@@ -6,8 +6,8 @@ build-backend = "setuptools.build_meta"
 name = "package_name"
 version = "0.1"
 requires-python = ">= 3.10"
-authors = [{ name = "Wessel Poelman", email = "contact@wesselpoelman.nl" }]
-maintainers = [{ name = "Wessel Poelman", email = "contact@wesselpoelman.nl" }]
+authors = [{ name = "Robin Kokot", email = "robin.edu.hr@gmail.com" }]
+maintainers = [{ name = "Robin Kokot", email = "robin.edu.hr@gmail.com" }]
 description = "A package to **description** (package_name)."
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -27,7 +27,7 @@ dev = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/WPoelman/package_name"
+"Homepage" = "https://github.com/rokii3/qtype-eval"
 
 [tool.setuptools.packages.find]
 where = ["src"]
