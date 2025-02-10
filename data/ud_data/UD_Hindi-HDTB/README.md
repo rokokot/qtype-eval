@@ -3,11 +3,9 @@
 The Hindi UD treebank is based on the Hindi Dependency Treebank (HDTB),
 created at IIIT Hyderabad, India.
 
-
 # Introduction
 
 The Hindi Universal Dependency Treebank was automatically converted from Hindi Dependency Treebank (HDTB) which is part of an ongoing effort of creating multi-layered treebanks for Hindi and Urdu. HDTB is developed at IIIT-H India.
-
 
 # Acknowledgments
 
@@ -42,8 +40,8 @@ Martha Palmer, Rajesh Bhatt, Bhuvana Narasimhan, Owen Rambow, Dipti Misra Sharma
 
 * 2024-11-15 v2.15
   * Construction annotations in the [UCxn](https://github.com/LeonieWeissweiler/UCxn) framework added to MISC.
-     * This release adds rule-based annotations of Interrogatives, Conditionals, Existentials, and NPN (noun-preposition-noun) constructions on the head of the respective phrase, plus construction elements.
-     * The UCxn v1 notation and categories are documented [here](https://github.com/LeonieWeissweiler/UCxn/blob/main/docs/UCxn-v1.pdf).
+    * This release adds rule-based annotations of Interrogatives, Conditionals, Existentials, and NPN (noun-preposition-noun) constructions on the head of the respective phrase, plus construction elements.
+    * The UCxn v1 notation and categories are documented [here](https://github.com/LeonieWeissweiler/UCxn/blob/main/docs/UCxn-v1.pdf).
 * 2024-05-15 v2.14
   * Added transliteration of lemmas and sentences.
   * Verbal lemma is infinitive instead of stem.
@@ -62,8 +60,6 @@ Martha Palmer, Rajesh Bhatt, Bhuvana Narasimhan, Owen Rambow, Dipti Misra Sharma
   * Converted to UD v2 guidelines (Dan Zeman).
 * 2015-11-01 v1.2
   * Initial release (Riyaz Bhat and Dan Zeman).
-
-
 
 <pre>
 === Machine-readable metadata =================================================

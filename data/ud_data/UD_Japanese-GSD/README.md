@@ -2,10 +2,9 @@
 
 This Universal Dependencies (UD) Japanese treebank is based on the definition of UD Japanese convention described in the UD documentation.  The original sentences are from Google UDT 2.0.
 
-
 # Introduction
 
-The Japanese UD treebank contains the sentences from Google Universal Dependency Treebanks v2.0 (legacy): https://github.com/ryanmcd/uni-dep-tb.  First, Google UDT v2.0 was converted to UD-style with bunsetsu-based word units (say "master" corpus).
+The Japanese UD treebank contains the sentences from Google Universal Dependency Treebanks v2.0 (legacy): <https://github.com/ryanmcd/uni-dep-tb>.  First, Google UDT v2.0 was converted to UD-style with bunsetsu-based word units (say "master" corpus).
 
 The word units in "master" is significantly different from the definition of the documents based on **Short Unit Word** (SUW) [1], then the sentences are automatically re-processed by Hiroshi Kanayama in Feb 2017.  It is the Japanese_UD v2.0 and used in the CoNLL 2017 shared task.
 In November 2017, UD_Japanese v2.0 is merged with the "master" data so that the manual annotations for dependencies can be reflected to the corpus. It reduced the errors in the dependency structures and relation labels.
@@ -16,12 +15,12 @@ In May 2020, we introduce UD_Japanese BCCWJ[3] like coversion method for UD_Japa
 
 # Specification
 
-
 ## Overview
-The data is tokenized manually in a three layered tokenization of Short Unit Word (SUW)[4], Long Unit Word (LUW)[5], and base-phrase (bunsetsu)[5] as the `Balanced Corpus of Contemporary Written Japanese'[6]. The original morporlogical labels are based on UniDic POS tagset [7]
+
+The data is tokenized manually in a three layered tokenization of Short Unit Word [SUW](4), Long Unit Word [LUW](5), and base-phrase [bunsetsu](5) as the `Balanced Corpus of Contemporary Written Japanese'[6]. The original morporlogical labels are based on UniDic POS tagset [7]
 We use the slightly changed version of SUW as the UD word tokenization, in which the cardinal numbers are concatenated as in one word.
 
-The (base-)phrase level dependency structures are annotated manually with the gudeline of BCCWJ-DepPara[8]. The phrase level dependency structures are converted into the word level dependency structures by the head rule of the dependency analyser CaboCha[9]. 
+The (base-)phrase level dependency structures are annotated manually with the gudeline of BCCWJ-DepPara[8]. The phrase level dependency structures are converted into the word level dependency structures by the head rule of the dependency analyser CaboCha[9].
 
 ## LEMMA field
 
@@ -46,7 +45,7 @@ XPOS is the part-of-speech label for Short Unit Word (SUW) based on UniDic POS t
 - LUWBILabel: Long Unit Word (LUW) boundary labels [5]
   - B: Beginning of LUW
   - I: Inside of LUW
-  
+
 - UniDicInfo: lemma information based on UniDic [7]. The UniDic lemma normalise
  not only conjugation forms but also orthographical variants.
   - 1 lForm: lexeme reading （語彙素読み）
@@ -57,7 +56,6 @@ XPOS is the part-of-speech label for Short Unit Word (SUW) based on UniDic POS t
   - 6 pronBase: Surface Pronunciation（発音形基本形）
   - 7 form: Word Form （語形）
   - 8 formBase: Word Form （語形基本形）
-
 
 # Acknowledgments
 
@@ -96,7 +94,6 @@ through annotation, discussion and validation with
 
 See file LICENSE.txt
 
-
 # Reference
 
 [1] Tanaka, T., Miyao, Y., Asahara, M., Uematsu, S., Kanayama, H., Mori, S., & Matsumoto, Y. (2016). Universal Dependencies for Japanese. In LREC.
@@ -120,25 +117,24 @@ See file LICENSE.txt
 [9] Kudo, T. & Matsumoto, Y. (2002). Japanese Dependency Analysis using Cascaded Chunking, In CoNLL 2002. pp.63-69.
 
 # Changelog
-* 2020-05-   v2.6
-  * Update for v2.6.  Introduce the conversion method of UD-Japanese BCCWJ [3]
-  
-* 2019-11-15 v2.5
-  * Google gave permission to drop the "NC" restriction from the license.
+- 2020-05-   v2.6
+  - Update for v2.6.  Introduce the conversion method of UD-Japanese BCCWJ [3]
+
+- 2019-11-15 v2.5
+  - Google gave permission to drop the "NC" restriction from the license.
     This applies to the UD annotations (not the underlying content, of which Google claims no ownership or copyright).
 
-* 2018-11-   v2.3
-  * Updates for v2.3.  Errors in morphologies are fixed, and unknown words and dep labels are reduced.  XPOS is added.
- 
-* 2017-11-   v2.1
-  * Updates for v2.1.  Several errors are removed by adding PoS/label rules and merging the manual dependency annotations in the original bunsetu-style annotations in Google UDT 2.0.
-  
-* 2017-03-01 v2.0
-  * Converted to UD v2 guidelines.
-  
-* 2016-11-15 v1.4
-  * Initial release in Universal Dependencies.
+- 2018-11-   v2.3
+  - Updates for v2.3.  Errors in morphologies are fixed, and unknown words and dep labels are reduced.  XPOS is added.
 
+- 2017-11-   v2.1
+  - Updates for v2.1.  Several errors are removed by adding PoS/label rules and merging the manual dependency annotations in the original bunsetu-style annotations in Google UDT 2.0.
+
+- 2017-03-01 v2.0
+  - Converted to UD v2 guidelines.
+
+- 2016-11-15 v1.4
+  - Initial release in Universal Dependencies.
 
 ```
 
@@ -192,8 +188,6 @@ slav@google.com
 See https://github.com/ryanmcd/uni-dep-tb for more details
 ```
 
-
-
 === Machine-readable metadata =================================================
 Data available since: UD v1.4
 License: CC BY-SA 4.0
@@ -206,6 +200,7 @@ Features: not available
 Relations: converted from manual
 Contributors: Omura, Mai; Miyao, Yusuke; Kanayama, Hiroshi; Matsuda, Hiroshi; Wakasa, Aya; Yamashita, Kayo; Asahara, Masayuki; Tanaka, Takaaki; Murawaki, Yugo; Matsumoto, Yuji; Mori, Shinsuke; Uematsu, Sumire; McDonald, Ryan; Nivre, Joakim; Zeman, Daniel
 Contributing: here
-Contact: hkana@jp.ibm.com
+Contact: <hkana@jp.ibm.com>
 ===============================================================================
+
 (Original treebank contributors: LaMontagne, Adam; Souček, Milan; Järvinen, Timo; Radici, Alessandra)

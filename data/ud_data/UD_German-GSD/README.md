@@ -3,10 +3,9 @@
 The German UD is converted from the content head version of the [universal
 dependency treebank v2.0 (legacy)](https://github.com/ryanmcd/uni-dep-tb).
 
-
 # Introduction
 
-The ACL 2013 paper (https://github.com/ryanmcd/uni-dep-tb/blob/master/ACL2013.pdf,
+The ACL 2013 paper (<https://github.com/ryanmcd/uni-dep-tb/blob/master/ACL2013.pdf>,
 McDonald et al.) describes version 1.0 of the corpus, of which there are 2200
 train/800 dev/1000 test sentences in German. According to the paper they
 consist of Reviews and News genres (the news data being from the TIGER
@@ -26,7 +25,6 @@ new ones in version 2.0, it looks like they are from Wikipedia and other
 websites.
 dev: Reviews=s1-s500, News=s501-s799
 test: Reviews=s1-s301, News=s302-s977
-
 
 # Morphology in release 2.0
 
@@ -94,80 +92,90 @@ UD instances the precision seems relatively high.
 # Changelog
 
 2024-11-15 v2.15
-  * Adverbial/predicative forms of adjectives (XPOS=ADJD) have now consistently UPOS=ADJ.
-  * Heuristically disambiguated ambiguous lemma strings such as "Wind|Winde|Winden".
-    (https://github.com/UniversalDependencies/UD_German-GSD/issues/35)
-  * Fixed deprel of "vor allem", "unter anderem" (https://github.com/UniversalDependencies/docs/issues/1060).
+
+* Adverbial/predicative forms of adjectives (XPOS=ADJD) have now consistently UPOS=ADJ.
+* Heuristically disambiguated ambiguous lemma strings such as "Wind|Winde|Winden".
+    (<https://github.com/UniversalDependencies/UD_German-GSD/issues/35>)
+* Fixed deprel of "vor allem", "unter anderem" (<https://github.com/UniversalDependencies/docs/issues/1060>).
 
 2024-05-15 v2.14
-  * Fixed "darüber hinaus" inconsistent annotations (#5).
-  * Reannotated "zu erreichen sein" as a copular construction (#1).
+
+* Fixed "darüber hinaus" inconsistent annotations (#5).
+* Reannotated "zu erreichen sein" as a copular construction (#1).
 
 2023-05-15 v2.12
-  * Fixed: nominals cannot have obj and iobj children.
-  * Fixed multiple subjects under the same predicate.
-  * Dative arguments are oblique, hence they are obl:arg and not iobj.
-  * PRON vs. DET annotation made consistent across German UD treebanks.
+
+* Fixed: nominals cannot have obj and iobj children.
+* Fixed multiple subjects under the same predicate.
+* Dative arguments are oblique, hence they are obl:arg and not iobj.
+* PRON vs. DET annotation made consistent across German UD treebanks.
 
 2022-05-15 v2.10
-  * Fixed tokenization, lemmatization and tagging of ordinal numerals.
-  * Added the Degree feature to adjectives.
-  * Fixed values of VerbForm where they did not match XPOS.
-  * Fixed the Definite feature: it applies only to DET PronType=Art.
+
+* Fixed tokenization, lemmatization and tagging of ordinal numerals.
+* Added the Degree feature to adjectives.
+* Fixed values of VerbForm where they did not match XPOS.
+* Fixed the Definite feature: it applies only to DET PronType=Art.
 
 2021-11-15 v2.9
-  * Fixed UPOS and DEPREL of attributive usages of 'manche'.
-  * Fixed UPOS of prepositions based on XPOS==APPR (especially in multi-word named entities).
+
+* Fixed UPOS and DEPREL of attributive usages of 'manche'.
+* Fixed UPOS of prepositions based on XPOS==APPR (especially in multi-word named entities).
 
 2020-11-15 Dan Zeman
-  * Fixed UPOS of possessives mein, dein, sein, ihr, unser, euer from PRON (or even PROPN) to DET.
+
+* Fixed UPOS of possessives mein, dein, sein, ihr, unser, euer from PRON (or even PROPN) to DET.
 
 2019-11-15 v2.5
-  * Google gave permission to drop the "NC" restriction from the license.
+
+* Google gave permission to drop the "NC" restriction from the license.
     This applies to the UD annotations (not the underlying content, of which Google claims no ownership or copyright).
 
 2019-05-15 Dan Zeman
-  * Fixed numerous bugs found by the new validator.
+
+* Fixed numerous bugs found by the new validator.
 
 2018-11-15 Dan Zeman
-  * Fixed punctuation using udapy -s ud.FixPunct
+
+* Fixed punctuation using udapy -s ud.FixPunct
 
 2018-04-15 Adriane Boyd
-  * Fixed morphology (retagged with Mate, see above), re-synchronized with original Tiger data where applicable.
+
+* Fixed morphology (retagged with Mate, see above), re-synchronized with original Tiger data where applicable.
 
 2017-11-20 Dan Zeman
-  * Fixed: copula is AUX.
-  * Fixed: capitalization of multi-word tokens at sentence beginning.
+
+* Fixed: copula is AUX.
+* Fixed: capitalization of multi-word tokens at sentence beginning.
 
 2017-04-13 Dan Zeman
 
-  * Removed duplicate sentences from the training data. They were too long to believe that they were naturally
+* Removed duplicate sentences from the training data. They were too long to believe that they were naturally
     occurring duplicates.
 
 2017-03-01 v2.0
-  * Converted to UD v2 guidelines (Dan Zeman)
+
+* Converted to UD v2 guidelines (Dan Zeman)
 
 2016-08-21 Dan Zeman
 
-  * Added sentence ids.
-  * Added LEMMA and XPOSTAG predicted by TreeTagger with a German model supplied with the tagger and available in Treex
-    (http://ufal.mff.cuni.cz/treex, commit 50ad1fe0b9907ac382cbcda0a0f102602abc21a0). The UPOSTAGs from the original data
+* Added sentence ids.
+* Added LEMMA and XPOSTAG predicted by TreeTagger with a German model supplied with the tagger and available in Treex
+    (<http://ufal.mff.cuni.cz/treex>, commit 50ad1fe0b9907ac382cbcda0a0f102602abc21a0). The UPOSTAGs from the original data
     (assigned manually) were not modified. Some features were also added if they could be derived from the information
     already present. Features that need a lexicon and/or disambiguation, such as Gender, Number and Case, have only been
     added if they can be deduced from the (manually annotated) dependency structure, plus a few heuristics (e.g. form
     equal to lemma often but not always means singular).
 
     The work was done mainly using the HamleDT::DE::FixUD block, see
-    https://github.com/ufal/treex/blob/master/lib/Treex/Block/HamleDT/DE/FixUD.pm
+    <https://github.com/ufal/treex/blob/master/lib/Treex/Block/HamleDT/DE/FixUD.pm>
 
 2015-11-08 Wolfgang Seeker
 
-  * Removed sentences from test due to overlap with dev
+* Removed sentences from test due to overlap with dev
     (sent-no. 6, 8, 79, 80, 88, 108, 109, 118, 152, 154, 164, 167, 190, 191, 195, 206, 215, 220, 229, 247, 295, 346, 451)
     Removed sentences from dev due to overlap with train
     (sent-no. 616)
-
-
 
 ```
 ===================================
@@ -220,7 +228,6 @@ slav@google.com
 See https://github.com/ryanmcd/uni-dep-tb for more details
 ```
 
-
 === Machine-readable metadata (DO NOT REMOVE!) ================================
 Data available since: UD v1.0
 License: CC BY-SA 4.0
@@ -233,6 +240,7 @@ Features: automatic
 Relations: converted from manual
 Contributors: Petrov, Slav; Seeker, Wolfgang; McDonald, Ryan; Nivre, Joakim; Zeman, Daniel; Boyd, Adriane
 Contributing: here
-Contact: zeman@ufal.mff.cuni.cz
+Contact: <zeman@ufal.mff.cuni.cz>
 ===============================================================================
+
 (Original treebank contributors: Quirmbach-Brundage, Yvonne; LaMontagne, Adam; Souček, Milan; Järvinen, Timo; Radici, Alessandra)

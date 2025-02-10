@@ -1,0 +1,23 @@
+# newdoc id = dev-s44
+# sent_id = dev-s44
+# text = どこにするか迷ってる方がいたら、ぜひともここをオススメします。
+1	どこ	何処	PRON	代名詞	_	3	obl	_	BunsetuBILabel=B|BunsetuPositionType=SEM_HEAD|LUWBILabel=B|LUWPOS=代名詞|SpaceAfter=No|UnidicInfo=ドコ,何処,どこ,どこ,ドコ,,,ドコ,ドコ,何処
+2	に	に	ADP	助詞-格助詞	_	1	case	_	BunsetuBILabel=I|BunsetuPositionType=SYN_HEAD|LUWBILabel=B|LUWPOS=助詞-格助詞|SpaceAfter=No|UnidicInfo=ニ,に,に,に,ニ,,,ニ,ニ,に
+3	する	為る	VERB	動詞-非自立可能-サ行変格	_	5	advcl	_	BunsetuBILabel=B|BunsetuPositionType=SEM_HEAD|LUWBILabel=B|LUWPOS=動詞-一般-サ行変格|PrevUDLemma=する|SpaceAfter=No|UnidicInfo=スル,為る,する,する,スル,,,スル,スル,する
+4	か	か	PART	助詞-副助詞	_	3	mark	_	BunsetuBILabel=I|BunsetuPositionType=SYN_HEAD|LUWBILabel=B|LUWPOS=助詞-副助詞|SpaceAfter=No|UnidicInfo=カ,か,か,か,カ,,,カ,カ,か
+5	迷っ	迷う	VERB	動詞-一般-五段-ワア行	_	7	acl	_	BunsetuBILabel=B|BunsetuPositionType=SEM_HEAD|LUWBILabel=B|LUWPOS=動詞-一般-五段-ワア行|SpaceAfter=No|UnidicInfo=マヨウ,迷う,迷っ,迷う,マヨッ,,,マヨウ,マヨウ,迷う
+6	てる	てる	AUX	助動詞-下一段-タ行	_	5	aux	_	BunsetuBILabel=I|BunsetuPositionType=SYN_HEAD|LUWBILabel=B|LUWPOS=助動詞-下一段-タ行|SpaceAfter=No|UnidicInfo=テル,てる,てる,てる,テル,,,テル,テル,てる
+7	方	方	NOUN	名詞-普通名詞-助数詞可能	_	9	nsubj	_	BunsetuBILabel=B|BunsetuPositionType=SEM_HEAD|LUWBILabel=B|LUWPOS=名詞-普通名詞-一般|SpaceAfter=No|UnidicInfo=カタ,方,方,方,カタ,,,カタ,カタ,方
+8	が	が	ADP	助詞-格助詞	_	7	case	_	BunsetuBILabel=I|BunsetuPositionType=SYN_HEAD|LUWBILabel=B|LUWPOS=助詞-格助詞|SpaceAfter=No|UnidicInfo=ガ,が,が,が,ガ,,,ガ,ガ,が
+9	い	居る	VERB	動詞-非自立可能-上一段-ア行	_	17	advcl	_	BunsetuBILabel=B|BunsetuPositionType=SEM_HEAD|LUWBILabel=B|LUWPOS=動詞-一般-上一段-ア行|PrevUDLemma=いる|SpaceAfter=No|UnidicInfo=イル,居る,い,いる,イ,,,イル,イル,居る
+10	たら	た	AUX	助動詞-助動詞-タ	_	9	aux	_	BunsetuBILabel=I|BunsetuPositionType=SYN_HEAD|LUWBILabel=B|LUWPOS=助動詞-助動詞-タ|SpaceAfter=No|UnidicInfo=タ,た,たら,た,タラ,,,タ,タ,た
+11	、	、	PUNCT	補助記号-読点	_	9	punct	_	BunsetuBILabel=I|BunsetuPositionType=CONT|LUWBILabel=B|LUWPOS=補助記号-読点|SpaceAfter=No|UnidicInfo=,、,、,、,,,,,,、
+12	ぜひ	是非	ADV	副詞	_	13	advmod	_	BunsetuBILabel=B|BunsetuPositionType=CONT|LUWBILabel=B|LUWPOS=副詞|SpaceAfter=No|UnidicInfo=ゼヒ,是非,ぜひ,ぜひ,ゼヒ,,,ゼヒ,ゼヒトモ,是非共
+13	とも	共	NOUN	接尾辞-名詞的-副詞可能	_	17	obl	_	BunsetuBILabel=I|BunsetuPositionType=SEM_HEAD|LUWBILabel=I|LUWPOS=副詞|SpaceAfter=No|UnidicInfo=トモ,共,とも,とも,トモ,,,トモ,ゼヒトモ,是非共
+14	ここ	此処	PRON	代名詞	_	17	obj	_	BunsetuBILabel=B|BunsetuPositionType=SEM_HEAD|LUWBILabel=B|LUWPOS=代名詞|SpaceAfter=No|UnidicInfo=ココ,此処,ここ,ここ,ココ,,,ココ,ココ,此処
+15	を	を	ADP	助詞-格助詞	_	14	case	_	BunsetuBILabel=I|BunsetuPositionType=SYN_HEAD|LUWBILabel=B|LUWPOS=助詞-格助詞|SpaceAfter=No|UnidicInfo=ヲ,を,を,を,オ,,,ヲ,ヲ,を
+16	オ	御	NOUN	接頭辞	_	17	compound	_	BunsetuBILabel=B|BunsetuPositionType=CONT|LUWBILabel=B|LUWPOS=動詞-一般-サ行変格|SpaceAfter=No|UnidicInfo=オ,御,オ,オ,オ,,,オ,オススメスル,御勧めする
+17	ススメ	勧める	VERB	動詞-一般-下一段-マ行	_	0	root	_	BunsetuBILabel=I|BunsetuPositionType=ROOT|LUWBILabel=I|LUWPOS=動詞-一般-サ行変格|SpaceAfter=No|UnidicInfo=ススメル,勧める,ススメ,ススメる,ススメ,,,ススメル,オススメスル,御勧めする
+18	し	為る	AUX	動詞-非自立可能-サ行変格	_	17	aux	_	BunsetuBILabel=I|BunsetuPositionType=FUNC|LUWBILabel=I|LUWPOS=動詞-一般-サ行変格|PrevUDLemma=する|SpaceAfter=No|UnidicInfo=スル,為る,し,する,シ,,,スル,オススメスル,御勧めする
+19	ます	ます	AUX	助動詞-助動詞-マス	_	17	aux	_	BunsetuBILabel=I|BunsetuPositionType=SYN_HEAD|LUWBILabel=B|LUWPOS=助動詞-助動詞-マス|SpaceAfter=No|UnidicInfo=マス,ます,ます,ます,マス,,,マス,マス,ます
+20	。	。	PUNCT	補助記号-句点	_	17	punct	_	BunsetuBILabel=I|BunsetuPositionType=CONT|LUWBILabel=B|LUWPOS=補助記号-句点|UnidicInfo=,。,。,。,,,,,,。
