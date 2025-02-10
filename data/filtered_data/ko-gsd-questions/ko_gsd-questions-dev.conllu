@@ -1,0 +1,159 @@
+# sent_id = dev-s149
+# text = 일반 삼계닭이 아닌가?
+# translit = .il.ban .sam.gye.darg.i .a.nin.ga?
+1	일반	일반	NOUN	NNG	_	3	nsubj	_	Translit=.il.ban|LTranslit=.il.ban
+2	삼계닭이	삼계닭+이	NOUN	NNG+JKC	_	1	flat	_	Translit=.sam.gye.darg.i|LTranslit=.sam.gye.darg+.i
+3	아닌가	아니+ㄴ가	ADJ	VCN+EF	_	0	root	_	SpaceAfter=No|Translit=.a.nin.ga|LTranslit=.a.ni+ㄴ.ga
+4	?	?	PUNCT	SF	_	3	punct	_	Translit=?|LTranslit=?
+
+# sent_id = dev-s243
+# text = 그리고 친서민 농업정책의 방향과 법안 논의가 이뤄지는 게 있다면?
+# translit = .geu.ri.go .chin.seo.min .nong.eob.jeong.chaeg.yi .bang.hyang.gwa .beob.an .non.yi.ga .i.rweo.ji.neun .ge .iss.da.myeon?
+1	그리고	그리고	ADV	MAJ	_	9	advmod	_	Translit=.geu.ri.go|LTranslit=.geu.ri.go
+2	친서민	친+서민	NOUN	XPN+NNG	_	7	nsubj	_	Translit=.chin.seo.min|LTranslit=.chin+.seo.min
+3	농업정책의	농업+정책+의	NOUN	NNG+NNG+JKG	_	2	nmod:poss	_	Translit=.nong.eob.jeong.chaeg.yi|LTranslit=.nong.eob+.jeong.chaeg+.yi
+4	방향과	방향+과	NOUN	NNG+JC	_	2	flat	_	Translit=.bang.hyang.gwa|LTranslit=.bang.hyang+.gwa
+5	법안	법안	NOUN	NNG	_	2	conj	_	Translit=.beob.an|LTranslit=.beob.an
+6	논의가	논의+가	NOUN	NNG+JKS	_	5	flat	_	Translit=.non.yi.ga|LTranslit=.non.yi+.ga
+7	이뤄지는	이루어지+는	VERB	VV+ETM	_	8	acl:relcl	_	Translit=.i.rweo.ji.neun|LTranslit=.i.ru.eo.ji+.neun
+8	게	것+이	NOUN	NNB+JKS	_	9	nsubj	_	Translit=.ge|LTranslit=.geos+.i
+9	있다면	있+다면	VERB	VV+EF	_	0	root	_	SpaceAfter=No|Translit=.iss.da.myeon|LTranslit=.iss+.da.myeon
+10	?	?	PUNCT	SF	_	9	punct	_	Translit=?|LTranslit=?
+
+# sent_id = dev-s247
+# text = 검사 전 특이 사항 물어본 게 상당히 짜증낼 정도의 질문인가요?
+# translit = .geom.sa .jeon .teug.i .sa.hang .mul.eo.bon .ge .sang.dang.hi .jja.jeung.nael .jeong.do.yi .jil.mun.in.ga.yo?
+1	검사	검사	NOUN	NNG	_	5	nmod	_	Translit=.geom.sa|LTranslit=.geom.sa
+2	전	전	ADP	NNG	_	1	case	_	Translit=.jeon|LTranslit=.jeon
+3	특이	특이	NOUN	XR	_	5	obj	_	Translit=.teug.i|LTranslit=.teug.i
+4	사항	사항	NOUN	NNG	_	3	flat	_	Translit=.sa.hang|LTranslit=.sa.hang
+5	물어본	물어보+ㄴ	VERB	VV+ETM	_	6	dep	_	Translit=.mul.eo.bon|LTranslit=.mul.eo.bo+ㄴ
+6	게	것+이	NOUN	NNB+JKS	_	10	nsubj	_	Translit=.ge|LTranslit=.geos+.i
+7	상당히	상당히	ADV	MAG	_	8	advmod	_	Translit=.sang.dang.hi|LTranslit=.sang.dang.hi
+8	짜증낼	짜증+내+ㄹ	VERB	NNG+VV+ETM	_	9	dep	_	Translit=.jja.jeung.nael|LTranslit=.jja.jeung+.nae+ㄹ
+9	정도의	정도+의	NOUN	NNG+JKG	_	10	nmod:poss	_	Translit=.jeong.do.yi|LTranslit=.jeong.do+.yi
+10	질문인가요	질문+이+ㄴ가요	VERB	NNG+VCP+EF	_	0	root	_	SpaceAfter=No|Translit=.jil.mun.in.ga.yo|LTranslit=.jil.mun+.i+ㄴ.ga.yo
+11	?	?	PUNCT	SF	_	10	punct	_	Translit=?|LTranslit=?
+
+# sent_id = dev-s275
+# text = 2단계에서 입학사정관들이 주로 평가한 것은 '자기 탐색의 완성도'라고 할까요?
+# translit = 2.dan.gye.e.seo .ib.hag.sa.jeong.gwan.deul.i .ju.ro .pyeong.ga.han .geos.eun '.ja.gi .tam.saeg.yi .wan.seong.do'.ra.go .hal.gga.yo?
+1	2단계에서	2+단계+에서	ADV	SN+NNG+JKB	_	4	advmod	_	Translit=2.dan.gye.e.seo|LTranslit=2+.dan.gye+.e.seo
+2	입학사정관들이	입학+사정관+들+이	NOUN	NNG+NNG+XSN+JKS	_	4	nsubj	_	Translit=.ib.hag.sa.jeong.gwan.deul.i|LTranslit=.ib.hag+.sa.jeong.gwan+.deul+.i
+3	주로	주로	ADV	MAG	_	4	advmod	_	Translit=.ju.ro|LTranslit=.ju.ro
+4	평가한	평가+하+ㄴ	VERB	NNG+XSV+ETM	_	5	dep	_	Translit=.pyeong.ga.han|LTranslit=.pyeong.ga+.ha+ㄴ
+5	것은	것+은	NOUN	NNB+JX	_	9	nsubj	_	Translit=.geos.eun|LTranslit=.geos+.eun
+6	'	'	PUNCT	SS	_	9	punct	_	SpaceAfter=No|Translit='|LTranslit='
+7	자기	자기	PRON	NP	_	9	det:poss	_	Translit=.ja.gi|LTranslit=.ja.gi
+8	탐색의	탐색+의	NOUN	NNG+JKG	_	7	flat	_	Translit=.tam.saeg.yi|LTranslit=.tam.saeg+.yi
+9	완성도	완성도	NOUN	NNG	_	0	root	_	SpaceAfter=No|Translit=.wan.seong.do|LTranslit=.wan.seong.do
+10	'	'	PUNCT	SS	_	9	punct	_	SpaceAfter=No|Translit='|LTranslit='
+11	라고	라고	ADP	JKQ	_	9	case	_	Translit=.ra.go|LTranslit=.ra.go
+12	할까요	하+ㄹ까요	VERB	VV+EF	_	9	appos	_	SpaceAfter=No|Translit=.hal.gga.yo|LTranslit=.ha+ㄹ.gga.yo
+13	?	?	PUNCT	SF	_	9	punct	_	Translit=?|LTranslit=?
+
+# sent_id = dev-s319
+# text = 여기서 맥도날드까지 몇 km인가요?
+# translit = .yeo.gi.seo .maeg.do.nal.deu.gga.ji .myeoch km.in.ga.yo?
+1	여기서	여기+서	ADV	NP+JKB	_	4	advmod	_	Translit=.yeo.gi.seo|LTranslit=.yeo.gi+.seo
+2	맥도날드까지	맥도날드+까지	ADV	NNP+JX	_	4	advmod	_	Translit=.maeg.do.nal.deu.gga.ji|LTranslit=.maeg.do.nal.deu+.gga.ji
+3	몇	몇	DET	MM	_	4	det	_	Translit=.myeoch|LTranslit=.myeoch
+4	km인가요	km+이+ㄴ가요	VERB	SL+VCP+EF	_	0	root	_	SpaceAfter=No|Translit=km.in.ga.yo|LTranslit=km+.i+ㄴ.ga.yo
+5	?	?	PUNCT	SF	_	4	punct	_	Translit=?|LTranslit=?
+
+# sent_id = dev-s402
+# text = 스타벅스까지 가는 버스?
+# translit = .seu.ta.beog.seu.gga.ji .ga.neun .beo.seu?
+1	스타벅스까지	스타벅스+까지	ADV	NNG+JX	_	2	advmod	_	Translit=.seu.ta.beog.seu.gga.ji|LTranslit=.seu.ta.beog.seu+.gga.ji
+2	가는	가+는	VERB	VV+ETM	_	3	acl:relcl	_	Translit=.ga.neun|LTranslit=.ga+.neun
+3	버스	버스	NOUN	NNG	_	0	root	_	SpaceAfter=No|Translit=.beo.seu|LTranslit=.beo.seu
+4	?	?	PUNCT	SF	_	3	punct	_	Translit=?|LTranslit=?
+
+# sent_id = dev-s463
+# text = 그렇게도 자신이 없는가?
+# translit = .geu.reoh.ge.do .ja.sin.i .eobs.neun.ga?
+1	그렇게도	그렇+게+도	ADV	VA+EC+JX	_	3	advmod	_	Translit=.geu.reoh.ge.do|LTranslit=.geu.reoh+.ge+.do
+2	자신이	자신+이	NOUN	NNG+JKS	_	3	nsubj	_	Translit=.ja.sin.i|LTranslit=.ja.sin+.i
+3	없는가	없+는가	ADJ	VA+EF	_	0	root	_	SpaceAfter=No|Translit=.eobs.neun.ga|LTranslit=.eobs+.neun.ga
+4	?	?	PUNCT	SF	_	3	punct	_	Translit=?|LTranslit=?
+
+# sent_id = dev-s470
+# text = 에펠타워 높이는?
+# translit = .e.pel.ta.weo .nop.i.neun?
+1	에펠타워	에펠타워	NOUN	NNP	_	2	nmod:poss	_	Translit=.e.pel.ta.weo|LTranslit=.e.pel.ta.weo
+2	높이는	높이+는	NOUN	NNG+JX	_	0	root	_	SpaceAfter=No|Translit=.nop.i.neun|LTranslit=.nop.i+.neun
+3	?	?	PUNCT	SF	_	2	punct	_	Translit=?|LTranslit=?
+
+# sent_id = dev-s486
+# text = 대전까지 최대 얼마 걸려?
+# translit = .dae.jeon.gga.ji .choe.dae .eol.ma .geol.ryeo?
+1	대전까지	대전+까지	ADV	NNP+JX	_	4	advmod	_	Translit=.dae.jeon.gga.ji|LTranslit=.dae.jeon+.gga.ji
+2	최대	최대	ADV	NNG	_	4	advmod	_	Translit=.choe.dae|LTranslit=.choe.dae
+3	얼마	얼마	NOUN	NNG	_	4	nsubj	_	Translit=.eol.ma|LTranslit=.eol.ma
+4	걸려	걸리+어	VERB	VV+EF	_	0	root	_	SpaceAfter=No|Translit=.geol.ryeo|LTranslit=.geol.ri+.eo
+5	?	?	PUNCT	SF	_	4	punct	_	Translit=?|LTranslit=?
+
+# sent_id = dev-s575
+# text = 만리장성을 만든 사람은?
+# translit = .man.ri.jang.seong.eul .man.deun .sa.ram.eun?
+1	만리장성을	만리장성+을	NOUN	NNP+JKO	_	2	obj	_	Translit=.man.ri.jang.seong.eul|LTranslit=.man.ri.jang.seong+.eul
+2	만든	만들+ㄴ	VERB	VV+ETM	_	3	acl:relcl	_	Translit=.man.deun|LTranslit=.man.deul+ㄴ
+3	사람은	사람+은	NOUN	NNG+JX	_	0	root	_	SpaceAfter=No|Translit=.sa.ram.eun|LTranslit=.sa.ram+.eun
+4	?	?	PUNCT	SF	_	3	punct	_	Translit=?|LTranslit=?
+
+# sent_id = dev-s635
+# text = 우리 아빠 직장이 어디더라?
+# translit = .u.ri .a.bba .jig.jang.i .eo.di.deo.ra?
+1	우리	우리	PRON	NNG	_	2	det:poss	_	Translit=.u.ri|LTranslit=.u.ri
+2	아빠	아빠	NOUN	NNG	_	4	nsubj	_	Translit=.a.bba|LTranslit=.a.bba
+3	직장이	직장+이	NOUN	NNG+JKS	_	2	flat	_	Translit=.jig.jang.i|LTranslit=.jig.jang+.i
+4	어디더라	어디+이+더라	VERB	NP+VCP+EF	_	0	root	_	SpaceAfter=No|Translit=.eo.di.deo.ra|LTranslit=.eo.di+.i+.deo.ra
+5	?	?	PUNCT	SF	_	4	punct	_	Translit=?|LTranslit=?
+
+# sent_id = dev-s653
+# text = 한우 값도 내렸다는대 갈비 값은 안 내리나요?
+# translit = .han.u .gabs.do .nae.ryeoss.da.neun.dae .gal.bi .gabs.eun .an .nae.ri.na.yo?
+1	한우	한우	NOUN	NNG	_	3	nsubj	_	Translit=.han.u|LTranslit=.han.u
+2	값도	값+도	NOUN	NNG+JX	_	1	flat	_	Translit=.gabs.do|LTranslit=.gabs+.do
+3	내렸다는대	내리+었+다는+대	VERB	VV+EP+ETM+NNB	_	7	advcl	_	Translit=.nae.ryeoss.da.neun.dae|LTranslit=.nae.ri+.eoss+.da.neun+.dae
+4	갈비	갈비	NOUN	NNG	_	7	nsubj	_	Translit=.gal.bi|LTranslit=.gal.bi
+5	값은	값+은	NOUN	NNG+JX	_	4	flat	_	Translit=.gabs.eun|LTranslit=.gabs+.eun
+6	안	안	ADV	MAG	_	7	advmod	_	Translit=.an|LTranslit=.an
+7	내리나요	내리+나요	VERB	VV+EF	_	0	root	_	SpaceAfter=No|Translit=.nae.ri.na.yo|LTranslit=.nae.ri+.na.yo
+8	?	?	PUNCT	SF	_	7	punct	_	Translit=?|LTranslit=?
+
+# sent_id = dev-s668
+# text = 맥도날드 직원 교육 좀 언제 제데로 시키실래요?
+# translit = .maeg.do.nal.deu .jig.weon .gyo.yug .jom .eon.je .je.de.ro .si.ki.sil.rae.yo?
+1	맥도날드	맥도날드	NOUN	NNP	_	7	obj	_	Translit=.maeg.do.nal.deu|LTranslit=.maeg.do.nal.deu
+2	직원	직원	NOUN	NNG	_	1	flat	_	Translit=.jig.weon|LTranslit=.jig.weon
+3	교육	교육	NOUN	NNG	_	1	flat	_	Translit=.gyo.yug|LTranslit=.gyo.yug
+4	좀	좀	ADV	MAG	_	7	advmod	_	Translit=.jom|LTranslit=.jom
+5	언제	언제	ADV	MAG	_	7	advmod	_	Translit=.eon.je|LTranslit=.eon.je
+6	제데로	제대로	ADV	MAG	_	7	advmod	_	Translit=.je.de.ro|LTranslit=.je.dae.ro
+7	시키실래요	시키+시+ㄹ래요	VERB	VV+EP+EF	_	0	root	_	SpaceAfter=No|Translit=.si.ki.sil.rae.yo|LTranslit=.si.ki+.si+ㄹ.rae.yo
+8	?	?	PUNCT	SF	_	7	punct	_	Translit=?|LTranslit=?
+
+# sent_id = dev-s757
+# text = 그런데 어떻게 이런 어처구니없는 부품결함이 일어날 수 있을까요?
+# translit = .geu.reon.de .eo.ddeoh.ge .i.reon .eo.cheo.gu.ni.eobs.neun .bu.pum.gyeol.ham.i .il.eo.nal .su .iss.eul.gga.yo?
+1	그런데	그런데	ADV	MAJ	_	8	advmod	_	Translit=.geu.reon.de|LTranslit=.geu.reon.de
+2	어떻게	어떻+게	ADV	VA+EC	_	6	advmod	_	Translit=.eo.ddeoh.ge|LTranslit=.eo.ddeoh+.ge
+3	이런	이런	ADJ	MM	_	5	amod	_	Translit=.i.reon|LTranslit=.i.reon
+4	어처구니없는	어처구니없+는	VERB	VA+ETM	_	5	acl:relcl	_	Translit=.eo.cheo.gu.ni.eobs.neun|LTranslit=.eo.cheo.gu.ni.eobs+.neun
+5	부품결함이	부품+결함+이	NOUN	NNG+NNG+JKS	_	6	nsubj	_	Translit=.bu.pum.gyeol.ham.i|LTranslit=.bu.pum+.gyeol.ham+.i
+6	일어날	일어나+ㄹ	VERB	VV+ETM	_	7	dep	_	Translit=.il.eo.nal|LTranslit=.il.eo.na+ㄹ
+7	수	수	NOUN	NNB	_	8	nsubj	_	Translit=.su|LTranslit=.su
+8	있을까요	있+을까요	ADJ	VV+EF	_	0	root	_	SpaceAfter=No|Translit=.iss.eul.gga.yo|LTranslit=.iss+.eul.gga.yo
+9	?	?	PUNCT	SF	_	8	punct	_	Translit=?|LTranslit=?
+
+# sent_id = dev-s801
+# text = 오늘 7시에 하는 영화는 뭐가 있어?
+# translit = .o.neul 7.si.e .ha.neun .yeong.hwa.neun .mweo.ga .iss.eo?
+1	오늘	오늘	NOUN	NNG	_	3	nmod	_	Translit=.o.neul|LTranslit=.o.neul
+2	7시에	7+시+에	ADV	SN+NNB+JKB	_	3	obl	_	Translit=7.si.e|LTranslit=7+.si+.e
+3	하는	하+는	VERB	VV+ETM	_	4	acl:relcl	_	Translit=.ha.neun|LTranslit=.ha+.neun
+4	영화는	영화+는	NOUN	NNG+JX	_	6	nsubj	_	Translit=.yeong.hwa.neun|LTranslit=.yeong.hwa+.neun
+5	뭐가	뭐+가	PRON	NP+JKS	_	6	nsubj	_	Translit=.mweo.ga|LTranslit=.mweo+.ga
+6	있어	있+어	ADJ	VV+EF	_	0	root	_	SpaceAfter=No|Translit=.iss.eo|LTranslit=.iss+.eo
+7	?	?	PUNCT	SF	_	6	punct	_	Translit=?|LTranslit=?

@@ -19700,4 +19700,3 @@
 26	in	in	ADP	APPR	_	27	case	_	_
 27	Israel	Israel	PROPN	NE	Case=Dat|Gender=Neut|Number=Sing	25	nmod	_	NamedEntity=Yes|SpaceAfter=No
 28	.	.	PUNCT	$.	_	20	punct	_	_
-
