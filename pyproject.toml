@@ -24,6 +24,7 @@ dev = [
     "ruff",
     "pre-commit",
     "pytest",
+    "poetry"
 ]
 
 [project.urls]
@@ -36,3 +37,10 @@ where = ["src"]
 
 [tool.ruff]
 line-length = 120
+
+[tool.poetry]
+
+name = "qtype-eval"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <your.email@example.com>"]

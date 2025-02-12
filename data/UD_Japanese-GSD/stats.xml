@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<treebank>
+  <!-- tokens means "surface tokens", e.g. Spanish "vámonos" counts as one token
+       words means "syntactic words", e.g. Spanish "vámonos" is split to two words, "vamos" and "nos"
+       fused is the number of tokens that are split to two or more syntactic words
+       The words and fused elements can be omitted if no token is split to smaller syntactic words. -->
+  <size>
+    <total><sentences>8100</sentences><tokens>193654</tokens><words>193654</words><fused>0</fused></total>
+    <train><sentences>7050</sentences><tokens>168333</tokens><words>168333</words><fused>0</fused></train>
+    <dev><sentences>507</sentences><tokens>12287</tokens><words>12287</words><fused>0</fused></dev>
+    <test><sentences>543</sentences><tokens>13034</tokens><words>13034</words><fused>0</fused></test>
+  </size>
+  <lemmas unique="19595" /><!-- の, 。, 、, に, 為る, は, を, た, て, が, と, だ, で, 居る, も -->
+  <forms unique="21691" /><!-- の, 。, に, 、, は, を, た, て, が, で, と, し, も, れ, , -->
+  <fusions unique="0" /><!--  -->
+  <!-- Statistics of universal POS tags. The comments show the most frequent lemmas. -->
+  <tags unique="16">
+    <tag name="ADJ">3839</tag><!-- 無い, 良い, 多い, 可能, 高い, 美味しい, 同じ, 大きい, 大きな, 少ない -->
+    <tag name="ADP">41864</tag><!-- の, に, は, を, が, と, で, も, から, や -->
+    <tag name="ADV">2364</tag><!-- 迚も, こう, どう, 特に, 初めて, 又, 可成, 良く, 直ぐ, 現在 -->
+    <tag name="AUX">21158</tag><!-- た, 為る, だ, れる, ます, です, ない, られる, ず, 様 -->
+    <tag name="CCONJ">819</tag><!-- 又, 然し, 及び, そして, 更に, 猶, 但し, だ, 一方, 唯 -->
+    <tag name="DET">987</tag><!-- 其の, 此の, 或る, 何の, 彼の, あらゆる, 我が, とある -->
+    <tag name="INTJ">13</tag><!-- _, あっ, OH, あら, いえ, やった, わお, イエイ, 否, 否々 -->
+    <tag name="NOUN">58184</tag><!-- 年, 事, 月, 日, 御, 人, 者, 後, 為, 物 -->
+    <tag name="NUM">5163</tag><!-- 1, 2, 3, 4, 一, 5, 10, 6, 8, 7 -->
+    <tag name="PART">1259</tag><!-- 的, か, さ, など, たり, ね, よ, な, だけ, ほど -->
+    <tag name="PRON">1108</tag><!-- 此れ, 其れ, 彼, 私, 此処, 何, 此方, 其処, 何時, 何れ -->
+    <tag name="PROPN">7141</tag><!-- 日本, 東京, アメリカ, 中国, 韓国, ドイツ, 大阪, フランス, イギリス, 台湾 -->
+    <tag name="PUNCT">19233</tag><!-- 。, 、, ,, 「, 」, “, ”, 『, 』, ! -->
+    <tag name="SCONJ">7995</tag><!-- て, の, が, と, ば, に, ながら, から, 為, けれど -->
+    <tag name="SYM">1301</tag><!-- ・, -, /, ~, =, &, :, ♪, 〜, — -->
+    <tag name="VERB">21226</tag><!-- 居る, 有る, 成る, 為る, 言う, 因る, 行く, 行う, 思う, 来る -->
+  </tags>
+  <!-- Statistics of features and values. The comments show the most frequent word forms. -->
+  <feats unique="1">
+    <feat name="Polarity" value="Neg" upos="AUX,NOUN,SCONJ">1087</feat><!-- ない, ず, ん, なかっ, 不, なく, 非, なけれ, 反, 無 -->
+  </feats>
+  <!-- Statistics of universal dependency relations. -->
+  <deps unique="25">
+    <dep name="acl">6998</dep>
+    <dep name="advcl">7197</dep>
+    <dep name="advmod">2280</dep>
+    <dep name="amod">445</dep>
+    <dep name="aux">17235</dep>
+    <dep name="case">41304</dep>
+    <dep name="cc">819</dep>
+    <dep name="ccomp">390</dep>
+    <dep name="compound">27489</dep>
+    <dep name="cop">2441</dep>
+    <dep name="csubj">155</dep>
+    <dep name="csubj:outer">8</dep>
+    <dep name="dep">76</dep>
+    <dep name="det">987</dep>
+    <dep name="discourse">16</dep>
+    <dep name="fixed">8623</dep>
+    <dep name="mark">7860</dep>
+    <dep name="nmod">12970</dep>
+    <dep name="nsubj">7793</dep>
+    <dep name="nsubj:outer">443</dep>
+    <dep name="nummod">2800</dep>
+    <dep name="obj">5309</dep>
+    <dep name="obl">12683</dep>
+    <dep name="punct">19233</dep>
+    <dep name="root">8100</dep>
+  </deps>
+</treebank>
