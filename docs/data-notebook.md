@@ -62,3 +62,17 @@ see tidy-filter.py
 |Indonesian|64|1741|328|14624|
 
 
+
+
+## Annotating questions
+
+What kind of a strategy can we use to annotate our questions with the relevant information
+
+
+
+
+# UD processing: extracting questions, annotating question types and complexity levels
+
+
+
+### UD question extraction logic:
