@@ -10,7 +10,8 @@ from datasets import Dataset, load_dataset
   The train split is annotated with a single value: `yes_no_answer: ['NONE']`
   The validation split is annotated with three values: `yes_no_answer: ['NONE', 'NONE', 'NONE']`
 
-
+  The dataset is also cleaned of languages for which we do not have gold data from UD treebanks, either because UD data is sparce or not provided in the most recent release.
+  
 """
 
 
