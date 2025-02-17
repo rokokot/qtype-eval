@@ -1,65 +1,65 @@
-import re
+import conllu
+from conllu.serializer import serialize
 import os
-from tqdm import tqdm
 
-def is_english_question(sentence):
- 
-    sentence = sentence.strip()
-    if sentence.endswith('?'):
-        return True
-        
-    question_words = r"^(Who|What|When|Where|Why|How|Which|Whose|Whom|Is|Are|Do|Does|Did|Have|Has|Had|Can|Could|Will|Would|Should|May|Might|Must)\b"
-    if re.search(question_words, sentence, re.IGNORECASE):
-        return True
-    return False
+def filter(file, pattern):
+    results = []
+    try:
+        with open(file, 'r', encoding='utf-8') as f:
+            data = f.read()
+            sentences = conllu.parse(data)
+            for sentence in sentences:
+                if sentence and any(token['form'] in pattern for token in sentence):
+                    results.append(sentence)
+    except FileNotFoundError:
+        print(f'Error at path {file}') 
+        return None
+    return results
 
-def is_hindi_question(sentence):
+def save(questions, out_file):
+    with open(out_file, 'w', encoding='utf-8') as f:
+        for question in questions:
+            f.write(serialize(question))
+            f.write('\n')
 
-    sentence = sentence.strip()
-    if sentence.endswith('?'):
-        return True
-        
-    question_words = [
-        "क्या", "किसको", "किसके", "किसका", "कौन", "कब", "कहाँ", 
-        "कैसी", "क्यों", "कैसे", "कैसा", "कितना", "कितने", "कितनी", 
-        "किस", "किसके", "से", "कौन सा", "सी"
-    ]
-    
-    for word in question_words:
-        if word in sentence.split():
-            return True
-    return False
+def run_filter(treebanks):
+    pattern = ['?', '؟']
 
-def filter_parallel_questions(english_file_path, hindi_file_path, output_file_path, limit=None):
+    for file in treebanks:
+        print(f'Working on {file}')
+        questions = filter(file, pattern)
 
+        if questions:
+            print(f'Collected {len(questions)} questions in {file}')
+            filename = os.path.basename(file)
+            out_file = os.path.join(f'questions_{filename}')
+            save(questions, out_file)
+            print(f'Saved questions to {out_file}')
+        else:
+            print(f'No questions found in {file}')
 
-    with open(english_file_path, 'r', encoding='utf-8') as en_file, \
-         open(hindi_file_path, 'r', encoding='utf-8') as hi_file, \
-         open(output_file_path, 'w', encoding='utf-8') as output_file:
-        
-        en_lines = en_file.readlines()
-        hi_lines = hi_file.readlines()
-        
-        if len(en_lines) != len(hi_lines):
-            raise ValueError("(different number of lines)")
-            
-        total_pairs = min(len(en_lines), limit) if limit else len(en_lines)
-        count = 0
-        
-        for i in tqdm(range(total_pairs)):
-            en_sentence = en_lines[i].strip()
-            hi_sentence = hi_lines[i].strip()
-            
-            if is_english_question(en_sentence) and is_hindi_question(hi_sentence):
-                output_file.write(f"{en_sentence}\t{hi_sentence}\n")
-                count += 1
-                
-        print(f"Found {count} question pairs out of {total_pairs} total pairs")
+treebanks = [
+   '/home/robin/Research/qtype-eval/data/UD_Arabic-PADT/ar_padt-ud-dev.conllu',
+   '/home/robin/Research/qtype-eval/data/UD_Arabic-PADT/ar_padt-ud-test.conllu',
+   '/home/robin/Research/qtype-eval/data/UD_Arabic-PADT/ar_padt-ud-train.conllu',
+   '/home/robin/Research/qtype-eval/data/UD_English-EWT/en_ewt-ud-dev.conllu',
+   '/home/robin/Research/qtype-eval/data/UD_English-EWT/en_ewt-ud-test.conllu',
+   '/home/robin/Research/qtype-eval/data/UD_English-EWT/en_ewt-ud-train.conllu',
+   '/home/robin/Research/qtype-eval/data/UD_Finnish-TDT/fi_tdt-ud-dev.conllu',
+   '/home/robin/Research/qtype-eval/data/UD_Finnish-TDT/fi_tdt-ud-test.conllu',
+   '/home/robin/Research/qtype-eval/data/UD_Finnish-TDT/fi_tdt-ud-train.conllu',
+   '/home/robin/Research/qtype-eval/data/UD_Indonesian-GSD/id_gsd-ud-dev.conllu',
+   '/home/robin/Research/qtype-eval/data/UD_Indonesian-GSD/id_gsd-ud-test.conllu',
+   '/home/robin/Research/qtype-eval/data/UD_Indonesian-GSD/id_gsd-ud-train.conllu',
+   '/home/robin/Research/qtype-eval/data/UD_Japanese-GSD/ja_gsd-ud-dev.conllu',
+   '/home/robin/Research/qtype-eval/data/UD_Japanese-GSD/ja_gsd-ud-test.conllu',
+   '/home/robin/Research/qtype-eval/data/UD_Japanese-GSD/ja_gsd-ud-train.conllu',
+   '/home/robin/Research/qtype-eval/data/UD_Korean-Kaist/ko_kaist-ud-dev.conllu',
+   '/home/robin/Research/qtype-eval/data/UD_Korean-Kaist/ko_kaist-ud-test.conllu',
+   '/home/robin/Research/qtype-eval/data/UD_Korean-Kaist/ko_kaist-ud-train.conllu',
+   '/home/robin/Research/qtype-eval/data/UD_Russian-Taiga/ru_taiga-ud-dev.conllu',
+   '/home/robin/Research/qtype-eval/data/UD_Russian-Taiga/ru_taiga-ud-test.conllu',
+   '/home/robin/Research/qtype-eval/data/UD_Russian-Taiga/ru_taiga-ud-train.conllu'
+]
 
-if __name__ == "__main__":
-    en_nllb = os.path.expanduser("~/Research/qtype-eval/data/en-hi.txt/NLLB.en-hi.en")
-    hi_nllb = os.path.expanduser("~/Research/qtype-eval/data/en-hi.txt/NLLB.en-hi.hi")
-    output_file = os.path.expanduser("~/Research/qtype-eval/data/en_hi_questions_v2.txt")
-    
-    filter_parallel_questions(en_nllb, hi_nllb, output_file, limit=5000)
-    print(f"Filtered question pairs saved to: {output_file}")
+run_filter(treebanks)
