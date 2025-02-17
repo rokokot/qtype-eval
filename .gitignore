@@ -167,3 +167,5 @@ cython_debug/
 data/
 
 docs/notebook.md 
+
+*.conllu
