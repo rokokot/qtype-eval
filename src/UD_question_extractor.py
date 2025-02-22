@@ -9,7 +9,7 @@ def filter(file, pattern):
             data = f.read()
             sentences = conllu.parse(data)
             for sentence in sentences:
-                if sentence and any(token['form'] in pattern for token in sentence):
+                if sentence and (any(token['form'] in pattern for token in sentence)) or sentence[-2]['form'] == 'か':
                     results.append(sentence)
     except FileNotFoundError:
         print(f'Error at path {file}') 
@@ -39,27 +39,7 @@ def run_filter(treebanks):
             print(f'No questions found in {file}')
 
 treebanks = [
-   '/home/robin/Research/qtype-eval/data/UD_Arabic-PADT/ar_padt-ud-dev.conllu',
-   '/home/robin/Research/qtype-eval/data/UD_Arabic-PADT/ar_padt-ud-test.conllu',
-   '/home/robin/Research/qtype-eval/data/UD_Arabic-PADT/ar_padt-ud-train.conllu',
-   '/home/robin/Research/qtype-eval/data/UD_English-EWT/en_ewt-ud-dev.conllu',
-   '/home/robin/Research/qtype-eval/data/UD_English-EWT/en_ewt-ud-test.conllu',
-   '/home/robin/Research/qtype-eval/data/UD_English-EWT/en_ewt-ud-train.conllu',
-   '/home/robin/Research/qtype-eval/data/UD_Finnish-TDT/fi_tdt-ud-dev.conllu',
-   '/home/robin/Research/qtype-eval/data/UD_Finnish-TDT/fi_tdt-ud-test.conllu',
-   '/home/robin/Research/qtype-eval/data/UD_Finnish-TDT/fi_tdt-ud-train.conllu',
-   '/home/robin/Research/qtype-eval/data/UD_Indonesian-GSD/id_gsd-ud-dev.conllu',
-   '/home/robin/Research/qtype-eval/data/UD_Indonesian-GSD/id_gsd-ud-test.conllu',
-   '/home/robin/Research/qtype-eval/data/UD_Indonesian-GSD/id_gsd-ud-train.conllu',
-   '/home/robin/Research/qtype-eval/data/UD_Japanese-GSD/ja_gsd-ud-dev.conllu',
-   '/home/robin/Research/qtype-eval/data/UD_Japanese-GSD/ja_gsd-ud-test.conllu',
-   '/home/robin/Research/qtype-eval/data/UD_Japanese-GSD/ja_gsd-ud-train.conllu',
-   '/home/robin/Research/qtype-eval/data/UD_Korean-Kaist/ko_kaist-ud-dev.conllu',
-   '/home/robin/Research/qtype-eval/data/UD_Korean-Kaist/ko_kaist-ud-test.conllu',
-   '/home/robin/Research/qtype-eval/data/UD_Korean-Kaist/ko_kaist-ud-train.conllu',
-   '/home/robin/Research/qtype-eval/data/UD_Russian-Taiga/ru_taiga-ud-dev.conllu',
-   '/home/robin/Research/qtype-eval/data/UD_Russian-Taiga/ru_taiga-ud-test.conllu',
-   '/home/robin/Research/qtype-eval/data/UD_Russian-Taiga/ru_taiga-ud-train.conllu'
+   '/home/robin/Research/qtype-eval/data/UD_Japanese-PUD/ja_pud-ud-test.conllu'
 ]
 
 run_filter(treebanks)

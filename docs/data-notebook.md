@@ -7,12 +7,7 @@
 
 definitions = {
   'POLAR': "A question that can only be answered with 'yes' or 'no'.",
-  'ALTERNATIVE': "A question presenting exactly two or three clear options to choose from.",
-  'MENTION_SOME': "A question asking for a few examples or instances, not requiring all  possible answers.",
-  'MENTION_ALL': "A question requiring a complete list of all possible answers.",
-  'SINGLE_MATCH': "A question with exactly one correct answer.",
-  'MULTIPLE_WH': "A question using multiple wh-words (who, what, where, when, why, how).",
-}
+  }
 
 
 ### TyDiQA - GoldP - dataset overview

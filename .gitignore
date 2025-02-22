@@ -166,6 +166,9 @@ cython_debug/
 
 data/
 
+src/sbox.ipynb
+
+
 docs/notebook.md 
 
 *.conllu
