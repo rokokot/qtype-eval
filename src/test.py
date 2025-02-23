@@ -109,6 +109,10 @@ def main():
     print(f"\nTotal records to upload: {len(all_records)}")
     print("\nSample record:")
     print(all_records[0])
+
+    records_data = []
+
+
     
    
     batch_size = 50
