@@ -1,14 +1,14 @@
 languages:
   en:
-    question_markers: ["?"]
-    content_question_words: ["what", "who", "where", "when", "why", "how", "which"]
-    auxiliary_first_polar: true
+    punctuation: ["?"]
+    content_words: ["what", "who", "where", "when", "why", "how", "which"]
+    auxiliaries: true
   fi:
-    question_markers: ["?"]
-    content_question_words: ["mikä", "mitä", "missä", "mistä", "mihin", "milloin", "miksi", "kuka", "ketkä", "kumpi", "kuinka", "miten", "montako"]
+    punctuation: ["?"]
+    content_words: ["mikä", "mitä", "missä", "mistä", "mihin", "milloin", "miksi", "kuka", "ketkä", "kumpi", "kuinka", "miten", "montako"]
   ko:
-    question_markers: ["?"]
-    content_question_words: ["무엇", "뭐", "어디", "언제", "누구", "왜", "어떻게", "무슨", "어느", "몇"]
+    punctuation: ["?"]
+    content_words: ["무엇", "뭐", "어디", "언제", "누구", "왜", "어떻게", "무슨", "어느", "몇"]
 
 extraction:
   min_tokens: 3
@@ -18,3 +18,4 @@ extraction:
 output:
   format: "conllu"
   separate_by_type: true
+
