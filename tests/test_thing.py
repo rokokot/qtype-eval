@@ -6,3 +6,6 @@ def test_thing():
 
     with pytest.raises(ValueError, match="Invalid value"):
         raise ValueError("Invalid value")
+
+
+
