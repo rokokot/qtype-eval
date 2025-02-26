@@ -164,7 +164,7 @@ cython_debug/
 .python-version
 
 
-data/
+data/raw
 
 src/sbox.ipynb
 
