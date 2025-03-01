@@ -52,6 +52,10 @@ LANGUAGE_MAP = {
     "indonesian": "id"
 }
 
+
+CLASSIFIER_POLAR_SET = {"english", "russian", "japanese", "arabic", "finnish", "korean"}
+
+
 class QuestionClassifier:
     """Classifier for questions based on patterns from ud_question_extractor"""
     
@@ -63,7 +67,7 @@ class QuestionClassifier:
 
 
         self.en_wh_words = r'\b(what*|who*|where*|when*|why*|how*|which*)\b'
-        self.en_polar_starters = r'^(is|are|do|does|did|have|has|can|could|will|would|should|may|might)'
+        self.en_polar_starters = r'^(is|Is|are|Are|Do|do|Does|does|Did|Did|Have|have|Has|has|Can|can|Could|could|will|Will|would|Would|should|Should|May|may|Might|might)'
         self.embedded_verbs = r'\b(know|tell|confirm|explain|understand|think|show|mean|see)\b'
         
         self.fi_wh_words = r'\b(mik(?:ä|si)|mit(?:ä|en)|miss(?:ä|tä)|mihin|mill(?:oin|ä)|kuk(?:a|aan)|ket(?:ä|kä)|ken(?:en|eltä)|kumpi|kuinka|montako)\b'
@@ -121,7 +125,7 @@ class QuestionClassifier:
         if re.search(self.en_wh_words, text, re.I):
             return 'content'
         
-        return 'polar'
+        return None
     
     def _classify_finnish(self, text):
         text = text.lower()
@@ -135,6 +139,9 @@ class QuestionClassifier:
         if re.search(self.fi_wh_words, text, re.I):
             return 'content'
         
+        return None
+    
+        
         
 
     
@@ -145,6 +152,7 @@ class QuestionClassifier:
         if re.search(self.ko_ending_pattern, text):
             return 'polar'
         
+        return None        
     
 
     def _classify_japanese(self, text):
@@ -154,6 +162,8 @@ class QuestionClassifier:
         if re.search(self.ja_ka_pattern, text):
             return 'polar'
         
+        return None
+        
     
     def _classify_russian(self, text):
         text = text.lower()
@@ -162,6 +172,8 @@ class QuestionClassifier:
         
         if re.search(self.ru_wh_words, text):
             return 'content'
+        
+        return None
 
     
     def _classify_arabic(self, text):
@@ -170,6 +182,8 @@ class QuestionClassifier:
         
         if re.search(self.ar_wh_words, text):
             return 'content'
+        
+        return None
     
     def _classify_indonesian(self, text):
         text = text.lower()
@@ -181,6 +195,8 @@ class QuestionClassifier:
         
         if re.search(self.id_wh_words, text):
             return 'content'
+        
+        return None
         
 
 class TyDiClassifier:
@@ -337,6 +353,19 @@ class TyDiClassifier:
             return annotation_class or "content"
         
         return classifier_result
+    
+    def include_question(self, annotation_class, classifier_class, language):
+        if annotation_class == "content" and classifier_class == "content":
+            return True
+            
+        if annotation_class == "polar" or classifier_class == "polar":
+            if language == "indonesian":
+                return annotation_class == classifier_class
+            
+            if language in CLASSIFIER_POLAR_SET:
+                return classifier_class == "polar"
+                
+        return False
 
     
     def process_dataset(self, df, output_path=None, filter_languages=None, txt_output_dir=None, use_classifier=False, split="validation"):
@@ -348,6 +377,8 @@ class TyDiClassifier:
         if filter_languages:
             df = df[df['language'].str.lower().isin(filter_languages)]
         
+        filtered_count = 0
+
         for _, row in tqdm(df.iterrows(), total=len(df), desc="Classifying questions"):
             question_text = row['question_text']
             language = row['language'].lower()
@@ -359,8 +390,19 @@ class TyDiClassifier:
             annotation_class = "polar" if polar_by_annotation else "content"
             
             classifier_class = self.classify_question(question_text, language, annotation_class)
+
+            include_question = self.include_question(annotation_class, classifier_class, language)
+
             
-            final_class = classifier_class if use_classifier else annotation_class
+            final_class = None
+            if include_question:
+                if annotation_class == "content" and classifier_class == "content":
+                    final_class = "content"
+                elif language in CLASSIFIER_POLAR_SET and classifier_class == "polar":
+                    final_class = "polar"
+                elif language == "indonesian" and annotation_class == classifier_class:
+                    final_class = annotation_class
+            
 
             self.stats["total"] += 1
             if polar_by_annotation:
@@ -384,12 +426,23 @@ class TyDiClassifier:
                 lang_stats["polar_by_classifier"] += 1
             if annotation_class == classifier_class:
                 lang_stats["agreement"] += 1
-                if annotation_class=="polar":
+                if annotation_class == "polar":
                     lang_stats["agreed_polar"] += 1
                 else:
                     lang_stats["agreed_content"] += 1
             else:
                 lang_stats["disagreement"] += 1
+            
+            if not include_question:
+                if "filtered_out" not in self.stats:
+
+                    self.stats["filtered_out"] = 0
+                self.stats["filtered_out"] += 1
+                if "filtered_out" not in lang_stats:
+
+                    lang_stats["filtered_out"] = 0
+                lang_stats["filtered_out"] += 1
+                filtered_count += 1
             
             result = {
                 "question_text": question_text,
@@ -397,7 +450,8 @@ class TyDiClassifier:
                 "annotation_class": annotation_class,
                 "classifier_class": classifier_class,
                 "agreement": annotation_class == classifier_class,
-                "final_class": final_class
+                "final_class": final_class,
+                "included": include_question
             }
             results.append(result)
         
@@ -416,33 +470,35 @@ class TyDiClassifier:
         return results_df
     
     def _get_split_output_dir(self, base_dir, split):
-        if split.lower() in base_dir.lower():
-            return base_dir
-        return os.path.join(base_dir, split)
+
+        base_dir = base_dir.rstrip('/')
+        return f'{base_dir}_{split}'
     
     
-    def save_disagreement_examples(self, results_df, output_path, split='validation'):
-        """Save examples where annotations and classifier disagree"""
-        disagreements = results_df[results_df["agreement"] == False]
-        
-        split_output_path = output_path
-        if not split.lower() in output_path.lower():
-            split_output_path = output_path.replace('.csv', f'_{split}.csv')
-        
-        if len(disagreements) > 0:
-            os.makedirs(os.path.dirname(split_output_path), exist_ok=True)
-            disagreements.to_csv(split_output_path, index=False)
-            logger.info(f"Saved {len(disagreements)} disagreement examples to {split_output_path}")
+    def save_simple_output(self, results_df, output_path, split='validation'):
+        included_df = results_df[(results_df['included'] == True) & (results_df['final_class'].notna())]
+
+        simple_df = included_df[['question_text', 'language', 'final_class']]
+
+        simple_output_path = output_path.replace('.csv', f'_{split}.csv')
+
+        os.makedirs(os.path.dirname(simple_output_path), exist_ok=True)
+        simple_df.to_csv(simple_output_path, index=False)
+        logger.info(f"Saved simplified output with {len(simple_df)} questions to {simple_output_path}")
+
+        return simple_output_path
     
     def save_as_txt(self, results_df, output_dir):
         """Save questions as plain text files, one question per line"""
         os.makedirs(output_dir, exist_ok=True)
 
-        languages = results_df['language'].unique()
+        included_df = results_df[results_df['included'] == True]
+
+        languages = included_df['language'].unique()
 
         
         for language in tqdm(languages, desc="Saving text files by language"):
-            language_df = results_df[results_df['language'] == language]
+            language_df = included_df[included_df['language'] == language]
             
             polar_questions = language_df[language_df['final_class'] == 'polar']['question_text']
             if not polar_questions.empty:
@@ -567,8 +623,8 @@ def main():
                       help="Dataset split to process (default: validation)")
     parser.add_argument("--output", type=str, default="results/tydi_classification.csv",
                       help="Path to output CSV file")
-    parser.add_argument("--disagreements", type=str, default="results/tydi_disagreements.csv",
-                      help="Path to save disagreement examples")
+    parser.add_argument("--simple-output", type=str, default="results/tydi_simple.csv",
+                        help="Path to save simplified output (question_text, language, final_class)")
     parser.add_argument("--languages", type=str,
                       help="Comma-separated list of languages to process (e.g., 'english,finnish')")
     parser.add_argument("--txt-output", type=str,
@@ -589,14 +645,20 @@ def main():
     
     classifier = TyDiClassifier()
     split = args.split
+
     output_path = args.output
-    if args.output and not split.lower() in args.output.lower():
-        output_path = args.output.replace('.csv', f'_{split}.csv')
+    if not split.lower() in args.simple_output.lower():
+        output_path  = args.output.replace('.csv', f'_{split}.csv')
+
+    simple_output_path = args.simple_output
 
     dataset_path = args.cached_dataset if args.cached_dataset else args.save_dataset
     df = classifier.load_tydi_dataset(args.split, dataset_path)
+
     results = classifier.process_dataset(df, output_path, filter_languages, args.txt_output, args.use_classifier, split)
-    classifier.save_disagreement_examples(results, args.disagreements, split)
+
+    classifier.save_simple_output(results, simple_output_path, split)
+    
     classifier.print_annotation_stats()
 
     classifier.print_stats()
