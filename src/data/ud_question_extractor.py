@@ -14,7 +14,7 @@ from typing import Dict, List, Optional, Set, Tuple
 logger = logging.getLogger(__name__)
 
 
-# configure logging
+
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', handlers=[logging.FileHandler("ud_question_extractor.log"), logging.StreamHandler(sys.stdout)])
 
 
