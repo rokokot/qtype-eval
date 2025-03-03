@@ -70,7 +70,7 @@ class QuestionClassifier:
         self.en_polar_starters = r'^(is|Is|are|Are|Do|do|Does|does|Did|Did|Have|have|Has|has|Can|can|Could|could|will|Will|would|Would|should|Should|May|may|Might|might)'
         self.embedded_verbs = r'\b(know|tell|confirm|explain|understand|think|show|mean|see)\b'
         
-        self.fi_wh_words = r'\b(mik(?:ä|si)|mit(?:ä|en)|miss(?:ä|tä)|mihin|mill(?:oin|ä)|kuk(?:a|aan)|ket(?:ä|kä)|ken(?:en|eltä)|kumpi|kuinka|montako)\b'
+        self.fi_wh_words = r'\b(mik(?:ä|si)|montako|mit(?:ä|en)|miss(?:ä|tä)|mihin|mill(?:oin|ä)|kuk(?:a|aan)|ket(?:ä|kä)|ken(?:en|eltä)|kumpi|kuinka|montako)\b'
         self.fi_polar = r'\b\w+(?:ko|kö)\b'
 
 
@@ -130,14 +130,15 @@ class QuestionClassifier:
     def _classify_finnish(self, text):
         text = text.lower()
 
+        if re.search(self.fi_wh_words, text, re.I):
+            return 'content'
+
         if re.search(self.fi_polar, text):
             return 'polar'
         
-        #if re.search(r'\bvai\b', text):
-            #return 'content'
+
         
-        if re.search(self.fi_wh_words, text, re.I):
-            return 'content'
+        
         
         return None
     
