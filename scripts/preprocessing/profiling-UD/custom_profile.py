@@ -14,7 +14,7 @@ FEATURES = [
     'lexical_density',
     'verbal_head_per_sent',
     'avg_max_depth',
-    'avg_verb_edges'
+    'avg_verb_edges',
     'avg_links_len',
     'avg_subordinate_chain_len',
     'subordinate_proposition_dist',
@@ -141,43 +141,19 @@ def main():
         
         if results:
             columns = ['sentence_id', 'text', 'language', 'type']
-            if selected_features:
-                feature_columns = []
-                for feature in selected_features:
-                    feature_columns.append(feature)
 
-                all_keys = set()
-                for result in results:
-                  all_keys.update(result.keys())
-            
-                for key in sorted(all_keys):
-                    if key not in columns and any(key.startswith(f) for f in selected_features):
-                        feature_columns.append(key)
-                columns.extend(feature_columns)
-
-            else:
-                
-                all_keys = set()
-                for result in results:
-                    all_keys.update(result.keys())
-                
-                for key in sorted(list(all_keys)):
-                    if key not in columns:
-                        columns.append(key)
-            
-            all_result_keys = set()
+            all_keys = set()
             for result in results:
-                all_result_keys.update(result.keys())
-            
-            for key in sorted(all_result_keys):
-                if key not in columns:
-                    columns.append(key)
-            
+                all_keys.update(result.keys())
+
+            feature_keys = [key for key in sorted(all_keys) if key not in columns]
+
+            columns.extend(feature_keys)
+
             with open(output_file, 'w', newline='', encoding='utf-8') as f:
                 writer = csv.DictWriter(f, fieldnames=columns)
                 writer.writeheader()
                 writer.writerows(results)
-            
             print(f"Output written to {output_file}")
         else:
             print(f"No results found for {input_file}")
