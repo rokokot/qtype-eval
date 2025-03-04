@@ -56,7 +56,7 @@ def extract_sentence_data(input_file):
                 current_text = None
             elif not line.startswith('#') and line.strip():
                 line = line.strip().split('\t')
-                if '-' not in line[0]:  
+                if '-' not in line[0] and '.' not in line[0]:  
                     sentence_tokens.append(Token(line))
     
     if sentence_tokens and current_sent_id:

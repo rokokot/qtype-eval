@@ -135,17 +135,10 @@ class QuestionClassifier:
 
         if re.search(self.fi_polar, text):
             return 'polar'
-        
-
-        
-        
-        
+    
         return None
     
-        
-        
 
-    
     def _classify_korean(self, text):
         if re.search(self.ko_wh_words, text):
             return 'content'
