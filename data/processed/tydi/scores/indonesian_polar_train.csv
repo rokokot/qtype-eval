@@ -1,0 +1,403 @@
+sentence_id,text,language,type,avg_links_len,avg_max_depth,avg_subordinate_chain_len,avg_verb_edges,lexical_density,n_tokens,subordinate_proposition_dist,verbal_head_per_sent
+1,Apakah Melissa Brannen telah ditemukan ?,indonesian,polar,2.2,2.0,0,2.0,0.6666666666666666,7,0.0,1.0
+2,Apakah Bosun sama dengan Nahkoda kapal?,indonesian,polar,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+3,Apakah Baladewa seorang manusia?,indonesian,polar,1.5,3.0,0,0,0.4,6,0,0.0
+4,Apakah ular sanca termasuk hewan yang dilindungi?,indonesian,polar,1.7142857142857142,3.0,1.0,2.0,0.75,9,50.0,2.0
+5,apakah Plato hidup di zaman yang sama dengan Aristoteles?,indonesian,polar,1.7777777777777777,3.0,0,3.0,0.6,11,0.0,1.0
+6,Apakah perakam ketikan dapat menyebabkan pencurian kata sandi?,indonesian,polar,1.875,3.0,0,4.0,0.7777777777777778,10,0.0,1.0
+7,Apaakh kaset menggunakan pita magnetik?,indonesian,polar,1.25,2.0,0,3.0,1.0,6,0.0,1.0
+8,Adakah monyet termasuk hominini?,indonesian,polar,1.75,2.0,1.0,2.0,0.8,6,50.0,2.0
+9,"apakah Joseph Patrick ""Joe""",indonesian,polar,1.75,2.0,0,0,0.8,7,0,0.0
+10,Kennedy masih hidup?,indonesian,polar,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+11,apakah ganja mengandung zat adiktif?,indonesian,polar,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+12,Apakah serial pokemon berasal dari komik ?,indonesian,polar,1.8333333333333333,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+13,apakah Spam termasuk tindakan kriminal?,indonesian,polar,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+14,apakah Kriptografi digunakan untuk sistem firewall sebuah situs web?,indonesian,polar,1.5555555555555556,3.0,0,3.0,0.7,11,0.0,1.0
+15,Apakah kesalahan yang dilakukan Mohammad Hatta sehingga dihukum pengasingan?,indonesian,polar,1.5555555555555556,4.0,2.0,2.5,0.7,11,100.0,2.0
+16,apakah lelaki mempunyai hormon estrogen?,indonesian,polar,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+17,apakah Belanda masuk dalam Perang Dunia I?,indonesian,polar,1.4285714285714286,3.0,0,3.0,0.75,9,0.0,1.0
+18,Apakah penggunaan Spotify berbayar ?,indonesian,polar,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+19,Apakah gereja protestan berbeda dengan katolik?,indonesian,polar,1.8333333333333333,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+20,apakah harimau bengal terancam punah?,indonesian,polar,1.8,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+21,apakah perjalanan waktu secara ilmiah bisa dilakukan?,indonesian,polar,2.7142857142857144,3.0,0,2.0,0.625,9,0.0,1.0
+22,Apakah Skizofrenia bisa diturunkan melalui gen ?,indonesian,polar,1.8333333333333333,2.0,0,3.0,0.5714285714285714,8,0.0,1.0
+23,Apakah buah kawung memiliki biji?,indonesian,polar,1.8,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+24,Apakah Enzim restriksi bersifat asam?,indonesian,polar,1.8,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+25,Apakah Gunung Tandikat termasuk gunung api aktif ?,indonesian,polar,1.5714285714285714,3.0,0,3.0,0.875,9,0.0,1.0
+26,apakah Marga Raja Basa adalah marga kerajaan?,indonesian,polar,2.142857142857143,3.0,0,0,0.75,9,0.0,1.0
+27,Apakah Masjid Al-Aqsa dan Kubah Batu termasuk situs-situs suci Yerusalem?,indonesian,polar,2.3,3.0,0,3.0,0.8181818181818182,12,0.0,1.0
+28,apakah Cirebon mempunyai bandara?,indonesian,polar,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+29,Adakah depresi bisa menyebabkan seseorang bubuh diri?,indonesian,polar,1.5714285714285714,4.0,1.0,1.6666666666666667,0.5,9,66.66666666666667,3.0
+30,Apakah Hindia Belanda sekarang disebut Indonesia?,indonesian,polar,2.0,2.0,0,4.0,0.8571428571428571,8,0.0,1.0
+31,Apakah lagenda Robin Hood berasal dari Nottingham?,indonesian,polar,2.0,3.0,0,3.0,0.75,9,0.0,1.0
+32,apakah bakteri bisa hidup di luar angkasa?,indonesian,polar,2.0,2.0,0,3.0,0.625,9,0.0,1.0
+33,Apakah sistem pembelajaran virtual memerlukan internet?,indonesian,polar,2.0,3.0,0,3.0,0.8571428571428571,8,0.0,1.0
+34,Apakah Kitab Yosua dikarang manusia?,indonesian,polar,1.8,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+35,apakah Teori modernisasi adalah teori dari Ilmu sosial?,indonesian,polar,1.875,2.0,0,0,0.6666666666666666,10,0.0,1.0
+36,apakah presiden soeharto menjalankan sistem diktatur di saat menjabat?,indonesian,polar,1.7777777777777777,2.0,1.0,2.0,0.8,11,50.0,2.0
+37,Apakah Najelaa Shihab seorang dosen?,indonesian,polar,1.6,2.0,0,0,0.6666666666666666,7,0,0.0
+38,Apakah aroma bahan dari koktail berasal dari buah ?,indonesian,polar,2.375,3.0,0,3.0,0.6666666666666666,10,0.0,1.0
+39,apakah Edmontosaurus pemakan tumbuhan?,indonesian,polar,1.25,2.0,0,0,0.8,6,0,0.0
+40,apakah seorang uskup harus lelaki?,indonesian,polar,2.0,2.0,0,0,0.5,7,0,0.0
+41,apakah dr.,indonesian,polar,1.5,2.0,0,0,0.6666666666666666,4,0,0.0
+42,Oen Boen Ing masih hidup?,indonesian,polar,1.75,2.0,0,0,1.0,6,0,0.0
+43,Apakah Kerajaan Mataram merupakan kerajaan Hindu ?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+44,Apakah Babilonia sekarang disebut Iraq?,indonesian,polar,1.8,2.0,0,4.0,0.8333333333333334,7,0.0,1.0
+45,apakah Prof. Dr. Sutan Remy Sjahdeini mempunyai perusahaan?,indonesian,polar,3.25,4.0,0,3.0,0.8888888888888888,12,0.0,1.0
+46,Apakah musik keroncong terkenal sampai keluar negeri ?,indonesian,polar,2.0,2.0,0,0.0,0.75,9,0,1.0
+47,Apakah Islam Nusantara mempertimbangkan unsur budaya Indonesia dalam merumuskan fikih?,indonesian,polar,1.8,3.0,1.0,3.0,0.8181818181818182,12,50.0,2.0
+48,apakah teh mengandung kafein?,indonesian,polar,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+49,Apakah Wawancara daring dapat dilakukan jarak jauh?,indonesian,polar,2.0,2.0,0,4.0,0.75,9,0.0,1.0
+50,Apakah Konversi dibolehkan di dalam Islam?,indonesian,polar,1.8333333333333333,2.0,0,3.0,0.5714285714285714,8,0.0,1.0
+51,Apakah Ferit Orhan Pamuk pernah meraih penghargaan?,indonesian,polar,2.142857142857143,3.0,0,4.0,0.875,9,0.0,1.0
+52,apakah Clair Cameron Patterson masih hidup?,indonesian,polar,2.3333333333333335,3.0,0,3.0,0.8571428571428571,8,0.0,1.0
+53,apakah ada manusia yang tinggal di Kepulauan kutub Svalbard?,indonesian,polar,1.3333333333333333,5.0,1.0,2.0,0.7,11,50.0,2.0
+54,Apakah Rosela dapat dijadikan minuman Jus?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+55,Apakah Kalsium hipoklorit berbahay jika tertelan manusia ?,indonesian,polar,1.7142857142857142,2.0,1.0,2.5,0.75,9,50.0,2.0
+56,Apakah garam mengandung air kristal?,indonesian,polar,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+57,apakah vietnam menganut sitem demokrasi?,indonesian,polar,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+58,Apakah masyarakat Jerman memakan roti sebagai sarapan?,indonesian,polar,1.8571428571428572,2.0,0,4.0,0.75,9,0.0,1.0
+59,Apakah kaum mardiker terdapat di Indonesia?,indonesian,polar,1.8333333333333333,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+60,apakah WWE sebuah pertunjukan Gulat?,indonesian,polar,1.4,2.0,0,0,0.6666666666666666,7,0,0.0
+61,apakah ada penyakit tumor pada tumbuhan?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+62,Apakah bisa Ular laut berperut kuning mematikan ?,indonesian,polar,2.857142857142857,4.0,1.0,1.5,0.75,9,50.0,2.0
+63,Adakah waduk dapat dijadikan sumber air Irigasi?,indonesian,polar,1.5714285714285714,4.0,1.0,2.0,0.75,9,50.0,2.0
+64,Apakah Tuak nira memabukkan?,indonesian,polar,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+65,apakah kalsium termasuk mineral?,indonesian,polar,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+66,Apakah William Adams masih hidup?,indonesian,polar,1.6,3.0,0,1.0,0.6666666666666666,7,0,1.0
+67,pernahkah amerika mengalami krisis ekonomi?,indonesian,polar,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+68,apakah Deinococcus radiodurans terdapat dalam hewan?,indonesian,polar,1.8333333333333333,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+69,Apakah Hirohito masih hidup?,indonesian,polar,2.0,2.0,0,3.0,0.8,6,0.0,1.0
+70,apakah Dollar berpengaruh pada krisis ekonomi?,indonesian,polar,1.5,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+71,apakah Bianca Maria Visconti keturunan Raja?,indonesian,polar,1.5,3.0,0,0,0.8571428571428571,8,0,0.0
+72,Apakah Negasonic Teenage Warhead seorang mutan?,indonesian,polar,1.6666666666666667,2.0,0,0,0.7142857142857143,8,0,0.0
+73,apakah dinosaurus sudah hidup pada zaman Mesozoikum?,indonesian,polar,1.7142857142857142,2.0,0,3.0,0.625,9,0.0,1.0
+74,Apakah Material butiran berwujud zat padat?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+75,apakah Indonesia negara Islam terbesar di dunia?,indonesian,polar,1.7142857142857142,4.0,0,0,0.75,9,0,0.0
+76,apakah orang dewasa bisa terjangkit Cacar monyet?,indonesian,polar,1.8571428571428572,2.0,0,3.0,0.75,9,0.0,1.0
+77,apakah Santo Fransiskus Xaverius masih hidup?,indonesian,polar,1.6666666666666667,3.0,0,2.0,0.8571428571428571,8,0.0,1.0
+78,Apakah smartphone adalah telepon genggam?,indonesian,polar,1.8,2.0,0,0,0.6666666666666666,7,0.0,1.0
+79,Apakah biji duku bisa dimakan ?,indonesian,polar,2.2,2.0,0,2.0,0.6666666666666666,7,0.0,1.0
+80,apakah kristen protestan juga melakukan perayaan misa?,indonesian,polar,1.8571428571428572,2.0,0,4.0,0.875,9,0.0,1.0
+81,apakah spam dapat dihindari?,indonesian,polar,2.0,2.0,0,2.0,0.6,6,0.0,1.0
+82,apakah babi omnivora?,indonesian,polar,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+83,apakah olahraga Kronum menggunakan Bola?,indonesian,polar,1.8,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+84,Apakah ajaran Anikonisme mempercayai adanya tuhan?,indonesian,polar,1.6666666666666667,2.0,1.0,2.0,0.8571428571428571,8,50.0,2.0
+85,apakah Wikipedia situs yang di akses secara gratis?,indonesian,polar,1.75,2.0,1.0,4.0,0.5555555555555556,10,100.0,1.0
+86,bisakah kita bertani di pinggir pantai?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.42857142857142855,8,0.0,1.0
+87,Apakah bisa Ular bangkai laut mematian ?,indonesian,polar,1.6666666666666667,2.0,1.0,1.5,0.7142857142857143,8,50.0,2.0
+88,Adakah komet anggota tata surya?,indonesian,polar,1.2,4.0,0,2.0,0.8333333333333334,7,0.0,1.0
+89,Adakah Bintang merek bir?,indonesian,polar,1.25,3.0,0,2.0,0.8,6,0.0,1.0
+90,apakah candi borobudur terletak di Provinsi Jawa Tengah?,indonesian,polar,1.625,3.0,0,3.0,0.7777777777777778,10,0.0,1.0
+91,apakah Ipad adalah salah satu Pocket PC Phone?,indonesian,polar,2.25,2.0,0,0,0.6666666666666666,10,0,0.0
+92,Bisakah SARS disembuhkan ?,indonesian,polar,2.0,1.0,0,2.0,0.5,5,0.0,1.0
+93,Apakah Louis Braille adalah seorang tunanetra ?,indonesian,polar,2.5,2.0,0,0,0.5714285714285714,8,0.0,1.0
+94,Apakah Tempo memiliki majalah Elektronik?,indonesian,polar,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+95,apakah Fidiricu II mempunyai anak?,indonesian,polar,1.8,2.0,0,3.0,0.6666666666666666,7,0.0,1.0
+96,Adakah bendungan dapat dijadikan tempat rekreasi?,indonesian,polar,1.6666666666666667,3.0,1.0,2.0,0.7142857142857143,8,50.0,2.0
+97,Apakah Pangeran Noto Igomo menkahi di Indonesia?,indonesian,polar,2.0,3.0,0,3.0,0.75,9,0.0,1.0
+98,apakah Elizabeth Bowes-Lyon seorang Ibu suri?,indonesian,polar,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+99,Apakah Yesus memiliki Ibu?,indonesian,polar,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+100,Apakah Imam Mahdī muncul sebelum Dajjal ?,indonesian,polar,1.8333333333333333,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+101,apakah Permaisuri Dugu Qieluo mempunyai anak?,indonesian,polar,2.0,3.0,0,3.0,0.8571428571428571,8,0.0,1.0
+102,apakah Plutarkhos nama seorang dewa?,indonesian,polar,1.4,4.0,0,0,0.5,7,0,0.0
+103,Apakah obat sakit kepala dapat menyababkan kantuk?,indonesian,polar,2.2857142857142856,2.0,0,3.0,0.75,9,0.0,1.0
+104,Apakah Al-Mas'udi pernah menulis buku ?,indonesian,polar,2.5,2.0,0,4.0,0.8571428571428571,9,0.0,1.0
+105,Apakah kelok sembilan terletak di Kota Payakumbuh?,indonesian,polar,1.7142857142857142,2.0,0,3.0,0.625,9,0.0,1.0
+106,apakah Karabin banyak digunakan pada PD II?,indonesian,polar,1.7142857142857142,2.0,0,4.0,0.625,9,0.0,1.0
+107,Apakah Binokular sebuah teleskop?,indonesian,polar,1.5,3.0,0,0,0.4,6,0,0.0
+108,apakah ada penganut islam di korea utara?,indonesian,polar,1.4285714285714286,3.0,0,2.0,0.75,9,0.0,1.0
+109,Apakah K'tut Tantri seorang penulis buku?,indonesian,polar,2.142857142857143,2.0,0,0,0.75,10,0,0.0
+110,Apakah internet sudah digunakan sebagai medium pembelajaran di sekolah dasar?,indonesian,polar,1.7,3.0,0,3.0,0.6363636363636364,12,0.0,1.0
+111,apakah kerajaan romawi menggunakan bahasa Yunani?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+112,Apakah HBx terdapat dalam tubuh manusia?,indonesian,polar,1.5,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+113,Apakah pemerintah menyediakan pekerjaan bagi peserta transmigrasi di daerah tujuan ?,indonesian,polar,1.5,4.0,0,3.0,0.7272727272727273,12,0.0,1.0
+114,apakah bluetooth termasuk teknologi berbagi berkas?,indonesian,polar,1.3333333333333333,3.0,1.0,2.0,0.8571428571428571,8,50.0,2.0
+115,apakah orangutan terancam punah?,indonesian,polar,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+116,Apakah perakam ketikan dapat menyebabkan pencurian data pribadi?,indonesian,polar,1.875,3.0,0,4.0,0.7777777777777778,10,0.0,1.0
+117,Apakah Blok Cepu merupakah ladang penghasil minyak tertua di dunia?,indonesian,polar,1.8181818181818181,4.0,0,4.0,0.75,13,0.0,1.0
+118,Apakah Yamcha adalah tokoh antagonis ?,indonesian,polar,1.8,2.0,0,0,0.6666666666666666,7,0.0,1.0
+119,Apakah tumbuhan getah sontek boleh dijadikan obat?,indonesian,polar,2.142857142857143,3.0,0,3.0,0.75,9,0.0,1.0
+120,apakah Kapal Putih sebuah kapal perang?,indonesian,polar,1.5,2.0,0,0,0.5714285714285714,8,0,0.0
+121,apakah Cirebon mempunyai pelabuhan?,indonesian,polar,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+122,Pernahkah Michael Gerard Tyson kalah dalam pertarungan tinju ?,indonesian,polar,1.875,3.0,0,3.0,0.7777777777777778,10,0.0,1.0
+123,Apakah Jepara menghasilkan kayu jati?,indonesian,polar,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+124,Apakah di Singapura dibolehkan menjual permen karet?,indonesian,polar,1.4285714285714286,3.0,1.0,2.0,0.75,9,50.0,2.0
+125,Apakah Kamen Rider adalah seorang tokoh super hero ?,indonesian,polar,2.25,2.0,0,0,0.6666666666666666,10,0.0,1.0
+126,Apakah Jalur informasi super cepat memerlukan koneksi internet?,indonesian,polar,2.25,3.0,0,3.0,0.8888888888888888,10,0.0,1.0
+127,apakah kecanduan alkohol memungkinkan untuk terjadi?,indonesian,polar,1.8333333333333333,2.0,1.0,2.0,0.7142857142857143,8,50.0,2.0
+128,Adakah matahari itu bintang?,indonesian,polar,1.5,2.0,0,2.0,0.6,6,0.0,1.0
+129,apakah Bruce Lee murid dari Ip Man?,indonesian,polar,1.4285714285714286,3.0,0,0,0.75,9,0,0.0
+130,apakah Illuminati benar benar ada?,indonesian,polar,2.4,2.0,0,4.0,0.8333333333333334,7,0.0,1.0
+131,apakah badak hewan omnivora?,indonesian,polar,1.25,3.0,0,0,0.6,6,0,0.0
+132,Apakah Tahun Baru Imlek termasuk libur nasional?,indonesian,polar,1.8571428571428572,3.0,0,3.0,0.875,9,0.0,1.0
+133,Apakah manusia bisa tinggal di Mars?,indonesian,polar,1.8333333333333333,2.0,0,3.0,0.5714285714285714,8,0.0,1.0
+134,Apakah nabi Sulaiman memiliki mukjizat?,indonesian,polar,1.8,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+135,apakah Jean Todt pernah menjadi pembalap professional?,indonesian,polar,1.8571428571428572,2.0,0,4.0,0.875,9,0.0,1.0
+136,apakah kerajaan tertua di kepulauan maluku?,indonesian,polar,1.5,3.0,0,0,0.5714285714285714,8,0,0.0
+137,apakah ada cacing pipih yang hidup di air?,indonesian,polar,1.5,4.0,1.0,2.0,0.6666666666666666,10,50.0,2.0
+138,apakah Guillaume IX pernah menikah?,indonesian,polar,2.2,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+139,apakah di Indonesia terdapat Lamun?,indonesian,polar,1.6,2.0,0,3.0,0.6666666666666666,7,0.0,1.0
+140,apakah aksara han digunakan di bahasa mandarin?,indonesian,polar,1.7142857142857142,2.0,0,3.0,0.75,9,0.0,1.0
+141,apakah limbah fosfat berbahaya bagi hewan?,indonesian,polar,1.8333333333333333,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+142,Apakah Dildo terbuat dari Batu?,indonesian,polar,1.6,2.0,0,3.0,0.6666666666666666,7,0.0,1.0
+143,Adakah tank menggunakan peluru?,indonesian,polar,1.5,2.0,1.0,2.0,0.8,6,50.0,2.0
+144,apakah seurakarta memiliki kerajaan?,indonesian,polar,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+145,Apakah sistem kasta berlaku di India?,indonesian,polar,1.8333333333333333,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+146,Apakah Salat Witir boleh dikerjakan setelah solat fardu?,indonesian,polar,1.875,2.0,0,3.0,0.6666666666666666,10,0.0,1.0
+147,Apakah musik Okinawa merupakan musik tradisional ?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+148,apakah Minangkabau suku yang berasal dari Pulau Sumatra?,indonesian,polar,1.375,4.0,1.0,2.0,0.6666666666666666,10,100.0,1.0
+149,provinsi jawa apakah yang terpadat tahun 2015?,indonesian,polar,1.4285714285714286,4.0,1.0,2.0,0.5,9,100.0,1.0
+150,Apakah Nicolas Erik Rosberg pernah menjuarai F1 ?,indonesian,polar,2.142857142857143,3.0,0,4.0,0.875,9,0.0,1.0
+151,apakah bahasa Tokharia sudah punah?,indonesian,polar,2.2,2.0,0,2.0,0.6666666666666666,7,0.0,1.0
+152,Adakah bendungan dapat digunakan untuk PLTA?,indonesian,polar,1.8333333333333333,3.0,1.0,2.0,0.5714285714285714,8,50.0,2.0
+153,Aapakah merokok penyebab utama penyakit jantung koroner?,indonesian,polar,1.2857142857142858,4.0,0,2.0,0.875,9,0.0,1.0
+154,Apakah Hari Anzac dijadikan hari libur nasional di Australia?,indonesian,polar,1.8888888888888888,3.0,0,3.0,0.8,11,0.0,1.0
+155,apakah Foto esei digunakan untuk bidang jurnalisme fotografi?,indonesian,polar,1.625,3.0,0,3.0,0.7777777777777778,10,0.0,1.0
+156,apakah handphone termasuk teknologi komunikasi?,indonesian,polar,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+157,apakah Visakhi festival keagamaan?,indonesian,polar,1.25,2.0,0,0,0.8,6,0,0.0
+158,Apakah ada upacara untuk memperingati Hari Anzac?,indonesian,polar,1.4285714285714286,3.0,1.0,2.5,0.75,9,50.0,2.0
+159,apakah schizophrenia penyakit psikologi?,indonesian,polar,1.25,3.0,0,0,0.6,6,0,0.0
+160,Apakah buah kosambi bisa dimakan ?,indonesian,polar,2.2,2.0,0,2.0,0.6666666666666666,7,0.0,1.0
+161,apakah agama hindu melakukan Penitensi?,indonesian,polar,1.8,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+162,apakah Xiao Baojuan mempunyai anak?,indonesian,polar,1.8,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+163,Apakah keris termasuk senjata?,indonesian,polar,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+164,Apakah Albert Einstein‎ filsuf berasal dari Jerman?,indonesian,polar,2.0,2.0,0,4.0,0.75,9,0.0,1.0
+165,Apakah Amy Rose adalah tokoh utama dalam serian Sonic?,indonesian,polar,1.8888888888888888,2.0,0,0,0.7,11,0.0,1.0
+166,Apakah makanan bisa tengik sebelum tanggal kedaluarsa?,indonesian,polar,1.7142857142857142,2.0,0,3.0,0.625,9,0.0,1.0
+167,apakah Tuanku Imam Bonjol mempunyai anak?,indonesian,polar,2.2857142857142856,2.0,0,4.0,0.75,9,0.0,1.0
+168,Apakah Kungfu termasuk bidang olahraga?,indonesian,polar,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+169,bisakah ratu inggris mendeklarasikan perang?,indonesian,polar,2.2,2.0,0,3.0,0.6666666666666666,7,0.0,1.0
+170,apakah Pierre Felix Bourdieu perah menikah?,indonesian,polar,2.3333333333333335,3.0,0,3.0,0.8571428571428571,8,0.0,1.0
+171,apakah seorang detektif harus mempelajari dasar ilmu Kimia forensik?,indonesian,polar,1.5555555555555556,4.0,0,3.0,0.7,11,0.0,1.0
+172,apakah John Winston Lennon mempunyai anak?,indonesian,polar,2.0,3.0,0,3.0,0.8571428571428571,8,0.0,1.0
+173,Apakah obat Antihistamin dapat menyebabkan rasa kantuk?,indonesian,polar,1.8571428571428572,2.0,0,3.0,0.75,9,0.0,1.0
+174,Apakah Urraca pernah menikah ?,indonesian,polar,2.0,2.0,0,3.0,0.8,6,0.0,1.0
+175,apakah Yesus meninggal karena disalip?,indonesian,polar,1.6,2.0,1.0,2.0,0.6666666666666666,7,50.0,2.0
+176,pernahkah Napoleon menikah?,indonesian,polar,1.6666666666666667,2.0,0,2.0,0.75,5,0.0,1.0
+177,Apakah Tuberkulosis dapat menular?,indonesian,polar,2.0,2.0,0,2.0,0.6,6,0.0,1.0
+178,Apakah Kristen mempercayai Kehidupan setelah kematian?,indonesian,polar,1.5,3.0,0,3.0,0.7142857142857143,8,0.0,1.0
+179,Apakah serai boleh dijadikan minuman?,indonesian,polar,1.8,2.0,0,3.0,0.6666666666666666,7,0.0,1.0
+180,Adakah minum bir dapat menyebabkan kecanduan?,indonesian,polar,2.0,3.0,1.0,2.0,0.7142857142857143,8,50.0,2.0
+181,pernahkah Thaksin Shinawatra membeli klub sepakbola?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+182,apakah palem memiliki buah?,indonesian,polar,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+183,Apakah Perusahaan Jawatan Kereta Api termasuk BUMN?,indonesian,polar,2.142857142857143,4.0,0,3.0,0.875,9,0.0,1.0
+184,Apakah agama Shinto percaya terhadap dewa ?,indonesian,polar,1.8333333333333333,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+185,apakah Telepon video bisa dilakukan dengan koneksi 3G?,indonesian,polar,1.875,2.0,0,3.0,0.6666666666666666,10,0.0,1.0
+186,Apakah Don Juan de Austria memiliki saudara ?,indonesian,polar,2.142857142857143,4.0,0,3.0,0.875,9,0.0,1.0
+187,apakah UUD 1945 dibuat berdasarkan Pancasila?,indonesian,polar,1.6666666666666667,2.0,1.0,2.0,0.7142857142857143,8,50.0,2.0
+188,apakah smartphone termasuk Pocket PC Phone?,indonesian,polar,1.3333333333333333,3.0,0,3.0,0.8571428571428571,8,0.0,1.0
+189,Apakah Pemasaran Internasional dapat menyebabkan kenaikan harga?,indonesian,polar,1.8571428571428572,2.0,0,3.0,0.75,9,0.0,1.0
+190,apakah Slamet Gundono masih hidup?,indonesian,polar,2.2,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+191,Apakah aplikasi VSCOCAM berbayar?,indonesian,polar,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+192,apakah Baitul Maqdis tempat Ibadah umat Yahudi?,indonesian,polar,1.2857142857142858,4.0,0,0,0.875,9,0,0.0
+193,apakah gastronomi mempelajari sejarah?,indonesian,polar,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+194,Apakah tanaman Nilam dapat dikonsumsi manusia?,indonesian,polar,2.0,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+195,apakah rusia mempunyai bom nuklir?,indonesian,polar,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+196,apakah Homosapiens hidup di zaman Paleozoikum Era?,indonesian,polar,1.4285714285714286,3.0,0,3.0,0.75,9,0.0,1.0
+197,bisakah Command & Conquer: Generals dimainkan secara offline?,indonesian,polar,3.4285714285714284,2.0,0,4.0,0.625,11,0.0,1.0
+198,apakah Genghis Khan berasal dari Kekaisaran Mongol?,indonesian,polar,1.7142857142857142,2.0,0,3.0,0.75,9,0.0,1.0
+199,Apa nama candi terbesar di Indonesia?,indonesian,polar,1.4,4.0,0,0,0.6666666666666666,7,0,0.0
+200,Adakah Flash disk termasuk teknologi Informasi?,indonesian,polar,1.6666666666666667,3.0,1.0,2.0,0.8571428571428571,8,50.0,2.0
+201,apakah Sekolah pintar atau smart school ada di Indonesia?,indonesian,polar,2.6666666666666665,3.0,0,3.0,0.7,11,0.0,1.0
+202,Adakah HIV penyakit Pandemik?,indonesian,polar,1.25,3.0,0,2.0,0.8,6,0.0,1.0
+203,apakah kavaleri pasukan berkuda?,indonesian,polar,1.25,2.0,1.0,0.0,0.8,6,100.0,1.0
+204,apakah August Theis masih hidup?,indonesian,polar,1.6,2.0,1.0,1.0,0.8333333333333334,7,100.0,1.0
+205,Apakah Hepatitis B bisa disembuhkan ?,indonesian,polar,2.2,2.0,0,2.0,0.6666666666666666,7,0.0,1.0
+206,apakah ada kerajaan di kota Singaraja?,indonesian,polar,1.3333333333333333,3.0,0,2.0,0.7142857142857143,8,0.0,1.0
+207,apakah LTE evolusi dari 3G?,indonesian,polar,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+208,Apakah Windows Explorer menggunakan Nama NetBIOS?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+209,Apakah Hermafrodit juga terjadi pada manusia?,indonesian,polar,1.8333333333333333,2.0,0,4.0,0.7142857142857143,8,0.0,1.0
+210,Apakah Gen dapat mempengaruhi warna kulit?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+211,apakah Ordnungspolizei bekerja dibawah Nazi?,indonesian,polar,1.6,2.0,0,3.0,0.6666666666666666,7,0.0,1.0
+212,Apakah Myanmar dulunya disebut Burma ?,indonesian,polar,2.0,3.0,0,3.0,0.7142857142857143,8,0.0,1.0
+213,apakah biseksual penyakit?,indonesian,polar,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+214,Apakah Buddha mempercayai Kehidupan setelah kematian?,indonesian,polar,1.5,3.0,0,3.0,0.7142857142857143,8,0.0,1.0
+215,Apa Emosikon yang mengekspresikan kesedihan?,indonesian,polar,1.25,3.0,1.0,2.0,0.6,6,100.0,1.0
+216,Apakah kuskus termasuk hewan yang dilindungi ?,indonesian,polar,1.5,3.0,1.0,2.0,0.7142857142857143,8,50.0,2.0
+217,apakah kepercayaan Taoisme ada di Indonesia?,indonesian,polar,1.8333333333333333,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+218,Apakah hepatitis B dapat disembuhkan?,indonesian,polar,2.2,2.0,0,2.0,0.6666666666666666,7,0.0,1.0
+219,Apakah Jamur kuping bisa dimakan ?,indonesian,polar,2.2,2.0,0,2.0,0.6666666666666666,7,0.0,1.0
+220,apakah Dana desa masuk dalam Undang-Undang Desa?,indonesian,polar,1.7142857142857142,2.0,0,3.0,0.75,9,0.0,1.0
+221,Apakah pohon yangmei memiliki buah?,indonesian,polar,1.4,3.0,1.0,2.0,0.6666666666666666,7,100.0,1.0
+222,Apakah penyakit Herpes bisa disembuhkan ?,indonesian,polar,2.2,2.0,0,2.0,0.6666666666666666,7,0.0,1.0
+223,Apaakh Nuzi nama daerah di Mesopotamia?,indonesian,polar,1.2,5.0,0,0,0.8333333333333334,7,0,0.0
+224,Apakah Seni Jaranan menggunakan musik latar?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+225,apakah kurikulum tersembunyi dapat digunakan untuk sekolah dasar?,indonesian,polar,1.875,2.0,1.0,1.5,0.6666666666666666,10,50.0,2.0
+226,apakah homoseksualitas di thailand di legalkan?,indonesian,polar,2.1666666666666665,3.0,0,3.0,0.5714285714285714,8,0.0,1.0
+227,apakah bahasa Yunani adalah bahasa tertua di dunia?,indonesian,polar,2.0,2.0,0,0,0.6666666666666666,10,0.0,1.0
+228,apakah ada cara lain dalam menghasilkan listrik menggunakan lautan?,indonesian,polar,1.5555555555555556,3.0,2.0,2.3333333333333335,0.8,11,66.66666666666667,3.0
+229,Apakah wabah demam Zika dapat menyebabkan kematian?,indonesian,polar,2.2857142857142856,2.0,0,3.0,0.75,9,0.0,1.0
+230,Apakah Yesus boleh menghidupkan orang mati?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+231,apakah Prof. Dr. Sutan Remy Sjahdeini mempunyai anak?,indonesian,polar,3.25,4.0,0,3.0,0.8888888888888888,12,0.0,1.0
+232,apakah Masakan khas Kazakhstan menggunakan daging kuda?,indonesian,polar,2.0,2.0,0,3.0,0.875,9,0.0,1.0
+233,apakah Indonesia terlibat dalam Perang Dunia II?,indonesian,polar,1.4285714285714286,3.0,0,3.0,0.625,9,0.0,1.0
+234,apakah ada standar pisau yang di gunakan dalam seni Lempar pisau?,indonesian,polar,1.4545454545454546,5.0,1.0,2.5,0.6666666666666666,13,50.0,2.0
+235,Apakah Intrusi air asin dapat membahayakan ekosistem laut?,indonesian,polar,2.0,3.0,0,3.0,0.7777777777777778,10,0.0,1.0
+236,Adakah bendungan dapat mencegah banjir?,indonesian,polar,1.8,2.0,1.0,2.0,0.6666666666666666,7,50.0,2.0
+237,apakah malin kundang berasal dari minangkabau?,indonesian,polar,1.8333333333333333,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+238,apakah pulau Flores memiliki gunung api aktif?,indonesian,polar,1.7142857142857142,2.0,0,3.0,0.875,9,0.0,1.0
+239,Adakah Angkor Wat tercatat dalam UNESCO?,indonesian,polar,1.8333333333333333,3.0,1.0,2.0,0.7142857142857143,8,50.0,2.0
+240,apakah Mahabharata dari kepercayaan Hindu?,indonesian,polar,1.4,2.0,0,0,0.6666666666666666,7,0,0.0
+241,Apakah The Longest Ride film adaptasi novel?,indonesian,polar,1.4285714285714286,4.0,0,0,0.875,9,0,0.0
+242,apakah Sunan Kudus pernah menikah?,indonesian,polar,2.2,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+243,Apakah GSM pada sistem telepon menggunakan Time-Division Multiplexing?,indonesian,polar,2.125,3.0,0,3.0,0.7777777777777778,10,0.0,1.0
+244,Pernahkah tim sepak bola Jepang ikut dalam Piala dunia ?,indonesian,polar,2.0,4.0,0,3.0,0.8,11,0.0,1.0
+245,Apakah komik sama dengan manga?,indonesian,polar,1.6,2.0,0,0,0.6666666666666666,7,0,0.0
+246,Apakah ambien bisa disembuhkan ?,indonesian,polar,2.0,2.0,0,2.0,0.6,6,0.0,1.0
+247,apakah Moldova memiliki wilayah laut?,indonesian,polar,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+248,Apakah pohon Weru memiliki buah?,indonesian,polar,1.8,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+249,apakah Raja Anund Jacob mempunyai anak?,indonesian,polar,2.0,3.0,0,3.0,0.8571428571428571,8,0.0,1.0
+250,pernahkah Israel diserang negara lain?,indonesian,polar,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+251,Apakah PT Kimia Farma Tbk. adalah perusahaan BUMN?,indonesian,polar,2.5,4.0,0,0,0.7777777777777778,11,0.0,1.0
+252,Apakah Bebandung sebuah puisi?,indonesian,polar,1.5,2.0,0,2.0,0.4,6,0.0,1.0
+253,Apakah dukun bisa menyembuhkan orang sakit ?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+254,Apakah Kubis mengandung vitamin?,indonesian,polar,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+255,Apakah Muhammad bin ʿAbd al-Wahhāb berpaham Wahhabi?,indonesian,polar,2.2857142857142856,3.0,0,3.0,0.875,9,0.0,1.0
+256,apakah berbicara kepada diri sendiri termasuk salah satu bentuk Komunikasi intrapribadi ?,indonesian,polar,1.6363636363636365,4.0,1.0,2.0,0.5833333333333334,13,50.0,2.0
+257,Adakah laptop termasuk teknologi Informasi?,indonesian,polar,1.6,3.0,1.0,2.0,0.8333333333333334,7,50.0,2.0
+258,apakah Kerajaan Medang sebuah kerajaan Hindu?,indonesian,polar,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+259,Apakah penyakit Hepatitis C dapat disembuhkan?,indonesian,polar,2.3333333333333335,3.0,0,2.0,0.7142857142857143,8,0.0,1.0
+260,Apakah film Dragon Ball Z diangkat dari anime ?,indonesian,polar,2.125,4.0,0,3.0,0.7777777777777778,10,0.0,1.0
+261,bisakah Pemanfaatan mikroorganisme digunakan untuk kesehatan manusia?,indonesian,polar,2.0,2.0,0,3.0,0.625,9,0.0,1.0
+262,Apakah koran bisa dijadikan bahan Kesenian dari barang bekas?,indonesian,polar,1.6666666666666667,3.0,0,3.0,0.7,11,0.0,1.0
+263,apakah bima termasuk karakter antagonis?,indonesian,polar,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+264,Apakah kayu pohon Shorea dapat dijadikan perabot?,indonesian,polar,2.142857142857143,3.0,0,3.0,0.75,9,0.0,1.0
+265,apakah PKI membantu kemerdekaan Indonesia?,indonesian,polar,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+266,Apakah menggunakan bra saat tidur itu baik?,indonesian,polar,1.5714285714285714,2.0,1.0,3.0,0.625,9,50.0,2.0
+267,Apakah istilah Boys' Love hanya ditujukan pada wanita?,indonesian,polar,2.5,3.0,0,4.0,0.7777777777777778,11,0.0,1.0
+268,apakah penyakit Diabetes melitus disebabkan oleh garis keturunan?,indonesian,polar,1.875,3.0,0,1.5,0.7777777777777778,10,0.0,2.0
+269,Apakah Panggilan konferensi memerlukan koneksi internet?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+270,Apakah virus Parvovirus mematikan ?,indonesian,polar,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+271,Apakah Peter Jackson mensutradarai semua serial film The Lord of the Rings?,indonesian,polar,1.6666666666666667,5.0,0,3.0,0.8461538461538461,14,0.0,1.0
+272,Apakah orang yang mengeluarkan nifas boleh melakukan hubungan suami istri?,indonesian,polar,2.1,3.0,1.0,2.5,0.7272727272727273,12,50.0,2.0
+273,Apakah semua tumbuhan mengalami fotosintesis?,indonesian,polar,1.6,2.0,0,3.0,0.6666666666666666,7,0.0,1.0
+274,Apakah siklus nitrogen dapat terjadi secara nonbiologis?,indonesian,polar,2.0,2.0,0,4.0,0.625,9,0.0,1.0
+275,Apakah Hindu mempercayai Kehidupan setelah kematian?,indonesian,polar,1.5,3.0,0,3.0,0.7142857142857143,8,0.0,1.0
+276,Apakah Candy Candy pernah difilmkan ?,indonesian,polar,2.2,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+277,Apakah mesin jet dan mesin roket termasuk dalam mesin pembakaran dalam?,indonesian,polar,2.272727272727273,3.0,0,3.0,0.6666666666666666,13,0.0,1.0
+278,apakah ketam kenari bisa bernafas dalam air?,indonesian,polar,2.142857142857143,2.0,0,4.0,0.625,9,0.0,1.0
+279,apakah Wasabi pedas?,indonesian,polar,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+280,apakah MSDM mencakup ilmu komunikasi?,indonesian,polar,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+281,apakah Garuda Indonesia mempunyai kerja sama dengan Airbus S.A.S?,indonesian,polar,1.7777777777777777,2.0,0,4.0,0.8,11,0.0,1.0
+282,apakah Hidayat Martaatmaja pernah menikah?,indonesian,polar,2.2,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+283,apakah penyakit HIV/AIDS menyerang sistem imun?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+284,Apakah Theodore Beza pernah menulis buku?,indonesian,polar,2.0,2.0,0,4.0,0.8571428571428571,8,0.0,1.0
+285,Apakah candi Borobudur candi agama Hindu?,indonesian,polar,1.3333333333333333,3.0,0,0,0.8571428571428571,8,0,0.0
+286,Apakah eceng termasuk tumbuhan perusak ?,indonesian,polar,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+287,bisakah etanol dikonsumsi manusia?,indonesian,polar,1.75,1.0,0,3.0,0.6,6,0.0,1.0
+288,Apakah Ibnu Taimiyah seorang ilmuwan Islam?,indonesian,polar,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+289,apakah Korea selatan dan Korea utara memiliki alat musik tradisional yang sama?,indonesian,polar,2.25,3.0,0,3.0,0.7692307692307693,14,0.0,1.0
+290,Apakah matahari termasuk bintang?,indonesian,polar,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+291,Apakah meminum Cherrybelle dapat menyebabkan kematian?,indonesian,polar,2.0,2.0,1.0,2.0,0.7142857142857143,8,50.0,2.0
+292,apakah Marcell Siahaan pernah menikah?,indonesian,polar,2.2,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+293,apakah all of Duty: Black Ops II mempunyai sekuel?,indonesian,polar,2.888888888888889,4.0,0,3.0,0.8,12,0.0,1.0
+294,Apakah agama Bahá'í percaya pada tuhan?,indonesian,polar,1.8333333333333333,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+295,apakah Tama masih hidup?,indonesian,polar,2.0,2.0,0,3.0,0.8,6,0.0,1.0
+296,Apakah Islam mempercayai Kehidupan setelah kematian?,indonesian,polar,1.5,3.0,0,3.0,0.7142857142857143,8,0.0,1.0
+297,Apakah pertunjukan Reog menggunakan musik latar?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+298,Apakah serial gundam merupakan tokoh robot ?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+299,Adakah E-commerce termasuk teknologi Informasi?,indonesian,polar,1.6,3.0,1.0,2.0,0.8333333333333334,7,50.0,2.0
+300,apakah ada Gereja Ortodoks di Indonesia?,indonesian,polar,1.5,3.0,0,2.0,0.7142857142857143,8,0.0,1.0
+301,apakah badai la-nina dan el-nino sama?,indonesian,polar,1.8333333333333333,3.0,0,0,0.7142857142857143,8,0,0.0
+302,Apakah jamu secara medik adalah minuman yang sehat?,indonesian,polar,2.25,3.0,0,0,0.5555555555555556,10,0.0,1.0
+303,apakah Yogyakarta terletak di Provinsi Jawa Tengah?,indonesian,polar,1.4285714285714286,3.0,0,3.0,0.75,9,0.0,1.0
+304,Adakah pembuatan pupuk meggunakan Kimia anorganik?,indonesian,polar,1.6666666666666667,3.0,1.0,2.0,0.8571428571428571,8,50.0,2.0
+305,Apakah Skype memiliki fitur Panggilan konferensi?,indonesian,polar,1.3333333333333333,3.0,0,3.0,0.8571428571428571,8,0.0,1.0
+306,Apakah agama Kristen menyakini kehidupan setelah mati?,indonesian,polar,1.7142857142857142,3.0,0,3.0,0.75,9,0.0,1.0
+307,apakah Banksia dentata memiliki buah?,indonesian,polar,1.8,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+308,Adakah proses Fotosintesis memerlukan cahaya matahari?,indonesian,polar,1.6666666666666667,3.0,1.0,2.0,0.8571428571428571,8,50.0,2.0
+309,Apakah Krustasea dapat dikonsumsi manusia?,indonesian,polar,1.8,2.0,0,3.0,0.6666666666666666,7,0.0,1.0
+310,apakah Michael Schumacher masih mengikuti Grand Prix F1 Kanada 2005?,indonesian,polar,1.6,5.0,0,4.0,0.8181818181818182,12,0.0,1.0
+311,apakah ada kerajaan Minangkabau?,indonesian,polar,1.25,2.0,0,2.0,0.8,6,0.0,1.0
+312,"apakah Joseph Patrick ""Joe"" Kennedy mempunyai isteri?",indonesian,polar,3.5714285714285716,2.0,0,3.0,0.875,11,0.0,1.0
+313,Apakah semua warga Indonesia berkewajiban memiliki BPJS Kesehatan?,indonesian,polar,1.625,3.0,1.0,2.0,0.7777777777777778,10,50.0,2.0
+314,apakah komunikasi hewan bisa dipelajari oleh manusia?,indonesian,polar,2.0,2.0,0,3.0,0.625,9,0.0,1.0
+315,Apakah agama Children of God diterima di Indonesia?,indonesian,polar,2.125,4.0,0,3.0,0.7777777777777778,10,0.0,1.0
+316,Adakah Pandemik sebuah virus?,indonesian,polar,1.5,3.0,0,2.0,0.6,6,0.0,1.0
+317,apakah Raelian termasuk atheist ?,indonesian,polar,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+318,apakah Nasi jollof bisa menggunakan nasi basmati?,indonesian,polar,1.8571428571428572,2.0,0,3.0,0.75,9,0.0,1.0
+319,Apakah Alamat IP versi 4 digunakan pada komputer?,indonesian,polar,2.25,3.0,0,3.0,0.6666666666666666,10,0.0,1.0
+320,Apakah pernikahan semasa jenis legal di Indonesia ?,indonesian,polar,1.5714285714285714,4.0,0,0,0.5,9,0,0.0
+321,Apakah Seoul dilalui Sungai Han?,indonesian,polar,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+322,Apakah The Flash bercerita tentang superhero ?,indonesian,polar,1.8333333333333333,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+323,apakah Sabino Arana mempelajari Ilmu Politik?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+324,apakah ada kerajaan yang berasal dari Jambi?,indonesian,polar,1.4285714285714286,4.0,1.0,2.0,0.625,9,50.0,2.0
+325,Apakah depresi membahayakan kesehatan?,indonesian,polar,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+326,Apakah sakit gigi dapat disembuhkan?,indonesian,polar,2.2,2.0,0,2.0,0.6666666666666666,7,0.0,1.0
+327,apakah Tubagus Alipan seorang anggota PKI?,indonesian,polar,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+328,Apakah tumbuhan Talas dapat dimakan manusia?,indonesian,polar,2.0,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+329,apakah Command & Conquer: Generals mempunyai sekuel?,indonesian,polar,2.8333333333333335,2.0,0,4.0,0.8571428571428571,10,0.0,1.0
+330,bisakah baja berkarat?,indonesian,polar,2.0,1.0,0,2.0,0.5,5,0.0,1.0
+331,Apakah Penyakit Crohn perlu dioperasi?,indonesian,polar,2.2,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+332,apakah Uni Soviet mengikuti perang dunia II?,indonesian,polar,1.5714285714285714,3.0,0,3.0,0.75,9,0.0,1.0
+333,Apakah buah melinjo baik untuk kesehatan ?,indonesian,polar,1.6666666666666667,2.0,0,4.0,0.7142857142857143,8,0.0,1.0
+334,Apakah PES sama dengan FIFA ?,indonesian,polar,1.6,2.0,0,0,0.6666666666666666,7,0,0.0
+335,Apakah Ludwig II pernah menjabat sebagai raja ?,indonesian,polar,2.0,2.0,0,4.0,0.625,9,0.0,1.0
+336,Apakah Turki dan Turkistan adalah negara yang sama ?,indonesian,polar,2.25,3.0,0,0,0.5555555555555556,10,0.0,1.0
+337,Apakah Pasar Beringharjo termasuk pasar tradisional?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+338,Apakah Anikonisme bertentangan dengan ajaran agama Islam?,indonesian,polar,1.4285714285714286,3.0,0,3.0,0.75,9,0.0,1.0
+339,apakah Bioskop Metropole adalah bioskop tertua di Indonesia?,indonesian,polar,2.0,2.0,0,0,0.6666666666666666,10,0.0,1.0
+340,Apakah kata dengan kalimat sama ?,indonesian,polar,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+341,apakah jerman pernah menjuarai liga sepakbola dunia?,indonesian,polar,1.5714285714285714,3.0,0,4.0,0.875,9,0.0,1.0
+342,Apakah Buster dan Babs sejenis binatang ?,indonesian,polar,1.6666666666666667,2.0,0,0,0.7142857142857143,8,0,0.0
+343,apakah dorce adalah seorang laki-laki?,indonesian,polar,2.4,2.0,0,0,0.5,7,0.0,1.0
+344,apakah film pertama asli dari orang Indonesia?,indonesian,polar,1.7142857142857142,3.0,0,0,0.625,9,0,0.0
+345,Apakah Yesus disalib?,indonesian,polar,1.6666666666666667,2.0,0,2.0,0.75,5,0.0,1.0
+346,Apakah Nina Wang adalah seorang pengusaha ?,indonesian,polar,2.5,2.0,0,0,0.5714285714285714,8,0.0,1.0
+347,apakah Command and Conquer mempunyai sekuel?,indonesian,polar,2.0,3.0,0,3.0,0.8571428571428571,8,0.0,1.0
+348,bisakah kita mengganti Alamat IP pada komputer personal kita?,indonesian,polar,1.7777777777777777,2.0,0,4.0,0.5,11,0.0,1.0
+349,Apakah agama islam termasuk agama Monoteisme ?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+350,Apakah Observatorium Bosscha dibuka untuk tempat wisata?,indonesian,polar,1.7142857142857142,2.0,0,3.0,0.75,9,0.0,1.0
+351,Apakah Pemasaran Internasional dapat menyebabkan inflasi?,indonesian,polar,2.0,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+352,Apakah Ya’juj dan Ma’juj manusia?,indonesian,polar,1.4,2.0,0,0,0.6666666666666666,7,0,0.0
+353,apakah MSDM mencakup ilmu psikologi?,indonesian,polar,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+354,apakah cahaya matahari meberikan efek pada proses pigmentasi?,indonesian,polar,1.75,2.0,0,4.0,0.7777777777777778,10,0.0,1.0
+355,Adakah Iran termasuk dalam Liga Arab?,indonesian,polar,1.5,3.0,1.0,2.0,0.7142857142857143,8,50.0,2.0
+356,apakah Kepulauan Seribu mempunyai jaringan telepon?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+357,Apakah orang yang mengeluarkan nifas dibolehkan melakukan hubungan suami istri?,indonesian,polar,1.9,4.0,1.0,2.0,0.8181818181818182,12,66.66666666666667,3.0
+358,apakah ada populasi manusia di Pulau Selaru?,indonesian,polar,1.4285714285714286,3.0,0,2.0,0.75,9,0.0,1.0
+359,apakah mayoritas Iran adalah Syi'ah?,indonesian,polar,2.0,2.0,0,0,0.7142857142857143,8,0,0.0
+360,apakah Plutarkhos masih hidup?,indonesian,polar,2.0,2.0,1.0,2.0,0.6,6,100.0,1.0
+361,Apakah Laut Aegea masuk kedalam wilayah Yunani ?,indonesian,polar,1.7142857142857142,2.0,0,3.0,0.75,9,0.0,1.0
+362,"apakah Kenneth Ray ""Kenny"" Rogers mempunyai anak ?",indonesian,polar,3.142857142857143,3.0,0,3.0,0.875,11,0.0,1.0
+363,Apakah heliocentric model dikenalkan oleh Galileo Galilei?,indonesian,polar,1.7142857142857142,2.0,0,3.0,0.75,9,0.0,1.0
+364,Apakah Sistem Penamaan Domain digunakan dalam pembuatan website?,indonesian,polar,1.875,3.0,0,3.0,0.7777777777777778,10,0.0,1.0
+365,bisakah semut berkomunikasi?,indonesian,polar,2.0,1.0,0,2.0,0.5,5,0.0,1.0
+366,Apakah kesultanan Utsmaniyah termasuk zaman keemasan Islam?,indonesian,polar,1.5714285714285714,3.0,0,3.0,0.875,9,0.0,1.0
+367,apakah Badak jawa terancam punah?,indonesian,polar,1.8,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+368,apakah David Émile Durkheim masih hidup?,indonesian,polar,1.6666666666666667,3.0,0,2.0,0.8571428571428571,8,0.0,1.0
+369,Apakah hepatitis B sejenis penyakit?,indonesian,polar,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+370,Apakah watak Petruk seorang laki laki?,indonesian,polar,1.5,2.0,0,0,0.5714285714285714,8,0,0.0
+371,Apakah Raymond IV pernah menikah?,indonesian,polar,2.2,2.0,0,3.0,0.6666666666666666,7,0.0,1.0
+372,apakah Pangeran Arya Jepara mempunyai anak?,indonesian,polar,2.0,3.0,0,3.0,0.8571428571428571,8,0.0,1.0
+373,Apakah dewa brahmana berasal dari kepercayaan Hindu ?,indonesian,polar,1.7142857142857142,2.0,0,3.0,0.75,9,0.0,1.0
+374,Adakah Kashmir dilalui oleh Sungai Indus?,indonesian,polar,1.5,3.0,1.0,2.0,0.7142857142857143,8,50.0,2.0
+375,Apakah Siklon Tropis Cempaka menelan korban jiwa?,indonesian,polar,1.8571428571428572,2.0,0,4.0,0.875,9,0.0,1.0
+376,Apakah Binokular digunakan untuk mengamati Planet?,indonesian,polar,1.5,2.0,1.0,2.5,0.7142857142857143,8,50.0,2.0
+377,apakah ospek di indonesia pernah memakan korban?,indonesian,polar,2.2857142857142856,3.0,0,4.0,0.75,9,0.0,1.0
+378,pernahkah Putri Di Dalam Petung menikah?,indonesian,polar,2.8333333333333335,3.0,0,2.0,0.5714285714285714,8,0.0,1.0
+379,apakah bima termasuk karakter protagonis?,indonesian,polar,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+380,Apakah penyembuhan ambien memerlukan operasi ?,indonesian,polar,1.8,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+381,Apakah orang yang mengeluarkan nifas dibolehkan puasa?,indonesian,polar,2.2857142857142856,3.0,1.0,2.5,0.75,9,50.0,2.0
+382,apakah bahasa Jawa Kuno masih digunakan?,indonesian,polar,2.3333333333333335,3.0,0,3.0,0.8571428571428571,8,0.0,1.0
+383,Apakah Material butiran berwujud zat cair?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+384,Apakah tumor bisa diobati ?,indonesian,polar,2.0,2.0,0,2.0,0.6,6,0.0,1.0
+385,apakah fosil bisa dijadikan energi terbaharui?,indonesian,polar,1.6666666666666667,2.0,1.0,1.5,0.7142857142857143,8,50.0,2.0
+386,Apakah permainan rugbi membutuhkan wasit ?,indonesian,polar,1.8,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+387,Apakah Dildo terbuat dari Kayu?,indonesian,polar,1.6,2.0,0,3.0,0.6666666666666666,7,0.0,1.0
+388,pernahkah Al-Habib Idrus bin Salim Al-Jufri menikah?,indonesian,polar,2.4285714285714284,5.0,0,2.0,0.875,9,0.0,1.0
+389,Adakah Gilgames seorang Raja?,indonesian,polar,1.5,3.0,0,2.0,0.6,6,0.0,1.0
+390,apakah Michael Dell mendirikan perusahaan nya dengan menggunakan dana investor?,indonesian,polar,1.7,3.0,1.0,3.0,0.7272727272727273,12,50.0,2.0
+391,Apakah masakan Belanda banyak menggunakan produk susu?,indonesian,polar,1.8571428571428572,2.0,0,4.0,0.875,9,0.0,1.0
+392,apakah kerajaan Persia terletak di negara Iran?,indonesian,polar,1.7142857142857142,2.0,0,3.0,0.75,9,0.0,1.0
+393,Apakah Meningitis bisa disembuhkan?,indonesian,polar,2.0,2.0,0,2.0,0.6,6,0.0,1.0
+394,apakah Daspletosaurus bertelur?,indonesian,polar,1.6666666666666667,2.0,0,2.0,0.75,5,0.0,1.0
+395,Apakah Gunung Semeru tergolong gunung aktif ?,indonesian,polar,1.6666666666666667,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+396,Apakah Pewarna indigo aman digunakan pada makanan?,indonesian,polar,2.0,2.0,0,4.0,0.75,9,0.0,1.0
+397,pernahkah Raja Rama IX menikah?,indonesian,polar,2.2,3.0,0,2.0,0.6666666666666666,7,0.0,1.0
+398,apakah Raden Adjeng Kartinipernah menikah?,indonesian,polar,2.2,3.0,0,2.0,0.8333333333333334,7,0.0,1.0
+399,Adakah Yesus Kristus disalib?,indonesian,polar,2.0,3.0,1.0,1.5,0.8,6,50.0,2.0
+400,Apakah karakter Avatar seorang laki laki?,indonesian,polar,1.5,3.0,0,0,0.5714285714285714,8,0,0.0
+401,kapankah Naruto masuk dalam siaran tv Indonesia?,indonesian,polar,1.4285714285714286,3.0,0,3.0,0.75,9,0.0,1.0
+402,apakah cahaya lebih cepat dari suara?,indonesian,polar,1.8333333333333333,3.0,0,0,0.5714285714285714,8,0,0.0

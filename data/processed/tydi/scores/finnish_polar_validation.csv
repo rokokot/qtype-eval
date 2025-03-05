@@ -1,0 +1,269 @@
+sentence_id,text,language,type,avg_links_len,avg_max_depth,avg_subordinate_chain_len,avg_verb_edges,lexical_density,n_tokens,subordinate_proposition_dist,verbal_head_per_sent
+1,Onko Alan Moore koskaan kirjoittanut kirjaa?,finnish,polar,2.0,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+2,Voiko Oulussa opiskella lakimieheksi?,finnish,polar,1.3333333333333333,1.0,0,2.0,0.75,5,0.0,1.0
+3,Voiko historiaa opiskella Kuopiossa?,finnish,polar,1.3333333333333333,1.0,0,2.0,0.75,5,0.0,1.0
+4,Kauanko lasia on valmistettu?,finnish,polar,2.0,1.0,0,3.0,0.75,5,0.0,1.0
+5,Saavatko munkit mennä naimisiin?,finnish,polar,1.3333333333333333,2.0,1.0,1.5,1.0,5,50.0,2.0
+6,Saiko Suomi jatkosodassa sotasaaliiksi viisi 130/50 N -tykkiä?,finnish,polar,2.7142857142857144,2.0,0,4.0,0.75,9,0.0,1.0
+7,Ovatko eläinrasvat kiellettyjä raaka-aineita luonnonkosmetiikassa?,finnish,polar,1.75,1.0,1.0,0.0,0.8,6,50.0,2.0
+8,Onko Sudanissa käyty koskaan sotaa?,finnish,polar,1.5,1.0,0,4.0,0.8,6,0.0,1.0
+9,Oliko kylmän sodan aikana myös varsinaisia sotia?,finnish,polar,1.8333333333333333,3.0,1.0,0,0.8571428571428571,8,100.0,1.0
+10,Onko nominalismia tutkittu tieteellisesti?,finnish,polar,1.3333333333333333,1.0,0,3.0,0.75,5,0.0,1.0
+11,Ovatko saamelaiset aina asuttaneet Pohjois-Suomea?,finnish,polar,1.75,1.0,0,3.0,0.8,6,0.0,1.0
+12,Onko supernova tähden räjähdys?,finnish,polar,2.0,1.0,0,0,0.75,5,0.0,1.0
+13,Hyväksyvätkö Jehovan todistajat verenluovutusta?,finnish,polar,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+14,Voiko suolan muuttaa nesteeksi?,finnish,polar,1.3333333333333333,1.0,0,2.0,0.75,5,0.0,1.0
+15,Onko sorsalla hampaita?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0.0,1.0
+16,Esiintyykö uraania Suomessa?,finnish,polar,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+17,Oliko Kapteeni Haddock ensiesiintymisessään alkoholisti?,finnish,polar,2.0,2.0,0,0,0.8,6,0.0,1.0
+18,Onko KalPa voittanut Suomen mestaruutta?,finnish,polar,1.5,2.0,0,2.0,0.8,6,0.0,1.0
+19,Onko kukkakaali vihannes vai hedelmä?,finnish,polar,1.5,2.0,0,0,0.6,6,0.0,1.0
+20,Onko Suomessa enemmän lehtimetsää vai kuusimetsää?,finnish,polar,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+21,Oliko valtatie 4 ensimmäinen virallinen valtatie Suomessa?,finnish,polar,2.6666666666666665,1.0,0,0,0.7142857142857143,8,0.0,1.0
+22,Oliko Satamaradalla juna-asemia lainkaan?,finnish,polar,1.3333333333333333,1.0,0,0,0.75,5,0,0.0
+23,Onko Half-Life 2: Episode Two -pelissä zombeja?,finnish,polar,2.6666666666666665,2.0,0,0,0.7142857142857143,9,0.0,1.0
+24,Ovatko saamelaiset aina asuttaneet Suomea?,finnish,polar,1.75,1.0,0,3.0,0.8,6,0.0,1.0
+25,Onko Kiinassa uskontoa?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0,0.0
+26,Elääkö Suomessa nokkaeläimiä?,finnish,polar,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+27,Oliko suomalaisilla käytössään Karjalankannaksen taisteluissa 129 000 miestä?,finnish,polar,2.0,2.0,0,0,0.7142857142857143,8,0.0,1.0
+28,Onko inkojen kosmologia jaettu kolmeen osaan?,finnish,polar,1.6,2.0,0,3.0,0.6666666666666666,7,0.0,1.0
+29,Voiko Kajaanin linnassa vierailla vuonna 2019?,finnish,polar,1.4,2.0,0,2.0,0.6666666666666666,7,0.0,1.0
+30,Onko Naruto Uzumaki poika?,finnish,polar,2.0,2.0,0,0,0.75,5,0.0,1.0
+31,Voisiko ihminen selvitä maapallolla ilman tekniikkaa?,finnish,polar,1.6,2.0,0,3.0,0.6666666666666666,7,0.0,1.0
+32,Kauanko kestää junalla Helsingistä Moskovaan?,finnish,polar,1.75,1.0,0,4.0,1.0,6,0.0,1.0
+33,Onko yhdistyksen perustaminen ilmaista?,finnish,polar,1.6666666666666667,2.0,0,0,0.75,5,0.0,1.0
+34,Pääseekö Turusta Moskovaan?,finnish,polar,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+35,Onko Suomessa uraanikaivoksia?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0,0.0
+36,Myydäänkö Nintendo Entertainment System pelikonsolia vuonna 2019?,finnish,polar,2.6666666666666665,3.0,0,2.0,0.8571428571428571,8,0.0,1.0
+37,Onko seminoleilla oma kieli?,finnish,polar,1.3333333333333333,2.0,0,0,0.75,5,0.0,1.0
+38,Onko ihmisellä ah-reseptoria?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0.0,1.0
+39,Onko Suomessa lentokoneteollisuutta?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0,0.0
+40,Onko Leipzigissä vanhaa kaupunkia?,finnish,polar,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+41,Säteileekö fuusioreaktorista haitallisia aineita luontoon?,finnish,polar,2.25,2.0,0,3.0,1.0,6,0.0,1.0
+42,Onko kuritus laillista Suomessa?,finnish,polar,1.3333333333333333,1.0,0,0,0.75,5,0.0,1.0
+43,Uskovatko japanilaiset henkiin?,finnish,polar,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+44,Onko riisipeippo lemmikkilintu?,finnish,polar,1.5,1.0,0,0,0.6666666666666666,4,0.0,1.0
+45,Onko Díalla asutusta?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0,0.0
+46,Onko Mäkiluoto suojeltu alue?,finnish,polar,1.3333333333333333,1.0,0,3.0,0.75,5,0.0,1.0
+47,Onko hyeena koira- vai kissaeläin?,finnish,polar,1.5,3.0,0,0,0.6,6,0.0,0.0
+48,Onko kehityksellisellä kielihäiriöllä geneettinen tausta?,finnish,polar,1.5,2.0,0,0,0.8,6,0.0,1.0
+49,Onko robotit koneita?,finnish,polar,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+50,Onko kastemadolla selkäjänne?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0.0,1.0
+51,Onko Tornion joessa lohta?,finnish,polar,1.3333333333333333,1.0,0,0,0.75,5,0.0,1.0
+52,Onko Saaristomeri Euroopan laajin saaristo?,finnish,polar,2.25,2.0,0,0,0.8,6,0.0,1.0
+53,Onko Suomussalmi kunta?,finnish,polar,1.5,1.0,0,0,0.6666666666666666,4,0.0,1.0
+54,Onko Suomessa koskaan nähty vesinokkaeläintä?,finnish,polar,1.75,1.0,0,4.0,0.8,6,0.0,1.0
+55,Asuuko Korsikan saarella alkuperäiskansaa?,finnish,polar,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+56,Onko Algeriassa koskaan sodittu?,finnish,polar,2.0,1.0,0,3.0,0.75,5,0.0,1.0
+57,Onko fuusioreaktori vaarallinen ympäristölle?,finnish,polar,1.3333333333333333,1.0,0,0,0.75,5,0.0,1.0
+58,Onko maapallon sisällä magnetismia?,finnish,polar,1.3333333333333333,2.0,1.0,0,0.5,5,100.0,1.0
+59,Muuttuuko tähtien alkuainekoostumus niiden ikääntyessä?,finnish,polar,2.0,2.0,1.0,1.5,0.8,6,50.0,2.0
+60,Onko mahicanit alkuperäiskansaa vielä elossa?,finnish,polar,2.5,1.0,0,0,0.8,6,0.0,1.0
+61,Onko aurinko tähti?,finnish,polar,1.5,1.0,0,0,0.6666666666666666,4,0.0,1.0
+62,Onko plutonium vaarallista ihmiselle?,finnish,polar,1.3333333333333333,1.0,0,0,0.75,5,0.0,1.0
+63,Onko Punaisen Ristin toiminta maksullista?,finnish,polar,1.75,3.0,0,0,0.8,6,0.0,1.0
+64,Onko keuhkokuumeeseen lääkettä?,finnish,polar,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+65,Minkä tyylilajin koomikko Dean Martin oli?,finnish,polar,1.2,3.0,0,0,0.6666666666666666,7,0,0.0
+66,Olivatko saamelaiset ensimmäisiä ihmisiä Suomessa?,finnish,polar,1.75,1.0,0,0,0.8,6,0.0,1.0
+67,Onko aivot hermosto?,finnish,polar,1.5,1.0,0,0,0.6666666666666666,4,0.0,1.0
+68,Kasvaako hasis luonnossa?,finnish,polar,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+69,Onko mainonta osa joukkotiedotusvälinettä?,finnish,polar,1.3333333333333333,1.0,0,0,0.75,5,0.0,1.0
+70,Puhutaanko Korsikan saarella ranskaa?,finnish,polar,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+71,Onko Tikkurilassa uimarantaa?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0,0.0
+72,Onko Alexander Grothendieck kehittänyt matemaattisen yhtälön?,finnish,polar,1.8,2.0,0,2.0,0.8333333333333334,7,0.0,1.0
+73,Onko Suomen jääkäriliike vieläkin käytössä?,finnish,polar,2.0,2.0,0,0,0.8,6,0.0,1.0
+74,Onko Japanissa tulivuoria?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0,0.0
+75,Lauletaanko elektronisen musiikin kappaleissa?,finnish,polar,1.6666666666666667,3.0,0,1.0,1.0,5,0.0,1.0
+76,Onko Palestiina maa?,finnish,polar,1.5,1.0,0,0,0.6666666666666666,4,0.0,1.0
+77,Oliko Mantineian alakaupunki ympäröity muurilla?,finnish,polar,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+78,Voiko keuhkokuumeeseen kuolla?,finnish,polar,1.5,1.0,0,1.0,0.6666666666666666,4,0.0,1.0
+79,Onko Korea aina jaettu etelä- ja pohjoisosiin?,finnish,polar,1.6666666666666667,3.0,0,4.0,0.7142857142857143,8,0.0,1.0
+80,Kulkeeko päiväntasaaja kolmen valtameren kautta?,finnish,polar,1.5,2.0,0,2.0,0.6,6,0.0,1.0
+81,Minä vuonna Jaakko I tuli Ison-Britannian kuningas?,finnish,polar,2.1666666666666665,2.0,0,4.0,0.8571428571428571,8,0.0,1.0
+82,Onko Kannabiksen kasvatus kotioloissa Suomessa rikos?,finnish,polar,2.4,2.0,0,0,0.8333333333333334,7,0.0,1.0
+83,Ovatko mafiosot hallinneet Sisiliaa ennen 2000-lukua?,finnish,polar,1.6,2.0,0,3.0,0.6666666666666666,7,0.0,1.0
+84,Ovatko afrikkalaiset heimot päällikkökuntia?,finnish,polar,1.6666666666666667,2.0,0,0,0.75,5,0.0,1.0
+85,Syövätkö kalat kasveja?,finnish,polar,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+86,Onko Punainen lohikäärme -elokuvasta tehty uutta versiota vuoden 2002 jälkeen?,finnish,polar,1.8888888888888888,2.0,0,5.0,0.7,11,0.0,1.0
+87,Onko Leipzig kaupungissa satamaa?,finnish,polar,1.6666666666666667,2.0,0,0,0.75,5,0.0,1.0
+88,Onko Felix ketsuppi suomalaista?,finnish,polar,2.0,1.0,0,0,0.75,5,0.0,1.0
+89,Voiko etanolia juoda?,finnish,polar,1.5,1.0,0,1.0,0.6666666666666666,4,0.0,1.0
+90,Voiko ammattikoulussa opiskella filosofiaa?,finnish,polar,1.3333333333333333,1.0,0,2.0,0.75,5,0.0,1.0
+91,Onko Half-Life 2 PC-peli?,finnish,polar,2.0,2.0,0,0,0.5,5,0.0,1.0
+92,Onko kalasääski rauhoitettu eläinlaji?,finnish,polar,1.3333333333333333,2.0,1.0,2.0,0.75,5,100.0,1.0
+93,Onko Israelin–Palestiinan konflikti edelleen voimassa?,finnish,polar,2.0,2.0,0,0,0.8,6,0.0,1.0
+94,Kuuluuko evankelis-luterilaiseen uskontoon temppelit?,finnish,polar,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+95,Onko Suomessa kasvanut aina havupuita?,finnish,polar,1.5,1.0,0,3.0,0.8,6,0.0,1.0
+96,Onko sotasyyllisyysoikeudenkäynnistä kirjoitettu Helsingin sanomiin?,finnish,polar,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+97,Onko ihmisellä selkäjänne?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0.0,1.0
+98,Voiko totuudesta väitellä?,finnish,polar,1.5,1.0,0,1.0,0.6666666666666666,4,0.0,1.0
+99,Voiko kaakaopapuja ostaa?,finnish,polar,1.5,1.0,0,1.0,0.6666666666666666,4,0.0,1.0
+100,Onko Komorit itsenäinen valtio?,finnish,polar,2.0,1.0,0,0,0.75,5,0.0,1.0
+101,Onko Suomen jääkäriliike vieläkin olemassa?,finnish,polar,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+102,Liittyikö Kongon kriisiin sotia?,finnish,polar,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+103,Onko Etelä-Suomessa suoalueita?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0,0.0
+104,Oliko Mantineia useiden taisteluiden paikka?,finnish,polar,2.25,2.0,0,0,0.8,6,0.0,1.0
+105,Onko Volvo ruotsalainen yritys?,finnish,polar,2.0,1.0,0,0,0.75,5,0.0,1.0
+106,Onko yhdistykseen liittyminen ilmaista?,finnish,polar,1.6666666666666667,2.0,0,0,0.75,5,0.0,1.0
+107,Löytyykö berylliumia luonnosta?,finnish,polar,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+108,Onko Filippiinien saariryhmillä käyty sotia?,finnish,polar,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+109,Onko tekniikka edesauttanut fysiikan tutkimuksen edistymistä?,finnish,polar,1.6,3.0,0,2.0,0.8333333333333334,7,0.0,1.0
+110,Onko Paloveden järvessä saaria?,finnish,polar,1.3333333333333333,1.0,0,0,0.75,5,0.0,1.0
+111,Paljonko Suomella on järvi rantaviivaa?,finnish,polar,1.75,1.0,0,0,0.8,6,0,0.0
+112,Esiintyykö malariaa Suomessa?,finnish,polar,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+113,Onko SUomen jääkäriliike vieläkin käytössä?,finnish,polar,2.0,2.0,0,0,0.8,6,0.0,1.0
+114,Onko feminismi maailmanlaajuista?,finnish,polar,1.5,1.0,0,0,0.6666666666666666,4,0.0,1.0
+115,Voiko synteettisen biologian avulla kloonata eliöitä?,finnish,polar,1.6,3.0,0,2.0,0.8333333333333334,7,0.0,1.0
+116,Voiko viestintää harjoittaa muuten kuin sanallisesti?,finnish,polar,1.4,3.0,0,2.0,0.6666666666666666,7,0.0,1.0
+117,Valmistetaanko videopelejä Suomessa?,finnish,polar,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+118,Onko Liettua kuulunut joskus Venäjään?,finnish,polar,1.5,1.0,0,3.0,0.8,6,0.0,1.0
+119,Monessako valtiossa puhutaan ranskaa yhtenä pääkielenä?,finnish,polar,1.4,2.0,0,3.0,0.6666666666666666,7,0.0,1.0
+120,Onko Hesekielin temppeli historiallinen kohde?,finnish,polar,2.0,2.0,0,0,0.8,6,0.0,1.0
+121,Voiko Hämeenlinnasta matkustaa vesiteitse Tampereelle?,finnish,polar,1.5,1.0,0,3.0,0.8,6,0.0,1.0
+122,Kauanko Suomessa on valmistettu lasia?,finnish,polar,1.75,1.0,0,4.0,0.8,6,0.0,1.0
+123,Oliko Mario Moretilla perhettä?,finnish,polar,1.3333333333333333,1.0,0,0,0.75,5,0,0.0
+124,Onko sanomalehti joukkotiedotusväline?,finnish,polar,1.5,1.0,0,0,0.6666666666666666,4,0.0,1.0
+125,Oliko Leia Organa Tähtien sodan alkuperäisessä trilogiassa Alderaanin prinsessa?,finnish,polar,2.875,3.0,0,0,0.8888888888888888,10,0.0,1.0
+126,Paljonko rantaviivaa Suomella on?,finnish,polar,1.3333333333333333,1.0,0,0,0.75,5,0,0.0
+127,Onko Pennsylvaniassa vampyyreja?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0,0.0
+128,Oliko Rembrandt Harmenszoon van Rijn perhe varakas?,finnish,polar,3.0,2.0,0,0,0.8571428571428571,8,0.0,1.0
+129,Ovatko irlantilaiset kehittyneet kelteistä?,finnish,polar,1.3333333333333333,1.0,0,2.0,0.75,5,0.0,1.0
+130,Periytyykö pituus vanhemmilta lapsille?,finnish,polar,1.6666666666666667,2.0,0,2.0,1.0,5,0.0,1.0
+131,Onko Van Halen -yhtye hajonnut?,finnish,polar,2.0,3.0,0,1.0,0.8,6,0.0,1.0
+132,Oliko Frendit sarjan kahvila oikeasti olemassa?,finnish,polar,2.6,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+133,Oliko osasyy Vladimir Leninin kuolemaan hänen niskassaan säilynyt Kaplanin luoti?,finnish,polar,3.111111111111111,4.0,1.0,2.0,0.8,11,50.0,2.0
+134,Asuivatko suomalaiset talonpojat maatiloilla 1500-luvulla?,finnish,polar,2.5,2.0,0,3.0,1.0,6,0.0,1.0
+135,Onko Japanissa apinoita?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0,0.0
+136,Onko kempo eri laji kuin kendō?,finnish,polar,2.0,3.0,0,0,0.6666666666666666,7,0.0,1.0
+137,Onko vesinokkaeläimellä hampaita?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0.0,1.0
+138,Onko Helsingissäkin Arabiaa?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0,0.0
+139,Onko kambodžalaisilla paljon lemmikkejä?,finnish,polar,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+140,Voiko keramiikkaa opiskella Suomessa?,finnish,polar,1.3333333333333333,1.0,0,2.0,0.75,5,0.0,1.0
+141,Onko Sudanissa aavikkoa?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0,0.0
+142,Onko Irlanti jaettu etelä- ja pohjoisosiin?,finnish,polar,1.4,3.0,0,3.0,0.6666666666666666,7,0.0,1.0
+143,Onko lääkärin peruskoulutus Suomessa lääketieteen lisensiaatin tutkinto?,finnish,polar,2.6666666666666665,2.0,0,0,0.8571428571428571,8,0.0,1.0
+144,Onko lentotukialus aina vedessä?,finnish,polar,2.0,1.0,0,0,0.75,5,0.0,1.0
+145,Onko Vallanhimo -elokuvaa esitetty Suomessa kun se julkaistiin 1940-luvulla?,finnish,polar,1.875,2.0,1.0,4.0,0.6666666666666666,10,50.0,2.0
+146,Kasvaako avocado puussa?,finnish,polar,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+147,Oliko Frederick William Lanchester vaimoa?,finnish,polar,2.5,2.0,0,0,0.8,6,0.0,1.0
+148,Voiko sydäntä treenata?,finnish,polar,1.5,1.0,0,1.0,0.6666666666666666,4,0.0,1.0
+149,Kuoliko Elena Gilbertin adoptiovanhemmat auto-onnettomuudessa?,finnish,polar,2.5,3.0,0,2.0,1.0,6,0.0,1.0
+150,Oliko Heinävesi Suomen väkiluvultaan kahdensadan suurimman kunnan joukossa vuonna 2018?,finnish,polar,2.6666666666666665,2.0,0,0,0.7,11,0.0,1.0
+151,Onko Havaiji Yhdysvaltain osavaltio?,finnish,polar,2.0,1.0,0,0,0.75,5,0.0,1.0
+152,Kauanko suklaan valmistamisessa kestää?,finnish,polar,1.6666666666666667,2.0,0,2.0,1.0,5,0.0,1.0
+153,Onko Irlannissa kreivejä?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0,0.0
+154,Onko Ruotsia hallinnut aina kuningas?,finnish,polar,1.5,1.0,0,3.0,0.8,6,0.0,1.0
+155,Oliko Ramsay MacDonald koko poliittisen uransa työväenpuolueessa?,finnish,polar,2.6666666666666665,2.0,0,0,0.8571428571428571,8,0.0,1.0
+156,Kohtasivatko viikingit koskaan merirosvoja?,finnish,polar,2.0,1.0,0,3.0,1.0,5,0.0,1.0
+157,Puhutaanko Luxemburgissa myös omaa kieltään?,finnish,polar,2.0,2.0,0,2.0,1.0,6,0.0,1.0
+158,Kasvaako Suomen luonnossa karpaloa?,finnish,polar,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+159,Oliko Arvo Aalto jatkosodan ajan evakossa Ruotsissa?,finnish,polar,2.1666666666666665,2.0,0,0,0.8571428571428571,8,0.0,1.0
+160,Saavatko Jehovan todistajat tervehtiä seurakunnasta erotettuja tai eronneita?,finnish,polar,1.7142857142857142,4.0,2.0,1.5,0.875,9,66.66666666666667,4.0
+161,Suojeleeko Voloh ihmisiä?,finnish,polar,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+162,Käytetäänkö ketiapiinia huumausaineena?,finnish,polar,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+163,Oliko Tuomas Akvinolainen munkki?,finnish,polar,2.0,1.0,0,0,0.75,5,0.0,1.0
+164,Onko Tudor-suvusta tehty televisiosarjaa?,finnish,polar,1.3333333333333333,1.0,0,3.0,0.75,5,0.0,1.0
+165,Onko Suomen jääkäriliike vieläkin toiminnassa?,finnish,polar,2.0,2.0,0,0,0.8,6,0.0,1.0
+166,Onko Moskovassa raitiovaunuja?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0,0.0
+167,Ovatko kaikki Augustus -keisarit sukua toisilleen?,finnish,polar,1.8,2.0,0,0,0.5,7,0.0,1.0
+168,Onko Loviisan linnoitus edelleen pystyssä Degerbyssä?,finnish,polar,1.8,2.0,0,0,0.8333333333333334,7,0.0,1.0
+169,Onko turvepeltojen käyttö hiiliviljelyä?,finnish,polar,1.6666666666666667,2.0,0,0,0.75,5,0.0,1.0
+170,Onko Go-peliä myytävissä Suomessa?,finnish,polar,1.3333333333333333,1.0,0,3.0,0.75,5,0.0,1.0
+171,Onko VR-Yhtymä Oy:llä tytäryhtiöitä?,finnish,polar,1.75,1.0,0,0,0.8,6,0.0,1.0
+172,Onko nokkaeläin nisäkäs?,finnish,polar,1.5,1.0,0,0,0.6666666666666666,4,0.0,1.0
+173,Onko epilepsia periytyvä?,finnish,polar,1.5,1.0,0,2.0,0.6666666666666666,4,0.0,1.0
+174,Onko raaka pähkinä myrkyllinen?,finnish,polar,2.0,1.0,0,0,0.75,5,0.0,1.0
+175,Käytiinkö Suomen sotahistorian aikana Etelä-Suomessa enemmän sotia kuin Itä-Suomessa?,finnish,polar,2.5,4.0,0,3.0,0.8888888888888888,10,0.0,1.0
+176,Osaako filosofia vastata elämän tarkoitus -kysymykseen?,finnish,polar,1.8,3.0,1.0,2.0,1.0,7,50.0,2.0
+177,Onko Sony Computer Entertainment japanilainen yhtiö?,finnish,polar,2.6,2.0,0,0,0.8333333333333334,7,0.0,1.0
+178,Onko Tukholmaa pommitettu sotien aikaan?,finnish,polar,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+179,Ovatko suomalaiset koskaan uskoneet haltioihin?,finnish,polar,1.75,1.0,0,3.0,0.8,6,0.0,1.0
+180,Onko Atlantilla jäävuoria?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0,0.0
+181,Onko Sly Cooper pelistä tullut toista osaa?,finnish,polar,2.0,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+182,Onko viinirypäleessä alkoholia?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0.0,1.0
+183,Onko Assyria vielä olemassa?,finnish,polar,2.0,1.0,0,2.0,0.75,5,0.0,1.0
+184,Onko saattuehävittäjässä aseita?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0.0,1.0
+185,Onko pankkitilillä oleva valuutta vain numeroita?,finnish,polar,1.4,3.0,1.0,0.0,0.8333333333333334,7,50.0,2.0
+186,Onko Shōjo kakumei Utena esitetty Suomessa?,finnish,polar,2.2,1.0,0,5.0,0.8333333333333334,7,0.0,1.0
+187,Onko Suomalainen voittanut Miss Universum kilpailun?,finnish,polar,1.8,3.0,0,2.0,0.8333333333333334,7,0.0,1.0
+188,Onko Juha Kankkunen voittanut neste rallia?,finnish,polar,1.6,2.0,0,2.0,0.8333333333333334,7,0.0,1.0
+189,Voiko ihminen tuottaa hiilivetyä?,finnish,polar,1.3333333333333333,1.0,0,2.0,0.75,5,0.0,1.0
+190,Ovatko Bridget ja Jane Fonda sukua?,finnish,polar,2.6,3.0,0,0,0.6666666666666666,7,0.0,1.0
+191,Onko Harry Potter ja kuoleman varjelukset kirjasta tehty elokuva?,finnish,polar,2.625,3.0,1.0,1.0,0.7777777777777778,10,50.0,2.0
+192,Ovatko kiinalaiset aina puhuneet kiinan kieltä?,finnish,polar,1.8,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+193,Onko Macaolla oma hallitsija?,finnish,polar,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+194,Kasvaako hilla vain suolla?,finnish,polar,1.6666666666666667,2.0,0,2.0,1.0,5,0.0,1.0
+195,Onko Suomessa patoja?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0,0.0
+196,Voiko puuvillaa kasvattaa Suomessa?,finnish,polar,1.3333333333333333,1.0,0,2.0,0.75,5,0.0,1.0
+197,Onko Maybach automerkki?,finnish,polar,1.5,1.0,0,0,0.6666666666666666,4,0.0,1.0
+198,Onko airsoft-aseissa ikärajaa?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0.0,1.0
+199,Onko Suomessa koskaan uskottu luonnon taruolentoihin?,finnish,polar,1.8,2.0,0,4.0,0.8333333333333334,7,0.0,1.0
+200,Valmistaako ihmisen keho pantoteenihappoa?,finnish,polar,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+201,Näkeekö värisokea keltaisen värin?,finnish,polar,1.6666666666666667,2.0,0,2.0,1.0,5,0.0,1.0
+202,Elikö maapallolla paleoseeni ajanjaksolla dinosauruksia?,finnish,polar,1.75,2.0,0,0,0.8,6,0.0,1.0
+203,Onko pelaaminen hyväksi aivoille?,finnish,polar,1.3333333333333333,3.0,0,0,0.75,5,0.0,0.0
+204,Onko ohjelmointi hakkerointia?,finnish,polar,1.5,1.0,0,0,0.6666666666666666,4,0.0,1.0
+205,Periytyykö eläimillä luonteenpiirteitä vanhemmilta?,finnish,polar,2.0,1.0,0,3.0,1.0,5,0.0,1.0
+206,Onko ohjelmointi sama asia kuin koodaaminen?,finnish,polar,2.0,3.0,0,0,0.5,7,0.0,1.0
+207,Paljonko painaa maailman painavin kilpikonna?,finnish,polar,1.5,3.0,0,2.0,1.0,6,0.0,1.0
+208,Onko George Lucas kirjoittanut kaikki Tähtien sota -elokuvat?,finnish,polar,2.142857142857143,3.0,0,2.0,0.75,9,0.0,1.0
+209,Onko majavan häntä nahkaa?,finnish,polar,2.0,1.0,0,0,0.5,5,0.0,1.0
+210,Oliko Mika Waltari vain näytelmien kirjoittaja?,finnish,polar,2.6,2.0,0,0,0.8333333333333334,7,0.0,1.0
+211,Voiko työnjohtoa opiskella?,finnish,polar,1.5,1.0,0,1.0,0.6666666666666666,4,0.0,1.0
+212,Onko maakaasu vaarallista ihmisille?,finnish,polar,1.3333333333333333,1.0,0,0,0.75,5,0.0,1.0
+213,Onko Kiinassa vain yksi poliittinen puolue?,finnish,polar,1.8,3.0,0,0,0.6666666666666666,7,0,0.0
+214,Onko maidossa happoa?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0.0,1.0
+215,Onko kouluratsastuksessa alalajeja?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0.0,1.0
+216,Onko scrum tietokoneohjelma?,finnish,polar,1.5,1.0,0,0,0.6666666666666666,4,0.0,1.0
+217,Onko Afrikan tähti lautapeli maailmanlaajuisesti tunnettu?,finnish,polar,2.0,3.0,0,0,0.8333333333333334,7,0.0,1.0
+218,Oliko Lapuan liike vaaraksi vasemmistolaisille?,finnish,polar,1.5,2.0,0,0,0.8,6,0.0,1.0
+219,Onko Salamavaras-kirja sopiva alle 12-vuotiaille lukijoille?,finnish,polar,1.6,3.0,0,0,0.8333333333333334,7,0.0,1.0
+220,Onko Ikaalinen Näsijärven rannalla?,finnish,polar,2.0,1.0,0,0,0.75,5,0.0,1.0
+221,Onko tuuli aaltoliikettä ilmassa?,finnish,polar,2.0,1.0,0,0,0.75,5,0.0,1.0
+222,Oliko Konstantinus Suurella perhettä?,finnish,polar,2.0,2.0,0,0,0.75,5,0.0,1.0
+223,Kasvaako kaikissa havupuissa käpyjä?,finnish,polar,2.0,2.0,0,2.0,0.75,5,0.0,1.0
+224,Onko maaperässä aerosolia?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0.0,1.0
+225,Voiko valuutta loppua?,finnish,polar,1.5,1.0,0,1.0,0.6666666666666666,4,0.0,1.0
+226,Onko Suomen jääkäriliike toiminnassa?,finnish,polar,1.6666666666666667,2.0,0,0,0.75,5,0.0,1.0
+227,Voinko opiskella tähtitiedettä Suomessa?,finnish,polar,1.3333333333333333,1.0,0,2.0,0.75,5,0.0,1.0
+228,Onko kuulla ilmakehä?,finnish,polar,1.0,1.0,0,1.0,0.6666666666666666,4,0.0,1.0
+229,Onko Romain Grosjean ajanut GT3 sarjaa?,finnish,polar,1.8,2.0,0,2.0,0.8333333333333334,7,0.0,1.0
+230,Voiko Suomessa kasvattaa oliiveja?,finnish,polar,1.3333333333333333,1.0,0,2.0,0.75,5,0.0,1.0
+231,Onko Leipzigissä teollisuusaluetta?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0,0.0
+232,Onko Suomen ja Venäjän jokiraja Kainuussa?,finnish,polar,2.4,4.0,0,0,0.6666666666666666,7,0,0.0
+233,Onko Mika Waltari suomalainen?,finnish,polar,2.0,2.0,0,0,0.75,5,0.0,1.0
+234,Kuuluvatko jehovan todistajat kristinuskoon?,finnish,polar,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+235,Voiko sähköiskuun kuolla?,finnish,polar,1.5,1.0,0,1.0,0.6666666666666666,4,0.0,1.0
+236,Onko Ikaalisissa kylpylä?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0,0.0
+237,Voiko maapallolla kokea painovoimattomuutta?,finnish,polar,1.3333333333333333,1.0,0,2.0,0.75,5,0.0,1.0
+238,Aloittiko Venäjä talvisodan?,finnish,polar,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+239,Voiko neste jäätyä ihmisen sisällä?,finnish,polar,1.25,2.0,0,2.0,0.6,6,0.0,1.0
+240,Onko Suomen nimi ollut aina,finnish,polar,2.0,2.0,0,0,0.6,5,0.0,1.0
+241,Suomi?,finnish,polar,0,0.0,0,0,1.0,2,0,0.0
+242,Voiko vesikauhun parantaa?,finnish,polar,1.5,1.0,0,1.0,0.6666666666666666,4,0.0,1.0
+243,Onko Suomessa pussieläimiä?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0,0.0
+244,Oliko Matti Arvo Armas Laurila naimisissa?,finnish,polar,3.0,2.0,0,0,0.8333333333333334,7,0.0,1.0
+245,Onko Liettuassa vielä aatelisia?,finnish,polar,1.3333333333333333,1.0,0,0,0.75,5,0,0.0
+246,Onko Salossa yliopistoa?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0,0.0
+247,Kauanko Suomessa on ollut asutusta?,finnish,polar,1.75,1.0,0,0,0.6,6,0,0.0
+248,Voiko Atlantin meri kuivua?,finnish,polar,1.6666666666666667,2.0,0,1.0,0.75,5,0.0,1.0
+249,Onko lapsityö sallittua Kiinassa? Onko Kivirannassa kallioita?,finnish,polar,1.5,3.0,0,0,0.7142857142857143,9,0.0,1.0
+250,Voiko nokkaeläintä pitää lemmikkinä?,finnish,polar,1.3333333333333333,1.0,0,2.0,0.75,5,0.0,1.0
+251,Minkä kokoisia,finnish,polar,1.0,1.0,0,0,0.5,2,0,0.0
+252,Suomalaiset jääkiekko kentät on?,finnish,polar,1.3333333333333333,1.0,0,0,0.75,5,0.0,1.0
+253,Onko Tansania meren rannalla?,finnish,polar,2.0,1.0,0,0,0.75,5,0.0,1.0
+254,Onko Lamentations of the Flame Princess -pelissä vain yksi päähenkilö?,finnish,polar,3.2222222222222223,3.0,0,0,0.8,11,0.0,1.0
+255,Voiko kosteusvauriosta syntyä hometta?,finnish,polar,1.3333333333333333,1.0,0,2.0,0.75,5,0.0,1.0
+256,Onko Aigaissa linnoitusta?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0,0.0
+257,Paljonko Jehovalaisia uusia kastettuja arvioidaan olevan vuosittain?,finnish,polar,2.1666666666666665,3.0,1.0,2.0,0.8571428571428571,8,50.0,2.0
+258,Onko vesinokkaeläin myrkyllinen?,finnish,polar,1.5,1.0,0,0,0.6666666666666666,4,0.0,1.0
+259,Ovatko sterolit haitallisia?,finnish,polar,1.5,1.0,0,0,0.6666666666666666,4,0.0,1.0
+260,Onko Suomessa tunnettua Jazz-artistia?,finnish,polar,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+261,Oliko Berliinin muurissa rajanylityspaikkoja?,finnish,polar,1.3333333333333333,1.0,0,0,0.75,5,0.0,1.0
+262,Kuuluuko saksofoni jazziin?,finnish,polar,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+263,Onko fyysinen kuritus laillista EU:n alueella?,finnish,polar,1.6,2.0,0,0,0.8333333333333334,7,0.0,1.0
+264,Onko Hergé luonut muita sarjakuvia kuin Tintti?,finnish,polar,1.6666666666666667,4.0,0,2.0,0.5714285714285714,8,0.0,1.0
+265,Voiko Kalliovuorille kiivetä?,finnish,polar,1.5,1.0,0,1.0,0.6666666666666666,4,0.0,1.0
+266,Onko Down-kreivikunta olemassa vuonna 2019?,finnish,polar,1.25,2.0,0,2.0,0.6,6,0.0,1.0
+267,Onko Aleksanteri I:n rintakuvasta tehty toinen kappale?,finnish,polar,1.8333333333333333,3.0,0,3.0,0.8571428571428571,8,0.0,1.0
+268,Onko tunteita ja tuoksuja sarjassa vielä alkuperäisiä näyttelijöitä?,finnish,polar,2.4285714285714284,4.0,0,0,0.75,9,0.0,1.0

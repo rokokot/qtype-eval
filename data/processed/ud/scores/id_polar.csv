@@ -1,0 +1,266 @@
+sentence_id,text,language,type,avg_links_len,avg_max_depth,avg_subordinate_chain_len,avg_verb_edges,lexical_density,n_tokens,subordinate_proposition_dist,verbal_head_per_sent
+test-s22,Starring ten main players who were obtained through the audition process and quarantine period in the AAdC show?,indonesian,polar,1.6875,6.0,1.0,1.5,0.6470588235294118,18,50.0,2.0
+test-s36,``When in future your children ask their father: What do these stones mean?,indonesian,polar,2.0714285714285716,4.0,0,5.0,0.4666666666666667,18,0.0,1.0
+test-s56,He was silent for a long time then said ``Is he the prophet that you told us that will confirm the truth of the preaching of the previous prophets?,indonesian,polar,2.391304347826087,5.0,1.0,2.75,0.5,26,75.0,4.0
+test-s81,which is a spin-off drama from the television drama Megutan tte Mahou Tsukaeru no?,indonesian,polar,1.2727272727272727,7.0,0,2.0,0.8333333333333334,13,0.0,1.0
+test-s83,What is the name of the institution that will serve these radios?,indonesian,polar,1.7142857142857142,3.0,1.0,2.0,0.5,9,100.0,1.0
+test-s89,Will Mat Chameleon and Dul Bajing succeed in getting the statue they want?,indonesian,polar,2.5,4.0,1.0,2.0,0.6153846153846154,14,66.66666666666667,3.0
+test-s114,Will their happiness come true?,indonesian,polar,2.5,2.0,0,2.0,0.4,6,0.0,1.0
+test-s140,Want to know the route taken by transportation in Jakarta via SMS?,indonesian,polar,1.7777777777777777,4.0,1.0,2.5,0.6,11,50.0,2.0
+test-s176,"Asked about it Minogue replied, ``I think BB is a sex symbol, right?",indonesian,polar,2.3333333333333335,4.0,1.0,2.3333333333333335,0.5384615384615384,17,66.66666666666667,4.0
+test-s192,Should you kill those whom you have captured with your sword and arrow?,indonesian,polar,3.4,5.0,1.0,3.0,0.375,17,50.0,2.0
+test-s314,What does that have to do with Bunga's past?,indonesian,polar,1.6666666666666667,2.0,0,0,0.5714285714285714,8,0,0.0
+test-s324,Erlangga who is arrogant and loved to death by Janet?,indonesian,polar,1.5714285714285714,4.0,0,3.0,0.625,9,0,1.0
+test-s333,He then asked if our country ever went to war?,indonesian,polar,2.5,3.0,1.0,3.0,0.6666666666666666,10,50.0,2.0
+test-s364,"Is it true that Neo is his true love, as he has always believed?",indonesian,polar,2.5384615384615383,2.0,1.0,5.0,0.5,16,50.0,2.0
+test-s424,Do you want big behavior from someone named Gaga?,indonesian,polar,1.4444444444444444,4.0,1.0,2.0,0.6,11,50.0,2.0
+test-s436,Should I beat you down?,indonesian,polar,1.8333333333333333,2.0,1.0,2.5,0.42857142857142855,8,50.0,2.0
+test-s444,Will Ajeng et al be able to get through it all and be able to continue to forge a sincere friendship?,indonesian,polar,2.2857142857142856,4.0,0,3.5,0.4666666666666667,16,0.0,2.0
+test-s445,"Can Kevin cs win the bet with Mike, which is to bring a beautiful girl to the party and get Jessica's heart back?",indonesian,polar,2.25,4.0,1.0,2.75,0.6666666666666666,23,50.0,4.0
+test-s448,Will SAFIRA succeed with all her cunning plans?,indonesian,polar,1.7777777777777777,3.0,0,3.0,0.5,11,0.0,1.0
+test-s521,How easy is it all to stand in the Regina Pacis complex?,indonesian,polar,1.5555555555555556,3.0,0,3.0,0.6,11,0.0,1.0
+test-s530,Could it be that the name wuku Kuningan inspired or prompted the name for this area?,indonesian,polar,2.3846153846153846,4.0,0,2.5,0.5714285714285714,16,0.0,2.0
+test-s554,Are there any improvements?,indonesian,polar,1.25,2.0,0,2.0,0.8,6,0.0,1.0
+test-s557,"But Abram said, ``God my Lord, I have many riches and possessions but of what use is it to me?",indonesian,polar,2.1666666666666665,5.0,0,3.0,0.5263157894736842,23,0.0,2.0
+dev-s16,Did MAT PEI to the heart reject the love of SAFINA who is so close to his parents?,indonesian,polar,1.875,6.0,0,4.0,0.6470588235294118,18,0.0,1.0
+dev-s40,"And even though I may not be buried in a big way, should I die on the road?",indonesian,polar,2.642857142857143,3.0,1.0,4.5,0.3333333333333333,17,50.0,2.0
+dev-s46,What smell do I smell?,indonesian,polar,1.6666666666666667,3.0,1.0,2.0,0.42857142857142855,8,100.0,1.0
+dev-s75,What type/brand?,indonesian,polar,2.5,1.0,0,0,0.6666666666666666,5,0,0.0
+dev-s112,"Mayumi Thyme is a supporting character in Shuffle!, and one of the main characters in Really?",indonesian,polar,2.230769230769231,3.0,0,0,0.6428571428571429,17,0.0,1.0
+dev-s135,"The order is, how is the skipper?",indonesian,polar,2.0,3.0,0,0,0.6666666666666666,8,0,0.0
+dev-s141,- a bit extravagant don't you think?,indonesian,polar,1.3333333333333333,1.0,0,0,0.75,6,0,0.0
+dev-s151,Is the Balai Pustaka Force the same as the New Pujangga Force?,indonesian,polar,1.7777777777777777,3.0,0,0,0.8,11,0,0.0
+dev-s159,"When captured and brought into the Sheik's tent, and asked for his name, he answered with the words: ``My name?",indonesian,polar,2.75,5.0,1.0,3.25,0.47619047619047616,26,50.0,4.0
+dev-s161,Jesus made reference to sentences from the Book of Genesis in his sermons on marriage in Matthew 19:4-6: ``Have you not read that He who created men from the beginning made them male and female?,indonesian,polar,2.5454545454545454,7.0,1.0,3.0,0.5294117647058824,38,50.0,4.0
+dev-s186,"Oh, you forgot again, right? - Look, you forgot again didn't you?",indonesian,polar,2.6666666666666665,2.0,0,3.0,0.5,15,0.0,3.0
+dev-s225,Is it worthy of something to be called love but is actually a punisher or a tormentor?,indonesian,polar,1.9166666666666667,4.0,0,4.0,0.6153846153846154,14,0.0,2.0
+dev-s234,whats next?,indonesian,polar,1.8,2.0,1.0,2.0,0.3333333333333333,7,100.0,1.0
+dev-s237,How's this?,indonesian,polar,1.5,1.0,0,0,0.0,4,0,0.0
+dev-s245,Have you turned away from my beliefs and offerings?,indonesian,polar,1.7142857142857142,3.0,0,3.0,0.375,9,0.0,1.0
+dev-s252,"Like many sophists, Hippias was concerned with the question, ``What determines human behavior?",indonesian,polar,1.875,4.0,1.0,3.0,0.6470588235294118,21,50.0,2.0
+dev-s322,What do you call to us?,indonesian,polar,1.8333333333333333,3.0,1.0,3.0,0.14285714285714285,8,100.0,1.0
+dev-s324,``Have you noticed my servant Job?,indonesian,polar,1.5,2.0,0,3.0,0.5714285714285714,9,0.0,1.0
+dev-s325,"-- 180.254.8.5 September 13, 2012 14:35 (UTC) After we have seen and read the explanation of rights and their types, now are there absolute rights?",indonesian,polar,4.875,6.0,1.0,1.75,0.52,30,100.0,4.0
+dev-s387,Will he really be able to bring out his inner strength as Sam taught him all this time?,indonesian,polar,2.375,4.0,1.0,3.5,0.47058823529411764,19,50.0,2.0
+dev-s395,"Martha asks Edo, is it true that Kamila miscarried?",indonesian,polar,1.7142857142857142,3.0,0,3.0,0.75,10,0.0,1.0
+dev-s406,Can he beat him?,indonesian,polar,1.5,2.0,0,3.0,0.4,6,0.0,1.0
+dev-s408,"Is UMMI able to face the harshness of life in its old age, which comes and goes without stopping?",indonesian,polar,2.3333333333333335,5.0,3.0,2.25,0.5789473684210527,20,75.0,4.0
+dev-s461,After that Rianti played in Is This What Love Feels Like?,indonesian,polar,1.6666666666666667,3.0,0,4.0,0.4,11,0.0,1.0
+dev-s466,Or have you thrown us out altogether?,indonesian,polar,2.142857142857143,2.0,0,5.0,0.5,10,0.0,1.0
+dev-s497,"In the hustle and bustle of human progress and confusion, isn't saying like this a very painful pronunciation and even in a simple way, reminds and educates us of the value of life?",indonesian,polar,2.5,6.0,1.0,3.0,0.5806451612903226,34,50.0,4.0
+dev-s513,Will Alya wake up from her coma?,indonesian,polar,1.8333333333333333,2.0,0,3.0,0.5714285714285714,8,0.0,1.0
+dev-s523,Then Yusuf said to them: ``Is it not Allah who explains the meaning of dreams?,indonesian,polar,2.0,4.0,1.0,3.0,0.5,15,50.0,2.0
+dev-s546,"Yes, my photo copy, you want to see me?",indonesian,polar,2.0,3.0,0,3.0,0.3333333333333333,12,0.0,1.0
+train-s22,Is the glass half empty or half full?,indonesian,polar,1.75,4.0,0,0,0.5555555555555556,10,0,0.0
+train-s39,Will Farah still survive?,indonesian,polar,2.2,1.0,1.0,2.0,0.6666666666666666,7,50.0,2.0
+train-s83,Will this one-sided friendship turn into love?,indonesian,polar,2.625,2.0,1.0,2.0,0.5555555555555556,10,66.66666666666667,3.0
+train-s98,Will he become a ``superstar''?,indonesian,polar,2.0,2.0,0,3.0,0.5,9,0.0,1.0
+train-s104,Will he still remember his mother and hometown?,indonesian,polar,1.7777777777777777,4.0,0,4.0,0.5,11,0.0,1.0
+train-s114,To what extent does science seek to achieve social change?,indonesian,polar,1.1666666666666667,3.0,1.0,2.0,0.7142857142857143,8,50.0,2.0
+train-s133,``Are you also a Galilean?,indonesian,polar,1.4,2.0,0,0,0.5,8,0,0.0
+train-s158,``What did you go to the desert for?,indonesian,polar,1.4285714285714286,2.0,0,3.0,0.375,10,0.0,1.0
+train-s197,"Will RICHARD, MENEER JAIM and MARCO continue to fight HERU?",indonesian,polar,3.888888888888889,3.0,0,4.0,0.7,12,0.0,1.0
+train-s209,WHAT'S WRONG WITH SMU Kharisma?,indonesian,polar,1.5,2.0,0,2.0,0.6,6,0.0,1.0
+train-s233,"Now, is emulation legal and not against the law?",indonesian,polar,1.8888888888888888,3.0,0,3.0,0.5,12,0,1.0
+train-s245,"Will Jessy, Jovan and Titaz succeed in overcoming the problem of the supernatural being?",indonesian,polar,2.6,4.0,1.0,2.0,0.7272727272727273,13,50.0,2.0
+train-s276,Will this one-sided friendship turn into love?,indonesian,polar,2.5,3.0,1.0,2.0,0.5555555555555556,10,50.0,2.0
+train-s288,Do you want to capture the souls of people who belong to My people and let others live for your sake?,indonesian,polar,1.7777777777777777,6.0,1.0,3.0,0.6842105263157895,21,50.0,3.0
+train-s296,You dare challenge me to a bet?,indonesian,polar,1.5,1.0,0,4.0,0.6,6,0.0,1.0
+train-s316,"TVXQ's Japanese single, ``Why?",indonesian,polar,2.3333333333333335,2.0,0,0,1.0,7,0,0.0
+train-s341,Then will Maya realize that the girl who has always been the butt of her frustration is her own child?,indonesian,polar,2.4444444444444446,6.0,1.0,4.5,0.47368421052631576,20,66.66666666666667,3.0
+train-s348,Is this not the mercy of Allah SWT?,indonesian,polar,1.7142857142857142,2.0,0,0,0.5,9,0,0.0
+train-s357,Petrified by his father?,indonesian,polar,1.3333333333333333,2.0,0,1.0,0.5,5,0.0,1.0
+train-s377,"Will he still maintain his relationship with Jelita, or will he turn to hate her?",indonesian,polar,2.2142857142857144,3.0,0,4.0,0.4666666666666667,17,0.0,2.0
+train-s383,Is the location of Silungkang village there also flanked by high hills and is it also a gift from the Kingdom in Periangan Padang Pajang?,indonesian,polar,2.391304347826087,5.0,0,5.0,0.6666666666666666,25,0.0,1.0
+train-s391,Will Melody's love for Eagle have a happy ending?,indonesian,polar,3.125,3.0,0,3.0,0.5555555555555556,10,0.0,1.0
+train-s447,Guess which one between Tadase and Ikuto would you choose?,indonesian,polar,2.5555555555555554,3.0,1.0,3.0,0.6,11,100.0,1.0
+train-s457,Will Tamon return to Mika?,indonesian,polar,2.1666666666666665,2.0,0,3.0,0.42857142857142855,8,0.0,1.0
+train-s475,"People often ask, what is Amek's dream in the future?",indonesian,polar,1.5,3.0,0,3.0,0.8571428571428571,9,0.0,1.0
+train-s478,The Apostle Paul in Romans describes it this way: ``Or do you not know that all of us who were baptized into Christ were baptized into his death?,indonesian,polar,2.84,6.0,1.0,3.5,0.38461538461538464,31,66.66666666666667,4.0
+train-s559,"The brown rice from Hailing will fill our warehouses and once the yellow flags fly on the banks of the Yangtze River, how far will the restoration go?",indonesian,polar,2.761904761904762,4.0,1.0,3.0,0.6818181818181818,24,66.66666666666667,3.0
+train-s570,"Musa asked Samiri, as narrated in the Koran: ``Musa said; what prompted you to do this Samiri?",indonesian,polar,2.4,4.0,1.0,2.25,0.6875,21,66.66666666666667,4.0
+train-s586,"``So does He speak in secret to a woman, and not to us, and not openly?",indonesian,polar,3.1176470588235294,3.0,0,6.0,0.3333333333333333,23,0.0,1.0
+train-s608,"Isn't (the situation) the same as we are with you, can't be far from the water?",indonesian,polar,2.3333333333333335,3.0,0,0,0.3076923076923077,17,0,0.0
+train-s629,"Prospero faces a difficult dilemma, will he use his magical abilities to regain his position, or will he take revenge on his enemy?",indonesian,polar,2.36,5.0,2.0,2.8,0.5384615384615384,29,66.66666666666667,5.0
+train-s641,And what exactly is in the suitcase?,indonesian,polar,1.8333333333333333,2.0,0,0,0.5714285714285714,8,0,0.0
+train-s648,Is Azzam able to save the household of Husna and Ilyas?,indonesian,polar,1.6666666666666667,4.0,0,3.0,0.7,11,0.0,1.0
+train-s687,"``Does (God) intend to prevent evil, but cannot?",indonesian,polar,2.375,2.0,1.0,2.3333333333333335,0.6666666666666666,14,50.0,3.0
+train-s696,Can the astrologer return the genie back?,indonesian,polar,2.0,2.0,0,4.0,0.6,11,0.0,1.0
+train-s708,``What are you crying bro?,indonesian,polar,1.6666666666666667,2.0,0,2.0,1.0,6,0.0,1.0
+train-s724,Should we all turn around and all listen to him?,indonesian,polar,2.2,3.0,0,3.0,0.2727272727272727,12,0.0,2.0
+train-s774,And is life finally generous to those who keep trying to reach their dreams?,indonesian,polar,2.0,4.0,2.0,3.3333333333333335,0.6428571428571429,15,66.66666666666667,3.0
+train-s776,Is Nina willing to sell all her principles for the sake of popularity at school?,indonesian,polar,1.9166666666666667,3.0,0,5.0,0.6153846153846154,14,0.0,1.0
+train-s799,"With these various activities, does Anin also have ambitions for a political position?",indonesian,polar,2.0833333333333335,2.0,0,5.0,0.5384615384615384,14,0.0,1.0
+train-s829,What name would they give to the unfortunate thing that was not wanted?,indonesian,polar,2.0,5.0,1.0,2.5,0.4166666666666667,13,100.0,2.0
+train-s849,"MBC said, ``You, are you going to watch 'Home Alone' at home again?",indonesian,polar,2.9166666666666665,3.0,1.0,3.5,0.6153846153846154,19,50.0,2.0
+train-s861,Can Banua reach his dreams?,indonesian,polar,1.6,2.0,0,3.0,0.5,7,0.0,1.0
+train-s869,Setback or progress?,indonesian,polar,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+train-s872,"Don't he think of us as strangers, because he has sold us?",indonesian,polar,2.3076923076923075,2.0,1.0,4.0,0.2857142857142857,16,50.0,2.0
+train-s915,Do I want them to ask Me for guidance?,indonesian,polar,1.4444444444444444,4.0,1.0,2.5,0.5,11,50.0,2.0
+train-s927,What is NU's business?,indonesian,polar,1.0,2.0,0,0,0.6666666666666666,4,0,0.0
+train-s928,Did they succeed in carrying out the 'football reform'?,indonesian,polar,1.4285714285714286,4.0,1.0,2.0,0.75,11,50.0,2.0
+train-s1021,"If a man had a hundred sheep, and one of them went astray, would he not leave the ninety-nine in the mountains and go in search of the one that went astray?",indonesian,polar,2.7241379310344827,5.0,1.0,3.0,0.36666666666666664,33,66.66666666666667,4.0
+train-s1062,Will it be Syilvie who will be matched with Syamsul or will Zizi be his life partner?,indonesian,polar,2.764705882352941,5.0,1.0,4.5,0.5555555555555556,19,100.0,2.0
+train-s1066,So what is the relationship between anarchism and non-violence?,indonesian,polar,1.375,5.0,0,0,0.4444444444444444,10,0,0.0
+train-s1072,Will their hearts and dreams meet?,indonesian,polar,3.5,3.0,0,2.0,0.42857142857142855,8,0.0,1.0
+train-s1078,Want to hear Rihanna perform a song to the accompaniment of Latin music?,indonesian,polar,1.2222222222222223,6.0,1.0,1.5,0.8,11,50.0,2.0
+train-s1089,This story ends with the disappearance of Superman?,indonesian,polar,1.5714285714285714,2.0,0,3.0,0.5,9,0.0,1.0
+train-s1100,Will Niki and Gio be able to unite in the midst of so many conflicts between them?,indonesian,polar,2.6153846153846154,3.0,0,5.0,0.5,15,0.0,1.0
+train-s1101,Wouldn't it be better to set it directly from the master?,indonesian,polar,1.7142857142857142,2.0,0,4.0,0.625,9,0.0,1.0
+train-s1155,"He asked, “Can we build the best luxury car in the world?” Eiji's question led Toyota to start a super-secret project codenamed F1 (""Flagship"" + ""No. 1 vehicle"" (Car No. 1)).",indonesian,polar,2.911764705882353,10.0,1.3333333333333333,2.4,0.6571428571428571,53,80.0,5.0
+train-s1192,Or love keeps Aril alive?,indonesian,polar,1.5,2.0,1.0,3.0,0.8571428571428571,8,50.0,2.0
+train-s1210,Is there really a hidden secret behind King's defeat to Rudy Hartono in the 1976 All England final?,indonesian,polar,2.2222222222222223,5.0,0,1.5,0.6842105263157895,20,0.0,2.0
+train-s1217,"Then Jacob said to Laban, ``What have you done to me?",indonesian,polar,2.0833333333333335,4.0,1.0,3.5,0.3076923076923077,16,50.0,2.0
+train-s1247,"When Captain (Francis) Light arrives, does he find a Malay, or a Malay village?",indonesian,polar,2.6923076923076925,3.0,1.0,3.0,0.7142857142857143,19,50.0,2.0
+train-s1270,Wasn't he the one who denied that Jesus was the Christ?,indonesian,polar,2.0,3.0,1.0,2.0,0.3333333333333333,10,100.0,1.0
+train-s1305,"Then he again asked, is it possible to revive Islam again?",indonesian,polar,2.111111111111111,2.0,1.0,2.3333333333333335,0.6,12,66.66666666666667,3.0
+train-s1331,Will Neo really never fall in love with Aurelie?,indonesian,polar,3.3,2.0,1.0,0.0,0.7272727272727273,12,100.0,1.0
+train-s1396,Will he defeat the Darkness as Tarrant did?,indonesian,polar,2.0,2.0,1.0,3.0,0.5555555555555556,10,50.0,2.0
+train-s1397,Can we have it?,indonesian,polar,1.75,1.0,0,3.0,0.2,6,0.0,1.0
+train-s1415,"Shall I let you be like Adma, make you like Zeboim?",indonesian,polar,2.0,3.0,1.0,3.5,0.5,12,50.0,2.0
+train-s1472,"Yaksa: What is the thing that, if abandoned, makes a person loved, happy and rich?",indonesian,polar,1.8333333333333333,6.0,1.5,2.0,0.5384615384615384,16,100.0,3.0
+train-s1512,Then the student asked: ``Which area do you want to establish the Pesantren in?,indonesian,polar,2.6363636363636362,3.0,1.0,3.5,0.4166666666666667,15,50.0,2.0
+train-s1514,"Will her high heels turn to loafers, her glitter makeup to dust, or her leather pants to cloth pants?",indonesian,polar,2.473684210526316,5.0,1.0,3.0,0.7,23,50.0,4.0
+train-s1526,"What will happen next with the relationship of Saffa, Arjuna, Luna and Bagas?",indonesian,polar,2.25,5.0,1.0,3.0,0.5384615384615384,16,100.0,1.0
+train-s1533,"After Moon passed out for the second time, Townshend asked the audience, ``Anyone here who can play the drums?",indonesian,polar,2.1176470588235294,4.0,1.0,2.5,0.6111111111111112,22,75.0,4.0
+train-s1562,Can they all qualify and manage to win the match?,indonesian,polar,1.5,4.0,1.0,2.0,0.5555555555555556,10,50.0,3.0
+train-s1563,"It's good, is not it? - Isn't that good?",indonesian,polar,2.0,2.0,0,0,0.5,7,0,0.0
+train-s1591,But can you live without love from everyone?,indonesian,polar,2.3333333333333335,2.0,0,5.0,0.4,11,0.0,1.0
+train-s1615,"Hey, Jack doesn't always lose to Wilson right?",indonesian,polar,2.4285714285714284,2.0,0,6.0,0.5,10,0.0,1.0
+train-s1632,Do you want to avenge what I did?,indonesian,polar,1.8571428571428572,2.0,0,4.0,0.5,9,0.0,1.0
+train-s1686,"If the prophecy is true, is Jesse her true love?",indonesian,polar,2.2,2.0,0,0,0.5454545454545454,13,0.0,1.0
+train-s1687,"Pinnock asks: ``Was He deluded by His greatness, a paranoid, an unintentional con artist, a schizophrenic?",indonesian,polar,3.9545454545454546,4.0,1.0,2.0,0.5652173913043478,31,66.66666666666667,3.0
+train-s1732,And is Tiara's guess correct that the resin is the son of a rich person?,indonesian,polar,1.8,3.0,0,0,0.6363636363636364,12,0,0.0
+train-s1737,"Or do you think that those who inhabit the cave and (who have) the raqim, they are among Our astonishing signs of power?",indonesian,polar,3.736842105263158,5.0,1.0,2.4,0.5,24,80.0,5.0
+train-s1758,Then was Toyib able to learn silat at the Sacred Shield hermitage to protect his mother?,indonesian,polar,1.7692307692307692,4.0,2.0,3.0,0.7142857142857143,15,66.66666666666667,3.0
+train-s1772,``Do people who talk a lot not have to be answered?,indonesian,polar,3.0,3.0,1.0,2.5,0.5555555555555556,11,50.0,2.0
+train-s1790,``Then you really mean to lie to me?,indonesian,polar,2.0,2.0,1.0,3.0,0.5714285714285714,9,50.0,2.0
+train-s1797,"Wasn't Mar Ephraim the Ephraim Patriarch of Antioch who served 539-545, who certainly wasn't a Monophysite?",indonesian,polar,2.235294117647059,3.0,1.0,2.5,0.5,20,100.0,2.0
+train-s1806,Can Wati Cs save Rin Bombom?,indonesian,polar,1.8571428571428572,2.0,0,3.0,0.75,9,0.0,1.0
+train-s1810,"Schopenhauer also asserts that if there is no free will, should crimes be punished?",indonesian,polar,2.4545454545454546,3.0,1.0,3.0,0.6666666666666666,14,50.0,3.0
+train-s1842,How does this affect the love-Dante-Light triangle love conflict?,indonesian,polar,1.4285714285714286,5.0,0,0,0.625,9,0,0.0
+train-s1851,What do you want to blame again?,indonesian,polar,1.75,1.0,0,4.0,0.8,6,0.0,1.0
+train-s1865,"Dennett then asked, ``once our engine is in Panama, should we say that the state we used to call Q still exists?",indonesian,polar,3.5238095238095237,5.0,1.0,3.4,0.6363636363636364,26,75.0,5.0
+train-s1878,Is it wrong if he does?,indonesian,polar,1.8,2.0,1.0,3.0,0.3333333333333333,7,100.0,1.0
+train-s1894,"He asked again, ``Shall I write you a letter to the governor of Kuffah to serve you?",indonesian,polar,2.066666666666667,4.0,1.0,3.0,0.4375,19,66.66666666666667,3.0
+train-s1898,Was he not a Christian emperor whose complete loyalty was to God?,indonesian,polar,2.5833333333333335,5.0,0,0,0.46153846153846156,14,0,0.0
+train-s1916,"If I thought: There is hope for me, and even if I have a husband tonight, even if I still give birth to sons, how can you wait until they grow up?",indonesian,polar,3.814814814814815,4.0,2.0,4.5,0.5357142857142857,33,66.66666666666667,4.0
+train-s1949,"Then, after being stuck in the studio for that long, what exactly will Axl Rose offer, who incidentally is the only initial member of Guns N Roses?",indonesian,polar,2.409090909090909,6.0,2.0,4.5,0.5652173913043478,24,100.0,2.0
+train-s1950,Did Siera succeed in persuading Tristan to return to playing basketball?,indonesian,polar,1.6666666666666667,3.0,2.0,2.6666666666666665,0.8,11,66.66666666666667,3.0
+train-s1973,"What do Rena, Mion, Rika, and Satoko have to do with the murders 5 years ago?",indonesian,polar,2.8181818181818183,4.0,0,0,0.6666666666666666,16,0,0.0
+train-s1982,Can ALIF and ANISSA's love survive in the face of all these obstacles?,indonesian,polar,2.0833333333333335,4.0,1.0,2.5,0.5384615384615384,14,50.0,2.0
+train-s1998,They said to the Prophet Yunus: ``What are these words that you speak and what lies are you telling us about your new religion?,indonesian,polar,2.28,6.0,1.0,3.3333333333333335,0.38461538461538464,29,66.66666666666667,3.0
+train-s2078,"I like the look of Kenrick's version of the main page, unfortunately the search box that was previously there was removed, right?",indonesian,polar,3.1333333333333333,5.0,1.0,2.0,0.75,18,66.66666666666667,3.0
+train-s2085,Should Heinz break into the shop to steal the drug for his wife?,indonesian,polar,1.7272727272727273,3.0,1.0,3.5,0.5,13,50.0,2.0
+train-s2094,"We can choose based on advertisements on TV, radio, internet or other media, but is it certain that the object or service is true as seen in the advertisement?",indonesian,polar,2.8076923076923075,4.0,1.0,3.5,0.5555555555555556,31,50.0,2.0
+train-s2109,"The meeting starts at eight, right? - Is it true that the meeting starts at eight?",indonesian,polar,2.5384615384615383,3.0,0,4.0,0.5714285714285714,17,0.0,2.0
+train-s2112,Will their parents be silent when they realize that their two children are starting to develop the seeds of romance?,indonesian,polar,2.111111111111111,5.0,3.0,2.5,0.631578947368421,20,75.0,4.0
+train-s2113,"Fierce struggle continues, will the Red CobeX Gang come out victorious?",indonesian,polar,2.7,4.0,1.0,2.5,0.7272727272727273,13,50.0,2.0
+train-s2172,Do you not know that the purpose of God's mercy is to lead you to repentance?,indonesian,polar,2.4166666666666665,4.0,2.0,3.0,0.46153846153846156,15,66.66666666666667,3.0
+train-s2175,Hole with the murders in the village?,indonesian,polar,1.5,3.0,0,1.0,0.6,6,0.0,1.0
+train-s2187,So what will happen?,indonesian,polar,1.8,2.0,1.0,1.0,0.16666666666666666,7,100.0,1.0
+train-s2220,Will the two of them really love each other?,indonesian,polar,2.857142857142857,2.0,0,4.0,0.5,9,0.0,1.0
+train-s2252,Also the only Egyptians who died did not include the Israelites who were still in Egyptian territory at that time?,indonesian,polar,2.1666666666666665,4.0,1.0,3.3333333333333335,0.6842105263157895,21,66.66666666666667,3.0
+train-s2273,Will they succeed in realizing their dreams or will they have to give up everything for the sake of those they love - including the presence of Pepi (Asmirandah) and Monique (Intan Nuraini) - who have had quite a lot of influence on Indra and Bayu's lives?,indonesian,polar,2.6578947368421053,9.0,1.0,2.3333333333333335,0.5128205128205128,46,80.0,6.0
+train-s2274,Can they solve each other's problems?,indonesian,polar,1.75,2.0,0,3.0,0.3333333333333333,10,0.0,1.0
+train-s2283,"Does that mean that Sheol is referring to a certain grave, where we might bury our loved ones?",indonesian,polar,2.111111111111111,5.0,1.5,3.0,0.5263157894736842,21,75.0,4.0
+train-s2323,"You may ask, are all systems already emulated?",indonesian,polar,2.5,3.0,1.0,2.0,0.3333333333333333,11,50.0,2.0
+train-s2332,So what does this have to do with bread making?,indonesian,polar,1.5,2.0,0,0,0.5714285714285714,8,0,0.0
+train-s2362,``Are you with friends?,indonesian,polar,1.0,1.0,0,2.0,0.6666666666666666,5,0.0,1.0
+train-s2396,"He said to Laban: ``What is my fault, what is my sin, that you hunt me so fiercely?",indonesian,polar,2.2941176470588234,5.0,1.0,3.0,0.3333333333333333,23,50.0,2.0
+train-s2403,Sweet and kind older sister?,indonesian,polar,1.6666666666666667,4.0,0,0,0.7142857142857143,8,0,0.0
+train-s2405,Will Arjuna and Saffa find out the secret that they are childhood friends they have been looking for all along?,indonesian,polar,2.176470588235294,3.0,2.0,3.5,0.5,19,66.66666666666667,3.0
+train-s2435,Or will you get closer to Juno?,indonesian,polar,2.1666666666666665,2.0,0,0,0.5714285714285714,8,0,0.0
+train-s2445,"Don't he think of us as strangers, because he has sold us?",indonesian,polar,2.3076923076923075,2.0,1.0,4.0,0.2857142857142857,16,50.0,2.0
+train-s2448,"Weren't the armies of the Ethiopians and Libyans great in number, and the chariots and horsemen very numerous?",indonesian,polar,2.3125,5.0,0,0,0.6470588235294118,19,0,0.0
+train-s2512,"Shall I deliver them from the power of the underworld, will I redeem them from death?",indonesian,polar,2.2941176470588234,4.0,0,4.5,0.3888888888888889,20,0.0,2.0
+train-s2521,Edo asks if Indy has made the decision to marry him?,indonesian,polar,1.9,4.0,2.0,2.6666666666666665,0.6363636363636364,12,66.66666666666667,3.0
+train-s2538,Will Kyai Hasan be silent about Fahmi's decision?,indonesian,polar,2.0,2.0,0,4.0,0.6666666666666666,10,0.0,1.0
+train-s2564,Lais art is taken from the name of a person who is very skilled in climbing coconut trees whose name is?,indonesian,polar,2.0,6.0,1.0,1.6666666666666667,0.6666666666666666,16,66.66666666666667,3.0
+train-s2566,"Go cook right away, what's the point of cooking ransom rice?",indonesian,polar,1.75,3.0,1.0,2.0,0.7777777777777778,11,50.0,3.0
+train-s2632,Example: Sakcingkir ae,indonesian,polar,2.272727272727273,4.0,1.0,2.0,0.8333333333333334,15,100.0,1.0
+train-s2654,What is the servant's name?,indonesian,polar,1.25,3.0,0,0,0.6,6,0,0.0
+train-s2689,What is Indonesia's economic strategy?,indonesian,polar,2.25,2.0,0,0,0.6,6,0,0.0
+train-s2728,Did Jesus forget what he said?,indonesian,polar,1.5,2.0,0,3.0,0.5714285714285714,8,0.0,1.0
+train-s2732,Is gynecomastia dangerous?,indonesian,polar,1.6666666666666667,2.0,0,2.0,0.75,5,0.0,1.0
+train-s2737,What is that white thing?,indonesian,polar,1.25,3.0,0,0,0.6,6,0,0.0
+train-s2772,"Besides that, didn't the king himself encourage us to give praise (madah) to him?",indonesian,polar,1.8125,5.0,2.0,2.5,0.35294117647058826,20,100.0,2.0
+train-s2801,"Will her high heels turn into loafers, her glitter makeup to dust, or her leather pants to cloth pants?",indonesian,polar,3.55,5.0,1.0,2.4,0.6666666666666666,27,66.66666666666667,5.0
+train-s2805,"does that mean it doesn't operate on saturdays, sundays/holidays?",indonesian,polar,2.0,4.0,0,2.0,0.7,13,0,1.0
+train-s2819,Is there a connection between Farah and a mysterious figure who carried out terror to kill the person's life?,indonesian,polar,1.7142857142857142,5.0,2.0,2.6666666666666665,0.6666666666666666,16,66.66666666666667,3.0
+train-s2823,The second stanza also asks... and do you believe in God up there?,indonesian,polar,2.076923076923077,4.0,0,3.5,0.6428571428571429,16,0.0,2.0
+train-s2826,"Mr. Grasshopper replied, what about calling me?",indonesian,polar,2.0,3.0,1.0,2.0,0.7142857142857143,9,50.0,2.0
+train-s2846,``Like my shoes?,indonesian,polar,1.0,2.0,0,1.0,0.6666666666666666,5,0.0,1.0
+train-s2902,Or what are you going for?,indonesian,polar,2.2,2.0,0,3.0,0.16666666666666666,7,0.0,1.0
+train-s2923,Did they manage to cover up their lies?,indonesian,polar,1.3333333333333333,3.0,1.0,2.0,0.5714285714285714,8,50.0,2.0
+train-s2934,Can Bunga escape from the clutches of Harun and a woman disguised as Aunt Reno?,indonesian,polar,1.875,5.0,1.0,3.5,0.5294117647058824,18,50.0,2.0
+train-s2970,Will Heru still be kind to them?,indonesian,polar,1.8571428571428572,2.0,1.0,2.5,0.625,9,50.0,2.0
+train-s2980,Is there an organization that oversees pembekam in Indonesia?,indonesian,polar,1.4285714285714286,5.0,1.0,2.0,0.625,9,50.0,2.0
+train-s3036,Should I deceive Heaven?,indonesian,polar,1.75,1.0,0,3.0,0.4,6,0.0,1.0
+train-s3087,"Then Saul's servants spoke these words to David, but David answered: 'Is it a light thing in your sight to be the son-in-law of the king?",indonesian,polar,2.55,5.0,2.0,2.75,0.6190476190476191,25,66.66666666666667,4.0
+train-s3136,So what shall we say about all this?,indonesian,polar,2.272727272727273,2.0,0,5.0,0.16666666666666666,13,0.0,1.0
+train-s3155,What is the channel for the stress of thoughts and feelings?,indonesian,polar,1.6,4.0,1.0,2.0,0.6363636363636364,12,100.0,1.0
+train-s3170,Which of the four is the oldest?,indonesian,polar,2.0,2.0,0,0,0.25,9,0,0.0
+train-s3228,What is new media?,indonesian,polar,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+train-s3275,What conclusions can be drawn from this 6 year study?,indonesian,polar,1.7,5.0,1.0,2.0,0.36363636363636365,12,100.0,1.0
+train-s3283,``And that you are allowed to approach together with all your brethren of the Levites?,indonesian,polar,1.7272727272727273,4.0,1.0,3.0,0.5,14,50.0,2.0
+train-s3290,Does Andhika also love Diana?,indonesian,polar,1.8,2.0,0,4.0,0.8333333333333334,7,0.0,1.0
+train-s3326,"Then, he also manages other quiz broadcasts such as Herkent u deze melodie?",indonesian,polar,1.8181818181818181,4.0,0,0,0.75,14,0,0.0
+train-s3382,``Have you noticed my servant Job?,indonesian,polar,1.5,2.0,0,3.0,0.5714285714285714,9,0.0,1.0
+train-s3392,Will Ali succeed in fighting for his love for Jamilah?,indonesian,polar,1.7777777777777777,4.0,1.0,2.5,0.6,11,50.0,2.0
+train-s3424,Want to enjoy photos on a bigger screen?,indonesian,polar,1.5714285714285714,4.0,0,1.0,0.625,9,0.0,1.0
+train-s3431,"Then the big question is, could Jesus be alone with an adulteress?",indonesian,polar,2.25,4.0,1.0,3.5,0.5384615384615384,15,50.0,2.0
+train-s3446,Is it because of the affairs of the DPR or DPA?,indonesian,polar,1.5,3.0,0,0,0.5714285714285714,8,0,0.0
+train-s3455,Can his disciples or his followers do the same as long as they are not aroused?,indonesian,polar,2.6153846153846154,4.0,0,2.0,0.5,15,0.0,2.0
+train-s3489,Is the PR interval constant?,indonesian,polar,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+train-s3494,And the two children don't think it's all just a charade?,indonesian,polar,2.3333333333333335,2.0,0,4.0,0.4,11,0.0,1.0
+train-s3523,Can Sekar and Agung unite?,indonesian,polar,2.5,2.0,0,3.0,0.5714285714285714,8,0.0,1.0
+train-s3536,Shall I tell you the story of Abu Dharr's conversion to Islam?,indonesian,polar,1.9090909090909092,3.0,1.0,4.0,0.5,13,50.0,2.0
+train-s3553,So what are the possible solutions?,indonesian,polar,1.6,3.0,1.0,1.0,0.5,7,100.0,1.0
+train-s3566,"""Cast"" is not she pregnant with your child?",indonesian,polar,1.8333333333333333,2.0,0,0,0.42857142857142855,10,0,0.0
+train-s3572,Did Rado Habeahan and Intan's relationship go smoothly?,indonesian,polar,2.4444444444444446,4.0,0,4.0,0.7,11,0.0,1.0
+train-s3585,Have you experienced a feeling of dry mouth every day for more than 3 months?,indonesian,polar,2.4285714285714284,4.0,0,4.0,0.5333333333333333,16,0.0,1.0
+train-s3586,"The Israelites said, ``Have you seen the man who came forward?",indonesian,polar,2.25,5.0,1.5,2.25,0.46153846153846156,16,75.0,4.0
+train-s3589,Am I not a Philistine and you are Saul's servant?,indonesian,polar,2.111111111111111,2.0,0,0,0.3,11,0,1.0
+train-s3590,"Then at one point, these two soulmates come to their senses; Will their love last forever?",indonesian,polar,2.75,3.0,0,4.0,0.5294117647058824,20,0.0,1.0
+train-s3641,"Or more precisely, to obtain a certain range of accuracy from predictions and observations, one can ask: is there a ``range'' of baryon-to-photon ratio values ​​that can apply to all observations?",indonesian,polar,3.032258064516129,7.0,1.0,2.5,0.5625,37,66.66666666666667,4.0
+train-s3653,Is there a P wave?,indonesian,polar,1.3333333333333333,2.0,0,2.0,0.75,5,0.0,1.0
+train-s3661,What is the Ambassador's reaction to these accusations?,indonesian,polar,1.4,3.0,0,0,0.5,7,0,0.0
+train-s3699,Macro lens for full frame or not?,indonesian,polar,1.6,3.0,0,0,0.5,7,0,0.0
+train-s3715,Did you hear in the countryside?,indonesian,polar,1.6,2.0,0,3.0,0.5,7,0.0,1.0
+train-s3717,"Finally, from the question posed by Pierre Beguin, Hergé is considered racist because he views Japan as a criminal?",indonesian,polar,2.1176470588235294,4.0,1.0,3.3333333333333335,0.6111111111111112,21,66.66666666666667,3.0
+train-s3764,Will Siera still be able to hide her identity?,indonesian,polar,2.0,2.0,0,4.0,0.625,9,0.0,1.0
+train-s3797,Fadil asked if Kamila didn't come too?,indonesian,polar,2.0,2.0,1.0,3.0,0.8571428571428571,8,50.0,2.0
+train-s3799,Is there a QRS complex?,indonesian,polar,1.3333333333333333,2.0,0,2.0,0.75,5,0.0,1.0
+train-s3804,``... What can I tell you about my crucifixion?,indonesian,polar,1.9,4.0,1.0,3.0,0.2727272727272727,14,100.0,1.0
+train-s3818,But the BIGGEST question is: Which one is right for us?,indonesian,polar,2.6666666666666665,2.0,0,0,0.5,12,0.0,1.0
+train-s3847,"Can Superboy find love, cure his sister's illness and save Jakarta from evil at the same time?",indonesian,polar,1.9285714285714286,4.0,0,3.3333333333333335,0.6666666666666666,17,0.0,3.0
+train-s3858,"But is democracy really profitable when leaders respond directly, perhaps even impulsively, to public sentiment?",indonesian,polar,2.823529411764706,3.0,1.0,4.5,0.6111111111111112,22,50.0,2.0
+train-s3888,Q: What is stigmatizing?,indonesian,polar,1.6666666666666667,2.0,0,0,0.5,6,0,0.0
+train-s3914,Will he find the happiness he's been longing for?,indonesian,polar,2.4444444444444446,3.0,1.0,3.5,0.3,11,50.0,2.0
+train-s3920,Is Ganymede even more grateful and affectionate than he is for (the supreme god) who loves him?,indonesian,polar,2.4,4.0,1.0,4.0,0.4375,19,100.0,2.0
+train-s3931,"In the end, the santri were able to enter the ranks of the government bureaucracy which was originally dominated by?",indonesian,polar,1.8461538461538463,3.0,1.0,3.0,0.6428571428571429,15,50.0,2.0
+train-s3953,Do you experience a recurring feeling of grit or pebbles in your eyes?,indonesian,polar,1.8333333333333333,4.0,1.0,3.5,0.6153846153846154,14,50.0,2.0
+train-s3977,"When he just died, don't you think I grieve like everyone else?",indonesian,polar,2.0714285714285716,4.0,1.0,3.3333333333333335,0.4666666666666667,17,66.66666666666667,3.0
+train-s3995,What's the beast head down below?,indonesian,polar,1.25,4.0,0,0,0.6,6,0,0.0
+train-s4038,"For example, am I a good child and liked by friends or not?",indonesian,polar,2.6153846153846154,3.0,0,4.0,0.5,16,0.0,2.0
+train-s4071,What will happen to their family feud?,indonesian,polar,1.875,4.0,1.0,3.0,0.4444444444444444,10,100.0,1.0
+train-s4090,"... Then a Japanese asked me several times in English, ``Where is the queen?",indonesian,polar,2.2857142857142856,4.0,0,5.0,0.6666666666666666,19,0.0,1.0
+train-s4133,"No robber is willing to share his loot for free, right?",indonesian,polar,2.8181818181818183,5.0,1.0,4.0,0.5833333333333334,14,50.0,2.0
+train-s4142,"Is it their singing, dance moves, well-toned bodies, tense clothes or girl power?",indonesian,polar,2.4615384615384617,5.0,1.0,1.0,0.7142857142857143,18,100.0,1.0
+train-s4146,Or Jamal (Bio One) Dinda's best friend?,indonesian,polar,2.0,3.0,0,0,0.8571428571428571,10,0,0.0
+train-s4154,Is that area the center of the Sunda Kingdom or just an important place that belongs to the Sunda Kingdom?,indonesian,polar,1.8823529411764706,5.0,1.0,3.0,0.7222222222222222,19,50.0,2.0
+train-s4158,"You have committed adultery with many lovers, and want to return to Me?",indonesian,polar,2.1,3.0,0,2.5,0.36363636363636365,13,0.0,2.0
+train-s4163,Do you women want this water full of filth to be poured on you?,indonesian,polar,2.0714285714285716,4.0,1.0,2.6666666666666665,0.6,16,66.66666666666667,3.0
+train-s4183,The importance of giving up in Islam?,indonesian,polar,1.3333333333333333,2.0,0,2.0,0.75,5,0.0,1.0
+train-s4191,"In addition, on what basis can Christianity be claimed as the most correct of all existing religions?",indonesian,polar,2.736842105263158,5.0,1.0,3.0,0.45,22,50.0,2.0
+train-s4236,"O LORD, what is man, that you should take care of him, and the son of man, that you should take him into account?",indonesian,polar,2.8125,3.0,1.0,3.5,0.35294117647058826,22,100.0,2.0
+train-s4267,What does that have to do with Raffi?,indonesian,polar,1.5,3.0,0,0,0.4,6,0,0.0
+train-s4355,Sasa: ​​What do you want to talk about?,indonesian,polar,2.0,2.0,0,3.0,0.3333333333333333,8,0.0,1.0
+train-s4366,What's the alternative besides that?,indonesian,polar,2.5,1.0,0,0,0.4,6,0,0.0
+train-s4367,Did not Ukasyah also see that the Messenger of Allah. was already sixty-three years old?,indonesian,polar,2.3333333333333335,4.0,1.0,3.5,0.5,18,50.0,2.0
+train-s4377,Is this Maria ``wife'' or ``daughter'' Clopas?,indonesian,polar,2.142857142857143,3.0,0,0,0.5,13,0,0.0
+train-s4429,"What else have you to do with me, Tire and Sidon and all the Philistines?",indonesian,polar,2.2,3.0,0,0,0.5,18,0,0.0
+train-s4453,And what else should I mention?,indonesian,polar,3.4285714285714284,2.0,0,5.0,0.375,9,0.0,1.0
+train-s4461,What really happened to Vino?,indonesian,polar,1.8333333333333333,3.0,1.0,3.0,0.42857142857142855,8,100.0,1.0
+train-s4475,You always ask what is Pi?,indonesian,polar,1.4,3.0,0,3.0,0.5,7,0.0,1.0

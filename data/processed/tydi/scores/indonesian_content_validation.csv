@@ -1,0 +1,1274 @@
+sentence_id,text,language,type,avg_links_len,avg_max_depth,avg_subordinate_chain_len,avg_verb_edges,lexical_density,n_tokens,subordinate_proposition_dist,verbal_head_per_sent
+1,Siapakah yang menemuka benua Amerika ?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+2,Kapan majalah Saikyou Jump berdiri ?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+3,Siapa istri Dr. Hendrik Kraemer?,indonesian,content,1.25,4.0,0,0,0.8,7,0,0.0
+4,kapankah Jalur Kereta Api Asker di bangun?,indonesian,content,1.7142857142857142,3.0,0,0,0.75,9,0,0.0
+5,Berapa berat kapal Mochizuki?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+6,Kapan Lu Xun meninggal ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+7,siapakah wakil presiden iran 2014?,indonesian,content,1.2,4.0,0,0,0.5,7,0,0.0
+8,Dimanakah letak Donggala ?,indonesian,content,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+9,Kapan Petrus Lombardus menulis Four Books of Sentences?,indonesian,content,1.4285714285714286,4.0,0,3.0,1.0,9,0.0,1.0
+10,menggunakah bahan apakah Kain gringsing?,indonesian,content,2.0,3.0,0,3.0,0.7142857142857143,8,0.0,1.0
+11,Dimanakan biasanya upacara nyalin diadakan?,indonesian,content,2.5,3.0,1.0,1.5,1.0,6,50.0,2.0
+12,Siapa bapak Teknik industri?,indonesian,content,1.0,3.0,0,0,0.75,5,0,0.0
+13,Kapan Penghulu Rasyid meninggal ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+14,kapankah Netflix dirilis pertama kali?,indonesian,content,1.6,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+15,Siapakah pengembang Left 4 Dead 2 ?,indonesian,content,1.3333333333333333,4.0,0,0,0.42857142857142855,8,0,0.0
+16,siapakah pemimpin Dinasti Ikhsyidiyah?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+17,Kapankah fillm 300 pertama kali tayang ?,indonesian,content,2.3333333333333335,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+18,seberapa luas kah samudera pasifik?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+19,siapakah raja/sultan terlama di kesultanan Cirebon?,indonesian,content,1.7142857142857142,3.0,0,0,0.625,9,0,0.0
+20,tahun berapakah Gebi Ramadhan dilahirkan?,indonesian,content,2.6,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+21,Berapa jumlah Klasifikasi Estuari berdasarkan sirkulasi air?,indonesian,content,1.3333333333333333,3.0,0,2.0,1.0,8,0.0,1.0
+22,pernahkah Song Si-yeol menikah?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+23,Kapan Bank BCA mengeluarkan kartu debit?,indonesian,content,1.6,2.0,0,3.0,1.0,7,0.0,1.0
+24,Dimana kantor pusat General Motors?,indonesian,content,1.0,4.0,0,0,1.0,6,0,0.0
+25,berapakah jumlah lagu yang dirilis oleh Silampukau?,indonesian,content,1.5714285714285714,3.0,1.0,2.0,0.625,9,100.0,1.0
+26,Berapa luas kota Blitar?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+27,Siapa yang menciptakan serial manga Crows?,indonesian,content,1.2,4.0,1.0,2.0,0.6666666666666666,7,100.0,1.0
+28,berapakah luas Kabupaten Kepulauan Mentawai?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+29,berapakah jumlah album john coltrane?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+30,siapakah karakter utama serial anime dan manga Eyeshield 21?,indonesian,content,1.4444444444444444,5.0,0,0,0.6,11,0,0.0
+31,Bagaimana untuk mendapatkan visa kerja bagi Tenaga Kerja Indonesia?,indonesian,content,1.5,3.0,0,4.0,0.7777777777777778,10,0.0,1.0
+32,Kapan Konami Computer Entertainment didirikan?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+33,Siapakah yang merumuskan naskah proklamasi ?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+34,Bagaimanakah sistem pemerintahan di Jepang ?,indonesian,content,1.6,2.0,0,0,0.6666666666666666,7,0,0.0
+35,Kenapa Negeri Naga Guntur dikenal sebagai Negeri Naga Guntur?,indonesian,content,1.75,3.0,0,3.0,0.8888888888888888,10,0.0,1.0
+36,Bagaimana bentuk daun tumbuhan serai?,indonesian,content,1.0,3.0,0,0,1.0,6,0,0.0
+37,berapakah luas Kecamatan Ngargoyoso?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+38,Berapa jumlah senar pada gitar?,indonesian,content,1.5,2.0,0,0,0.8,6,0,0.0
+39,berapakah jumlah provinsi di indonesia pada tahun 2013?,indonesian,content,1.875,2.0,0,0,0.5555555555555556,10,0,0.0
+40,kapankah Gerakan Pemuda Ansor didirikan?,indonesian,content,2.2,3.0,0,2.0,0.8333333333333334,7,0.0,1.0
+41,Dimana Yang Yuhuan dibesarkan?,indonesian,content,2.0,2.0,1.0,2.0,0.75,5,100.0,1.0
+42,dimanakah letak Cekungan Tarim?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+43,terbuat dari apakah Genta ?,indonesian,content,1.5,2.0,0,1.0,0.4,6,0.0,1.0
+44,Siapakah sultan Banjar ke V?,indonesian,content,1.6,3.0,0,0,0.5,7,0,0.0
+45,Siapakah R.L. Stine?,indonesian,content,1.6666666666666667,2.0,0,0,0.5,6,0,0.0
+46,Berapa lama durasi film Bunian ?,indonesian,content,1.25,2.0,0,0,1.0,6,0,0.0
+47,Kapan Wayang kulit Bali biasa ditampilkan?,indonesian,content,2.4,3.0,0,3.0,1.0,7,0.0,1.0
+48,Siapakah yang menggagas Determinisme biologis?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+49,Dimana Konsili Kartago diadakan?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+50,berapakah luas Bendung Katulampa?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+51,Kapan perahu pertama dibuat ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+52,dari manakah tari angin mamiri berasal?,indonesian,content,2.0,3.0,0,2.0,0.5714285714285714,8,0.0,1.0
+53,Kapan Yeghishe Vardapet lahir?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+54,Siapa ayah Prof.Dr. H. Musa Asy'ari?,indonesian,content,1.8333333333333333,5.0,0,0,0.8571428571428571,11,0,0.0
+55,Kapan Yekaterina I lahir ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+56,kapankah Marcell Siahaan dilahirkan?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+57,Kapan Banjir Besar Gun-Yu pertama kali terjadi ?,indonesian,content,2.5,3.0,0,3.0,1.0,8,0.0,1.0
+58,kapankah presiden soeharto meninggal dunia?,indonesian,content,1.8,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+59,Kapan Johann Ludwig Tieck lahir ?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+60,Dimana letak Museum Anak Kolong Tangga?,indonesian,content,1.0,5.0,0,0,0.8333333333333334,7,0,0.0
+61,"kapankah Daniel ""Dani"" Pedrosa menjuarai Moto GP pertama kali?",indonesian,content,2.888888888888889,2.0,0,4.0,0.9,13,0.0,1.0
+62,siapakah pendiri klub Leicester City?,indonesian,content,1.2,4.0,0,0,0.6666666666666666,7,0,0.0
+63,Kapan Georges Prosper Remi mulai menulis komik ?,indonesian,content,1.8333333333333333,3.0,1.0,2.0,1.0,8,50.0,2.0
+64,berapakah luas Laut Azov?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+65,Siapa nama pemimpin militer irak 2015?,indonesian,content,1.2,4.0,0,0,0.6666666666666666,7,0,0.0
+66,kapankah PDIA didirikan?,indonesian,content,1.6666666666666667,2.0,0,2.0,0.75,5,0.0,1.0
+67,Dimanakah asal kota Dagadu ?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+68,Siapakah raja pertama kerajaan Yordania ?,indonesian,content,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+69,tahun berapakah Universitas Islam Negeri Sumatera Utara didirikan?,indonesian,content,3.25,4.0,0,3.0,0.8888888888888888,10,0.0,1.0
+70,kapankah perum PNRI didirikan?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+71,Darimanakah Santo George berasal?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+72,kapankah antena pertama diciptakan?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+73,berapakah jumlah suku yang berasal dari Bengkulu?,indonesian,content,1.5714285714285714,3.0,1.0,2.0,0.625,9,100.0,1.0
+74,berapakah lebar Candi Kidal?,indonesian,content,1.5,3.0,0,0,0.8,6,0,0.0
+75,Berapa jumlah stasiun yang dilewati Kereta api Patas Bandung Raya?,indonesian,content,1.3333333333333333,5.0,1.0,2.0,0.9,11,100.0,1.0
+76,Siapakah permaisuri Kerajaan Sisilia yang pertama?,indonesian,content,1.6666666666666667,3.0,0,0,0.5714285714285714,8,0,0.0
+77,berapakah jumlah kalimat allah di dalam Al-quran?,indonesian,content,1.8571428571428572,2.0,0,0,0.625,9,0,0.0
+78,Di negara manakah Moehammad Joesoef Ronodipoero menjadi duta besar?,indonesian,content,1.7777777777777777,3.0,0,3.0,0.8,11,0.0,1.0
+79,kapankah Pembebasan Manila terjadi?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+80,Siapakah yang menemukan istilah ZigBee ?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+81,kapan Murasaki Shikibu meninggal dunia?,indonesian,content,1.75,2.0,0,3.0,1.0,6,0.0,1.0
+82,berapakah luas Taman Nasional Lore Lindu?,indonesian,content,1.1666666666666667,4.0,0,0,0.8571428571428571,8,0,0.0
+83,Kapan universitas Massachusetts berdiri ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+84,kapankah La Galigo diciptakan?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+85,Bagaimana Porifera berkembangbiak?,indonesian,content,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+86,Dari mana asal kata Bodas ?,indonesian,content,1.25,2.0,0,0,0.6,6,0,0.0
+87,Siapakah sutradara Qayamat Ki Raat?,indonesian,content,1.2,4.0,0,0,0.6666666666666666,7,0,0.0
+88,siapakah produser The Mountain Eagle?,indonesian,content,1.2,4.0,0,0,0.6666666666666666,7,0,0.0
+89,Siapa orangtua Inspektur Jenderal Polisi Achmad Bastari ?,indonesian,content,1.0,6.0,0,0,0.8571428571428571,8,0,0.0
+90,Dimana letak geografis Atlanta?,indonesian,content,1.0,3.0,0,0,0.75,5,0,0.0
+91,berapakah jumlah suku asli amazon?,indonesian,content,1.4,2.0,0,0,0.8333333333333334,7,0,0.0
+92,Kapan 10 West Studios berdiri ?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+93,berapakah jarak dari Poso ke Palu?,indonesian,content,1.5,3.0,0,0,0.5714285714285714,8,0,0.0
+94,kapankah Thailand resmi menjadi sebuah negara?,indonesian,content,1.8333333333333333,2.0,0,4.0,0.7142857142857143,8,0.0,1.0
+95,Siapa nama orang tua Francis Fukuyama?,indonesian,content,1.2,4.0,0,0,0.8333333333333334,7,0,0.0
+96,kapankah Sophokles lahir?,indonesian,content,1.6666666666666667,2.0,0,2.0,0.75,5,0.0,1.0
+97,berapakah kandungan protein dalam 1ltr susu sapi?,indonesian,content,1.4285714285714286,3.0,0,0,0.75,9,0,0.0
+98,bagaimanakah bentuk lembing Pasola ?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+99,Berapa jumlah marga di indonesia?,indonesian,content,1.5,2.0,0,0,0.8,6,0,0.0
+100,Kapan The Best Damn Thing dirilis?,indonesian,content,2.4,4.0,0,2.0,1.0,7,0.0,1.0
+101,Sejak kapan Yakuza mulai muncul di Jepang ?,indonesian,content,1.3333333333333333,3.0,1.0,2.0,0.7142857142857143,8,50.0,2.0
+102,Apa yang dimaksud dengan teknologi mekanik?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+103,Siapa arsitek Bandar Udara Internasional José Martí?,indonesian,content,1.0,6.0,0,0,0.8571428571428571,8,0,0.0
+104,kapankah pasar saham Indonesia pertama kali di bentuk?,indonesian,content,2.375,2.0,0,4.0,0.8888888888888888,10,0.0,1.0
+105,siapakah pendiri Proton?,indonesian,content,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+106,siapakah Grandmaster termuda di indonesia?,indonesian,content,1.6,3.0,0,0,0.5,7,0,0.0
+107,dimanakah Syekh Haji Abdul Muhyi meninggal?,indonesian,content,2.3333333333333335,4.0,0,2.0,0.8571428571428571,8,0.0,1.0
+108,siapakah pengisi suara SpongeBob?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+109,berapakah luas Pulau Senua?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+110,berapakah jumlah album Cross Gene?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+111,Kapan Walt Disney Animation Studios berdiri ?,indonesian,content,2.4,4.0,0,2.0,1.0,7,0.0,1.0
+112,Siapa ketua pertama Lingkaran Survei Indonesia?,indonesian,content,1.2,4.0,0,0,0.8333333333333334,7,0,0.0
+113,Kapan István III lahir ?,indonesian,content,2.0,2.0,0,2.0,0.75,5,0.0,1.0
+114,Berapakah UMR Jakarta tahun 2018 ?,indonesian,content,1.4,2.0,0,0,0.6666666666666666,7,0,0.0
+115,Siapa sutradara film Sleeping Beauty?,indonesian,content,1.0,4.0,0,0,0.8,6,0,0.0
+116,Kapan Johannes Rach pertama datang ke Indonesia?,indonesian,content,2.0,2.0,0,4.0,0.8571428571428571,8,0.0,1.0
+117,siapakah karakter utama Serial anime dand manga Eyeshield 21?,indonesian,content,1.4444444444444444,5.0,0,0,0.7,11,0,0.0
+118,Dimana tumbuhan Gambir dapat hidup?,indonesian,content,2.25,2.0,0,2.0,0.8,6,0.0,1.0
+119,Berapa populasi provinsi Nusa Tenggara Barat 2017?,indonesian,content,1.0,5.0,0,0,0.8571428571428571,8,0,0.0
+120,Kapankah Badan Pengembangan Sumber Daya Manusia Energi dan Sumber Daya Mineral dibentuk ?,indonesian,content,3.0,6.0,0,2.0,0.8461538461538461,14,0.0,1.0
+121,Siapa nama orang tua Teruo Nakamura?,indonesian,content,1.2,4.0,0,0,0.8333333333333334,7,0,0.0
+122,Ada berapa klub dansa di Amerika Serikat?,indonesian,content,1.5,3.0,0,1.0,0.8571428571428571,8,0.0,1.0
+123,berapakah luas Paradise Island?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+124,siapakah yang menciptakan game Shin Megami Tensei: Persona 3?,indonesian,content,1.5555555555555556,5.0,1.0,2.0,0.6,12,100.0,1.0
+125,siapakah pendiri Bolshevik ?,indonesian,content,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+126,Mengapa Serangan Saar terjadi?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+127,siapakah dewa utama dalam agama Buddha ?,indonesian,content,1.5,3.0,0,0,0.5714285714285714,8,0,0.0
+128,"Siapakah nama istri Sir Alexander Chapman ""Alex"" Ferguson ?",indonesian,content,1.625,5.0,0,0,0.7777777777777778,12,0,0.0
+129,siapakah karakter utama dalam Fifty Shades Darker ?,indonesian,content,1.4285714285714286,4.0,0,0,0.625,9,0,0.0
+130,Berapakah luas negara wales ?,indonesian,content,1.25,2.0,0,0,0.6,6,0,0.0
+131,dimanakah Dipati Ukur meninggal?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+132,Kapan Kalium ditemukan ?,indonesian,content,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+133,berapakah besar kapasitas dari MicroSD pertama?,indonesian,content,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+134,Siapa pemeran utama film Fences ?,indonesian,content,1.25,3.0,0,0,0.8,6,0,0.0
+135,dimanakah NBC didirikan pertama kali?,indonesian,content,1.6,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+136,Dimana kantor pusat Partai Aliansi Liberal dan Demokrat untuk Eropa?,indonesian,content,2.0,6.0,0,0,0.8,11,0,0.0
+137,kapan lionel messi masuk barcelona?,indonesian,content,1.75,2.0,0,3.0,1.0,6,0.0,1.0
+138,Siapa yang menggagas Emansipasi wanita?,indonesian,content,1.25,3.0,1.0,2.0,0.6,6,100.0,1.0
+139,Kapan Sense and Sensibility dirilis?,indonesian,content,2.5,2.0,0,2.0,1.0,6,0.0,1.0
+140,berapakah orang yang telah di bunuh oleh Minamoto no Yoshitsune?,indonesian,content,1.6,4.0,2.0,1.5,0.6363636363636364,12,100.0,2.0
+141,berapakah kode telepon Makassar?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+142,berapakah jumlah situs arkeologis di Indonesia?,indonesian,content,1.6666666666666667,2.0,0,0,0.7142857142857143,8,0,0.0
+143,berapakah jumlah korban mahasiswa pada Gerakan Mahasiswa Indonesia 1998 ?,indonesian,content,1.4444444444444444,4.0,0,0,0.7,11,0,0.0
+144,siapakah sutradara film Jailangkung pertama?,indonesian,content,1.6,3.0,0,0,0.6666666666666666,7,0,0.0
+145,Kapan Alfonso XII lahir ?,indonesian,content,2.0,2.0,0,2.0,0.75,5,0.0,1.0
+146,Siapakah sutradara An Invisible Thread?,indonesian,content,1.2,4.0,0,0,0.6666666666666666,7,0,0.0
+147,Siapa pendiri Gereja Bethel Injil ?,indonesian,content,1.0,4.0,0,0,0.8,6,0,0.0
+148,Berapa luas Museum Louvre?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+149,kapankah Lakilaponto menjadi Raja di Muna?,indonesian,content,1.5,3.0,0,3.0,0.7142857142857143,8,0.0,1.0
+150,Kapan Sekolah Regina Pacis didirikan?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+151,Berapa jumlah musisi band Suicide Silence?,indonesian,content,1.0,4.0,0,0,1.0,7,0,0.0
+152,berapakah jumlah karakter dalam Nausicaä of the Valley of the Wind ?,indonesian,content,1.4545454545454546,6.0,0,0,0.8333333333333334,13,0,0.0
+153,Kapankah TVRI berdiri ?,indonesian,content,1.6666666666666667,2.0,0,2.0,0.75,5,0.0,1.0
+154,Kapankah musik jazz pertama kali muncul di dunia ?,indonesian,content,2.125,2.0,0,4.0,0.7777777777777778,10,0.0,1.0
+155,Dimana habitat Porifera?,indonesian,content,1.0,2.0,0,0,0.6666666666666666,4,0,0.0
+156,Kapan Shanghai Transrapid dibuka umum?,indonesian,content,1.75,2.0,0,3.0,1.0,6,0.0,1.0
+157,Kapan Padre Pio meninggal?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+158,Siapakah ketua pertama Himpunan Mahasiswa Islam?,indonesian,content,1.3333333333333333,4.0,0,0,0.7142857142857143,8,0,0.0
+159,Berapa jumlah siswa Kolese Gonzaga tahun 1990?,indonesian,content,1.5,3.0,0,0,0.8571428571428571,8,0,0.0
+160,Bagaimanakah sistem pemerintahan di negeri Mamala ?,indonesian,content,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+161,berapakah luas kecamatan Langsa Timur?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+162,Dimanakah sejarah tentang adanya Kerajaan Kandali bisa ditemukan?,indonesian,content,2.625,4.0,1.0,2.0,0.6666666666666666,10,50.0,2.0
+163,Berapa lama entara Pembebasan Rakyat beridiri ?,indonesian,content,1.8,2.0,1.0,2.0,1.0,7,50.0,2.0
+164,Siapa penerbit Ultraman Cosmos?,indonesian,content,1.0,3.0,0,0,0.75,5,0,0.0
+165,Berapakah masa jabatan Perdana Menteri di Israel?,indonesian,content,1.4285714285714286,4.0,0,0,0.75,9,0,0.0
+166,Berapa orang jumlah personil Helloween ?,indonesian,content,1.0,3.0,0,0,1.0,6,0,0.0
+167,berapakah luas Kabupaten Banggai?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+168,Dari manakah Pendleton Ward berasal ?,indonesian,content,1.8,2.0,0,2.0,0.5,7,0.0,1.0
+169,pernahkah Indonesia mengalami perang saudara?,indonesian,content,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+170,Kapankah Yayasan Kelola berdiri ?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+171,Apa yang dimaksud dengan era feodal Jepang?,indonesian,content,1.3333333333333333,4.0,1.0,2.0,0.5714285714285714,8,100.0,1.0
+172,siapakah orang tua Ferdinand VII?,indonesian,content,1.4,3.0,0,0,0.5,7,0,0.0
+173,Siapakah yang mendirikan sekolah Rinpa?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+174,siapakah presiden/perdana menteri pertama Israel?,indonesian,content,1.5,3.0,0,0,0.7142857142857143,8,0,0.0
+175,berapakah jumlah populasi di seoul?,indonesian,content,1.6,2.0,0,0,0.6666666666666666,7,0,0.0
+176,Berapa durasi film Inferno ?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+177,kapankah Kekaisaran Bizantium berakhir?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+178,Siapakah yang menjadi tokoh utama dalam film Inception?,indonesian,content,1.625,3.0,1.0,3.0,0.5555555555555556,10,100.0,1.0
+179,Siapa yang melantik Konrad III menjadi kaisar Romawi?,indonesian,content,1.4285714285714286,4.0,2.0,2.0,0.625,9,100.0,2.0
+180,Siapakah yang menyelenggarakan Seri AS Terbuka?,indonesian,content,1.3333333333333333,4.0,1.0,2.0,0.5714285714285714,8,100.0,1.0
+181,Apa yang dimaksud dengan daerah otonom?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+182,Bagaimana sistem pemerintahan di Honduras?,indonesian,content,1.5,2.0,0,0,0.8,6,0,0.0
+183,siapakah raja pertama Swedia?,indonesian,content,1.5,2.0,0,0,0.6,6,0,0.0
+184,Berapa jumlah kapal yang digunakan Angkatan Laut Kekaisaran Jepang pada Perang Dunia II?,indonesian,content,1.5833333333333333,5.0,1.0,3.0,0.7692307692307693,14,100.0,1.0
+185,Siapa yang menemukan istilah Bioinformatika?,indonesian,content,1.25,3.0,1.0,2.0,0.6,6,100.0,1.0
+186,apa yang dimaksud dengan komunikasi satu arah?,indonesian,content,1.5,4.0,1.0,2.0,0.42857142857142855,8,100.0,1.0
+187,Berapa jumlah anggota band The Rollies?,indonesian,content,1.0,4.0,0,0,1.0,7,0,0.0
+188,Kapan sekuel Percy Jackson difilmkan ?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+189,Kapankah agama katolik masuk ke Indonesia?,indonesian,content,1.8333333333333333,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+190,Kapan Ir. Muhammad Natsir Thaib lahir?,indonesian,content,3.0,4.0,0,2.0,1.0,8,0.0,1.0
+191,berapakah luas kekuasaan Dinasti Zhou?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+192,Kenapa manusia disebut makhluk sosial?,indonesian,content,1.25,2.0,0,3.0,1.0,6,0.0,1.0
+193,berapaka jumlah Novel yang ditulis oleh Tio Ie Soei?,indonesian,content,1.375,4.0,1.0,2.0,0.7777777777777778,10,100.0,1.0
+194,Siapa yang menemukan obat Fito farmakologi Fitofarmaka?,indonesian,content,1.1666666666666667,5.0,1.0,2.0,0.7142857142857143,8,100.0,1.0
+195,Berapa lama Dinasti Lê Akhir berkuasa di Vietnam ?,indonesian,content,2.4285714285714284,3.0,0,4.0,0.875,9,0.0,1.0
+196,Berapa lama periode Sengoku berlangsung?,indonesian,content,2.0,2.0,0,2.0,1.0,6,0.0,1.0
+197,Kapan kereta api ditemukan ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+198,Kapan Creative Eye Limited didirikan?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+199,Siapa tokoh yang mengenalkan Eksistensialisme?,indonesian,content,1.25,3.0,1.0,2.0,0.6,6,100.0,1.0
+200,dimanakah kantor pusat perusahaan Sampoerna?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+201,Siapa menteri keuangan Indonesia tahun 2001?,indonesian,content,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+202,Siapakah yang menemukan video pertama kali ?,indonesian,content,1.5,4.0,1.0,2.0,0.5714285714285714,8,100.0,1.0
+203,Ada berapa dewi dalam kepercayaan agama Hindu ?,indonesian,content,1.3333333333333333,4.0,0,1.0,0.8571428571428571,8,0.0,1.0
+204,berapakah jumlah episode Tom and Jerry?,indonesian,content,1.3333333333333333,4.0,0,0,0.8571428571428571,8,0,0.0
+205,Kapan persengketaan Ambalat terjadi antara Malaysia dan Indonesia?,indonesian,content,1.7142857142857142,3.0,0,3.0,0.75,9,0.0,1.0
+206,Berapa luas pulau utama Mentawai ?,indonesian,content,1.25,2.0,0,0,1.0,6,0,0.0
+207,Berapah luas wilayah Bhutan ?,indonesian,content,1.0,3.0,0,1.0,1.0,5,0.0,1.0
+208,kapankah Bebop mulai dipopulerkan?,indonesian,content,1.5,2.0,1.0,1.5,0.8,6,50.0,2.0
+209,Berapa tinggi rata rata pohon pace?,indonesian,content,1.2,3.0,0,0,1.0,7,0,0.0
+210,Kapan Kolonel Zulkifli Lubis lahir?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+211,Dimanakah letak Manchuria ?,indonesian,content,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+212,Kapan Pangeran Xia lahir?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+213,Kapan David Lloyd mulai menulis novel ?,indonesian,content,1.6,2.0,1.0,2.0,1.0,7,50.0,2.0
+214,Kapan Sakurajima pertama kali erupsi?,indonesian,content,2.25,2.0,0,3.0,1.0,6,0.0,1.0
+215,Dimanakah Pertempuran Badar terjadi ?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+216,Dimana Yang Yuhuan lahir?,indonesian,content,2.0,2.0,1.0,2.0,0.75,5,100.0,1.0
+217,siapakah rektor/kepala Institut Teknologi Sumatera yang pertama?,indonesian,content,1.7142857142857142,4.0,0,0,0.625,9,0,0.0
+218,Kapan Ajnata Kaundinya lahir?,indonesian,content,2.0,1.0,0,3.0,1.0,5,0.0,1.0
+219,Kapan Bob Dylan lahir?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+220,Berapa luas Kabupaten Donggala?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+221,Siapa pendiri DisneyToon ?,indonesian,content,1.0,2.0,0,0,0.6666666666666666,4,0,0.0
+222,berapakah jumlah novel yang dibuat oleh Thomas Keneally?,indonesian,content,1.5,3.0,1.0,2.0,0.6666666666666666,10,100.0,1.0
+223,Berapa jalur kereta api Orient Express?,indonesian,content,1.4,2.0,0,0,1.0,7,0,0.0
+224,Siapakah Maya Lestari Gf?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+225,Kapan Yan Xishan diangkat menjadi panglima perang Tiongkok ?,indonesian,content,1.4285714285714286,4.0,1.0,2.0,1.0,9,50.0,2.0
+226,berapakah jumlah populasi masyarakat di tokyo pada tahun 2012?,indonesian,content,2.0,2.0,0,0,0.6,11,0,0.0
+227,siapa pelopor ilmu mekanika kuantum?,indonesian,content,1.0,4.0,0,0,0.8,6,0,0.0
+228,siapakah nama pemeran the beast dalam serial Beauty and the Beast?,indonesian,content,1.6363636363636365,5.0,0,0,0.75,13,0,0.0
+229,Siapa penerbit film Flags of Our Fathers?,indonesian,content,1.0,6.0,0,0,0.8571428571428571,8,0,0.0
+230,Kapan WrestleMania XXVII pertama tayang?,indonesian,content,2.25,2.0,0,3.0,1.0,6,0.0,1.0
+231,Berapa besar kapal Galiung Manila?,indonesian,content,1.25,2.0,0,0,1.0,6,0,0.0
+232,kapankah HUT kota Balikpapan?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+233,siapakah isteri Surya Dharma Paloh?,indonesian,content,1.2,4.0,0,0,0.6666666666666666,7,0,0.0
+234,berapakah populasi biseksual di indonesia tahun 2016?,indonesian,content,1.8571428571428572,2.0,0,0,0.625,9,0,0.0
+235,kapan Naguib Mahfouz dilahirkan?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+236,Siapa pendiri Sekolah Regina Pacis?,indonesian,content,1.0,4.0,0,0,0.8,6,0,0.0
+237,"Kapan film animasi Monster,Inc dirilis?",indonesian,content,2.4,4.0,0,2.0,1.0,7,0.0,1.0
+238,Siapakah istri Djamaludin Malik?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+239,Dimanakah letak Galilea?,indonesian,content,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+240,berapa lamakah Operasi Gunung Gede berlangsung?,indonesian,content,2.8,3.0,0,3.0,1.0,7,0.0,1.0
+241,dimanakah Kuil Buddha terbesar yang ada di Korea?,indonesian,content,1.75,4.0,1.0,2.0,0.6666666666666666,10,100.0,1.0
+242,Siapa pendiri PT Scooter Victory Inter Part?,indonesian,content,1.0,6.0,0,0,0.8571428571428571,8,0,0.0
+243,Berapa jumlah pulau di kepulauan Mentawai ?,indonesian,content,1.4,2.0,0,0,0.8333333333333334,7,0,0.0
+244,siapakah aktivis Feminisme indonesia yang pertama?,indonesian,content,1.6666666666666667,3.0,0,0,0.5714285714285714,8,0,0.0
+245,Dimana tempat kelahiran Adoni-Zedek?,indonesian,content,1.0,3.0,0,0,0.75,5,0,0.0
+246,Berapa luas kota Ur-Kasdim?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+247,siapakah karakter utama dalam serial TV Kamen Rider?,indonesian,content,1.5,4.0,0,0,0.6666666666666666,10,0,0.0
+248,Kapan album Hollywood Dreams dirilis?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+249,Siapa yang melantik Leo III menjadi Kaisar Romawi Timur?,indonesian,content,1.375,5.0,2.0,2.0,0.6666666666666666,10,100.0,2.0
+250,kapankah militer Tiongkok resmi didirikan?,indonesian,content,2.2,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+251,siapakah karakter utama Film Vertigo?,indonesian,content,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+252,Siapakah itu Jend. Johannes Ludovicius Jakobus Hubertus Pel?,indonesian,content,1.5,6.0,0,0,0.6666666666666666,11,0,0.0
+253,Kapan Yōichi Masuzoe menjabat sebagai anggota Dewan Konselor?,indonesian,content,1.5714285714285714,3.0,0,3.0,0.875,9,0.0,1.0
+254,Berapa jumlah anggota dalam boyband Highlight?,indonesian,content,1.4,2.0,0,0,0.8333333333333334,7,0,0.0
+255,siapakah yang membangun Gedung Reichstag?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+256,kapankah televisi LED pertama ditemukan?,indonesian,content,2.4,2.0,0,2.0,0.8333333333333334,7,0.0,1.0
+257,Berapa jumlah spesifikasi Warna web?,indonesian,content,1.0,3.0,0,0,1.0,6,0,0.0
+258,Siapakah yang memperkenalkan istilah Sekularisme pertama kali ?,indonesian,content,1.5714285714285714,4.0,1.0,2.0,0.625,9,100.0,1.0
+259,Siapa ayah Ajnata Kaundinya?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+260,Dimana Esarhadon lahir?,indonesian,content,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+261,dimanakah Tour de Singkarak 2013 berlangsung?,indonesian,content,2.3333333333333335,4.0,0,2.0,0.7142857142857143,8,0.0,1.0
+262,Berapa tinggi Masjid Jogokariyan?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+263,seberapa dalam kah samudera atlantik?,indonesian,content,2.0,2.0,0,0,0.6,6,0,0.0
+264,Apa yang dimaksud dengan BH dalam ilmu kimia?,indonesian,content,1.7142857142857142,3.0,1.0,3.0,0.5,9,100.0,1.0
+265,siapakah pemimpin israel tahun 2015?,indonesian,content,1.4,3.0,0,0,0.5,7,0,0.0
+266,Kapan Komputer mikro mulai dikembangkan ?,indonesian,content,1.75,2.0,1.0,1.5,1.0,6,50.0,2.0
+267,Kapan Kerajaan Selaparang berdiri ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+268,Siapakah Basuki Tjahaja Purnama?,indonesian,content,1.5,2.0,0,0,0.6,6,0,0.0
+269,berapakah jumlah korban Pertempuran Nagashino?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+270,Siapa pencipta HTMS Chakri Naruebet?,indonesian,content,1.0,4.0,0,0,0.8,6,0,0.0
+271,Kapan Raja Ataulf menikah ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+272,Dimanakah letak Desa Karang kancana?,indonesian,content,1.2,4.0,0,0,0.6666666666666666,7,0,0.0
+273,Berapa luas Bandar Udara Palangkaraya?,indonesian,content,1.0,3.0,0,0,1.0,6,0,0.0
+274,Berapa luas kota Chaoyang?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+275,Kenapa Hamzah bin Abdul-Muththalib dijuluki singa Allah ?,indonesian,content,2.0,3.0,0,3.0,1.0,8,0.0,1.0
+276,siapakah yang berperang di Perang Salib Kedua ?,indonesian,content,1.4285714285714286,4.0,1.0,2.0,0.5,9,100.0,1.0
+277,ada berapakah jenis-jenis penerjemahan?,indonesian,content,1.75,3.0,0,1.0,0.8,6,0.0,1.0
+278,seberapa luaskah danau baikal?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+279,Berapa lama proses pembangunan Masjid Wazir Khan?,indonesian,content,1.1666666666666667,4.0,0,0,1.0,8,0,0.0
+280,Siapa pendiri Pagoda Utara Chaoyang?,indonesian,content,1.0,4.0,0,0,0.8,6,0,0.0
+281,Kapankah Sentimen anti-Malaysia mulai muncul ?,indonesian,content,1.8,2.0,1.0,1.5,0.8333333333333334,7,50.0,2.0
+282,siapakah penemu televisi?,indonesian,content,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+283,Kapankah KRI Kelas Makassar mulai beroperasi ?,indonesian,content,2.0,3.0,1.0,1.5,0.8571428571428571,8,50.0,2.0
+284,dimanakah letak Lecce ?,indonesian,content,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+285,bisakah binatang mempunyai akhlak?,indonesian,content,1.75,1.0,0,3.0,0.6,6,0.0,1.0
+286,Ada berapa tingkatan dalam Ijtihad?,indonesian,content,1.5,3.0,0,1.0,0.8,6,0.0,1.0
+287,Berapa lama Pertempuran Carrhae berlangsung ?,indonesian,content,2.5,2.0,0,3.0,1.0,6,0.0,1.0
+288,Kapan Tite Kubo lahir?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+289,Kapan Colby Lopez mulai menjadi pegulat?,indonesian,content,1.6,2.0,1.0,2.0,1.0,7,50.0,2.0
+290,Siapakah presiden pertama Singapura ?,indonesian,content,1.5,2.0,0,0,0.6,6,0,0.0
+291,dari manakah asal pohon Bidara ?,indonesian,content,1.6,2.0,0,0,0.5,7,0,0.0
+292,berapakah jumlah kecamatan di Kabupaten Badung?,indonesian,content,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+293,Siapakah anak Bunda Maria Penolong Abadi?,indonesian,content,1.1666666666666667,5.0,0,0,0.7142857142857143,8,0,0.0
+294,siapakah yang menggantikan jabatan Mr. Assaat?,indonesian,content,1.5,4.0,1.0,2.0,0.5714285714285714,9,100.0,1.0
+295,"Kapan Mgr. Anton Pieter Franz van Velsen, S.J. lahir?",indonesian,content,4.375,6.0,0,2.0,1.0,13,0.0,1.0
+296,bisakah Kacang kratok tumbuh di daerah bersalju?,indonesian,content,2.0,2.0,0,1.5,0.625,9,0.0,2.0
+297,di kota manakah Sapta Darma pertama kali muncul?,indonesian,content,2.125,3.0,0,3.0,0.6666666666666666,10,0.0,1.0
+298,Kapan Amuk Hantarukung diangkat menjadi panglima perang ?,indonesian,content,1.5,3.0,1.0,2.0,1.0,8,50.0,2.0
+299,Dari apakah timah berasal ?,indonesian,content,1.5,2.0,0,2.0,0.4,6,0.0,1.0
+300,kapankah boneka Barbie pertama kali diciptakan?,indonesian,content,2.3333333333333335,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+301,Siapa yang menggunakan ilmu Pemuliaan tanaman?,indonesian,content,1.2,4.0,1.0,2.0,0.6666666666666666,7,100.0,1.0
+302,siapakah nama karakter antagonis dalam cerita Sanghyang Guruminda?,indonesian,content,1.375,5.0,0,0,0.6666666666666666,10,0,0.0
+303,Jenis Protista apakah yang dapat membahayakan manusia?,indonesian,content,1.7142857142857142,3.0,1.0,2.0,0.5,9,100.0,1.0
+304,berapakah jumlah jenis hewan endemik yang dimiliki oleh thailand?,indonesian,content,1.6666666666666667,3.0,1.0,2.0,0.7,11,100.0,1.0
+305,Kapan Carlos Saldanha lahir ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+306,berapakah luas benua Republik Demokratik Somali?,indonesian,content,1.1666666666666667,4.0,0,0,0.8571428571428571,8,0,0.0
+307,Apa yang dimaksud dengan surat-surat Petrus?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+308,berapa lamakah proses pembuatan I Know What You Did Last Summer?,indonesian,content,1.1,9.0,0,0,1.0,12,0,0.0
+309,Kapan Liu Ju meninggal?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+310,Kapanakah istilah Orang Banyumasan muncul ?,indonesian,content,2.2,3.0,0,2.0,0.8333333333333334,7,0.0,1.0
+311,Kapan Log Zhelebour mulai menjadi produser ?,indonesian,content,1.6,2.0,1.0,2.0,1.0,7,50.0,2.0
+312,Dimana letak Orléans?,indonesian,content,1.0,2.0,0,0,0.6666666666666666,4,0,0.0
+313,Kapan video pertama kali diciptakan ?,indonesian,content,2.25,2.0,0,3.0,1.0,6,0.0,1.0
+314,Berapa lama Heinrich Luitpold Himmler menjadi komandan Schutzstaffel Jerman?,indonesian,content,2.125,3.0,0,4.0,1.0,10,0.0,1.0
+315,berapakah jumlah Suku Ogan tahun 2015?,indonesian,content,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+316,Ada berapa kandidat dalam Pemilu Jerman 2017?,indonesian,content,1.3333333333333333,4.0,0,1.0,0.7142857142857143,8,0.0,1.0
+317,Berapa jumlah korban Pertempuran Ky Hòa?,indonesian,content,1.0,4.0,0,0,1.0,7,0,0.0
+318,Kapan kereta api Orient Express pertama dibuka?,indonesian,content,2.6666666666666665,3.0,0,3.0,1.0,8,0.0,1.0
+319,Siapa ketua pimpinan Kepolisian Daerah Riau tahun 2015?,indonesian,content,1.7142857142857142,4.0,0,0,0.75,9,0,0.0
+320,Siapakah Ketua Mahkamah Konstitusi Indonesia yang pertama?,indonesian,content,1.7142857142857142,4.0,0,0,0.625,9,0,0.0
+321,Berapa jumlah musisi band Nine Inch Nails?,indonesian,content,1.0,5.0,0,0,1.0,8,0,0.0
+322,Kapan Arung Palakka lahir?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+323,Kapan Aria Wiraraja menikah?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+324,Berapa luas kota Atambua?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+325,siapakah orang tua Guan Yu?,indonesian,content,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+326,kapankah teknik data mining pertama kali dilakukan?,indonesian,content,2.4285714285714284,3.0,0,3.0,0.875,9,0.0,1.0
+327,Berapa lama Prof. Dr. Gerrit A. Siwabessy menjadi Menteri Badan Tenaga Atom Nasional?,indonesian,content,2.5,5.0,0,3.0,1.0,17,0.0,1.0
+328,Kapan Herbert Marcuse lahir ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+329,siapakah pendiri Star Plus?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+330,berapakah jumlah wanita di jepang pada tahun 2015?,indonesian,content,1.875,2.0,0,0,0.5555555555555556,10,0,0.0
+331,siapakah yang menciptakan boneka Barbie?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+332,Berapakah kadar gula tertinggi pada Diabetes melitus tipe 2?,indonesian,content,1.4444444444444444,4.0,1.0,1.0,0.7,11,100.0,1.0
+333,siapakah karakter utama Street Fighter?,indonesian,content,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+334,Darimana asal Asmara Nababan?,indonesian,content,1.0,3.0,0,0,1.0,5,0,0.0
+335,Dimana Aleksander Yaneus meninggal?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+336,tahun berapakah Perth Glory FC didirikan?,indonesian,content,2.8333333333333335,3.0,0,3.0,0.8571428571428571,8,0.0,1.0
+337,Kapan Kinetoskop diciptakan ?,indonesian,content,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+338,Siapakah sultan pertama Brunei Darussalam ?,indonesian,content,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+339,siapakah yang menciptakan teknologi/fitur Video-on-demand?,indonesian,content,1.5,4.0,1.0,2.0,0.5714285714285714,9,100.0,1.0
+340,Kapankah keyboard diciptakan ?,indonesian,content,1.6666666666666667,2.0,0,2.0,0.75,5,0.0,1.0
+341,seberapa luaskah samudera atlantik?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+342,Berapakah luas desa Balaradin ?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+343,Bagaimana bentuk Transistor pertemuan dwikutub?,indonesian,content,1.0,3.0,0,0,1.0,6,0,0.0
+344,Siapa nama orang tua Barthélemy Boganda?,indonesian,content,1.2,4.0,0,0,0.8333333333333334,7,0,0.0
+345,Berapa luas kecamatan Kramat?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+346,Siapakah yang terlibat dalam Pertempuran Pulau Ramree?,indonesian,content,1.4285714285714286,4.0,1.0,2.0,0.5,9,100.0,1.0
+347,Kapan agama katolik masuk ke Indonesia ?,indonesian,content,1.8,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+348,Kapan Helloween dibentuk ?,indonesian,content,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+349,berapakah jumlah Kebun binatang di asia?,indonesian,content,1.6666666666666667,2.0,0,0,0.7142857142857143,8,0,0.0
+350,kapankah Pangeran Julu diangkat menjadi panglima pertama kali?,indonesian,content,1.625,3.0,1.0,2.0,0.8888888888888888,10,50.0,2.0
+351,Siapakah yang menemukan istilah birokratis ?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+352,Kapankah Topeng ireng perlu digunakan?,indonesian,content,2.2,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+353,siapakah nama presiden ke dua indonesia?,indonesian,content,1.6666666666666667,4.0,0,0,0.42857142857142855,8,0,0.0
+354,Dari manakah asal Mr. Raden Mas Sartono?,indonesian,content,1.5714285714285714,4.0,0,0,0.625,10,0,0.0
+355,Siapa Menteri Badan Tenaga Atom Nasional yang pertama?,indonesian,content,1.7142857142857142,5.0,0,0,0.75,9,0,0.0
+356,Siapa presiden Republik Ghana pertama?,indonesian,content,1.25,3.0,0,0,0.8,6,0,0.0
+357,Ada berapakah serial Cardcaptor Sakura?,indonesian,content,1.6,3.0,0,1.0,0.8333333333333334,7,0.0,1.0
+358,negara mana sajakah yang termasuk dalam kawasan samudera atlantik?,indonesian,content,1.625,4.0,1.0,2.0,0.6666666666666666,10,100.0,1.0
+359,Berapa jumlah pasukan yang mempertahankan Roma?,indonesian,content,1.2,3.0,1.0,2.0,0.8333333333333334,7,100.0,1.0
+360,Kapan Tun Haji Abdullah bin Haji Ahmad Badawi lahir ?,indonesian,content,2.625,7.0,0,2.0,1.0,10,0.0,1.0
+361,Berapakah suhu Titik panas Anahim?,indonesian,content,1.6,3.0,0,1.0,0.8333333333333334,7,0.0,1.0
+362,Kapankah Gempa bumi dan tsunami Sulawesi 2018 terjadi ?,indonesian,content,2.75,4.0,0,2.0,0.6666666666666666,10,0.0,1.0
+363,Siapakah penulis naskah In America ?,indonesian,content,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+364,Siapakh ketua sindikat Yakuza?,indonesian,content,1.0,3.0,0,0,0.75,5,0,0.0
+365,Berapa luas kekuasaan Kesultanan Cirebon?,indonesian,content,1.0,3.0,0,0,1.0,6,0,0.0
+366,Berapa populasi masyarakat Budha di Bhutan tahun 2000?,indonesian,content,1.8571428571428572,3.0,0,0,0.75,9,0,0.0
+367,Siapa raja Dinasti Đinh?,indonesian,content,1.0,3.0,0,0,0.75,5,0,0.0
+368,Berapa lama masa berlaku paspor ?,indonesian,content,1.25,2.0,0,2.0,1.0,6,0.0,1.0
+369,Dimanakah letak pabrik Zippo?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+370,Kapan Yuchi Jingde lahir?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+371,Siapa yang membiayai produksi USS Washington (BB-56)?,indonesian,content,1.5,4.0,1.0,2.0,0.7142857142857143,10,100.0,1.0
+372,vitamin apa sajakah yang dapat membantu daya ingat?,indonesian,content,1.7142857142857142,3.0,1.0,2.0,0.625,9,100.0,1.0
+373,kapankah Salatiga didirikan secara resmi?,indonesian,content,1.6,2.0,0,4.0,0.6666666666666666,7,0.0,1.0
+374,Kapan Katolik masuk ke Indonesia ?,indonesian,content,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+375,Siapa ibu Baudouin I ?,indonesian,content,1.0,3.0,0,0,0.5,5,0,0.0
+376,siapakah orang tua Nimrod?,indonesian,content,1.5,2.0,0,0,0.6,6,0,0.0
+377,Kapan mayat Margaret Martin ditemukan ?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+378,berapakah jumlah korban pada Pemberontakan Jacobite?,indonesian,content,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+379,Siapakah yang terlibat dalam Pertempuran Badar?,indonesian,content,1.5,3.0,1.0,2.0,0.42857142857142855,8,100.0,1.0
+380,kapankah Donny de Keizer pertama kali menjadi presenter berita?,indonesian,content,2.111111111111111,3.0,0,4.0,0.9,11,0.0,1.0
+381,Siapa pendiri Birmingham Zulus?,indonesian,content,1.0,3.0,0,0,0.75,5,0,0.0
+382,Apa yang dimaksud dengan neokonservatif ?,indonesian,content,1.5,3.0,1.0,2.0,0.4,6,100.0,1.0
+383,siapakah pelopor ilmu Semiotika ?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+384,siapakah Dewa pertama di ajaran agama Hindu?,indonesian,content,1.4285714285714286,4.0,0,0,0.625,9,0,0.0
+385,Kapan Mgr.,indonesian,content,1.0,1.0,0,0,1.0,3,0,0.0
+386,"Wilhelmus Joannes Demarteau, M.S.F. lahir?",indonesian,content,3.25,3.0,0,1.0,1.0,9,0.0,1.0
+387,Kapan Petrus Lombardus lahir?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+388,Siapa yang mengembangkan tautomerisme keto–enol?,indonesian,content,1.2,4.0,1.0,2.0,0.6666666666666666,7,100.0,1.0
+389,Siapa yang menciptakan robot pertama kali ?,indonesian,content,1.4,4.0,1.0,2.0,0.6666666666666666,7,100.0,1.0
+390,Berapakah diameter Roda gigi?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+391,Siapakah yang biasa menggunakan alat teleprompter ?,indonesian,content,1.6666666666666667,3.0,1.0,3.0,0.5714285714285714,8,100.0,1.0
+392,Apa yang dimaksud dengan pendidikan tersier ?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+393,Berapa jumlah pemain dalam teater Kabuki?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+394,dimanakah letak samudera pasifik?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+395,Siapa yang meresmikan pembukaan Bandar Udara Palangkaraya?,indonesian,content,1.1666666666666667,5.0,1.0,2.0,0.7142857142857143,8,100.0,1.0
+396,Apa yang dimaksud dengan pornoaksi ?,indonesian,content,1.5,3.0,1.0,2.0,0.4,6,100.0,1.0
+397,Siapa Menteri Kesehatan Republik Indonesia yang pertama?,indonesian,content,1.6666666666666667,4.0,0,0,0.7142857142857143,8,0,0.0
+398,Berapa luas kota Breslau?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+399,berapakah jumlah karakter dalam serial Transformers?,indonesian,content,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+400,Kapan Radio Republik Indonesia berdiri ?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+401,berapakah luas Takalar ?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+402,ada berapakah jenis bakteri termofilik?,indonesian,content,1.6,3.0,0,1.0,0.8333333333333334,7,0.0,1.0
+403,Berapa jumlah fakultas di Universitas Islam Internasional Indonesia?,indonesian,content,1.2857142857142858,4.0,0,0,0.875,9,0,0.0
+404,Apa yang dimaksud dengan Pukul Manyapu Mamala Amalatu?,indonesian,content,1.2857142857142858,5.0,1.0,2.0,0.625,9,100.0,1.0
+405,dimanakah pusat Kerajaan Bourgogne?,indonesian,content,1.25,3.0,0,0,0.8,6,0,0.0
+406,Kapan Model penerimaan teknologi sesuai diterapkan?,indonesian,content,2.4,3.0,0,3.0,1.0,7,0.0,1.0
+407,Pada zaman apa Homo floresiensis hidup ?,indonesian,content,2.2,2.0,0,3.0,0.6666666666666666,7,0.0,1.0
+408,Dimanakah letak objek wisata Sendang Bidadari?,indonesian,content,1.1666666666666667,4.0,0,0,0.8571428571428571,8,0,0.0
+409,Kapan Komando Divisi IX Banteng dibentuk?,indonesian,content,2.4,4.0,0,2.0,1.0,7,0.0,1.0
+410,Kapan Radio Televizioni Shqiptar mulai beroperasi ?,indonesian,content,2.0,3.0,1.0,1.5,1.0,7,50.0,2.0
+411,Berapa jarak dari Kota Bekasi ke Kota Bandung?,indonesian,content,1.4285714285714286,3.0,0,0,0.75,9,0,0.0
+412,Kapan Pertempuran Badar berakhir?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+413,berapakah luas Yordania?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+414,mata uang apakah yang di gunakan di korea selatan?,indonesian,content,1.7777777777777777,3.0,1.0,3.0,0.5,11,100.0,1.0
+415,berapakah luas Candi Ratu Boko?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+416,Siapa karakter utama Nazar ?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+417,dimanakah Squidward Tentacles bekerja?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+418,dimanakah letak danau baikal?,indonesian,content,1.25,3.0,0,0,0.8,6,0,0.0
+419,Berapa lama Henry II menjadi raja?,indonesian,content,1.6,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+420,siapakah Perdana Menteri Republik Ceko yang termuda pernah menjabat?,indonesian,content,2.4444444444444446,4.0,1.0,1.0,0.7,11,100.0,1.0
+421,siapakah orang tua Coretta Scott King?,indonesian,content,1.3333333333333333,4.0,0,0,0.7142857142857143,8,0,0.0
+422,dari manakah asalsuku-bangsa Sasak?,indonesian,content,1.25,2.0,0,0,0.4,6,0,0.0
+423,Siapa nama walikota Payakumbuh tahun 2010 ?,indonesian,content,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+424,siapakah figur utama HAM di Indonesia?,indonesian,content,1.5,4.0,0,0,0.5714285714285714,8,0,0.0
+425,Kapan taksi pertama beroperasi di Indonesia?,indonesian,content,1.8,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+426,Kapan Fender Musical Instruments Corporation berdiri ?,indonesian,content,2.4,4.0,0,2.0,1.0,7,0.0,1.0
+427,Dari manakah wangsa Komnenos berasal ?,indonesian,content,1.8,2.0,0,2.0,0.5,7,0.0,1.0
+428,Kapan Up Comedy muncul pertama kali di dunia ?,indonesian,content,2.0,2.0,0,4.0,0.875,9,0.0,1.0
+429,Kapan Martin Heidegger menikah?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+430,berapakah luas Kalirancang ?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+431,siapakah kepala sekola SMK Negeri 2 Sumedang tahun 2015?,indonesian,content,1.8888888888888888,4.0,0,0,0.6,11,0,0.0
+432,Kapan Festival Film Indonesia pertama diadakan?,indonesian,content,2.8,3.0,0,2.0,1.0,7,0.0,1.0
+433,Siapa Raja Spanyol pertama ?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+434,Apa yang dimaksud dengan server ?,indonesian,content,1.5,3.0,1.0,2.0,0.4,6,100.0,1.0
+435,Kapan Matthew Roy lahir ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+436,Siapa pendiri Creative Eye Limited?,indonesian,content,1.0,4.0,0,0,0.8,6,0,0.0
+437,Dimana letak limfosit T pada tubuh manusia?,indonesian,content,1.5,2.0,0,0,0.8571428571428571,8,0,0.0
+438,Siapa pendiri Pondok Pesantren Al-Islam?,indonesian,content,1.0,4.0,0,0,0.8,6,0,0.0
+439,Kapan HSBC Holdings PLC didirikan?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+440,siapakah pemimpin partai PKS tahun 2015?,indonesian,content,1.5,3.0,0,0,0.5714285714285714,8,0,0.0
+441,dimanakah letak Manokwari?,indonesian,content,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+442,dimanakah Mr. Assaat dilahirkan?,indonesian,content,2.75,2.0,0,2.0,0.8,7,0.0,1.0
+443,Bagaimana rakyat Australia memperingati Hari Anzac?,indonesian,content,1.6,2.0,0,3.0,1.0,7,0.0,1.0
+444,Disebut apakah orang memakai paham Skeptisisme ?,indonesian,content,1.8333333333333333,3.0,1.0,2.0,0.8571428571428571,8,50.0,2.0
+445,Berapa lama Pemberontakan Jagapati berlangsung ?,indonesian,content,2.5,2.0,0,3.0,1.0,6,0.0,1.0
+446,Berapa jumlah gigi pada Roda gigi?,indonesian,content,1.4,2.0,0,0,0.8333333333333334,7,0,0.0
+447,Dimanakah Aurelia aurita bisa ditemukan ?,indonesian,content,2.2,2.0,0,2.0,0.6666666666666666,7,0.0,1.0
+448,Berapakah kadar gula dalam Aspartam?,indonesian,content,1.6,2.0,0,0,0.6666666666666666,7,0,0.0
+449,Kapan Insiden Honnoji terjadi ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+450,Berapa jumlah personil boyband SpeXial?,indonesian,content,1.0,3.0,0,0,1.0,6,0,0.0
+451,Dimanakah D.A. Rinkes lahir ?,indonesian,content,2.75,2.0,0,2.0,0.8,7,0.0,1.0
+452,Kapan industri penerbangan mulai beroperasi di Indonesia ?,indonesian,content,1.6666666666666667,3.0,1.0,2.0,0.8571428571428571,8,50.0,2.0
+453,Dimana Siauw Giok Tjhan lahir ?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+454,"Dimana Dr. Henry Walton Jones, Jr mengajar arkeologi?",indonesian,content,4.0,3.0,0,3.0,1.0,11,0.0,1.0
+455,Di daerah manakah Akar wangi dapat tumbuh ?,indonesian,content,2.0,3.0,0,2.0,0.625,9,0.0,1.0
+456,Berapa lama Pelemparan di Praha terjadi?,indonesian,content,3.0,3.0,0,3.0,0.8333333333333334,7,0.0,1.0
+457,Berapakah ukuran standar lapangan Baseball?,indonesian,content,1.4,2.0,0,0,0.8333333333333334,7,0,0.0
+458,Di siaran tv apa Hikmah Fajar ditayangkan?,indonesian,content,2.0,3.0,0,2.0,0.7142857142857143,8,0.0,1.0
+459,Kapan Pemberontakan Para Budak terjadi ?,indonesian,content,2.5,3.0,0,2.0,0.8,6,0.0,1.0
+460,dimanakah S.H. Mintardja dilahirkan?,indonesian,content,2.75,2.0,0,2.0,0.8,7,0.0,1.0
+461,kapankah Konferensi Habitat III dilaksanakan?,indonesian,content,2.2,3.0,0,2.0,0.6666666666666666,7,0.0,1.0
+462,siapakah Haryapatih Lituania Władysław II Jagiełło?,indonesian,content,1.3333333333333333,4.0,0,0,0.5714285714285714,8,0,0.0
+463,Dimana Insiden Honnoji terjadi ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+464,berapakah kapasitas penonton di Sirkuit Silverstone?,indonesian,content,1.3333333333333333,3.0,0,0,0.7142857142857143,8,0,0.0
+465,Berapakah luas Kabupaten Magelang ?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+466,Kapan konsep Melayu Raya dibentuk?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+467,Siapakah sultan pertama Kesultanan Aceh?,indonesian,content,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+468,Berapa jumah tahap dalam reaksi Substitusi elektrofilik?,indonesian,content,1.3333333333333333,3.0,0,0,0.8571428571428571,8,0,0.0
+469,Apa yang dimaksud dengan genin dalam manga naruto ?,indonesian,content,1.7142857142857142,3.0,1.0,3.0,0.5,9,100.0,1.0
+470,siapakah juara Pankration dalam olimpiade Yunani thaun 648sm?,indonesian,content,1.75,3.0,0,0,0.6666666666666666,10,0,0.0
+471,Cabe apa yang digunakan untuk membuat sambal Balado?,indonesian,content,1.4285714285714286,4.0,2.0,2.0,0.625,9,100.0,2.0
+472,Darimana asal dr.,indonesian,content,1.0,2.0,0,0,0.6666666666666666,4,0,0.0
+473,Arif Budianto?,indonesian,content,1.0,1.0,0,0,1.0,3,0,0.0
+474,Berapakah berat U-511?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+475,berapakah tinggi Megatron?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+476,Berapa panjang sungai Kali Baru Barat?,indonesian,content,1.0,4.0,0,0,1.0,7,0,0.0
+477,Kapan Kekaisaran Bulgaria Pertama didirikan?,indonesian,content,2.5,2.0,0,2.0,1.0,6,0.0,1.0
+478,siapakah yang mencptakan Ide 4 sehat 5 sempurna pertama kali?,indonesian,content,1.7,5.0,1.0,2.0,0.5454545454545454,12,100.0,1.0
+479,Kapan Permaisuri Bo menikah?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+480,siapakah gubernur pertama Provinsi Sulawesi Tengah?,indonesian,content,1.3333333333333333,4.0,0,0,0.7142857142857143,8,0,0.0
+481,Kapan Heinrich Luitpold Himmler diangkat menjadi komandan Schutzstaffel Jerman?,indonesian,content,1.625,4.0,1.0,2.0,1.0,10,50.0,2.0
+482,Berapa lama kerajaan Bourgogne berkuasa ?,indonesian,content,2.5,2.0,0,3.0,1.0,6,0.0,1.0
+483,darimanakah asal kata Genta ?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+484,berapakah tinggi Dipati Ukur?,indonesian,content,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+485,Berapa jumlah episode Melati untuk Marvel?,indonesian,content,1.6,2.0,0,0,0.8333333333333334,7,0,0.0
+486,dimanakah Mangasa Sotarduga Hutagalung dilahirkan?,indonesian,content,2.2,3.0,0,2.0,0.8333333333333334,7,0.0,1.0
+487,Dimana Sir Francis Legatt Chantrey mulai belajar memahat patung?,indonesian,content,1.875,4.0,2.0,1.6666666666666667,1.0,10,66.66666666666667,3.0
+488,Siapa penggagas Politik Minangkabau?,indonesian,content,1.0,3.0,0,0,0.75,5,0,0.0
+489,Siapa istri Kubilai Khan?,indonesian,content,1.0,3.0,0,0,0.75,5,0,0.0
+490,Berapa karakter protagonis dalam Hunter × Hunter?,indonesian,content,1.5,2.0,0,0,0.8571428571428571,8,0,0.0
+491,Berapa berat Mesin kepung?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+492,mikroorganisme apa kah yang baik untuk tubuh manusia?,indonesian,content,1.5714285714285714,3.0,0,0,0.5,9,0,0.0
+493,berapakah kode telepon di Somalia?,indonesian,content,1.6,2.0,0,0,0.6666666666666666,7,0,0.0
+494,Kapan musik DJ pertama kali muncul di dunia ?,indonesian,content,2.142857142857143,2.0,0,4.0,0.875,9,0.0,1.0
+495,Berapa lama Aleksander Yaneus menjadi raja?,indonesian,content,2.2,2.0,0,4.0,1.0,7,0.0,1.0
+496,Berapa jumlah anak Charles Martel?,indonesian,content,1.0,3.0,0,0,1.0,6,0,0.0
+497,Kapan Su Dingfang lahir?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+498,Mengapa sindikat Yakuza disebut mafia Jepang?,indonesian,content,1.6,2.0,0,3.0,1.0,7,0.0,1.0
+499,Siapa yang dimaksud dengan bangsawan Norman?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+500,siapakah penggagas ide Creative Europe?,indonesian,content,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+501,siapakah ayah dari Aleksander III?,indonesian,content,1.4,3.0,0,0,0.3333333333333333,7,0,0.0
+502,siapakah orang tua Manuel Luis Quezón y Molina?,indonesian,content,1.375,6.0,0,0,0.7777777777777778,10,0,0.0
+503,Kapan Crest Animation Productions berdiri ?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+504,Siapakah walikota tangerang tahun 2010?,indonesian,content,1.4,3.0,0,0,0.5,7,0,0.0
+505,Tahun berapa Birmingham Zulus mulai aktif?,indonesian,content,2.2,2.0,0,4.0,1.0,7,0.0,1.0
+506,Ada berapa serial film Fifty Shades of Grey?,indonesian,content,1.1428571428571428,6.0,0,2.0,1.0,9,0.0,1.0
+507,berapakah jumlah halaman dalam Kitab Samuel?,indonesian,content,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+508,Kapan Patriark Ekumenis Konstantinopel diangkat menjadi uskup ?,indonesian,content,1.8333333333333333,3.0,1.0,2.0,1.0,8,50.0,2.0
+509,dimanakah Nabi Muhammad SAW dikuburkan?,indonesian,content,2.2,3.0,0,2.0,0.8333333333333334,7,0.0,1.0
+510,Apa yang dimaksud dengan derivat organik?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+511,Siapakah nama walikota Kabupaten Pasaman Barat tahun 2010?,indonesian,content,1.5,5.0,0,0,0.6666666666666666,10,0,0.0
+512,Darimana asal Sunan Drajat?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+513,Ada berapa tahap dalam Metode ensemble?,indonesian,content,1.4,3.0,0,1.0,0.8333333333333334,7,0.0,1.0
+514,Berapa penduduk Desa Candirenggo 2015?,indonesian,content,1.0,3.0,0,0,0.8,6,0,0.0
+515,Dimanakah rumah igloo biasa ditemukan?,indonesian,content,2.2,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+516,Dimana Penghormatan Leluhur dilakukan?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+517,siapakah penemu aljabar?,indonesian,content,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+518,kapan kah john coltrane meninggal?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+519,dimanakah kantor pusat Djisamsoe?,indonesian,content,1.5,2.0,0,0,0.8,6,0,0.0
+520,Kapan istilah interkom ditemukan ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+521,ada berapakah jenis Pensil di Dunia?,indonesian,content,1.8333333333333333,3.0,0,1.0,0.7142857142857143,8,0.0,1.0
+522,Bagaiaman sistem pemerintahan di Jepang ?,indonesian,content,1.5,3.0,0,0,0.8,6,0,0.0
+523,Kapan Oskar-Heinz “Pritzl” Bär pertama kali ikut perang ?,indonesian,content,3.2857142857142856,2.0,0,5.0,1.0,11,0.0,1.0
+524,siapakah pemeran utama dalam Heart Series?,indonesian,content,1.5,3.0,0,0,0.5714285714285714,8,0,0.0
+525,Dimana Liu Ju lahir?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+526,berapa jumlah populasi argentina?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+527,kapankah May Day pertama kali dilakukan?,indonesian,content,2.3333333333333335,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+528,Dimana Su Dingfang lahir?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+529,berapakah Jumlah Suku yang sudah punah di Indonesia?,indonesian,content,1.75,3.0,1.0,2.0,0.5555555555555556,10,100.0,1.0
+530,tahun berapakah Ratu Kalinyamat menjadi bupati di Jepara?,indonesian,content,2.125,3.0,0,4.0,0.7777777777777778,10,0.0,1.0
+531,siapakah istri George Herbert Walker Bush?,indonesian,content,1.1666666666666667,5.0,0,0,0.7142857142857143,8,0,0.0
+532,Siapakah istri dari George H. W.,indonesian,content,1.5,4.0,0,0,0.5714285714285714,9,0,0.0
+533,Bush?,indonesian,content,0,0.0,0,0,1.0,2,0,0.0
+534,kapankah Delman pertama kali dibuat?,indonesian,content,2.2,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+535,siapakah pencetus standar ukuran kertas internasional?,indonesian,content,1.3333333333333333,3.0,0,0,0.7142857142857143,8,0,0.0
+536,Kapan sistem Ina-TEWS pertama digunakan?,indonesian,content,2.5,2.0,0,2.0,1.0,6,0.0,1.0
+537,Siapakah Perdana menteri Israel sebelum Yitzhak Shamir?,indonesian,content,1.5714285714285714,3.0,0,0,0.625,9,0,0.0
+538,Dari mana musik DJ berasal ?,indonesian,content,1.75,2.0,0,2.0,0.6,6,0.0,1.0
+539,mata uang apakah yang digunakan di jepang?,indonesian,content,1.8571428571428572,3.0,1.0,2.0,0.5,9,100.0,1.0
+540,Siapa pendiri Kolese Gonzaga?,indonesian,content,1.0,3.0,0,0,0.75,5,0,0.0
+541,siapakah vokalis The Rain?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+542,berapakah jumlah penduduk beijing pada tahun 2015?,indonesian,content,1.5714285714285714,2.0,0,0,0.625,9,0,0.0
+543,kenapa Samudera pasifik disebut lautan teduh?,indonesian,content,1.6,2.0,0,1.5,1.0,7,0.0,2.0
+544,negara manakah yang mempunyai Lampu lalu lintas terbanyak?,indonesian,content,1.5,4.0,1.0,2.0,0.6666666666666666,10,100.0,1.0
+545,berapa lama bayi gorila berhenti menyusui?,indonesian,content,1.6,2.0,1.0,1.5,1.0,7,50.0,2.0
+546,kapan Ludwig III diangkat menjadi raja ?,indonesian,content,1.6,2.0,1.0,2.0,0.8333333333333334,7,50.0,2.0
+547,Dimana kantor Lingkaran Survei Indonesia?,indonesian,content,1.0,4.0,0,0,0.8,6,0,0.0
+548,Kapan BlackBerry mulai masuk ke Indonesia ?,indonesian,content,1.4,3.0,1.0,2.0,0.8333333333333334,7,50.0,2.0
+549,Kapan umat Islam menggunakan Biji tasbih untuk berzikir?,indonesian,content,1.8571428571428572,2.0,1.0,2.5,0.875,9,50.0,2.0
+550,Apa yang dimaksud dengan gunung api aktif ?,indonesian,content,1.5,3.0,1.0,2.0,0.5714285714285714,8,100.0,1.0
+551,siapakah orang tua Liu Yongfu?,indonesian,content,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+552,Kapankah Hasbro Studios berdiri ?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+553,berapakah berat Pengangkut personel lapis baja yang pertama?,indonesian,content,1.5,4.0,0,0,0.7777777777777778,10,0,0.0
+554,Berapa biaya produksi film Fences ?,indonesian,content,1.0,3.0,0,0,1.0,6,0,0.0
+555,Berapa lama pohon Kayu manis bisa hidup ?,indonesian,content,3.0,3.0,0,3.0,0.8571428571428571,8,0.0,1.0
+556,Apa yang dimaksud dengan membran sel ?,indonesian,content,1.4,3.0,2.0,2.0,0.5,7,100.0,2.0
+557,Dari negara mana Hergé berasal ?,indonesian,content,1.5,2.0,0,2.0,0.6,6,0.0,1.0
+558,berapakah luas Abu Dhabi?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+559,Kapan boyband B.A.P dibentuk ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+560,Kapan Reis Efendi meninggal ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+561,dimanakah LTE pertama kali diciptakan?,indonesian,content,2.2,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+562,Siapakah perdana menteri Israel pertama ?,indonesian,content,1.6,2.0,0,0,0.6666666666666666,7,0,0.0
+563,dimanakah Han Xin lahir?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+564,kapankah Star India Private Limited didirikan?,indonesian,content,2.3333333333333335,4.0,0,2.0,0.8571428571428571,8,0.0,1.0
+565,apa yang dimaksud komunikasi dua arah?,indonesian,content,1.4,4.0,1.0,2.0,0.5,7,100.0,1.0
+566,Kapan Charles Maurras lahir ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+567,siapakah orang tua Jurgen Habermas?,indonesian,content,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+568,Kapan Khunais bin Hudhafah al-Sahmiy meninggal?,indonesian,content,2.6,3.0,0,2.0,1.0,7,0.0,1.0
+569,Bagaimana bentuk daun pohon Tebu?,indonesian,content,1.0,3.0,0,0,1.0,6,0,0.0
+570,Siapa arsitek Gereja Bethany?,indonesian,content,1.0,3.0,0,0,0.75,5,0,0.0
+571,berapakah luas Kesultanan Yogyakarta?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+572,Berapa durasi film Fences ?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+573,Berapa luas wilayah Hokkaido?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+574,Kapan tayangan pertama acara Hikmah Fajar?,indonesian,content,1.2,3.0,0,0,1.0,7,0,0.0
+575,Siapa pemilik Perusahaan Jawatan Kereta Api?,indonesian,content,1.0,5.0,0,0,0.8333333333333334,7,0,0.0
+576,kapankah keyakinan Yahudi muncul pertama kali?,indonesian,content,1.8333333333333333,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+577,kapankah perang sodara Kabupaten Poso berakhir?,indonesian,content,2.5,3.0,0,2.0,0.8571428571428571,8,0.0,1.0
+578,Berapa total film yang diproduksi Nollywood sampai tahun 2011?,indonesian,content,1.375,4.0,1.0,3.0,0.6666666666666666,10,100.0,1.0
+579,berapakah jumlah suku yang berasal dari Provinsi Sumatra Selatan?,indonesian,content,1.4444444444444444,4.0,1.0,2.0,0.7,11,100.0,1.0
+580,berapakah luas Masjid Tua Palopo?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+581,Bagaimana cara pembayaran PDAM ?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+582,Kapan An Invisible Thread pertama tayang?,indonesian,content,2.4,3.0,0,3.0,1.0,7,0.0,1.0
+583,dimanakah Bernhard Karlgren dilahirkan?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+584,Berapa lama Stephen King menulis novel Carrie?,indonesian,content,1.5,2.0,0,3.0,1.0,8,0.0,1.0
+585,pada tahun berapakah Illiad dan odyssey diciptakan homer?,indonesian,content,2.5,3.0,0,4.0,0.6666666666666666,10,0.0,1.0
+586,Mengapa Yi Yong Gong dipuja di Juwana?,indonesian,content,2.0,3.0,0,3.0,0.8571428571428571,8,0.0,1.0
+587,Darimanakah asal Marc Márquez?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+588,Berapa lama William Hanna dan Joseph menghasilkan Johann Mouse?,indonesian,content,2.125,3.0,0,3.0,0.8888888888888888,10,0.0,1.0
+589,berapakah tinggi Casper ?,indonesian,content,1.6666666666666667,3.0,0,0,0.75,5,0,0.0
+590,Kapan homeschooling pertama kali muncul ?,indonesian,content,2.25,2.0,0,3.0,1.0,6,0.0,1.0
+591,berapa lamakah kekaisaran Bizantium bertahan?,indonesian,content,2.5,2.0,0,3.0,1.0,6,0.0,1.0
+592,ada berapakah jenis huruf dalam tipografi?,indonesian,content,1.8333333333333333,3.0,0,1.0,0.7142857142857143,8,0.0,1.0
+593,Kapan PDRM dibentuk ?,indonesian,content,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+594,Siapa pendiri ANTV?,indonesian,content,1.0,2.0,0,0,0.6666666666666666,4,0,0.0
+595,Dimanakah letak negeri Mamala ?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+596,kapankah Konfusius lahir?,indonesian,content,1.6666666666666667,2.0,0,2.0,0.75,5,0.0,1.0
+597,siapakah presiden russia pada tahun 2012?,indonesian,content,1.8333333333333333,2.0,0,0,0.42857142857142855,8,0,0.0
+598,Berapa jumlah suku bangsa Iran?,indonesian,content,1.0,3.0,0,0,1.0,6,0,0.0
+599,Dimanakah lokasi STIE Muhammadiyah Bandung ?,indonesian,content,1.2,4.0,0,0,0.8333333333333334,7,0,0.0
+600,berapakah jumlah Gereja Kristen di Vietnam tahun 2015?,indonesian,content,2.0,2.0,0,0,0.6666666666666666,10,0,0.0
+601,berapakah jumlah agama yang mempercai tuhan mereka sebagai Allah?,indonesian,content,1.6666666666666667,3.0,1.0,3.0,0.6,11,100.0,1.0
+602,di tim apakah Marc Márquez Alenta mendapatkan gelar juara dunia kelas 125cc pertama kali?,indonesian,content,1.7857142857142858,4.0,0,4.0,0.8,16,0.0,1.0
+603,Siapa Perdana Menteri Israel kedua?,indonesian,content,1.0,4.0,0,0,0.8,6,0,0.0
+604,berapakah jumlah anggota Decepticons?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+605,kapankah Musik rock di perkenalkan di indonesia?,indonesian,content,1.5714285714285714,3.0,0,0,0.5,9,0,0.0
+606,Siapa pendiri Direktorat Jenderal Imigrasi?,indonesian,content,1.0,4.0,0,0,0.8,6,0,0.0
+607,siapakah teman baik karakter SpongeBob SquarePants?,indonesian,content,1.3333333333333333,4.0,0,0,0.7142857142857143,8,0,0.0
+608,siapakah orang tua Emmy Saelan ?,indonesian,content,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+609,Berapa anggota Majelis Parlementer Perserikatan Bangsa-Bangsa?,indonesian,content,1.0,4.0,0,0,1.0,7,0,0.0
+610,Siapakah Bapak Binaraga Modern?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+611,Siapakah yang mendirikan Ksatria Hospitaller ?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+612,Bagaimana bakteri masuk ke tubuh manusia ?,indonesian,content,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+613,Dimana Pelemparan di Praha terjadi?,indonesian,content,2.5,3.0,0,2.0,0.8,6,0.0,1.0
+614,Kapan Pieter Willem Botha lahir ?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+615,Berapa kedalaman rata rata Danau Beira?,indonesian,content,1.4,2.0,0,0,1.0,7,0,0.0
+616,berapa lamakah PKI berdiri di indonesia?,indonesian,content,1.8,2.0,0,4.0,0.8333333333333334,7,0.0,1.0
+617,Siapakah yang memimpin Operasi Fajar 8: Teluk Aden?,indonesian,content,1.625,4.0,1.0,2.0,0.5555555555555556,11,100.0,1.0
+618,Dimanakah letak Universitas Tadulako ?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+619,Kapan Philip Heinrich Christoph Hofman mulai menjadi misionaris Belanda?,indonesian,content,1.875,4.0,1.0,2.0,1.0,10,50.0,2.0
+620,kapankah Shandy Aulia pertama kali membintangi sebuah film?,indonesian,content,2.125,2.0,0,4.0,0.7777777777777778,10,0.0,1.0
+621,kapan logaritma pertama kali diciptakan?,indonesian,content,2.25,2.0,0,3.0,1.0,6,0.0,1.0
+622,siapakah yang menemukan Ötzi?,indonesian,content,1.5,2.0,1.0,2.0,0.4,6,100.0,1.0
+623,berapakah jumlah Warisan Dunia UNESCO sampai tahun 2015?,indonesian,content,1.625,3.0,0,0,0.6666666666666666,10,0,0.0
+624,berapakah jumlah kabupaten di Provinsi Bali?,indonesian,content,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+625,dimankah Filipus V dilahirkan ?,indonesian,content,2.0,2.0,0,2.0,0.6,6,0.0,1.0
+626,berapakah laus Yunani?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+627,Dimana Gereja Yesus Kristus?,indonesian,content,1.0,3.0,0,0,1.0,5,0,0.0
+628,Bagaimana ritual pernikahan dalam masyarakat betawi ?,indonesian,content,1.4,2.0,0,0,0.8333333333333334,7,0,0.0
+629,Siapa ayah Baudouin I ?,indonesian,content,1.0,3.0,0,0,0.5,5,0,0.0
+630,berapakah jumlah Kerajaan-kerajaan di Tanah Sunda?,indonesian,content,1.3333333333333333,3.0,0,0,0.7142857142857143,8,0,0.0
+631,Dimana Philip Heinrich Christoph Hofman lahir?,indonesian,content,2.4,4.0,0,2.0,1.0,7,0.0,1.0
+632,bisakah menanam Jeruk kalamansi di daerah pantai??,indonesian,content,1.5714285714285714,2.0,0,3.0,0.625,10,0.0,1.0
+633,berapakah korban Peristiwa Sabtu Kelabu?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+634,Ada mana asal kata yoyo ?,indonesian,content,1.25,3.0,0,2.0,0.8,6,0.0,1.0
+635,berapakah jumlah korban di Pembantaian Westerling?,indonesian,content,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+636,Siapa ketua tim Preston North End pada musim 1888-89?,indonesian,content,1.625,5.0,0,0,0.6666666666666666,10,0,0.0
+637,Siapa Teruo Nakamura?,indonesian,content,1.0,2.0,0,0,0.6666666666666666,4,0,0.0
+638,Berapa jumlah anggota Pink Floyd?,indonesian,content,1.0,3.0,0,0,1.0,6,0,0.0
+639,Kapan Rudi Garcia mulai menjadi manajer sepak bola ?,indonesian,content,1.4285714285714286,4.0,1.0,1.0,1.0,9,100.0,1.0
+640,Dimanakah letak Danzig ?,indonesian,content,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+641,Apa yang dimaksud dengan Maharani?,indonesian,content,1.5,3.0,1.0,2.0,0.4,6,100.0,1.0
+642,Kapan Prof. dr.,indonesian,content,1.5,2.0,0,0,1.0,5,0,0.0
+643,Lim Joey Thay mulai menjadi dosen di Universitas Indonesia?,indonesian,content,1.625,4.0,1.0,3.0,0.8888888888888888,10,100.0,1.0
+644,Kapankah Himpunan Mahasiswa Islam bubar ?,indonesian,content,2.2,3.0,0,2.0,0.8333333333333334,7,0.0,1.0
+645,Dimanakah proklamasi dibacakan ?,indonesian,content,1.6666666666666667,2.0,0,2.0,0.75,5,0.0,1.0
+646,siapakah yang menciptakan Lampu lalu lintas ?,indonesian,content,1.3333333333333333,4.0,1.0,2.0,0.5714285714285714,8,100.0,1.0
+647,kapankah gerakan Feminisme dimulai pertama kali?,indonesian,content,1.8333333333333333,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+648,Ada berapa serial Harvest Moon: A Wonderful Life ?,indonesian,content,1.4285714285714286,5.0,0,2.0,1.0,10,0.0,1.0
+649,siapakah jenderal Tentara Revolusioner yang pertama?,indonesian,content,1.6666666666666667,3.0,0,0,0.5714285714285714,8,0,0.0
+650,siapa penemu Logaritma?,indonesian,content,1.0,2.0,0,0,0.6666666666666666,4,0,0.0
+651,Berapa jumlah fakultas di Institut Teknologi Sepuluh Nopember Surabaya?,indonesian,content,1.25,5.0,0,0,0.8888888888888888,10,0,0.0
+652,berapakah jumlah isteri Nimrod?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+653,Kapan Gereja Bethany didirikan?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+654,kapan teknologi nuklir pertama kali diciptakan?,indonesian,content,2.4,2.0,0,3.0,1.0,7,0.0,1.0
+655,siapakah yang memimpin Kongres Pemuda Indonesia I?,indonesian,content,1.2857142857142858,5.0,1.0,2.0,0.5,9,100.0,1.0
+656,Siapakah karakter utama dalam Ginga e Kickoff!!?,indonesian,content,1.4285714285714286,4.0,0,0,0.625,10,0,0.0
+657,Dimana lokasi Terminal Sritanjung?,indonesian,content,1.0,3.0,0,0,1.0,5,0,0.0
+658,Kapan Bon Jovi berdiri ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+659,Kapan Kumandang Sastra mulai disiarkan ?,indonesian,content,1.75,2.0,1.0,1.5,1.0,6,50.0,2.0
+660,Apa yang dimaksud dengan Jambore pramuka?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+661,seberapa kadar keasaman pada 100ml teh?,indonesian,content,1.2,3.0,0,0,0.6666666666666666,7,0,0.0
+662,berapakah jumlah episode/seri Go-Tōbun no Hanayome?,indonesian,content,1.1666666666666667,4.0,0,0,0.8571428571428571,8,0,0.0
+663,berapakah jumlah pulau di kepulauan Krakatau?,indonesian,content,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+664,kapan kah Basileios II dilahirkan?,indonesian,content,2.0,2.0,0,2.0,0.6,6,0.0,1.0
+665,Kapan Pelemparan di Praha terjadi?,indonesian,content,2.5,3.0,0,2.0,0.8,6,0.0,1.0
+666,Siapa karakter utama dalam The Castle of Cagliostro?,indonesian,content,1.5714285714285714,4.0,0,0,0.75,9,0,0.0
+667,Siapakah sutradara film Aku Cinta Kamu?,indonesian,content,1.5,3.0,0,0,0.5714285714285714,8,0,0.0
+668,siapakah orang tua Marc Márquez Alenta?,indonesian,content,1.5,3.0,0,0,0.7142857142857143,8,0,0.0
+669,Siapakah ketua BPK PENABUR ?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+670,siapakah pendiri NBC ?,indonesian,content,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+671,Dimanakah tumbuhan kaktus sering dijumpai ?,indonesian,content,2.2,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+672,Berapa lama penerbangan dari Kuala Lumpur ke Jeddah?,indonesian,content,1.5714285714285714,3.0,0,0,0.75,9,0,0.0
+673,Siapakah menteri keuangan Indonesia tahun 2017?,indonesian,content,1.5,3.0,0,0,0.5714285714285714,8,0,0.0
+674,Nasib buruk apa yang dimaksud dalam Tulisan di dinding?,indonesian,content,1.5,5.0,1.0,2.0,0.5555555555555556,10,100.0,1.0
+675,Berapa biaya produksi kapal Mochizuki?,indonesian,content,1.0,3.0,0,0,1.0,6,0,0.0
+676,Berapa luas kota Malé?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+677,Berapa jumlah divisi dalam TNI ?,indonesian,content,1.5,2.0,0,0,0.8,6,0,0.0
+678,Kapan Kubilai Khan lahir?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+679,siapakah yang menciptakan Istilah Genosida?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+680,Di daerah bersuhu berapa tanaman temu mangga bisa hiup ?,indonesian,content,2.625,3.0,1.0,1.5,0.7777777777777778,10,50.0,2.0
+681,Berapa luas kota Gander?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+682,mata uang apakah yang digunakan di Iran?,indonesian,content,1.8571428571428572,3.0,1.0,2.0,0.5,9,100.0,1.0
+683,Siapakah penulis buku The Heroes of Olympus?,indonesian,content,1.2857142857142858,5.0,0,0,0.75,9,0,0.0
+684,berapa lamakah Indonesia mengalami kolonialisme?,indonesian,content,1.75,1.0,0,4.0,1.0,6,0.0,1.0
+685,siapakah pemimpin Kekaisaran Bizantium yang terlama?,indonesian,content,1.6666666666666667,3.0,1.0,1.0,0.5714285714285714,8,100.0,1.0
+686,berapakah jumlah dewa pada agama budha?,indonesian,content,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+687,Siapakah Sultan Bone pertama?,indonesian,content,1.5,2.0,0,0,0.6,6,0,0.0
+688,Siapa pendiri Institut Leimena?,indonesian,content,1.0,3.0,0,0,0.75,5,0,0.0
+689,Bagaimana cerita rakyat dulu disampaikan kepada masyarakat?,indonesian,content,2.0,2.0,0,4.0,0.8571428571428571,8,0.0,1.0
+690,Siapakah karakter utama dari Petualangan Tintin ?,indonesian,content,1.5,3.0,0,0,0.5714285714285714,8,0,0.0
+691,Tahun berapakah seni pembuatan tanah liat masuk ke Indonesia ?,indonesian,content,2.6666666666666665,4.0,0,4.0,0.8,11,0.0,1.0
+692,siapapresiden pertama indonesia?,indonesian,content,1.5,1.0,0,0,1.0,4,0,0.0
+693,Siapakah perdana menteri pertama Pakistan ?,indonesian,content,1.6,2.0,0,0,0.6666666666666666,7,0,0.0
+694,Siapakah produser dari film Johnny English Reborn?,indonesian,content,1.2857142857142858,5.0,0,0,0.625,9,0,0.0
+695,berapakah jumlah fakultas di Universitas Teuku Umar tahun 2010?,indonesian,content,1.8888888888888888,3.0,0,0,0.7,11,0,0.0
+696,Di umur berapa Michael Trent Reznor mulai belajar musik?,indonesian,content,2.125,3.0,1.0,2.5,0.8888888888888888,10,50.0,2.0
+697,kapankah Pensil diciptakan pertama kali?,indonesian,content,1.6,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+698,Kapan Kitab Yesaya ditulis ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+699,Dimanakah aliran Sungai Asahan berakhir ?,indonesian,content,2.2,3.0,0,2.0,0.8333333333333334,7,0.0,1.0
+700,Berapa luas Vihara Buddhagaya?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+701,berapakah luas Kota Pasuruan?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+702,Kapan Islam masuk pertama kali ke Aceh ?,indonesian,content,1.8333333333333333,2.0,0,4.0,0.8571428571428571,8,0.0,1.0
+703,tahun berapakah Tio Ie Soei meninggal?,indonesian,content,2.8333333333333335,3.0,0,3.0,0.8571428571428571,8,0.0,1.0
+704,Dimanakah letak Timur Dekat Kuno?,indonesian,content,1.2,4.0,0,0,0.6666666666666666,7,0,0.0
+705,pernahkah Pierre II menikah?,indonesian,content,2.0,2.0,0,2.0,0.6,6,0.0,1.0
+706,Kapan Fan Li lahir ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+707,Mengapa orang melakukan Konversi?,indonesian,content,1.3333333333333333,1.0,0,3.0,1.0,5,0.0,1.0
+708,siapakah Raja Swedia yang pertama?,indonesian,content,1.6,3.0,0,0,0.5,7,0,0.0
+709,dimanakah Aleksander III dimakamkan?,indonesian,content,2.0,2.0,0,2.0,0.6,6,0.0,1.0
+710,Kapankah Rizaldi Siagian lahir ?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+711,siapakah dokter hewan pertama di Indonesia?,indonesian,content,1.8333333333333333,3.0,0,0,0.5714285714285714,8,0,0.0
+712,tahun berapakah Unione Sportiva Sassuolo Calcio didirikan?,indonesian,content,2.2857142857142856,4.0,0,2.0,0.875,9,0.0,1.0
+713,berapakah luas Aceh Tengah?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+714,Dimanakah fosil Homo floresiensis ditemukan?,indonesian,content,2.2,3.0,0,2.0,0.8333333333333334,7,0.0,1.0
+715,siapakah sutradara film merantau?,indonesian,content,1.5,2.0,1.0,0.0,0.6,6,100.0,1.0
+716,berapa lamakah yang diperlukan untuk memanen tembakau?,indonesian,content,1.3333333333333333,3.0,2.0,2.0,0.7142857142857143,8,100.0,2.0
+717,Kapan Sunan Ampel meninggal?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+718,Dari manakah asal Rusli Amran?,indonesian,content,1.6,2.0,0,0,0.5,7,0,0.0
+719,dimanakah Hamid Algadri dilahirkan?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+720,kapankah Syi'ah Ismailiyah dibentuk?,indonesian,content,2.8,3.0,0,2.0,0.8333333333333334,8,0.0,1.0
+721,Dari manakah kata lebak berasal ?,indonesian,content,1.8,2.0,0,2.0,0.5,7,0.0,1.0
+722,Siapa yang membawa masuk ajaran Syiah ke Indonesia?,indonesian,content,1.4285714285714286,5.0,2.0,1.5,0.625,9,100.0,2.0
+723,siapakah yang menciptakan TOEFL?,indonesian,content,1.5,2.0,1.0,2.0,0.4,6,100.0,1.0
+724,Kapankah MLP:FIM pertama kali tayang di televisi ?,indonesian,content,2.5,2.0,0,4.0,0.7777777777777778,11,0.0,1.0
+725,Kapan epidose pertama Melati untuk Marvel ditayangkan?,indonesian,content,3.1666666666666665,3.0,0,2.0,0.8571428571428571,8,0.0,1.0
+726,siapakah nama karakter antagonis utama di dalam Avatar: The Last Airbender?,indonesian,content,1.9090909090909092,5.0,0,0,0.6666666666666666,14,0,0.0
+727,Siapa penerbit film Paddle Pop Atlantos?,indonesian,content,1.0,5.0,0,0,0.8333333333333334,7,0,0.0
+728,kapankah D'Academy pertama kali ditayangkan di tv?,indonesian,content,2.5,2.0,0,4.0,0.7777777777777778,11,0.0,1.0
+729,Berapa jumlah album A. Riyanto?,indonesian,content,1.25,3.0,0,0,1.0,7,0,0.0
+730,berapakah jumlah situs arkeologi di Indonesia?,indonesian,content,1.6666666666666667,2.0,0,0,0.7142857142857143,8,0,0.0
+731,Untuk apakah Taman Italia dibangun?,indonesian,content,1.8,2.0,0,2.0,0.5,7,0.0,1.0
+732,Siapa ketua fraksi Partai Aliansi Liberal dan Demokrat untuk Eropa?,indonesian,content,1.7777777777777777,6.0,0,0,0.7,11,0,0.0
+733,Berapa jumlah lagu dalam album mini Shock of the New Era?,indonesian,content,1.3,6.0,0,0,0.9090909090909091,12,0,0.0
+734,kapankah Perserikatan Bangsa-bangsa diresmikan?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+735,Berapakah jumlah Tarian tradisional di Jawa?,indonesian,content,1.6666666666666667,2.0,0,0,0.7142857142857143,8,0,0.0
+736,Siapa pendiri istana kekaisaran pada zaman Heian?,indonesian,content,1.5,3.0,0,0,0.7142857142857143,8,0,0.0
+737,Kapan Learning Management System pertama diciptakan?,indonesian,content,2.8,3.0,0,2.0,1.0,7,0.0,1.0
+738,Tanaman apa yang memerlukan ilmu Pemuliaan tanaman?,indonesian,content,1.3333333333333333,4.0,1.0,2.0,0.7142857142857143,8,100.0,1.0
+739,berapakah jumlah korban saat perang Padri?,indonesian,content,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+740,kapankah kapal pertama diciptakan?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+741,Kapan Strategi Iklim dan Energi 2030 dirancang ?,indonesian,content,2.6666666666666665,4.0,0,2.0,0.7142857142857143,8,0.0,1.0
+742,Mengapa Pemberontakan Batavia terjadi?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+743,Kapan Amerika Serikat melakukan uji coba senjata nuklir?,indonesian,content,1.4285714285714286,4.0,0,3.0,1.0,9,0.0,1.0
+744,Berapakah kadar alkohol dari minuman Cap Tikus ?,indonesian,content,1.4285714285714286,3.0,0,0,0.75,9,0,0.0
+745,siapakah presiden iran 2014?,indonesian,content,1.25,3.0,0,0,0.4,6,0,0.0
+746,siapakah pemimpin/presiden Jerman pertama kali?,indonesian,content,1.5,4.0,0,0,0.7142857142857143,8,0,0.0
+747,dimanakah kantor pusat Kemenperin RI?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+748,Siapakah Kubilai Khan?,indonesian,content,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+749,kapankah Brasília Metro diresmikan pertama kali?,indonesian,content,1.8333333333333333,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+750,Berapa luas pulau Belitung ?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+751,dari manakah asal Pierluigi Collina?,indonesian,content,1.6,2.0,0,0,0.5,7,0,0.0
+752,Siapakah orang Eropa yang pertama datang ke Jepang?,indonesian,content,2.0,4.0,1.0,2.0,0.5555555555555556,10,100.0,1.0
+753,Kapan Hulagu Khan meninggal ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+754,tahun berapakah Kesultanan Aceh didirikan?,indonesian,content,2.6,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+755,Siapa istri Prof.Dr. H. Musa Asy'ari?,indonesian,content,1.8333333333333333,5.0,0,0,0.8571428571428571,11,0,0.0
+756,Kapan Automobiles Gonfaronnaises Sportives berdiri ?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+757,berapakah luas Garden Museum?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+758,Apa yang dimaksud dengan semiconductor?,indonesian,content,1.5,3.0,1.0,2.0,0.4,6,100.0,1.0
+759,Apa yang dimaksud komunikasi visual?,indonesian,content,1.25,3.0,1.0,2.0,0.6,6,100.0,1.0
+760,Siapa pendiri agama Bahá'í?,indonesian,content,1.0,3.0,0,0,0.75,5,0,0.0
+761,Dimana letak Kensington ?,indonesian,content,1.0,2.0,0,0,0.6666666666666666,4,0,0.0
+762,siapakah jenderal pertama TNI ?,indonesian,content,1.5,2.0,0,0,0.6,6,0,0.0
+763,siapakah bupati pertama di Kab. Tasikmalaya?,indonesian,content,1.6666666666666667,3.0,0,0,0.5714285714285714,9,0,0.0
+764,Dimanakah Kebakaran KM Levina I terjadi ?,indonesian,content,2.3333333333333335,4.0,0,2.0,0.8571428571428571,8,0.0,1.0
+765,Kapan Pisau Gaib diterbitkan ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+766,Kapan Kritik atas Nalar Murni diterbitkan?,indonesian,content,2.6,3.0,0,2.0,0.8333333333333334,7,0.0,1.0
+767,Kapan Petar Segrt ditunjuk menjadi pelatih kepala PSM Makassar?,indonesian,content,1.5,4.0,1.0,2.0,1.0,10,50.0,2.0
+768,Kapan Pondok Pesantren Al Jauhari Garut dibangun ?,indonesian,content,2.5,5.0,0,2.0,1.0,8,0.0,1.0
+769,siapakah orang tua Cut Nyak Dhien?,indonesian,content,1.3333333333333333,4.0,0,0,0.7142857142857143,8,0,0.0
+770,Siapa juara Grand Prix Amerika Serikat 2005?,indonesian,content,1.0,6.0,0,0,0.7142857142857143,8,0,0.0
+771,Berapa luas pulau Jamaika?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+772,siapakah yang menggantikan tahta Rudolf I?,indonesian,content,1.3333333333333333,4.0,1.0,2.0,0.42857142857142855,8,100.0,1.0
+773,Dimana letak Balai Kota DKI Jakarta?,indonesian,content,1.0,5.0,0,0,0.8333333333333334,7,0,0.0
+774,kapankah Musik hip hop masuk ke Indonesia?,indonesian,content,2.0,3.0,0,3.0,0.75,9,0.0,1.0
+775,Kapan acara realitas Mamamia pertama kali masuk di Indonesia?,indonesian,content,2.375,2.0,0,4.0,0.8888888888888888,10,0.0,1.0
+776,Berapa luas Sekolah Regina Pacis?,indonesian,content,1.0,3.0,0,0,1.0,6,0,0.0
+777,Berapa luas kota Westminster ?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+778,berapakah luas wilayah Uighur Xinjiang?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+779,Dimana letak Montenegro?,indonesian,content,1.0,2.0,0,0,0.6666666666666666,4,0,0.0
+780,Kapan Mayor PNB Djalaludin Tantu bergabung dengan TNI ?,indonesian,content,2.142857142857143,4.0,0,3.0,0.875,9,0.0,1.0
+781,Dimana letak Aquitania?,indonesian,content,1.0,2.0,0,0,0.6666666666666666,4,0,0.0
+782,berapakah jumlah fakultas di Politeknik Negeri Madura tahun 2015?,indonesian,content,1.8888888888888888,3.0,0,0,0.7,11,0,0.0
+783,Siapa tokoh utama dari ISkul Musikal?,indonesian,content,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+784,Kapankah tiongkok menjadi negara republik ?,indonesian,content,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+785,siapakah yang mendirikan Maccabi Haifa F.C.?,indonesian,content,1.3333333333333333,4.0,1.0,2.0,0.5714285714285714,9,100.0,1.0
+786,Bagaimana suara dapat direkam menjadi MP3?,indonesian,content,1.6,2.0,1.0,2.0,0.8333333333333334,7,50.0,2.0
+787,siapakah orang tua Daeng Koro?,indonesian,content,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+788,Kapan buku Stardust diterbitkan di Inggris?,indonesian,content,1.8,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+789,Siapakah presiden Turkmenistan pertama ?,indonesian,content,1.5,2.0,0,0,0.6,6,0,0.0
+790,Dari mana asal kata azali ?,indonesian,content,1.25,2.0,0,0,0.6,6,0,0.0
+791,Bahasa apa yang digunakan dalam Kitab Yesus bin Sirakh?,indonesian,content,1.375,5.0,1.0,2.0,0.6666666666666666,10,100.0,1.0
+792,Dari mana asal kata Bhagawadgita?,indonesian,content,1.25,2.0,0,0,0.6,6,0,0.0
+793,Berapa umur Samuel Rizal saat membintangi Eiffel.,indonesian,content,1.5,2.0,1.0,2.0,0.8571428571428571,8,100.0,1.0
+794,..,indonesian,content,0,0.0,0,0,0,2,0,0.0
+795,I'm in Love?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+796,Mengapa organisasi Akatsuki didirikan?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+797,siapakah manusia pertama yang di baptis?,indonesian,content,1.5,3.0,1.0,2.0,0.42857142857142855,8,100.0,1.0
+798,Ada berapa jumlah bentuk molekul?,indonesian,content,1.25,3.0,0,1.0,1.0,6,0.0,1.0
+799,Berapa jumlah tim sepak bola di Jerman?,indonesian,content,1.6666666666666667,3.0,0,0,0.8571428571428571,8,0,0.0
+800,kapankah Ashikaga Takauji dilahirkan?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+801,sejak kapankah tradisi Kebo-Keboan dimulai pertama kali?,indonesian,content,1.7142857142857142,2.0,0,3.0,0.75,9,0.0,1.0
+802,Siapa artis wanita pemeran utama dalam Eiffel.,indonesian,content,1.3333333333333333,5.0,0,0,0.7142857142857143,8,0,0.0
+803,..,indonesian,content,0,0.0,0,0,0,2,0,0.0
+804,I'm in Love?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+805,Di umur berapa Ambo Dalle mulai belajar ilmu agama?,indonesian,content,1.75,3.0,1.0,2.5,0.8888888888888888,10,50.0,2.0
+806,Abad keberapakah zaman feodal Jepang?,indonesian,content,1.6,2.0,0,0,0.8333333333333334,7,0,0.0
+807,Berapa luas kecamatan Samarinda Seberang?,indonesian,content,1.0,3.0,0,0,1.0,6,0,0.0
+808,Kapan General Dynamics Corporation berdiri ?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+809,siapakah penerus Asyurbanipal?,indonesian,content,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+810,Bagaimana sistem Pengelolaan sampah di Indonesia?,indonesian,content,1.6,2.0,0,0,0.8333333333333334,7,0,0.0
+811,Kapan Museum Goedang Ransoem dibangun ?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+812,kapankah SD Card Association dibuat pertama kali?,indonesian,content,2.0,3.0,0,3.0,0.875,9,0.0,1.0
+813,siapakah CEO PT Antam tahun 2008?,indonesian,content,1.5,3.0,0,0,0.5714285714285714,8,0,0.0
+814,tahun berapakah Gerhana Matahari Asyur terjadi ?,indonesian,content,2.8333333333333335,3.0,0,3.0,0.8571428571428571,8,0.0,1.0
+815,siapakah ketua Perum LKBN pertama?,indonesian,content,1.6,3.0,0,0,0.6666666666666666,7,0,0.0
+816,Berapa lama Konsili Efesus berlangsung?,indonesian,content,2.5,2.0,0,3.0,1.0,6,0.0,1.0
+817,siapakah nama dewa/tuhan tertinggi di kepercayaan Tionghoa?,indonesian,content,1.4285714285714286,4.0,0,0,0.625,9,0,0.0
+818,Kapan PT Broadband Multimedia Tbk berubah menjadi First Media ?,indonesian,content,1.875,4.0,1.0,2.0,1.0,10,50.0,2.0
+819,Berapa durasi lagu Shock?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+820,dari manakah asal Thomas Francis Mantell?,indonesian,content,1.5,3.0,0,0,0.5714285714285714,8,0,0.0
+821,Dimana proyek Palapa Ring dimulai?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+822,Siapakah wakil ketua Mahkamah Konstitusi Republik Indonesia yang kedua?,indonesian,content,1.7777777777777777,6.0,0,0,0.7,11,0,0.0
+823,dari manakah asal Soetjipto Soentoro?,indonesian,content,1.6,2.0,0,0,0.5,7,0,0.0
+824,Dimana Petrus Lombardus meninggal?,indonesian,content,2.0,2.0,0,2.0,0.75,5,0.0,1.0
+825,dari manakah istilah genosida berasal?,indonesian,content,1.8,2.0,0,2.0,0.5,7,0.0,1.0
+826,Tahun berapa orde lama berakhir?,indonesian,content,2.5,2.0,0,3.0,1.0,6,0.0,1.0
+827,berapakah jumlah kecamatan Kabupaten Nabire?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+828,Kapan PT bus Damri didirikan?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+829,Siapakah ketua KPK tahun 2018?,indonesian,content,1.4,3.0,0,0,0.5,7,0,0.0
+830,Berapa luas Las Vegas?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+831,Siapa yang merumuskan naskah proklamasi Indonesia?,indonesian,content,1.2,4.0,1.0,2.0,0.6666666666666666,7,100.0,1.0
+832,Bagaimanakah cara penggunaan Google Keep?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+833,Apa yang dimaksud dengan penyakit autosomal?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+834,Siapakah ketua Mahkamah Konstitusi Republik Indonesia yang pertama?,indonesian,content,1.75,5.0,0,0,0.6666666666666666,10,0,0.0
+835,Kapan Pieter Willem Botha menjabat sebagai perdana menteri ?,indonesian,content,2.142857142857143,3.0,0,3.0,0.875,9,0.0,1.0
+836,Berapakah luas kawasan Candi Mendut?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+837,kapan aljabar ditemukan?,indonesian,content,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+838,Siapa yang memperkenalkan Unitarianisme?,indonesian,content,1.3333333333333333,2.0,1.0,2.0,0.5,5,100.0,1.0
+839,berapakah jumlah lagu yang dibuat oleh boyband Beast?,indonesian,content,1.5,3.0,1.0,2.0,0.6666666666666666,10,100.0,1.0
+840,kapankah Fiber optik pertama kali diciptakan?,indonesian,content,2.3333333333333335,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+841,dimanakah Aleksander III dilahirkan?,indonesian,content,2.0,2.0,0,2.0,0.6,6,0.0,1.0
+842,Kapan Tarekat Qodiriyah wa Naqsyabandiyah berdiri ?,indonesian,content,2.4,4.0,0,2.0,1.0,7,0.0,1.0
+843,Kapan Katolik masuk ke Roma ?,indonesian,content,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+844,Kapan Mesin Bubut diciptakan?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+845,Kapan Simon dan Garfunkel memulai debut sebagai penyanyi ?,indonesian,content,2.0,3.0,0,3.0,0.75,9,0.0,1.0
+846,kapankah Kabupaten Lingga berdiri?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+847,bisakah kita membuat Nasi goreng menggunakan beras coklat?,indonesian,content,1.625,3.0,1.0,2.5,0.6666666666666666,10,50.0,2.0
+848,tahun berapakah The Greatest Showman dirilis?,indonesian,content,2.8333333333333335,3.0,0,3.0,0.8571428571428571,8,0.0,1.0
+849,Dimana Wei Zheng lahir?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+850,Kapan Perusahaan Jawatan Kereta Api didirikan?,indonesian,content,2.4,4.0,0,2.0,1.0,7,0.0,1.0
+851,Siapa yang berpotensi terkena penyakit Talasemia ?,indonesian,content,1.2,4.0,2.0,1.5,0.6666666666666666,7,100.0,2.0
+852,siapakah orang tua Huang Na?,indonesian,content,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+853,Siapakah yang menciptakan keyboard pertama kali ?,indonesian,content,1.5,3.0,1.0,2.0,0.5714285714285714,8,100.0,1.0
+854,berapakah jumlah album Christina Aguilera?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+855,Kapan MRT mulai beroperasi di Jakarta ?,indonesian,content,1.4,3.0,1.0,2.0,0.8333333333333334,7,50.0,2.0
+856,Siapa nama istri Joko Sutopo ?,indonesian,content,1.0,4.0,0,0,0.8,6,0,0.0
+857,Siapakah yang disebut Pahlawan Nasional ?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+858,kapankah Alexander von Humboldt meninggal?,indonesian,content,2.2,3.0,0,2.0,0.8333333333333334,7,0.0,1.0
+859,Kapan Empire Earth dirilis ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+860,Siapa pemeran utama di film Paddle Pop Atlantos?,indonesian,content,1.2857142857142858,5.0,0,0,0.75,9,0,0.0
+861,Bagaimanakah bakteri masuk ke dalam tubuh manusia ?,indonesian,content,1.7142857142857142,2.0,0,3.0,0.625,9,0.0,1.0
+862,Apa yang dimaksud dengan Suaka ?,indonesian,content,1.5,3.0,1.0,2.0,0.4,6,100.0,1.0
+863,dimanakah letak Kesultanan Ngayogyakarta Hadiningrat?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+864,Dimana letak daerah Malta di Eropa ?,indonesian,content,1.4,4.0,0,0,0.6666666666666666,7,0,0.0
+865,berapakah kandungan lemak dalam 1ltr asi?,indonesian,content,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+866,Kapan pangkat Kolonel Jenderal digunakan di Prancis?,indonesian,content,2.0,3.0,0,3.0,0.8571428571428571,8,0.0,1.0
+867,siapakah pencipta Magical Doremi?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+868,Berapa laba bersih HSBC Holdings PLC 2011?,indonesian,content,1.1666666666666667,4.0,0,0,0.8571428571428571,8,0,0.0
+869,Berapa lama Prof. Dr. Gerrit A.,indonesian,content,2.0,3.0,0,0,1.0,9,0,0.0
+870,Siwabessy menjadi Menteri Kesehatan Republik Indonesia?,indonesian,content,1.0,4.0,0,2.0,1.0,7,0.0,1.0
+871,berapakah populasi masyarakat Kampung Naga?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+872,Siapakah Dr. H. Shofwan Karim Elha?,indonesian,content,1.8333333333333333,4.0,0,0,0.7142857142857143,10,0,0.0
+873,Siapa Kepala sekolah pertama SMK Negeri 1 Cikampek?,indonesian,content,1.5714285714285714,4.0,0,0,0.75,9,0,0.0
+874,berapakah luas Kecamatan Pakong?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+875,Kapan Need for Speed: ​​Payback dirilis?,indonesian,content,3.0,4.0,0,2.0,1.0,8,0.0,1.0
+876,kapankah perusahaan Siemens AG didirikan pertama kali?,indonesian,content,2.0,3.0,0,3.0,0.875,9,0.0,1.0
+877,Kapankah PPSM Sakti Magelang berdiri ?,indonesian,content,2.2,3.0,0,2.0,0.8333333333333334,7,0.0,1.0
+878,Berapa tahap dalam proses pengaturan tampilan templat?,indonesian,content,1.1666666666666667,4.0,0,0,0.8571428571428571,8,0,0.0
+879,apa yang dimaksud dengan teori komunikasi pada model lasswell?,indonesian,content,1.75,3.0,1.0,3.0,0.5555555555555556,10,100.0,1.0
+880,siapakah PM/President pertama Republik India?,indonesian,content,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+881,berapa lamakah zaman Orde Lama berlangsung?,indonesian,content,2.4,4.0,0,2.0,1.0,7,0.0,1.0
+882,Kapan R.M.A.A. Koesoemo Oetoyo diangkat menjadi bupati ?,indonesian,content,2.6666666666666665,2.0,1.0,2.0,1.0,9,50.0,2.0
+883,"Mengapa tim Preston North End dijuluki nama ""The Invincibles""?",indonesian,content,2.125,4.0,0,3.0,1.0,12,0.0,1.0
+884,Kapan Johnny Hiromu Kitagawa lahir?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+885,Berapa jumlah serial dari Knights of Lemon?,indonesian,content,1.3333333333333333,3.0,0,0,0.8571428571428571,8,0,0.0
+886,Berapa lama Kerajaan Selaparang berkuasa di Lombok ?,indonesian,content,2.1666666666666665,2.0,0,4.0,0.8571428571428571,8,0.0,1.0
+887,Kapan Pembantaian Westerling terjadi ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+888,pernahkah Mesir terkena tsunami?,indonesian,content,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+889,berapakah laus negara India ?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+890,siapakah orang tua Jean-Bertrand Aristide?,indonesian,content,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+891,Berapa jumlah suku Moro di Filipina tahun 2001?,indonesian,content,2.0,2.0,0,0,0.75,9,0,0.0
+892,Kapan ponsel Blackberry pertama kali rilis ?,indonesian,content,2.4,2.0,0,3.0,1.0,7,0.0,1.0
+893,Siapa pemimpin Pertempuran Attu?,indonesian,content,1.0,3.0,0,0,0.75,5,0,0.0
+894,Apa yang dimaksud dengan Gerakan kepanduan?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+895,berapakah luas Kepulauan Marshall?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+896,Dari manakah adal club CONMEBOL?,indonesian,content,1.6,2.0,0,4.0,0.5,7,0.0,1.0
+897,Tentang apa isi kitab Bhagawad Gita?,indonesian,content,1.0,4.0,0,0,0.6666666666666666,7,0,0.0
+898,Berapa lama Michiel Adriaenszoon de Ruyter menjadi laksamana Belanda?,indonesian,content,1.875,4.0,0,3.0,1.0,10,0.0,1.0
+899,mata uang apakah yang digunakan di brazil?,indonesian,content,1.8571428571428572,3.0,1.0,2.0,0.5,9,100.0,1.0
+900,Berapa macam spesies burung Cipoh kacat ?,indonesian,content,1.0,4.0,0,0,1.0,7,0,0.0
+901,dimanakah Bandai Namco Entertainment didirikan pertama kali?,indonesian,content,2.0,3.0,0,3.0,0.875,9,0.0,1.0
+902,kapankah The Last of Us: Left Behind dirilis?,indonesian,content,3.0,3.0,0,2.0,0.8888888888888888,11,0.0,1.0
+903,kapankah Wang Duo meninggal?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+904,berapakah jumlah kandungan gula dalam 100gr anggur?,indonesian,content,1.8571428571428572,2.0,0,0,0.625,9,0,0.0
+905,kapankah al-Musnad dibuat?,indonesian,content,1.6666666666666667,2.0,0,2.0,0.75,5,0.0,1.0
+906,dimanakah kantor pusat Perum LKBN?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+907,Siapa pendiri NAMRU-2?,indonesian,content,1.0,2.0,0,0,0.6666666666666666,4,0,0.0
+908,Siapa raja pertama kerajaan Negeri Sembilan?,indonesian,content,1.2,4.0,0,0,0.6666666666666666,7,0,0.0
+909,siapakah pencipta game Final Fantasy X?,indonesian,content,1.1666666666666667,5.0,0,0,0.7142857142857143,8,0,0.0
+910,berapakah jumlah jenis penyakit pada penis?,indonesian,content,1.3333333333333333,4.0,0,0,0.7142857142857143,8,0,0.0
+911,Perushaan apa yang memproduksi Maltese pertama kali ?,indonesian,content,1.6666666666666667,3.0,1.0,3.0,0.7142857142857143,8,100.0,1.0
+912,Siapakah pembawa acara Hikmah Fajar?,indonesian,content,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+913,Pernahkah Petualangan Tintin difilmkan ?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+914,Dimana Ratu Mingde lahir?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+915,Dimanakah Djamaludin Malik lahir?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+916,Kapankah Louw Djing Tie lahir ?,indonesian,content,2.2,3.0,0,2.0,0.8333333333333334,7,0.0,1.0
+917,Siapakah karakter antagonis dalam In America ?,indonesian,content,1.5,3.0,0,0,0.5714285714285714,8,0,0.0
+918,Siapa musuh Harumichi Bouya?,indonesian,content,1.0,3.0,0,0,0.75,5,0,0.0
+919,tahun berapakah E. L. James mulai membuat Fifty Shades Darker?,indonesian,content,2.5,4.0,1.0,2.0,0.9090909090909091,14,50.0,2.0
+920,Pada umur berapa Rudolf Christian menemukan mesin diesel ?,indonesian,content,1.8571428571428572,2.0,0,4.0,0.875,9,0.0,1.0
+921,kapan kah musim yang baik untuk menanam beras?,indonesian,content,1.7142857142857142,3.0,1.0,2.0,0.625,9,100.0,1.0
+922,Sejak kapan Billboard Hot 100 mulai diselenggarakan ?,indonesian,content,2.1666666666666665,3.0,0,3.0,0.7142857142857143,8,0.0,1.0
+923,Sejak kapa suku Sasak berada di pulau Lombok ?,indonesian,content,1.5714285714285714,2.0,0,3.0,0.625,9,0.0,1.0
+924,Siapa arsitek Istana Kerajaan Kamboja?,indonesian,content,1.0,4.0,0,0,0.8,6,0,0.0
+925,Siapakah pemimpin Khilafah pertama ?,indonesian,content,1.5,2.0,0,0,0.6,6,0,0.0
+926,Dimana Oskar-Heinz “Pritzl” Bär lahir ?,indonesian,content,4.25,2.0,0,2.0,1.0,8,0.0,1.0
+927,Berapa luas Museum Anak Kolong Tangga?,indonesian,content,1.0,4.0,0,0,1.0,7,0,0.0
+928,Berapa lama waktu yang diperlukan untuk lulus jurusan Manajemen pemasaran di ITB?,indonesian,content,1.5454545454545454,5.0,2.0,2.0,0.75,13,100.0,2.0
+929,Berapakah panjang pantai Pesisir Selatan?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+930,Siapa pengarah film Guinea Pig?,indonesian,content,1.0,4.0,0,0,0.8,6,0,0.0
+931,siapakah orang tua Przemysł II?,indonesian,content,1.4,3.0,0,0,0.5,7,0,0.0
+932,Siapa yang mengembangkan situs Multiply ?,indonesian,content,1.25,3.0,1.0,2.0,0.6,6,100.0,1.0
+933,negara manakah yang terbesar di eropa barat?,indonesian,content,1.5714285714285714,3.0,0,0,0.5,9,0,0.0
+934,Dimana Johnny Hiromu Kitagawa lahir?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+935,Bahasa apa yang digunakan pada Mishnah?,indonesian,content,1.6,3.0,1.0,2.0,0.5,7,100.0,1.0
+936,tahun berapakah novel No Game No Life dirilis pertama kali?,indonesian,content,2.2,5.0,0,3.0,0.9090909090909091,12,0.0,1.0
+937,Apa yang dimaksud dengan jembatan suspensi?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+938,Siapa tokoh utama dalam film Bunian?,indonesian,content,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+939,berapakah luas LOKA ?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+940,Siapakah yang memperkenalkan istilah SUV ?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+941,Berapa frekuensi Radio Pelita Kasih?,indonesian,content,1.0,3.0,0,0,1.0,6,0,0.0
+942,dimanakah majalah Prisma didirikan pertama kali?,indonesian,content,1.8333333333333333,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+943,Berapakah berat maksimal Beruang-hitam himalaya?,indonesian,content,1.4,2.0,0,0,0.6666666666666666,7,0,0.0
+944,berapakah luas USS Renville?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+945,siapakah presiden brazil 2012?,indonesian,content,1.25,3.0,0,0,0.4,6,0,0.0
+946,berapakah cabang Ilmu politik?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+947,Pada zaman apakah Baudouin hidup ?,indonesian,content,2.0,2.0,0,3.0,0.6666666666666666,7,0.0,1.0
+948,Berapakah luas kekuasaan kerajaan Bali Dwipa ?,indonesian,content,1.1666666666666667,4.0,0,0,0.8571428571428571,8,0,0.0
+949,kapankah kalender pertama ditemukan?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+950,Apa yang dimaksud dengan kota Metropolitan?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+951,Berapa jarak Terminal Brawijaya ke Terminal Sritanjung?,indonesian,content,1.5,2.0,0,0,0.8571428571428571,8,0,0.0
+952,dimanakah Brigjen dr.,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+953,Soepandji dilahirkan?,indonesian,content,1.0,1.0,0,1.0,1.0,3,0.0,1.0
+954,siapakah orang tua F.L. Anthing?,indonesian,content,1.6,3.0,0,0,0.6666666666666666,8,0,0.0
+955,berapakah jumlah populasi masyarakat Kabupaten Donggala tahun 2015?,indonesian,content,1.625,4.0,0,0,0.7777777777777778,10,0,0.0
+956,Kapan BlackBerry diciptakan ?,indonesian,content,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+957,siapakah pencipta Motion capture?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+958,kapankah Dropbox didirikan?,indonesian,content,1.6666666666666667,2.0,0,2.0,0.75,5,0.0,1.0
+959,Apa yang dimaksud dengan Pahlawan Nasional Indonesia ?,indonesian,content,1.3333333333333333,4.0,1.0,2.0,0.5714285714285714,8,100.0,1.0
+960,Siapakah drummer grup musik The Who?,indonesian,content,1.1666666666666667,5.0,0,0,0.7142857142857143,8,0,0.0
+961,Dimanakah letak Universitas Leiden ?,indonesian,content,1.25,2.0,0,0,0.6,6,0,0.0
+962,dari manakah asal agama Abrahamik?,indonesian,content,1.6,2.0,0,0,0.5,7,0,0.0
+963,dari manakah asal suku Inka?,indonesian,content,1.6,2.0,0,0,0.5,7,0,0.0
+964,Kapan Werner Karl Heisenberg lahir ?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+965,Apa yang dimaksud alat kolonoskop?,indonesian,content,1.25,3.0,1.0,2.0,0.6,6,100.0,1.0
+966,Kapan Karavan pertama Amerika Tengah terjadi?,indonesian,content,2.6,3.0,0,2.0,1.0,7,0.0,1.0
+967,Apa yang dimaksud dengan Depo lokomotif ?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+968,bisakah Tulip hidup di daerah bersalju?,indonesian,content,1.6666666666666667,2.0,0,1.5,0.5714285714285714,8,0.0,2.0
+969,dimanakah kantor pusat BATAN?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+970,berapakah panjang sungai amazon?,indonesian,content,1.5,3.0,0,0,0.8,6,0,0.0
+971,Kapan Masjid Shah dibangun ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+972,Kapan Dinasti Le didirikan?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+973,Siapakah yang mendirikan Universitas Kristen Petra ?,indonesian,content,1.5,3.0,1.0,2.0,0.5714285714285714,8,100.0,1.0
+974,siapakah dewa utama menurut agama Budha?,indonesian,content,1.5,3.0,0,0,0.5714285714285714,8,0,0.0
+975,Siapa penerbit serial televisi Lost?,indonesian,content,1.0,4.0,0,0,0.8,6,0,0.0
+976,Siapa pendiri Dailymotion ?,indonesian,content,1.0,2.0,0,0,0.6666666666666666,4,0,0.0
+977,Kapankah Sisingamangaraja XII lahir ?,indonesian,content,2.0,2.0,0,2.0,0.6,6,0.0,1.0
+978,dimanakah letak Suaka margasatwa Muara Angke ?,indonesian,content,1.1666666666666667,4.0,0,0,0.8571428571428571,8,0,0.0
+979,Siapakah raja Jerman pertama ?,indonesian,content,1.5,2.0,0,0,0.6,6,0,0.0
+980,Dimana DisneyToon Studios berlokasi ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+981,Siapa penerbit buku Kompas Emas?,indonesian,content,1.0,4.0,0,0,0.8,6,0,0.0
+982,Berapakah luas pulau Ko Phi Phi Leh?,indonesian,content,1.1428571428571428,5.0,0,0,0.875,9,0,0.0
+983,Berapa diameter Labu Schlenk?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+984,Dimanakah spesies burung Kakapo bisa ditemukan ?,indonesian,content,2.3333333333333335,3.0,0,2.0,0.7142857142857143,8,0.0,1.0
+985,Ada berapakah serial buku The Voyage of the Dawn Treader?,indonesian,content,1.4,7.0,0,1.0,0.9090909090909091,12,0.0,1.0
+986,Dimanakah letak negara Angola ?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+987,siapakah ketua badan Kependudukan dan Keluarga Berencana Nasional tahun2010?,indonesian,content,1.8888888888888888,6.0,0,0,0.7,11,0,0.0
+988,Berapa luas wilayah Keboansikep ?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+989,Bagaimana bakteri masuk ke dalam tubuh manusia ?,indonesian,content,1.6666666666666667,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+990,berapa jumlah negara di timur tengah?,indonesian,content,1.4,2.0,0,0,0.8333333333333334,7,0,0.0
+991,Siapa pendiri Institut Teknologi Sepuluh Nopember Surabaya?,indonesian,content,1.0,6.0,0,0,0.8571428571428571,8,0,0.0
+992,Kapan Joseph Muscat lahir ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+993,Dimana kantor pusat Eugen Systems?,indonesian,content,1.25,3.0,0,0,1.0,6,0,0.0
+994,berapkah jumlah album The Rain?,indonesian,content,1.0,4.0,0,1.0,1.0,6,0.0,1.0
+995,berapa besarkah jagung yang tercatat dalam sejarah?,indonesian,content,1.7142857142857142,3.0,1.0,2.0,0.625,9,100.0,1.0
+996,dari manakah asal kata six sigma?,indonesian,content,1.6666666666666667,2.0,0,0,0.5714285714285714,8,0,0.0
+997,Apa yang dimaksud dengan Sang Tiga Dewata Murni?,indonesian,content,2.0,3.0,1.0,2.0,0.5,9,100.0,1.0
+998,dimankah Satoshi Tajiri dilahirkan?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+999,negara apa saja kah yang termasuk dalam kawasan samudera pasifik?,indonesian,content,1.6666666666666667,4.0,1.0,2.0,0.6,11,100.0,1.0
+1000,Berapa luas Taman Pemandian Kerajaan Warsawa?,indonesian,content,1.0,4.0,0,0,1.0,7,0,0.0
+1001,siapakah yang mengakhiri kekaisaran romawi?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+1002,Dimana Colby Lopez meninggal?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+1003,Siapa yang merilis Coco Voice?,indonesian,content,1.25,3.0,1.0,2.0,0.6,6,100.0,1.0
+1004,Perselisihan apakah yang terjadi pada masa pemerintahan Yelizaveta ?,indonesian,content,1.5,4.0,1.0,2.0,0.5555555555555556,10,100.0,1.0
+1005,Kapan Fachry Albar mulai terjun ke dunia akting ?,indonesian,content,1.5714285714285714,3.0,1.0,2.0,0.875,9,50.0,2.0
+1006,kapan homeros meninggal dunia?,indonesian,content,1.3333333333333333,1.0,0,3.0,1.0,5,0.0,1.0
+1007,ada berapakah jenis Proyektor LCD?,indonesian,content,1.6,3.0,0,1.0,0.8333333333333334,7,0.0,1.0
+1008,Kapan Padre Pio lahir?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+1009,kapnkah Sophokles lahir?,indonesian,content,1.6666666666666667,2.0,0,2.0,0.75,5,0.0,1.0
+1010,Dimana Raja Aurangzeb dilahirkan?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+1011,Kapan Alkitab Ibrani diturunkan ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+1012,siapakah arsitek Istana Dolmabahçe?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+1013,berapakah tinggi Candi Kidal?,indonesian,content,1.5,3.0,0,0,0.8,6,0,0.0
+1014,Dimanakah Syekh Bayang dibesarkan ?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+1015,berapakah jumlah album Powderfinger ?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+1016,Berapakah luas Kabupaten Pasaman Timur?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+1017,Berapa luas Provinsi Anhui?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+1018,kapankah Nickelodeon didirikan pertama kali?,indonesian,content,1.6,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+1019,"Kenapa Ras Melayu disebut ""ras coklat"" oleh Johann Friedrich Blumenbach?",indonesian,content,2.0,3.0,0,4.0,0.9,13,0.0,1.0
+1020,Berapa jenis horman dalam tubuh manusia?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+1021,Berapa luas kawasan hutan provinsi Jawa Barat Siapa pendiri PT. Kharisma Starvision Plus?,indonesian,content,1.5833333333333333,5.0,0,0,0.9230769230769231,15,0,0.0
+1022,Kapan aksara Lontara digunakan dalam adat masyrakat bugis ?,indonesian,content,1.5714285714285714,3.0,0,3.0,0.875,9,0.0,1.0
+1023,Perdana Menteri keberapakah Tun Haji Abdullah bin Haji Ahmad Badawi?,indonesian,content,1.4,7.0,0,0,0.9090909090909091,12,0,0.0
+1024,Dimana Raja Ataulf meninggal?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+1025,negara manakah yang memproduksi senjata nuklir terbesar?,indonesian,content,1.5714285714285714,3.0,1.0,2.0,0.625,9,100.0,1.0
+1026,Apa yang dimaksud dengan plat tektonik?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+1027,Dari kerajaan manakah Pangeran Kamran berasal ?,indonesian,content,1.8333333333333333,3.0,0,2.0,0.7142857142857143,8,0.0,1.0
+1028,Berapa jumlah siswa SMK Negeri 1 Cikampek tahun pertama didirikan?,indonesian,content,2.6666666666666665,4.0,0,1.0,0.9,11,0.0,1.0
+1029,Dimanakah Thomas Earl Petty lahir kapankah kartun Pokémon pertama kali dirilis?,indonesian,content,2.6666666666666665,3.0,1.0,3.0,0.8461538461538461,14,50.0,2.0
+1030,Kapan Sekte Rinzai di jepang berdiri ?,indonesian,content,2.8,3.0,0,2.0,0.8333333333333334,7,0.0,1.0
+1031,berapakah jumlah karakter Protagonis pada Ushio to Tora?,indonesian,content,1.5,3.0,0,0,0.7777777777777778,10,0,0.0
+1032,Siapakah karakter utama dalam film Fiksi ?,indonesian,content,1.5,3.0,0,0,0.5714285714285714,8,0,0.0
+1033,sejak kapankah adat Barong Banyuwangi dilakukan?,indonesian,content,2.0,3.0,0,2.0,0.7142857142857143,8,0.0,1.0
+1034,smartphone apakah yang menggunakan teknologi The third screen pertama?,indonesian,content,1.6666666666666667,4.0,1.0,2.0,0.8,11,100.0,1.0
+1035,Apa yang dimaksud dengan membran ?,indonesian,content,1.5,3.0,2.0,1.5,0.4,6,100.0,2.0
+1036,pernahkah Conan Christopher O'Brien menikah?,indonesian,content,2.8333333333333335,4.0,0,2.0,0.8571428571428571,9,0.0,1.0
+1037,Berapa durasi film Tomorrow Never Dies?,indonesian,content,1.0,4.0,0,0,1.0,7,0,0.0
+1038,kapankah SpongeBob pertama kali dirilis?,indonesian,content,2.2,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+1039,berapakah episode Serial anime dand manga Eyeshield 21 ?,indonesian,content,1.125,6.0,0,0,0.7777777777777778,10,0,0.0
+1040,Apa yang dimaksud dengan frekuensi ?,indonesian,content,1.5,3.0,1.0,2.0,0.4,6,100.0,1.0
+1041,boleh kah sarjana Ilmu politik melanjutkan S2 manajemen bisnis?,indonesian,content,2.125,3.0,0,3.0,0.7777777777777778,10,0.0,1.0
+1042,Bagaimana katak Coquí berkembangbiak?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+1043,Siapakah ketua umum Nahdlatul Ulama tahun 2010 ?,indonesian,content,1.7142857142857142,3.0,0,0,0.625,9,0,0.0
+1044,berapakah jumlah kabupaten Provinsi Bali?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+1045,Dimana Arung Palakka lahir?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+1046,Dimana Peraturan Presiden Republik Indonesia No. 10 tahun 1959 ditandatangani?,indonesian,content,3.888888888888889,4.0,0,2.0,0.8,12,0.0,1.0
+1047,Pada zaman apakah aksara baji digunakan?,indonesian,content,2.3333333333333335,2.0,0,3.0,0.7142857142857143,8,0.0,1.0
+1048,Berapa halaman kitab Bhagawad Gita?,indonesian,content,1.0,3.0,0,0,1.0,6,0,0.0
+1049,siapakah nama karakter utama Despicable Me 3?,indonesian,content,1.2857142857142858,5.0,0,0,0.625,9,0,0.0
+1050,berapakah luas Pulau Enggano?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+1051,dimanakah Aleksandra Fyodorovna dilahirkan?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+1052,kapankah Konfusius meninggal?,indonesian,content,1.6666666666666667,2.0,0,2.0,0.75,5,0.0,1.0
+1053,Ada berapa zaman di masa Jepang kuno ?,indonesian,content,1.5,3.0,0,1.0,0.8571428571428571,8,0.0,1.0
+1054,siapakah wanita yang di nikahi Barrack Obama?,indonesian,content,1.4285714285714286,4.0,1.0,3.0,0.5,9,100.0,1.0
+1055,Kapan Lothar II lahir?,indonesian,content,2.0,2.0,0,2.0,0.75,5,0.0,1.0
+1056,Siapakah presiden wanita pertama di Filipina ?,indonesian,content,1.5,4.0,0,0,0.5714285714285714,8,0,0.0
+1057,Kapan tari Breakdance muncul ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+1058,Berapa durasi lagu Tim McGraw?,indonesian,content,1.0,3.0,0,0,1.0,6,0,0.0
+1059,Kapan Francis Fukuyama lahir ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+1060,Siapakah yang memproduksi film Truth in Numbers?,indonesian,content,1.2857142857142858,5.0,1.0,2.0,0.625,9,100.0,1.0
+1061,Everything?,indonesian,content,0,0.0,0,0,1.0,2,0,0.0
+1062,Ada berapa teknik mencuci tangan yang benar?,indonesian,content,1.3333333333333333,5.0,1.0,1.0,0.8571428571428571,8,50.0,2.0
+1063,berapakah jumlah kecamatan di Kabupaten Majalengka?,indonesian,content,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+1064,Kapan organisasi Muhammadiyah berdiri ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+1065,Siapakah yang memberikan nama kehormatan Chengtian?,indonesian,content,1.3333333333333333,4.0,1.0,2.0,0.5714285714285714,8,100.0,1.0
+1066,pernahkah Sultan Mahmud Badaruddin II menikah?,indonesian,content,2.3333333333333335,4.0,0,2.0,0.7142857142857143,8,0.0,1.0
+1067,Siapa walikota Kendal 2017?,indonesian,content,1.0,3.0,0,0,0.5,5,0,0.0
+1068,Kapan Fred Quimby lahir?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+1069,Siapakah anak dari Margarita dari Navarra?,indonesian,content,1.5,4.0,0,0,0.42857142857142855,8,0,0.0
+1070,kapankah Perencanaan pembangunan twintower malaysia di mulai?,indonesian,content,2.142857142857143,4.0,1.0,1.5,0.875,9,50.0,2.0
+1071,apa yang di ucapkan ketika melakukan tarian haka?,indonesian,content,1.4285714285714286,4.0,2.0,2.5,0.5,9,100.0,2.0
+1072,dari manakah tari haka berasal?,indonesian,content,1.8,2.0,0,2.0,0.5,7,0.0,1.0
+1073,berapakah jumlah anggota pada klan Shinano Genji?,indonesian,content,1.4285714285714286,3.0,0,0,0.75,9,0,0.0
+1074,Berapa lamakah pemerintahan Raja Henry VII Tudor?,indonesian,content,1.1666666666666667,4.0,0,0,0.8571428571428571,8,0,0.0
+1075,Berapa lama Konrad III menjadi kaisar Romawi?,indonesian,content,1.5,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+1076,Siapa pendiri Lembaga Administrasi Negara?,indonesian,content,1.0,4.0,0,0,0.8,6,0,0.0
+1077,Berapa durasi film The Mummy?,indonesian,content,1.0,3.0,0,0,1.0,6,0,0.0
+1078,Berapakah jumlah korban jiwa tsunami Sulawesi 2018?,indonesian,content,1.1428571428571428,5.0,0,0,0.75,9,0,0.0
+1079,tahun berapakah Circuit Gilles Villeneuve di Montreal didirikan?,indonesian,content,2.75,3.0,0,2.0,0.7777777777777778,10,0.0,1.0
+1080,siapakah karakter utama Ca-bau-kan?,indonesian,content,1.5,2.0,0,0,0.6,6,0,0.0
+1081,siapakah Dewa Wisnu menurut agama Hindu?,indonesian,content,1.8333333333333333,2.0,0,0,0.5714285714285714,8,0,0.0
+1082,seberapa dalam kah danau baikal?,indonesian,content,2.0,2.0,0,0,0.6,6,0,0.0
+1083,Kapan Stephen Sommers menulis The Mummy?,indonesian,content,1.6,2.0,0,3.0,1.0,7,0.0,1.0
+1084,dimanakah studio pembuatan Tom and Jerry?,indonesian,content,1.3333333333333333,3.0,0,0,0.8571428571428571,8,0,0.0
+1085,Berapakah kandungan gizi ikan mas?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+1086,Bagaimana sistem pemerintahan Jepang?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+1087,berapakah kandungan protein dalam 1ltr asi?,indonesian,content,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+1088,Berapa korban jiwa pada Letusan Krakatau 1883?,indonesian,content,1.3333333333333333,3.0,0,0,0.7142857142857143,8,0,0.0
+1089,Apa yang dimaksud dengan wilayah Tatar Ukur?,indonesian,content,1.3333333333333333,4.0,1.0,2.0,0.5714285714285714,8,100.0,1.0
+1090,siapakah orang tua James W. Fowler?,indonesian,content,1.5,4.0,0,0,0.7142857142857143,9,0,0.0
+1091,"Kapan Eugene Curran ""Gene"" Kelly mulai menjadi penari?",indonesian,content,3.4285714285714284,2.0,1.0,2.0,1.0,11,50.0,2.0
+1092,Siapa yang menyususn Diagram Hubungan Entitas?,indonesian,content,1.2,4.0,1.0,2.0,0.6666666666666666,7,100.0,1.0
+1093,Siapa yang menemukan industri lokomotif pertama kali ?,indonesian,content,1.5,4.0,1.0,2.0,0.7142857142857143,8,100.0,1.0
+1094,berapakah jumlah pulau di samudera atlantik?,indonesian,content,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+1095,hal apa yang mengakibatkan pelapukan pada kayu?,indonesian,content,1.5,4.0,1.0,2.0,0.5714285714285714,8,100.0,1.0
+1096,Berapa luas daerah Langgur?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+1097,Dimanakah letak Malawi ?,indonesian,content,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+1098,tahun berapakah Film Vertigo dirilis?,indonesian,content,2.6,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+1099,Dimanakah letak Montenegro?,indonesian,content,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+1100,tahun berapakah Bandar Udara Gibraltar dibangun?,indonesian,content,2.8333333333333335,3.0,0,3.0,0.8571428571428571,8,0.0,1.0
+1101,Kapan Juninho mulai bergabung dengan Persija Jakarta ?,indonesian,content,1.6666666666666667,2.0,0,4.0,0.8571428571428571,8,0.0,1.0
+1102,Dimanakah letak kerajaan Bohemia ?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+1103,Siapa presiden pertama Nauru?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+1104,Dari mana musik indie pop berasal ?,indonesian,content,2.8,3.0,0,3.0,0.6666666666666666,7,0.0,1.0
+1105,siapakah nama lengkap dari Konfusius?,indonesian,content,1.6,3.0,0,0,0.5,7,0,0.0
+1106,kapankah Guru Nanak dilahirkan?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+1107,Apa yang dimaksud dengan biologi evolusioner ?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+1108,Untuk apakah daun pohon sagu biasanya digunakan ?,indonesian,content,2.142857142857143,3.0,0,3.0,0.625,9,0.0,1.0
+1109,Siapakah yang berhak menerima bantuan BLT ?,indonesian,content,1.3333333333333333,4.0,2.0,1.5,0.5714285714285714,8,100.0,2.0
+1110,kapankah Nickelodeon didirikan?,indonesian,content,1.6666666666666667,2.0,0,2.0,0.75,5,0.0,1.0
+1111,Siapa nama istri Paul Simon?,indonesian,content,1.0,4.0,0,0,0.8,6,0,0.0
+1112,siapakah pendiri India Tobacco Company?,indonesian,content,1.2,4.0,0,0,0.6666666666666666,7,0,0.0
+1113,berapakah jumlah karakter/huruf dalam Tōyō Kanji?,indonesian,content,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+1114,kapankah Konami didirikan?,indonesian,content,1.6666666666666667,2.0,0,2.0,0.75,5,0.0,1.0
+1115,bisakah pohon nangka hidup di daerah bersalju?,indonesian,content,2.0,2.0,0,1.5,0.625,9,0.0,2.0
+1116,berapakah luas Negara Pasundan?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+1117,Kapankah sistem Khilafah pertama kali dibangun ?,indonesian,content,2.3333333333333335,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+1118,beapa lamakah pembuatan Avatar: The Last Airbender?,indonesian,content,1.3333333333333333,4.0,0,0,1.0,9,0,0.0
+1119,Ada berapa pulau di kepulauan Belitung ?,indonesian,content,1.4,3.0,0,1.0,0.8333333333333334,7,0.0,1.0
+1120,siapakah Pelopor Mogok makan ?,indonesian,content,2.0,2.0,0,2.0,0.6,6,0.0,1.0
+1121,Siapakah Presiden Haiti pertama ?,indonesian,content,1.5,2.0,0,0,0.6,6,0,0.0
+1122,Siapa yang menciptakan alat Megafon?,indonesian,content,1.25,3.0,1.0,2.0,0.6,6,100.0,1.0
+1123,Pada perang apa USS Washington (BB-56) digunakan?,indonesian,content,3.8333333333333335,2.0,0,3.0,0.7142857142857143,10,0.0,1.0
+1124,Apa yang menyebabkan kematian Jend. Johannes Ludovicius Jakobus Hubertus Pel?,indonesian,content,1.2222222222222223,8.0,1.0,2.0,0.8,12,100.0,1.0
+1125,Kapan Wuhan Metro mulai beroperasi ?,indonesian,content,1.75,2.0,1.0,1.5,1.0,6,50.0,2.0
+1126,Siapa istri Colby Lopez?,indonesian,content,1.0,3.0,0,0,0.75,5,0,0.0
+1127,Siapakah Nuh dalam agama Abrahamik?,indonesian,content,1.4,3.0,0,0,0.5,7,0,0.0
+1128,Berapa luas kota Pelusium?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+1129,siapakah presiden/perdana menteri pertama Estonia?,indonesian,content,1.5,3.0,0,0,0.7142857142857143,8,0,0.0
+1130,Kapan produk pertama Zippo mulai diluncurkan?,indonesian,content,2.4,2.0,1.0,1.0,1.0,7,100.0,1.0
+1131,Tepung apa yang digunakan untuk membuat Brownies?,indonesian,content,1.5,3.0,2.0,2.0,0.5714285714285714,8,100.0,2.0
+1132,Siapakah sutradara film The Lion King 1½ ?,indonesian,content,1.1428571428571428,6.0,0,0,0.625,9,0,0.0
+1133,Siapa raja kedua kerajaan Negeri Sembilan?,indonesian,content,1.2,4.0,0,0,0.6666666666666666,7,0,0.0
+1134,kapankah American National Standards Institute didirikan?,indonesian,content,2.3333333333333335,4.0,0,2.0,0.8571428571428571,8,0.0,1.0
+1135,berapa lamakah proses pembuatan Despicable Me 3?,indonesian,content,1.0,5.0,0,0,0.8571428571428571,8,0,0.0
+1136,Dari manakah Roehana Koeddoes berasal ?,indonesian,content,1.8,2.0,0,2.0,0.5,7,0.0,1.0
+1137,berapakah luas kecamatan Bekasi Selatan?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+1138,Bagaimana cara mengukur sawah dalam sistem Lodok?,indonesian,content,1.3333333333333333,3.0,1.0,2.0,0.8571428571428571,8,100.0,1.0
+1139,Siapa yang menemukan ilmu linguistik?,indonesian,content,1.25,3.0,1.0,2.0,0.6,6,100.0,1.0
+1140,Berapa lama Teungku Ilyas Leube menjadi Perdana Menteri Aceh Merdeka ke-2?,indonesian,content,1.6,4.0,0,3.0,1.0,12,0.0,1.0
+1141,Siapa kepala sekolah Kolese Gonzaga pertama?,indonesian,content,1.0,5.0,0,0,0.8333333333333334,7,0,0.0
+1142,siapakah orang tua dari Filipus V ?,indonesian,content,1.5,3.0,0,0,0.42857142857142855,8,0,0.0
+1143,berapakah luas Camplong ?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+1144,Pada tahun berapa Dagadu populer di kalangan remaja Indonesia ?,indonesian,content,1.5,3.0,0,0,0.7777777777777778,10,0,0.0
+1145,Kapan Log Zhelebour Production berdiri ?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+1146,siapakah orang tua Mas Besar Martokoesoemo?,indonesian,content,1.3333333333333333,4.0,0,0,0.7142857142857143,8,0,0.0
+1147,Kapan Kuil Witoba didirikan?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+1148,Berapakah luas wilayah Magelang?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+1149,Kapan Drs. K.H. Ahmad Syahiduddin lahir?,indonesian,content,4.0,3.0,0,2.0,1.0,9,0.0,1.0
+1150,berapa lamakah durasi film Sex and the City?,indonesian,content,1.0,6.0,0,0,1.0,9,0,0.0
+1151,Siapa pendiri Pusdik Penerbad?,indonesian,content,1.0,3.0,0,0,0.75,5,0,0.0
+1152,tahun berapakah Karl Dönitz dilahirkan?,indonesian,content,2.6,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+1153,Kapan Katrina Kaif mulai menjadi model ?,indonesian,content,1.6,2.0,1.0,2.0,1.0,7,50.0,2.0
+1154,Tahun berapa Nicole Vaidišová mulai menjadi petenis?,indonesian,content,2.0,2.0,1.0,2.5,1.0,8,50.0,2.0
+1155,kapankah Jacques Lacan dilahirkan?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+1156,Kapankah tiongkok menjadi negar republik ?,indonesian,content,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+1157,Bagaimana negara Israel memilih perdana menteri?,indonesian,content,1.8,2.0,0,3.0,1.0,7,0.0,1.0
+1158,Siapa presiden pertama Republik Maladewa?,indonesian,content,1.25,3.0,0,0,0.8,6,0,0.0
+1159,dimanakah Indovision didirikan?,indonesian,content,1.6666666666666667,2.0,0,2.0,0.75,5,0.0,1.0
+1160,Siapa yang pertama kali menggunakan kebijakan Weaponisasi keuangan?,indonesian,content,1.5714285714285714,4.0,1.0,2.0,0.75,9,100.0,1.0
+1161,dimanakah tempat lahir Raden Ronggo?,indonesian,content,1.2,3.0,1.0,1.0,0.8333333333333334,7,100.0,1.0
+1162,Dimanakah letak kota Malé?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+1163,Berapakah luas Pulau Sumbawa?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+1164,siapakah pencipta sepeda pertama kali?,indonesian,content,1.4,4.0,0,0,0.6666666666666666,7,0,0.0
+1165,Berapa jumlah penutur bahasa tibet pada tahun 2000?,indonesian,content,1.5714285714285714,3.0,0,0,0.75,9,0,0.0
+1166,berapakah populasi Republik Maluku Selatan tahun 1950?,indonesian,content,1.5714285714285714,3.0,0,0,0.75,9,0,0.0
+1167,Kapan Insiden Gerbang Xuanwu terjadi ?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+1168,dimanakah Prof Dr Ir Sajogyo dilahirkan?,indonesian,content,2.3333333333333335,4.0,0,2.0,0.8571428571428571,8,0.0,1.0
+1169,berapakah luas Kabupaten Boyolali?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+1170,siapakah pendiri Chicago Bulls?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+1171,Dimana tumbuhan Gambir pertama kali ditemukan?,indonesian,content,2.4,2.0,0,3.0,1.0,7,0.0,1.0
+1172,Berapa jumlah halaman Fifty Shades of Grey?,indonesian,content,1.0,5.0,0,0,1.0,8,0,0.0
+1173,siapakah Puteri Indonesia yang ke 18?,indonesian,content,2.1666666666666665,2.0,0,0,0.2857142857142857,8,0,0.0
+1174,Dimanakah letak Gunung Sukmana?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+1175,berapakah jumlah kecamatan di Nusa Tenggara Timur?,indonesian,content,1.4285714285714286,3.0,0,0,0.75,9,0,0.0
+1176,Kapan Soepeno diangkat menjadi menteri Pembangunan dan Pemuda Indonesia?,indonesian,content,1.25,5.0,1.0,2.0,0.8888888888888888,10,50.0,2.0
+1177,Berapakah luas daerah Donggala ?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+1178,Tahun berapa Pertempuran Shiffin terjadi?,indonesian,content,2.5,2.0,0,3.0,1.0,6,0.0,1.0
+1179,Dimanakah letak Granada ?,indonesian,content,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+1180,Siapa pemeran utama drama Yowakutemo Katemasu?,indonesian,content,1.2,4.0,0,0,0.8333333333333334,7,0,0.0
+1181,siapakah yang menciptakan Harukaze?,indonesian,content,1.5,2.0,1.0,2.0,0.4,6,100.0,1.0
+1182,"selain daniel, siapa kah yang di makamkan di Makam Daniel?",indonesian,content,1.5555555555555556,3.0,1.0,3.0,0.4,12,100.0,1.0
+1183,Kapankah Sultan Syarif Abdurrahman Alkadrie lahir ?,indonesian,content,2.3333333333333335,4.0,0,2.0,0.8571428571428571,8,0.0,1.0
+1184,Dimanakah letak Andechs ?,indonesian,content,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+1185,berapakah jumlah senator di Amerika Serikat?,indonesian,content,1.5,2.0,0,0,0.7142857142857143,8,0,0.0
+1186,Siapa pendiri Gereja Bethany?,indonesian,content,1.0,3.0,0,0,0.75,5,0,0.0
+1187,ApakahRinitis alergi dapat disembuhkan?,indonesian,content,1.6666666666666667,2.0,0,1.0,0.75,5,0.0,1.0
+1188,Kapan Islam masuk ke Mesir ?,indonesian,content,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+1189,Ada berapa jumlah masjid di Desa Godog?,indonesian,content,1.5,3.0,0,1.0,0.8571428571428571,8,0.0,1.0
+1190,Siapakah tokoh utama dalam serial Naruto ?,indonesian,content,1.5,3.0,0,0,0.5714285714285714,8,0,0.0
+1191,apa yang dimaksud nektar pada bunga?,indonesian,content,1.6,3.0,1.0,3.0,0.5,7,100.0,1.0
+1192,Kapan A Series of Unfortunate Events mulai difilmkan ?,indonesian,content,2.4285714285714284,4.0,1.0,1.5,1.0,9,50.0,2.0
+1193,Kapan Taiwan diakui menjadi sebuah negara ?,indonesian,content,1.4,3.0,1.0,2.0,0.8333333333333334,7,50.0,2.0
+1194,siapakah pembalap Lotus Cars di formula1 tahun 2016?,indonesian,content,2.0,3.0,0,0,0.5555555555555556,10,0,0.0
+1195,kapankah teknologi LTE muncul pertama kali?,indonesian,content,1.8333333333333333,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+1196,Siapa Raja Jerman pertama?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+1197,Dimana Pusdik Penerbad didirikan?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+1198,berapakah jumlah faktor yang mempengaruhi Perilaku konsumen ?,indonesian,content,1.4285714285714286,3.0,1.0,2.0,0.75,9,100.0,1.0
+1199,berapa lamakah perang Padri berlangsung?,indonesian,content,2.5,2.0,0,3.0,1.0,6,0.0,1.0
+1200,Siapa yang membawa masuk Islam pertama kali ke Jerman?,indonesian,content,1.875,4.0,2.0,2.5,0.6666666666666666,10,100.0,2.0
+1201,berapakah luas wilayah Eropa barat?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+1202,siapakah orang tua Friederich Wilhelm August Fröbel?,indonesian,content,1.2857142857142858,5.0,0,0,0.75,9,0,0.0
+1203,Siapa nama ibu Drestadyumna ?,indonesian,content,1.0,3.0,0,0,0.75,5,0,0.0
+1204,Kapan film Inferno rilis ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+1205,bisakah Astigmatisma terjadi kepada anak balita?,indonesian,content,1.6666666666666667,2.0,0,3.0,0.5714285714285714,8,0.0,1.0
+1206,Kenapa Bandung disebut dengan negeri pasundan ?,indonesian,content,1.4,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+1207,Siapakah yang membentuk Pro Duta FC ?,indonesian,content,1.3333333333333333,4.0,1.0,2.0,0.5714285714285714,8,100.0,1.0
+1208,Berkebangsaan apa Johann Friedrich Blumenbach?,indonesian,content,1.25,3.0,0,2.0,0.8,6,0.0,1.0
+1209,Bagaimana sistem pemerintahan Pakistan ?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+1210,berapakah kandungan lemak dalam 1ltr susu sapi?,indonesian,content,1.4285714285714286,3.0,0,0,0.75,9,0,0.0
+1211,Kapan situs Multiply tutup layanan ?,indonesian,content,1.75,2.0,0,3.0,1.0,6,0.0,1.0
+1212,berapakah jumlah anggota Kongres Pemuda Indonesia I ?,indonesian,content,1.1428571428571428,5.0,0,0,0.75,9,0,0.0
+1213,Siapakah Presiden Chili pertama ?,indonesian,content,1.5,2.0,0,0,0.6,6,0,0.0
+1214,Berapa luas Montenegro?,indonesian,content,1.0,1.0,0,0,1.0,4,0,0.0
+1215,Berapa lama Karl Martell menjadi Pangeran Franka?,indonesian,content,1.5,2.0,0,3.0,1.0,8,0.0,1.0
+1216,siapakah pelopor ilmu perjalanan waktu?,indonesian,content,1.2,4.0,0,0,0.6666666666666666,7,0,0.0
+1217,Kapan Paul F. Knitter lahir?,indonesian,content,3.0,3.0,0,2.0,1.0,7,0.0,1.0
+1218,kapankah L’Étranger diciptakan?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+1219,Berapa jumlah album The Rollies?,indonesian,content,1.0,3.0,0,0,1.0,6,0,0.0
+1220,berapakah jumlah korban jiwa Perang Soviet–Afganistan?,indonesian,content,1.1428571428571428,5.0,0,0,0.875,9,0,0.0
+1221,Kapan War Dogs pertama tayang?,indonesian,content,2.25,2.0,0,3.0,1.0,6,0.0,1.0
+1222,siapakah yang membuat SIMFi pertama kali?,indonesian,content,1.5,4.0,1.0,2.0,0.5714285714285714,8,100.0,1.0
+1223,berapa kali kah agama islam mebuat ta'ziah kepada seseorang yang meninggal?,indonesian,content,2.272727272727273,3.0,1.0,3.0,0.6666666666666666,14,50.0,2.0
+1224,Kapan Imam Mahdī diprediksi muncul ?,indonesian,content,1.75,2.0,1.0,1.5,1.0,6,50.0,2.0
+1225,Siapa raja pertama Kerajaan Nabatea?,indonesian,content,1.25,3.0,0,0,0.8,6,0,0.0
+1226,Kapan GBI Bethany didirikan?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+1227,siapakah yang mendirikan organisasi palang merah?,indonesian,content,1.3333333333333333,4.0,1.0,2.0,0.5714285714285714,8,100.0,1.0
+1228,berapakah luas Kabupaten Takalar?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+1229,kerajaan apakah yang terkecil yang pernah ada di pulau Jawa?,indonesian,content,1.7,4.0,1.0,3.0,0.5454545454545454,12,100.0,1.0
+1230,tahun berapakah Mary Celeste ditemukan di Samudra Atlantik pertama kali?,indonesian,content,2.0,3.0,0,4.0,0.8181818181818182,12,0.0,1.0
+1231,kapankah Jaka Linglung dilahirkan?,indonesian,content,2.0,2.0,0,2.0,0.8,6,0.0,1.0
+1232,berapakah suhu tertinggi Pulau Enggano?,indonesian,content,1.4,2.0,0,0,0.8333333333333334,7,0,0.0
+1233,Siapakah yang memperkenalkan ilmu Broadcasting ?,indonesian,content,1.4,3.0,1.0,2.0,0.5,7,100.0,1.0
+1234,nabi ke berapakah nabi Isma'il?,indonesian,content,2.1666666666666665,3.0,0,0,0.7142857142857143,9,0,0.0
+1235,Kapan tawanan kamp Bergen-Belsen dibebaskan?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+1236,Siapakah penerbit novel Carrie?,indonesian,content,1.25,3.0,0,0,0.6,6,0,0.0
+1237,"Kapan Dr. Henry Walton Jones, Jr menjadi tentara?",indonesian,content,3.7142857142857144,4.0,0,3.0,1.0,11,0.0,1.0
+1238,Siapa yang menemukan paham Reduksionisme?,indonesian,content,1.25,3.0,1.0,2.0,0.6,6,100.0,1.0
+1239,Kapan Dr.,indonesian,content,1.0,1.0,0,0,1.0,3,0,0.0
+1240,George Habash terlibat dalam politik Palestina?,indonesian,content,1.4,2.0,0,2.0,0.8333333333333334,7,0.0,1.0
+1241,Berapa ukuran layar Tablet Android Vizio?,indonesian,content,1.0,4.0,0,0,1.0,7,0,0.0
+1242,Ada berapa jenis kaligrafi dalam islam ?,indonesian,content,1.6,3.0,0,1.0,0.8333333333333334,7,0.0,1.0
+1243,kapankah uang rupiah pertama kali di cetak secara masal?,indonesian,content,2.2222222222222223,2.0,1.0,3.0,0.8,11,50.0,2.0
+1244,Siapa nama personil Bon Jovi?,indonesian,content,1.0,4.0,0,0,0.8,6,0,0.0
+1245,Berapa jumlah suku bangsa Lithuania?,indonesian,content,1.0,3.0,0,0,1.0,6,0,0.0
+1246,siapakah orang tua Abdullah Said?,indonesian,content,1.4,3.0,0,0,0.6666666666666666,7,0,0.0
+1247,berapa lamakah waktu untuk memanen sorgum?,indonesian,content,1.2,3.0,1.0,2.0,0.8333333333333334,7,100.0,1.0
+1248,Mengapa Möngke Khan tidak mendeklarasikan penerus kekaisaran Mongol?,indonesian,content,1.7142857142857142,3.0,0,4.0,0.875,9,0.0,1.0
+1249,Sejak kapan Barthélemy Boganda menjadi politikus ?,indonesian,content,1.6,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
+1250,Kapan Prof. dr.,indonesian,content,1.5,2.0,0,0,1.0,5,0,0.0
+1251,Lim Joey Thay menyelesaikan pendidikannya di luar negeri?,indonesian,content,1.875,2.0,0,4.0,0.7777777777777778,10,0.0,1.0
+1252,dimanakah kantor pusat Airbus S.A.S?,indonesian,content,1.4,2.0,0,0,0.8333333333333334,7,0,0.0
+1253,Kapan Thomas Arkidiakonus lahir ?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+1254,Berapakah luas Kepulauan Okinawa?,indonesian,content,1.25,2.0,0,0,0.8,6,0,0.0
+1255,berapakah luas Provinsi Nusa Tenggara Barat?,indonesian,content,1.1666666666666667,4.0,0,0,0.8571428571428571,8,0,0.0
+1256,Berapa luas kota Nepal?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+1257,Berapakah daya tampung memori chip pertama ?,indonesian,content,1.5,2.0,0,0,0.8571428571428571,8,0,0.0
+1258,Dimana Kolonel Zulkifli Lubis lahir?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+1259,siapakah penerus Gwanggaeto?,indonesian,content,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
+1260,Kapan musik DJ pertama kali muncul ?,indonesian,content,2.4,2.0,0,3.0,1.0,7,0.0,1.0
+1261,Dimana kantor pusat PT Scooter Victory Inter Part?,indonesian,content,1.1428571428571428,6.0,0,0,1.0,9,0,0.0
+1262,Dimana Max Horkheimer lahir?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+1263,Kapan Teori hubungan internasional diciptakan?,indonesian,content,2.25,3.0,0,2.0,1.0,6,0.0,1.0
+1264,berapakah jumlah jurusan di SMK Negeri 2 Sumedang?,indonesian,content,1.5,3.0,0,0,0.6666666666666666,10,0,0.0
+1265,Kapan sistem Serayo pertama diterapkan?,indonesian,content,2.5,2.0,0,2.0,1.0,6,0.0,1.0
+1266,seberapa luas danau Toba?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+1267,Abad ke berapakah zaman Kamakura?,indonesian,content,2.2,2.0,0,0,0.6666666666666666,7,0,0.0
+1268,Kapan Adipati Bretagne meninggal?,indonesian,content,2.0,2.0,0,2.0,1.0,5,0.0,1.0
+1269,kapan musik hip hop pertama kali muncul ?,indonesian,content,2.5,3.0,0,3.0,1.0,8,0.0,1.0
+1270,Berapa luas SMK Negeri 1 Cikampek?,indonesian,content,1.2,3.0,0,0,0.8333333333333334,7,0,0.0
+1271,berapakah durasi film Olga dan Sepatu Roda?,indonesian,content,1.2857142857142858,4.0,0,0,0.75,9,0,0.0
+1272,Berapakah berat Ikan pari manta yag terbesar?,indonesian,content,1.2857142857142858,4.0,0,0,0.875,9,0,0.0
+1273,siapakah pendiri BlackBerry ?,indonesian,content,1.3333333333333333,2.0,0,0,0.5,5,0,0.0
