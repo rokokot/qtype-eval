@@ -1,0 +1,297 @@
+sentence_id,text,language,type,avg_links_len,avg_max_depth,avg_subordinate_chain_len,avg_verb_edges,lexical_density,n_tokens,subordinate_proposition_dist,verbal_head_per_sent
+test-s3,"What is the history of the establishment of SMAN 1 Pekanbaru, which is half a century old?",indonesian,content,2.0,3.0,1.0,2.0,0.5384615384615384,14,100.0,1.0
+test-s7,Who can confirm whether a reality is actually a dream and a dream is actually a reality?,indonesian,content,2.125,4.0,0,2.0,0.5294117647058824,18,0.0,1.0
+test-s14,Kamila asked why Grandma Tini told her to get in the car?,indonesian,content,1.875,3.0,2.0,2.3333333333333335,0.8888888888888888,10,66.66666666666667,3.0
+test-s19,Who exactly is the girl who looks like the Cemong?,indonesian,content,1.8571428571428572,3.0,0,0,0.5,9,0,0.0
+test-s46,And how do you see the situation now?,indonesian,content,1.8571428571428572,2.0,0,4.0,0.5,9,0.0,1.0
+test-s49,"If it wasn't him who would help Zhong bury (and honor) his father's ashes, who else would?",indonesian,content,2.611111111111111,7.0,1.3333333333333333,1.5,0.42105263157894735,23,100.0,4.0
+test-s54,"What will happen to Maya, Naomy and Ryan?",indonesian,content,1.8,3.0,0,0,0.8333333333333334,8,0,0.0
+test-s90,"How does Kayla face Rita as her honey, while she is getting better and better?",indonesian,content,2.4285714285714284,3.0,1.0,4.0,0.6666666666666666,17,50.0,2.0
+test-s131,What's the next story?,indonesian,content,1.0,1.0,0,0,1.0,4,0,0.0
+test-s156,How is his friendship with Aldo?,indonesian,content,1.5,2.0,0,0,0.6,6,0,0.0
+test-s162,How can humans as individuals enter into a relationship with God?,indonesian,content,2.3636363636363638,3.0,0,3.0,0.5,13,0.0,1.0
+test-s166,"If God is mortal or dead, what will be the fate of His creations like humans?",indonesian,content,2.090909090909091,4.0,0,0,0.5833333333333334,15,0,0.0
+test-s190,"Moreover, what can we learn from the man who is called the father of modern education?",indonesian,content,1.8461538461538463,6.0,1.0,2.5,0.42857142857142855,16,100.0,2.0
+test-s195,Where do these young souls' dreams take them?,indonesian,content,2.3333333333333335,3.0,0,3.0,0.7142857142857143,8,0.0,1.0
+test-s207,What about Florence's prediction about the occurrence of the highest tide?,indonesian,content,2.1,2.0,0,5.0,0.5454545454545454,12,0.0,1.0
+test-s224,"I always ask, who am I really in your days, Viola?",indonesian,content,2.0833333333333335,3.0,0,3.0,0.38461538461538464,16,0.0,1.0
+test-s238,Then who will pay attention to the fate of our people?,indonesian,content,1.4285714285714286,4.0,1.0,2.0,0.375,9,100.0,1.0
+test-s245,After that I asked him: Whose son are you?,indonesian,content,1.7777777777777777,3.0,0,4.0,0.2,12,0.0,1.0
+test-s247,"Mr. Douw, you have tried to run for the Regent, what if later you fail to get support and are not elected in the PILKADA Nabire?",indonesian,content,2.5,4.0,1.5,3.0,0.6521739130434783,26,75.0,6.0
+test-s249,So what determines whether a mixture will produce the Brazil nut effect or vice versa?,indonesian,content,1.6153846153846154,5.0,2.0,2.0,0.5714285714285714,15,100.0,2.0
+test-s307,How do they exchange their souls back?,indonesian,content,2.142857142857143,2.0,1.0,2.0,0.625,9,50.0,2.0
+test-s321,"If we use all of this against the enemy, which enemy will not lose?",indonesian,content,2.3076923076923075,3.0,1.0,3.0,0.35714285714285715,16,66.66666666666667,3.0
+test-s323,"The problem faced at that time was: who would replace Prophet Muhammad, and how much power would he get?",indonesian,content,2.6315789473684212,4.0,1.0,1.6666666666666667,0.35,23,75.0,4.0
+test-s331,How do we know that 7 plus 8 is always 15?,indonesian,content,1.6666666666666667,3.0,2.0,3.0,0.5,11,66.66666666666667,3.0
+test-s368,And who forgives sins more than Allah?,indonesian,content,1.625,4.0,1.0,3.0,0.4444444444444444,10,100.0,1.0
+test-s370,"However, what was arranged by the colonial government next?",indonesian,content,1.5,4.0,1.0,2.0,0.6666666666666666,11,100.0,1.0
+test-s375,"``But Andreas answered and said to his brothers, 'What do you think about what he just said?",indonesian,content,2.0,5.0,1.0,3.6666666666666665,0.47368421052631576,23,50.0,3.0
+test-s421,What should Winnie do?,indonesian,content,1.75,2.0,1.0,3.0,0.6,6,100.0,1.0
+test-s423,What are the 3 different colored realms?,indonesian,content,1.5,3.0,0,0,0.5714285714285714,8,0,0.0
+test-s429,How did King get interested in the hospitality and wellness massage business?,indonesian,content,1.6666666666666667,3.0,0,3.0,0.7,11,0.0,1.0
+test-s438,"Who would have thought that Argentina, an isolated country, would go to war against its biggest customer in agricultural exports -- the UK?",indonesian,content,2.5714285714285716,7.0,2.0,1.75,0.5454545454545454,25,100.0,4.0
+test-s450,Who is that liar?,indonesian,content,1.3333333333333333,2.0,0,0,0.25,5,0,0.0
+test-s467,Why put on the border?,indonesian,content,1.3333333333333333,2.0,0,2.0,0.75,5,0.0,1.0
+test-s477,"So Mr. Grasshopper said, where did you come from and what is your purpose?",indonesian,content,2.1,3.0,1.0,2.5,0.5454545454545454,13,50.0,2.0
+test-s509,How will this couple survive in the midst of a showdown between humans and fangire?,indonesian,content,1.6363636363636365,5.0,0,4.0,0.6666666666666666,13,0.0,1.0
+test-s515,What's the next story?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+test-s522,"They are indeed different, but how can they be recognized?",indonesian,content,2.5714285714285716,3.0,0,2.0,0.5,10,0,1.0
+test-s531,Who can tell man what will happen under the sun after him?,indonesian,content,1.8666666666666667,7.0,1.0,2.5,0.3125,17,100.0,2.0
+dev-s13,Then what about the love story of Mutia and Fadel?,indonesian,content,1.2857142857142858,5.0,0,0,0.625,9,0,0.0
+dev-s22,"The LORD said to Samuel, ``How long will you mourn for Saul?",indonesian,content,2.5454545454545454,3.0,1.0,3.5,0.5833333333333334,15,50.0,2.0
+dev-s31,Why Should Inul?,indonesian,content,1.0,1.0,0,2.0,1.0,4,0.0,1.0
+dev-s33,Why do miners use chewing tobacco?,indonesian,content,1.4,2.0,0,1.5,0.8333333333333334,7,0.0,2.0
+dev-s39,What about Mrs. Acih who also loves Sinar?,indonesian,content,2.6666666666666665,3.0,0,3.0,0.7,11,0.0,1.0
+dev-s67,"The Queen believed this and agreed, but what to do?",indonesian,content,2.2,3.0,1.0,2.0,0.45454545454545453,13,50.0,3.0
+dev-s79,But He said to them: ``How much bread do you have?,indonesian,content,2.0,6.0,1.0,2.5,0.5,15,50.0,2.0
+dev-s128,How will Rendra react if he finds out about this?,indonesian,content,2.375,2.0,0,5.0,0.6666666666666666,10,0.0,1.0
+dev-s134,"What about the love triangle story between Hafizah, Samsul and Bambang?",indonesian,content,1.8888888888888888,3.0,0,0,0.8,12,0,0.0
+dev-s146,How will Gaby and Popo's love story end?,indonesian,content,1.3333333333333333,4.0,0,0,0.8571428571428571,8,0,0.0
+dev-s191,"Ibrahim said to Namrud: ``If that is the case, why do you worship these statues, which cannot speak, cannot see and cannot hear, cannot bring benefit or reject harm, and cannot even save themselves from destruction and destruction. ?",indonesian,content,2.951219512195122,7.0,1.0,3.125,0.40476190476190477,50,50.0,8.0
+dev-s215,Why can't Indonesia do like these countries?,indonesian,content,2.0,2.0,0,4.0,0.5,9,0.0,1.0
+dev-s224,"When the dogs are near us, don't we smell them?",indonesian,content,2.25,3.0,1.0,3.5,0.38461538461538464,15,50.0,2.0
+dev-s226,How is the continuation of the love story of MAT PEI-AISAH?,indonesian,content,1.1666666666666667,4.0,0,0,0.8571428571428571,8,0,0.0
+dev-s258,The problem then: how to link the political and scientific demands above?,indonesian,content,1.8181818181818181,5.0,1.0,2.5,0.75,14,50.0,2.0
+dev-s267,Who saves us from the hand of this mighty God?,indonesian,content,1.6363636363636365,5.0,1.0,3.0,0.4166666666666667,13,100.0,1.0
+dev-s297,The next problem is how to determine which is the perpetrator and which is the victim?,indonesian,content,1.875,4.0,1.0,2.0,0.6666666666666666,11,100.0,1.0
+dev-s321,"And if someone criticizes the King, I wonder why?",indonesian,content,2.625,2.0,1.0,3.5,0.4444444444444444,11,50.0,2.0
+dev-s363,What does globalization mean for Lippo?,indonesian,content,1.75,2.0,0,0,0.6,6,0,0.0
+dev-s368,What does all this mean?,indonesian,content,1.3333333333333333,2.0,0,0,0.25,5,0,0.0
+dev-s369,What made him commit murder in cold blood?,indonesian,content,1.375,5.0,2.0,2.0,0.5555555555555556,10,100.0,2.0
+dev-s400,Why was Kanade first in the Afterlife world?,indonesian,content,1.7142857142857142,2.0,0,4.0,0.875,9,0.0,1.0
+dev-s407,"On the 4th occasion, the woman said to him: ``How can you say: I love you, when your heart is not set on me?",indonesian,content,2.375,5.0,1.0,3.5,0.52,31,50.0,4.0
+dev-s421,Why does it have to be high?,indonesian,content,1.5,1.0,0,0,0.6666666666666666,4,0,0.0
+dev-s448,And who's boxing?,indonesian,content,1.3333333333333333,2.0,1.0,1.0,0.25,5,100.0,1.0
+dev-s482,What about our age?,indonesian,content,1.5,2.0,0,0,0.4,6,0,0.0
+dev-s494,What is the first food that people eat in heaven?,indonesian,content,1.8571428571428572,3.0,1.0,3.0,0.625,9,100.0,1.0
+dev-s518,What will happen to Popo and Nando?,indonesian,content,1.7142857142857142,4.0,1.0,2.0,0.375,9,100.0,1.0
+dev-s521,How did He do it?,indonesian,content,1.5,2.0,0,3.0,0.4,6,0.0,1.0
+dev-s542,"If there really was good will to help from Wu's side, why did Sun Quan keep the army a secret?",indonesian,content,2.2666666666666666,4.0,2.0,3.3333333333333335,0.75,18,66.66666666666667,3.0
+train-s20,"What did he do, and why did he do it?",indonesian,content,2.125,3.0,1.0,2.0,0.3333333333333333,11,100.0,2.0
+train-s24,How can we not express our deep sorrow over all this?,indonesian,content,1.8181818181818181,4.0,1.0,3.5,0.5,13,50.0,2.0
+train-s53,"Khidr answered his greetings and asked, ``Where does prosperity come from on earth that has no welfare?",indonesian,content,2.0,5.0,1.0,2.75,0.5294117647058824,20,66.66666666666667,4.0
+train-s55,Where is the mind?,indonesian,content,1.0,2.0,0,0,0.6666666666666666,4,0,0.0
+train-s61,"``O Muhammad, why do you forbid what Allah has made lawful for you; you seek the pleasure of your wives?",indonesian,content,2.0588235294117645,5.0,1.0,3.6666666666666665,0.5,22,66.66666666666667,3.0
+train-s64,Who created this earth?,indonesian,content,1.5,2.0,0,0,0.4,6,0,0.0
+train-s82,How is the continuation of the story of these teenagers who are still underage?,indonesian,content,2.0,4.0,0,0,0.5833333333333334,13,0,0.0
+train-s90,Then how to spend wealth according to the guidance of Allah and His Messenger?,indonesian,content,1.4,5.0,1.0,2.0,0.7272727272727273,12,100.0,1.0
+train-s96,"So, what is His name?",indonesian,content,1.3333333333333333,2.0,0,0,0.25,6,0,0.0
+train-s121,How long will Nino pretend in front of his grandmother that he and Abel are dating?,indonesian,content,2.3846153846153846,4.0,1.0,3.0,0.5,15,50.0,2.0
+train-s141,Who dared to steal this beast?,indonesian,content,1.6666666666666667,3.0,1.0,3.0,0.5714285714285714,8,100.0,1.0
+train-s150,"When he hears of all the immorality his children have committed, he says to them, ``Why do you do such things, that I have heard from all this nation about your evil deeds?",indonesian,content,2.3125,6.0,1.0,3.4,0.3939393939393939,38,75.0,5.0
+train-s163,"If Nadya is sick, who will take care of them?",indonesian,content,1.7142857142857142,2.0,1.0,2.0,0.375,10,100.0,1.0
+train-s183,When will he be freed?,indonesian,content,1.75,1.0,0,4.0,0.6,6,0.0,1.0
+train-s193,"And who did Siera fall in love with, Tristan or Rian?",indonesian,content,2.1,4.0,0,5.0,0.5454545454545454,13,0.0,1.0
+train-s205,Why is Makoto dressing up like a girl?,indonesian,content,1.5,2.0,0,3.0,0.8,6,0.0,1.0
+train-s221,Taufan (Fadil) asked what he meant to Ambar?,indonesian,content,1.8571428571428572,4.0,0,2.0,0.625,11,0.0,1.0
+train-s283,What will happen this time?,indonesian,content,1.6,3.0,1.0,2.0,0.3333333333333333,7,100.0,1.0
+train-s295,"He then asked his mother ``Mother, where do we get a young duck?",indonesian,content,2.25,3.0,1.0,4.0,0.5384615384615384,16,50.0,2.0
+train-s297,To all the priests Joash said: ``Why don't you fix the damage to the house?,indonesian,content,1.9090909090909092,4.0,1.0,3.5,0.5833333333333334,15,50.0,2.0
+train-s318,Why is the approach so important?,indonesian,content,1.5,2.0,0,3.0,1.0,6,0.0,1.0
+train-s350,"Say no, why did Jesus give such an example?",indonesian,content,1.75,4.0,2.0,2.3333333333333335,0.6666666666666666,11,66.66666666666667,3.0
+train-s374,Who exactly is this figure?,indonesian,content,1.75,2.0,0,0,0.4,6,0,0.0
+train-s405,How is his relationship with Amara?,indonesian,content,1.5,2.0,0,0,0.6,6,0,0.0
+train-s406,"Then how about thousands of vocabulary, along with the correct pronunciation that is absorbed by the little one -- did you teach it specifically?",indonesian,content,2.6666666666666665,5.0,1.0,2.3333333333333335,0.48,28,100.0,3.0
+train-s423,What is the price of gold in the next 3 months?,indonesian,content,1.5,2.0,0,0,0.5714285714285714,8,0,0.0
+train-s449,Wiwi asked why didn't Grandmother Tini take it herself?,indonesian,content,1.6666666666666667,3.0,1.0,2.5,0.7,11,50.0,2.0
+train-s458,``Who is Ilham Aliyev?,indonesian,content,1.0,2.0,0,0,0.6666666666666666,5,0,0.0
+train-s459,What if the process continues for a hundred years?,indonesian,content,2.4285714285714284,2.0,0,5.0,0.625,9,0.0,1.0
+train-s460,"Why?, Is it because the Prophet gave Zainab excessive spending?",indonesian,content,2.2,4.0,1.0,3.5,0.6363636363636364,14,50.0,2.0
+train-s462,"Furthermore, how to measure both aspects of a science and technology activity consistently and relatively objectively?",indonesian,content,2.4285714285714284,4.0,1.0,2.0,0.6666666666666666,17,50.0,2.0
+train-s483,When do you want? - Actually when do you want?,indonesian,content,2.0,3.0,1.0,2.0,0.6666666666666666,12,100.0,1.0
+train-s489,What is not clear is why the inscription regarding the return of government to the King of Sunda is there?,indonesian,content,2.466666666666667,5.0,1.0,2.0,0.5625,17,50.0,2.0
+train-s520,"His father even said, ``Why don't you tell that so noble and holy you mean?",indonesian,content,2.1333333333333333,3.0,1.0,2.6666666666666665,0.625,19,66.66666666666667,3.0
+train-s527,Who knows _ Maybe tomorrow?,indonesian,content,1.3333333333333333,2.0,0,2.0,0.75,6,0.0,1.0
+train-s574,Who managed to win Nayla's love?,indonesian,content,1.3333333333333333,4.0,2.0,1.5,0.5714285714285714,8,100.0,2.0
+train-s587,Why is the waste the responsibility of the community?,indonesian,content,1.6666666666666667,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
+train-s600,How will LARA's relationship with VANO and DION be next?,indonesian,content,2.142857142857143,3.0,0,0,0.75,9,0,0.0
+train-s660,Why is the etymology of ``marga'' taken from Cakap Karo (merga) and ``merga'' changed to marga?,indonesian,content,2.923076923076923,3.0,1.0,2.6666666666666665,0.8571428571428571,20,50.0,3.0
+train-s677,So how can a single processor system run multiple processes?,indonesian,content,2.75,3.0,0,4.0,0.6666666666666666,10,0.0,1.0
+train-s707,Who gave you this Name?,indonesian,content,1.5,4.0,1.0,2.0,0.2857142857142857,8,100.0,1.0
+train-s712,"How are you, mother?",indonesian,content,2.0,2.0,0,0,0.5,6,0,0.0
+train-s775,"What about John, if in his general letter he says that there are Three who testify, the Spirit and the water and the blood?",indonesian,content,2.45,5.0,1.0,3.0,0.5238095238095238,24,66.66666666666667,3.0
+train-s811,"Now, who rejects this Communist Party?",indonesian,content,1.5,3.0,1.0,2.0,0.5714285714285714,9,100.0,1.0
+train-s816,What's the next story?,indonesian,content,1.0,1.0,0,0,1.0,4,0,0.0
+train-s823,"Pause, why not?",indonesian,content,1.6666666666666667,2.0,0,0,0.75,6,0,0.0
+train-s851,How will Sultan and Atikah overcome all the obstacles that stand in their way of their love relationship?,indonesian,content,2.0,4.0,1.0,2.5,0.6,16,50.0,2.0
+train-s853,People in what conditions should not be cupped?,indonesian,content,2.0,4.0,1.0,2.0,0.3333333333333333,10,100.0,1.0
+train-s860,- What is Thinking?,indonesian,content,1.3333333333333333,2.0,2.0,1.0,0.5,6,100.0,2.0
+train-s878,Fadil says is it true that Kamila hasn't been found yet?,indonesian,content,1.6666666666666667,3.0,1.0,1.0,0.8571428571428571,8,50.0,2.0
+train-s891,And what about Aurelie herself?,indonesian,content,1.25,2.0,0,0,0.4,6,0,0.0
+train-s896,What if the event ``out of mind'' in the life of a married couple?,indonesian,content,2.4444444444444446,3.0,1.0,2.0,0.8,13,100.0,1.0
+train-s948,Who would have thought that they were destined to love each other?,indonesian,content,1.8571428571428572,3.0,2.0,2.3333333333333335,0.5,9,66.66666666666667,3.0
+train-s957,Why is this not the case in Protestantism?,indonesian,content,2.0,2.0,0,4.0,0.5714285714285714,8,0.0,1.0
+train-s964,How is Isabella's life struggle?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
+train-s998,"Why angry, why angry?",indonesian,content,1.6666666666666667,2.0,0,1.5,1.0,6,0.0,2.0
+train-s1010,Which is Islamic?,indonesian,content,2.0,2.0,0,0,0.4,6,0,0.0
+train-s1012,And why is it the equivalent of three point fourteen?,indonesian,content,1.625,4.0,0,0,0.3333333333333333,10,0,0.0
+train-s1034,How will Bayu react when he finds out that Jelita is the daughter of the person who killed her father?,indonesian,content,1.8,6.0,1.5,2.0,0.5625,17,100.0,3.0
+train-s1116,"12.4 If he has no skills, then train him with your skills, for how can a Christian live among you without a job?",indonesian,content,2.6363636363636362,4.0,1.0,2.6666666666666665,0.34782608695652173,26,66.66666666666667,3.0
+train-s1162,What's the next story?,indonesian,content,1.0,1.0,0,0,1.0,4,0,0.0
+train-s1167,"The Dusun Road is the same, because the territorial area of Tunjungmuli village which exceeds the reasonable limit makes the maintenance of the hamlet road difficult to carry out because it requires a very large budget or budget just to take care of the road, what about education?",indonesian,content,2.861111111111111,7.0,1.0,2.4,0.7027027027027027,40,80.0,5.0
+train-s1196,Who would have thought that Britain would go to war to defend the remnants of its Empire 37 years after World War II?,indonesian,content,2.0,6.0,3.0,2.25,0.5263157894736842,20,100.0,4.0
+train-s1209,How long will Aladin be able to keep the magic lamp in his hands?,indonesian,content,1.8181818181818181,2.0,0,5.0,0.5833333333333334,13,0.0,1.0
+train-s1214,"A question, why is the relief of Garudeya carved?",indonesian,content,1.4,2.0,0,3.0,0.8333333333333334,8,0.0,1.0
+train-s1216,Where do you think the love is in those words?,indonesian,content,1.875,2.0,0,0,0.2222222222222222,11,0,0.0
+train-s1220,"Where is Islam's position vis a vis secular ideologies such as democracy, socialism and Marxism?",indonesian,content,2.0,4.0,0,0,0.7142857142857143,16,0,0.0
+train-s1227,Who is at risk for sepsis?,indonesian,content,1.3333333333333333,2.0,1.0,2.0,0.5,5,100.0,1.0
+train-s1288,"Suddenly out of nowhere, a voice came out, ``You, want red paper?",indonesian,content,2.5555555555555554,3.0,0,2.3333333333333335,0.7,15,0.0,3.0
+train-s1315,What should I do now?,indonesian,content,2.2,2.0,1.0,3.0,0.3333333333333333,7,100.0,1.0
+train-s1334,What if he won't go to the ball?,indonesian,content,2.375,2.0,0,5.0,0.3333333333333333,10,0.0,1.0
+train-s1395,"Cordelia then pointed to her two sisters and said that if they loved their father, why did they marry someone else?",indonesian,content,2.1,5.0,3.0,3.5,0.5714285714285714,23,75.0,4.0
+train-s1419,"'If you had the world and what's in it and like it again, would you redeem yourself?",indonesian,content,2.380952380952381,6.0,1.0,3.3333333333333335,0.36363636363636365,25,66.66666666666667,3.0
+train-s1453,What happens if Yellowstone erupts?,indonesian,content,1.8,3.0,2.0,2.0,0.5,7,100.0,2.0
+train-s1454,"Lecturers every Wednesday in a forum called Discussion Reboan enthusiastically debate, exchange ideas and sharpen analytical sharpness, who doesn't miss an atmosphere like this?",indonesian,content,2.730769230769231,5.0,1.0,1.6,0.5925925925925926,30,66.66666666666667,5.0
+train-s1466,When will his family problems be over?,indonesian,content,2.875,3.0,0,3.0,0.5555555555555556,10,0.0,1.0
+train-s1467,"At that moment, he questioned what does MASOVU mean?",indonesian,content,1.4285714285714286,3.0,0,3.0,0.5,10,0.0,1.0
+train-s1478,"Abu Bakr and Umar asked, ''What made you cry?",indonesian,content,2.0,3.0,2.0,1.6666666666666667,0.6,13,66.66666666666667,3.0
+train-s1480,How is Wataru doing who is sandwiched between the two?,indonesian,content,1.8888888888888888,4.0,1.0,2.0,0.5,11,100.0,1.0
+train-s1483,How will their story continue?,indonesian,content,1.0,2.0,0,0,0.75,5,0,0.0
+train-s1489,"After that, who knows?",indonesian,content,2.6666666666666665,1.0,0,3.0,0.25,6,0.0,1.0
+train-s1497,But what happened?,indonesian,content,1.3333333333333333,2.0,1.0,1.0,0.5,5,100.0,1.0
+train-s1537,"Loh, why is he here? - Why is he here?",indonesian,content,2.4444444444444446,3.0,1.0,3.0,0.5,14,100.0,1.0
+train-s1552,Why did I become a monk?,indonesian,content,1.25,2.0,1.0,2.0,0.6,6,100.0,1.0
+train-s1573,"(Romans 11:13) However, who founded the congregations in Colossae, Hierapolis and Laodicea?",indonesian,content,2.0,5.0,1.0,3.0,0.5,19,100.0,1.0
+train-s1592,How will SAFIRA use ANISSA's past as her trump card?,indonesian,content,1.8,3.0,1.0,2.0,0.7272727272727273,12,50.0,2.0
+train-s1596,"Who will Nando choose, Idayu or Mira?",indonesian,content,2.4285714285714284,3.0,1.0,2.0,0.5,10,100.0,1.0
+train-s1626,How many days can the arrangement be implemented?,indonesian,content,2.0,2.0,0,2.0,0.6666666666666666,7,0.0,1.0
+train-s1641,"How is it possible for hair and nails to grow, when humans do not eat hair or nails?",indonesian,content,2.25,4.0,1.0,3.5,0.6923076923076923,15,50.0,2.0
+train-s1680,Indy asked who was sick?,indonesian,content,1.4,3.0,0,3.0,0.6666666666666666,7,0.0,1.0
+train-s1709,Indy says what is it they told him to come?,indonesian,content,1.2857142857142858,4.0,1.5,1.5,0.625,9,75.0,4.0
+train-s1714,"How will Ningsih, Ones and Cecep's relationship end?",indonesian,content,1.6666666666666667,4.0,0,0,0.8571428571428571,9,0,0.0
+train-s1718,``Why don't you want to worship Allah SWT?,indonesian,content,2.0,2.0,0,4.0,0.5,10,0.0,1.0
+train-s1739,"So, how much phosphorus is released by the earth's population now which has reached about 6.3 billion people?",indonesian,content,2.25,6.0,1.0,3.0,0.5882352941176471,19,100.0,2.0
+train-s1751,Why doesn't the customer feel the change?,indonesian,content,1.6666666666666667,2.0,0,4.0,0.5714285714285714,8,0.0,1.0
+train-s1849,"Tired of looking for no jump, saying, who on earth seems to know this divination?",indonesian,content,2.5833333333333335,3.0,1.3333333333333333,2.0,0.6153846153846154,16,80.0,5.0
+train-s1893,How will this story end?,indonesian,content,1.0,2.0,0,0,0.75,5,0,0.0
+train-s1927,Who will Naia choose?,indonesian,content,1.8,3.0,1.0,2.0,0.3333333333333333,7,100.0,1.0
+train-s1955,But what to do if the amniotic fluid breaks in the fetus before the time of birth?,indonesian,content,2.066666666666667,4.0,1.0,1.3333333333333333,0.5625,17,100.0,3.0
+train-s1980,What happens to Aisyah and Kirani if ​​they have the same in-laws?,indonesian,content,1.8181818181818181,5.0,2.0,2.5,0.5,13,100.0,2.0
+train-s2023,Instead I ask why do you not mourn for Him in this place?,indonesian,content,2.0,4.0,1.0,3.5,0.4166666666666667,13,50.0,2.0
+train-s2046,When is dad coming home?,indonesian,content,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+train-s2095,What will happen?,indonesian,content,2.0,2.0,1.0,1.0,0.25,5,100.0,1.0
+train-s2105,"Loh, what the hell! - What's going on here?",indonesian,content,1.8571428571428572,4.0,1.0,2.0,0.375,12,100.0,1.0
+train-s2146,What is the fate of Yopie's love story with Astuti?,indonesian,content,1.1666666666666667,5.0,0,0,0.8571428571428571,8,0,0.0
+train-s2159,How did Wataru who wasn't a descendant of the Fangire King have Kiva?,indonesian,content,2.75,4.0,0,3.0,0.7777777777777778,10,0.0,1.0
+train-s2222,How about another gift as a gift for you?,indonesian,content,1.5714285714285714,3.0,0,0,0.5,9,0,0.0
+train-s2251,Why did you run quietly and outsmart me?,indonesian,content,1.5,2.0,0,3.0,0.5714285714285714,8,0.0,2.0
+train-s2289,"Even the sun is in shock, who is the Moon?",indonesian,content,1.6,2.0,0,3.0,0.5,8,0.0,1.0
+train-s2329,"But if this is the case, how can a cosmological argument -- formally valid if the premise uses one term with a certain meaning and in the conclusion uses the same term with a completely different meaning?",indonesian,content,2.40625,7.0,1.0,3.0,0.6060606060606061,36,100.0,4.0
+train-s2341,Chapter division: Where do the disputes and quarrels among you come from?,indonesian,content,1.9230769230769231,4.0,0,3.0,0.5,16,0,1.0
+train-s2365,Andara asks whose villa is this?,indonesian,content,1.25,2.0,0,2.0,0.6,6,0.0,1.0
+train-s2393,"Then, why did the developers use the name ``Catfiz''?",indonesian,content,2.1666666666666665,2.0,0,4.0,0.7142857142857143,11,0.0,1.0
+train-s2458,Why does he have a sour face? - Why does he have a sour face?,indonesian,content,2.4444444444444446,4.0,0,0,0.5,13,0,0.0
+train-s2473,Why do people want to re-baptize?,indonesian,content,1.6,2.0,0,1.5,0.8333333333333334,7,0.0,2.0
+train-s2476,Why was the first Sultan of Buton inaugurated / crowned by Imam Fathani?,indonesian,content,2.3636363636363638,5.0,1.0,1.5,0.6666666666666666,14,100.0,2.0
+train-s2529,"Honey, he asked, how are you doing with your tan-skinned wife?",indonesian,content,1.6666666666666667,5.0,1.0,2.5,0.46153846153846156,16,50.0,2.0
+train-s2536,How will ANISSA behave if she finds out about her family's past?,indonesian,content,1.5555555555555556,4.0,1.0,3.0,0.7,11,100.0,1.0
+train-s2589,But the three things that underlie all of his work are the questions: What does it mean to live?,indonesian,content,2.4285714285714284,4.0,1.0,2.5,0.4666666666666667,17,50.0,3.0
+train-s2593,How did Dini and Adrian deal with their marriage?,indonesian,content,2.0,3.0,0,3.0,0.625,9,0.0,1.0
+train-s2602,Why hasn't Mother Earth become a beacon of the world yet?,indonesian,content,2.5,2.0,0,5.0,0.7777777777777778,10,0.0,1.0
+train-s2616,"Many Jipang villagers hold this place sacred, why is it sacred?",indonesian,content,1.8888888888888888,3.0,1.0,2.5,0.7,12,50.0,2.0
+train-s2635,Then what is the impact on PT CPOKU's financial position?,indonesian,content,1.3333333333333333,5.0,0,0,0.6,11,0,0.0
+train-s2643,"What did I tell him, the Tintin maker, and finally go worldwide?",indonesian,content,2.8333333333333335,4.0,1.0,4.0,0.38461538461538464,16,100.0,1.0
+train-s2660,Who gets the punishment?,indonesian,content,1.4,3.0,1.0,2.0,0.3333333333333333,7,100.0,1.0
+train-s2696,And what about Malin Kundang who has become a Jakartan?,indonesian,content,1.7777777777777777,3.0,1.0,2.0,0.6,11,100.0,1.0
+train-s2722,How is it possible that a faculty whose buildings are still far from proper can educate students to become qualified social science graduates?,indonesian,content,3.0476190476190474,5.0,1.0,2.75,0.6363636363636364,23,75.0,4.0
+train-s2738,how many years is it?,indonesian,content,1.4,2.0,0,0,0.8333333333333334,7,0,0.0
+train-s2751,And what can Vicky and Misa do to save their brother?,indonesian,content,1.8333333333333333,4.0,2.0,2.5,0.38461538461538464,14,100.0,2.0
+train-s2752,How will Frans and Livia's love story continue?,indonesian,content,1.2857142857142858,5.0,0,0,0.75,9,0,0.0
+train-s2755,"Without attaining enlightenment oneself first, how is it possible to enlighten other beings?",indonesian,content,2.0,3.0,0,2.5,0.6153846153846154,15,0.0,2.0
+train-s2768,How's Sahibul Menara?,indonesian,content,1.0,3.0,0,0,0.75,5,0,0.0
+train-s2769,Once won the best comic award from Kodansha Who would have thought that in this world there were wizards?,indonesian,content,2.1333333333333333,4.0,2.0,2.3333333333333335,0.625,17,100.0,3.0
+train-s2770,"How will this story continue, did Intan manage to save Kasih?",indonesian,content,1.9,3.0,1.0,2.5,0.7272727272727273,13,50.0,2.0
+train-s2778,Who will be the king?,indonesian,content,1.3333333333333333,2.0,1.0,2.0,0.5,5,100.0,1.0
+train-s2787,AMY GOODMAN: Why do you say that President Aristide is obsessed with power?,indonesian,content,3.1,3.0,1.0,1.5,0.7272727272727273,13,100.0,2.0
+train-s2790,Andara says what about him?,indonesian,content,1.6,2.0,0,2.0,0.5,7,0.0,1.0
+train-s2799,Why Do We Study and Research Communication?,indonesian,content,1.8,2.0,0,2.5,0.6666666666666666,7,0.0,2.0
+train-s2818,What will ANISSA do after finding out all about Safira's scheming?,indonesian,content,1.9,4.0,2.0,2.5,0.5454545454545454,12,100.0,2.0
+train-s2824,Why are you alone here?,indonesian,content,1.0,1.0,0,2.0,1.0,4,0.0,1.0
+train-s2831,What use is this agreement if a book by an author in a well-protected country is published in a country with poor or no protection at all?,indonesian,content,3.2580645161290325,9.0,1.0,3.3333333333333335,0.5,33,100.0,3.0
+train-s2867,"So, how can Payakumbuh Government provide access to clean water for 96 percent of its citizens, while the springs in the city are very minus?",indonesian,content,2.5652173913043477,4.0,0,5.0,0.6666666666666666,27,0.0,1.0
+train-s2870,and what is meant by 'omnipotence'?,indonesian,content,1.8,3.0,1.0,2.0,0.3333333333333333,9,100.0,1.0
+train-s2873,"Chris asked the man, what kind of work did he do to afford a luxury car?",indonesian,content,2.142857142857143,4.0,1.0,2.3333333333333335,0.5333333333333333,17,66.66666666666667,3.0
+train-s2905,"However, the question arises, how did Jesus fulfill the law?",indonesian,content,1.7272727272727273,5.0,1.0,3.0,0.75,13,50.0,2.0
+train-s2906,Why are bottled mineral water producers not subject to excise duty?,indonesian,content,2.4285714285714284,3.0,0,4.0,0.875,9,0.0,1.0
+train-s2913,"Then what about Vino, Clarissa's husband, who suddenly appears to take advantage of Clarissa's second marriage?",indonesian,content,1.8666666666666667,5.0,2.0,3.0,0.6875,19,100.0,2.0
+train-s2927,"When the Messenger of Allah was asked, who will get your intercession?",indonesian,content,1.6666666666666667,4.0,1.0,2.5,0.4,12,50.0,2.0
+train-s2963,The wife who says who will get it?,indonesian,content,2.142857142857143,3.0,0,3.0,0.375,9,0.0,1.0
+train-s2996,LittleJOHN asks the question: By what process does knowledge arise?,indonesian,content,1.625,3.0,1.0,3.0,0.7777777777777778,11,50.0,2.0
+train-s3022,When can you win?,indonesian,content,2.0,2.0,0,2.0,0.4,6,0.0,1.0
+train-s3029,When to Have a Pap Smear?,indonesian,content,1.0,2.0,0,2.0,1.0,5,0.0,1.0
+train-s3030,"My God, my God, why have you forsaken me?",indonesian,content,2.7142857142857144,2.0,0,5.0,0.5,11,0.0,1.0
+train-s3042,"If I don't cry for her, then who will?",indonesian,content,2.0,2.0,0,5.0,0.2222222222222222,11,0.0,1.0
+train-s3045,Who calls you wise?,indonesian,content,1.3333333333333333,2.0,1.0,2.0,0.5,5,100.0,1.0
+train-s3052,What is the estimated sales turnover of a marketer who has 3.5 years of work experience?,indonesian,content,1.6923076923076923,5.0,1.0,2.0,0.6428571428571429,15,100.0,1.0
+train-s3053,Who is this priest Dwidjosoesastro?,indonesian,content,1.5,2.0,0,0,0.4,6,0,0.0
+train-s3075,Who cares about their honor?,indonesian,content,1.4,3.0,1.0,2.0,0.3333333333333333,7,100.0,1.0
+train-s3118,"Dretarastra decided to choose Gendari, why did Gendari choose?",indonesian,content,2.0,2.0,1.0,2.6666666666666665,0.7777777777777778,11,66.66666666666667,3.0
+train-s3126,How about their story?,indonesian,content,1.3333333333333333,1.0,0,0,0.75,5,0,0.0
+train-s3128,Why did you run quietly and outsmart me?,indonesian,content,1.5,2.0,0,3.0,0.5714285714285714,8,0.0,2.0
+train-s3142,Why did the ajibon rebel?,indonesian,content,1.5,1.0,0,2.0,1.0,4,0.0,1.0
+train-s3233,"ALLERGIES CAN BE TREATED, WHY NOT?",indonesian,content,1.5,2.0,0,2.0,0.6,7,0.0,1.0
+train-s3235,How can Ferry and his friends deal with the problems that are now coming and are increasingly causing conflict in their friendship?,indonesian,content,2.4444444444444446,3.0,1.0,3.6666666666666665,0.6842105263157895,20,50.0,3.0
+train-s3255,"What about men, do you want to be immersed in dirty water like that?",indonesian,content,2.7857142857142856,3.0,0,5.0,0.4666666666666667,17,0.0,1.0
+train-s3299,Why are you late? - Why are you late?,indonesian,content,2.2,2.0,0,2.5,0.5,9,0.0,2.0
+train-s3303,Who's fussing?,indonesian,content,1.5,2.0,0,0,0.3333333333333333,4,0,0.0
+train-s3323,"This district can be called a developed district, why?",indonesian,content,2.0,3.0,1.0,2.0,0.625,10,50.0,2.0
+train-s3330,Why do you prostrate like that?,indonesian,content,1.3333333333333333,1.0,0,3.0,0.5,5,0.0,1.0
+train-s3334,What will Karin do when she sees Vishnu and Rasti happy?,indonesian,content,1.8,5.0,2.0,2.5,0.5454545454545454,12,100.0,2.0
+train-s3350,How do we calculate the number 28.57%?,indonesian,content,1.4,3.0,0,3.0,0.5,7,0.0,1.0
+train-s3352,"Then, how is it possible to measure actions and events that aim to create a legal norm?",indonesian,content,1.6428571428571428,6.0,1.5,2.0,0.6666666666666666,17,100.0,3.0
+train-s3354,"`` O Gajah Mada, what do you mean you have a big mouth towards us?",indonesian,content,1.8,5.0,1.0,2.0,0.5454545454545454,14,100.0,1.0
+train-s3363,"If God is for us, who will be against us?",indonesian,content,1.9,3.0,1.0,2.0,0.2727272727272727,13,100.0,1.0
+train-s3364,``Why not General Gatot Subroto?,indonesian,content,1.25,2.0,0,0,0.8,7,0,0.0
+train-s3374,When will Christ return?,indonesian,content,1.8,2.0,1.0,1.5,0.6666666666666666,7,50.0,2.0
+train-s3375,Where then does he take his side?,indonesian,content,1.8,2.0,0,3.0,0.3333333333333333,7,0.0,1.0
+train-s3377,How could this happen?,indonesian,content,2.0,1.0,0,2.0,0.5,5,0.0,1.0
+train-s3388,"So Abah Buyut himself is a separate mystery, where did he learn this Maenpo, was it the result of his own reflection or did someone teach him?",indonesian,content,2.0476190476190474,6.0,1.0,2.2,0.5909090909090909,25,75.0,5.0
+train-s3393,Where's Melanie?,indonesian,content,1.0,2.0,0,0,0.3333333333333333,4,0,0.0
+train-s3417,``How do you interpret those trees?,indonesian,content,1.25,2.0,0,3.0,0.6,7,0.0,1.0
+train-s3444,``Until when do we have to be indoctrinated and continue to be fed with uniform songs and ``Sorry'' not paying attention to aesthetic values ​​in music?,indonesian,content,2.3157894736842106,5.0,1.0,2.4,0.55,24,66.66666666666667,5.0
+train-s3450,"In this reform era, who doesn't know Soetandyo Wignjosoebroto?",indonesian,content,1.9090909090909092,3.0,1.0,3.0,0.5,14,100.0,1.0
+train-s3470,"So the king looked at the captain of the ship and said, how are you doing, is it true that the astrologer beta and no?",indonesian,content,2.3181818181818183,7.0,1.0,3.5,0.5652173913043478,25,50.0,2.0
+train-s3477,If the electrons don't fall to the center what happens?,indonesian,content,2.0,2.0,1.0,3.0,0.4444444444444444,10,100.0,2.0
+train-s3498,"In a conversation in 1950, physicist Enrico Fermi asked: if a number of advanced extraterrestrial civilizations exist in the Milky Way, why can't evidence like spacecraft be found?",indonesian,content,3.4615384615384617,5.0,1.5,2.75,0.6296296296296297,31,75.0,4.0
+train-s3559,Is it true or not my number?,indonesian,content,1.8,2.0,0,0,0.3333333333333333,7,0,0.0
+train-s3564,Yaksa: Who is truly happy?,indonesian,content,2.0,3.0,1.0,2.0,0.5,8,100.0,1.0
+train-s3569,(C) Where are we now?,indonesian,content,2.6,3.0,0,0,0.3333333333333333,9,0,0.0
+train-s3570,What will the world say if you marry someone who doesn't count as my wife?,indonesian,content,1.8333333333333333,4.0,2.0,3.5,0.38461538461538464,14,100.0,2.0
+train-s3571,``Why not use the piano?,indonesian,content,1.3333333333333333,1.0,0,3.0,0.75,6,0.0,1.0
+train-s3587,What will happen to the statue of Ryan's mother?,indonesian,content,1.5714285714285714,4.0,1.0,2.0,0.5,9,100.0,1.0
+train-s3588,Why do we use Fusebox as a framework?,indonesian,content,1.6,2.0,0,4.0,0.6666666666666666,7,0.0,1.0
+train-s3667,What happened between November 25 -- December 10?,indonesian,content,1.5555555555555556,6.0,2.0,2.0,0.5,12,100.0,2.0
+train-s3686,What should he do as a first step towards achieving his goals in this industry?,indonesian,content,2.230769230769231,3.0,1.0,2.5,0.42857142857142855,15,50.0,2.0
+train-s3694,Who doesn't know Ramlan Surbakti?,indonesian,content,1.6,3.0,1.0,3.0,0.5,7,100.0,1.0
+train-s3753,Why didn't you tell me that I might lead you with joy and song with tambourines and harps?,indonesian,content,2.0,5.0,1.0,4.5,0.3888888888888889,20,50.0,2.0
+train-s3775,"Until one day Naia remembers the past, including her love, Imam. Who will Naia choose?",indonesian,content,2.2777777777777777,4.0,1.0,2.25,0.5789473684210527,22,75.0,4.0
+train-s3880,What is his name and what is his son's name?,indonesian,content,1.4285714285714286,4.0,0,0,0.375,9,0,0.0
+train-s3881,Where did fate take Alif?,indonesian,content,1.3333333333333333,1.0,0,3.0,1.0,5,0.0,1.0
+train-s3896,Where is the king's treasure now?,indonesian,content,1.6666666666666667,2.0,0,0,0.42857142857142855,8,0,0.0
+train-s3954,Did you say? - Didn't you say that?,indonesian,content,2.0,3.0,1.0,1.5,0.2,13,100.0,2.0
+train-s3971,And who holds the secret keys?,indonesian,content,1.4285714285714286,3.0,1.0,2.0,0.375,9,100.0,1.0
+train-s4006,What's the next story?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+train-s4057,Who really is João Tavares?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
+train-s4070,How does Rafael deal with Princess and Gladis at the same time?,indonesian,content,1.8333333333333333,3.0,0,4.0,0.8571428571428571,8,0.0,1.0
+train-s4094,"But in the anime OVA Angel Beats, Angel Beats!: Another Epilogue Tells about Otonashi who has not been reincarnated and helps people who have died in the Afterlife world When will Otonashi Yuzuru donate his heart to Kanade?",indonesian,content,2.7096774193548385,5.0,1.0,3.0,0.71875,36,66.66666666666667,5.0
+train-s4100,How did he learn it?,indonesian,content,1.3333333333333333,1.0,0,3.0,0.5,5,0.0,1.0
+train-s4115,How will this story continue?,indonesian,content,1.25,2.0,0,0,0.6,6,0,0.0
+train-s4118,"Who has ascended to heaven, or descended?",indonesian,content,2.142857142857143,3.0,1.0,2.0,0.375,10,100.0,2.0
+train-s4121,Eyang Tini's private driver asked how much longer they would look for Kamila?,indonesian,content,2.1818181818181817,3.0,1.0,2.5,0.8333333333333334,13,50.0,2.0
+train-s4138,"How can there be an unbroken egg, in its own nest toppled over?",indonesian,content,2.5,3.0,1.0,1.6666666666666667,0.5454545454545454,13,66.66666666666667,3.0
+train-s4179,``Why didn't the train come?,indonesian,content,2.6,2.0,0,4.0,0.6666666666666666,8,0.0,1.0
+train-s4209,"Is it true as the astrologer said, where do you want to divert the true words?",indonesian,content,2.2666666666666666,4.0,1.0,4.0,0.5625,18,100.0,1.0
+train-s4220,What is the fate of Nadya and Imam's love?,indonesian,content,1.2,4.0,0,0,0.8333333333333334,7,0,0.0
+train-s4249,"Mama Ardi then panicked and said, why did the marriage get cancelled?",indonesian,content,2.111111111111111,4.0,0,2.0,0.8,12,0,2.0
+train-s4258,"My God, my God, why have you forsaken me?",indonesian,content,2.625,2.0,0,5.0,0.4444444444444444,12,0.0,1.0
+train-s4265,"``Hi Sura, why did you break the rules that we both agreed on?",indonesian,content,2.1,3.0,1.0,3.5,0.6363636363636364,14,50.0,2.0
+train-s4292,How can we not experience suffering because of the separation of our human faculties?,indonesian,content,1.9,3.0,0,5.0,0.5454545454545454,12,0.0,1.0
+train-s4362,What do they want to do?,indonesian,content,2.5,2.0,1.0,3.0,0.4,6,100.0,1.0
+train-s4392,What prevents the demons from producing more Nephilim today?,indonesian,content,1.8,3.0,1.0,2.0,0.7272727272727273,12,50.0,2.0
+train-s4432,How is reflected light from a planet refracted as it enters Earth's atmosphere?,indonesian,content,2.4,3.0,1.0,2.5,0.7272727272727273,12,50.0,2.0
+train-s4464,Which woman did Arya's parents choose?,indonesian,content,1.7142857142857142,3.0,1.0,2.0,0.625,9,100.0,1.0
+train-s4468,What does it mean when we say that a hyphenation error is created when we approach a mathematical procedure?,indonesian,content,2.0,5.0,3.0,3.0,0.5,17,100.0,3.0
+train-s4470,Why did they accept?,indonesian,content,1.5,1.0,0,2.0,0.6666666666666666,4,0.0,1.0
+train-s4472,How do hot air balloons move from one location to another?,indonesian,content,1.7272727272727273,4.0,1.0,2.0,0.6666666666666666,13,100.0,1.0
+train-s4474,So try to answer questions like what needs is someone trying to satisfy?,indonesian,content,1.4166666666666667,7.0,1.5,1.75,0.5384615384615384,14,75.0,4.0
+train-s4476,How about in Indonesia?,indonesian,content,1.5,2.0,0,0,0.6666666666666666,4,0,0.0
