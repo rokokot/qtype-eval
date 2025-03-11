@@ -295,6 +295,7 @@ def process_conllu_file(input_file, output_dir, lang, min_tokens=3, max_tokens=4
         current_sentence = []
         is_question_sentence = False
         sentence_text = ""
+        english_translation = ""
         
         with open(input_file, 'r', encoding='utf-8') as f:
             for line in f:
@@ -316,27 +317,37 @@ def process_conllu_file(input_file, output_dir, lang, min_tokens=3, max_tokens=4
                             stats["filtered_questions"] += 1
                             filtered_txt.write(sentence_text + '\n')
                         else:
-                        
-                            classifier = QuestionClassifier(lang)
-                            question_type = classifier.classify(sentence_text)
-                        
-                            if question_type == 'polar':
-                                stats["polar"] += 1
-                                polar_conllu.write(''.join(current_sentence))
-                                polar_txt.write(sentence_text + '\n')
-                            elif question_type == 'content':
-                                stats["content"] += 1
-                                content_conllu.write(''.join(current_sentence))
-                                content_txt.write(sentence_text + '\n')
+                            if lang == "id" and english_translation:
+                                en_classifier = QuestionClassifier('en')
+                                question_type = en_classifier._classify_english(english_translation)
+
+                                if question_type is None:
+                                    id_classifier = QuestionClassifier('id')
+                                    question_type = id_classifier.classify(sentence_text)
                             else:
-                                stats["unclassified"] += 1
-                                unclassified_txt.write(sentence_text + '\n')
-                        
+                                    
+                            
+                                classifier = QuestionClassifier(lang)
+                                question_type = classifier.classify(sentence_text)
+                            
+                                if question_type == 'polar':
+                                    stats["polar"] += 1
+                                    polar_conllu.write(''.join(current_sentence))
+                                    polar_txt.write(sentence_text + '\n')
+                                elif question_type == 'content':
+                                    stats["content"] += 1
+                                    content_conllu.write(''.join(current_sentence))
+                                    content_txt.write(sentence_text + '\n')
+                                else:
+                                    stats["unclassified"] += 1
+                                    unclassified_txt.write(sentence_text + '\n')
+                            
                     # Reset for the next sentence
                     current_sentence = []
                     is_question_sentence = False
                     sentence_text = ""
-        
+                    english_translation = ""
+                    
         # Handle the last sentence if there's no final newline
         if current_sentence and is_question_sentence and sentence_text:
             stats["questions"] += 1

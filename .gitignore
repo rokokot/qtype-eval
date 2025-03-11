@@ -165,6 +165,9 @@ cython_debug/
 
 
 data/raw
+feature_analysis.py
+/home/robin/Research/qtype-eval/feature_analysis-UD
+/home/robin/Research/qtype-eval/feature_analysis-TyDi
 src/profiling-UD 
 
 

@@ -19,7 +19,6 @@ logger = logging.getLogger(__name__)
 
 
 """
-
     This script loads and processes the TyDi QA dataset. For example, to download the validation split, run the following commands:
 
     python src/data/tydi_classifier.py --save-dataset data/tydi_validation.pkl --txt-output TyDi-questions/
@@ -33,14 +32,7 @@ logger = logging.getLogger(__name__)
     note the args in main for more options such as:
     
     save data to .csv: python src/data/tydi_classifier.py --cached-dataset data/tydi_validation.pkl --txt-output TyDi-questions/ --output custom/path/results.csv --disagreements custom/path/disagreements.csv
-
-
 """
-
-
-
-
-
 
 LANGUAGE_MAP = {
     "english": "en",
@@ -52,7 +44,6 @@ LANGUAGE_MAP = {
     "indonesian": "id"
 }
 
-
 CLASSIFIER_POLAR_SET = {"english", "russian", "japanese", "arabic", "finnish", "korean"}
 
 
@@ -60,12 +51,8 @@ class QuestionClassifier:
     """Classifier for questions based on patterns from ud_question_extractor"""
     
     def __init__(self, language):
-        
         self.language = language
         
-        
-
-
         self.en_wh_words = r'\b(what*|who*|where*|when*|why*|how*|which*)\b'
         self.en_polar_starters = r'^(is|Is|are|Are|Do|do|Does|does|Did|Did|Have|have|Has|has|Can|can|Could|could|will|Will|would|Would|should|Should|May|may|Might|might)'
         self.embedded_verbs = r'\b(know|tell|confirm|explain|understand|think|show|mean|see)\b'
@@ -73,19 +60,40 @@ class QuestionClassifier:
         self.fi_wh_words = r'\b(mik(?:ä|si)|montako|mit(?:ä|en)|miss(?:ä|tä)|mihin|mill(?:oin|ä)|kuk(?:a|aan)|ket(?:ä|kä)|ken(?:en|eltä)|kumpi|kuinka|montako)\b'
         self.fi_polar = r'\b\w+(?:ko|kö)\b'
 
-
         self.ko_wh_words = r'(무엇|뭐|뭣|무슨|누구|누가|어디|어느|언제|왜|어째서|어떻게|어떤|몇|얼마)'
-        self.ko_ending_pattern = r'(까요|니까|나요|는가|을까|가요|니|까|냐|가|나)\s*\??$'
+        self.ko_ending_pattern = r'(습니까|읍니까|ㅂ니까|나요|가요|군요|네요|죠|인가요|인가|은가요|는가요|ㄴ가요|까요|을까요|를까요|ㄹ까요|지요|하나요|한가요|할까요|하겠나요|겠나요)\s*\??$'
 
-        self.ja_ka_pattern = r'か\s*[\?？]?$'
-        self.ja_wh_words = r'(何|なに|なん|どこ|どちら|いつ|誰|だれ|なぜ|どうして|どう|どのよう|どの|どんな|いくつ|いくら)'
+        self.ja_polar_pattern = [
+            r'(か|かな|のか|のかな|だろうか|でしょうか|ですか)[\s。]*[\?？]*$',  
+            r'(ますか|ませんか|ましたか|ませんでしたか)[\s。]*[\?？]*$',         
+            r'(ある|ない|いる|いない)(か)[\s。]*[\?？]*$',                     
+            r'は.*(ですか|ますか|でしょうか)[\s。]*[\?？]*$',                  
+            r'が.*(ですか|ますか|でしょうか)[\s。]*[\?？]*$',                  
+            r'を.*(ますか|ませんか)[\s。]*[\?？]*$',                          
+            r'(でしょう|だろう)[\s。]*[\?？]*$',                              
+        ]
+
+        self.ja_wh_words = [
+            r'(何|なに|なん)\b',           
+            r'(誰|だれ)\b',               
+            r'どこ\b',                    
+            r'いつ\b',                    
+            r'(なぜ|どうして)\b',          
+            r'(どう|どのよう|どのように)\b', 
+            r'どの\b',                    
+            r'どんな\b',                  
+            r'(いくつ|いくら)\b',          
+            r'どれ\b',                    
+            r'どちら\b',                  
+            r'どのくらい\b',              
+            r'いかが\b',    
+        ]
 
         self.ru_li_pattern = r'\s+ли\b'
         self.ru_wh_words = r'\b(что|чего|чему|чем|кто|кого|кому|кем|где|куда|откуда|когда|почему|зачем|как|каким\s+образом|который|как(?:ой|ая|ое|ие)|сколько)\b'
 
         self.ar_polar_pattern = r'^(هل|أ)\b' 
         self.ar_wh_words = r'\b(ما(?:ذا)?|من|أين|وين|متى|لماذا|ليش|كيف|أي|كم)\b'
-
 
         self.id_polar_pattern = r'^(apakah|apa\s+kah|apa)\b'  
         self.id_wh_words = r'\b(apa\s+yang|apa\s+saja|siapa(?:kah)?|di\s+mana|dimana|ke\s+mana|kemana|dari\s+mana|darimana|kapan|bila|mengapa|kenapa|bagaimana|yang\s+mana|berapa)\b'
@@ -108,7 +116,6 @@ class QuestionClassifier:
             return self._classify_indonesian(text)
         
         return None
-        #return "polar"
     
     def _classify_english(self, text):
         text = text.lower()
@@ -138,27 +145,140 @@ class QuestionClassifier:
     
         return None
     
-
     def _classify_korean(self, text):
+
+        if len(text) < 4:
+            return None
+        
+        strong_polar_indicators = [
+            r'(인가요|인가)\?$',
+            r'(합니까|습니까|읍니까)\?$',
+            r'(하나요|나요|가요|군요|네요)\?$',
+            r'(하십니까|십니까)\?$',
+            r'(한가요|은가요|는가요)\?$',
+            r'(할까요|을까요|를까요)\?$',
+            r'(하겠\w+가|겠\w+가)\?$',
+            r'\?$'  # As a fallback, any question mark ending without explicit WH structure
+        ]
+
+        for pattern in strong_polar_indicators:
+            if re.search(pattern, text):
+                obvious_wh = re.match(r'^(무엇|누구|어디|언제|왜|어떻게) ', text) or re.match(r'^(무슨|어느|몇) \w+ ', text)
+                if not obvious_wh:
+                    return 'polar'
+
+
         if re.search(self.ko_wh_words, text):
             return 'content'
-        
+    
+    # If ends with a question mark but doesn't have clear WH structure, classify as polar
+        if text.endswith('?'):
+            return 'polar'
+    
+    # If has common polar endings
         if re.search(self.ko_ending_pattern, text):
             return 'polar'
-        
-        return None        
     
+        wh_in_polar_contexts = [
+            r'(무엇|뭐|뭣|무슨).+(인가요|일까요|입니까)',
+            r'(누구|누가).+(인가요|일까요|입니까)',
+            r'(어디|어느).+(인가요|일까요|입니까)'
+        ]
 
+        for pattern in wh_in_polar_contexts:
+            if re.search(pattern, text):
+                return 'polar'
+
+
+        return None   
+    
     def _classify_japanese(self, text):
-        if re.search(self.ja_wh_words, text):
-            return 'content'
+      
+        wh_patterns = [
+            r'(何|なに|なん)\b',           
+            r'(誰|だれ)\b',               
+            r'どこ\b',                    
+            r'いつ\b',                    
+            r'(なぜ|どうして)\b',         
+            r'(どう|どのよう|どのように)\b',
+            r'どの\b',                    
+            r'どんな\b',                  
+            r'(いくつ|いくら)\b',          
+            r'どれ\b',                    
+            r'どちら\b',                  
+            r'どのくらい\b',              
+            r'いかが\b',                  
+        ]
         
-        if re.search(self.ja_ka_pattern, text):
+        has_wh_word = False
+        for pattern in wh_patterns:
+            if re.search(pattern, text):
+                has_wh_word = True
+                break
+
+        
+        strong_polar_patterns = [
+            r'(ですか|ますか|でしょうか)[\s。]*[\?？]*$',
+            r'(ある|ない|あります|ありません|います|いません|できる|できない)(か|の|ですか)[\s。]*[\?？]*$',
+            r'(〜ですか|〜ますか|〜でしょうか)[\s。]*[\?？]*$',
+            
+            r'^.+は.+(?<!(なに|なん|だれ|どこ|いつ|なぜ|どう))(ですか|ますか|でしょうか)[\s。]*[\?？]*$',
+            r'(ある|ない|あります|ありません|です|ます|ません)(か)[\s。]*[\?？]*$',
+            
+            r'^.+(は|が|を).+[でし]すか[\?？]?$',
+            r'^.+(できます|できる|あります|ある|います|いる)(か|のか|ですか)[\?？]?$',
+            
+            r'[^か]+(か|の)[\s。]*[\?？]*$',
+        ]
+
+        if (text.endswith('?') or text.endswith('？')) and not has_wh_word:
             return 'polar'
         
-        return None
+        for pattern in strong_polar_patterns:
+            if re.search(pattern, text):
+                if not has_wh_word:
+                    return 'polar'
+                
+                if re.search(r'(ですか|ますか|でしょうか)[\s。]*[\?？]*$', text):
+                    if re.search(r'(なに|なん|だれ|どこ|いつ|なぜ|どう).*(ですか|ますか)[\?？]?$', text):
+                        return 'content'
+                    else:
+                        return 'polar'
+
+        if has_wh_word:
+            strong_content_patterns = [
+                r'(何|なに|なん)(が|を|に|の|は|で)',
+                r'(誰|だれ)(が|を|に|の|は|で)',
+                r'どこ(が|を|に|の|は|で|へ)',
+                r'いつ(から|まで|に|の|は|で)',
+                r'(なぜ|どうして)(に|は|で|を)',
+                r'どのよう(に|な|は|で)',
+                
+                r'^(何|なに|なん|誰|だれ|どこ|いつ|なぜ|どうして)',
+                r'^.*(何|なに|なん|誰|だれ|どこ|いつ|なぜ|どうして).*[\?？]$',
+                
+                r'^.+は.*(何|なに|なん|誰|だれ|どこ|いつ|なぜ|どうして)',
+            ]
+            
+            for pattern in strong_content_patterns:
+                if re.search(pattern, text):
+                    return 'content'
+            
+            return 'content'
+
+        if (text.endswith('?') or text.endswith('？')):
+            if re.search(r'^.+(は|が|を).+', text):
+                return 'polar'
         
-    
+        if re.search(r'.+か[\s。]*$', text) and not has_wh_word:
+            return 'polar'
+            
+        if re.search(r'(ます|ません|でしょう|ですか|あります|ありません)', text) and not has_wh_word:
+            if text.endswith('?') or text.endswith('？'):
+                return 'polar'
+        
+        return None
+            
     def _classify_russian(self, text):
         text = text.lower()
         if re.search(self.ru_li_pattern, text):
@@ -168,7 +288,6 @@ class QuestionClassifier:
             return 'content'
         
         return None
-
     
     def _classify_arabic(self, text):
         if re.search(self.ar_polar_pattern, text):
@@ -194,7 +313,6 @@ class QuestionClassifier:
         
 
 class TyDiClassifier:
-    """Classifies questions from TyDi QA using both annotations and linguistic patterns"""
     
     def __init__(self):
         self.classifiers = {}
@@ -239,8 +357,18 @@ class TyDiClassifier:
                 "disagreement": 0
             }
     
+    def has_unanimous_annotations(self, annotations):
+        if isinstance(annotations, dict) and 'yes_no_answer' in annotations:
+            yes_no_answers = annotations['yes_no_answer']
+            if len(yes_no_answers) <= 1:
+                return True
+                
+            is_polar = [ans == 'YES' or ans == 'NO' for ans in yes_no_answers]
+            return all(is_polar) or not any(is_polar)
+            
+        return True 
+    
     def load_tydi_dataset(self, split="validation", cached_path=None):
-        """Load the TyDi QA dataset"""
 
         pickle_path = None
         if cached_path:
@@ -259,8 +387,6 @@ class TyDiClassifier:
               except Exception as e:
                   logger.warning(f"Failed to load cached data from {pickle_path}: {e}")
                   logger.warning("Will download dataset from HuggingFace instead")
-                  
-
 
         logger.info(f"Download TyDi QA dataset ({split} split) from HuggingFace")
 
@@ -272,7 +398,6 @@ class TyDiClassifier:
             df = dataset[split][:].copy()
             pbar.update(1)
 
-        
         if pickle_path:
             try:
               os.makedirs(os.path.dirname(pickle_path), exist_ok=True)
@@ -286,11 +411,7 @@ class TyDiClassifier:
       
         return df
     
-                
-        
-    
     def analyze_annotations(self, df, filter_languages=None):
-        """Analyze the distribution of yes_no_answer annotations"""
         
         if filter_languages:
             df = df[df['language'].str.lower().isin(filter_languages)]
@@ -331,143 +452,227 @@ class TyDiClassifier:
                     lang_counts["yes_distribution"][0] += 1
     
     def is_polar_by_annotation(self, annotations):
-        """Check if a question is polar based on TyDi annotations"""
         if isinstance(annotations, dict) and 'yes_no_answer' in annotations:
             return any(ans == 'YES' or ans == 'NO' for ans in annotations['yes_no_answer'])
         return False
     
     def classify_question(self, question_text, language, annotation_class=None):
-        """Compare result to a pattern-based classifier"""
+    
+        if language in ["japanese", "korean"]:
+            return annotation_class or "content"
+        
         if language not in self.classifiers:
-           return annotation_class or "content"
+            return annotation_class or "content"
         
         classifier_result = self.classifiers[language].classify(question_text)
 
         if classifier_result not in ["polar", "content"]:
             return annotation_class or "content"
-        
+    
         return classifier_result
     
     def include_question(self, annotation_class, classifier_class, language):
-        if annotation_class == "content" and classifier_class == "content":
+      
+        if language in ["japanese", "korean"] and annotation_class in ["polar", "content"]:
             return True
             
+        if annotation_class == "content" and classifier_class == "content":
+            return True
+                
         if annotation_class == "polar" or classifier_class == "polar":
             if language == "indonesian":
                 return annotation_class == classifier_class
-            
+                
             if language in CLASSIFIER_POLAR_SET:
                 return classifier_class == "polar"
-                
+                    
+        return False
+    
+    
+    def has_any_polar_annotation(self, annotations):
+        
+        if isinstance(annotations, dict) and 'yes_no_answer' in annotations:
+        
+            yes_no_answers = annotations['yes_no_answer']
+        
+            return any(ans == 'YES' or ans == 'NO' for ans in yes_no_answers)
+        
         return False
 
-    
     def process_dataset(self, df, output_path=None, filter_languages=None, txt_output_dir=None, use_classifier=False, split="validation"):
-        """Process the dataset and classify questions"""
-        results = []
-        
-        self.analyze_annotations(df, filter_languages)
-
-        if filter_languages:
-            df = df[df['language'].str.lower().isin(filter_languages)]
-        
-        filtered_count = 0
-
-        for _, row in tqdm(df.iterrows(), total=len(df), desc="Classifying questions"):
-            question_text = row['question_text']
-            language = row['language'].lower()
+            results = []
             
-            if language not in self.classifiers:
-                continue
-            
-            polar_by_annotation = self.is_polar_by_annotation(row['annotations'])
-            annotation_class = "polar" if polar_by_annotation else "content"
-            
-            classifier_class = self.classify_question(question_text, language, annotation_class)
+            self.analyze_annotations(df, filter_languages)
 
-            include_question = self.include_question(annotation_class, classifier_class, language)
-
+            if filter_languages:
+                df = df[df['language'].str.lower().isin(filter_languages)]
             
-            final_class = None
-            if include_question:
-                if annotation_class == "content" and classifier_class == "content":
-                    final_class = "content"
-                elif language in CLASSIFIER_POLAR_SET and classifier_class == "polar":
-                    final_class = "polar"
-                elif language == "indonesian" and annotation_class == classifier_class:
-                    final_class = annotation_class
-            
+            filtered_count = 0
+            skipped_questions = {lang: 0 for lang in LANGUAGE_MAP}
+            filtered_content = {lang: 0 for lang in LANGUAGE_MAP}
+            added_polar = {lang: 0 for lang in LANGUAGE_MAP}
 
-            self.stats["total"] += 1
-            if polar_by_annotation:
-                self.stats["polar_by_annotation"] += 1
-            if classifier_class == "polar":
-                self.stats["polar_by_classifier"] += 1
-            if annotation_class == classifier_class:
-                self.stats["agreement"] += 1
-                if annotation_class == "polar":
-                    self.stats["agreed_polar"] += 1
+            for _, row in tqdm(df.iterrows(), total=len(df), desc="Classifying questions"):
+                question_text = row['question_text']
+                language = row['language'].lower()
+                
+                if language not in self.classifiers:
+                    continue
+                
+                # Special handling for Japanese and Korean
+                if language in ["japanese", "korean"]:
+                    # Check if any annotator marked it as polar
+                    any_polar = self.has_any_polar_annotation(row['annotations'])
+                    
+                    # For unanimous agreement
+                    unanimous = self.has_unanimous_annotations(row['annotations'])
+                    
+                    # Get annotation class based on majority (as before)
+                    polar_by_annotation = self.is_polar_by_annotation(row['annotations'])
+                    annotation_class = "polar" if polar_by_annotation else "content"
+                    
+                    # RELAXED CRITERIA:
+                    # 1. Always include if any annotator marked as polar
+                    # 2. For content questions, still verify wh-words
+                    
+                    # Case 1: Any annotator marked as polar -> include as polar
+                    if any_polar:
+                        classifier_class = "polar"
+                        include_question = True
+                        final_class = "polar"
+                        
+                        # Track how many we're adding that weren't unanimous
+                        if not unanimous or annotation_class != "polar":
+                            added_polar[language] += 1
+                        
+                    # Case 2: Content question -> verify unanimous + has wh-words
+                    elif annotation_class == "content":
+                        # Skip if not unanimous agreement
+                        if not unanimous:
+                            skipped_questions[language] += 1
+                            continue
+                        
+                        # Check if it contains wh-words
+                        has_wh_word = False
+                        
+                        # Handle different pattern structures for Japanese and Korean
+                        if language == "korean":
+                            # Korean has a single regex pattern
+                            if re.search(self.classifiers[language].ko_wh_words, question_text):
+                                has_wh_word = True
+                        else:  # Japanese
+                            # Japanese has a list of patterns
+                            for pattern in self.classifiers[language].ja_wh_words:
+                                if re.search(pattern, question_text):
+                                    has_wh_word = True
+                                    break
+                        
+                        # Skip content questions without wh-words
+                        if not has_wh_word:
+                            filtered_content[language] += 1
+                            continue
+                        
+                        classifier_class = "content"
+                        include_question = True
+                        final_class = "content"
+                    
+                    # Case 3: Neither polar nor valid content -> skip
+                    else:
+                        skipped_questions[language] += 1
+                        continue
                 else:
-                    self.stats["agreed_content"] += 1
-            else:
-                self.stats["disagreement"] += 1
-            
-            lang_stats = self.stats["by_language"][language]
-            lang_stats["total"] += 1
-            if polar_by_annotation:
-                lang_stats["polar_by_annotation"] += 1
-            if classifier_class == "polar":
-                lang_stats["polar_by_classifier"] += 1
-            if annotation_class == classifier_class:
-                lang_stats["agreement"] += 1
-                if annotation_class == "polar":
-                    lang_stats["agreed_polar"] += 1
+                    # For other languages, use the regular classification logic
+                    polar_by_annotation = self.is_polar_by_annotation(row['annotations'])
+                    annotation_class = "polar" if polar_by_annotation else "content"
+                    classifier_class = self.classify_question(question_text, language, annotation_class)
+                    include_question = self.include_question(annotation_class, classifier_class, language)
+                    
+                    final_class = None
+                    if include_question:
+                        if annotation_class == "content" and classifier_class == "content":
+                            final_class = "content"
+                        elif language in CLASSIFIER_POLAR_SET and classifier_class == "polar":
+                            final_class = "polar"
+                        elif language == "indonesian" and annotation_class == classifier_class:
+                            final_class = annotation_class
+                
+                # Update statistics
+                self.stats["total"] += 1
+                if polar_by_annotation:
+                    self.stats["polar_by_annotation"] += 1
+                if classifier_class == "polar":
+                    self.stats["polar_by_classifier"] += 1
+                if annotation_class == classifier_class:
+                    self.stats["agreement"] += 1
+                    if annotation_class == "polar":
+                        self.stats["agreed_polar"] += 1
+                    else:
+                        self.stats["agreed_content"] += 1
                 else:
-                    lang_stats["agreed_content"] += 1
-            else:
-                lang_stats["disagreement"] += 1
+                    self.stats["disagreement"] += 1
+                
+                lang_stats = self.stats["by_language"][language]
+                lang_stats["total"] += 1
+                if polar_by_annotation:
+                    lang_stats["polar_by_annotation"] += 1
+                if classifier_class == "polar":
+                    lang_stats["polar_by_classifier"] += 1
+                if annotation_class == classifier_class:
+                    lang_stats["agreement"] += 1
+                    if annotation_class == "polar":
+                        lang_stats["agreed_polar"] += 1
+                    else:
+                        lang_stats["agreed_content"] += 1
+                else:
+                    lang_stats["disagreement"] += 1
+                
+                if not include_question:
+                    if "filtered_out" not in self.stats:
+                        self.stats["filtered_out"] = 0
+                    self.stats["filtered_out"] += 1
+                    if "filtered_out" not in lang_stats:
+                        lang_stats["filtered_out"] = 0
+                    lang_stats["filtered_out"] += 1
+                    filtered_count += 1
+                
+                result = {
+                    "question_text": question_text,
+                    "language": language,
+                    "annotation_class": annotation_class,
+                    "classifier_class": classifier_class,
+                    "agreement": annotation_class == classifier_class,
+                    "final_class": final_class,
+                    "included": include_question
+                }
+                results.append(result)
             
-            if not include_question:
-                if "filtered_out" not in self.stats:
-
-                    self.stats["filtered_out"] = 0
-                self.stats["filtered_out"] += 1
-                if "filtered_out" not in lang_stats:
-
-                    lang_stats["filtered_out"] = 0
-                lang_stats["filtered_out"] += 1
-                filtered_count += 1
+            results_df = pd.DataFrame(results)
             
-            result = {
-                "question_text": question_text,
-                "language": language,
-                "annotation_class": annotation_class,
-                "classifier_class": classifier_class,
-                "agreement": annotation_class == classifier_class,
-                "final_class": final_class,
-                "included": include_question
-            }
-            results.append(result)
-        
-        results_df = pd.DataFrame(results)
-        
-        if output_path:
-            os.makedirs(os.path.dirname(output_path), exist_ok=True)
-            results_df.to_csv(output_path, index=False)
-            logger.info(f"Saved classification results to {output_path}")
-        
-        if txt_output_dir:
-            split_output_dir = self._get_split_output_dir(txt_output_dir, split)
-            self.save_as_txt(results_df, split_output_dir)
+            # Log info about skipped and filtered questions
+            for lang in ["japanese", "korean"]:
+                if (filter_languages and lang in filter_languages) or not filter_languages:
+                    if skipped_questions[lang] > 0 or filtered_content[lang] > 0 or added_polar[lang] > 0:
+                        logger.info(f"Skipped {skipped_questions[lang]} {lang.capitalize()} questions due to inconsistent annotations")
+                        logger.info(f"Filtered {filtered_content[lang]} {lang.capitalize()} content questions without wh-words")
+                        logger.info(f"Added {added_polar[lang]} additional {lang.capitalize()} polar questions using relaxed criteria")
+            
+            if output_path:
+                os.makedirs(os.path.dirname(output_path), exist_ok=True)
+                results_df.to_csv(output_path, index=False)
+                logger.info(f"Saved classification results to {output_path}")
+            
+            if txt_output_dir:
+                split_output_dir = self._get_split_output_dir(txt_output_dir, split)
+                self.save_as_txt(results_df, split_output_dir)
 
-        
-        return results_df
+            return results_df
     
-    def _get_split_output_dir(self, base_dir, split):
-
+    def _get_split_output_dir(self, base_dir, split, no_suffix=False):
         base_dir = base_dir.rstrip('/')
+        if no_suffix:
+            return base_dir
+
         return f'{base_dir}_{split}'
-    
     
     def save_simple_output(self, results_df, output_path, split='validation'):
         included_df = results_df[(results_df['included'] == True) & (results_df['final_class'].notna())]
@@ -483,14 +688,12 @@ class TyDiClassifier:
         return simple_output_path
     
     def save_as_txt(self, results_df, output_dir):
-        """Save questions as plain text files, one question per line"""
         os.makedirs(output_dir, exist_ok=True)
 
         included_df = results_df[results_df['included'] == True]
 
         languages = included_df['language'].unique()
 
-        
         for language in tqdm(languages, desc="Saving text files by language"):
             language_df = included_df[included_df['language'] == language]
             
@@ -509,10 +712,8 @@ class TyDiClassifier:
                     for question in content_questions:
                         f.write(f"{question.strip()}\n")
                 logger.info(f"Saved {len(content_questions)} content questions to {content_path}")
-    
 
     def print_annotation_stats(self):
-        """Print annotation distribution statistics"""
         logger.info("\n=== Annotation Distribution ===")
         logger.info(f"Total questions analyzed: {self.annotation_counts['total']}")
         logger.info(f"Questions with single annotator: {self.annotation_counts['single_annotator']}")
@@ -534,27 +735,20 @@ class TyDiClassifier:
                 for count, occurrences in sorted(stats["yes_distribution"].items()):
                     logger.info(f"    {count} YES annotations: {occurrences}")
 
-
-
     def print_stats(self):
-        """Print classification statistics"""
         total = self.stats["total"]
-
-        content_by_annotation = total - self.stats["polar_by_annotation"]
-        content_by_classifier = total - self.stats["polar_by_classifier"]
 
         if total == 0:
             logger.warning("No questions processed")
             return
         
+        content_by_annotation = total - self.stats["polar_by_annotation"]
+        content_by_classifier = total - self.stats["polar_by_classifier"]
+        
         logger.info("Classification Statistics:")
-
         logger.info(f"Total questions processed: {total}")
-
         logger.info(f"Polar questions by annotation: {self.stats['polar_by_annotation']} ({self.stats['polar_by_annotation']/total*100:.2f}%)")
-
         logger.info(f"Polar questions by classifier: {self.stats['polar_by_classifier']} ({self.stats['polar_by_classifier']/total*100:.2f}%)")
-
         logger.info(f"Content questions by annotation: {content_by_annotation} ({content_by_annotation/total*100:.2f}%)")
         logger.info(f"Content questions by classifier: {content_by_classifier} ({content_by_classifier/total*100:.2f}%)")
     
@@ -575,8 +769,6 @@ class TyDiClassifier:
           logger.info(f"\nAgreement rates by question type:")
           logger.info(f"  Polar question agreement rate: {polar_agreement_rate:.2f}%")
           logger.info(f"  Content question agreement rate: {content_agreement_rate:.2f}%")
-    
-          
 
         logger.info("\nBreakdown by language:")
         for lang, stats in self.stats["by_language"].items():
@@ -604,13 +796,8 @@ class TyDiClassifier:
                   logger.info(f"  Agreement rates by type:")
                   logger.info(f"    Polar agreement rate: {polar_agree_rate:.2f}%")
                   logger.info(f"    Content agreement rate: {content_agree_rate:.2f}%")
-        
-        
 
 def main():
-    
-    """Main function for the TyDi classifier"""
-
     parser = argparse.ArgumentParser(description="Classify TyDi QA questions using annotations and linguistic patterns.")
     
     parser.add_argument("--split", type=str, default="validation", choices=["train", "validation"],
@@ -629,7 +816,6 @@ def main():
                       help="Path to save the dataset as CSV for future use")
     parser.add_argument("--use-classifier", action="store_true",
                       help="Use pattern-based classifier for final classification instead of annotations")
-    
     
     args = parser.parse_args()
     

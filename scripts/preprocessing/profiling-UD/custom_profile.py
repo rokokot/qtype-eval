@@ -34,26 +34,41 @@ def extract_sentence_data(input_file):
     sentence_data = {}
     sentence_tokens = []
     
+    file_base = os.path.basename(input_file)
+    file_name = os.path.splitext(file_base)[0]
+
     current_sent_id = None
     current_text = None
+    found_text = False
+    sentence_counter = 0
+
     
     with codecs.open(input_file, 'r', 'utf-8') as f:
         for line in f:
             if line.startswith('# sent_id'):
-                current_sent_id = line.rstrip('\n').split('= ')[1]
-            elif line.startswith('# text'):
+                original_id = line.rstrip('\n').split('= ')[1]
+
+                current_sent_id = f"{file_name}_{sentence_counter}"
+                found_text = False
+
+            elif line.startswith('# text') and not found_text:
                 current_text = line.rstrip('\n').split('= ')[1]
+                found_text = True
             elif line == '\n' and sentence_tokens:
                 if current_sent_id:
                     mysent = Sentence(sentence_tokens)
                     sentences[current_sent_id] = mysent
                     sentence_data[current_sent_id] = {
                         'text': current_text,
-                        'id': current_sent_id
+                        'id': original_id,
+                        'unique_id': current_sent_id
                     }
+                    sentence_counter += 1
                 sentence_tokens = []
                 current_sent_id = None
                 current_text = None
+                found_text = False
+                
             elif not line.startswith('#') and line.strip():
                 line = line.strip().split('\t')
                 if '-' not in line[0] and '.' not in line[0]:  
@@ -64,7 +79,8 @@ def extract_sentence_data(input_file):
         sentences[current_sent_id] = mysent
         sentence_data[current_sent_id] = {
             'text': current_text,
-            'id': current_sent_id
+            'id': original_id,
+            'unique_id': current_sent_id
         }
     
     return sentences, sentence_data
@@ -77,9 +93,11 @@ def analyze_file(input_file, selected_features=None, language="", sentence_type=
     results = []
     for sent_id, sentence in sentences.items():
         features = compute_features([sentence], None, type_analysis=0)
+
+        original_id = sentence_data[sent_id]['id']
         
         result = {
-            'sentence_id': sent_id,
+            'unique_id': sent_id,
             'text': sentence_data[sent_id].get('text', ''),
             'language': language,
             'type': sentence_type
@@ -140,7 +158,7 @@ def main():
         )
         
         if results:
-            columns = ['sentence_id', 'text', 'language', 'type']
+            columns = ['unique_id', 'text', 'language', 'type']
 
             all_keys = set()
             for result in results:
