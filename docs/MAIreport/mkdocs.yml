@@ -104,6 +104,7 @@ nav:
     - Task design: experiments/task_design.md
     - Ablation Studies: experiments/ablation_studies.md
     - Evaluation: experiments/evaluation.md
+  - Data: data/data_overview.md
   - Software documentation: 
     - software/tools.md
   - References: 

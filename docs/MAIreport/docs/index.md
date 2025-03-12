@@ -1,17 +1,3 @@
-# Welcome to MkDocs
+# Multilingual Neural Question Understanding: Surveying the Effects of Linguistic Features on Type and Complexity Prediction
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+This notebook documents the research for a master thesis evaluating the performance of multilingual transformer models (glot500) on the task of question type classification and sentence complexity regression. In this research project, we develop a framework for quantifying question complexity in a cross-lingual system setting. We begin by adressing a significant lack of unified approaches to computational modelling of linguistic complexity measures, as well as the lack of research investigating language agnostic features of information seeking linguistic structures (questions). By investigating how sentence complexity affects model performance across languages, our work contributes to the growing field of multilingual NLP evaluation, and develops a set of resources that can improve practical NLP system development.

@@ -1,0 +1,38 @@
+{
+  "language": [
+    "ar",
+    "en",
+    "fi",
+    "id",
+    "ja",
+    "ko",
+    "ru"
+  ],
+  "license": "cc-by-sa-4.0",
+  "annotations_creators": [
+    "found",
+    "machine-generated"
+  ],
+  "language_creators": [
+    "found"
+  ],
+  "task_categories": [
+    "text-classification",
+    "question-answering"
+  ],
+  "task_ids": [
+    "text-classification-other",
+    "question-complexity"
+  ],
+  "multilinguality": "multilingual",
+  "size_categories": [
+    "1K<n<10K"
+  ],
+  "source_datasets": [
+    "original",
+    "extended|universal-dependencies",
+    "extended|tydiqa"
+  ],
+  "paperswithcode_id": "",
+  "pretty_name": "Question Type and Complexity Dataset"
+}
