@@ -1,5 +1,8 @@
-site_name: "Multilingual Neural Question Understanding: Surveying the Effects of Linguistic Features on Type and Complexity Prediction"
-site_description: This notebook documents the research for a master thesis evaluating the performance of multilingual transformer models (glot500) on the task of question type classification and sentence complexity regression. In this research project, we develop a framework for quantifying question complexity in a cross-lingual system setting. We begin by adressing a significant lack of unified approaches to computational modelling of linguistic complexity measures, as well as the lack of research investigating language agnostic features of information seeking linguistic structures (questions). By investigating how sentence complexity affects model performance across languages, our work contributes to the growing field of multilingual NLP evaluation, and develops a set of resources that can improve practical NLP system development. Documentation also includes the description of the data gathering and annotation efforts, as well as scripts to reproduce the experiments.
+site_name: "Multilingual Neural Question Understanding"
+site_description: Documentation for the research done in the scope of a master thesis in the MAI programe at KU Leuven. In this project, we develop a framework for quantifying question complexity in a cross-lingual NLP system setting. Our work contributes to the growing field of multilingual evaluation, and develops a set of resources that can improve practical NLP system development. The report includes the description of the data gathering and annotation efforts, as well as documentation for the scripts used to process the data and run the experiments.
+
+
+
 site_author: Robin Kokot
 
 # Repository
@@ -102,7 +105,7 @@ nav:
     - Ablation Studies: experiments/ablation_studies.md
     - Evaluation: experiments/evaluation.md
   - Software documentation: 
-    - tools.md
+    - software/tools.md
   - References: 
-    - bibliography.md
+    - references/bibliography.md
 

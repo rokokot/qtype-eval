@@ -1,0 +1,281 @@
+unique_id,text,language,type_original,avg_links_len,avg_max_depth,avg_subordinate_chain_len,avg_verb_edges,lexical_density,n_tokens,subordinate_proposition_dist,verbal_head_per_sent,question_type,complexity_score
+fi_polar_0,Onko ammatillinen uskottavuuteni noin pientä..?,fi,polar,-0.069,-0.707,0.0,0.0,0.8,2.079,0.0,-0.871,1,-0.782
+fi_polar_1,"- Opettaja, onko sulla olemassa koti?",fi,polar,-0.319,-1.707,0.0,0.0,0.4,2.197,0.0,-1.871,1,-1.229
+fi_polar_2,Eikö olekin kivaa?,fi,polar,-0.569,-1.707,0.0,0.0,0.333,1.609,0.0,-0.871,1,-1.212
+fi_polar_3,Vai onko vaatekerrosten määrä asennekysymys?,fi,polar,0.181,-0.707,0.0,0.0,0.6,1.946,0.0,-0.871,1,-0.797
+fi_polar_4,”Osaanko nauttia seksistä?”,fi,polar,-1.069,-0.707,1.0,0.2,1.0,1.946,3.932,0.129,1,0.136
+fi_polar_5,Osaavatko ihmiset lukea toistensa silmistä tällaista itseluottamusta?,fi,polar,-0.236,0.293,1.0,0.4,0.857,2.197,3.932,0.129,1,0.514
+fi_polar_6,"Osaako mies ilmaista käytöksellään, että hän on varma taidoistaan tyydyttää nainen?",fi,polar,-0.169,2.293,1.5,0.333,0.727,2.639,4.331,2.129,1,1.433
+fi_polar_7,Osaako nainen lukea miehen käytöksestä tämän?,fi,polar,-0.269,0.293,1.0,0.4,0.833,2.079,3.932,0.129,1,0.483
+fi_polar_8,"Entä viestivätkö naisen silmät miehelle, että ”uskon sinun kykyihisi, ota minut, saat minut hulluksi himosta?”",fi,polar,0.431,1.293,1.0,0.55,0.733,3.091,3.932,2.129,1,1.323
+fi_polar_9,"Kahlaavatko he läpi elämän tietämättä, minkälaista seksiä itse haluavat, tai minkälaista seksiä kumppani haluaa, jos eivät osaa lukea sitä toistensa silmistä ja eleistä?",fi,polar,0.795,2.293,2.0,0.5,0.652,3.332,4.394,4.129,1,2.195
+fi_polar_10,"Voimmeko syyttää vanhempiamme siitä, ettemme ole seksuaalisesti kehittyneet vapaiksi, osaaviksi ja vastaanottavaisiksi?",fi,polar,0.264,2.293,1.0,0.5,0.538,2.833,3.932,0.129,1,1.029
+fi_polar_11,Sanoinko jo jotain tästä ravaamisesta? :D,fi,polar,0.731,-0.707,0.0,0.8,0.5,2.079,0.0,-0.871,1,-0.552
+fi_polar_12,"Nää käy myös töihin, kuulostaako tutulta tää lemppariperustelu?",fi,polar,-0.212,0.293,0.0,0.5,0.75,2.398,0.0,0.129,1,-0.319
+fi_polar_13,Tekeekö netti meistä tyhmiä?,fi,polar,-0.069,-1.707,0.0,0.6,0.75,1.792,0.0,-0.871,1,-0.912
+fi_polar_14,"Ovatko naiset siis todella mustasukkaisia toisistaan, vaan yrittävätkö he vain selvitä kuolaavien käpyaivojensa kanssa minimaalisella häpeän määrällä?",fi,polar,0.056,1.293,1.0,0.4,0.706,2.996,4.215,2.129,1,1.259
+fi_polar_15,Mutta uskaltaako se mennä yksin jossain metroasemalla poistamaan oksennukseensa sammuneen nistin?,fi,polar,-0.269,2.293,1.5,0.4,0.727,2.565,4.331,2.129,1,1.414
+fi_polar_16,"PIKKUVAIMO: Jos me voitetaan tämä, niin saadaanko varmasti mitali?",fi,polar,0.431,0.293,1.0,0.7,0.667,2.565,4.615,0.129,1,0.836
+fi_polar_17,PIKKUVAIMO: Saadaanko sitten varmasti pronssia?,fi,polar,-0.069,-0.707,0.0,0.6,1.0,2.079,0.0,-0.871,1,-0.641
+fi_polar_18,"(DE) Arvoisa puhemies, voisitteko pyytää hakemaan teknikon?",fi,polar,0.098,-0.707,1.0,0.4,0.857,2.485,3.932,0.129,1,0.447
+fi_polar_19,Annammeko tämän jatkua sanomatta mitään?,fi,polar,-0.319,-0.707,1.0,0.267,0.6,1.946,4.215,1.129,1,0.436
+fi_polar_20,"Mielestäni tämä keskustelu tiivistyy seuraavaan kysymykseen: uskommeko, että Göteborgin pöytäkirja oli paras tulos, jonka jäsenvaltioiden voidaan odottaa realistisesti saavuttavan?",fi,polar,0.542,3.293,3.0,0.4,0.737,3.178,4.331,3.129,1,2.285
+fi_polar_21,Oliko Helsingissä tehty päätös sittenkin hätiköity?,fi,polar,-0.069,0.293,1.0,0.4,0.833,2.079,3.932,0.129,1,0.518
+fi_polar_22,"Muistatko sinä ne kerrat, kun lahkeet olivat polviin asti märät kauppareissun jäljiltä?",fi,polar,0.658,1.293,1.0,0.4,0.583,2.708,3.932,0.129,1,0.89
+fi_polar_23,"Luulitko sinä, että kiinnostuisin Jonesta, kiinnostuisin niin, että kävelisin hänen kanssaan teidän vierellänne?",fi,polar,-0.319,3.293,1.5,0.45,0.462,2.89,4.331,2.129,1,1.602
+fi_polar_24,"Palasin, kaipasitko minua?",fi,polar,-0.569,-0.707,0.0,0.2,0.667,1.792,0.0,0.129,1,-0.733
+fi_polar_25,Tarvitsevatko ne jotain?,fi,polar,-0.569,-1.707,0.0,0.4,0.333,1.609,0.0,-0.871,1,-1.141
+fi_polar_26,Pitäisikö niistä olla jotenkin erityisen huolissaan juuri siksi?,fi,polar,0.502,-0.707,0.0,0.0,0.625,2.303,0.0,-0.871,1,-0.673
+fi_polar_27,Olenko minä se väärin pukeutunut?,fi,polar,0.431,-1.707,0.0,0.8,0.4,1.946,0.0,-0.871,1,-0.823
+fi_polar_28,"Vai voiko tosiaan pitää paikkansa, että minun neljäs olohuoneeni, jonne tulen arki-iltana juomaan teetä ja pelaamaan lautapelejä kavereiden kanssa, on jollekin laittautumisen, aloittelun ja jatkojen väliin jäävä bilepaikka?",fi,polar,3.005,4.293,2.0,0.52,0.643,3.526,4.394,4.129,1,2.974
+fi_polar_29,Pitäisikö minun mennä sisälle johonkin taloista?,fi,polar,-0.669,-0.707,0.0,0.4,0.333,2.079,0.0,-0.871,1,-0.9
+fi_polar_30,Toisiko Se tällä kertaa mukanaan siunauksen vai tuhon?,fi,polar,0.36,0.293,0.0,0.8,0.625,2.303,0.0,-0.871,1,-0.38
+fi_polar_31,"Kääntäisikö Se mahtavan Ahterinsa Nielun kansalle, ja siunaisi sitä ruskealla sukkulalla ja kultaisella sateella, vai laskisiko Se alas kauhistuttavan Kätensä mukanaan sininen kaikentuhoava tulva?",fi,polar,1.018,1.293,0.0,0.867,0.708,3.332,0.0,1.129,1,0.474
+fi_polar_32,Tässäkö se muka oli?,fi,polar,-0.069,-1.707,0.0,0.0,0.25,1.792,0.0,-0.871,1,-1.106
+fi_polar_33,Mutta sopeutuivatko ne Marsin olosuhteisiin?,fi,polar,-0.569,-0.707,0.0,0.6,0.6,1.946,0.0,-0.871,1,-0.823
+fi_polar_34,Vai oliko se tanga-naisia?,fi,polar,-0.069,-1.707,0.0,0.0,0.25,1.792,0.0,-0.871,1,-1.106
+fi_polar_35,Menikö se ylös vai alas?,fi,polar,-0.569,0.293,0.0,0.4,0.6,1.946,0.0,-0.871,1,-0.682
+fi_polar_36,Urheiluosastolle vai ulko-ovelle?,fi,polar,-0.569,-0.707,0.0,0.0,0.667,1.609,0.0,-1.871,1,-1.153
+fi_polar_37,Hetken hän tuijotti alas (kuolemaan?) ja mietti onko tämä koko paska vaivan arvoista.,fi,polar,0.514,1.293,1.0,0.6,0.692,2.89,3.932,1.129,1,1.128
+fi_polar_38,"""Eikö ole kaunis päivä?""",fi,polar,-0.736,-0.707,0.0,0.2,0.75,2.079,0.0,-0.871,1,-0.873
+fi_polar_39,Oliko tämä unta vai todellisuutta?,fi,polar,-0.569,-0.707,0.0,0.0,0.4,1.946,0.0,-0.871,1,-0.964
+fi_polar_40,Onko sulla joku toinen?,fi,polar,-0.736,-0.707,0.0,0.0,0.0,1.792,0.0,-1.871,1,-1.268
+fi_polar_41,- Jos minä lähen nyt pois enkä tuu enää koskaan takas nii lähettekö isin mukaan vai jäättekö äidin luo?,fi,polar,0.049,1.293,1.0,0.65,0.667,3.045,3.932,2.129,1,1.253
+fi_polar_42,Pitäisikö heidän nyt oikeasti ryhtyä keksimään joitain ihan uusia huippujuttuja?,fi,polar,0.153,1.293,1.0,0.5,0.7,2.485,3.932,0.129,1,0.8
+fi_polar_43,– Semmoisen paperisenko?,fi,polar,-1.069,-1.707,0.0,0.0,1.0,1.609,0.0,-1.871,1,-1.359
+fi_polar_44,- Eikö se ole selvää?  parrakas ryöväri ärähti.,fi,polar,-0.069,0.293,0.0,0.2,0.571,2.398,0.0,0.129,1,-0.378
+fi_polar_45,- Piilotitko veneen hyvin?  Juho kysyi.,fi,polar,0.181,-0.707,0.0,0.4,1.0,2.197,0.0,0.129,1,-0.435
+fi_polar_46,- Haluatteko tupakkia?,fi,polar,-1.069,-1.707,0.0,0.2,1.0,1.609,0.0,-0.871,1,-1.147
+fi_polar_47,Vai haluavatko kruunun miehet viedä ne veroina?,fi,polar,-0.402,-0.707,1.0,0.5,0.714,2.197,3.932,0.129,1,0.3
+fi_polar_48,Entä olinko jo ostanut jotain jouluruokia?,fi,polar,-0.269,-0.707,0.0,0.6,0.667,2.079,0.0,-0.871,1,-0.735
+fi_polar_49,Onko sinulla töitä?,fi,polar,-1.069,-1.707,0.0,0.0,0.333,1.609,0.0,-1.871,1,-1.477
+fi_polar_50,Onko tämän asian tiimoilta tullut teille valituksia?,fi,polar,-0.236,-0.707,0.0,0.6,0.429,2.197,0.0,-0.871,1,-0.75
+fi_polar_51,Ja sinäkö olet edelleen varma että se oli vahinko?,fi,polar,0.431,-0.707,1.0,0.0,0.333,2.398,3.932,0.129,1,0.327
+fi_polar_52,Porvoostako he tulevat?,fi,polar,-0.569,-1.707,0.0,0.4,0.667,1.609,0.0,-0.871,1,-1.083
+fi_polar_53,Onko Granfeltilta tilattu tutkimustulos vai tutkimustyö?,fi,polar,-0.669,0.293,0.0,0.4,0.667,2.079,0.0,-0.871,1,-0.664
+fi_polar_54,Ettäkö kaikki kylähulluiksi?,fi,polar,-1.069,-1.707,0.0,0.0,0.333,1.609,0.0,-1.871,1,-1.477
+fi_polar_55,Tulevatko he Porvoosta?,fi,polar,-0.569,-1.707,0.0,0.4,0.667,1.609,0.0,-0.871,1,-1.083
+fi_polar_56,Miks ei ne pane lapselle nimeksi Mikko?,fi,polar,-0.069,-1.707,0.0,1.0,0.714,2.197,0.0,-0.871,1,-0.776
+fi_polar_57,Suostutteko keskustapuolueen uudeksi puheenjohtajaksi?,fi,polar,-0.069,-0.707,0.0,0.2,1.0,1.792,0.0,-0.871,1,-0.762
+fi_polar_58,Söitkö sinä jo?,fi,polar,-0.569,-1.707,0.0,0.4,0.667,1.609,0.0,-0.871,1,-1.083
+fi_polar_59,Taruako lienee vai totta?,fi,polar,-0.402,-0.707,0.0,0.0,0.5,1.792,0.0,-0.871,1,-0.945
+fi_polar_60,Leikitäänkö nyt kotia?,fi,polar,-0.569,-1.707,0.0,0.4,1.0,1.609,0.0,-0.871,1,-1.024
+fi_polar_61,Onko enkeli tyttö vai poika?,fi,polar,-0.569,-0.707,0.0,0.0,0.6,1.946,0.0,-0.871,1,-0.929
+fi_polar_62,Tulisiko tästä yhtään mitään?,fi,polar,-0.402,-0.707,0.0,0.4,0.5,1.792,0.0,-0.871,1,-0.874
+fi_polar_63,Vieläkö Bosniaan pystyy antamaan avustusta?,fi,polar,-0.569,-0.707,1.0,0.4,1.0,1.946,3.932,0.129,1,0.259
+fi_polar_64,Tuleeko hän varmasti?,fi,polar,-0.569,-1.707,0.0,0.4,0.667,1.609,0.0,-0.871,1,-1.083
+fi_polar_65,annetaanko koneiden jyskyttää puoliteholla kunnes teknikko on lennätetty paikalle?,fi,polar,-0.069,0.293,2.0,0.533,0.778,2.398,4.215,1.129,1,0.991
+fi_polar_66,"Onko henkilöstä annettu etsintäkuulutus, koska hänellä on laiton ase?",fi,polar,-0.319,0.293,0.0,0.8,0.556,2.485,0.0,-0.871,1,-0.48
+fi_polar_67,Onko sinne pitkä matka?,fi,polar,-0.069,-0.707,0.0,0.2,1.0,1.792,0.0,-0.871,1,-0.762
+fi_polar_68,Voiko pukua käyttää häissä tai lakkiaisissa?,fi,polar,-0.669,0.293,0.0,0.4,0.667,2.079,0.0,-0.871,1,-0.664
+fi_polar_69,Voiko äiti olla omin päin ottanut sen käyttöönsä?,fi,polar,0.502,-0.707,0.0,0.8,0.625,2.303,0.0,-0.871,1,-0.531
+fi_polar_70,Varastoitko ruokaa pahan päivän varalta?,fi,polar,-0.569,-0.707,0.0,0.4,0.8,1.946,0.0,-0.871,1,-0.823
+fi_polar_71,Onko onni ollut tänään myötä?,fi,polar,0.431,-1.707,0.0,0.0,0.6,1.946,0.0,-0.871,1,-0.929
+fi_polar_72,"Näinkö se alkaa, kivikuume?",fi,polar,-0.069,-0.707,0.0,0.4,0.75,1.946,0.0,-0.871,1,-0.744
+fi_polar_73,"Eikö se, että tavoitteenani on olla onnellinen, ole kunnianhimoista?",fi,polar,1.556,1.293,2.0,0.0,0.333,2.565,4.215,1.129,1,1.311
+fi_polar_74,"Eikö tahdossa löytää itse se tapa, jolla eläminen tekee kaikkein onnellisimmaksi, ole kunnianhimoa kerrakseen?",fi,polar,2.162,2.293,1.0,0.4,0.714,2.89,4.215,1.129,1,1.613
+fi_polar_75,"Mistä tiedetään, paljonko työtä tietty kurssi on opiskelijalta vaatinut?",fi,polar,0.681,0.293,1.0,0.5,0.778,2.485,3.932,0.129,1,0.73
+fi_polar_76,Tai haluaisitko kokea millaista oli neuvostoajan pioneerileirillä Tallinnassa?,fi,polar,-0.783,1.293,2.0,0.3,0.75,2.303,4.215,1.129,1,0.978
+fi_polar_77,"”Kuulostaa kivalta, mutta eikö tuo ole aika kallista?”",fi,polar,1.36,-0.707,0.0,0.4,0.5,2.565,0.0,0.129,1,-0.25
+fi_polar_78,Onko sinun koskaan tarvinnut nettikeskustelussa esittää olevasi kännissä?,fi,polar,-0.498,0.293,2.0,0.4,0.75,2.303,4.215,1.129,1,0.87
+fi_polar_79,Vai oletko peräti absolutisti?,fi,polar,-0.069,-1.707,0.0,0.0,0.5,1.792,0.0,-0.871,1,-1.062
+fi_polar_80,Onko tosiaan näin?,fi,polar,-0.569,-1.707,0.0,0.0,0.667,1.609,0.0,-0.871,1,-1.153
+fi_polar_81,Onko lainan ottamiseen varaa?,fi,polar,-0.402,0.293,0.0,0.2,1.0,1.792,0.0,-0.871,1,-0.644
+fi_polar_82,Entä: onko kookkaiden lainojen ottaminen epävakaina talousaikoina järkevää?,fi,polar,1.074,0.293,0.0,0.0,0.875,2.398,0.0,-0.871,1,-0.334
+fi_polar_83,"Siinä keskustelussa ydinkysymys ei ole gallup-henkinen ""kannatatko maahanmuuton lisäämistä?”",fi,polar,0.931,-0.707,0.0,1.0,0.667,2.565,0.0,-0.871,1,-0.367
+fi_polar_84,"− Kokevatko kreikkalaiset, että isot EU-valtiot tulevat ja pakottavat heidät tekemään muutoksia?",fi,polar,-0.169,1.293,1.0,0.45,0.727,2.708,4.215,2.129,1,1.181
+fi_polar_85,Onko lääkekehityksellä tulevaisuutta Suomessa? -symposiumin ensimmäisen puheenvuoron käytti emeritusprofessori Risto Santti.,fi,polar,-0.569,2.293,1.0,0.4,0.909,2.639,3.932,0.129,1,0.895
+fi_polar_86,Söivätkö ritarit muuta kuin lihaa?,fi,polar,-0.569,0.293,0.0,0.4,0.6,1.946,0.0,-0.871,1,-0.682
+fi_polar_87,Tekivätkö prinsessat mitään kotitöitä?,fi,polar,-0.402,-0.707,0.0,0.4,0.75,1.792,0.0,-0.871,1,-0.83
+fi_polar_88,"Siirto 2...Lc5 sisältää myös avausansan aloittelijoille: Jos valkea jatkaa fxe5?, musta pelaa 3...Dh4+, jolloin valkea menettää joko torninsa (4.g3 Dxe4+) tai joutuu matitetuksi (4.Ke2 Dxe4#).",fi,polar,0.306,2.293,1.0,0.633,0.6,3.526,4.331,4.129,1,1.969
+fi_polar_89,Eivätkö olekin kivat?,fi,polar,-0.569,-1.707,0.0,0.0,0.333,1.609,0.0,-0.871,1,-1.212
+fi_polar_90,"Onko joku jo muistanut kertoa, että isä kuolee?",fi,polar,-0.069,0.293,2.0,0.4,0.625,2.398,4.215,1.129,1,0.94
+fi_polar_91,"Kerroinko jo, että isäsi kuolee?",fi,polar,0.181,-0.707,1.0,0.4,0.8,2.079,3.932,0.129,1,0.38
+fi_polar_92,"Millaiseksi siitä tulee, kun kaikki hokevat koko ajan, että isä kuolee kohta heti huomenna tänään koko ajan aina?",fi,polar,0.343,2.293,2.0,0.667,0.778,3.091,4.215,1.129,1,1.563
+fi_polar_93,Onko kaikki se odottaminen sitten tarpeellista?,fi,polar,0.131,-0.707,0.0,0.0,0.5,2.079,0.0,-0.871,1,-0.8
+fi_polar_94,Onko jokaisen ihmisen välttämätöntä muistuttaa asiasta aina sopivan tai sopimattoman tilanteen tullen?,fi,polar,0.386,3.293,2.0,0.5,0.75,2.639,4.215,1.129,1,1.633
+fi_polar_95,"Onko se toistettava päivittäin, viikoittain, kuukausittain?",fi,polar,-0.069,-0.707,0.0,0.6,0.667,2.303,0.0,-0.871,1,-0.66
+fi_polar_96,Onko ihmisille mahdotonta keskustella isästäni ilman kuolinpäivän arvailuja?,fi,polar,-0.355,0.293,1.0,0.4,0.75,2.303,3.932,0.129,1,0.492
+fi_polar_97,Aiheuttaako lämpenevä toimistobiosfääri toimistokuukkelin katoamisen?,fi,polar,-0.069,-0.707,1.0,0.2,1.0,1.946,3.932,0.129,1,0.312
+fi_polar_98,"Muistatko, kun Juuson tarhasta karkasi järvelle 2 000 ankkaa?",fi,polar,0.074,0.293,1.0,0.5,0.75,2.398,3.932,0.129,1,0.602
+fi_polar_99,Tunnetko hänet vielä vanhanakin?,fi,polar,-0.402,-0.707,0.0,0.4,0.75,1.792,0.0,-0.871,1,-0.83
+fi_polar_100,"Jos miehen mielestä hänen kumppanillaan on ihana peppu, jota on mukava taputella tai vähän puristaa, niin eikö siitä voisi naisena nauttia?",fi,polar,0.981,3.293,2.0,0.533,0.571,3.219,4.215,2.129,1,1.991
+fi_polar_101,Olisiko se iltalenkin jälkeen peiton tuominen sohvalle yhdessä iltateen tai viinilasillisen kanssa?,fi,polar,0.204,0.293,0.0,0.0,0.583,2.639,0.0,-0.871,1,-0.497
+fi_polar_102,"Olisiko se, että itse tulee sinne peiton alle, kainaloon, vain alusvaatteisillaan?",fi,polar,0.331,1.293,1.0,0.5,0.727,2.773,3.932,0.129,1,0.886
+fi_polar_103,Olisiko se toisen passaaminen osa sitä arkiromantiikkaa?,fi,polar,-0.236,-0.707,0.0,0.0,0.429,2.197,0.0,-0.871,1,-0.856
+fi_polar_104,"Juhlaseksiä, arkiseksiä - onko niillä eroa?",fi,polar,0.181,-0.707,1.0,0.0,0.6,2.197,4.615,-0.871,1,0.239
+fi_polar_105,"Onko arkiseksi nopea tyydytys ennen nukkumaanmenoa, tai nopea tyydytys ennen ylösnousua aamulla?",fi,polar,-0.069,0.293,0.0,0.0,0.667,2.708,0.0,-0.871,1,-0.518
+fi_polar_106,Onko juhlaseksi tuntien kestävää hyväilyä ja seksiä sille järjestetyllä ajalla?,fi,polar,0.042,0.293,1.0,0.2,0.7,2.485,4.215,1.129,1,0.777
+fi_polar_107,– Etkö usko?,fi,polar,-1.069,-1.707,0.0,0.0,0.5,1.609,0.0,-0.871,1,-1.271
+fi_polar_108,- Sinäkö kilpailisit ylimysten rikkauksien kanssa sienilläsi?,fi,polar,-0.269,-0.707,0.0,0.6,0.667,2.197,0.0,-0.871,1,-0.714
+fi_polar_109,Pitäisikö varsinaissuomalaisia ammattioppilaitoksia yhdistää?,fi,polar,-0.402,-0.707,0.0,0.2,0.75,1.792,0.0,-0.871,1,-0.865
+fi_polar_110,"Jos näin tapahtuisi, niin silloinhan ei näitä uudelleenvirittelyoppaita tarvittaisi ollenkaan, eikö niin?",fi,polar,0.567,-0.707,1.0,0.6,0.75,2.773,4.215,1.129,1,0.823
+fi_polar_111,"”Voisiko vaimosi paremmin jos pyytäisit tätä lupaa tai kertoisit, että harrastat seksiä toisen naisen kanssa?",fi,polar,-0.212,2.293,1.0,0.55,0.6,2.944,4.215,2.129,1,1.387
+fi_polar_112,"Voisitko itse paremmin, jos seksielämäsi jatkuisi?”",fi,polar,0.331,-0.707,1.0,0.5,0.833,2.303,3.932,0.129,1,0.469
+fi_polar_113,Päästäänkö kolmanteen pilariin kuuluvaa tietosuojaa koskevasta puitepäätöksestä poliittiseen yhteisymmärrykseen tämän vuoden loppuun mennessä?,fi,polar,0.431,4.293,1.0,0.267,0.846,2.708,4.215,1.129,1,1.628
+fi_polar_114,Ratkaiseeko puitesopimus kaikki ongelmat?,fi,polar,-0.402,-0.707,0.0,0.4,0.75,1.792,0.0,-0.871,1,-0.83
+fi_polar_115,Onko tietosuojaviranomaisilla asianmukaiset voimavarat tietosuojaa koskevien sääntöjen täytäntöönpanemiseksi SIS II -järjestelmän osalta?,fi,polar,0.204,2.293,1.0,0.2,0.917,2.639,4.615,-0.871,1,0.942
+fi_polar_116,Toimivatko kaikki jäsenvaltiot vilpittömässä mielessä Schengen-tietoja käsitellessään?,fi,polar,0.431,-0.707,1.0,0.4,0.857,2.197,3.932,0.129,1,0.455
+fi_polar_117,"""Eikö sinustakin?"" kysyit kolme vuotta sitten.",fi,polar,-0.269,0.293,0.0,0.3,0.5,2.398,0.0,0.129,1,-0.408
+fi_polar_118,"Onko sitten teoriassa olemassa mahdollisuus, ettei se olisi?",fi,polar,0.181,0.293,1.0,0.5,0.556,2.485,3.932,0.129,1,0.602
+fi_polar_119,Eikö tämän kaltaisessa asiassa käytännön ja teorian tulisi olla samanlaisia?”,fi,polar,0.598,1.293,1.0,0.4,0.6,2.565,3.932,0.129,1,0.857
+fi_polar_120,Olisiko silloin kuitenkin teoriassa mahdollisuus sille ettei se olisi?,fi,polar,-0.069,1.293,1.0,0.4,0.5,2.485,3.932,0.129,1,0.707
+fi_polar_121,olisiko viininvalmistus yrittäjälle sivu- vai pääelinkeino?,fi,polar,-0.269,-0.707,0.0,0.0,0.667,2.079,0.0,-0.871,1,-0.841
+fi_polar_122,Pystyykö Bosniaan antamaan vielä avustusta?,fi,polar,-0.569,-0.707,1.0,0.4,1.0,1.946,3.932,0.129,1,0.259
+fi_polar_123,Onko tarpeen olla noin perusteellinen?,fi,polar,-0.069,-0.707,1.0,0.4,0.8,1.946,3.932,0.129,1,0.312
+fi_polar_124,"Popista, rockista vaiko iskelmästä?",fi,polar,0.264,-0.707,0.0,0.0,0.75,1.946,0.0,-1.871,1,-0.932
+fi_polar_125,Oletteko ehkä kotoisin Raumalta?,fi,polar,-0.736,-1.707,0.0,0.0,0.75,1.792,0.0,-0.871,1,-1.136
+fi_polar_126,Haluaisitko sinä yhdistää vaihto-opiskelun ja eksoottisen unelmaloman jossakin Aasian vaihtokohteista?,fi,polar,0.042,1.293,1.0,0.3,0.7,2.485,3.932,0.129,1,0.745
+fi_polar_127,Oletko tehoääliö töissä?,fi,polar,-1.069,-1.707,0.0,0.0,0.667,1.609,0.0,-0.871,1,-1.241
+fi_content_0,Mitä minä puhun?,fi,content,-0.569,-1.707,0.0,0.4,0.333,1.609,0.0,-0.871,0,-1.141
+fi_content_1,Mitä minä ihan oikeasti puhun?,fi,content,0.181,-0.707,0.0,0.6,0.6,1.946,0.0,-0.871,0,-0.691
+fi_content_2,Mitä tästä sanoisi enää?,fi,content,-0.736,-1.707,0.0,0.6,0.5,1.792,0.0,-0.871,0,-1.074
+fi_content_3,"- Opettaja, missä sä oikein olet töissä?",fi,content,1.131,-1.707,0.0,0.0,0.5,2.303,0.0,-0.871,0,-0.76
+fi_content_4,Miksi talvella pitää käyttää koko ajan ihan tylsiä kenkiä?,fi,content,-0.069,0.293,0.0,0.8,0.889,2.398,0.0,-0.871,0,-0.392
+fi_content_5,"Mitä saadaan, kun purkitetaan sata naista?",fi,content,-0.469,0.293,1.0,0.4,0.5,2.197,3.932,0.129,0,0.409
+fi_content_6,Miksi sitten takerrumme tavaroihin?,fi,content,-0.736,-1.707,0.0,0.6,1.0,1.792,0.0,-0.871,0,-0.986
+fi_content_7,Mitä jos uudistuisimme kevään kynnyksellä juuri näin?,fi,content,-0.236,-0.707,0.0,0.8,0.714,2.197,0.0,-0.871,0,-0.665
+fi_content_8,Mikä seksuaalinen itsetunto?,fi,content,-0.569,-1.707,0.0,0.0,0.667,1.609,0.0,-1.871,0,-1.33
+fi_content_9,Onko kenellekään tullut koskaan mieli kysyä itseltään ”Miksi minun pitäisi haluta seksiä?”,fi,content,0.022,0.293,1.0,0.6,0.583,2.773,3.932,1.129,0,0.824
+fi_content_10,”Mitä minun tulisi tuntea seksin aikana?”,fi,content,-0.269,0.293,1.0,0.4,0.667,2.303,3.932,0.129,0,0.493
+fi_content_11,”Pitäisikö minun tietää mitä kumppani tuntee tai mitä hän haluaa?”,fi,content,0.042,0.293,1.0,0.533,0.4,2.639,3.932,1.129,0,0.76
+fi_content_12,Miten sitten saavuttaisimme tämän seksuaalisen itseluottamuksen?,fi,content,-0.269,-0.707,0.0,0.6,0.833,2.079,0.0,-0.871,0,-0.705
+fi_content_13,"Ovatko he niitä, jotka ottavat sen jonka saavat tai eivät ota ketään, kun eivät ole varmoja, kuka on se oikea, eivätkä osaa viestittää mitään oikein tai ollenkaan?",fi,content,0.085,5.293,1.25,0.4,0.333,3.497,4.435,6.129,0,2.782
+fi_content_14,Miksi emme pidä seksuaalielämäämme usein kovinkaan hyvänä?,fi,content,-0.236,-0.707,0.0,0.8,0.857,2.197,0.0,-0.871,0,-0.639
+fi_content_15,"Miksi emme hae itsellemme sitä nautintoa, jota kaipaamme?",fi,content,-0.355,0.293,1.0,0.4,0.5,2.398,3.932,0.129,0,0.465
+fi_content_16,"Miksi emme kehitä taitojamme seksin alueella, jotta pystyisimme tyydyttämään kumppanimme?",fi,content,-0.291,0.293,2.0,0.4,0.8,2.565,4.215,1.129,0,0.962
+fi_content_17,"Miksi tyydymme vähään ja odotamme, että se paranisi itsestään sitten joskus?",fi,content,-0.269,1.293,1.0,0.6,0.727,2.639,3.932,1.129,0,0.951
+fi_content_18,Miksi meidän pitäisi sitten osata olla niin vapaita seksuaalisesti?,fi,content,0.056,-0.707,1.0,0.8,0.667,2.398,3.932,0.129,0,0.461
+fi_content_19,Kuinka se on mahdollista?,fi,content,-0.069,-1.707,0.0,0.0,0.5,1.792,0.0,-0.871,0,-1.062
+fi_content_20,"En kuitenkaan ymmärrä, miksi joku ei maksaisi kymmentä tai viittä euroa kuussa järjettömän suuresta, mobiilista musiikkikirjastosta?",fi,content,0.598,2.293,1.0,0.6,0.625,2.996,3.932,0.129,0,1.149
+fi_content_21,Kuinka paljon ihmiset oikeasti sitten olisivat valmiita maksamaan tästä huvista?,fi,content,0.264,0.293,1.0,0.4,0.8,2.485,3.932,0.129,0,0.643
+fi_content_22,Ai miten kiersin bannit?,fi,content,-0.736,-1.707,0.0,0.6,0.75,1.792,0.0,-0.871,0,-1.03
+fi_content_23,- ... Mutta miten ne ei ole vieläkään saanut rakennettua sitä Lepuskin tornia?,fi,content,0.731,0.293,1.0,0.6,0.545,2.708,3.932,0.129,0,0.755
+fi_content_24,Nimittäin miksi olisin tästä toiselle naiselle tästä vihainen?,fi,content,1.645,-0.707,0.0,0.0,0.5,2.303,0.0,-0.871,0,-0.493
+fi_content_25,MIES: No miten siinä nyt pronssia varmasti muka saisi?,fi,content,2.556,-0.707,0.0,0.0,0.778,2.485,0.0,-0.871,0,-0.251
+fi_content_26,PIKKUVAIMO: Mitä sä naurat?,fi,content,0.264,-0.707,0.0,0.4,0.5,1.946,0.0,-0.871,0,-0.729
+fi_content_27,"Tämä setti toimi, sillä siinä vaiheessa kun avaimet oli vaihdettu, uskalsin jo kysyä, että ”mitä sä musta ajattelit, kun ekan kerran näit?”.",fi,content,0.979,3.293,3.0,0.6,0.545,3.434,4.435,4.129,0,2.604
+fi_content_28,Mikä on puheenjohtajavaltio Alankomaiden strategia?,fi,content,-0.319,0.293,0.0,0.0,0.6,1.946,0.0,-0.871,0,-0.708
+fi_content_29,"Miksi ne valtiot, joiden oletetaan hyväksyneen direktiivit neuvostossa, ovat sitten kuitenkin vastahakoisia soveltamaan niitä?",fi,content,1.162,1.293,1.5,0.333,0.714,2.89,4.331,2.129,0,1.534
+fi_content_30,"Mitä tapahtuu, jos itäeurooppalaiset ja keskieurooppalaiset vallan keskukset kerran siirtyvät?",fi,content,1.042,2.293,1.0,0.5,0.7,2.565,3.932,0.129,0,1.147
+fi_content_31,Milloin ryhdymme neuvottelemaan siitä?,fi,content,-1.069,-0.707,1.0,0.3,0.75,1.792,3.932,0.129,0,0.082
+fi_content_32,Mitä teemme valmistellaksemme asiaa?,fi,content,-1.069,-0.707,1.0,0.3,0.75,1.792,3.932,0.129,0,0.082
+fi_content_33,Mitä teemme sen lisäksi antaaksemme Ukrainan osallistua Eurooppa-konferenssiin?,fi,content,-0.64,0.293,2.0,0.4,0.625,2.303,4.215,1.129,0,0.823
+fi_content_34,"Miten komissio suhtautuu siihen, mitkä ovat sen näkemykset asiasta?",fi,content,-0.444,0.293,0.0,0.8,0.556,2.485,0.0,0.129,0,-0.325
+fi_content_35,"Voiko komissio selvittää, miten se valvoo tämän säädöksen täytäntöönpanon onnistumista?",fi,content,-0.18,2.293,1.0,0.5,0.7,2.565,3.932,0.129,0,0.931
+fi_content_36,"Miksi minun täytyi elää kylmyydessä, miksi minä en koskaan edes elänyt?",fi,content,0.931,-0.707,0.0,0.8,0.636,2.639,0.0,0.129,0,-0.218
+fi_content_37,"Ei hän voi tietää, miten voisi, jos sinäkään et tiedä?",fi,content,0.264,0.293,1.0,0.4,0.3,2.639,3.932,0.129,0,0.582
+fi_content_38,"Miksi katsoessani niitä, näen vain tyhjän lumisen jalkakäytävän, sen, jota pitkin sinä et saavu?",fi,content,0.546,2.293,1.0,0.4,0.571,2.944,4.215,1.129,0,1.313
+fi_content_39,"Miten hän osaisi kertoa, että sama kohina tuntui hänen suonissaan?",fi,content,-0.18,1.293,2.0,0.467,0.6,2.565,4.215,1.129,0,1.134
+fi_content_40,"Miten hän selittäisi, että hengitti samaan tahtiin sen kanssa?",fi,content,-0.569,1.293,1.0,0.5,0.444,2.485,3.932,0.129,0,0.627
+fi_content_41,"Miten mies voisikaan tietää, ettei Pekulla enää edes ole puhelintaan?",fi,content,0.231,-0.707,0.0,0.6,0.636,2.639,0.0,-0.871,0,-0.553
+fi_content_42,"On vain yksi, miksi?",fi,content,0.264,-0.707,0.0,0.4,0.75,1.946,0.0,-0.871,0,-0.685
+fi_content_43,"Mitä sinulla nyt voisi hätänä olla, vakavasti, terveellä nuorella ihmisellä?",fi,content,1.264,-0.707,0.0,0.0,0.6,2.639,0.0,-1.871,0,-0.66
+fi_content_44,Miten sitä enää jaksaa?,fi,content,-0.069,-1.707,0.0,0.6,1.0,1.792,0.0,-0.871,0,-0.868
+fi_content_45,Kuka tätä ikinä näkee paitsi me?,fi,content,-0.269,-0.707,0.0,0.8,0.333,2.079,0.0,-0.871,0,-0.758
+fi_content_46,"Miksi pitää kiinni kenestäkään, kun myöhemmin pakotetaan kuitenkin päästämään irti?",fi,content,-0.18,0.293,2.0,0.6,0.8,2.565,4.215,1.129,0,1.017
+fi_content_47,”Kuka muka pakottaa?,fi,content,-0.569,-1.707,0.0,0.4,0.667,1.792,0.0,-0.871,0,-1.05
+fi_content_48,Miten joku voi täälläkin asua?,fi,content,0.431,-1.707,0.0,0.6,0.6,1.946,0.0,-0.871,0,-0.823
+fi_content_49,"Tulipa tällänen väli stoori kirjotettua kesken matikan tunnin, kertokaa mitä ootte mieltä ja että pitäskö tälle seurata jatkoa? :DD",fi,content,1.709,1.293,1.0,0.52,0.632,3.091,4.215,3.129,0,1.752
+fi_content_50,"Miten selität Espanjan kesäillan sille, joka ei sitä tiedä?",fi,content,0.181,0.293,1.0,0.5,0.556,2.485,3.932,0.129,0,0.602
+fi_content_51,"""Kuinka voit tehdä meille näin kaiken yhdessä viettämämme ajan jälkeen?""",fi,content,-0.069,0.293,1.0,0.5,0.6,2.639,3.932,0.129,0,0.593
+fi_content_52,"”Miksi Carla sitten sanoo, että se on maanpäällinen Helvetti?”",fi,content,0.681,-0.707,1.0,0.8,0.667,2.639,3.932,0.129,0,0.614
+fi_content_53,Mitä hän muka Luvatusta Maasta tietäisi?,fi,content,0.731,-0.707,1.0,0.4,0.667,2.079,3.932,0.129,0,0.453
+fi_content_54,"Miksi Jumalat olisivat sinne matkalla, ellei se olisi paratiisi?”",fi,content,0.82,-0.707,1.0,0.0,0.5,2.639,3.932,0.129,0,0.468
+fi_content_55,"”Tietävätköhän Jumalat nyt, mitä ovat tekemässä?”",fi,content,0.331,-0.707,1.0,0.4,0.667,2.398,3.932,0.129,0,0.439
+fi_content_56,Tuntuu kuin matkalla olisi aikaa ajatella koko elämä; mitä minä teen jos saan sen kiinni ennen ulko-ovea?,fi,content,0.119,2.293,1.0,0.5,0.588,2.996,4.331,3.129,0,1.64
+fi_content_57,Mitä jos se alkaa kysymään enemmän tyttöystävästä jota minulla ei koskaan ollut?,fi,content,-0.342,1.293,1.0,0.6,0.417,2.639,3.932,0.129,0,0.707
+fi_content_58,Mikä sen nimi olisi?,fi,content,-0.069,-0.707,0.0,0.0,0.25,1.792,0.0,-0.871,0,-0.93
+fi_content_59,Oliko hän varmasti tietoinen mitä teki?,fi,content,-0.269,-0.707,1.0,0.2,0.5,2.079,3.932,0.129,0,0.212
+fi_content_60,Miksi hän käveli taas?,fi,content,-0.736,-1.707,0.0,0.6,0.75,1.792,0.0,-0.871,0,-1.03
+fi_content_61,"Jos roolit ovat toisinpäin, ajattelee ""Mitä vittua?""",fi,content,-0.236,-0.707,1.0,0.4,0.571,2.485,3.932,0.129,0,0.337
+fi_content_62,- Mikä ei toimi?,fi,content,-0.569,-1.707,0.0,0.2,0.333,1.792,0.0,-0.871,0,-1.145
+fi_content_63,Mitä paskaa sä jauhat?,fi,content,-0.736,-0.707,0.0,0.4,0.5,1.792,0.0,-0.871,0,-0.933
+fi_content_64,tuu takas mikä sua vaivaa?,fi,content,-0.069,-0.707,0.0,0.4,0.6,1.946,0.0,0.129,0,-0.594
+fi_content_65,- Mitä te haluatte?  Mårten kysyi.,fi,content,-0.319,-0.707,0.0,0.4,0.6,2.197,0.0,0.129,0,-0.593
+fi_content_66,– Missä lapset ovat?,fi,content,-0.569,-1.707,0.0,0.0,0.333,1.792,0.0,-0.871,0,-1.18
+fi_content_67,Mitä muuta tänne ruotsinpuolelle kuuluu?,fi,content,-0.569,-0.707,0.0,0.4,0.6,1.946,0.0,-0.871,0,-0.858
+fi_content_68,- Keitä te olette ja miksi tungette tänne iltamyöhällä?,fi,content,-0.069,-0.707,0.0,0.8,0.5,2.398,0.0,0.129,0,-0.461
+fi_content_69,- Kuka tuolla pihalla kulki ja miksi?  Hartikka tivasi.,fi,content,0.36,0.293,0.0,0.4,0.75,2.485,0.0,0.129,0,-0.22
+fi_content_70,"- Moi, mitä kuuntelet? kysyt vilpittömästi",fi,content,-0.319,-0.707,0.0,0.4,0.6,2.197,0.0,0.129,0,-0.593
+fi_content_71,Mitä kello oikeesti on?”,fi,content,-0.069,-1.707,0.0,0.0,0.5,1.946,0.0,-0.871,0,-1.035
+fi_content_72,Mitä se tarkottaa?”,fi,content,-0.569,-1.707,0.0,0.4,0.333,1.792,0.0,-0.871,0,-1.109
+fi_content_73,Miten pakolaisten ja suomalaisten kulttuurit saadaan kohtaamaan toisensa?,fi,content,0.074,2.293,1.0,0.4,0.75,2.303,3.932,0.129,0,0.921
+fi_content_74,Mikä on Suomen suunta ja linja seuraavan 20.10.10 vuoden aikana?,fi,content,0.153,1.293,0.0,0.0,0.6,2.485,0.0,-0.871,0,-0.353
+fi_content_75,Millä te Australiassa eläisitte?,fi,content,-0.069,-1.707,0.0,0.6,0.5,1.792,0.0,-0.871,0,-0.956
+fi_content_76,"Mikä siinä on, että myyjien on niin vaikea keskittyä palvelemaan ihan tavallista, nuorta asiakasta?",fi,content,0.393,3.293,3.0,0.3,0.643,2.89,4.331,2.129,0,1.997
+fi_content_77,"Jos tämä ei riitä, mitä me sitten tehdään?",fi,content,0.36,-0.707,1.0,0.6,0.375,2.398,3.932,0.129,0,0.428
+fi_content_78,Mutta mikä olet sinä tai kukaan muukaan nimittämään toisten pyhinä pitämiä totuuksia pakanauskonnoiksi?,fi,content,0.348,1.293,1.0,0.4,0.385,2.708,4.215,1.129,0,1.026
+fi_content_79,Siis mitä et usko?,fi,content,-0.069,-1.707,0.0,0.4,0.5,1.792,0.0,-0.871,0,-0.992
+fi_content_80,Mitä se tähän kuuluu?,fi,content,-0.069,-1.707,0.0,0.6,0.25,1.792,0.0,-0.871,0,-1.0
+fi_content_81,Missä laatikossa niiden papereiden piti olla?,fi,content,0.131,-0.707,0.0,0.0,0.333,2.079,0.0,-0.871,0,-0.829
+fi_content_82,Mitä te oikein olette tehneet kukalleni?,fi,content,0.131,-1.707,0.0,0.8,0.5,2.079,0.0,-0.871,0,-0.835
+fi_content_83,Kenen toimesta tämä on tehty?,fi,content,-0.319,-0.707,0.0,0.6,0.4,1.946,0.0,-0.871,0,-0.814
+fi_content_84,"Mitähän siitä tulisi, jos kaikki kyselisivät toisiltaan, mitä makkaraa kukin syö?",fi,content,0.031,1.293,2.0,0.6,0.364,2.708,4.215,1.129,0,1.179
+fi_content_85,miksi meidän pitää olla Natoon intoilemassa?,fi,content,0.931,-1.707,0.0,0.6,0.5,2.079,0.0,-0.871,0,-0.729
+fi_content_86,"Aiotaanko korvauskysymykset ottaa huomioon lain uudistuksessa, ja jos, niin miten?",fi,content,0.709,-0.707,0.0,0.8,0.7,2.639,0.0,-0.871,0,-0.422
+fi_content_87,Mitä se sillä tarkoitti?,fi,content,-0.069,-1.707,0.0,0.6,0.25,1.792,0.0,-0.871,0,-1.0
+fi_content_88,"Kysyipä joku epähienotunteisesti, että miten lienee sosialidemokraattien laita?",fi,content,0.074,0.293,1.0,0.6,0.75,2.398,3.932,0.129,0,0.62
+fi_content_89,Kuka oli Ison-Britannian kuningatar Viktorian aviomies?,fi,content,-0.269,1.293,0.0,0.0,0.667,2.079,0.0,-0.871,0,-0.488
+fi_content_90,Mitä sä olet mieltä siitä asiasta?,fi,content,-0.269,-0.707,0.0,0.6,0.5,2.079,0.0,-0.871,0,-0.764
+fi_content_91,"Osaatteko sanoa, missä olisi lähin R-kioski?",fi,content,-0.469,1.293,2.0,0.2,0.667,2.197,4.215,1.129,0,0.983
+fi_content_92,Ymmärrätkö mitä yritän selittää?,fi,content,-0.736,-0.707,2.0,0.2,1.0,1.792,4.215,1.129,0,0.57
+fi_content_93,Ei kai kukaan kaipaa sinne takaisin?,fi,content,-0.269,-0.707,0.0,0.6,0.667,2.079,0.0,-0.871,0,-0.735
+fi_content_94,"Kohentaminen vaatii mielikuvitusta: mitä tehdä torilla, kun talvinen viima menee luihin ja ytimiin?",fi,content,-0.152,2.293,1.0,0.6,0.769,2.833,3.932,1.129,0,1.19
+fi_content_95,"Mikä mieli, järki tai merkitys tällä hirvittävän kokoisella maailmankaikkeudella on?",fi,content,0.376,0.293,0.0,0.0,0.6,2.565,0.0,-0.871,0,-0.477
+fi_content_96,Kuka rahasta juoksisi?,fi,content,-0.569,-1.707,0.0,0.4,0.667,1.609,0.0,-0.871,0,-1.083
+fi_content_97,Mutta mitä ihmettä?,fi,content,-1.069,-1.707,0.0,0.0,0.333,1.609,0.0,-1.871,0,-1.477
+fi_content_98,Mitä sinä haluaisit?,fi,content,-0.569,-1.707,0.0,0.4,0.333,1.609,0.0,-0.871,0,-1.141
+fi_content_99,"Ensinnäkin sen sijaan, että työntekijöitä komennettaisiin milloin mihinkin projektiin, saa usein kuulla kysymystä ”mitä haluaisit tehdä?”, ja työntekijän toiveita myös oikeasti kuunnellaan.",fi,content,1.407,2.293,1.0,0.533,0.727,3.401,4.331,4.129,0,2.146
+fi_content_100,Mitä tähän asti on tehty ja ennen kaikkea; mitä kaikkea kivaa on vielä vuoden aikana edessä?,fi,content,1.798,0.293,0.0,0.8,0.375,2.944,0.0,0.129,0,0.119
+fi_content_101,Ja stressittömän yhteiskunta-alan työn löytäminen nykyaikana – kuinka paljon enemmän voi itselleen haastetta asettaa?,fi,content,0.431,1.293,0.0,0.6,0.769,2.773,0.0,-0.871,0,-0.118
+fi_content_102,Tai edes kuinka paljon uutta asiaa hän on kurssilla oppinut?,fi,content,1.376,0.293,0.0,1.0,0.7,2.485,0.0,-0.871,0,-0.12
+fi_content_103,Mikä siis avuksi?,fi,content,-0.569,-1.707,0.0,0.0,0.667,1.609,0.0,-1.871,0,-1.33
+fi_content_104,Miksi siis nauraa naistutkimukselle?,fi,content,-0.736,-1.707,0.0,0.6,1.0,1.792,0.0,-0.871,0,-0.986
+fi_content_105,- Luennoitsija kysyy ja vastaa itse: ”Mikä on ihminen?,fi,content,0.217,-0.707,1.0,0.5,0.625,2.565,3.932,1.129,0,0.635
+fi_content_106,Kuinka näitä sitten käsitellään?,fi,content,-0.069,-1.707,0.0,0.6,0.75,1.792,0.0,-0.871,0,-0.912
+fi_content_107,"Kuinka kaiken aikaa muuttuvan, hahmottoman ja virtaavan voi asettaa pysyväksi tarkoitettuun systeemiin, ihmisten maailmankaikkeuteen?",fi,content,0.546,0.293,1.0,0.4,0.786,2.89,4.215,2.129,0,1.164
+fi_content_108,Vai mitä muuta fuksiaiset ovat kuin initiaatio tietyn ryhmän jäsenyyteen?,fi,content,-0.291,1.293,0.0,0.0,0.5,2.485,0.0,-0.871,0,-0.45
+fi_content_109,Mikä mahtaa olla tilanne jälkimodernissa länsimaalaisessa yhteiskunnassa?,fi,content,0.431,-0.707,0.0,0.0,0.571,2.197,0.0,-0.871,0,-0.713
+fi_content_110,Miten oppiminen toimi valtion ja kirkon intressien välineenä?,fi,content,0.074,2.293,0.0,0.6,0.875,2.303,0.0,-0.871,0,-0.069
+fi_content_111,Miten säätyjen väliset jännitteet ja vallan tasapaino ilmenivät kasvatuksessa?,fi,content,0.431,0.293,0.0,0.6,0.889,2.398,0.0,-0.871,0,-0.339
+fi_content_112,Mitä ihmettä tämä tarkoittaa?,fi,content,-0.402,-0.707,0.0,0.4,0.5,1.792,0.0,-0.871,0,-0.874
+fi_content_113,Mihin niitä kelaatteja sitten käytetään?,fi,content,-0.069,-0.707,0.0,0.6,0.6,1.946,0.0,-0.871,0,-0.735
+fi_content_114,Mitä kuninkaallisten peruukit maksoivat?,fi,content,-0.402,-0.707,0.0,0.4,0.75,1.792,0.0,-0.871,0,-0.83
+fi_content_115,"Robert William ”Bob” Hoskins (s. 26. lokakuuta 1942 Bury St Edmunds, Suffolk) on englantilainen näyttelijä, joka on tullut tunnetuksi muun muassa tähdittämistään elokuvista Kuka viritti ansan, Roger Rabbit? (1988) ja Hook – kapteeni Koukku (1991).",fi,content,1.052,3.293,1.0,0.5,0.765,3.892,4.394,3.129,0,2.182
+fi_content_116,"Hoskinsin tunnetuimpiin näyttelijäsuorituksiin lukeutuvat etsivä Eddie Valiant elokuvasta Kuka viritti ansan, Roger Rabbit?, Cherin vastanäyttelijä elokuvassa Äitini on merenneito (1990), Nikita Hruštšov elokuvassa Vihollinen porteilla (2001) ja setä Bart, väkivaltainen Jet Lin isäntä elokuvassa Danny the Dog.",fi,content,1.348,2.293,1.0,0.5,0.865,3.871,4.215,1.129,0,1.687
+fi_content_117,"Vaimo Veronica Lario kysyi: Miten on mahdollista hyväksyä sellainen poliittinen kulttuuri, jossa parlamenttiehdokkaaksi asetetaan pääministerin suosimia tanssityttöjä?”",fi,content,-0.194,4.293,1.333,0.35,0.882,3.091,4.394,3.129,0,2.05
+fi_content_118,Ja mitä kustantaa valmis dolly?,fi,content,-0.569,-0.707,0.0,0.6,0.6,1.946,0.0,-0.871,0,-0.823
+fi_content_119,"Kuinka sitten tiedät, onko sinut bannattu?",fi,content,-0.069,-0.707,1.0,0.5,0.667,2.197,3.932,0.129,0,0.351
+fi_content_120,"Miksi aina silloin, kun oikeasti tarvitsee jotain, ei löydä mitään?",fi,content,0.487,1.293,1.0,0.6,0.6,2.639,3.932,0.129,0,0.886
+fi_content_121,"Kuka se olikaan, joka heitti väärän roskapussin ulos?",fi,content,0.074,0.293,1.0,0.6,0.5,2.398,3.932,0.129,0,0.576
+fi_content_122,"Kuka niihin pystyy vaikuttamaan, jos ei ministeri?",fi,content,-0.236,-0.707,1.0,0.4,0.571,2.303,4.215,1.129,0,0.532
+fi_content_123,Mikä kumma sitä oikein vaivaa?,fi,content,-0.319,-0.707,0.0,0.6,0.6,1.946,0.0,-0.871,0,-0.779
+fi_content_124,"− Oppivatko lapset nopeammin, ja miten on vanhenevien eläkeläisten laita?",fi,content,-0.069,1.293,1.0,0.3,0.778,2.565,3.932,1.129,0,0.929
+fi_content_125,"Taas tuli aika miettiä, mitä seuraavaksi, mistä aiheesta nyt keskusteltaisiin?",fi,content,-0.291,3.293,1.0,0.333,0.8,2.639,3.932,1.129,0,1.266
+fi_content_126,Mikä on sitä arkiromantiikkaa sitten?,fi,content,0.181,-0.707,0.0,0.0,0.4,1.946,0.0,-0.871,0,-0.832
+fi_content_127,Mitä se on teidän mielestänne?,fi,content,-0.069,-0.707,0.0,0.0,0.2,1.946,0.0,-0.871,0,-0.911
+fi_content_128,Ja mikä olisi sitten sitä juhlaromantiikkaa?,fi,content,-0.269,-0.707,0.0,0.0,0.333,2.079,0.0,-0.871,0,-0.9
+fi_content_129,"Ja kun nyt paneudutaan näihin kysymyksiin, niin arvioidaan samalla, että mikä on sitä arkiseksiä ja mikä juhlaseksiä, sillä kai silläkin on eronsa?",fi,content,0.693,0.293,1.0,0.9,0.455,3.296,4.331,2.129,0,1.312
+fi_content_130,Mikä sitten avuksi tähän kaipuuseen?,fi,content,-0.569,-0.707,0.0,0.0,0.6,1.946,0.0,-1.871,0,-1.106
+fi_content_131,Miten nainen voisi viljellä sitten sitä arkiromantiikkaa vähän enemmän?,fi,content,0.056,-0.707,0.0,1.0,0.778,2.398,0.0,-0.871,0,-0.531
+fi_content_132,Mitä muuta se on kuin lempiviinin tai -oluen hankkiminen lempiruuan seuraksi?,fi,content,0.531,2.293,0.0,0.0,0.455,2.565,0.0,-0.871,0,-0.122
+fi_content_133,"Kuitenkin se on jotain, mitä nainen ei tunne passaukseksi, jos asia olisi päinvastoin - miksiköhän?",fi,content,1.239,0.293,2.0,0.8,0.5,2.944,4.215,1.129,0,1.316
+fi_content_134,Miten saada nainen nauttimaan arkiseksistä?,fi,content,-0.819,-0.707,1.0,0.4,1.0,1.946,3.932,0.129,0,0.215
+fi_content_135,"Miten saada hänet ymmärtämään, että halailu, puristelu ja eroottinen koskettelu ovat hänelle hyväksi, että se auttaa häntä rentoutumaan, sen sijaan, että hän tuntisi itsensä pakotetuksi vastaamaan miehen haluihin saada seksiä?",fi,content,0.724,6.293,1.75,0.375,0.567,3.611,4.483,7.129,0,3.401
+fi_content_136,Miten saamme kansalaiset hyväksymään Euroopan yhdentymishankkeen?,fi,content,-0.669,0.293,1.0,0.4,1.0,2.079,3.932,0.129,0,0.442
+fi_content_137,Mikä on Euroopan tulevaisuus?,fi,content,-0.069,-1.707,0.0,0.0,0.5,1.792,0.0,-0.871,0,-1.062
+fi_content_138,"Junan ovet piippaavat kuin aikapommi, tarkastaja on vihollinen Tikkurilassa, vaaraton Puistolassa, kuka tietää miksi?",fi,content,0.085,0.293,0.0,0.5,0.786,2.944,0.0,1.129,0,0.013
+fi_content_139,"Ketä näyttelijää ja mitä elokuvaroolia olet katsellut sillä mielellä, että olisit halunnut näytellä sen itse?",fi,content,-0.14,1.293,2.0,0.4,0.467,2.89,4.215,1.129,0,1.163
+fi_content_140,Miksi et nauttisi ja harrastaisi seksiä näistä tuntemuksista huolimatta?,fi,content,-0.319,-0.707,0.0,0.5,0.556,2.398,0.0,0.129,0,-0.548
+fi_content_141,"Ihokosketus, seksi ja orgasmi saavat sinut voimaan paremmin, miksi olla pidättyväinen, kun voisit saada helpotusta oloosi?",fi,content,0.264,1.293,1.0,0.467,0.688,3.045,4.215,2.129,0,1.313
+fi_content_142,"Heti ensimmäisissä bileissä helmikuussa hävitin mun Mulberry-huivin, ja mitä tapahtui tällä viikolla?",fi,content,-0.16,0.293,0.0,0.6,0.667,2.708,0.0,0.129,0,-0.252
+fi_content_143,"Annan teille yhden esimerkin: mitä tehdään leluille, joissa on siruja?",fi,content,-0.402,2.293,1.0,0.4,0.5,2.639,3.932,1.129,0,1.029
+fi_content_144,Mitä SIS II -järjestelmälle on tapahtunut?,fi,content,0.131,0.293,0.0,0.4,0.667,2.079,0.0,-0.871,0,-0.523
+fi_content_145,Miksi esitän näin paljon kysymyksiä nyt?,fi,content,-0.069,0.293,0.0,0.6,1.0,2.079,0.0,-0.871,0,-0.464
+fi_content_146,Kuka minä sitten olen ihmisenä?,fi,content,0.431,-1.707,0.0,0.0,0.4,1.946,0.0,-0.871,0,-0.964
+fi_content_147,"""Mitä vittuu noi roskikset rämisee?"" Stilsu huutaa isoon ääneen et ne kuulis kans.",fi,content,-0.069,0.293,1.0,0.6,0.692,2.89,3.932,1.129,0,0.848
+fi_content_148,"“Mitä tarkoitit kun sanoit, että veitsi on käytännöllisesti katsoen puhdas?",fi,content,0.709,1.293,3.0,0.333,0.6,2.639,4.331,2.129,0,1.654
+fi_content_149,"Käyttölupani on vanhenemassa, miten uusin sen?",fi,content,-0.469,-0.707,0.0,0.4,0.667,2.197,0.0,0.129,0,-0.608
+fi_content_150,"Miten selität sen, että tuloksesi olivat niin hirmuisen kovia verrattuna nykyisiin aikoihin?",fi,content,0.477,2.293,2.0,0.3,0.75,2.708,4.215,1.129,0,1.449
+fi_content_151,Kaikki tietomme asuttamastamme maailmankaikkeudesta on lähtenyt yhdestä kysymyksestä: miten?,fi,content,-0.319,0.293,1.0,0.2,0.667,2.485,3.932,0.129,0,0.481
