@@ -1,297 +1,297 @@
-unique_id,text,language,type,avg_links_len,avg_max_depth,avg_subordinate_chain_len,avg_verb_edges,lexical_density,n_tokens,subordinate_proposition_dist,verbal_head_per_sent
-id_content_0,Bagaimana sejarah berdirinya SMAN 1 Pekanbaru yang sudah berusia setengah abad itu?,indonesian,content,2.0,3.0,1.0,2.0,0.5384615384615384,14,100.0,1.0
-id_content_1,Siapa dapat memastikan apakah sebuah kenyataan itu sesungguhnya impian dan sebuah impian itu justru sesungguhnya kenyataan?,indonesian,content,2.125,4.0,0,2.0,0.5294117647058824,18,0.0,1.0
-id_content_2,Kamila bertanya kenapa Eyang Tini menyuruhnya naik mobil?,indonesian,content,1.875,3.0,2.0,2.3333333333333335,0.8888888888888888,10,66.66666666666667,3.0
-id_content_3,Siapakah sebenarnya gadis yang mirip si Cemong?,indonesian,content,1.8571428571428572,3.0,0,0,0.5,9,0,0.0
-id_content_4,Dan bagaimanakah kamu lihat keadaannya sekarang?,indonesian,content,1.8571428571428572,2.0,0,4.0,0.5,9,0.0,1.0
-id_content_5,"Jika bukan dirinya yang akan membantu Zhong memakamkan (dan menghormati) abu ayahnya, siapa lagi yang akan menolong?",indonesian,content,2.611111111111111,7.0,1.3333333333333333,1.5,0.42105263157894735,23,100.0,4.0
-id_content_6,"Bagaimana nasib Maya, Naomy dan Ryan?",indonesian,content,1.8,3.0,0,0,0.8333333333333334,8,0,0.0
-id_content_7,"Bagaimana Kayla menghadapi Rita sebagai madunya, sementara dirinya semakin lama menjadi semakin sehat?",indonesian,content,2.4285714285714284,3.0,1.0,4.0,0.6666666666666666,17,50.0,2.0
-id_content_8,Bagaimana kisah selanjutnya?,indonesian,content,1.0,1.0,0,0,1.0,4,0,0.0
-id_content_9,Bagaimana persahabatannya dengan Aldo?,indonesian,content,1.5,2.0,0,0,0.6,6,0,0.0
-id_content_10,Bagaimana manusia sebagai individu dapat masuk ke dalam suatu hubungan dengan Allah?,indonesian,content,2.3636363636363638,3.0,0,3.0,0.5,13,0.0,1.0
-id_content_11,"Jika Tuhan itu fana 'atau mati, bagaimana nasib ciptaan-Nya seperti manusia?",indonesian,content,2.090909090909091,4.0,0,0,0.5833333333333334,15,0,0.0
-id_content_12,"Selain itu, apa yang dapat kita pelajari dari pria yang disebut bapak pendidikan modern?",indonesian,content,1.8461538461538463,6.0,1.0,2.5,0.42857142857142855,16,100.0,2.0
-id_content_13,Kemana impian jiwa muda ini membawa mereka?,indonesian,content,2.3333333333333335,3.0,0,3.0,0.7142857142857143,8,0.0,1.0
-id_content_14,Bagaimana dengan ramalan Florence tentang akan terjadinya pasang tertinggi tersebut?,indonesian,content,2.1,2.0,0,5.0,0.5454545454545454,12,0.0,1.0
-id_content_15,"Aku selalu bertanya, siapakah diriku sebenarnya di dalam hari-harimu, Viola?",indonesian,content,2.0833333333333335,3.0,0,3.0,0.38461538461538464,16,0.0,1.0
-id_content_16,Lalu siapa yang akan memperhatikan nasib rakyat kita?,indonesian,content,1.4285714285714286,4.0,1.0,2.0,0.375,9,100.0,1.0
-id_content_17,Sesudah itu aku bertanya kepadanya: Anak siapakah engkau?,indonesian,content,1.7777777777777777,3.0,0,4.0,0.2,12,0.0,1.0
-id_content_18,"Pak Douw, anda telah berusaha untuk maju menjadi Bupati, bagaimana kalau seandainya nanti anda gagal mendapatkan dukungan dan tidak terpilih di PILKADA Nabire?",indonesian,content,2.5,4.0,1.5,3.0,0.6521739130434783,26,75.0,6.0
-id_content_19,Lalu apa yang menentukan suatu campuran akan menghasilkan efek kacang Brasil atau kebalikannya?,indonesian,content,1.6153846153846154,5.0,2.0,2.0,0.5714285714285714,15,100.0,2.0
-id_content_20,Bagaimana caranya mereka menukarkan jiwa mereka kembali?,indonesian,content,2.142857142857143,2.0,1.0,2.0,0.625,9,50.0,2.0
-id_content_21,"Bila kita menggunakan semua ini untuk melawan musuh, musuh mana yang tak akan kalah?",indonesian,content,2.3076923076923075,3.0,1.0,3.0,0.35714285714285715,16,66.66666666666667,3.0
-id_content_22,"Permasalahan yang dihadapi ketika itu adalah: siapa yang akan menggantikan Nabi Muhammad, dan sebesar apa kekuasaan yang akan didapatkannya?",indonesian,content,2.6315789473684212,4.0,1.0,1.6666666666666667,0.35,23,75.0,4.0
-id_content_23,Bagaimana kita tahu bahwa 7 ditambah 8 selalu ada 15?,indonesian,content,1.6666666666666667,3.0,2.0,3.0,0.5,11,66.66666666666667,3.0
-id_content_24,Dan siapakah yang lebih mengampuni dosa selain Allah?,indonesian,content,1.625,4.0,1.0,3.0,0.4444444444444444,10,100.0,1.0
-id_content_25,"Namun, apa saja yang ditata oleh pemerintah kolonial selanjutnya?",indonesian,content,1.5,4.0,1.0,2.0,0.6666666666666666,11,100.0,1.0
-id_content_26,"``Tetapi Andreas menjawab dan berkata kepada saudara-saudaranya, 'Apa pendapat kalian tentang apa yang baru saja dikatakannya itu?",indonesian,content,2.0,5.0,1.0,3.6666666666666665,0.47368421052631576,23,50.0,3.0
-id_content_27,Apa yang herus dilakukan Winnie?,indonesian,content,1.75,2.0,1.0,3.0,0.6,6,100.0,1.0
-id_content_28,Apa saja 3 ranah berbeda warna itu?,indonesian,content,1.5,3.0,0,0,0.5714285714285714,8,0,0.0
-id_content_29,Bagaimana King bisa tertarik pada bisnis perhotelan dan pijat kesehatan?,indonesian,content,1.6666666666666667,3.0,0,3.0,0.7,11,0.0,1.0
-id_content_30,"Siapa yang akan mengira bahwa Argentina, sebuah negara yang terisolir akan pergi berperang melawan pelanggan terbesarnya dalam ekspor hasil pertanian -- Inggris?",indonesian,content,2.5714285714285716,7.0,2.0,1.75,0.5454545454545454,25,100.0,4.0
-id_content_31,Siapakah pendusta itu?,indonesian,content,1.3333333333333333,2.0,0,0,0.25,5,0,0.0
-id_content_32,Mengapa diletakkan di perbatasan?,indonesian,content,1.3333333333333333,2.0,0,2.0,0.75,5,0.0,1.0
-id_content_33,"Maka kata Pak Belalang, dari mana datang dan apakah hajat?",indonesian,content,2.1,3.0,1.0,2.5,0.5454545454545454,13,50.0,2.0
-id_content_34,Bagaimana pasangan ini bertahan hidup di tengah pertikaian antara manusia dan fangire?,indonesian,content,1.6363636363636365,5.0,0,4.0,0.6666666666666666,13,0.0,1.0
-id_content_35,Bagaimanakah kisah selanjutnya?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
-id_content_36,"Mereka memang berbeda, tetapi bagaimanakah bisa dikenali?",indonesian,content,2.5714285714285716,3.0,0,2.0,0.5,10,0,1.0
-id_content_37,Siapakah yang dapat mengatakan kepada manusia apa yang akan terjadi di bawah matahari sesudah dia?,indonesian,content,1.8666666666666667,7.0,1.0,2.5,0.3125,17,100.0,2.0
-id_content_38,Lalu bagaimana dengan kisah cinta Mutia dan Fadel?,indonesian,content,1.2857142857142858,5.0,0,0,0.625,9,0,0.0
-id_content_39,Berfirmanlah TUHAN kepada Samuel: ``Berapa lama lagi engkau berdukacita karena Saul?,indonesian,content,2.5454545454545454,3.0,1.0,3.5,0.5833333333333334,15,50.0,2.0
-id_content_40,Kenapa Harus Inul?,indonesian,content,1.0,1.0,0,2.0,1.0,4,0.0,1.0
-id_content_41,Kenapa para penambang menggunakan tembakau kunyah?,indonesian,content,1.4,2.0,0,1.5,0.8333333333333334,7,0.0,2.0
-id_content_42,Bagaimana dengan Bu Acih yang juga telanjur sayang kepada Sinar?,indonesian,content,2.6666666666666665,3.0,0,3.0,0.7,11,0.0,1.0
-id_content_43,"Ratu percaya hal tersebut dan setuju, tapi apa yang harus dilakukan?",indonesian,content,2.2,3.0,1.0,2.0,0.45454545454545453,13,50.0,3.0
-id_content_44,Tetapi Ia berkata kepada mereka: ``Berapa banyak roti yang ada padamu?,indonesian,content,2.0,6.0,1.0,2.5,0.5,15,50.0,2.0
-id_content_45,Bagaimana jugakah reaksi Rendra jika mengetahui hal tersebut?,indonesian,content,2.375,2.0,0,5.0,0.6666666666666666,10,0.0,1.0
-id_content_46,"Bagaimana pula kisah cinta segitiga antara Hafizah, Samsul dan Bambang?",indonesian,content,1.8888888888888888,3.0,0,0,0.8,12,0,0.0
-id_content_47,Bagaimana akhir kisah cinta Gaby dan Popo?,indonesian,content,1.3333333333333333,4.0,0,0,0.8571428571428571,8,0,0.0
-id_content_48,"Berkata Ibrahim kepada Namrud itu: ``Jika demikian halnya, mengapa kamu sembah patung-patung itu, yang tidak dapat berkata, tidak dapat melihat dan tidak dapat mendengar, tidak dapat membawa manfaat atau menolak mudharat, bahkan tidak dapat menolong dirinya dari kehancuran dan kebinasaan?",indonesian,content,2.951219512195122,7.0,1.0,3.125,0.40476190476190477,50,50.0,8.0
-id_content_49,Mengapa Indonesia tidak mampu berbuat seperti negara-negara tesebut?,indonesian,content,2.0,2.0,0,4.0,0.5,9,0.0,1.0
-id_content_50,"Bila anjing-anjing itu ada di dekat kita, tidakkah kita mencium baunya?",indonesian,content,2.25,3.0,1.0,3.5,0.38461538461538464,15,50.0,2.0
-id_content_51,Bagaimana kelanjutan dari kisah cinta MAT PEI-AISAH?,indonesian,content,1.1666666666666667,4.0,0,0,0.8571428571428571,8,0,0.0
-id_content_52,Yang menjadi masalah kemudian: bagaimana menghubungkan tuntutan politis dan ilmiah di atas?,indonesian,content,1.8181818181818181,5.0,1.0,2.5,0.75,14,50.0,2.0
-id_content_53,Siapakah yang menolong kita dari tangan Allah yang maha dahsyat ini?,indonesian,content,1.6363636363636365,5.0,1.0,3.0,0.4166666666666667,13,100.0,1.0
-id_content_54,"Persoalan berikutnya, bagaimana menentukan mana pelaku dan mana korban?",indonesian,content,1.875,4.0,1.0,2.0,0.6666666666666666,11,100.0,1.0
-id_content_55,"Dan kalau seseorang mengkritik Raja, saya ingin tahu mengapa?",indonesian,content,2.625,2.0,1.0,3.5,0.4444444444444444,11,50.0,2.0
-id_content_56,Apa arti globalisasi buat Lippo?,indonesian,content,1.75,2.0,0,0,0.6,6,0,0.0
-id_content_57,Apa arti semua ini?,indonesian,content,1.3333333333333333,2.0,0,0,0.25,5,0,0.0
-id_content_58,Apa yang membuatnya melakukan pembunuhan dengan darah dingin?,indonesian,content,1.375,5.0,2.0,2.0,0.5555555555555556,10,100.0,2.0
-id_content_59,Mengapa Kanade ada lebih dulu di dunia Afterlife?,indonesian,content,1.7142857142857142,2.0,0,4.0,0.875,9,0.0,1.0
-id_content_60,"Pada kesempatan yang ke-4, berkatalah perempuan itu kepadanya: ``Bagaimana mungkin engkau berkata: Aku cinta kepadamu, padahal hatimu tidak tertuju kepadaku?",indonesian,content,2.375,5.0,1.0,3.5,0.52,31,50.0,4.0
-id_content_61,Kenapa harus smada?,indonesian,content,1.5,1.0,0,0,0.6666666666666666,4,0,0.0
-id_content_62,Dan siapa yang tinju?,indonesian,content,1.3333333333333333,2.0,1.0,1.0,0.25,5,100.0,1.0
-id_content_63,Bagaimanakah dengan umur kita?,indonesian,content,1.5,2.0,0,0,0.4,6,0,0.0
-id_content_64,Makanan pertama apa yang dimakan orang di surga?,indonesian,content,1.8571428571428572,3.0,1.0,3.0,0.625,9,100.0,1.0
-id_content_65,Apa yang akan terjadi dengan Popo dan Nando?,indonesian,content,1.7142857142857142,4.0,1.0,2.0,0.375,9,100.0,1.0
-id_content_66,Bagaimanakah Ia melakukan-Nya?,indonesian,content,1.5,2.0,0,3.0,0.4,6,0.0,1.0
-id_content_67,"Jika memang ada niat baik untuk membantu dari pihak Wu, mengapa Sun Quan merahasiakan pasukan itu?",indonesian,content,2.2666666666666666,4.0,2.0,3.3333333333333335,0.75,18,66.66666666666667,3.0
-id_content_68,"Apa yang ia lakukan, dan mengapa ia melakukannya?",indonesian,content,2.125,3.0,1.0,2.0,0.3333333333333333,11,100.0,2.0
-id_content_69,Bagaimana bisa kita tidak mengungkapkan kesedihan yang mendalam akan semua hal ini?,indonesian,content,1.8181818181818181,4.0,1.0,3.5,0.5,13,50.0,2.0
-id_content_70,"Khidir menjawab salamnya dan bertanya, ``Dari mana datangnya kesejahteraan di bumi yang tidak mempunyai kesejahteraan?",indonesian,content,2.0,5.0,1.0,2.75,0.5294117647058824,20,66.66666666666667,4.0
-id_content_71,Dimana letak pikiran?,indonesian,content,1.0,2.0,0,0,0.6666666666666666,4,0,0.0
-id_content_72,"``Hai Muhammad, mengapa kamu mengharamkan apa yang Allah menghalalkannya bagimu; kamu mencari kesenangan hati istri-istrimu?",indonesian,content,2.0588235294117645,5.0,1.0,3.6666666666666665,0.5,22,66.66666666666667,3.0
-id_content_73,Siapakah pencipta bumi ini?,indonesian,content,1.5,2.0,0,0,0.4,6,0,0.0
-id_content_74,Bagaimanakah kelanjutan kisah para remaja yang masih di bawah umur ini?,indonesian,content,2.0,4.0,0,0,0.5833333333333334,13,0,0.0
-id_content_75,Lalu bagaimana cara menafkah harta sesuai tuntunan Alloh dan Rasul-Nya?,indonesian,content,1.4,5.0,1.0,2.0,0.7272727272727273,12,100.0,1.0
-id_content_76,"Maka, siapa Nama-Nya?",indonesian,content,1.3333333333333333,2.0,0,0,0.25,6,0,0.0
-id_content_77,Sampai kapan Nino akan berpura-pura di depan neneknya kalau dia dan Abel berpacaran?,indonesian,content,2.3846153846153846,4.0,1.0,3.0,0.5,15,50.0,2.0
-id_content_78,Siapa yang berani mencuri binatang buas ini?,indonesian,content,1.6666666666666667,3.0,1.0,3.0,0.5714285714285714,8,100.0,1.0
-id_content_79,"Apabila didengarnya segala kedursilaan yang dilakukan anak-anaknya, berkatalah ia kepada mereka: ``Mengapa kamu melakukan hal-hal yang begitu, sehingga kudengar dari segenap bangsa ini tentang perbuatan-perbuatanmu yang jahat itu?",indonesian,content,2.3125,6.0,1.0,3.4,0.3939393939393939,38,75.0,5.0
-id_content_80,"Kalo Nadya sakit, siapa yang akan mengurus mereka?",indonesian,content,1.7142857142857142,2.0,1.0,2.0,0.375,10,100.0,1.0
-id_content_81,Kapan ia tidak terikat lagi?,indonesian,content,1.75,1.0,0,4.0,0.6,6,0.0,1.0
-id_content_82,"Dan pada siapakah Siera akhirnya jatuh cinta, Tristan atau Rian?",indonesian,content,2.1,4.0,0,5.0,0.5454545454545454,13,0.0,1.0
-id_content_83,Mengapa Makoto berdandan seperti perempuan?,indonesian,content,1.5,2.0,0,3.0,0.8,6,0.0,1.0
-id_content_84,Taufan (Fadil) bertanya apa maksudnya pada Ambar?,indonesian,content,1.8571428571428572,4.0,0,2.0,0.625,11,0.0,1.0
-id_content_85,Apa yang akan terjadi kali ini?,indonesian,content,1.6,3.0,1.0,2.0,0.3333333333333333,7,100.0,1.0
-id_content_86,"Ia lalu bertanya kepada ibunya ``Ibu, dimana kita mendapatkan seekor bebek muda?",indonesian,content,2.25,3.0,1.0,4.0,0.5384615384615384,16,50.0,2.0
-id_content_87,Kepada semua imam-imam Yoas berkata: ``Mengapa kamu tidak perbaiki kerusakan rumah itu?,indonesian,content,1.9090909090909092,4.0,1.0,3.5,0.5833333333333334,15,50.0,2.0
-id_content_88,Mengapa pendekatan menjadi begitu penting?,indonesian,content,1.5,2.0,0,3.0,1.0,6,0.0,1.0
-id_content_89,"Katakanlah tidak ada, mengapa Yesus memberikan contoh demikian?",indonesian,content,1.75,4.0,2.0,2.3333333333333335,0.6666666666666666,11,66.66666666666667,3.0
-id_content_90,Siapakah sebenarnya sosok tersebut?,indonesian,content,1.75,2.0,0,0,0.4,6,0,0.0
-id_content_91,Bagaimana hubungan dia dengan Amara?,indonesian,content,1.5,2.0,0,0,0.6,6,0,0.0
-id_content_92,"Lalu bagaimana dengan ribuan kosakata, berikut dengan cara pengucapannya yang benar yang diserap oleh si kecil -- apakah Anda yang mengajarkannya secara khusus?",indonesian,content,2.6666666666666665,5.0,1.0,2.3333333333333335,0.48,28,100.0,3.0
-id_content_93,Berapakah harga emas 3 bulan mendatang?,indonesian,content,1.5,2.0,0,0,0.5714285714285714,8,0,0.0
-id_content_94,Wiwi bertanya kenapa tidak Eyang Tini yang mengambilnya sendiri?,indonesian,content,1.6666666666666667,3.0,1.0,2.5,0.7,11,50.0,2.0
-id_content_95,``Siapa Ilham Aliyev?,indonesian,content,1.0,2.0,0,0,0.6666666666666666,5,0,0.0
-id_content_96,Bagaimana bila proses itu terus berlangsung seratus tahun?,indonesian,content,2.4285714285714284,2.0,0,5.0,0.625,9,0.0,1.0
-id_content_97,"Mengapa?, apakah karena Rasulullah memberikan belanja yang berlebih terhadap Zainab?",indonesian,content,2.2,4.0,1.0,3.5,0.6363636363636364,14,50.0,2.0
-id_content_98,"Lebih lanjut, bagaimana mengukur kedua aspek dari satu kegiatan iptek secara konsisten dan relatif obyektif?",indonesian,content,2.4285714285714284,4.0,1.0,2.0,0.6666666666666666,17,50.0,2.0
-id_content_99,Maumu kapan sih? - Sebenarnya kapan yang kamu mau?,indonesian,content,2.0,3.0,1.0,2.0,0.6666666666666666,12,100.0,1.0
-id_content_100,Yang belum jelas adalah mengapa prasasti mengenai pengembalian pemerintahan kepada Raja Sunda itu terdapat di sana?,indonesian,content,2.466666666666667,5.0,1.0,2.0,0.5625,17,50.0,2.0
-id_content_101,"Ayahnya bahkan berkata, ``Mengapa tidak engkau beri tahu bahwa begitu mulia dan suci maksudmu?",indonesian,content,2.1333333333333333,3.0,1.0,2.6666666666666665,0.625,19,66.66666666666667,3.0
-id_content_102,Siapa tahu _ Mungkin besok?,indonesian,content,1.3333333333333333,2.0,0,2.0,0.75,6,0.0,1.0
-id_content_103,Siapakah yang berhasil memenangkan cinta Nayla?,indonesian,content,1.3333333333333333,4.0,2.0,1.5,0.5714285714285714,8,100.0,2.0
-id_content_104,Kenapa limbahnya menjadi tanggung jawab masyarakat?,indonesian,content,1.6666666666666667,2.0,0,3.0,0.8571428571428571,8,0.0,1.0
-id_content_105,Bagaimana hubungan LARA dengan VANO dan DION selanjutnya?,indonesian,content,2.142857142857143,3.0,0,0,0.75,9,0,0.0
-id_content_106,Mengapa etimologi ``marga'' diambil dari Cakap Karo (merga) dan ``merga'' berubah menjadi marga?,indonesian,content,2.923076923076923,3.0,1.0,2.6666666666666665,0.8571428571428571,20,50.0,3.0
-id_content_107,Maka bagaimana sebuah sistem prosesor tunggal dapat menjalankan multi-proses?,indonesian,content,2.75,3.0,0,4.0,0.6666666666666666,10,0.0,1.0
-id_content_108,Siapa yang memberikan Nama ini kepadamu?,indonesian,content,1.5,4.0,1.0,2.0,0.2857142857142857,8,100.0,1.0
-id_content_109,"Apa kabarnya, bunda?",indonesian,content,2.0,2.0,0,0,0.5,6,0,0.0
-id_content_110,"Bagaimana dengan Yohanes, bila dalam surat amnya ia berkata bahwa ada Tiga yang memberi kesaksian, Roh dan air dan darah?",indonesian,content,2.45,5.0,1.0,3.0,0.5238095238095238,24,66.66666666666667,3.0
-id_content_111,"Sekarang, siapa yang menolak Partai Komunis ini?",indonesian,content,1.5,3.0,1.0,2.0,0.5714285714285714,9,100.0,1.0
-id_content_112,Bagaimana kisah selanjutnya?,indonesian,content,1.0,1.0,0,0,1.0,4,0,0.0
-id_content_113,"Perhentian sementara, mengapa tidak?",indonesian,content,1.6666666666666667,2.0,0,0,0.75,6,0,0.0
-id_content_114,Bagaimanakah cara Sultan dan Atikah mengatasi semua rintangan yang menghadang hubungan cinta mereka?,indonesian,content,2.0,4.0,1.0,2.5,0.6,16,50.0,2.0
-id_content_115,Orang dalam kondisi seperti apa yang tidak boleh dibekam?,indonesian,content,2.0,4.0,1.0,2.0,0.3333333333333333,10,100.0,1.0
-id_content_116,- Apa yang Disebut Berpikir?,indonesian,content,1.3333333333333333,2.0,2.0,1.0,0.5,6,100.0,2.0
-id_content_117,Fadil bilang apa benar Kamila belum ditemukan?,indonesian,content,1.6666666666666667,3.0,1.0,1.0,0.8571428571428571,8,50.0,2.0
-id_content_118,Dan bagaimana dengan Aurelie sendiri?,indonesian,content,1.25,2.0,0,0,0.4,6,0,0.0
-id_content_119,Bagaimana pula jika peristiwa ``kehabisan cita'' dalam hidup pasangan suami-istri?,indonesian,content,2.4444444444444446,3.0,1.0,2.0,0.8,13,100.0,1.0
-id_content_120,Siapa sangka bahwa mereka ditakdirkan untuk saling mencintai?,indonesian,content,1.8571428571428572,3.0,2.0,2.3333333333333335,0.5,9,66.66666666666667,3.0
-id_content_121,Mengapa hal ini tidak terjadi dalam Protestanisme?,indonesian,content,2.0,2.0,0,4.0,0.5714285714285714,8,0.0,1.0
-id_content_122,Bagaimana perjuangan hidup Isabella?,indonesian,content,1.0,2.0,0,0,1.0,5,0,0.0
-id_content_123,"Kenapa marah, kenapa murka?",indonesian,content,1.6666666666666667,2.0,0,1.5,1.0,6,0.0,2.0
-id_content_124,Yang Islami itu yang mana?,indonesian,content,2.0,2.0,0,0,0.4,6,0,0.0
-id_content_125,Dan kenapa ia setara dengan tiga koma empat belas?,indonesian,content,1.625,4.0,0,0,0.3333333333333333,10,0,0.0
-id_content_126,Bagaimana reaksi Bayu saat mengetahui bahwa Jelita adalah puteri dari orang yang sudah membunuh papanya?,indonesian,content,1.8,6.0,1.5,2.0,0.5625,17,100.0,3.0
-id_content_127,"12.4 Jika dia tidak memiliki keahlian, maka latihlah dia dengan keahlianmu, karena bagaimana seorang Masehi hidup di antara kamu tanpa pekerjaan?",indonesian,content,2.6363636363636362,4.0,1.0,2.6666666666666665,0.34782608695652173,26,66.66666666666667,3.0
-id_content_128,Bagaimana kisah selanjutnya?,indonesian,content,1.0,1.0,0,0,1.0,4,0,0.0
-id_content_129,"Jalan Dusun pun demikian, karena Luas wilayah teritorial desa Tunjungmuli yang melebihi batas sewajarnya menjadikan perawatan jalan dusun susah di laksanakan karena memerlukan budget atau anggaran yang sangat besar hanya untuk mengurusi Jalan, bagaimana dengan Pendidikan?",indonesian,content,2.861111111111111,7.0,1.0,2.4,0.7027027027027027,40,80.0,5.0
-id_content_130,Siapa yang akan menyangka bahwa Inggris akan pergi berperang untuk mempertahankan sisa-sisa Imperiumnya 37 tahun setelah Perang Dunia II?,indonesian,content,2.0,6.0,3.0,2.25,0.5263157894736842,20,100.0,4.0
-id_content_131,Sampai kapankah Aladin sanggup mempertahankan lampu ajaib tersebut di tangannya?,indonesian,content,1.8181818181818181,2.0,0,5.0,0.5833333333333334,13,0.0,1.0
-id_content_132,"Sebuah pertanyaan, mengapa dipahatkan relief Garudeya?",indonesian,content,1.4,2.0,0,3.0,0.8333333333333334,8,0.0,1.0
-id_content_133,"Menurutmu, di manakah cinta pada kata-kata itu?",indonesian,content,1.875,2.0,0,0,0.2222222222222222,11,0,0.0
-id_content_134,"Di mana posisi Islam vis a vis ideologi-ideologi sekular seperti demokrasi, sosialisme dan Marxisme?",indonesian,content,2.0,4.0,0,0,0.7142857142857143,16,0,0.0
-id_content_135,Siapa yang beresiko sepsis?,indonesian,content,1.3333333333333333,2.0,1.0,2.0,0.5,5,100.0,1.0
-id_content_136,"Tiba-tiba entah dari mana, terdengar suara, ``Kau, mau kertas merah?",indonesian,content,2.5555555555555554,3.0,0,2.3333333333333335,0.7,15,0.0,3.0
-id_content_137,Apa yang harus aku lakukan sekarang?,indonesian,content,2.2,2.0,1.0,3.0,0.3333333333333333,7,100.0,1.0
-id_content_138,Bagaimana jika ia tidak akan pergi ke bola itu?,indonesian,content,2.375,2.0,0,5.0,0.3333333333333333,10,0.0,1.0
-id_content_139,"Cordelia lalu menunjuk kepada kedua kakaknya seraya berkata bahwa jika mereka mencintai ayah mereka, mengapa mereka menikah dengan orang lain?",indonesian,content,2.1,5.0,3.0,3.5,0.5714285714285714,23,75.0,4.0
-id_content_140,"'Kalau seandainya kamu memiliki dunia dan apa yang ada di dalamnya dan sepertinya lagi, apakah kamu akan menebus dirimu?",indonesian,content,2.380952380952381,6.0,1.0,3.3333333333333335,0.36363636363636365,25,66.66666666666667,3.0
-id_content_141,Apa yang terjadi jika Yellowstone meletus?,indonesian,content,1.8,3.0,2.0,2.0,0.5,7,100.0,2.0
-id_content_142,"Dosen-dosen setiap hari rabu dalam sebuah forum yang disebut Diskusi Reboan dengan antusias berdebat, bertukar pikiran dan mengasah ketajaman analisis, siapa yang tak rindu suasana seperti ini?",indonesian,content,2.730769230769231,5.0,1.0,1.6,0.5925925925925926,30,66.66666666666667,5.0
-id_content_143,Kapankah kiranya masalah keluarganya akan selesai?,indonesian,content,2.875,3.0,0,3.0,0.5555555555555556,10,0.0,1.0
-id_content_144,"Pada saat itu, ia mempertanyakan apa arti MASOVU?",indonesian,content,1.4285714285714286,3.0,0,3.0,0.5,10,0.0,1.0
-id_content_145,"Abu Bakar dan Umar bertanya,'' Apa yang membuatmu menangis?",indonesian,content,2.0,3.0,2.0,1.6666666666666667,0.6,13,66.66666666666667,3.0
-id_content_146,Bagaimana sepak terjang Wataru yang terjepit di antara keduanya?,indonesian,content,1.8888888888888888,4.0,1.0,2.0,0.5,11,100.0,1.0
-id_content_147,Bagaimana kelanjutan kisah mereka?,indonesian,content,1.0,2.0,0,0,0.75,5,0,0.0
-id_content_148,"Setelah itu, siapa tahu?",indonesian,content,2.6666666666666665,1.0,0,3.0,0.25,6,0.0,1.0
-id_content_149,Namun apa yang terjadi?,indonesian,content,1.3333333333333333,2.0,1.0,1.0,0.5,5,100.0,1.0
-id_content_150,"Loh, kenapa dia di sini? - Kenapa dia ada di sini?",indonesian,content,2.4444444444444446,3.0,1.0,3.0,0.5,14,100.0,1.0
-id_content_151,Mengapa saya yang menjadi Bhikkhu?,indonesian,content,1.25,2.0,1.0,2.0,0.6,6,100.0,1.0
-id_content_152,"(Roma 11:13) Akan tetapi, siapakah yang mendirikan sidang-sidang di Kolose, Hierapolis dan Laodikia?",indonesian,content,2.0,5.0,1.0,3.0,0.5,19,100.0,1.0
-id_content_153,Bagaimana SAFIRA akan menggunakan masa lalu ANISSA sebagai kartu as-nya?,indonesian,content,1.8,3.0,1.0,2.0,0.7272727272727273,12,50.0,2.0
-id_content_154,"Siapakah yang Nando pilih, Idayu atau Mira?",indonesian,content,2.4285714285714284,3.0,1.0,2.0,0.5,10,100.0,1.0
-id_content_155,Berapa hari pengaturan tersebut dapat dilaksanakan?,indonesian,content,2.0,2.0,0,2.0,0.6666666666666666,7,0.0,1.0
-id_content_156,"Bagaimana mungkin rambut dan kuku tumbuh, padahal manusia tidak memakan rambut atau kuku?",indonesian,content,2.25,4.0,1.0,3.5,0.6923076923076923,15,50.0,2.0
-id_content_157,Indy bertanya memang siapa yang sakit?,indonesian,content,1.4,3.0,0,3.0,0.6666666666666666,7,0.0,1.0
-id_content_158,Indy bilang ada apa mereka menyuruhnya datang?,indonesian,content,1.2857142857142858,4.0,1.5,1.5,0.625,9,75.0,4.0
-id_content_159,"Bagaimana akhir hubungan Ningsih, Ones dan Cecep?",indonesian,content,1.6666666666666667,4.0,0,0,0.8571428571428571,9,0,0.0
-id_content_160,``Mengapakah kamu tidak mau menyembah Allah SWT?,indonesian,content,2.0,2.0,0,4.0,0.5,10,0.0,1.0
-id_content_161,"Lantas, berapa jumlah fosfor yang dilepaskan oleh penduduk bumi sekarang yang sudah mencapai sekitar 6,3 miliar jiwa?",indonesian,content,2.25,6.0,1.0,3.0,0.5882352941176471,19,100.0,2.0
-id_content_162,Kenapa si pelanggan tidak merasakan pergantian itu?,indonesian,content,1.6666666666666667,2.0,0,4.0,0.5714285714285714,8,0.0,1.0
-id_content_163,"Jenuh mencari tiada jumpa, sambil berkata, siapakah gerangan agaknya tahu bertenung ini?",indonesian,content,2.5833333333333335,3.0,1.3333333333333333,2.0,0.6153846153846154,16,80.0,5.0
-id_content_164,Bagaimana akhir kisah ini?,indonesian,content,1.0,2.0,0,0,0.75,5,0,0.0
-id_content_165,Siapa yang akan dipilih oleh Naia?,indonesian,content,1.8,3.0,1.0,2.0,0.3333333333333333,7,100.0,1.0
-id_content_166,Namun apa yang harus dilakukan jika air ketuban pecah di masa janin belum waktunya lahir?,indonesian,content,2.066666666666667,4.0,1.0,1.3333333333333333,0.5625,17,100.0,3.0
-id_content_167,Apa yang terjadi dengan Aisyah dan Kirani jika mempunyai mertua yang sama?,indonesian,content,1.8181818181818181,5.0,2.0,2.5,0.5,13,100.0,2.0
-id_content_168,Sebaliknya saya bertanya mengapa kamu tidak berkabung bagi-Nya di tempat ini?,indonesian,content,2.0,4.0,1.0,3.5,0.4166666666666667,13,50.0,2.0
-id_content_169,Kapan ayah pulang?,indonesian,content,1.5,1.0,0,2.0,1.0,4,0.0,1.0
-id_content_170,Apa yang akan terjadi?,indonesian,content,2.0,2.0,1.0,1.0,0.25,5,100.0,1.0
-id_content_171,"Loh, apa-apaan ini! - Apa yang terjadi di sini?",indonesian,content,1.8571428571428572,4.0,1.0,2.0,0.375,12,100.0,1.0
-id_content_172,Bagaimana nasib kisah cinta Yopie dengan Astuti?,indonesian,content,1.1666666666666667,5.0,0,0,0.8571428571428571,8,0,0.0
-id_content_173,Bagaimana Wataru yang bukan keturunan Raja Fangire memiliki Kiva?,indonesian,content,2.75,4.0,0,3.0,0.7777777777777778,10,0.0,1.0
-id_content_174,Bagaimana kalau pemberian lain sebagai hadiah untukmu?,indonesian,content,1.5714285714285714,3.0,0,0,0.5,9,0,0.0
-id_content_175,Mengapa engkau lari diam-diam dan mengakali aku?,indonesian,content,1.5,2.0,0,3.0,0.5714285714285714,8,0.0,2.0
-id_content_176,"Mentari pun shock, siapakah Bulan?",indonesian,content,1.6,2.0,0,3.0,0.5,8,0.0,1.0
-id_content_177,"Namun kalau memang demikian adanya, bagaimanasebuah argument-argument kosmologis -- secara formal syah kalau premis menggunakan satu istilah dengan pengertian tertentu dan dalam kesimpulannya menggunakan istilah yang sama dengan arti yang berbeda sama sekali?",indonesian,content,2.40625,7.0,1.0,3.0,0.6060606060606061,36,100.0,4.0
-id_content_178,Pembagian isi pasal: Dari manakah datangnya sengketa dan pertengkaran di antara kamu?,indonesian,content,1.9230769230769231,4.0,0,3.0,0.5,16,0,1.0
-id_content_179,Andara bertanya ini villa siapa?,indonesian,content,1.25,2.0,0,2.0,0.6,6,0.0,1.0
-id_content_180,"Lalu, mengapa para pengembang menggunakan nama ``Catfiz''?",indonesian,content,2.1666666666666665,2.0,0,4.0,0.7142857142857143,11,0.0,1.0
-id_content_181,Kok dia mukanya masam? - Kenapa dia mukanya masam?,indonesian,content,2.4444444444444446,4.0,0,0,0.5,13,0,0.0
-id_content_182,Mengapa orang mau melakukan baptisan ulang?,indonesian,content,1.6,2.0,0,1.5,0.8333333333333334,7,0.0,2.0
-id_content_183,Apa sebab Sultan Buton yang pertama itu dilantik / dinobatkan oleh Imam Fathani?,indonesian,content,2.3636363636363638,5.0,1.0,1.5,0.6666666666666666,14,100.0,2.0
-id_content_184,"Sayang, dia bertanya, apa kabarnya dengan isterimu yang berkulit sawo matang?",indonesian,content,1.6666666666666667,5.0,1.0,2.5,0.46153846153846156,16,50.0,2.0
-id_content_185,Bagaimana sikap ANISSA jika ia tahu masa lalu keluarganya?,indonesian,content,1.5555555555555556,4.0,1.0,3.0,0.7,11,100.0,1.0
-id_content_186,Namun tiga hal yang mendasari seluruh karyanya adalah pertanyaan-pertanyaan: Apa artinya untuk hidup?,indonesian,content,2.4285714285714284,4.0,1.0,2.5,0.4666666666666667,17,50.0,3.0
-id_content_187,Bagaimanakah Dini dan Adrian menyiasati pernikahan mereka?,indonesian,content,2.0,3.0,0,3.0,0.625,9,0.0,1.0
-id_content_188,Mengapa Ibu Pertiwi belum juga bisa menjadi mercusuar dunia?,indonesian,content,2.5,2.0,0,5.0,0.7777777777777778,10,0.0,1.0
-id_content_189,"Banyak warga desa Jipang mengkeramatkan tempat ini, kenapa kok dikeramatkan?",indonesian,content,1.8888888888888888,3.0,1.0,2.5,0.7,12,50.0,2.0
-id_content_190,Lalu bagaimana dampaknya terhadap posisi keuangan PT CPOKU?,indonesian,content,1.3333333333333333,5.0,0,0,0.6,11,0,0.0
-id_content_191,"Apa yang sudah kukatakan padanya, si pembuat Tintin, dan akhirnya mendunia?",indonesian,content,2.8333333333333335,4.0,1.0,4.0,0.38461538461538464,16,100.0,1.0
-id_content_192,Siapakah yang mendapatkan hukuman itu?,indonesian,content,1.4,3.0,1.0,2.0,0.3333333333333333,7,100.0,1.0
-id_content_193,Dan bagaimanakah Malin Kundang yang sudah menjadi orang Jakarta?,indonesian,content,1.7777777777777777,3.0,1.0,2.0,0.6,11,100.0,1.0
-id_content_194,Bagaimana mungkin sebuah fakultas yang gedungnya saja masih jauh dari layak bisa mendidik mahasiswa hingga menjadi sarjana ilmu sosial yang bermutu?,indonesian,content,3.0476190476190474,5.0,1.0,2.75,0.6363636363636364,23,75.0,4.0
-id_content_195,sudah berapa tahun berapa jumlahnya?,indonesian,content,1.4,2.0,0,0,0.8333333333333334,7,0,0.0
-id_content_196,Dan apa yang bisa dilakukan oleh Vicky dan Misa untuk menyelamatkan saudara mereka?,indonesian,content,1.8333333333333333,4.0,2.0,2.5,0.38461538461538464,14,100.0,2.0
-id_content_197,Bagaimanakah kelanjutan kisah cinta Frans dan Livia?,indonesian,content,1.2857142857142858,5.0,0,0,0.75,9,0,0.0
-id_content_198,"Tanpa diri sendiri mencapai pencerahan terlebih dahulu, bagaimana mungkin dapat mencerahkan mahkluk lain?",indonesian,content,2.0,3.0,0,2.5,0.6153846153846154,15,0.0,2.0
-id_content_199,Apa kabar Sahibul Menara?,indonesian,content,1.0,3.0,0,0,0.75,5,0,0.0
-id_content_200,Pernah memenangkan penghargaan komik terbaik dari Kodansha Siapa yang menyangka bahwa di dunia ini ada penyihir?,indonesian,content,2.1333333333333333,4.0,2.0,2.3333333333333335,0.625,17,100.0,3.0
-id_content_201,"Bagaimanakah kelanjutan kisah ini, apakah Intan berhasil menyelamatkan Kasih?",indonesian,content,1.9,3.0,1.0,2.5,0.7272727272727273,13,50.0,2.0
-id_content_202,Siapa yang menjadi raja?,indonesian,content,1.3333333333333333,2.0,1.0,2.0,0.5,5,100.0,1.0
-id_content_203,AMY GOODMAN: Mengapa anda mengatakan bahwa Presiden Aristide terobsesi dengan kekuasaan?,indonesian,content,3.1,3.0,1.0,1.5,0.7272727272727273,13,100.0,2.0
-id_content_204,Andara bilang bagaimana dengan dirinya?,indonesian,content,1.6,2.0,0,2.0,0.5,7,0.0,1.0
-id_content_205,Mengapa Komunikasi Kita Pelajari dan Teliti?,indonesian,content,1.8,2.0,0,2.5,0.6666666666666666,7,0.0,2.0
-id_content_206,Apa yang akan ANISSA lakukan setelah tahu semua rencana busuk Safira?,indonesian,content,1.9,4.0,2.0,2.5,0.5454545454545454,12,100.0,2.0
-id_content_207,Mengapa menyendiri disini?,indonesian,content,1.0,1.0,0,2.0,1.0,4,0.0,1.0
-id_content_208,Apa gunanya persetujuan ini apabila buku dari seorang pengarang di sebuah negara yang memiliki perlindungan yang baik diterbitkan di sebuah negara yang perlindungannya buruk atau malah sama sekali tidak ada?,indonesian,content,3.2580645161290325,9.0,1.0,3.3333333333333335,0.5,33,100.0,3.0
-id_content_209,"Lantas, bagaimana Pemko Payakumbuh bisa menyediakan akses air bersih untuk 96 persen warganya, sementara sumber mata air di kota itu sangat minus sekali?",indonesian,content,2.5652173913043477,4.0,0,5.0,0.6666666666666666,27,0.0,1.0
-id_content_210,dan apa yang dimaksud dengan 'kemahakuasaan'?,indonesian,content,1.8,3.0,1.0,2.0,0.3333333333333333,9,100.0,1.0
-id_content_211,"Chris bertanya kepada orang itu, pekerjaan apa yang ia lakukan sehingga mampu membeli mobil mewah?",indonesian,content,2.142857142857143,4.0,1.0,2.3333333333333335,0.5333333333333333,17,66.66666666666667,3.0
-id_content_212,Namun demikian muncul pertanyaan bagaimana cara Yesus untuk menggenapi hukum Taurat itu?,indonesian,content,1.7272727272727273,5.0,1.0,3.0,0.75,13,50.0,2.0
-id_content_213,Mengapa produsen air mineral kemasan tidak dikenakan cukai?,indonesian,content,2.4285714285714284,3.0,0,4.0,0.875,9,0.0,1.0
-id_content_214,"Lalu bagaimana dengan Vino, suami Clarissa, yang mendadak muncul untuk mencari keuntungan dari pernikahan kedua Clarissa?",indonesian,content,1.8666666666666667,5.0,2.0,3.0,0.6875,19,100.0,2.0
-id_content_215,"Ketika Rasulullah ditanya, siapakah yang akan mendapatkan syafaatmu?",indonesian,content,1.6666666666666667,4.0,1.0,2.5,0.4,12,50.0,2.0
-id_content_216,Isteri yang cakap siapakah akan mendapatkannya?,indonesian,content,2.142857142857143,3.0,0,3.0,0.375,9,0.0,1.0
-id_content_217,LittleJOHN mengajukan pertanyaan: Dengan proses bagaimana timbulnya pengetahuan?,indonesian,content,1.625,3.0,1.0,3.0,0.7777777777777778,11,50.0,2.0
-id_content_218,Kapankah kalian bisa menang?,indonesian,content,2.0,2.0,0,2.0,0.4,6,0.0,1.0
-id_content_219,Kapan Melakukan Pap Smear?,indonesian,content,1.0,2.0,0,2.0,1.0,5,0.0,1.0
-id_content_220,"Allahku, Allahku, mengapa Engkau meninggalkan aku?",indonesian,content,2.7142857142857144,2.0,0,5.0,0.5,11,0.0,1.0
-id_content_221,"Jika aku tidak menangis untuknya, lalu siapa lagi?",indonesian,content,2.0,2.0,0,5.0,0.2222222222222222,11,0.0,1.0
-id_content_222,Siapa yang menyuebutmu bijak?,indonesian,content,1.3333333333333333,2.0,1.0,2.0,0.5,5,100.0,1.0
-id_content_223,"Berapa perkiraan omzet penjualan dari seorang marketing yang memiliki pengalaman kerjanya 3,5 tahun?",indonesian,content,1.6923076923076923,5.0,1.0,2.0,0.6428571428571429,15,100.0,1.0
-id_content_224,Siapakah pastor Dwidjosoesastro ini?,indonesian,content,1.5,2.0,0,0,0.4,6,0,0.0
-id_content_225,Siapa yang peduli dengan kehormatan mereka?,indonesian,content,1.4,3.0,1.0,2.0,0.3333333333333333,7,100.0,1.0
-id_content_226,"Dretarastra memutuskan untuk memilih Gendari, kenapa yang dipilih Gendari?",indonesian,content,2.0,2.0,1.0,2.6666666666666665,0.7777777777777778,11,66.66666666666667,3.0
-id_content_227,Bagaimana kira-kira kisah mereka?,indonesian,content,1.3333333333333333,1.0,0,0,0.75,5,0,0.0
-id_content_228,Mengapa engkau lari diam-diam dan mengakali aku?,indonesian,content,1.5,2.0,0,3.0,0.5714285714285714,8,0.0,2.0
-id_content_229,Mengapa ajibon memberontak?,indonesian,content,1.5,1.0,0,2.0,1.0,4,0.0,1.0
-id_content_230,"ALERGI BISA DIATASI, MENGAPA TIDAK?",indonesian,content,1.5,2.0,0,2.0,0.6,7,0.0,1.0
-id_content_231,Bagaimana Ferry dan kawan-kawan dapat menghadapi masalah yang kini datang dan semakin lama semakin menimbulkan konflik pada persahabatan mereka?,indonesian,content,2.4444444444444446,3.0,1.0,3.6666666666666665,0.6842105263157895,20,50.0,3.0
-id_content_232,"Bagaimana dengan kaum laki-laki, apakah kalian mau direndam dalam air yang kotor seperti itu?",indonesian,content,2.7857142857142856,3.0,0,5.0,0.4666666666666667,17,0.0,1.0
-id_content_233,Kok kamu terlambat? - Kenapa kamu terlambat?,indonesian,content,2.2,2.0,0,2.5,0.5,9,0.0,2.0
-id_content_234,Siapa yang ribut?,indonesian,content,1.5,2.0,0,0,0.3333333333333333,4,0,0.0
-id_content_235,"Kecamatan ini dapat dibilang kecamatan yang maju, mengapa?",indonesian,content,2.0,3.0,1.0,2.0,0.625,10,50.0,2.0
-id_content_236,Mengapa engkau sujud demikian?,indonesian,content,1.3333333333333333,1.0,0,3.0,0.5,5,0.0,1.0
-id_content_237,Apa yang akan dilakukan Karin ketika melihat Wisnu dan Rasti bahagia?,indonesian,content,1.8,5.0,2.0,2.5,0.5454545454545454,12,100.0,2.0
-id_content_238,"Bagaimana kita menghitung angka 28,57 %?",indonesian,content,1.4,3.0,0,3.0,0.5,7,0.0,1.0
-id_content_239,"Kemudian, bagaimana mungkin untuk mengukur tindakan-tindakan dan kejadian yang bertujuan untuk menciptakan sebuah norma legal?",indonesian,content,1.6428571428571428,6.0,1.5,2.0,0.6666666666666666,17,100.0,3.0
-id_content_240,"``Wahai Gajah Mada, apa maksudnya engkau bermulut besar terhadap kami?",indonesian,content,1.8,5.0,1.0,2.0,0.5454545454545454,14,100.0,1.0
-id_content_241,"Jika Allah di pihak kita, siapakah yang akan melawan kita?",indonesian,content,1.9,3.0,1.0,2.0,0.2727272727272727,13,100.0,1.0
-id_content_242,``Mengapa bukan Jenderal Gatot Subroto?,indonesian,content,1.25,2.0,0,0,0.8,7,0,0.0
-id_content_243,Kapankah Kristus akan datang kembali?,indonesian,content,1.8,2.0,1.0,1.5,0.6666666666666666,7,50.0,2.0
-id_content_244,Ke manakah kemudian ia berpihak?,indonesian,content,1.8,2.0,0,3.0,0.3333333333333333,7,0.0,1.0
-id_content_245,Bagaimana ini bisa terjadi?,indonesian,content,2.0,1.0,0,2.0,0.5,5,0.0,1.0
-id_content_246,"Jadi Abah Buyut sendiri merupakan sebuah misteri terpisah, darimana beliau belajar Maenpo ini, apakah hasil perenungan sendiri atau ada yang mengajari?",indonesian,content,2.0476190476190474,6.0,1.0,2.2,0.5909090909090909,25,75.0,5.0
-id_content_247,Di Mana Melani?,indonesian,content,1.0,2.0,0,0,0.3333333333333333,4,0,0.0
-id_content_248,``Bagaimana kau menginterpretasikan pepohonan itu?,indonesian,content,1.25,2.0,0,3.0,0.6,7,0.0,1.0
-id_content_249,``sampai kapan kita mesti ter-doktrin dan terus dicekoki dengan lagu-lagu yang seragam dan ``Maaf'' tak mengindahkan nilai estitika dalam bermusik?,indonesian,content,2.3157894736842106,5.0,1.0,2.4,0.55,24,66.66666666666667,5.0
-id_content_250,"Di zaman reformasi seperti sekarang ini, siapa yang tak kenal Soetandyo Wignjosoebroto?",indonesian,content,1.9090909090909092,3.0,1.0,3.0,0.5,14,100.0,1.0
-id_content_251,"Maka baginda pun memandang kepada nahkoda kapal itu seraya bertitah, apa kabar nahkoda adakah betul seperti kata ahlun nujum beta dan tiada?",indonesian,content,2.3181818181818183,7.0,1.0,3.5,0.5652173913043478,25,50.0,2.0
-id_content_252,Jika elektron tidak jadi jatuh ke-pusatnya apa yang terjadi?,indonesian,content,2.0,2.0,1.0,3.0,0.4444444444444444,10,100.0,2.0
-id_content_253,"Dalam perbincangan pada tahun 1950, fisikawan Enrico Fermi mempertanyakan: apabila sejumlah peradaban ekstraterestrial yang maju ada di Bima Sakti, mengapa bukti seperti pesawat angkasa tidak dapat ditemui?",indonesian,content,3.4615384615384617,5.0,1.5,2.75,0.6296296296296297,31,75.0,4.0
-id_content_254,Benar atau tidak bilangan aku itu?,indonesian,content,1.8,2.0,0,0,0.3333333333333333,7,0,0.0
-id_content_255,Yaksa: Siapakah yang benar-benar berbahagia?,indonesian,content,2.0,3.0,1.0,2.0,0.5,8,100.0,1.0
-id_content_256,(C) Di mana kita saat ini?,indonesian,content,2.6,3.0,0,0,0.3333333333333333,9,0,0.0
-id_content_257,Apa kata dunia bila aku menikahimu yang tidak dikira sebagai istriku?,indonesian,content,1.8333333333333333,4.0,2.0,3.5,0.38461538461538464,14,100.0,2.0
-id_content_258,``Mengapa tidak memakai piano?,indonesian,content,1.3333333333333333,1.0,0,3.0,0.75,6,0.0,1.0
-id_content_259,Apa yang akan terjadi dengan patung ibu Ryan?,indonesian,content,1.5714285714285714,4.0,1.0,2.0,0.5,9,100.0,1.0
-id_content_260,Mengapa kami menggunakan Fusebox sebagai framework?,indonesian,content,1.6,2.0,0,4.0,0.6666666666666666,7,0.0,1.0
-id_content_261,Apa yang terjadi dalam rentang waktu 25 November -- 10 Desember?,indonesian,content,1.5555555555555556,6.0,2.0,2.0,0.5,12,100.0,2.0
-id_content_262,Apa yang harus ia lakukan sebagai langkah awal mencapai cita-citanya dalam industri ini?,indonesian,content,2.230769230769231,3.0,1.0,2.5,0.42857142857142855,15,50.0,2.0
-id_content_263,Siapa yang tak kenal Ramlan Surbakti?,indonesian,content,1.6,3.0,1.0,3.0,0.5,7,100.0,1.0
-id_content_264,"Mengapa engkau tidak memberitahu kepadaku, supaya aku menghantarkan engkau dengan sukacita dan nyanyian dengan rebana dan kecapi?",indonesian,content,2.0,5.0,1.0,4.5,0.3888888888888889,20,50.0,2.0
-id_content_265,"Sampai suatu saat Naia kembali ingat dengan masa lampau termasuk cintanya, Imam. Siapa yang akan dipilih oleh Naia?",indonesian,content,2.2777777777777777,4.0,1.0,2.25,0.5789473684210527,22,75.0,4.0
-id_content_266,Siapa namanya dan siapa nama anaknya?,indonesian,content,1.4285714285714286,4.0,0,0,0.375,9,0,0.0
-id_content_267,Kemana nasib membawa Alif?,indonesian,content,1.3333333333333333,1.0,0,3.0,1.0,5,0.0,1.0
-id_content_268,Di manakah harta raja itu sekarang?,indonesian,content,1.6666666666666667,2.0,0,0,0.42857142857142855,8,0,0.0
-id_content_269,Kan kamu yang bilang? - Bukankah kamu yang bilang demikian?,indonesian,content,2.0,3.0,1.0,1.5,0.2,13,100.0,2.0
-id_content_270,Dan siapakah yang memegang kunci-kunci rahasia itu?,indonesian,content,1.4285714285714286,3.0,1.0,2.0,0.375,9,100.0,1.0
-id_content_271,Bagaimanakah kisah selanjutnya?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
-id_content_272,Siapa sebenarnya João Tavares?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5,0,0.0
-id_content_273,Bagaimana Rafael menghadapi Putri dan Gladis sekaligus?,indonesian,content,1.8333333333333333,3.0,0,4.0,0.8571428571428571,8,0.0,1.0
-id_content_274,"Tapi pada anime OVA Angel Beats, Angel Beats!: Another Epilogue Menceritakan Otonashi yang belum reinkarnasi dan membantu orang-orang yang sudah meninggal di dunia Afterlife Kapan Otonashi Yuzuru mendonorkan jantungnya kepada Kanade?",indonesian,content,2.7096774193548385,5.0,1.0,3.0,0.71875,36,66.66666666666667,5.0
-id_content_275,Bagaimana ia mempelajarinya?,indonesian,content,1.3333333333333333,1.0,0,3.0,0.5,5,0.0,1.0
-id_content_276,Bagaimanakah kelanjutan cerita ini?,indonesian,content,1.25,2.0,0,0,0.6,6,0,0.0
-id_content_277,"Siapa yang telah naik ke sorga, atau turun?",indonesian,content,2.142857142857143,3.0,1.0,2.0,0.375,10,100.0,2.0
-id_content_278,Supir pribadi Eyang Tini bertanya berapa lama lagi mereka akan mencari Kamila?,indonesian,content,2.1818181818181817,3.0,1.0,2.5,0.8333333333333334,13,50.0,2.0
-id_content_279,"Bagaimana bisa ada telur tak terputus, didalam sarangnya sendiri menggulingkan?",indonesian,content,2.5,3.0,1.0,1.6666666666666667,0.5454545454545454,13,66.66666666666667,3.0
-id_content_280,``Mengapa keretanya tak kunjung datang?,indonesian,content,2.6,2.0,0,4.0,0.6666666666666666,8,0.0,1.0
-id_content_281,"Betulkah seperti kata ahlun nujum ini, di mana hendak patik simpangkan perkataan yang sebenar itu?",indonesian,content,2.2666666666666666,4.0,1.0,4.0,0.5625,18,100.0,1.0
-id_content_282,Bagaimana nasib cinta Nadya maupun Imam?,indonesian,content,1.2,4.0,0,0,0.8333333333333334,7,0,0.0
-id_content_283,"Mama Ardi kemudian panik dan mengatakan, mengapa pernikahannya dibatalkan?",indonesian,content,2.111111111111111,4.0,0,2.0,0.8,12,0,2.0
-id_content_284,"Allahku, ya Allahku, mengapa Engkau meninggalkan aku?",indonesian,content,2.625,2.0,0,5.0,0.4444444444444444,12,0.0,1.0
-id_content_285,"``Hai Sura, mengapa kamu melanggar peraturan yang telah kita sepakati berdua?",indonesian,content,2.1,3.0,1.0,3.5,0.6363636363636364,14,50.0,2.0
-id_content_286,Bagaimana mungkin kita tidak mengalami penderitaan karena keterpisahan kemampuan-kemampuan manusiawi kita?,indonesian,content,1.9,3.0,0,5.0,0.5454545454545454,12,0.0,1.0
-id_content_287,Apa yang mahu mereka kerjakan?,indonesian,content,2.5,2.0,1.0,3.0,0.4,6,100.0,1.0
-id_content_288,Apa yang mencegah setan-setan menghasilkan lebih banyak Nefilim pada zaman sekarang?,indonesian,content,1.8,3.0,1.0,2.0,0.7272727272727273,12,50.0,2.0
-id_content_289,Bagaimana pantulan cahaya dari sebuah planet dibiaskan sewaktu memasuki atmosfer bumi?,indonesian,content,2.4,3.0,1.0,2.5,0.7272727272727273,12,50.0,2.0
-id_content_290,Siapakah wanita yang dipilih orang tua Arya?,indonesian,content,1.7142857142857142,3.0,1.0,2.0,0.625,9,100.0,1.0
-id_content_291,Apa artinya ketika kita mengaktan bahwa galat pemenggalan diciptakan ketika kita menghampiri sebuah prosedur matematika?,indonesian,content,2.0,5.0,3.0,3.0,0.5,17,100.0,3.0
-id_content_292,Mengapa mereka menerima?,indonesian,content,1.5,1.0,0,2.0,0.6666666666666666,4,0.0,1.0
-id_content_293,Bagaimana caranya balon udara berpindah dari satu lokasi ke lokasi lain?,indonesian,content,1.7272727272727273,4.0,1.0,2.0,0.6666666666666666,13,100.0,1.0
-id_content_294,Jadi dicoba untuk menjawab pertanyaan-pertanyaan seperti kebutuhan apa yang dicoba dipuaskan oleh seseorang?,indonesian,content,1.4166666666666667,7.0,1.5,1.75,0.5384615384615384,14,75.0,4.0
-id_content_295,Bagaimana di Indonesia?,indonesian,content,1.5,2.0,0,0,0.6666666666666666,4,0,0.0
+unique_id,text,language,type,avg_links_len,avg_max_depth,avg_subordinate_chain_len,avg_verb_edges,lexical_density,n_tokens
+id_content_0,Bagaimana sejarah berdirinya SMAN 1 Pekanbaru yang sudah berusia setengah abad itu?,indonesian,content,2.0,3.0,1.0,2.0,0.5384615384615384,14
+id_content_1,Siapa dapat memastikan apakah sebuah kenyataan itu sesungguhnya impian dan sebuah impian itu justru sesungguhnya kenyataan?,indonesian,content,2.125,4.0,0,2.0,0.5294117647058824,18
+id_content_2,Kamila bertanya kenapa Eyang Tini menyuruhnya naik mobil?,indonesian,content,1.875,3.0,2.0,2.3333333333333335,0.8888888888888888,10
+id_content_3,Siapakah sebenarnya gadis yang mirip si Cemong?,indonesian,content,1.8571428571428572,3.0,0,0,0.5,9
+id_content_4,Dan bagaimanakah kamu lihat keadaannya sekarang?,indonesian,content,1.8571428571428572,2.0,0,4.0,0.5,9
+id_content_5,"Jika bukan dirinya yang akan membantu Zhong memakamkan (dan menghormati) abu ayahnya, siapa lagi yang akan menolong?",indonesian,content,2.611111111111111,7.0,1.3333333333333333,1.5,0.42105263157894735,23
+id_content_6,"Bagaimana nasib Maya, Naomy dan Ryan?",indonesian,content,1.8,3.0,0,0,0.8333333333333334,8
+id_content_7,"Bagaimana Kayla menghadapi Rita sebagai madunya, sementara dirinya semakin lama menjadi semakin sehat?",indonesian,content,2.4285714285714284,3.0,1.0,4.0,0.6666666666666666,17
+id_content_8,Bagaimana kisah selanjutnya?,indonesian,content,1.0,1.0,0,0,1.0,4
+id_content_9,Bagaimana persahabatannya dengan Aldo?,indonesian,content,1.5,2.0,0,0,0.6,6
+id_content_10,Bagaimana manusia sebagai individu dapat masuk ke dalam suatu hubungan dengan Allah?,indonesian,content,2.3636363636363638,3.0,0,3.0,0.5,13
+id_content_11,"Jika Tuhan itu fana 'atau mati, bagaimana nasib ciptaan-Nya seperti manusia?",indonesian,content,2.090909090909091,4.0,0,0,0.5833333333333334,15
+id_content_12,"Selain itu, apa yang dapat kita pelajari dari pria yang disebut bapak pendidikan modern?",indonesian,content,1.8461538461538463,6.0,1.0,2.5,0.42857142857142855,16
+id_content_13,Kemana impian jiwa muda ini membawa mereka?,indonesian,content,2.3333333333333335,3.0,0,3.0,0.7142857142857143,8
+id_content_14,Bagaimana dengan ramalan Florence tentang akan terjadinya pasang tertinggi tersebut?,indonesian,content,2.1,2.0,0,5.0,0.5454545454545454,12
+id_content_15,"Aku selalu bertanya, siapakah diriku sebenarnya di dalam hari-harimu, Viola?",indonesian,content,2.0833333333333335,3.0,0,3.0,0.38461538461538464,16
+id_content_16,Lalu siapa yang akan memperhatikan nasib rakyat kita?,indonesian,content,1.4285714285714286,4.0,1.0,2.0,0.375,9
+id_content_17,Sesudah itu aku bertanya kepadanya: Anak siapakah engkau?,indonesian,content,1.7777777777777777,3.0,0,4.0,0.2,12
+id_content_18,"Pak Douw, anda telah berusaha untuk maju menjadi Bupati, bagaimana kalau seandainya nanti anda gagal mendapatkan dukungan dan tidak terpilih di PILKADA Nabire?",indonesian,content,2.5,4.0,1.5,3.0,0.6521739130434783,26
+id_content_19,Lalu apa yang menentukan suatu campuran akan menghasilkan efek kacang Brasil atau kebalikannya?,indonesian,content,1.6153846153846154,5.0,2.0,2.0,0.5714285714285714,15
+id_content_20,Bagaimana caranya mereka menukarkan jiwa mereka kembali?,indonesian,content,2.142857142857143,2.0,1.0,2.0,0.625,9
+id_content_21,"Bila kita menggunakan semua ini untuk melawan musuh, musuh mana yang tak akan kalah?",indonesian,content,2.3076923076923075,3.0,1.0,3.0,0.35714285714285715,16
+id_content_22,"Permasalahan yang dihadapi ketika itu adalah: siapa yang akan menggantikan Nabi Muhammad, dan sebesar apa kekuasaan yang akan didapatkannya?",indonesian,content,2.6315789473684212,4.0,1.0,1.6666666666666667,0.35,23
+id_content_23,Bagaimana kita tahu bahwa 7 ditambah 8 selalu ada 15?,indonesian,content,1.6666666666666667,3.0,2.0,3.0,0.5,11
+id_content_24,Dan siapakah yang lebih mengampuni dosa selain Allah?,indonesian,content,1.625,4.0,1.0,3.0,0.4444444444444444,10
+id_content_25,"Namun, apa saja yang ditata oleh pemerintah kolonial selanjutnya?",indonesian,content,1.5,4.0,1.0,2.0,0.6666666666666666,11
+id_content_26,"``Tetapi Andreas menjawab dan berkata kepada saudara-saudaranya, 'Apa pendapat kalian tentang apa yang baru saja dikatakannya itu?",indonesian,content,2.0,5.0,1.0,3.6666666666666665,0.47368421052631576,23
+id_content_27,Apa yang herus dilakukan Winnie?,indonesian,content,1.75,2.0,1.0,3.0,0.6,6
+id_content_28,Apa saja 3 ranah berbeda warna itu?,indonesian,content,1.5,3.0,0,0,0.5714285714285714,8
+id_content_29,Bagaimana King bisa tertarik pada bisnis perhotelan dan pijat kesehatan?,indonesian,content,1.6666666666666667,3.0,0,3.0,0.7,11
+id_content_30,"Siapa yang akan mengira bahwa Argentina, sebuah negara yang terisolir akan pergi berperang melawan pelanggan terbesarnya dalam ekspor hasil pertanian -- Inggris?",indonesian,content,2.5714285714285716,7.0,2.0,1.75,0.5454545454545454,25
+id_content_31,Siapakah pendusta itu?,indonesian,content,1.3333333333333333,2.0,0,0,0.25,5
+id_content_32,Mengapa diletakkan di perbatasan?,indonesian,content,1.3333333333333333,2.0,0,2.0,0.75,5
+id_content_33,"Maka kata Pak Belalang, dari mana datang dan apakah hajat?",indonesian,content,2.1,3.0,1.0,2.5,0.5454545454545454,13
+id_content_34,Bagaimana pasangan ini bertahan hidup di tengah pertikaian antara manusia dan fangire?,indonesian,content,1.6363636363636365,5.0,0,4.0,0.6666666666666666,13
+id_content_35,Bagaimanakah kisah selanjutnya?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5
+id_content_36,"Mereka memang berbeda, tetapi bagaimanakah bisa dikenali?",indonesian,content,2.5714285714285716,3.0,0,2.0,0.5,10
+id_content_37,Siapakah yang dapat mengatakan kepada manusia apa yang akan terjadi di bawah matahari sesudah dia?,indonesian,content,1.8666666666666667,7.0,1.0,2.5,0.3125,17
+id_content_38,Lalu bagaimana dengan kisah cinta Mutia dan Fadel?,indonesian,content,1.2857142857142858,5.0,0,0,0.625,9
+id_content_39,Berfirmanlah TUHAN kepada Samuel: ``Berapa lama lagi engkau berdukacita karena Saul?,indonesian,content,2.5454545454545454,3.0,1.0,3.5,0.5833333333333334,15
+id_content_40,Kenapa Harus Inul?,indonesian,content,1.0,1.0,0,2.0,1.0,4
+id_content_41,Kenapa para penambang menggunakan tembakau kunyah?,indonesian,content,1.4,2.0,0,1.5,0.8333333333333334,7
+id_content_42,Bagaimana dengan Bu Acih yang juga telanjur sayang kepada Sinar?,indonesian,content,2.6666666666666665,3.0,0,3.0,0.7,11
+id_content_43,"Ratu percaya hal tersebut dan setuju, tapi apa yang harus dilakukan?",indonesian,content,2.2,3.0,1.0,2.0,0.45454545454545453,13
+id_content_44,Tetapi Ia berkata kepada mereka: ``Berapa banyak roti yang ada padamu?,indonesian,content,2.0,6.0,1.0,2.5,0.5,15
+id_content_45,Bagaimana jugakah reaksi Rendra jika mengetahui hal tersebut?,indonesian,content,2.375,2.0,0,5.0,0.6666666666666666,10
+id_content_46,"Bagaimana pula kisah cinta segitiga antara Hafizah, Samsul dan Bambang?",indonesian,content,1.8888888888888888,3.0,0,0,0.8,12
+id_content_47,Bagaimana akhir kisah cinta Gaby dan Popo?,indonesian,content,1.3333333333333333,4.0,0,0,0.8571428571428571,8
+id_content_48,"Berkata Ibrahim kepada Namrud itu: ``Jika demikian halnya, mengapa kamu sembah patung-patung itu, yang tidak dapat berkata, tidak dapat melihat dan tidak dapat mendengar, tidak dapat membawa manfaat atau menolak mudharat, bahkan tidak dapat menolong dirinya dari kehancuran dan kebinasaan?",indonesian,content,2.951219512195122,7.0,1.0,3.125,0.40476190476190477,50
+id_content_49,Mengapa Indonesia tidak mampu berbuat seperti negara-negara tesebut?,indonesian,content,2.0,2.0,0,4.0,0.5,9
+id_content_50,"Bila anjing-anjing itu ada di dekat kita, tidakkah kita mencium baunya?",indonesian,content,2.25,3.0,1.0,3.5,0.38461538461538464,15
+id_content_51,Bagaimana kelanjutan dari kisah cinta MAT PEI-AISAH?,indonesian,content,1.1666666666666667,4.0,0,0,0.8571428571428571,8
+id_content_52,Yang menjadi masalah kemudian: bagaimana menghubungkan tuntutan politis dan ilmiah di atas?,indonesian,content,1.8181818181818181,5.0,1.0,2.5,0.75,14
+id_content_53,Siapakah yang menolong kita dari tangan Allah yang maha dahsyat ini?,indonesian,content,1.6363636363636365,5.0,1.0,3.0,0.4166666666666667,13
+id_content_54,"Persoalan berikutnya, bagaimana menentukan mana pelaku dan mana korban?",indonesian,content,1.875,4.0,1.0,2.0,0.6666666666666666,11
+id_content_55,"Dan kalau seseorang mengkritik Raja, saya ingin tahu mengapa?",indonesian,content,2.625,2.0,1.0,3.5,0.4444444444444444,11
+id_content_56,Apa arti globalisasi buat Lippo?,indonesian,content,1.75,2.0,0,0,0.6,6
+id_content_57,Apa arti semua ini?,indonesian,content,1.3333333333333333,2.0,0,0,0.25,5
+id_content_58,Apa yang membuatnya melakukan pembunuhan dengan darah dingin?,indonesian,content,1.375,5.0,2.0,2.0,0.5555555555555556,10
+id_content_59,Mengapa Kanade ada lebih dulu di dunia Afterlife?,indonesian,content,1.7142857142857142,2.0,0,4.0,0.875,9
+id_content_60,"Pada kesempatan yang ke-4, berkatalah perempuan itu kepadanya: ``Bagaimana mungkin engkau berkata: Aku cinta kepadamu, padahal hatimu tidak tertuju kepadaku?",indonesian,content,2.375,5.0,1.0,3.5,0.52,31
+id_content_61,Kenapa harus smada?,indonesian,content,1.5,1.0,0,0,0.6666666666666666,4
+id_content_62,Dan siapa yang tinju?,indonesian,content,1.3333333333333333,2.0,1.0,1.0,0.25,5
+id_content_63,Bagaimanakah dengan umur kita?,indonesian,content,1.5,2.0,0,0,0.4,6
+id_content_64,Makanan pertama apa yang dimakan orang di surga?,indonesian,content,1.8571428571428572,3.0,1.0,3.0,0.625,9
+id_content_65,Apa yang akan terjadi dengan Popo dan Nando?,indonesian,content,1.7142857142857142,4.0,1.0,2.0,0.375,9
+id_content_66,Bagaimanakah Ia melakukan-Nya?,indonesian,content,1.5,2.0,0,3.0,0.4,6
+id_content_67,"Jika memang ada niat baik untuk membantu dari pihak Wu, mengapa Sun Quan merahasiakan pasukan itu?",indonesian,content,2.2666666666666666,4.0,2.0,3.3333333333333335,0.75,18
+id_content_68,"Apa yang ia lakukan, dan mengapa ia melakukannya?",indonesian,content,2.125,3.0,1.0,2.0,0.3333333333333333,11
+id_content_69,Bagaimana bisa kita tidak mengungkapkan kesedihan yang mendalam akan semua hal ini?,indonesian,content,1.8181818181818181,4.0,1.0,3.5,0.5,13
+id_content_70,"Khidir menjawab salamnya dan bertanya, ``Dari mana datangnya kesejahteraan di bumi yang tidak mempunyai kesejahteraan?",indonesian,content,2.0,5.0,1.0,2.75,0.5294117647058824,20
+id_content_71,Dimana letak pikiran?,indonesian,content,1.0,2.0,0,0,0.6666666666666666,4
+id_content_72,"``Hai Muhammad, mengapa kamu mengharamkan apa yang Allah menghalalkannya bagimu; kamu mencari kesenangan hati istri-istrimu?",indonesian,content,2.0588235294117645,5.0,1.0,3.6666666666666665,0.5,22
+id_content_73,Siapakah pencipta bumi ini?,indonesian,content,1.5,2.0,0,0,0.4,6
+id_content_74,Bagaimanakah kelanjutan kisah para remaja yang masih di bawah umur ini?,indonesian,content,2.0,4.0,0,0,0.5833333333333334,13
+id_content_75,Lalu bagaimana cara menafkah harta sesuai tuntunan Alloh dan Rasul-Nya?,indonesian,content,1.4,5.0,1.0,2.0,0.7272727272727273,12
+id_content_76,"Maka, siapa Nama-Nya?",indonesian,content,1.3333333333333333,2.0,0,0,0.25,6
+id_content_77,Sampai kapan Nino akan berpura-pura di depan neneknya kalau dia dan Abel berpacaran?,indonesian,content,2.3846153846153846,4.0,1.0,3.0,0.5,15
+id_content_78,Siapa yang berani mencuri binatang buas ini?,indonesian,content,1.6666666666666667,3.0,1.0,3.0,0.5714285714285714,8
+id_content_79,"Apabila didengarnya segala kedursilaan yang dilakukan anak-anaknya, berkatalah ia kepada mereka: ``Mengapa kamu melakukan hal-hal yang begitu, sehingga kudengar dari segenap bangsa ini tentang perbuatan-perbuatanmu yang jahat itu?",indonesian,content,2.3125,6.0,1.0,3.4,0.3939393939393939,38
+id_content_80,"Kalo Nadya sakit, siapa yang akan mengurus mereka?",indonesian,content,1.7142857142857142,2.0,1.0,2.0,0.375,10
+id_content_81,Kapan ia tidak terikat lagi?,indonesian,content,1.75,1.0,0,4.0,0.6,6
+id_content_82,"Dan pada siapakah Siera akhirnya jatuh cinta, Tristan atau Rian?",indonesian,content,2.1,4.0,0,5.0,0.5454545454545454,13
+id_content_83,Mengapa Makoto berdandan seperti perempuan?,indonesian,content,1.5,2.0,0,3.0,0.8,6
+id_content_84,Taufan (Fadil) bertanya apa maksudnya pada Ambar?,indonesian,content,1.8571428571428572,4.0,0,2.0,0.625,11
+id_content_85,Apa yang akan terjadi kali ini?,indonesian,content,1.6,3.0,1.0,2.0,0.3333333333333333,7
+id_content_86,"Ia lalu bertanya kepada ibunya ``Ibu, dimana kita mendapatkan seekor bebek muda?",indonesian,content,2.25,3.0,1.0,4.0,0.5384615384615384,16
+id_content_87,Kepada semua imam-imam Yoas berkata: ``Mengapa kamu tidak perbaiki kerusakan rumah itu?,indonesian,content,1.9090909090909092,4.0,1.0,3.5,0.5833333333333334,15
+id_content_88,Mengapa pendekatan menjadi begitu penting?,indonesian,content,1.5,2.0,0,3.0,1.0,6
+id_content_89,"Katakanlah tidak ada, mengapa Yesus memberikan contoh demikian?",indonesian,content,1.75,4.0,2.0,2.3333333333333335,0.6666666666666666,11
+id_content_90,Siapakah sebenarnya sosok tersebut?,indonesian,content,1.75,2.0,0,0,0.4,6
+id_content_91,Bagaimana hubungan dia dengan Amara?,indonesian,content,1.5,2.0,0,0,0.6,6
+id_content_92,"Lalu bagaimana dengan ribuan kosakata, berikut dengan cara pengucapannya yang benar yang diserap oleh si kecil -- apakah Anda yang mengajarkannya secara khusus?",indonesian,content,2.6666666666666665,5.0,1.0,2.3333333333333335,0.48,28
+id_content_93,Berapakah harga emas 3 bulan mendatang?,indonesian,content,1.5,2.0,0,0,0.5714285714285714,8
+id_content_94,Wiwi bertanya kenapa tidak Eyang Tini yang mengambilnya sendiri?,indonesian,content,1.6666666666666667,3.0,1.0,2.5,0.7,11
+id_content_95,``Siapa Ilham Aliyev?,indonesian,content,1.0,2.0,0,0,0.6666666666666666,5
+id_content_96,Bagaimana bila proses itu terus berlangsung seratus tahun?,indonesian,content,2.4285714285714284,2.0,0,5.0,0.625,9
+id_content_97,"Mengapa?, apakah karena Rasulullah memberikan belanja yang berlebih terhadap Zainab?",indonesian,content,2.2,4.0,1.0,3.5,0.6363636363636364,14
+id_content_98,"Lebih lanjut, bagaimana mengukur kedua aspek dari satu kegiatan iptek secara konsisten dan relatif obyektif?",indonesian,content,2.4285714285714284,4.0,1.0,2.0,0.6666666666666666,17
+id_content_99,Maumu kapan sih? - Sebenarnya kapan yang kamu mau?,indonesian,content,2.0,3.0,1.0,2.0,0.6666666666666666,12
+id_content_100,Yang belum jelas adalah mengapa prasasti mengenai pengembalian pemerintahan kepada Raja Sunda itu terdapat di sana?,indonesian,content,2.466666666666667,5.0,1.0,2.0,0.5625,17
+id_content_101,"Ayahnya bahkan berkata, ``Mengapa tidak engkau beri tahu bahwa begitu mulia dan suci maksudmu?",indonesian,content,2.1333333333333333,3.0,1.0,2.6666666666666665,0.625,19
+id_content_102,Siapa tahu _ Mungkin besok?,indonesian,content,1.3333333333333333,2.0,0,2.0,0.75,6
+id_content_103,Siapakah yang berhasil memenangkan cinta Nayla?,indonesian,content,1.3333333333333333,4.0,2.0,1.5,0.5714285714285714,8
+id_content_104,Kenapa limbahnya menjadi tanggung jawab masyarakat?,indonesian,content,1.6666666666666667,2.0,0,3.0,0.8571428571428571,8
+id_content_105,Bagaimana hubungan LARA dengan VANO dan DION selanjutnya?,indonesian,content,2.142857142857143,3.0,0,0,0.75,9
+id_content_106,Mengapa etimologi ``marga'' diambil dari Cakap Karo (merga) dan ``merga'' berubah menjadi marga?,indonesian,content,2.923076923076923,3.0,1.0,2.6666666666666665,0.8571428571428571,20
+id_content_107,Maka bagaimana sebuah sistem prosesor tunggal dapat menjalankan multi-proses?,indonesian,content,2.75,3.0,0,4.0,0.6666666666666666,10
+id_content_108,Siapa yang memberikan Nama ini kepadamu?,indonesian,content,1.5,4.0,1.0,2.0,0.2857142857142857,8
+id_content_109,"Apa kabarnya, bunda?",indonesian,content,2.0,2.0,0,0,0.5,6
+id_content_110,"Bagaimana dengan Yohanes, bila dalam surat amnya ia berkata bahwa ada Tiga yang memberi kesaksian, Roh dan air dan darah?",indonesian,content,2.45,5.0,1.0,3.0,0.5238095238095238,24
+id_content_111,"Sekarang, siapa yang menolak Partai Komunis ini?",indonesian,content,1.5,3.0,1.0,2.0,0.5714285714285714,9
+id_content_112,Bagaimana kisah selanjutnya?,indonesian,content,1.0,1.0,0,0,1.0,4
+id_content_113,"Perhentian sementara, mengapa tidak?",indonesian,content,1.6666666666666667,2.0,0,0,0.75,6
+id_content_114,Bagaimanakah cara Sultan dan Atikah mengatasi semua rintangan yang menghadang hubungan cinta mereka?,indonesian,content,2.0,4.0,1.0,2.5,0.6,16
+id_content_115,Orang dalam kondisi seperti apa yang tidak boleh dibekam?,indonesian,content,2.0,4.0,1.0,2.0,0.3333333333333333,10
+id_content_116,- Apa yang Disebut Berpikir?,indonesian,content,1.3333333333333333,2.0,2.0,1.0,0.5,6
+id_content_117,Fadil bilang apa benar Kamila belum ditemukan?,indonesian,content,1.6666666666666667,3.0,1.0,1.0,0.8571428571428571,8
+id_content_118,Dan bagaimana dengan Aurelie sendiri?,indonesian,content,1.25,2.0,0,0,0.4,6
+id_content_119,Bagaimana pula jika peristiwa ``kehabisan cita'' dalam hidup pasangan suami-istri?,indonesian,content,2.4444444444444446,3.0,1.0,2.0,0.8,13
+id_content_120,Siapa sangka bahwa mereka ditakdirkan untuk saling mencintai?,indonesian,content,1.8571428571428572,3.0,2.0,2.3333333333333335,0.5,9
+id_content_121,Mengapa hal ini tidak terjadi dalam Protestanisme?,indonesian,content,2.0,2.0,0,4.0,0.5714285714285714,8
+id_content_122,Bagaimana perjuangan hidup Isabella?,indonesian,content,1.0,2.0,0,0,1.0,5
+id_content_123,"Kenapa marah, kenapa murka?",indonesian,content,1.6666666666666667,2.0,0,1.5,1.0,6
+id_content_124,Yang Islami itu yang mana?,indonesian,content,2.0,2.0,0,0,0.4,6
+id_content_125,Dan kenapa ia setara dengan tiga koma empat belas?,indonesian,content,1.625,4.0,0,0,0.3333333333333333,10
+id_content_126,Bagaimana reaksi Bayu saat mengetahui bahwa Jelita adalah puteri dari orang yang sudah membunuh papanya?,indonesian,content,1.8,6.0,1.5,2.0,0.5625,17
+id_content_127,"12.4 Jika dia tidak memiliki keahlian, maka latihlah dia dengan keahlianmu, karena bagaimana seorang Masehi hidup di antara kamu tanpa pekerjaan?",indonesian,content,2.6363636363636362,4.0,1.0,2.6666666666666665,0.34782608695652173,26
+id_content_128,Bagaimana kisah selanjutnya?,indonesian,content,1.0,1.0,0,0,1.0,4
+id_content_129,"Jalan Dusun pun demikian, karena Luas wilayah teritorial desa Tunjungmuli yang melebihi batas sewajarnya menjadikan perawatan jalan dusun susah di laksanakan karena memerlukan budget atau anggaran yang sangat besar hanya untuk mengurusi Jalan, bagaimana dengan Pendidikan?",indonesian,content,2.861111111111111,7.0,1.0,2.4,0.7027027027027027,40
+id_content_130,Siapa yang akan menyangka bahwa Inggris akan pergi berperang untuk mempertahankan sisa-sisa Imperiumnya 37 tahun setelah Perang Dunia II?,indonesian,content,2.0,6.0,3.0,2.25,0.5263157894736842,20
+id_content_131,Sampai kapankah Aladin sanggup mempertahankan lampu ajaib tersebut di tangannya?,indonesian,content,1.8181818181818181,2.0,0,5.0,0.5833333333333334,13
+id_content_132,"Sebuah pertanyaan, mengapa dipahatkan relief Garudeya?",indonesian,content,1.4,2.0,0,3.0,0.8333333333333334,8
+id_content_133,"Menurutmu, di manakah cinta pada kata-kata itu?",indonesian,content,1.875,2.0,0,0,0.2222222222222222,11
+id_content_134,"Di mana posisi Islam vis a vis ideologi-ideologi sekular seperti demokrasi, sosialisme dan Marxisme?",indonesian,content,2.0,4.0,0,0,0.7142857142857143,16
+id_content_135,Siapa yang beresiko sepsis?,indonesian,content,1.3333333333333333,2.0,1.0,2.0,0.5,5
+id_content_136,"Tiba-tiba entah dari mana, terdengar suara, ``Kau, mau kertas merah?",indonesian,content,2.5555555555555554,3.0,0,2.3333333333333335,0.7,15
+id_content_137,Apa yang harus aku lakukan sekarang?,indonesian,content,2.2,2.0,1.0,3.0,0.3333333333333333,7
+id_content_138,Bagaimana jika ia tidak akan pergi ke bola itu?,indonesian,content,2.375,2.0,0,5.0,0.3333333333333333,10
+id_content_139,"Cordelia lalu menunjuk kepada kedua kakaknya seraya berkata bahwa jika mereka mencintai ayah mereka, mengapa mereka menikah dengan orang lain?",indonesian,content,2.1,5.0,3.0,3.5,0.5714285714285714,23
+id_content_140,"'Kalau seandainya kamu memiliki dunia dan apa yang ada di dalamnya dan sepertinya lagi, apakah kamu akan menebus dirimu?",indonesian,content,2.380952380952381,6.0,1.0,3.3333333333333335,0.36363636363636365,25
+id_content_141,Apa yang terjadi jika Yellowstone meletus?,indonesian,content,1.8,3.0,2.0,2.0,0.5,7
+id_content_142,"Dosen-dosen setiap hari rabu dalam sebuah forum yang disebut Diskusi Reboan dengan antusias berdebat, bertukar pikiran dan mengasah ketajaman analisis, siapa yang tak rindu suasana seperti ini?",indonesian,content,2.730769230769231,5.0,1.0,1.6,0.5925925925925926,30
+id_content_143,Kapankah kiranya masalah keluarganya akan selesai?,indonesian,content,2.875,3.0,0,3.0,0.5555555555555556,10
+id_content_144,"Pada saat itu, ia mempertanyakan apa arti MASOVU?",indonesian,content,1.4285714285714286,3.0,0,3.0,0.5,10
+id_content_145,"Abu Bakar dan Umar bertanya,'' Apa yang membuatmu menangis?",indonesian,content,2.0,3.0,2.0,1.6666666666666667,0.6,13
+id_content_146,Bagaimana sepak terjang Wataru yang terjepit di antara keduanya?,indonesian,content,1.8888888888888888,4.0,1.0,2.0,0.5,11
+id_content_147,Bagaimana kelanjutan kisah mereka?,indonesian,content,1.0,2.0,0,0,0.75,5
+id_content_148,"Setelah itu, siapa tahu?",indonesian,content,2.6666666666666665,1.0,0,3.0,0.25,6
+id_content_149,Namun apa yang terjadi?,indonesian,content,1.3333333333333333,2.0,1.0,1.0,0.5,5
+id_content_150,"Loh, kenapa dia di sini? - Kenapa dia ada di sini?",indonesian,content,2.4444444444444446,3.0,1.0,3.0,0.5,14
+id_content_151,Mengapa saya yang menjadi Bhikkhu?,indonesian,content,1.25,2.0,1.0,2.0,0.6,6
+id_content_152,"(Roma 11:13) Akan tetapi, siapakah yang mendirikan sidang-sidang di Kolose, Hierapolis dan Laodikia?",indonesian,content,2.0,5.0,1.0,3.0,0.5,19
+id_content_153,Bagaimana SAFIRA akan menggunakan masa lalu ANISSA sebagai kartu as-nya?,indonesian,content,1.8,3.0,1.0,2.0,0.7272727272727273,12
+id_content_154,"Siapakah yang Nando pilih, Idayu atau Mira?",indonesian,content,2.4285714285714284,3.0,1.0,2.0,0.5,10
+id_content_155,Berapa hari pengaturan tersebut dapat dilaksanakan?,indonesian,content,2.0,2.0,0,2.0,0.6666666666666666,7
+id_content_156,"Bagaimana mungkin rambut dan kuku tumbuh, padahal manusia tidak memakan rambut atau kuku?",indonesian,content,2.25,4.0,1.0,3.5,0.6923076923076923,15
+id_content_157,Indy bertanya memang siapa yang sakit?,indonesian,content,1.4,3.0,0,3.0,0.6666666666666666,7
+id_content_158,Indy bilang ada apa mereka menyuruhnya datang?,indonesian,content,1.2857142857142858,4.0,1.5,1.5,0.625,9
+id_content_159,"Bagaimana akhir hubungan Ningsih, Ones dan Cecep?",indonesian,content,1.6666666666666667,4.0,0,0,0.8571428571428571,9
+id_content_160,``Mengapakah kamu tidak mau menyembah Allah SWT?,indonesian,content,2.0,2.0,0,4.0,0.5,10
+id_content_161,"Lantas, berapa jumlah fosfor yang dilepaskan oleh penduduk bumi sekarang yang sudah mencapai sekitar 6,3 miliar jiwa?",indonesian,content,2.25,6.0,1.0,3.0,0.5882352941176471,19
+id_content_162,Kenapa si pelanggan tidak merasakan pergantian itu?,indonesian,content,1.6666666666666667,2.0,0,4.0,0.5714285714285714,8
+id_content_163,"Jenuh mencari tiada jumpa, sambil berkata, siapakah gerangan agaknya tahu bertenung ini?",indonesian,content,2.5833333333333335,3.0,1.3333333333333333,2.0,0.6153846153846154,16
+id_content_164,Bagaimana akhir kisah ini?,indonesian,content,1.0,2.0,0,0,0.75,5
+id_content_165,Siapa yang akan dipilih oleh Naia?,indonesian,content,1.8,3.0,1.0,2.0,0.3333333333333333,7
+id_content_166,Namun apa yang harus dilakukan jika air ketuban pecah di masa janin belum waktunya lahir?,indonesian,content,2.066666666666667,4.0,1.0,1.3333333333333333,0.5625,17
+id_content_167,Apa yang terjadi dengan Aisyah dan Kirani jika mempunyai mertua yang sama?,indonesian,content,1.8181818181818181,5.0,2.0,2.5,0.5,13
+id_content_168,Sebaliknya saya bertanya mengapa kamu tidak berkabung bagi-Nya di tempat ini?,indonesian,content,2.0,4.0,1.0,3.5,0.4166666666666667,13
+id_content_169,Kapan ayah pulang?,indonesian,content,1.5,1.0,0,2.0,1.0,4
+id_content_170,Apa yang akan terjadi?,indonesian,content,2.0,2.0,1.0,1.0,0.25,5
+id_content_171,"Loh, apa-apaan ini! - Apa yang terjadi di sini?",indonesian,content,1.8571428571428572,4.0,1.0,2.0,0.375,12
+id_content_172,Bagaimana nasib kisah cinta Yopie dengan Astuti?,indonesian,content,1.1666666666666667,5.0,0,0,0.8571428571428571,8
+id_content_173,Bagaimana Wataru yang bukan keturunan Raja Fangire memiliki Kiva?,indonesian,content,2.75,4.0,0,3.0,0.7777777777777778,10
+id_content_174,Bagaimana kalau pemberian lain sebagai hadiah untukmu?,indonesian,content,1.5714285714285714,3.0,0,0,0.5,9
+id_content_175,Mengapa engkau lari diam-diam dan mengakali aku?,indonesian,content,1.5,2.0,0,3.0,0.5714285714285714,8
+id_content_176,"Mentari pun shock, siapakah Bulan?",indonesian,content,1.6,2.0,0,3.0,0.5,8
+id_content_177,"Namun kalau memang demikian adanya, bagaimanasebuah argument-argument kosmologis -- secara formal syah kalau premis menggunakan satu istilah dengan pengertian tertentu dan dalam kesimpulannya menggunakan istilah yang sama dengan arti yang berbeda sama sekali?",indonesian,content,2.40625,7.0,1.0,3.0,0.6060606060606061,36
+id_content_178,Pembagian isi pasal: Dari manakah datangnya sengketa dan pertengkaran di antara kamu?,indonesian,content,1.9230769230769231,4.0,0,3.0,0.5,16
+id_content_179,Andara bertanya ini villa siapa?,indonesian,content,1.25,2.0,0,2.0,0.6,6
+id_content_180,"Lalu, mengapa para pengembang menggunakan nama ``Catfiz''?",indonesian,content,2.1666666666666665,2.0,0,4.0,0.7142857142857143,11
+id_content_181,Kok dia mukanya masam? - Kenapa dia mukanya masam?,indonesian,content,2.4444444444444446,4.0,0,0,0.5,13
+id_content_182,Mengapa orang mau melakukan baptisan ulang?,indonesian,content,1.6,2.0,0,1.5,0.8333333333333334,7
+id_content_183,Apa sebab Sultan Buton yang pertama itu dilantik / dinobatkan oleh Imam Fathani?,indonesian,content,2.3636363636363638,5.0,1.0,1.5,0.6666666666666666,14
+id_content_184,"Sayang, dia bertanya, apa kabarnya dengan isterimu yang berkulit sawo matang?",indonesian,content,1.6666666666666667,5.0,1.0,2.5,0.46153846153846156,16
+id_content_185,Bagaimana sikap ANISSA jika ia tahu masa lalu keluarganya?,indonesian,content,1.5555555555555556,4.0,1.0,3.0,0.7,11
+id_content_186,Namun tiga hal yang mendasari seluruh karyanya adalah pertanyaan-pertanyaan: Apa artinya untuk hidup?,indonesian,content,2.4285714285714284,4.0,1.0,2.5,0.4666666666666667,17
+id_content_187,Bagaimanakah Dini dan Adrian menyiasati pernikahan mereka?,indonesian,content,2.0,3.0,0,3.0,0.625,9
+id_content_188,Mengapa Ibu Pertiwi belum juga bisa menjadi mercusuar dunia?,indonesian,content,2.5,2.0,0,5.0,0.7777777777777778,10
+id_content_189,"Banyak warga desa Jipang mengkeramatkan tempat ini, kenapa kok dikeramatkan?",indonesian,content,1.8888888888888888,3.0,1.0,2.5,0.7,12
+id_content_190,Lalu bagaimana dampaknya terhadap posisi keuangan PT CPOKU?,indonesian,content,1.3333333333333333,5.0,0,0,0.6,11
+id_content_191,"Apa yang sudah kukatakan padanya, si pembuat Tintin, dan akhirnya mendunia?",indonesian,content,2.8333333333333335,4.0,1.0,4.0,0.38461538461538464,16
+id_content_192,Siapakah yang mendapatkan hukuman itu?,indonesian,content,1.4,3.0,1.0,2.0,0.3333333333333333,7
+id_content_193,Dan bagaimanakah Malin Kundang yang sudah menjadi orang Jakarta?,indonesian,content,1.7777777777777777,3.0,1.0,2.0,0.6,11
+id_content_194,Bagaimana mungkin sebuah fakultas yang gedungnya saja masih jauh dari layak bisa mendidik mahasiswa hingga menjadi sarjana ilmu sosial yang bermutu?,indonesian,content,3.0476190476190474,5.0,1.0,2.75,0.6363636363636364,23
+id_content_195,sudah berapa tahun berapa jumlahnya?,indonesian,content,1.4,2.0,0,0,0.8333333333333334,7
+id_content_196,Dan apa yang bisa dilakukan oleh Vicky dan Misa untuk menyelamatkan saudara mereka?,indonesian,content,1.8333333333333333,4.0,2.0,2.5,0.38461538461538464,14
+id_content_197,Bagaimanakah kelanjutan kisah cinta Frans dan Livia?,indonesian,content,1.2857142857142858,5.0,0,0,0.75,9
+id_content_198,"Tanpa diri sendiri mencapai pencerahan terlebih dahulu, bagaimana mungkin dapat mencerahkan mahkluk lain?",indonesian,content,2.0,3.0,0,2.5,0.6153846153846154,15
+id_content_199,Apa kabar Sahibul Menara?,indonesian,content,1.0,3.0,0,0,0.75,5
+id_content_200,Pernah memenangkan penghargaan komik terbaik dari Kodansha Siapa yang menyangka bahwa di dunia ini ada penyihir?,indonesian,content,2.1333333333333333,4.0,2.0,2.3333333333333335,0.625,17
+id_content_201,"Bagaimanakah kelanjutan kisah ini, apakah Intan berhasil menyelamatkan Kasih?",indonesian,content,1.9,3.0,1.0,2.5,0.7272727272727273,13
+id_content_202,Siapa yang menjadi raja?,indonesian,content,1.3333333333333333,2.0,1.0,2.0,0.5,5
+id_content_203,AMY GOODMAN: Mengapa anda mengatakan bahwa Presiden Aristide terobsesi dengan kekuasaan?,indonesian,content,3.1,3.0,1.0,1.5,0.7272727272727273,13
+id_content_204,Andara bilang bagaimana dengan dirinya?,indonesian,content,1.6,2.0,0,2.0,0.5,7
+id_content_205,Mengapa Komunikasi Kita Pelajari dan Teliti?,indonesian,content,1.8,2.0,0,2.5,0.6666666666666666,7
+id_content_206,Apa yang akan ANISSA lakukan setelah tahu semua rencana busuk Safira?,indonesian,content,1.9,4.0,2.0,2.5,0.5454545454545454,12
+id_content_207,Mengapa menyendiri disini?,indonesian,content,1.0,1.0,0,2.0,1.0,4
+id_content_208,Apa gunanya persetujuan ini apabila buku dari seorang pengarang di sebuah negara yang memiliki perlindungan yang baik diterbitkan di sebuah negara yang perlindungannya buruk atau malah sama sekali tidak ada?,indonesian,content,3.2580645161290325,9.0,1.0,3.3333333333333335,0.5,33
+id_content_209,"Lantas, bagaimana Pemko Payakumbuh bisa menyediakan akses air bersih untuk 96 persen warganya, sementara sumber mata air di kota itu sangat minus sekali?",indonesian,content,2.5652173913043477,4.0,0,5.0,0.6666666666666666,27
+id_content_210,dan apa yang dimaksud dengan 'kemahakuasaan'?,indonesian,content,1.8,3.0,1.0,2.0,0.3333333333333333,9
+id_content_211,"Chris bertanya kepada orang itu, pekerjaan apa yang ia lakukan sehingga mampu membeli mobil mewah?",indonesian,content,2.142857142857143,4.0,1.0,2.3333333333333335,0.5333333333333333,17
+id_content_212,Namun demikian muncul pertanyaan bagaimana cara Yesus untuk menggenapi hukum Taurat itu?,indonesian,content,1.7272727272727273,5.0,1.0,3.0,0.75,13
+id_content_213,Mengapa produsen air mineral kemasan tidak dikenakan cukai?,indonesian,content,2.4285714285714284,3.0,0,4.0,0.875,9
+id_content_214,"Lalu bagaimana dengan Vino, suami Clarissa, yang mendadak muncul untuk mencari keuntungan dari pernikahan kedua Clarissa?",indonesian,content,1.8666666666666667,5.0,2.0,3.0,0.6875,19
+id_content_215,"Ketika Rasulullah ditanya, siapakah yang akan mendapatkan syafaatmu?",indonesian,content,1.6666666666666667,4.0,1.0,2.5,0.4,12
+id_content_216,Isteri yang cakap siapakah akan mendapatkannya?,indonesian,content,2.142857142857143,3.0,0,3.0,0.375,9
+id_content_217,LittleJOHN mengajukan pertanyaan: Dengan proses bagaimana timbulnya pengetahuan?,indonesian,content,1.625,3.0,1.0,3.0,0.7777777777777778,11
+id_content_218,Kapankah kalian bisa menang?,indonesian,content,2.0,2.0,0,2.0,0.4,6
+id_content_219,Kapan Melakukan Pap Smear?,indonesian,content,1.0,2.0,0,2.0,1.0,5
+id_content_220,"Allahku, Allahku, mengapa Engkau meninggalkan aku?",indonesian,content,2.7142857142857144,2.0,0,5.0,0.5,11
+id_content_221,"Jika aku tidak menangis untuknya, lalu siapa lagi?",indonesian,content,2.0,2.0,0,5.0,0.2222222222222222,11
+id_content_222,Siapa yang menyuebutmu bijak?,indonesian,content,1.3333333333333333,2.0,1.0,2.0,0.5,5
+id_content_223,"Berapa perkiraan omzet penjualan dari seorang marketing yang memiliki pengalaman kerjanya 3,5 tahun?",indonesian,content,1.6923076923076923,5.0,1.0,2.0,0.6428571428571429,15
+id_content_224,Siapakah pastor Dwidjosoesastro ini?,indonesian,content,1.5,2.0,0,0,0.4,6
+id_content_225,Siapa yang peduli dengan kehormatan mereka?,indonesian,content,1.4,3.0,1.0,2.0,0.3333333333333333,7
+id_content_226,"Dretarastra memutuskan untuk memilih Gendari, kenapa yang dipilih Gendari?",indonesian,content,2.0,2.0,1.0,2.6666666666666665,0.7777777777777778,11
+id_content_227,Bagaimana kira-kira kisah mereka?,indonesian,content,1.3333333333333333,1.0,0,0,0.75,5
+id_content_228,Mengapa engkau lari diam-diam dan mengakali aku?,indonesian,content,1.5,2.0,0,3.0,0.5714285714285714,8
+id_content_229,Mengapa ajibon memberontak?,indonesian,content,1.5,1.0,0,2.0,1.0,4
+id_content_230,"ALERGI BISA DIATASI, MENGAPA TIDAK?",indonesian,content,1.5,2.0,0,2.0,0.6,7
+id_content_231,Bagaimana Ferry dan kawan-kawan dapat menghadapi masalah yang kini datang dan semakin lama semakin menimbulkan konflik pada persahabatan mereka?,indonesian,content,2.4444444444444446,3.0,1.0,3.6666666666666665,0.6842105263157895,20
+id_content_232,"Bagaimana dengan kaum laki-laki, apakah kalian mau direndam dalam air yang kotor seperti itu?",indonesian,content,2.7857142857142856,3.0,0,5.0,0.4666666666666667,17
+id_content_233,Kok kamu terlambat? - Kenapa kamu terlambat?,indonesian,content,2.2,2.0,0,2.5,0.5,9
+id_content_234,Siapa yang ribut?,indonesian,content,1.5,2.0,0,0,0.3333333333333333,4
+id_content_235,"Kecamatan ini dapat dibilang kecamatan yang maju, mengapa?",indonesian,content,2.0,3.0,1.0,2.0,0.625,10
+id_content_236,Mengapa engkau sujud demikian?,indonesian,content,1.3333333333333333,1.0,0,3.0,0.5,5
+id_content_237,Apa yang akan dilakukan Karin ketika melihat Wisnu dan Rasti bahagia?,indonesian,content,1.8,5.0,2.0,2.5,0.5454545454545454,12
+id_content_238,"Bagaimana kita menghitung angka 28,57 %?",indonesian,content,1.4,3.0,0,3.0,0.5,7
+id_content_239,"Kemudian, bagaimana mungkin untuk mengukur tindakan-tindakan dan kejadian yang bertujuan untuk menciptakan sebuah norma legal?",indonesian,content,1.6428571428571428,6.0,1.5,2.0,0.6666666666666666,17
+id_content_240,"``Wahai Gajah Mada, apa maksudnya engkau bermulut besar terhadap kami?",indonesian,content,1.8,5.0,1.0,2.0,0.5454545454545454,14
+id_content_241,"Jika Allah di pihak kita, siapakah yang akan melawan kita?",indonesian,content,1.9,3.0,1.0,2.0,0.2727272727272727,13
+id_content_242,``Mengapa bukan Jenderal Gatot Subroto?,indonesian,content,1.25,2.0,0,0,0.8,7
+id_content_243,Kapankah Kristus akan datang kembali?,indonesian,content,1.8,2.0,1.0,1.5,0.6666666666666666,7
+id_content_244,Ke manakah kemudian ia berpihak?,indonesian,content,1.8,2.0,0,3.0,0.3333333333333333,7
+id_content_245,Bagaimana ini bisa terjadi?,indonesian,content,2.0,1.0,0,2.0,0.5,5
+id_content_246,"Jadi Abah Buyut sendiri merupakan sebuah misteri terpisah, darimana beliau belajar Maenpo ini, apakah hasil perenungan sendiri atau ada yang mengajari?",indonesian,content,2.0476190476190474,6.0,1.0,2.2,0.5909090909090909,25
+id_content_247,Di Mana Melani?,indonesian,content,1.0,2.0,0,0,0.3333333333333333,4
+id_content_248,``Bagaimana kau menginterpretasikan pepohonan itu?,indonesian,content,1.25,2.0,0,3.0,0.6,7
+id_content_249,``sampai kapan kita mesti ter-doktrin dan terus dicekoki dengan lagu-lagu yang seragam dan ``Maaf'' tak mengindahkan nilai estitika dalam bermusik?,indonesian,content,2.3157894736842106,5.0,1.0,2.4,0.55,24
+id_content_250,"Di zaman reformasi seperti sekarang ini, siapa yang tak kenal Soetandyo Wignjosoebroto?",indonesian,content,1.9090909090909092,3.0,1.0,3.0,0.5,14
+id_content_251,"Maka baginda pun memandang kepada nahkoda kapal itu seraya bertitah, apa kabar nahkoda adakah betul seperti kata ahlun nujum beta dan tiada?",indonesian,content,2.3181818181818183,7.0,1.0,3.5,0.5652173913043478,25
+id_content_252,Jika elektron tidak jadi jatuh ke-pusatnya apa yang terjadi?,indonesian,content,2.0,2.0,1.0,3.0,0.4444444444444444,10
+id_content_253,"Dalam perbincangan pada tahun 1950, fisikawan Enrico Fermi mempertanyakan: apabila sejumlah peradaban ekstraterestrial yang maju ada di Bima Sakti, mengapa bukti seperti pesawat angkasa tidak dapat ditemui?",indonesian,content,3.4615384615384617,5.0,1.5,2.75,0.6296296296296297,31
+id_content_254,Benar atau tidak bilangan aku itu?,indonesian,content,1.8,2.0,0,0,0.3333333333333333,7
+id_content_255,Yaksa: Siapakah yang benar-benar berbahagia?,indonesian,content,2.0,3.0,1.0,2.0,0.5,8
+id_content_256,(C) Di mana kita saat ini?,indonesian,content,2.6,3.0,0,0,0.3333333333333333,9
+id_content_257,Apa kata dunia bila aku menikahimu yang tidak dikira sebagai istriku?,indonesian,content,1.8333333333333333,4.0,2.0,3.5,0.38461538461538464,14
+id_content_258,``Mengapa tidak memakai piano?,indonesian,content,1.3333333333333333,1.0,0,3.0,0.75,6
+id_content_259,Apa yang akan terjadi dengan patung ibu Ryan?,indonesian,content,1.5714285714285714,4.0,1.0,2.0,0.5,9
+id_content_260,Mengapa kami menggunakan Fusebox sebagai framework?,indonesian,content,1.6,2.0,0,4.0,0.6666666666666666,7
+id_content_261,Apa yang terjadi dalam rentang waktu 25 November -- 10 Desember?,indonesian,content,1.5555555555555556,6.0,2.0,2.0,0.5,12
+id_content_262,Apa yang harus ia lakukan sebagai langkah awal mencapai cita-citanya dalam industri ini?,indonesian,content,2.230769230769231,3.0,1.0,2.5,0.42857142857142855,15
+id_content_263,Siapa yang tak kenal Ramlan Surbakti?,indonesian,content,1.6,3.0,1.0,3.0,0.5,7
+id_content_264,"Mengapa engkau tidak memberitahu kepadaku, supaya aku menghantarkan engkau dengan sukacita dan nyanyian dengan rebana dan kecapi?",indonesian,content,2.0,5.0,1.0,4.5,0.3888888888888889,20
+id_content_265,"Sampai suatu saat Naia kembali ingat dengan masa lampau termasuk cintanya, Imam. Siapa yang akan dipilih oleh Naia?",indonesian,content,2.2777777777777777,4.0,1.0,2.25,0.5789473684210527,22
+id_content_266,Siapa namanya dan siapa nama anaknya?,indonesian,content,1.4285714285714286,4.0,0,0,0.375,9
+id_content_267,Kemana nasib membawa Alif?,indonesian,content,1.3333333333333333,1.0,0,3.0,1.0,5
+id_content_268,Di manakah harta raja itu sekarang?,indonesian,content,1.6666666666666667,2.0,0,0,0.42857142857142855,8
+id_content_269,Kan kamu yang bilang? - Bukankah kamu yang bilang demikian?,indonesian,content,2.0,3.0,1.0,1.5,0.2,13
+id_content_270,Dan siapakah yang memegang kunci-kunci rahasia itu?,indonesian,content,1.4285714285714286,3.0,1.0,2.0,0.375,9
+id_content_271,Bagaimanakah kisah selanjutnya?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5
+id_content_272,Siapa sebenarnya João Tavares?,indonesian,content,1.3333333333333333,2.0,0,0,0.75,5
+id_content_273,Bagaimana Rafael menghadapi Putri dan Gladis sekaligus?,indonesian,content,1.8333333333333333,3.0,0,4.0,0.8571428571428571,8
+id_content_274,"Tapi pada anime OVA Angel Beats, Angel Beats!: Another Epilogue Menceritakan Otonashi yang belum reinkarnasi dan membantu orang-orang yang sudah meninggal di dunia Afterlife Kapan Otonashi Yuzuru mendonorkan jantungnya kepada Kanade?",indonesian,content,2.7096774193548385,5.0,1.0,3.0,0.71875,36
+id_content_275,Bagaimana ia mempelajarinya?,indonesian,content,1.3333333333333333,1.0,0,3.0,0.5,5
+id_content_276,Bagaimanakah kelanjutan cerita ini?,indonesian,content,1.25,2.0,0,0,0.6,6
+id_content_277,"Siapa yang telah naik ke sorga, atau turun?",indonesian,content,2.142857142857143,3.0,1.0,2.0,0.375,10
+id_content_278,Supir pribadi Eyang Tini bertanya berapa lama lagi mereka akan mencari Kamila?,indonesian,content,2.1818181818181817,3.0,1.0,2.5,0.8333333333333334,13
+id_content_279,"Bagaimana bisa ada telur tak terputus, didalam sarangnya sendiri menggulingkan?",indonesian,content,2.5,3.0,1.0,1.6666666666666667,0.5454545454545454,13
+id_content_280,``Mengapa keretanya tak kunjung datang?,indonesian,content,2.6,2.0,0,4.0,0.6666666666666666,8
+id_content_281,"Betulkah seperti kata ahlun nujum ini, di mana hendak patik simpangkan perkataan yang sebenar itu?",indonesian,content,2.2666666666666666,4.0,1.0,4.0,0.5625,18
+id_content_282,Bagaimana nasib cinta Nadya maupun Imam?,indonesian,content,1.2,4.0,0,0,0.8333333333333334,7
+id_content_283,"Mama Ardi kemudian panik dan mengatakan, mengapa pernikahannya dibatalkan?",indonesian,content,2.111111111111111,4.0,0,2.0,0.8,12
+id_content_284,"Allahku, ya Allahku, mengapa Engkau meninggalkan aku?",indonesian,content,2.625,2.0,0,5.0,0.4444444444444444,12
+id_content_285,"``Hai Sura, mengapa kamu melanggar peraturan yang telah kita sepakati berdua?",indonesian,content,2.1,3.0,1.0,3.5,0.6363636363636364,14
+id_content_286,Bagaimana mungkin kita tidak mengalami penderitaan karena keterpisahan kemampuan-kemampuan manusiawi kita?,indonesian,content,1.9,3.0,0,5.0,0.5454545454545454,12
+id_content_287,Apa yang mahu mereka kerjakan?,indonesian,content,2.5,2.0,1.0,3.0,0.4,6
+id_content_288,Apa yang mencegah setan-setan menghasilkan lebih banyak Nefilim pada zaman sekarang?,indonesian,content,1.8,3.0,1.0,2.0,0.7272727272727273,12
+id_content_289,Bagaimana pantulan cahaya dari sebuah planet dibiaskan sewaktu memasuki atmosfer bumi?,indonesian,content,2.4,3.0,1.0,2.5,0.7272727272727273,12
+id_content_290,Siapakah wanita yang dipilih orang tua Arya?,indonesian,content,1.7142857142857142,3.0,1.0,2.0,0.625,9
+id_content_291,Apa artinya ketika kita mengaktan bahwa galat pemenggalan diciptakan ketika kita menghampiri sebuah prosedur matematika?,indonesian,content,2.0,5.0,3.0,3.0,0.5,17
+id_content_292,Mengapa mereka menerima?,indonesian,content,1.5,1.0,0,2.0,0.6666666666666666,4
+id_content_293,Bagaimana caranya balon udara berpindah dari satu lokasi ke lokasi lain?,indonesian,content,1.7272727272727273,4.0,1.0,2.0,0.6666666666666666,13
+id_content_294,Jadi dicoba untuk menjawab pertanyaan-pertanyaan seperti kebutuhan apa yang dicoba dipuaskan oleh seseorang?,indonesian,content,1.4166666666666667,7.0,1.5,1.75,0.5384615384615384,14
+id_content_295,Bagaimana di Indonesia?,indonesian,content,1.5,2.0,0,0,0.6666666666666666,4

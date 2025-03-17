@@ -1,0 +1,442 @@
+unique_id,text,language,avg_max_depth,avg_subordinate_chain_len,avg_verb_edges,lexical_density,n_tokens,question_type,complexity_score,source
+en_content_7,"We just did a deal for the rest of the month for 10,000/d at meter # 1552 QE-1 @ $4.355 .... can you let me and Robert Lloyd know what the sitara # is?",en,1.801,2.0,0.444,0.351,3.714,0,8.31,ud
+ru_polar_70,Нету ли проблем с активацией или эксплуатацией?,ru,-0.603,0.0,0.6,0.571,2.197,1,2.765,ud
+fi_polar_8,"Entä viestivätkö naisen silmät miehelle, että ”uskon sinun kykyihisi, ota minut, saat minut hulluksi himosta?”",fi,1.336,1.0,0.55,0.733,3.091,1,6.71,ud
+ja_content_19,これからの日本ラグビー史にどれだけの栄光を刻むのか。,ja,-0.39,0.0,0.8,0.333,2.833,0,3.576,ud
+ru_content_125,Что мне делать?,ru,-1.955,0.0,0.333,0.333,1.609,0,0.32,ud
+russian_polar_525,Протекают ли реки у города Ливны?,ru,-0.5,0.0,0.6,0.667,2.079,1,2.846,tydi
+id_polar_36,Gimana toh ini?,id,-2.362,0.0,0.0,0.0,1.609,1,-0.753,ud
+finnish_content_10090,Milloin GameCube on julkaistu?,fi,-1.051,0.0,0.5,0.75,1.792,0,1.991,tydi
+russian_content_6967,Какой рост у Влади́мира Влади́мировича Пу́тина?,ru,0.49,0.0,0.0,0.667,2.079,0,3.236,tydi
+russian_polar_1313,"Правда ли что Микеланджело ослеп, расписывая Сикстинскую капеллу?",ru,1.5,2.0,0.4,0.75,2.398,1,7.048,tydi
+russian_polar_335,Соблюдались права человека в СССР?,ru,0.5,0.0,0.2,0.8,1.946,1,3.446,tydi
+english_content_142,Which museum has the largest selection of Hans Georg Wenzeslaus von Knobelsdorff works?,en,1.422,0.0,0.333,0.769,2.708,,5.232,tydi
+fi_content_33,Mitä teemme sen lisäksi antaaksemme Ukrainan osallistua Eurooppa-konferenssiin?,fi,0.257,2.0,0.4,0.625,2.303,0,5.585,ud
+finnish_polar_6,Onko elinkelpoisia kuita?,fi,0.15,0.0,0.0,0.667,1.609,1,2.426,tydi
+arabic_content_12638,من هو مخترع الليزر ؟,ar,-1.8,0.0,0.0,0.5,1.792,0,0.492,tydi
+id_polar_146,Lalu setelah mengendap selama itu di studio apa sebenarnya yang akan ditawarkan Axl Rose yang notabene tinggal satu-satunya personel awal Guns N Roses?,id,2.638,2.0,0.75,0.565,3.219,1,9.172,ud
+english_content_1725,When do silk worms form cocoons?,en,-0.578,0.0,0.5,0.833,2.079,,2.834,tydi
+indonesian_content_2540,Siapakah gubernur Sulawesi Tenggara tahun 2010?,id,0.219,0.0,0.0,0.571,2.197,0,2.987,tydi
+english_content_2927,Where was Joan of Arc martyred?,en,0.422,0.0,0.5,0.667,2.079,,3.668,tydi
+finnish_polar_177,Onko gilalisko myrkyllinen?,fi,-0.85,0.0,0.0,0.667,1.609,1,1.426,tydi
+arabic_polar_2318,هل مجلة افتح يا سمسم هي مجلة كويتية ؟,ar,0.175,1.0,0.167,0.5,2.303,1,4.145,tydi
+ru_content_286,"А вдруг кто то знает, подскажите, крест в полях под Сабуро-Покровское, Тамбовской области, для чего и по какому поводу?",ru,4.045,0.0,0.417,0.474,3.219,0,8.155,ud
+arabic_polar_492,هل توجد عضلات قابضة في المريء ؟,ar,-0.825,0.0,0.5,0.667,2.079,1,2.421,tydi
+japanese_polar_640,ガスパールとは犬のキャラクターですか？,ja,-0.553,0.0,0.0,0.444,2.398,1,2.289,tydi
+russian_polar_536,Нашли ли обломки рейса 370 Malaysia Airlines?,ru,1.5,0.0,0.4,0.429,2.197,1,4.526,tydi
+finnish_content_10211,Mikä oli ensimmäinen Kiinalainen auto jota aloitettiin tuomaan Suomeen?,fi,1.949,2.0,0.25,0.667,2.398,0,7.264,tydi
+ko_content_269,그러면 우리가 과학기술을 발전시킬 수 있는 구체적인 방법은 무엇인가?,ko,0.533,1.0,0.278,0.778,2.398,0,4.987,ud
+id_polar_42,"Apakah pada akhirnya, ia betul-betul bisa mengeluarkan tenaga dalamnya seperti yang diajarkan Sam selama ini?",id,0.638,1.0,0.583,0.471,2.996,1,5.688,ud
+finnish_polar_319,Voiko lämpötila nousta jopa 43 asteeseen Khartumissa?,fi,1.15,0.0,0.5,0.714,2.197,1,4.561,tydi
+japanese_content_3644,日本で民主党が結成されたのはいつ,ja,-0.19,1.0,0.667,0.333,2.565,0,4.375,tydi
+korean_content_2444,역사상 가장 짧은 기간 유지된 나라는 어디인가?,ko,2.184,1.0,0.3,1.0,2.197,0,6.681,tydi
+english_content_5882,How often does a lawyer need to take the bar?,en,0.422,1.0,0.417,0.6,2.485,,4.924,tydi
+english_content_6137,Where do the most floods happen in the world?,en,-0.578,0.0,0.5,0.556,2.398,,2.876,tydi
+korean_polar_66,독점규제법에서는 직접 또는 특수 관계인을 통하여 다른 회사의 영업의 전부 또는 주요 부분을 양수함으로써 일정한 거래분야에서 경쟁을 실질적으로 제한하는 행위를 규제하나요?,ko,2.864,1.0,0.5,0.857,3.135,1,8.356,tydi
+english_polar_445,Do snails die when you step on them?,en,0.83,1.0,0.5,0.5,2.303,1,5.133,tydi
+russian_polar_1101,"Есть на Поварской у́лице ""заповедная территория"" домов?",ru,0.5,0.0,0.2,0.857,2.398,1,3.955,tydi
+english_polar_736,Did Cristine Rose audition for the part of Angela Petrelli?,en,0.83,0.0,0.4,0.6,2.485,1,4.315,tydi
+japanese_polar_1095,カナディアン・ナショナル鉄道は民間企業？,ja,-0.553,0.0,0.0,0.714,2.197,1,2.358,tydi
+fi_polar_72,"Näinkö se alkaa, kivikuume?",fi,-0.664,0.0,0.4,0.75,1.946,1,2.432,ud
+ru_content_619,Какое имя получил меч Арагорна?,ru,-0.955,0.0,0.333,0.8,1.946,0,2.124,ud
+english_content_3968,When was the first volume of Monster?,en,0.422,0.0,0.0,0.571,2.197,,3.19,tydi
+en_content_369,What are some GOOD 18+ clubs in the bay area?,en,-0.199,0.0,0.0,0.364,2.565,0,2.73,ud
+fi_content_144,Mitä SIS II -järjestelmälle on tapahtunut?,fi,0.257,0.0,0.4,0.667,2.079,0,3.403,ud
+id_content_139,"Cordelia lalu menunjuk kepada kedua kakaknya seraya berkata bahwa jika mereka mencintai ayah mereka, mengapa mereka menikah dengan orang lain?",id,1.774,3.0,0.7,0.571,3.178,0,9.223,ud
+finnish_content_6085,Missä Kansas sijaitsee?,fi,-1.051,0.0,0.333,0.667,1.609,0,1.558,tydi
+en_content_2,"(And, by the way, is anybody else just a little nostalgic for the days when that was a good thing?)",en,-0.199,1.0,0.0,0.45,3.258,0,4.509,ud
+ar_content_44,"ورحب شيخ الأزهر بمن ينادون بانتخاب شيخ الأزهر وقال بلغة واثقة: ""مرحباً بالانتخاب""، وعندما سأله المذيع عن حق أي مسلم في العالم أن يرشح نفسه لهذا الموقع قال شيخ الأزهر: ""وأبناء العالم الإسلامي يتدخلوا في مصر ليه؟"".",ar,2.905,1.0,0.633,0.562,4.06,0,9.16,ud
+russian_polar_1480,"Есть улица в Москве, названная в честь Панфиловцев?",ru,1.5,1.0,0.2,0.75,2.398,1,5.848,tydi
+ko_content_40,먼저 프롤레타리아 독재란 무엇인가?,ko,-1.467,0.0,0.333,0.75,1.792,0,1.408,ud
+en_polar_548,Will you be providing an execution version with questions removed/blanks filled in?,en,1.966,1.0,0.167,0.5,2.773,1,6.406,ud
+ko_content_166,그렇다면 이러한 디지털혁명에 뒤이은 21 세기의 기술신대륙은 과연 무엇일까?,ko,0.533,1.0,0.222,0.778,2.398,0,4.931,ud
+japanese_content_180,HALOシリーズが初めて発売されたのはどこ,ja,-0.19,1.0,0.667,0.364,2.485,0,4.326,tydi
+ru_content_221,"И как его нужно правильно оформить, чтобы выехать из России на Украину к родственникам?",ru,1.045,2.0,0.583,0.571,2.833,0,7.032,ud
+arabic_polar_144,هل تسبب اشعة غاما السرطان؟,ar,-0.825,0.0,0.333,0.6,1.946,1,2.054,tydi
+fi_content_50,"Miten selität Espanjan kesäillan sille, joka ei sitä tiedä?",fi,0.257,1.0,0.5,0.556,2.485,0,4.798,ud
+finnish_content_12666,Kuinka kauan yhden talon rakentamisessa kestää?,fi,0.949,0.0,0.333,0.833,2.079,0,4.194,tydi
+arabic_content_8812,متى ولد ناجي أبو نوار ؟,ar,0.2,0.0,0.333,0.2,1.946,0,2.679,tydi
+ar_content_31,وكيف يمكنها ان تعزز الثقة بلبنان واوضاعه الاقتصادية، التي تستحق الدعم لانها تملك عناصر استعادة العافية والازدهار، وهي تقضي على آخر معالم الثقة بامكان التوصل داخليا الى ما يعيد توفير المنعة الى الوحدة الوطنية التي هي القاعدة الوحيدة للعافية والازدهار؟,ar,9.905,1.25,0.467,0.569,4.007,0,16.198,ud
+ko_content_148,도대체 당신들 서양 사람들 중에서 몇 사람이나 내 이름의 유래를 알고 있겠소?,ko,-0.467,0.0,0.667,0.833,2.639,0,3.672,ud
+japanese_polar_456,ケルト神話は多神教？,ja,-0.553,0.0,0.0,0.8,1.946,1,2.193,tydi
+en_content_57,What's the best time to start a trip around the world?,en,1.801,1.0,0.333,0.417,2.639,0,6.19,ud
+ko_polar_96,섭씨 40 도의 물 한 그릇과 섭씨 80 도의 식용유 한 그릇을 섞으면 120 도의 액체 두 그릇이 생길까?,ko,1.365,0.0,0.333,0.579,3.045,1,5.322,ud
+japanese_content_2009,カプコンが最初に発売したゲームは何,ja,0.81,1.0,0.333,0.4,2.398,0,4.941,tydi
+id_content_212,Namun demikian muncul pertanyaan bagaimana cara Yesus untuk menggenapi hukum Taurat itu?,id,1.774,1.0,0.6,0.75,2.639,0,6.763,ud
+ja_polar_25,一緒に話を聞かせてもらってもいいですか?,ja,-1.273,1.0,0.625,0.308,2.708,1,3.368,ud
+english_polar_558,Is the cuttlefish a mollusk?,en,-0.17,0.0,0.0,0.4,1.946,1,2.176,tydi
+ru_content_3,Вы вообще в курсе какой сегодня день?,ru,-0.955,0.0,0.0,0.571,2.197,0,1.813,ud
+russian_polar_418,Был ли Алекса́ндр Алекса́ндрович Зино́вьев одним из символов возрождения философской мысли в СССР?,ru,1.5,0.0,0.0,0.615,2.708,1,4.823,tydi
+arabic_content_8948,ماهي عاصمة البرتغال ؟,ar,-0.8,0.0,0.0,0.333,1.609,0,1.142,tydi
+indonesian_polar_26,apakah Cirebon mempunyai bandara?,id,-0.482,0.0,0.75,0.8,1.946,1,3.014,tydi
+ru_content_474,Да и что делать мне?,ru,-1.955,0.0,0.667,0.2,1.946,0,0.858,ud
+fi_content_146,Kuka minä sitten olen ihmisenä?,fi,-1.743,0.0,0.0,0.4,1.946,0,0.603,ud
+arabic_polar_1297,هل تعد السوائل ذات درجة حموضة أقل من 7 أحماض؟,ar,2.175,0.0,0.5,0.727,2.565,1,5.967,tydi
+indonesian_polar_7,Adakah monyet termasuk hominini?,id,-0.482,1.0,0.5,0.8,1.946,1,3.764,tydi
+english_content_7144,When was Ubisoft Quebec founded?,en,-0.578,0.0,0.5,0.8,1.946,,2.668,tydi
+ko_polar_31,그러나 역사과정 속에서 두가지 혁명의 개별적이고 특수한 요소들이 서로 뒤엉키게 된다는 것을 부정할 수 있겠는가?,ko,1.365,1.0,0.333,0.8,2.833,1,6.331,ud
+fi_content_20,"En kuitenkaan ymmärrä, miksi joku ei maksaisi kymmentä tai viittä euroa kuussa järjettömän suuresta, mobiilista musiikkikirjastosta?",fi,2.257,1.0,0.6,0.625,2.996,0,7.478,ud
+finnish_polar_541,Onko Jasser Arafatilla perhettä?,fi,0.15,0.0,0.0,0.75,1.792,1,2.692,tydi
+japanese_content_4613,暗号の起源はいつ,ja,-0.19,0.0,0.0,0.4,1.792,0,2.002,tydi
+ar_polar_18, احتمالات الحرب ولكن هل يمكن أن تجازف إسرائيل بشن حرب ضد مصر برغم السلام الموقع بينهما ووجود سفارة إسرائيلية في القاهرة؟,ar,1.375,1.0,0.6,0.577,3.401,1,6.953,ud
+english_polar_205,Is cremation better than burial?,en,-0.17,0.0,0.0,0.6,1.946,1,2.376,tydi
+russian_content_3257,"Когда вышла первая игра ""Simpsons""?",ru,-0.51,0.0,0.333,0.8,2.197,0,2.82,tydi
+id_content_270,Dan siapakah yang memegang kunci-kunci rahasia itu?,id,-0.226,1.0,0.4,0.375,2.303,0,3.852,ud
+russian_polar_99,«Двадцать восемь панфиловцев» стал лучшим фильмом России 2016 года?,ru,0.5,0.0,0.4,0.778,2.565,1,4.243,tydi
+indonesian_polar_74,apakah orang dewasa bisa terjangkit Cacar monyet?,id,-0.482,0.0,0.75,0.75,2.303,1,3.321,tydi
+english_polar_321,Does TV have blue light?,en,-0.17,0.0,0.4,0.8,1.946,1,2.976,tydi
+ru_content_390,Почему щенок может облизывать письку?,ru,-0.955,1.0,0.333,1.0,1.946,0,3.324,ud
+arabic_content_10390,متى انتهت الأمبراطورية المغولية ؟,ar,-0.8,0.0,0.333,0.75,1.792,0,2.075,tydi
+arabic_polar_153,هل زار ابن بطوطة اليمن؟,ar,-0.825,0.0,0.333,0.4,1.946,1,1.854,tydi
+en_polar_20,Today is good 12:30 ?,en,-1.034,1.0,0.0,0.5,1.792,1,2.258,ud
+ko_polar_23,받는 자의 삶이었습니까?,ko,-1.635,1.0,0.083,1.0,1.609,1,2.057,ud
+id_polar_132,"Atau kamu mengira bahwa orang-orang yang mendiami gua dan (yang mempunyai) raqim itu, mereka termasuk tanda-tanda kekuasaan Kami yang mengherankan?",id,1.638,1.0,0.4,0.5,3.219,1,6.757,ud
+arabic_polar_732,هل تحتاج العضلات الدهون للنمو؟,ar,-0.825,0.0,0.5,0.667,2.079,1,2.421,tydi
+english_polar_396,Can bipolar be treated naturally?,en,-1.17,0.0,0.6,0.6,1.946,1,1.976,tydi
+ko_content_101,"""소련이 될 모양이야."" ""아니, 뭐라구?"" KBS 홍성규 차장이 급히 외무부 기자실로 연락을 취했다.",ko,0.533,3.0,0.375,0.923,3.091,0,7.922,ud
+fi_polar_95,"Onko se toistettava päivittäin, viikoittain, kuukausittain?",fi,-0.664,0.0,0.6,0.667,2.303,1,2.906,ud
+english_content_7303,Where was the psychologist Pavlov from?,en,-0.578,0.0,0.0,0.5,2.079,,2.001,tydi
+id_content_92,"Lalu bagaimana dengan ribuan kosakata, berikut dengan cara pengucapannya yang benar yang diserap oleh si kecil -- apakah Anda yang mengajarkannya secara khusus?",id,1.774,1.0,0.467,0.48,3.367,0,7.088,ud
+en_polar_223,So much for resting on our laurels.?,en,-0.034,1.0,0.333,0.571,2.197,1,4.067,ud
+ru_polar_8,"Уж не трусишка ли он, спросила она насмешливо, коли не хочет подождать ее десять минут на улице?",ru,1.397,2.0,0.6,0.412,3.045,1,7.454,ud
+indonesian_content_39,Kapan handphone pertama diciptakan ?,id,-0.781,0.0,0.333,1.0,1.792,0,2.344,tydi
+ja_polar_36,"やはり日本の企業とビジネスで関わる上で,空気を読むことは大事なのでしょうか。",ja,0.727,1.0,0.5,0.45,3.135,1,5.812,ud
+korean_polar_358,바니시는 무색의 투명 물질인가요?,ko,-2.136,0.0,0.75,1.0,1.792,1,1.406,tydi
+arabic_polar_224,هل دفن الحسين بن علي شريف مكة في السعودية؟,ar,0.175,0.0,0.5,0.556,2.398,1,3.629,tydi
+english_content_1287,What plant has the highest protein?,en,-0.578,0.0,0.333,0.667,2.079,,2.501,tydi
+indonesian_content_1208,Siapakah nama kaisar pertama Dinasti Ming?,id,1.219,0.0,0.0,0.714,2.197,0,4.13,tydi
+indonesian_content_6928,berapakah luas Lazio?,id,-0.781,0.0,0.0,0.75,1.792,0,1.761,tydi
+ru_polar_23,"Насколько есть вероятность заражения в этой ситуации и можно ли сдать какой-то анализ, чтобы убедиться, что вируса нет, и успокоиться?",ru,2.397,3.0,0.433,0.6,3.219,1,9.649,ud
+japanese_polar_69,進化心理学とはダーウィンの進化論を参考にしているか,ja,0.447,1.0,0.5,0.562,2.833,1,5.342,tydi
+arabic_polar_1369,هل علي بن أبي طالب هو رابع الخلفاء الراشدين؟,ar,-0.825,0.0,0.0,0.444,2.398,1,2.017,tydi
+russian_content_809,Обязательно посещение детского психолога перед вступлением в школу в России на апрель 2019?,ru,1.49,0.0,0.0,0.692,2.708,0,4.89,tydi
+finnish_content_10877,Milloin Diablo 2 julkaistiin?,fi,-0.051,0.0,0.333,0.75,1.792,0,2.824,tydi
+russian_content_11317,Сколько раз профессиональный футбольный клуб «Э́вертон»из Ливерпуля становился победителем Английской Премьер лиги?,ru,0.49,0.0,0.5,0.846,2.833,0,4.669,tydi
+arabic_content_6522,من هو أول رئيس عراقي تولى الحكم مباشرة بعد سقوط نظام صدام حسين؟,ar,3.2,1.0,0.5,0.615,2.708,0,8.023,tydi
+arabic_polar_837,هل يعتبر الياسمين الزهرة الوطنية لإندونيسيا؟,ar,-0.825,0.0,0.5,0.667,2.079,1,2.421,tydi
+fi_polar_19,Annammeko tämän jatkua sanomatta mitään?,fi,-0.664,1.0,0.267,0.6,1.946,1,3.149,ud
+en_content_188,"More like a cohesive society with a shared sense of purpose, who can identify Us and Them?",en,0.801,1.0,0.167,0.412,2.996,0,5.376,ud
+indonesian_content_5377,Dimana letak Tiongkok?,id,-0.781,0.0,0.0,0.667,1.609,0,1.495,tydi
+ko_content_172,조성이란 무엇을 의미하는가?,ko,-2.467,0.0,0.333,0.667,1.609,0,0.142,ud
+en_polar_26,Are you going to be able to make the power VAR meeting on Thursday?,en,1.966,2.0,0.333,0.5,2.773,1,7.572,ud
+english_polar_1161,does the Reformed Episcopal Church still stand?,en,-0.17,0.0,0.4,0.714,2.197,1,3.141,tydi
+russian_polar_412,Ви́ктор Ива́нович Пе́трик был женат?,ru,-0.5,0.0,0.0,0.8,1.946,1,2.246,tydi
+indonesian_content_8512,Kapan istilah Virtualisasi pertama kali muncul ?,id,-0.781,0.0,0.5,1.0,2.079,0,2.798,tydi
+arabic_content_17562,ما هو المستعر الأعظم؟,ar,-0.8,0.0,0.0,0.5,1.792,0,1.492,tydi
+ja_polar_4,では統一原理は使いますか?,ja,-1.273,0.0,0.75,0.375,2.303,1,2.155,ud
+korean_polar_33,식물은 광합성을 하나요?,ko,-2.136,0.0,0.5,1.0,1.609,1,0.973,tydi
+korean_content_11394,가장 많은 선인장이 있는 사막은 어디인가?,ko,2.184,0.0,0.2,1.0,2.079,0,5.463,tydi
+arabic_content_3955,متى ولد لينين؟,ar,-1.8,0.0,0.0,0.333,1.609,0,0.142,tydi
+arabic_polar_69,هل تعتبر الشمس نجم أم كوكب ؟,ar,0.175,0.0,0.5,0.5,2.079,1,3.254,tydi
+russian_polar_503,Опасен ли для растений кузнечик зелёный скачок?,ru,-0.5,0.0,0.0,0.714,2.197,1,2.411,tydi
+en_polar_533,"A restaurant with this many patrons willing to stand in line just to order tacos must be good, right?",en,2.966,2.0,0.5,0.526,3.091,1,9.083,ud
+ru_content_328,Как часто нужно менять необслуживаемый испаритель в вейпе?,ru,0.045,1.0,0.333,0.875,2.303,0,4.556,ud
+ru_content_134,Что делать в данной ситуации?,ru,-0.955,0.0,0.333,0.6,1.946,0,1.924,ud
+finnish_content_11752,Milloin Vince McMahon on syntynyt?,fi,-0.051,0.0,0.333,0.8,1.946,0,3.028,tydi
+en_content_172,What say ye?,en,-2.199,0.0,0.333,0.333,1.609,0,0.076,ud
+ru_content_385,"Есть какие либо стратегии борьбы с Кулексус, Тысячниками, в настолке?",ru,1.045,0.0,0.167,0.6,2.639,0,4.451,ud
+ru_polar_86,Если ли онлайн версия гта на ios?,ru,-0.603,0.0,0.4,0.571,2.197,1,2.565,ud
+russian_content_11669,Когда умер Ива́н Про́хорович Бедро́?,ru,-0.51,0.0,0.333,0.8,1.946,0,2.569,tydi
+korean_content_4089,독일에서 가장 많은 학생이 공부하는 대학은 어디인가?,ko,2.184,1.0,0.3,1.0,2.197,0,6.681,tydi
+finnish_content_11012,Milloin Mach1 Mustang mallia aloitettiin valmistamaan?,fi,1.949,1.0,0.25,1.0,2.079,0,6.278,tydi
+ja_polar_28,"元妻である人物にたいして失礼だし,子ども達への影響を考えないのだろうか?",ja,1.727,1.0,0.333,0.429,3.178,1,6.667,ud
+russian_content_7431,За что Планк получил Нобелевскую премию по физике?,ru,0.49,0.0,0.5,0.625,2.303,0,3.918,tydi
+finnish_polar_2291,Voiko Kalliovuorille kiivetä?,fi,-0.85,0.0,0.167,0.667,1.609,1,1.593,tydi
+korean_content_11027,한국의 현재 국무위원장은 누구인가요?,ko,-0.816,0.0,0.2,1.0,1.792,0,2.176,tydi
+indonesian_content_1570,Kapan wiracarita Mahabharata pertama ditampilkan?,id,-0.781,0.0,0.333,1.0,1.946,0,2.498,tydi
+indonesian_content_11805,Perdana Menteri keberapakah Tun Haji Abdullah bin Haji Ahmad Badawi?,id,4.219,0.0,0.0,0.909,2.565,0,7.693,tydi
+japanese_polar_665,ピュタゴラスは数学者だった？,ja,-0.553,0.0,0.0,0.5,2.079,1,2.026,tydi
+en_content_217,What cleaners should I use for dusting around my parakeet?,en,-0.199,1.0,0.417,0.4,2.485,0,4.103,ud
+russian_polar_1719,Есть ли у архипелага Сент-Ки́лда свой флаг?,ru,-0.5,0.0,0.6,0.571,2.197,1,2.868,tydi
+finnish_polar_338,Onko Gaara Temarin ja Kankuron pikkuveli?,fi,1.15,0.0,0.0,0.667,2.079,1,3.896,tydi
+russian_content_901,Где родился Влади́мир Ростисла́вович Меди́нский?,ru,-0.51,0.0,0.333,1.0,1.946,0,2.769,tydi
+ru_polar_125,"Можно ли шотландскому котенку 2мес ему, кушать корм по типу вискаса с магнита?",ru,0.397,1.0,0.5,0.692,2.773,1,5.362,ud
+finnish_polar_1610,Oliko RMS Olympic -laivassa turkkilaisia saunoja?,fi,0.15,0.0,0.0,0.833,2.079,1,3.062,tydi
+english_content_5466,How many students enrolled in Baldwin Wallace University in 2018?,en,0.422,0.0,0.5,0.7,2.485,,4.107,tydi
+ru_polar_177,"Что это за песня, можно ли где-то прочитать её текст и перевод?",ru,1.397,1.0,0.4,0.5,2.708,1,6.005,ud
+ru_polar_15,И лечится ли это вообще?,ru,-2.603,0.0,0.8,0.4,1.946,1,0.543,ud
+english_polar_856,Are twins in the same sac?,en,-1.17,0.0,0.0,0.5,2.079,1,1.409,tydi
+korean_content_9332,칼륨의 원자 번호는 무엇인가?,ko,-0.816,0.0,0.2,1.0,1.792,0,2.176,tydi
+russian_content_7967,"Как долго снимался фильм ""Служебный роман""?",ru,0.49,0.0,0.333,1.0,2.303,0,4.126,tydi
+finnish_polar_70,Minä vuonna Englantilainen muusikko Richard Wright kuoli?,fi,1.15,0.0,0.5,0.857,2.197,1,4.704,tydi
+ko_polar_138,그러한 신라가 중국에 권위를 요청한다는 일은 당연히 무리가 아니었겠는가?,ko,0.365,1.0,0.25,1.0,2.398,1,5.013,ud
+japanese_content_5052,コロニアルバトルスターの脚本担当は誰,ja,-0.19,0.0,0.0,0.5,1.946,0,2.256,tydi
+indonesian_polar_255,Adakah laptop termasuk teknologi Informasi?,id,0.518,1.0,0.5,0.833,2.079,1,4.93,tydi
+ko_content_131,일이 이렇게 되면 당황하지 않을 사람이 어디 있겠습니까?,ko,-0.467,1.0,0.167,0.625,2.303,0,3.628,ud
+japanese_content_3325,『新機動戦記ガンダムW』のディレクターは誰？,ja,-0.19,0.0,0.0,0.667,2.565,0,3.042,tydi
+ko_polar_8,하지만 구더기 무서워서 장 못 담그겠습니까?,ko,-1.635,0.0,0.667,0.667,2.079,1,1.778,ud
+indonesian_content_11663,siapakah PM/President pertama Republik India?,id,0.219,0.0,0.0,0.667,2.079,0,2.965,tydi
+ko_content_35,무엇이 진정한 아름다움일까?,ko,-2.467,0.0,0.0,0.667,1.609,0,-0.191,ud
+korean_polar_11,말레이시아에서는 사형제도가 시행되고 있는가?,ko,-2.136,0.0,0.5,0.75,1.792,1,0.906,tydi
+arabic_content_585,ما هو الإنفاق الحكومي؟,ar,-0.8,0.0,0.0,0.5,1.792,0,1.492,tydi
+fi_polar_52,Porvoostako he tulevat?,fi,-1.664,0.0,0.4,0.667,1.609,1,1.012,ud
+ko_polar_124,그렇다면 메카트로닉스의 요소 기술을 계속 발전시켜 나가기만 하면 마이크로머신이 가능할 것인가?,ko,0.365,1.0,0.333,0.818,2.565,1,5.081,ud
+russian_content_10183,Какой президент Украины отказывался подписать Соглашение об ассоциации между Украиной и Европейским союзом?,ru,3.49,1.0,0.25,0.692,2.708,0,8.14,tydi
+russian_polar_337,Можно ли в России получить отпуск из-за приступа депрессии?,ru,0.5,1.0,0.5,0.667,2.398,1,5.065,tydi
+id_content_288,Apa yang mencegah setan-setan menghasilkan lebih banyak Nefilim pada zaman sekarang?,id,-0.226,1.0,0.4,0.727,2.565,0,4.466,ud
+en_polar_3,And can anyone use military pressure without proof?,en,-1.034,0.0,0.667,0.5,2.303,1,2.436,ud
+english_content_5949,What is the average daily internet data usage of Americans?,en,0.422,0.0,0.0,0.6,2.485,,3.507,tydi
+id_polar_201,Dari keempat itu manakah yang lebih tua?,id,-1.362,0.0,0.0,0.25,2.303,1,1.191,ud
+id_content_208,Apa gunanya persetujuan ini apabila buku dari seorang pengarang di sebuah negara yang memiliki perlindungan yang baik diterbitkan di sebuah negara yang perlindungannya buruk atau malah sama sekali tidak ada?,id,5.774,1.0,0.667,0.5,3.526,0,11.467,ud
+arabic_content_4883,متى ولد فلاديمير ألييتش أوليانوف ؟,ar,-0.8,0.0,0.333,0.2,1.946,0,1.679,tydi
+ko_content_63,"전환의 계기 또는 역전의 동기, 이를테면 야구의 9회 말 만루역전 홈런에 비유할 수 있는 극적인 변화는 무엇으로 해서 동화에 주어질까요?",ko,1.533,1.0,0.333,0.9,3.135,0,6.901,ud
+ko_polar_55,명분 없는 싸움으로 죄 없는 동족에게 섣불리 총부리를 들이대는 러시아인들은 없을 것이라 믿은 탓일까?,ko,3.365,1.0,0.333,0.929,2.773,1,8.4,ud
+fi_polar_83,"Siinä keskustelussa ydinkysymys ei ole gallup-henkinen ""kannatatko maahanmuuton lisäämistä?”",fi,-0.664,0.0,1.0,0.667,2.565,1,3.568,ud
+fi_content_143,"Annan teille yhden esimerkin: mitä tehdään leluille, joissa on siruja?",fi,2.257,1.0,0.4,0.5,2.639,0,6.796,ud
+finnish_polar_1645,Onko Silppuri Teenage Mutant Ninja Turtlesien vihollinen?,fi,0.15,0.0,0.0,0.857,2.197,1,3.204,tydi
+id_content_207,Mengapa menyendiri disini?,id,-2.226,0.0,0.4,1.0,1.609,0,0.783,ud
+arabic_polar_1165,هل تصنع بعض الأدوية من اللدائن؟,ar,-0.825,0.0,0.333,0.429,2.197,1,2.134,tydi
+russian_content_5623,Какая численность военно-воздушных сил России в 2019 году?,ru,0.49,0.0,0.0,0.75,2.303,0,3.543,tydi
+en_polar_458,Leave High School?,en,-1.034,0.0,0.167,1.0,1.609,1,1.742,ud
+english_polar_294,Was Al Capone apart of the The Apalachin meeting?,en,-0.17,0.0,0.0,0.556,2.398,1,2.784,tydi
+ru_polar_100,Средство брызгалки или которое втыкают в разетку и могут ли липучки от мух их убить?,ru,1.397,1.0,0.6,0.533,2.833,1,6.363,ud
+ru_polar_47,"Вопрос собственно так, те кто уже пробовал, не пожалели ли?",ru,0.397,1.0,0.5,0.6,2.639,1,5.136,ud
+fi_polar_42,Pitäisikö heidän nyt oikeasti ryhtyä keksimään joitain ihan uusia huippujuttuja?,fi,1.336,1.0,0.5,0.7,2.485,1,6.021,ud
+ru_polar_62,Смогут ли столько ПЦР делать ежедневно?,ru,-1.603,1.0,0.5,0.667,2.079,1,2.643,ud
+korean_content_3455,허정숙의 별칭은 무엇인가요?,ko,-0.816,0.0,0.2,1.0,1.609,0,1.993,tydi
+ru_content_102,Что в ничтожные сроки завладел планетой и прорубил окно во Вселенную?,ru,0.045,0.0,0.583,0.636,2.565,0,3.829,ud
+indonesian_content_1966,Kapankah PT. Kereta Api Indonesia berdiri ?,id,1.219,0.0,0.333,0.857,2.303,0,4.712,tydi
+indonesian_polar_77,Apakah biji duku bisa dimakan ?,id,-0.482,0.0,0.5,0.667,2.079,1,2.764,tydi
+id_polar_248,"Apakah nyanyian mereka, gerakan tarian, badan-badan baik kencang, pakaian tegang atau girl power?",id,1.638,1.0,0.167,0.714,2.944,1,6.463,ud
+en_content_134,Which do you prefer?,en,-2.199,0.0,0.333,0.25,1.792,0,0.176,ud
+indonesian_polar_99,apakah Permaisuri Dugu Qieluo mempunyai anak?,id,0.518,0.0,0.75,0.857,2.197,1,4.322,tydi
+fi_polar_119,Eikö tämän kaltaisessa asiassa käytännön ja teorian tulisi olla samanlaisia?”,fi,1.336,1.0,0.4,0.6,2.565,1,5.901,ud
+korean_polar_170,RNA는 오탄당인 리보스를 기반으로 사슬구조를 이루나요?,ko,-0.136,1.0,0.375,1.0,2.079,1,4.318,tydi
+finnish_polar_1160,Onko Suomessa koskaan ollut isoa maanjäristystä?,fi,0.15,0.0,0.0,0.667,2.079,1,2.896,tydi
+arabic_polar_1215,هل الكمون نبات ؟,ar,-1.825,0.0,0.0,0.667,1.609,1,0.451,tydi
+en_content_99,What are we going to get her?,en,-1.199,1.0,0.417,0.286,2.197,0,2.701,ud
+en_polar_10,We have this report?,en,-1.034,0.0,0.333,0.5,1.792,1,1.591,ud
+indonesian_polar_237,Adakah Angkor Wat tercatat dalam UNESCO?,id,0.518,1.0,0.5,0.714,2.197,1,4.929,tydi
+finnish_content_2471,Mistä liekkikupolit tunnetaan?,fi,-1.051,0.0,0.333,0.667,1.609,0,1.558,tydi
+korean_content_6378,마케도니아에는 얼마나 많은 사람들이 살고 있는가?,ko,0.184,0.0,0.4,0.833,2.079,0,3.496,tydi
+en_content_307,What was the goal for North Vietnam in the Tet offensive?,en,-0.199,0.0,0.0,0.455,2.565,0,2.821,ud
+fi_content_4,Miksi talvella pitää käyttää koko ajan ihan tylsiä kenkiä?,fi,0.257,0.0,0.8,0.889,2.398,0,4.344,ud
+korean_polar_288,브릿 어워드는 영국음반산업협회에서 음반 분야의 탁월한 업적에 대해 수여하는 상인가요?,ko,1.864,1.0,0.333,0.9,2.485,1,6.582,tydi
+ko_polar_196,우리는 어떠한 경제체제 아래서 살고 있는가?,ko,-0.635,0.0,0.167,0.667,2.079,1,2.278,ud
+id_content_235,"Kecamatan ini dapat dibilang kecamatan yang maju, mengapa?",id,-0.226,1.0,0.4,0.625,2.398,0,4.197,ud
+en_polar_269,is it possible to combine the standard isda and our confirm into a single long form?,en,0.966,1.0,0.5,0.5,2.89,1,5.856,ud
+japanese_polar_855,アンフェタミンの使用は日本で合法？,ja,0.447,0.0,0.0,0.571,2.197,1,3.215,tydi
+english_content_6624,What is the national dish of Scotland?,en,0.422,0.0,0.0,0.429,2.197,,3.048,tydi
+arabic_polar_26,هل البتراء الأردنية مدرجة على لائحة اليونسكو للتراث العالمي؟,ar,0.175,0.0,0.0,0.556,2.398,1,3.129,tydi
+arabic_content_1941,متى توفي الرئيس السوري السابق شكري القوتلي؟,ar,0.2,0.0,0.333,0.571,2.197,0,3.301,tydi
+finnish_content_6781,Mitä tarkoittaa synteettinen?,fi,-1.051,0.0,0.333,0.667,1.609,0,1.558,tydi
+finnish_content_4964,Mistä Gabriel Lippmann voitti Nobelin fysiikanpalkinnon?,fi,-0.051,0.0,0.5,0.833,2.079,0,3.361,tydi
+id_polar_233,``... Apakah yang dapat kukatakan kepadamu mengenai penyalibanku?,id,0.638,1.0,0.5,0.273,2.708,1,5.119,ud
+indonesian_polar_205,apakah LTE evolusi dari 3G?,id,0.518,0.0,0.0,0.667,2.079,1,3.264,tydi
+indonesian_polar_453,Apakah Acquired Immunodeficiency Syndrome bisa disembuhkan ?,id,0.518,0.0,0.5,0.714,2.197,1,3.929,tydi
+english_polar_779,Do frogs breathe through their skin?,en,-0.17,0.0,0.4,0.5,2.079,1,2.809,tydi
+id_polar_68,Lalu akankah Maya menyadari gadis yang selama ini selalu jadi bulan-bulanan kekesalannya adalah buah hatinya sendiri?,id,2.638,1.0,0.75,0.474,3.045,1,7.907,ud
+japanese_content_3342,暗黒物質を考案したのは誰,ja,-1.19,0.0,0.667,0.333,2.303,0,2.113,tydi
+japanese_content_5466,世界最大のイオン・モールは何？,ja,-0.19,0.0,0.0,0.5,2.303,0,2.613,tydi
+ko_content_236,어디에서 탈출구를 찾을 것인가?,ko,-2.467,1.0,0.25,1.0,1.792,0,1.575,ud
+ru_polar_58,"Стоит ли тратить деньги на то, чтобы заполняли за меня и возможность выигрыша будет в разы больше?",ru,2.397,1.0,0.467,0.471,2.996,1,7.331,ud
+ko_content_133,"꿈 속에서 한 일 역시 내가 한 일인데, 그것에 대해서는 왜 책임을 지지 않는가?",ko,2.533,1.0,0.333,0.786,2.833,0,7.485,ud
+japanese_polar_1219,ルーマニアに国教はある？,ja,-0.553,0.0,0.4,0.6,1.946,1,2.393,tydi
+fi_content_32,Mitä teemme valmistellaksemme asiaa?,fi,-0.743,1.0,0.3,0.75,1.792,0,3.099,ud
+finnish_polar_2287,Oliko Berliinin muurissa rajanylityspaikkoja?,fi,-0.85,0.0,0.0,0.75,1.792,1,1.692,tydi
+korean_content_6286,중국에서 가장 높은 사찰은 무엇인가?,ko,0.184,0.0,0.2,1.0,1.946,0,3.33,tydi
+japanese_polar_445,中華民国では民主主義政治が行われている？,ja,-0.553,1.0,0.3,0.583,2.639,1,3.969,tydi
+id_polar_217,Lalu apa solusi yang mungkin diambil?,id,-0.362,1.0,0.167,0.5,2.079,1,3.384,ud
+id_content_159,"Bagaimana akhir hubungan Ningsih, Ones dan Cecep?",id,0.774,0.0,0.0,0.857,2.303,0,3.934,ud
+en_polar_494,Can you tell me the whole process of breeding them and taking care of the babies?,en,1.966,1.0,0.5,0.438,2.89,1,6.794,ud
+russian_polar_1471,Есть ли жизнь на Плутоне?,ru,-0.5,0.0,0.6,0.6,1.946,1,2.646,tydi
+indonesian_polar_18,apakah harimau bengal terancam punah?,id,-0.482,0.0,0.75,0.833,2.079,1,3.18,tydi
+ru_polar_198,ты кудесник мне ответь сон ли это?,ru,-1.603,0.0,0.8,0.429,2.197,1,1.823,ud
+russian_content_5272,Когда Россия вступила в Первую Мировую войну?,ru,-0.51,0.0,0.5,0.714,2.197,0,2.901,tydi
+indonesian_content_3927,Apa yang dimaksud dengan Nekrosis ?,id,0.219,1.0,0.333,0.4,1.946,0,3.898,tydi
+ko_content_139,이 완전한 원에 대한 관념은 어디서 생겨나는 걸까요?,ko,1.533,1.0,0.167,0.875,2.303,0,5.878,ud
+ko_content_75,세상에 어느 나라 어느 역사의 쿠데타나 혁명이 구체제의 법적 질서에 의해 그 행위의 정당성을 입증하려 했던가?,ko,1.533,0.0,0.5,0.625,2.89,0,5.548,ud
+indonesian_content_5443,Negara apa yang pertama kali memproduksi pesawat?,id,0.219,1.0,0.5,0.714,2.197,0,4.63,tydi
+id_content_15,"Aku selalu bertanya, siapakah diriku sebenarnya di dalam hari-harimu, Viola?",id,-0.226,0.0,0.6,0.385,2.833,0,3.592,ud
+russian_polar_1668,Выходит ли «Правда: Рабочая газета» на 2019 год?,ru,0.5,0.0,0.6,0.75,2.565,1,4.415,tydi
+russian_content_6711,Какая максимальная скорость хода Лине́йного кре́йсера на апрель 2019?,ru,0.49,0.0,0.0,0.778,2.398,0,3.666,tydi
+ko_polar_149,혹은 인간이 알 수 있는 데에 마지막 한계가 있을까?,ko,0.365,1.0,0.333,0.889,2.398,1,4.985,ud
+finnish_content_14640,Mikä on arktisen alueen eteläisin kaupunki?,fi,1.949,0.0,0.0,0.667,2.079,0,4.695,tydi
+ar_content_50,"وفي أي عام قدم الصندوق الكويتي قرضاً لتمويل بناء مدارس في جمهورية مصر العربية؟""",ar,-1.095,0.0,0.8,0.688,2.944,0,3.337,ud
+japanese_content_2232,サム・フィリップスの出身はどこ？,ja,-0.19,0.0,0.0,0.429,2.197,0,2.436,tydi
+ar_content_7,ماذا لو تحقق ذلك؟..,ar,-3.095,1.0,0.2,0.25,2.079,0,0.434,ud
+korean_polar_205,금은 돈보다 더 좋은 화폐인가?,ko,-1.136,0.0,0.5,1.0,1.946,1,2.31,tydi
+en_polar_611,Is it ok for a woman in french culture to make the first move?,en,-0.034,1.0,0.833,0.5,2.773,1,5.072,ud
+id_content_151,Mengapa saya yang menjadi Bhikkhu?,id,-1.226,1.0,0.4,0.6,1.946,0,2.72,ud
+korean_polar_64,모든 신경 세포는 전기적인 흥분성을 띄나요?,ko,-1.136,1.0,0.25,1.0,2.079,1,3.193,tydi
+korean_content_4646,워털루는 벨기에에서 몇 번째로 큰 도시인가?,ko,0.184,0.0,0.4,1.0,2.079,0,3.663,tydi
+japanese_polar_1156,大西洋は世界で一番大きい海ですか？,ja,0.447,0.0,0.0,0.6,2.485,1,3.532,tydi
+russian_content_2124,Когда в Лондоне появился первый двухэтажный автобус?,ru,-0.51,0.0,0.5,0.714,2.197,0,2.901,tydi
+ko_polar_175,그 혼란을 국민이 감당하려 할 것인가?,ko,-1.635,1.0,0.25,0.667,2.079,1,2.361,ud
+indonesian_polar_326,Apakah tumbuhan Talas dapat dimakan manusia?,id,-0.482,0.0,0.75,0.714,2.197,1,3.179,tydi
+ru_content_149,Если да то как?,ru,-0.955,0.0,0.0,0.25,1.792,0,1.087,ud
+finnish_polar_1429,Onko Yhdysvaltojen presidenttinä ollut useammin republikaani kuin demokraatti?,fi,2.15,0.0,0.0,0.625,2.303,1,5.078,tydi
+finnish_content_25,Milloin Nancy Spungen syntyi?,fi,-0.051,0.0,0.333,1.0,1.792,0,3.074,tydi
+indonesian_polar_130,Apakah Tahun Baru Imlek termasuk libur nasional?,id,0.518,0.0,0.75,0.875,2.303,1,4.446,tydi
+ja_content_34,誰がこのオーストラリアサイドを止めることができるのか？,ja,-1.39,0.0,1.0,0.333,2.639,0,2.582,ud
+id_polar_70,Membatu oleh ayahnya?,id,-1.362,0.0,0.167,0.5,1.792,1,1.097,ud
+en_content_140,How was the play?,en,-1.199,0.0,0.0,0.5,1.792,0,1.093,ud
+fi_content_104,Miksi siis nauraa naistutkimukselle?,fi,-1.743,0.0,0.6,1.0,1.792,0,1.649,ud
+id_content_199,Apa kabar Sahibul Menara?,id,-0.226,0.0,0.0,0.75,1.792,0,2.316,ud
+ko_polar_114,아귀날도는 과연 우리가 이제까지 생각해왔던 그대로인가?,ko,-1.635,1.0,0.417,0.833,2.079,1,2.694,ud
+japanese_content_98,アイザック・アシモフの処女作は何？,ja,-0.19,0.0,0.0,0.5,2.303,0,2.613,tydi
+finnish_polar_844,Kuoleeko Lost -sarjan päähenkilö?,fi,1.15,0.0,0.167,1.0,1.792,1,4.109,tydi
+korean_content_2908,독일에서 가장 오래된 대학은 무엇인가?,ko,0.184,1.0,0.3,1.0,1.946,0,4.43,tydi
+english_content_1579,What channel is Ion television on?,en,-0.578,0.0,0.0,0.5,2.079,,2.001,tydi
+korean_polar_93,스케테의 본질은 수도원 체계인가요?,ko,-1.136,0.0,0.5,1.0,1.792,1,2.156,tydi
+fi_polar_115,Onko tietosuojaviranomaisilla asianmukaiset voimavarat tietosuojaa koskevien sääntöjen täytäntöönpanemiseksi SIS II -järjestelmän osalta?,fi,2.336,1.0,0.2,0.917,2.639,1,7.092,ud
+korean_content_2588,교회가 가장 많은 나라는 어디인가?,ko,0.184,0.0,0.2,1.0,1.946,0,3.33,tydi
+en_content_306,how rough is too rough?,en,-1.199,0.0,0.0,0.8,1.946,0,1.547,ud
+ru_polar_32,"Действительно ли нормально, когда так сильно и непрекращаемо болит зуб?",ru,0.397,1.0,0.4,0.7,2.565,1,5.062,ud
+en_content_80,Who could stop a suicide murder in the midst of the crowded line waiting to be checked by the airport metal detector?,en,3.801,2.0,0.333,0.5,3.178,0,9.812,ud
+japanese_content_2934,日本初の医療法人は何？,ja,-0.19,0.0,0.0,0.571,2.197,0,2.578,tydi
+en_content_31,What is the best pos system I can buy in philadelphia pa?,en,-0.199,1.0,0.333,0.5,2.639,0,4.273,ud
+indonesian_content_5877,Ada berapa jumlah jamur ?,id,-0.781,0.0,0.167,1.0,1.792,0,2.178,tydi
+id_polar_161,"Juga yang meninggal hanyalah orang Mesir, tidak termasuk orang Israel yang saat itu masih berada di wilayah Mesir?",id,0.638,1.0,0.556,0.684,3.091,1,5.969,ud
+finnish_polar_1027,Voiko skitsofreniaa sairastava henkilö käydä normaalisti töissä?,fi,1.15,1.0,0.333,0.857,2.197,1,5.537,tydi
+arabic_content_8200,ماهو اسم آخر زوجة تزوحها النبي محمد (ص)؟,ar,2.2,1.0,0.333,0.556,2.565,0,6.654,tydi
+arabic_content_14628,متى أصدرت لعبة كاونتر سترايك قو على نظام الستيم ؟,ar,0.2,0.0,0.667,0.444,2.398,0,3.709,tydi
+arabic_polar_368,هل يمكن للرضيع المولود في سبعة أشهر العيش عندما يولد ؟,ar,2.175,1.0,0.25,0.6,2.485,1,6.51,tydi
+finnish_content_1360,Mikä on Islannin BKT?,fi,-0.051,0.0,0.0,0.5,1.792,0,2.241,tydi
+fi_content_77,"Jos tämä ei riitä, mitä me sitten tehdään?",fi,-0.743,1.0,0.6,0.375,2.398,0,3.63,ud
+korean_polar_297,"온타리오주는 캐나다의 정치, 경제의 핵심을 이루는 주인가요?",ko,1.864,1.0,0.375,1.0,2.303,1,6.542,tydi
+korean_content_10665,브라질 프로축구에서 가장 많은 우승을 한 팀은 어디인가?,ko,2.184,1.0,0.3,1.0,2.303,0,6.787,tydi
+id_polar_122,"Apakah yang akan terjadi selanjutnya dengan hubungan Saffa, Arjuna, Luna dan Bagas?",id,1.638,1.0,0.5,0.538,2.833,1,6.509,ud
+english_polar_759,Do you need to go to a four-year university to be a pharmacy tech?,en,1.83,2.0,0.5,0.4,2.89,1,7.62,tydi
+en_polar_143,"Do we expect to have ONE EPC contract, or several?",en,0.966,1.0,0.333,0.5,2.565,1,5.364,ud
+indonesian_polar_460,bisakah anggur menghasilkan alkohol?,id,-1.482,0.0,0.75,0.6,1.946,1,1.814,tydi
+ko_content_205,생물화학자들 중에 자기 주변의 야생화 이름을 손꼽을 수 있는 사람이 과연 몇이나 될까?,ko,2.533,1.0,0.5,0.923,2.708,0,7.664,ud
+korean_polar_247,손빈은 손무의 5대 손인가요?,ko,-2.136,0.0,0.75,1.0,1.792,1,1.406,tydi
+fi_content_85,miksi meidän pitää olla Natoon intoilemassa?,fi,-1.743,0.0,0.6,0.5,2.079,0,1.436,ud
+arabic_content_16982,"في أي عام نشأ حزب المحافظين البريطاني رسميا""؟",ar,-0.8,0.0,0.5,0.875,2.398,0,2.973,tydi
+ko_content_111,그렇다면 그 무엇에 해당하는 새로운 사회구성체의 본질은 무엇인가?,ko,0.533,1.0,0.25,0.75,2.303,0,4.836,ud
+indonesian_content_11010,Siapakah Maya Lestari Gf?,id,0.219,0.0,0.0,0.6,1.946,0,2.765,tydi
+japanese_content_504,最長距離を走る日本の深夜バスは何,ja,0.81,1.0,0.167,0.6,2.398,0,4.975,tydi
+ja_content_17,"で,どんな顔だった?",ja,-2.39,0.0,0.0,0.2,2.079,0,-0.111,ud
+ko_polar_155,어쩌면 그 일은 지구의 생물체를 외계로 진출시킬 수 있는 거의 유일한 방법이 아니겠는가?,ko,0.365,1.0,0.333,0.923,2.708,1,5.329,ud
+arabic_polar_537,هل يمكن علاج تثدي الرجل؟,ar,0.175,0.0,0.167,0.6,1.946,1,2.888,tydi
+japanese_content_2048,北朝鮮が初めてミサイルの打ち上げをしたのはいつ,ja,0.81,1.0,0.833,0.417,2.565,0,5.625,tydi
+russian_polar_1009,"Совершали ли члены секты ""Семья"" жестокие убийства?",ru,0.5,0.0,0.6,0.857,2.398,1,4.355,tydi
+en_polar_313,Do you live in a gated community or gentrified neighborhood?,en,-0.034,0.0,0.167,0.5,2.485,1,3.118,ud
+id_polar_186,"Akankah sepatu berhak tinggi - nya berubah menjadi pantofel, riasan glitter - nya menjadi debu, atau celana kulit - nya jadi celana kain?",id,1.638,1.0,0.4,0.667,3.332,1,7.037,ud
+ru_content_606,"Что делать, друзья, товарищи?",ru,-0.955,0.0,0.333,0.75,2.079,0,2.207,ud
+id_content_166,Namun apa yang harus dilakukan jika air ketuban pecah di masa janin belum waktunya lahir?,id,0.774,1.0,0.267,0.562,2.89,0,5.493,ud
+fi_content_66,– Missä lapset ovat?,fi,-1.743,0.0,0.0,0.333,1.792,0,0.382,ud
+english_polar_181,Can you only use Photoshop Premier with a membership?,en,-0.17,0.0,0.8,0.556,2.398,1,3.584,tydi
+japanese_polar_875,『ACE COMBAT 5 THE UNSUNG WAR』でプレイヤー同士の対戦はできる？,ja,0.447,0.0,0.4,0.769,2.833,1,4.449,tydi
+id_content_165,Siapa yang akan dipilih oleh Naia?,id,-0.226,1.0,0.4,0.333,2.079,0,3.586,ud
+english_polar_463,can you visit the Beacham Theatre?,en,-0.17,0.0,0.4,0.5,2.079,1,2.809,tydi
+english_polar_153,Did the sinosauropteryx fly?,en,-0.17,0.0,0.2,0.5,1.792,1,2.322,tydi
+arabic_polar_1069,هل كان صلاح الدين الأيوبيّ كرديّا؟,ar,-0.825,0.0,0.0,0.286,2.197,1,1.658,tydi
+japanese_content_2955,行列理論を提唱したのはだれ？,ja,-1.19,0.0,0.5,0.444,2.398,0,2.152,tydi
+id_content_99,Maumu kapan sih? - Sebenarnya kapan yang kamu mau?,id,-0.226,1.0,0.4,0.667,2.565,0,4.406,ud
+russian_polar_629,Альберт Эйнштейн получил Нобелевскую премию по физике?,ru,0.5,0.0,0.4,0.857,2.197,1,3.954,tydi
+ar_polar_19,"يقول بال: ""لحسن الحظ, قال أحدهم في سوني أستراليا: 'بالمناسبة, هل لاحظتم هذا؟'"".",ar,-0.625,2.0,0.6,0.562,3.296,1,5.833,ud
+russian_polar_573,Упомянута ли игра Pac-Man в книге рекордов Гиннесса в 2019 году?,ru,0.5,0.0,0.8,0.636,2.565,1,4.501,tydi
+indonesian_polar_95,Apakah Pangeran Noto Igomo menkahi di Indonesia?,id,0.518,0.0,0.75,0.75,2.303,1,4.321,tydi
+japanese_polar_1307,結城紬の生産は機械化されたことがある？,ja,0.447,1.0,0.0,0.538,2.708,1,4.693,tydi
+japanese_polar_560,新幹線には最初から座席指定席があった？,ja,-0.553,0.0,0.6,0.583,2.639,1,3.269,tydi
+fi_polar_30,Toisiko Se tällä kertaa mukanaan siunauksen vai tuhon?,fi,0.336,0.0,0.8,0.625,2.303,1,4.064,ud
+ru_polar_31,"Скажите, пожалуйста, стоит ли мне пить ципрофлоксацин?",ru,-0.603,1.0,0.4,0.571,2.398,1,3.766,ud
+fi_content_71,Mitä kello oikeesti on?”,fi,-1.743,0.0,0.0,0.5,1.946,0,0.703,ud
+english_polar_792,Is there a US military base in Afghanistan?,en,0.83,0.0,0.4,0.625,2.303,1,4.158,tydi
+finnish_polar_2014,Onko X-Men: Days of Future Past -elokuva saanut Oscar -ehdokkuutta?,fi,2.15,0.0,0.333,0.9,2.565,1,5.948,tydi
+finnish_content_7910,Milloin Hiei laskettiin vesille?,fi,-1.051,0.0,0.5,1.0,1.792,0,2.241,tydi
+ar_content_18, ماذا سيرتدي صدام حسين في المحكمة؟,ar,-3.095,0.0,0.6,0.286,2.303,0,0.094,ud
+korean_content_2316,공무원의 정년은 몇년인가?,ko,-0.816,0.0,0.2,1.0,1.609,0,1.993,tydi
+en_polar_510,So any ideas?,en,-2.034,0.0,0.0,0.667,1.609,1,0.242,ud
+korean_polar_106,영의정은 정 1품에 해당하는 관직인가요?,ko,-0.136,1.0,0.375,1.0,1.946,1,4.185,tydi
+arabic_content_1470,أين تقع منطقة إقليم الباسك؟,ar,0.2,0.0,0.333,0.6,1.946,0,3.079,tydi
+finnish_polar_28,Onko Ídan luola yksi Kreetan merkittävimmistä luolapyhäköistä?,fi,1.15,0.0,0.0,0.714,2.197,1,4.061,tydi
+arabic_content_2007,أين تقع جبال زيلامسي ؟,ar,-0.8,0.0,0.333,0.5,1.792,0,1.825,tydi
+ru_content_401,Что грозит в таком случае?,ru,-0.955,0.0,0.333,0.4,1.946,0,1.724,ud
+ko_polar_127,액체는 다른 모든 액체들과 다르겠는가?,ko,-1.635,0.0,0.0,0.8,1.946,1,1.111,ud
+indonesian_polar_287,apakah Korea selatan dan Korea utara memiliki alat musik tradisional yang sama?,id,0.518,0.0,0.75,0.769,2.708,1,4.745,tydi
+ja_content_4,責任者は誰ですか?,ja,-1.39,0.0,0.0,0.333,2.079,0,1.022,ud
+ru_polar_13,Как его поить и можно ли воду чем-то заменить или она обязательна в чистом виде?,ru,0.397,1.0,0.6,0.533,2.833,1,5.363,ud
+korean_polar_249,마르크스-레닌주의에서는 개인의 독재가 아니라 계급의 독재를 말하며 '직접 폭력에 입각하여 아무런 법률의 구속을 받지 않는 권력'(레닌)이라고 규정하고 있나요?,ko,1.864,1.0,0.25,0.684,3.178,1,6.976,tydi
+indonesian_polar_386,pernahkah Al-Habib Idrus bin Salim Al-Jufri menikah?,id,2.518,0.0,0.5,0.875,2.303,1,6.196,tydi
+indonesian_content_4485,Dimana George Otto Gey lahir?,id,0.219,0.0,0.333,1.0,1.946,0,3.498,tydi
+indonesian_content_3444,kapankah Kernel diciptakan?,id,-0.781,0.0,0.333,0.75,1.792,0,2.094,tydi
+japanese_content_1882,ローマの休日を監督したのは誰？,ja,0.81,1.0,0.5,0.3,2.485,0,5.095,tydi
+russian_polar_509,Можно ли женщине заходить в мечеть?,ru,0.5,1.0,0.4,0.667,2.079,1,4.646,tydi
+japanese_content_5087,日本で発見された最古の人類の化石は何？,ja,0.81,1.0,0.167,0.385,2.708,0,5.07,tydi
+russian_content_10001,Сколько длился самый длинный полет на ТУ-95?,ru,0.49,0.0,0.333,0.5,2.303,0,3.626,tydi
+ru_polar_118,"Vae / woe, Aes / ore: есть ли ещё англо-латинские слова с ae / o соответствием?",ru,1.397,0.0,0.4,0.357,2.996,1,5.15,ud
+korean_polar_12,도마뱀은 난생을 하는 동물인가요?,ko,-1.136,1.0,0.375,1.0,1.792,1,3.031,tydi
+ko_polar_13,우리나라 국회의원들이 이래서 되겠습니까?,ko,-0.635,0.0,0.167,0.75,1.792,1,2.074,ud
+japanese_content_3063,レディ・ビー・グッドを開発したのは誰,ja,-1.19,0.0,0.667,0.333,2.565,0,2.375,tydi
+id_polar_33,"Tuh, kamu lupa lagi kan? - Lihat, kamu lupa lagi bukan?",id,-1.362,0.0,0.5,0.5,2.773,1,2.411,ud
+fi_content_8,Mikä seksuaalinen itsetunto?,fi,-1.743,0.0,0.0,0.667,1.609,0,0.533,ud
+arabic_polar_958,هل تم القبض على جاك السفاح ؟,ar,0.175,0.0,0.167,0.5,2.079,1,2.921,tydi
+indonesian_polar_80,apakah babi omnivora?,id,-0.482,0.0,0.0,0.5,1.792,1,1.81,tydi
+indonesian_polar_85,Apakah bisa Ular bangkai laut mematian ?,id,-0.482,1.0,0.375,0.714,2.197,1,3.804,tydi
+ko_content_73,대통령 유고시 부통령이 권한을 대행하는 것일 뿐인데 어째서 정부전복인가?,ko,-0.467,2.0,0.389,0.889,2.398,0,5.209,ud
+japanese_polar_607,社会福祉士は国家資格？,ja,-0.553,0.0,0.0,0.833,2.079,1,2.359,tydi
+english_polar_385,Is Gwen Poole part of the Avengers?,en,-0.17,0.0,0.0,0.571,2.197,1,2.598,tydi
+en_polar_95,"For example, did you know that George Bush spent considerably more time in uniform than John Kerry?",en,1.966,1.0,0.5,0.647,2.996,1,7.109,ud
+ar_content_4,"ألا يحق لأي فلسطيني أن يعرف الضمانات قبل أن يوافق على الهدنة، خاصة أن شارون يعلن مع بداية الحوار الفلسطيني ـ الفلسطيني في القاهرة أن إسرائيل ليست طرفاً في أي هدنة، وأن هذه الهدنة ""شأن فلسطيني داخلي""؟!",ar,-0.095,2.0,0.8,0.59,3.85,0,7.145,ud
+ru_content_453,Что за растение?,ru,-1.955,0.0,0.0,0.333,1.609,0,-0.013,ud
+en_content_86,"Do you shoot an arch-murderer who deliberately moves from one location to another, always surrounded by children?",en,1.801,2.0,0.5,0.471,2.996,0,7.768,ud
+en_content_390,What kind of Meal do peopel in Argentina have?,en,-0.199,0.0,0.333,0.556,2.398,0,3.088,ud
+indonesian_content_5066,Ada berapa serial NG Knight Ramune?,id,1.219,0.0,0.167,1.0,2.079,0,4.465,tydi
+arabic_polar_1318,هل يمكن استخدام صناعة السجاد؟,ar,0.175,0.0,0.167,0.5,2.079,1,2.921,tydi
+japanese_polar_583,名誉革命で流血は起きた？,ja,-0.553,0.0,0.4,0.571,2.197,1,2.615,tydi
+korean_content_519,리겔의 분광형은 무엇인가요?,ko,-0.816,0.0,0.2,1.0,1.609,0,1.993,tydi
+en_polar_135,Did you happen to sign your employment agreement?,en,-0.034,1.0,0.333,0.5,2.303,1,4.102,ud
+ko_polar_78,서울에서도 소련 말을 잘 아는 사람이 많으니 주의하라는 얘기가 그들에게서 들을 수 있는 날이 올까?,ko,5.365,1.0,0.292,0.933,2.833,1,10.423,ud
+en_content_243,"Ok maybe that isn't the right question, but my question is can you text from a united states number when your in canada, can you send texts to another united states number?",en,1.801,0.0,0.25,0.441,3.638,0,6.13,ud
+ko_content_92,"1982년에 처음 출판한 한 저서에 그는 아예 ""문학이란 무엇이었나?"" 라는 제목을 붙이고 있다.",ko,-0.467,1.0,0.444,0.692,2.89,0,4.559,ud
+ja_polar_44,自称“平和を愛する小柄な”男の妻まで殴りつけたということか。,ja,2.727,1.0,0.25,0.562,2.996,1,7.535,ud
+indonesian_content_5243,Dimana Surat Eusebius ditemukan?,id,-0.781,0.0,0.333,1.0,1.792,0,2.344,tydi
+arabic_content_20902,ما هي عاصمة جورجيا؟,ar,-0.8,0.0,0.0,0.25,1.792,0,1.242,tydi
+korean_polar_72,덴마크의 수도는 어디인가?,ko,-1.136,0.0,0.25,1.0,1.609,1,1.723,tydi
+en_polar_17,Today is good 12:30 ?,en,-1.034,1.0,0.0,0.5,1.792,1,2.258,ud
+russian_content_7603,Как звали жену Зигмунда Фрейда?,ru,0.49,0.0,0.333,1.0,1.946,0,3.769,tydi
+japanese_polar_664,正規雇用とは、アルバイト、契約社員も含まれますか？,ja,-0.553,0.0,0.6,0.5,2.773,1,3.32,tydi
+finnish_content_9692,Mikä oli Ensemble Studiosin ensimmäinen kehittämä peli?,fi,1.949,1.0,0.167,0.714,2.197,0,6.027,tydi
+korean_content_9263,한국의 통계청은 어느 도시에 있는가?,ko,-0.816,0.0,0.0,0.8,1.946,0,1.93,tydi
+ru_content_702,На что жить?,ru,-0.955,0.0,0.167,0.333,1.609,0,1.154,ud
+finnish_content_15097,Mikä on uunin panko?,fi,-0.051,0.0,0.0,0.5,1.792,0,2.241,tydi
+ko_polar_26,조개껍질을 연구하는 이유는 그 생물을 추정해 보려는 것뿐이 아닌가?,ko,0.365,1.5,0.167,1.0,2.398,1,5.43,ud
+russian_content_11342,Кто был главным конструктором Паровоза О?,ru,-1.51,0.0,0.0,0.5,2.079,0,1.069,tydi
+ko_polar_170,문학비평가와 문학연구가를 굳이 따로 분리할 필요가 있을까?,ko,0.365,1.0,0.333,0.857,2.197,1,4.752,ud
+id_polar_104,Mau mendengarkan Rihanna membawakan lagu dengan iringan irama musik latin?,id,2.638,1.0,0.25,0.8,2.485,1,7.173,ud
+en_content_77,==Why did Bush revoke Executive Order 13011 today?,en,-1.199,0.0,0.833,0.667,2.398,0,2.699,ud
+korean_polar_296,MTV가 첫 방송을 실시할 당시 HBO에서도 Video Jukebox라는 30분짜리 뮤직비디오 프로그램을 방영한 바 있나요?,ko,0.864,1.0,0.438,0.929,2.773,1,6.004,tydi
+english_polar_611,Is Coalhouse Fort still an active military location?,en,-0.17,0.0,0.0,0.75,2.303,1,2.883,tydi
+finnish_content_2952,Milloin hedelmöityshoitoa on aloitettu käyttämään?,fi,-0.051,1.0,0.333,0.8,1.946,0,4.028,tydi
+id_content_61,Kenapa harus smada?,id,-2.226,0.0,0.0,0.667,1.609,0,0.05,ud
+ru_content_489,"как перестать заходить к нему на страницу и что может послужить причиной тому, что он все еще оставляет мне такие тайные послания?",ru,4.045,1.0,0.467,0.545,3.219,0,9.276,ud
+id_content_249,``sampai kapan kita mesti ter-doktrin dan terus dicekoki dengan lagu-lagu yang seragam dan ``Maaf'' tak mengindahkan nilai estitika dalam bermusik?,id,1.774,1.0,0.48,0.55,3.219,0,7.023,ud
+fi_content_150,"Miten selität sen, että tuloksesi olivat niin hirmuisen kovia verrattuna nykyisiin aikoihin?",fi,2.257,2.0,0.3,0.75,2.708,0,8.015,ud
+english_content_4157,What causes the bystander effect?,en,-0.578,0.0,0.333,0.6,1.946,,2.301,tydi
+english_content_765,What does a hakka symbolize?,en,-0.578,0.0,0.333,0.4,1.946,,2.101,tydi
+ko_polar_36,인민은 오류가 없는가?,ko,-2.635,0.0,0.0,1.0,1.609,1,-0.026,ud
+id_polar_136,"Bukankah Mar Efraim adalah Efraim Patriark Antiokhia yang menjabat tahun 539-545, yang tentunya bukan seorang Monofisit?",id,-0.362,1.0,0.417,0.5,3.045,1,4.6,ud
+japanese_polar_1143,『Cooking with Dog』を配信しているのは個人？,ja,0.447,1.0,0.4,0.545,2.708,1,5.1,tydi
+arabic_content_15694,ما هي السور السبع الطوال في القرآن الكريم ؟,ar,2.2,0.0,0.0,0.5,2.303,0,5.003,tydi
+ko_content_46,1941년 도대체 어떤 해인가?,ko,-2.467,0.0,0.25,1.0,1.792,0,0.575,ud
+finnish_polar_1736,Ovatko ydinaineet vaarallisia ihmiselle?,fi,-0.85,0.0,0.0,0.75,1.792,1,1.692,tydi
+ja_polar_64,シリーズ2は今のところ動いていますか？,ja,-0.273,1.0,0.5,0.455,2.565,1,4.247,ud
+id_content_30,"Siapa yang akan mengira bahwa Argentina, sebuah negara yang terisolir akan pergi berperang melawan pelanggan terbesarnya dalam ekspor hasil pertanian -- Inggris?",id,3.774,2.0,0.35,0.545,3.258,0,9.927,ud
+ru_polar_170,Это нормально ли?,ru,-2.603,0.0,0.0,0.333,1.609,1,-0.661,ud
+japanese_polar_913,合理的選択理論は哲学の分野でも研究されている？,ja,0.447,1.0,0.3,0.467,2.833,1,5.047,tydi
+ru_content_10,Но для чего ?,ru,-1.955,0.0,0.0,0.0,1.609,0,-0.346,ud
+korean_content_1024,2018년 세상에서 가장 많이 판매된 책은 무엇인가?,ko,1.184,1.0,0.4,1.0,2.197,0,5.781,tydi
+japanese_polar_1217,扁桃腺の切除は医学的根拠がある？,ja,0.447,0.0,0.4,0.6,2.485,1,3.932,tydi
+korean_polar_364,ISO 8601는 그레고리력에서의 날짜와 24시간제에 기반하는 시간인가요?,ko,-0.136,1.0,0.375,0.571,2.197,1,4.007,tydi
+finnish_polar_1209,Onko Islannissa Jokamiehenoikeudet?,fi,-0.85,0.0,0.0,0.667,1.609,1,1.426,tydi
+fi_polar_121,olisiko viininvalmistus yrittäjälle sivu- vai pääelinkeino?,fi,-0.664,0.0,0.0,0.667,2.079,1,2.082,ud
+finnish_content_11951,Mikä on Ruoveden asukasluku?,fi,-0.051,0.0,0.0,0.5,1.792,0,2.241,tydi
+korean_content_5481,조지아의 화폐 통화는 무엇인가요?,ko,-0.816,0.0,0.2,1.0,1.792,0,2.176,tydi
+english_polar_384,Did Edmontosaurus have feathers?,en,-1.17,0.0,0.4,0.75,1.792,1,1.772,tydi
+russian_content_5046,Сколько произведений было написано Ре́йчел Лу́из Ка́рсон?,ru,-0.51,0.0,0.5,0.714,2.197,0,2.901,tydi
+english_content_278,What is the biggest diamond?,en,-0.578,0.0,0.0,0.4,1.946,,1.768,tydi
+korean_content_11471,2015년 세계무역 수출 2위는 어느 나라인가요?,ko,0.184,0.0,0.6,0.667,2.079,0,3.53,tydi
+id_polar_130,"Pinnock bertanya: ``Apakah Ia terperdaya sendiri (deluded'') oleh kebesaran-Nya, seorang paranoid, seorang penipu yang tidak sengaja melakukannya, seorang skizoprenik?",id,0.638,1.0,0.333,0.565,3.466,1,6.002,ud
+fi_polar_124,"Popista, rockista vaiko iskelmästä?",fi,-0.664,0.0,0.0,0.75,1.946,1,2.032,ud
+ru_polar_156,Нормально ли такое поведение женщины?,ru,-0.603,0.0,0.0,0.6,1.946,1,1.943,ud
+arabic_content_10270,ما هي جنسية لاعبة التنس بتسي عباس؟,ar,1.2,0.0,0.0,0.429,2.197,0,3.826,tydi
+id_polar_252,Apakah kalian kaum perempuan mau air yang penuh berisi kotoran-kotoran ini dituangkan kepada kalian?,id,0.638,1.0,0.444,0.6,2.833,1,5.515,ud
+english_content_1409,How many cathedrals are there in Letterkenny?,en,0.422,0.0,0.5,0.714,2.197,,3.833,tydi
+english_content_2886,How old was William I when he died?,en,-0.578,1.0,0.333,0.625,2.303,,3.683,tydi
+japanese_content_1207,ソシエテ・ジェネラルの創業者は誰,ja,-0.19,0.0,0.0,0.5,2.197,0,2.507,tydi
+korean_polar_20,미토콘드리아는 자체적인 유전물질을 가지고 있나요?,ko,-1.136,1.0,0.25,0.8,1.946,1,2.86,tydi
+russian_content_2173,Когда родился Чо́нси Рэ́й Би́ллапс?,ru,-0.51,0.0,0.333,1.0,1.946,0,2.769,tydi
+en_polar_512,Is that something you are up for?,en,-1.034,1.0,0.0,0.143,2.197,1,2.306,ud

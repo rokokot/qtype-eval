@@ -39,85 +39,108 @@ Nivre, J., de Marneffe, M.-C., Ginter, F., Hajič, J., Manning, C. D., Pyysalo, 
 
 #### TyDi QA Processing
 
-1. **Data Extraction:** We utilized the HuggingFace datasets library to access the TyDi QA primary task dataset.
-2. **Question Classification:**
-   - We developed language-specific rule-based classifiers using regex and token matching for polar and content questions
-   - For languages with well-documented grammatical question markers (e.g., Finnish -ko/-kö, Japanese か, English wh-words etc.), we used these as reliable indicators
-   - For languages with less explicit markers, we employed combined approaches using question word lists and positional patterns
-   - We cross-validated our classifications against the available annotations in TyDi QA's yes_no_answer field
-3. **Validation:** We employed a multi-step validation process:
-   - Manual review of random samples by language specialists
-   - Consistency checking between rule-based classification and existing annotations
+   We utilized the HuggingFace datasets library to access the TyDi QA primary task dataset.
+
+   **Question Classification:**
+
+- We developed language-specific rule-based classifiers using regex and token matching for polar and content questions
+- For languages with well-documented grammatical question markers (e.g., Finnish -ko/-kö, Japanese か, English wh-words etc.), we used these as reliable indicators
+- For languages with less explicit markers, we employed combined approaches using question word lists and positional patterns
+- We cross-validated our classifications against the available annotations in TyDi QA's yes_no_answer field
+
+   **Validation:** We employed a multi-step validation process:
+
+- Manual review of random samples by language specialists
+- Consistency checking between rule-based classification and existing annotations
 
 #### Universal Dependencies Processing
 
-1. **Dataset Selection:** We curated a selection of UD treebanks across our 7 target languages, prioritizing treebanks with conversational and question-containing content. The treebanks for partly chosen for their mean absolute rankings as surveyed by (Kulmizev, A. and Nivre, J., 2023 )
-2. **CoNLL-U Parsing:** We processed the UD treebanks' CoNLL-U files to extract questions using:
-   - Sentence-final punctuation (?, ？, ؟)
-   - Language-specific interrogative markers
-   - Syntactic question patterns identifiable through dependency relations
-3. **UDPipe Processing:** For syntactic processing, we employed UDPipe (Straka et al., 2016), a state-of-the-art tool for UD format processing:
-   - Tokenization, lemmatization, and morphological analysis
-   - Dependency parsing to extract syntactic structures
-   - Language-specific models trained on UD treebanks
-4. **Question Classification:**
-   - We developed the `ud_classifier.py` script to identify and classify questions from CoNLL-U files
-   - The script implements language-specific pattern matching for interrogative features
-   - Questions were classified as polar or content based on morphosyntactic properties
-   - Extensive filtering to remove incomplete questions, rhetorical questions, and other edge cases
+   **Dataset Selection:** We curated a selection of UD treebanks across our 7 target languages, prioritizing treebanks with conversational and question-containing content. The treebanks for partly chosen for their mean absolute rankings as surveyed by (Kulmizev, A. and Nivre, J., 2023 )
+
+   **CoNLL-U Parsing:**
+
+- We processed the UD treebanks' CoNLL-U files to extract questions using:
+- Sentence-final punctuation (?, ？, ؟)
+- Language-specific interrogative markers
+- Syntactic question patterns identifiable through dependency relations
+
+   **UDPipe Processing:**
+
+- For syntactic processing, we employed UDPipe (Straka et al., 2016), a state-of-the-art tool for UD format processing:
+- Tokenization, lemmatization, and morphological analysis
+- Dependency parsing to extract syntactic structures
+- Language-specific models trained on UD treebanks
+
+   **Question Classification:**
+
+- We developed the `ud_classifier.py` script to identify and classify questions from CoNLL-U files
+- The script implements language-specific pattern matching for interrogative features
+- Questions were classified as polar or content based on morphosyntactic properties
+- Extensive filtering to remove incomplete questions, rhetorical questions, and other edge cases
 
 **Reference:**
-Straka, M., Hajic, J., & Straková, J. (2016). UDPipe: Trainable Pipeline for Processing CoNLL-U Files Performing Tokenization, Morphological Analysis, POS Tagging and Parsing. In Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC'16) (pp. 4290-4297).
 
-Kulmizev, A. & Nivre, J. (2023). Investigating UD Treebanks via Dataset Difficulty Measures. In Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics (pp. 1076-1089).  
+- Straka, M., Hajic, J., & Straková, J. (2016). UDPipe: Trainable Pipeline for Processing CoNLL-U Files Performing Tokenization, Morphological Analysis, POS Tagging and Parsing. In Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC'16) (pp. 4290-4297).
+
+- Kulmizev, A. & Nivre, J. (2023). Investigating UD Treebanks via Dataset Difficulty Measures. In Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics (pp. 1076-1089).  
 
 ### Linguistic Complexity Feature Scoring
 
 We implemented a linguistic analysis pipeline using:
 
-1. **Profiling-UD Framework:**
-   - We developed a custom profiling framework for extracting linguistic complexity features
-   - Our implementation was inspired by and extends the approach of Brunato et al. (2020) on linguistic complexity profiling
-   - The framework processes parsed sentences to extract a wide range of complexity features using the profiling-UD tool developed by Brunato et al. (2020)
+**Profiling-UD Framework:**
 
-2. **Feature Extraction Process for the TyDi Data:**
-   - Each question was processed through UDPipe to generate CoNLL-U format parse trees using our `scripts/data-processing/run_udpipe.py`
-   - The parsed trees were analyzed using our  `scripts/data_processing/profiling-UD/custom-profile.py` script
-   - Results were normalized and aggregated to provide a single complexity score
+- We developed a custom profiling framework for extracting linguistic complexity features
+- Our implementation was inspired by and extends the approach of Brunato et al. (2020) on linguistic complexity profiling
+- The framework processes parsed sentences to extract a wide range of complexity features using the profiling-UD tool developed by Brunato et al. (2020)
+
+**Feature Extraction Process for the TyDi Data:**
+
+- Each question was processed through UDPipe to generate CoNLL-U format parse trees using our `scripts/data-processing/run_udpipe.py`
+- The parsed trees were analyzed using our  `scripts/data_processing/profiling-UD/custom-profile.py` script
+- Results were normalized and aggregated to provide a single complexity score
 
 **References:**
-Brunato, D., Cimino, A., Dell'Orletta, F., Venturi, G., & Montemagni, S. (2020). Profiling-UD: A Tool for Linguistic Profiling of Texts. In Proceedings of The 12th Language Resources and Evaluation Conference (pp. 7145-7151).
+
+- Brunato, D., Cimino, A., Dell'Orletta, F., Venturi, G., & Montemagni, S. (2020). Profiling-UD: A Tool for Linguistic Profiling of Texts. In Proceedings of The 12th Language Resources and Evaluation Conference (pp. 7145-7151).
 
 ## Preprocessing and Feature Extraction
 
 Our preprocessing pipeline involved several key stages:
+   
+   **Question Extraction and Classification**
 
-1. **Question Extraction and Classification**
-   - TyDi: Questions were classified using a combination of annotations from the original dataset and linguistic pattern matching.
-   - UD: Questions were extracted from UD treebanks using sentence-final punctuation and language-specific question markers.
+- TyDi: Questions were classified using a combination of annotations from the original dataset and linguistic pattern matching.
+- UD: Questions were extracted from UD treebanks using sentence-final punctuation and language-specific question markers.
 
-2. **Syntactic Parsing**
-   - All questions were parsed using UDPipe with language-specific models
-   - Parsed structures were normalized to handle language-specific variations
+   **Syntactic Parsing**
 
-3. **Linguistic Complexity Analysis**
-   - All questions were analyzed using a custom profile of linguistic complexity metrics, focusing on syntactic, morphological, and lexical features.
+- All questions were parsed using UDPipe with language-specific models
+- Parsed structures were normalized to handle language-specific variations
 
-4. **Normalization**
-   - Features were normalized using a combination of methods to ensure cross-linguistic comparability:
-     - Language centering: `avg_links_len`, `avg_max_depth`, `verbal_head_per_sent`
-     - Log normalization: `subordinate_proposition_dist`, `n_tokens`
-     - Min-max scaling per language: `avg_verb_edges`
-     - Raw values: `avg_subordinate_chain_len`, `lexical_density`
+   **Linguistic Complexity Analysis**
 
-5. **Downsampling** (TyDi data only)
-   - The TyDi data was strategically downsampled using token-based stratified sampling to balance the distribution across languages and question types, while preserving the original sentence length distribution.
+- All questions were analyzed using a custom profile of linguistic complexity metrics, focusing on syntactic, morphological, and lexical features.
 
-6. **Complexity Score Calculation**
-   - Combined normalized features with final z-score standardization to produce a single complexity metric centred around 0 as baseline complexity with standard deviation of 1.
+   **Normalization**
 
-7. **Ablation Analysis**
-   - Generated variant datasets excluding a single feature each time in order to isolate individual feature importance.
+- Features were normalized using a combination of methods to ensure cross-linguistic comparability:
+- Language centering: `avg_links_len`, `avg_max_depth`, `verbal_head_per_sent`
+- Log normalization: `subordinate_proposition_dist`, `n_tokens`
+- Min-max scaling per language: `avg_verb_edges`
+- Raw values: `avg_subordinate_chain_len`, `lexical_density`
+
+   **Downsampling** (TyDi data only)
+
+- The TyDi data was strategically downsampled using token-based stratified sampling to balance the distribution across languages and question types, while preserving the original sentence length distribution.
+
+   **Complexity Score Calculation**
+
+- Combined normalized features with final z-score standardization to produce a single complexity metric centred around 0 as baseline complexity with standard deviation of 1.
+
+   **Ablation Analysis**
+
+- Generated variant datasets excluding a single feature each time in order to isolate individual feature importance.
 
 ## Dataset Structure
 
@@ -268,7 +291,7 @@ Additionally, please cite the underlying data sources and tools:
   publisher={MIT Press}
 }
 
-@inproceedings{nivre2020universal,
+@inproceedings{nivre2020,
   title={Universal Dependencies v2: An Evergrowing Multilingual Treebank Collection},
   author={Nivre, Joakim and de Marneffe, Marie-Catherine and Ginter, Filip and Haji{\v{c}}, Jan and Manning, 
   Christopher D and Pyysalo, Sampo and Schuster, Sebastian and Tyers, Francis and Zeman, Daniel},
@@ -277,7 +300,7 @@ Additionally, please cite the underlying data sources and tools:
   year={2020}
 }
 
-@inproceedings{straka2016udpipe,
+@inproceedings{straka2016,
   title={UDPipe: Trainable Pipeline for Processing CoNLL-U Files Performing Tokenization, Morphological Analysis, 
   POS Tagging and Parsing},
   author={Straka, Milan and Haji{\v{c}}, Jan and Strakov{\'a}, Jana},
@@ -286,7 +309,7 @@ Additionally, please cite the underlying data sources and tools:
   year={2016}
 }
 
-@inproceedings{brunato2020profiling,
+@inproceedings{brunato2020,
   title={Profiling-UD: A Tool for Linguistic Profiling of Texts},
   author={Brunato, Dominique and Cimino, Andrea and Dell'Orletta, Felice and Venturi, Giulia and Montemagni, Simonetta},
   booktitle={Proceedings of The 12th Language Resources and Evaluation Conference},

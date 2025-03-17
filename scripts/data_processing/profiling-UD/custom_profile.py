@@ -12,13 +12,10 @@ from collections import defaultdict
 FEATURES = [
     'n_tokens',
     'lexical_density',
-    'verbal_head_per_sent',
     'avg_max_depth',
     'avg_verb_edges',
     'avg_links_len',
     'avg_subordinate_chain_len',
-    'subordinate_proposition_dist',
-    
 ]
 
 try:
