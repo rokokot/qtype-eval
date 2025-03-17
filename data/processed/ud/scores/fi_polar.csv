@@ -1,129 +1,129 @@
-unique_id,text,language,type,avg_links_len,avg_max_depth,avg_subordinate_chain_len,avg_verb_edges,lexical_density,n_tokens,subordinate_proposition_dist,verbal_head_per_sent
-fi_polar_0,Onko ammatillinen uskottavuuteni noin pientä..?,finnish,polar,2.0,2.0,0,0,0.8,7,0.0,1.0
-fi_polar_1,"- Opettaja, onko sulla olemassa koti?",finnish,polar,1.75,1.0,0,0,0.4,8,0,0.0
-fi_polar_2,Eikö olekin kivaa?,finnish,polar,1.5,1.0,0,0,0.3333333333333333,4,0.0,1.0
-fi_polar_3,Vai onko vaatekerrosten määrä asennekysymys?,finnish,polar,2.25,2.0,0,0,0.6,6,0.0,1.0
-fi_polar_4,”Osaanko nauttia seksistä?”,finnish,polar,1.0,2.0,1.0,1.0,1.0,6,50.0,2.0
-fi_polar_5,Osaavatko ihmiset lukea toistensa silmistä tällaista itseluottamusta?,finnish,polar,1.8333333333333333,3.0,1.0,2.0,0.8571428571428571,8,50.0,2.0
-fi_polar_6,"Osaako mies ilmaista käytöksellään, että hän on varma taidoistaan tyydyttää nainen?",finnish,polar,1.9,5.0,1.5,1.6666666666666667,0.7272727272727273,13,75.0,4.0
-fi_polar_7,Osaako nainen lukea miehen käytöksestä tämän?,finnish,polar,1.8,3.0,1.0,2.0,0.8333333333333334,7,50.0,2.0
-fi_polar_8,"Entä viestivätkö naisen silmät miehelle, että ”uskon sinun kykyihisi, ota minut, saat minut hulluksi himosta?”",finnish,polar,2.5,4.0,1.0,2.75,0.7333333333333333,21,50.0,4.0
-fi_polar_9,"Kahlaavatko he läpi elämän tietämättä, minkälaista seksiä itse haluavat, tai minkälaista seksiä kumppani haluaa, jos eivät osaa lukea sitä toistensa silmistä ja eleistä?",finnish,polar,2.8636363636363638,5.0,2.0,2.5,0.6521739130434783,27,80.0,6.0
-fi_polar_10,"Voimmeko syyttää vanhempiamme siitä, ettemme ole seksuaalisesti kehittyneet vapaiksi, osaaviksi ja vastaanottavaisiksi?",finnish,polar,2.3333333333333335,5.0,1.0,2.5,0.5384615384615384,16,50.0,2.0
-fi_polar_11,Sanoinko jo jotain tästä ravaamisesta? :D,finnish,polar,2.8,2.0,0,4.0,0.5,7,0.0,1.0
-fi_polar_12,"Nää käy myös töihin, kuulostaako tutulta tää lemppariperustelu?",finnish,polar,1.8571428571428572,3.0,0,2.5,0.75,10,0.0,2.0
-fi_polar_13,Tekeekö netti meistä tyhmiä?,finnish,polar,2.0,1.0,0,3.0,0.75,5,0.0,1.0
-fi_polar_14,"Ovatko naiset siis todella mustasukkaisia toisistaan, vaan yrittävätkö he vain selvitä kuolaavien käpyaivojensa kanssa minimaalisella häpeän määrällä?",finnish,polar,2.125,4.0,1.0,2.0,0.7058823529411765,19,66.66666666666667,4.0
-fi_polar_15,Mutta uskaltaako se mennä yksin jossain metroasemalla poistamaan oksennukseensa sammuneen nistin?,finnish,polar,1.8,5.0,1.5,2.0,0.7272727272727273,12,75.0,4.0
-fi_polar_16,"PIKKUVAIMO: Jos me voitetaan tämä, niin saadaanko varmasti mitali?",finnish,polar,2.5,3.0,1.0,3.5,0.6666666666666666,12,100.0,2.0
-fi_polar_17,PIKKUVAIMO: Saadaanko sitten varmasti pronssia?,finnish,polar,2.0,2.0,0,3.0,1.0,7,0,1.0
-fi_polar_18,"(DE) Arvoisa puhemies, voisitteko pyytää hakemaan teknikon?",finnish,polar,2.1666666666666665,2.0,1.0,2.0,0.8571428571428571,11,50.0,2.0
-fi_polar_19,Annammeko tämän jatkua sanomatta mitään?,finnish,polar,1.75,2.0,1.0,1.3333333333333333,0.6,6,66.66666666666667,3.0
-fi_polar_20,"Mielestäni tämä keskustelu tiivistyy seuraavaan kysymykseen: uskommeko, että Göteborgin pöytäkirja oli paras tulos, jonka jäsenvaltioiden voidaan odottaa realistisesti saavuttavan?",finnish,polar,2.611111111111111,6.0,3.0,2.0,0.7368421052631579,23,75.0,5.0
-fi_polar_21,Oliko Helsingissä tehty päätös sittenkin hätiköity?,finnish,polar,2.0,3.0,1.0,2.0,0.8333333333333334,7,50.0,2.0
-fi_polar_22,"Muistatko sinä ne kerrat, kun lahkeet olivat polviin asti märät kauppareissun jäljiltä?",finnish,polar,2.727272727272727,4.0,1.0,2.0,0.5833333333333334,14,50.0,2.0
-fi_polar_23,"Luulitko sinä, että kiinnostuisin Jonesta, kiinnostuisin niin, että kävelisin hänen kanssaan teidän vierellänne?",finnish,polar,1.75,6.0,1.5,2.25,0.46153846153846156,17,75.0,4.0
-fi_polar_24,"Palasin, kaipasitko minua?",finnish,polar,1.5,2.0,0,1.0,0.6666666666666666,5,0.0,2.0
-fi_polar_25,Tarvitsevatko ne jotain?,finnish,polar,1.5,1.0,0,2.0,0.3333333333333333,4,0.0,1.0
-fi_polar_26,Pitäisikö niistä olla jotenkin erityisen huolissaan juuri siksi?,finnish,polar,2.5714285714285716,2.0,0,0,0.625,9,0.0,1.0
-fi_polar_27,Olenko minä se väärin pukeutunut?,finnish,polar,2.5,1.0,0,4.0,0.4,6,0.0,1.0
-fi_polar_28,"Vai voiko tosiaan pitää paikkansa, että minun neljäs olohuoneeni, jonne tulen arki-iltana juomaan teetä ja pelaamaan lautapelejä kavereiden kanssa, on jollekin laittautumisen, aloittelun ja jatkojen väliin jäävä bilepaikka?",finnish,polar,5.074074074074074,7.0,2.0,2.6,0.6428571428571429,33,80.0,6.0
-fi_polar_29,Pitäisikö minun mennä sisälle johonkin taloista?,finnish,polar,1.4,2.0,0,2.0,0.3333333333333333,7,0.0,1.0
-fi_polar_30,Toisiko Se tällä kertaa mukanaan siunauksen vai tuhon?,finnish,polar,2.4285714285714284,3.0,0,4.0,0.625,9,0.0,1.0
-fi_polar_31,"Kääntäisikö Se mahtavan Ahterinsa Nielun kansalle, ja siunaisi sitä ruskealla sukkulalla ja kultaisella sateella, vai laskisiko Se alas kauhistuttavan Kätensä mukanaan sininen kaikentuhoava tulva?",finnish,polar,3.0869565217391304,4.0,0,4.333333333333333,0.7083333333333334,27,0.0,3.0
-fi_polar_32,Tässäkö se muka oli?,finnish,polar,2.0,1.0,0,0,0.25,5,0.0,1.0
-fi_polar_33,Mutta sopeutuivatko ne Marsin olosuhteisiin?,finnish,polar,1.5,2.0,0,3.0,0.6,6,0.0,1.0
-fi_polar_34,Vai oliko se tanga-naisia?,finnish,polar,2.0,1.0,0,0,0.25,5,0.0,1.0
-fi_polar_35,Menikö se ylös vai alas?,finnish,polar,1.5,3.0,0,2.0,0.6,6,0.0,1.0
-fi_polar_36,Urheiluosastolle vai ulko-ovelle?,finnish,polar,1.5,2.0,0,0,0.6666666666666666,4,0,0.0
-fi_polar_37,Hetken hän tuijotti alas (kuolemaan?) ja mietti onko tämä koko paska vaivan arvoista.,finnish,polar,2.5833333333333335,4.0,1.0,3.0,0.6923076923076923,17,50.0,3.0
-fi_polar_38,"""Eikö ole kaunis päivä?""",finnish,polar,1.3333333333333333,2.0,0,1.0,0.75,7,0.0,1.0
-fi_polar_39,Oliko tämä unta vai todellisuutta?,finnish,polar,1.5,2.0,0,0,0.4,6,0.0,1.0
-fi_polar_40,Onko sulla joku toinen?,finnish,polar,1.3333333333333333,2.0,0,0,0.0,5,0,0.0
-fi_polar_41,- Jos minä lähen nyt pois enkä tuu enää koskaan takas nii lähettekö isin mukaan vai jäättekö äidin luo?,finnish,polar,2.1176470588235294,4.0,1.0,3.25,0.6666666666666666,20,50.0,4.0
-fi_polar_42,Pitäisikö heidän nyt oikeasti ryhtyä keksimään joitain ihan uusia huippujuttuja?,finnish,polar,2.2222222222222223,4.0,1.0,2.5,0.7,11,50.0,2.0
-fi_polar_43,– Semmoisen paperisenko?,finnish,polar,1.0,1.0,0,0,1.0,4,0,0.0
-fi_polar_44,- Eikö se ole selvää?  parrakas ryöväri ärähti.,finnish,polar,2.0,3.0,0,1.0,0.5714285714285714,10,0.0,2.0
-fi_polar_45,- Piilotitko veneen hyvin?  Juho kysyi.,finnish,polar,2.25,2.0,0,2.0,1.0,8,0.0,2.0
-fi_polar_46,- Haluatteko tupakkia?,finnish,polar,1.0,1.0,0,1.0,1.0,4,0.0,1.0
-fi_polar_47,Vai haluavatko kruunun miehet viedä ne veroina?,finnish,polar,1.6666666666666667,2.0,1.0,2.5,0.7142857142857143,8,50.0,2.0
-fi_polar_48,Entä olinko jo ostanut jotain jouluruokia?,finnish,polar,1.8,2.0,0,3.0,0.6666666666666666,7,0.0,1.0
-fi_polar_49,Onko sinulla töitä?,finnish,polar,1.0,1.0,0,0,0.3333333333333333,4,0,0.0
-fi_polar_50,Onko tämän asian tiimoilta tullut teille valituksia?,finnish,polar,1.8333333333333333,2.0,0,3.0,0.42857142857142855,8,0.0,1.0
-fi_polar_51,Ja sinäkö olet edelleen varma että se oli vahinko?,finnish,polar,2.5,2.0,1.0,0,0.3333333333333333,10,50.0,2.0
-fi_polar_52,Porvoostako he tulevat?,finnish,polar,1.5,1.0,0,2.0,0.6666666666666666,4,0.0,1.0
-fi_polar_53,Onko Granfeltilta tilattu tutkimustulos vai tutkimustyö?,finnish,polar,1.4,3.0,0,2.0,0.6666666666666666,7,0.0,1.0
-fi_polar_54,Ettäkö kaikki kylähulluiksi?,finnish,polar,1.0,1.0,0,0,0.3333333333333333,4,0,0.0
-fi_polar_55,Tulevatko he Porvoosta?,finnish,polar,1.5,1.0,0,2.0,0.6666666666666666,4,0.0,1.0
-fi_polar_56,Miks ei ne pane lapselle nimeksi Mikko?,finnish,polar,2.0,1.0,0,5.0,0.7142857142857143,8,0.0,1.0
-fi_polar_57,Suostutteko keskustapuolueen uudeksi puheenjohtajaksi?,finnish,polar,2.0,2.0,0,1.0,1.0,5,0.0,1.0
-fi_polar_58,Söitkö sinä jo?,finnish,polar,1.5,1.0,0,2.0,0.6666666666666666,4,0.0,1.0
-fi_polar_59,Taruako lienee vai totta?,finnish,polar,1.6666666666666667,2.0,0,0,0.5,5,0.0,1.0
-fi_polar_60,Leikitäänkö nyt kotia?,finnish,polar,1.5,1.0,0,2.0,1.0,4,0.0,1.0
-fi_polar_61,Onko enkeli tyttö vai poika?,finnish,polar,1.5,2.0,0,0,0.6,6,0.0,1.0
-fi_polar_62,Tulisiko tästä yhtään mitään?,finnish,polar,1.6666666666666667,2.0,0,2.0,0.5,5,0.0,1.0
-fi_polar_63,Vieläkö Bosniaan pystyy antamaan avustusta?,finnish,polar,1.5,2.0,1.0,2.0,1.0,6,50.0,2.0
-fi_polar_64,Tuleeko hän varmasti?,finnish,polar,1.5,1.0,0,2.0,0.6666666666666666,4,0.0,1.0
-fi_polar_65,annetaanko koneiden jyskyttää puoliteholla kunnes teknikko on lennätetty paikalle?,finnish,polar,2.0,3.0,2.0,2.6666666666666665,0.7777777777777778,10,66.66666666666667,3.0
-fi_polar_66,"Onko henkilöstä annettu etsintäkuulutus, koska hänellä on laiton ase?",finnish,polar,1.75,3.0,0,4.0,0.5555555555555556,11,0.0,1.0
-fi_polar_67,Onko sinne pitkä matka?,finnish,polar,2.0,2.0,0,1.0,1.0,5,0.0,1.0
-fi_polar_68,Voiko pukua käyttää häissä tai lakkiaisissa?,finnish,polar,1.4,3.0,0,2.0,0.6666666666666666,7,0.0,1.0
-fi_polar_69,Voiko äiti olla omin päin ottanut sen käyttöönsä?,finnish,polar,2.5714285714285716,2.0,0,4.0,0.625,9,0.0,1.0
-fi_polar_70,Varastoitko ruokaa pahan päivän varalta?,finnish,polar,1.5,2.0,0,2.0,0.8,6,0.0,1.0
-fi_polar_71,Onko onni ollut tänään myötä?,finnish,polar,2.5,1.0,0,0,0.6,6,0.0,1.0
-fi_polar_72,"Näinkö se alkaa, kivikuume?",finnish,polar,2.0,2.0,0,2.0,0.75,6,0.0,1.0
-fi_polar_73,"Eikö se, että tavoitteenani on olla onnellinen, ole kunnianhimoista?",finnish,polar,3.625,4.0,2.0,0,0.3333333333333333,12,66.66666666666667,3.0
-fi_polar_74,"Eikö tahdossa löytää itse se tapa, jolla eläminen tekee kaikkein onnellisimmaksi, ole kunnianhimoa kerrakseen?",finnish,polar,4.230769230769231,5.0,1.0,2.0,0.7142857142857143,17,66.66666666666667,3.0
-fi_polar_75,"Mistä tiedetään, paljonko työtä tietty kurssi on opiskelijalta vaatinut?",finnish,polar,2.75,3.0,1.0,2.5,0.7777777777777778,11,50.0,2.0
-fi_polar_76,Tai haluaisitko kokea millaista oli neuvostoajan pioneerileirillä Tallinnassa?,finnish,polar,1.2857142857142858,4.0,2.0,1.5,0.75,9,66.66666666666667,3.0
-fi_polar_77,"”Kuulostaa kivalta, mutta eikö tuo ole aika kallista?”",finnish,polar,3.4285714285714284,2.0,0,2.0,0.5,12,0.0,2.0
-fi_polar_78,Onko sinun koskaan tarvinnut nettikeskustelussa esittää olevasi kännissä?,finnish,polar,1.5714285714285714,3.0,2.0,2.0,0.75,9,66.66666666666667,3.0
-fi_polar_79,Vai oletko peräti absolutisti?,finnish,polar,2.0,1.0,0,0,0.5,5,0.0,1.0
-fi_polar_80,Onko tosiaan näin?,finnish,polar,1.5,1.0,0,0,0.6666666666666666,4,0.0,1.0
-fi_polar_81,Onko lainan ottamiseen varaa?,finnish,polar,1.6666666666666667,3.0,0,1.0,1.0,5,0.0,1.0
-fi_polar_82,Entä: onko kookkaiden lainojen ottaminen epävakaina talousaikoina järkevää?,finnish,polar,3.142857142857143,3.0,0,0,0.875,10,0.0,1.0
-fi_polar_83,"Siinä keskustelussa ydinkysymys ei ole gallup-henkinen ""kannatatko maahanmuuton lisäämistä?”",finnish,polar,3.0,2.0,0,5.0,0.6666666666666666,12,0.0,1.0
-fi_polar_84,"− Kokevatko kreikkalaiset, että isot EU-valtiot tulevat ja pakottavat heidät tekemään muutoksia?",finnish,polar,1.9,4.0,1.0,2.25,0.7272727272727273,14,66.66666666666667,4.0
-fi_polar_85,Onko lääkekehityksellä tulevaisuutta Suomessa? -symposiumin ensimmäisen puheenvuoron käytti emeritusprofessori Risto Santti.,finnish,polar,1.5,5.0,1.0,2.0,0.9090909090909091,13,50.0,2.0
-fi_polar_86,Söivätkö ritarit muuta kuin lihaa?,finnish,polar,1.5,3.0,0,2.0,0.6,6,0.0,1.0
-fi_polar_87,Tekivätkö prinsessat mitään kotitöitä?,finnish,polar,1.6666666666666667,2.0,0,2.0,0.75,5,0.0,1.0
-fi_polar_88,"Siirto 2...Lc5 sisältää myös avausansan aloittelijoille: Jos valkea jatkaa fxe5?, musta pelaa 3...Dh4+, jolloin valkea menettää joko torninsa (4.g3 Dxe4+) tai joutuu matitetuksi (4.Ke2 Dxe4#).",finnish,polar,2.375,5.0,1.0,3.1666666666666665,0.6,33,75.0,6.0
-fi_polar_89,Eivätkö olekin kivat?,finnish,polar,1.5,1.0,0,0,0.3333333333333333,4,0.0,1.0
-fi_polar_90,"Onko joku jo muistanut kertoa, että isä kuolee?",finnish,polar,2.0,3.0,2.0,2.0,0.625,10,66.66666666666667,3.0
-fi_polar_91,"Kerroinko jo, että isäsi kuolee?",finnish,polar,2.25,2.0,1.0,2.0,0.8,7,50.0,2.0
-fi_polar_92,"Millaiseksi siitä tulee, kun kaikki hokevat koko ajan, että isä kuolee kohta heti huomenna tänään koko ajan aina?",finnish,polar,2.411764705882353,5.0,2.0,3.3333333333333335,0.7777777777777778,21,66.66666666666667,3.0
-fi_polar_93,Onko kaikki se odottaminen sitten tarpeellista?,finnish,polar,2.2,2.0,0,0,0.5,7,0.0,1.0
-fi_polar_94,Onko jokaisen ihmisen välttämätöntä muistuttaa asiasta aina sopivan tai sopimattoman tilanteen tullen?,finnish,polar,2.4545454545454546,6.0,2.0,2.5,0.75,13,66.66666666666667,3.0
-fi_polar_95,"Onko se toistettava päivittäin, viikoittain, kuukausittain?",finnish,polar,2.0,2.0,0,3.0,0.6666666666666666,9,0.0,1.0
-fi_polar_96,Onko ihmisille mahdotonta keskustella isästäni ilman kuolinpäivän arvailuja?,finnish,polar,1.7142857142857142,3.0,1.0,2.0,0.75,9,50.0,2.0
-fi_polar_97,Aiheuttaako lämpenevä toimistobiosfääri toimistokuukkelin katoamisen?,finnish,polar,2.0,2.0,1.0,1.0,1.0,6,50.0,2.0
-fi_polar_98,"Muistatko, kun Juuson tarhasta karkasi järvelle 2 000 ankkaa?",finnish,polar,2.142857142857143,3.0,1.0,2.5,0.75,10,50.0,2.0
-fi_polar_99,Tunnetko hänet vielä vanhanakin?,finnish,polar,1.6666666666666667,2.0,0,2.0,0.75,5,0.0,1.0
-fi_polar_100,"Jos miehen mielestä hänen kumppanillaan on ihana peppu, jota on mukava taputella tai vähän puristaa, niin eikö siitä voisi naisena nauttia?",finnish,polar,3.05,6.0,2.0,2.6666666666666665,0.5714285714285714,24,66.66666666666667,4.0
-fi_polar_101,Olisiko se iltalenkin jälkeen peiton tuominen sohvalle yhdessä iltateen tai viinilasillisen kanssa?,finnish,polar,2.272727272727273,3.0,0,0,0.5833333333333334,13,0.0,1.0
-fi_polar_102,"Olisiko se, että itse tulee sinne peiton alle, kainaloon, vain alusvaatteisillaan?",finnish,polar,2.4,4.0,1.0,2.5,0.7272727272727273,15,50.0,2.0
-fi_polar_103,Olisiko se toisen passaaminen osa sitä arkiromantiikkaa?,finnish,polar,1.8333333333333333,2.0,0,0,0.42857142857142855,8,0.0,1.0
-fi_polar_104,"Juhlaseksiä, arkiseksiä - onko niillä eroa?",finnish,polar,2.25,2.0,1.0,0,0.6,8,100.0,1.0
-fi_polar_105,"Onko arkiseksi nopea tyydytys ennen nukkumaanmenoa, tai nopea tyydytys ennen ylösnousua aamulla?",finnish,polar,2.0,3.0,0,0,0.6666666666666666,14,0.0,1.0
-fi_polar_106,Onko juhlaseksi tuntien kestävää hyväilyä ja seksiä sille järjestetyllä ajalla?,finnish,polar,2.111111111111111,3.0,1.0,1.0,0.7,11,66.66666666666667,3.0
-fi_polar_107,– Etkö usko?,finnish,polar,1.0,1.0,0,0.0,0.5,4,0.0,1.0
-fi_polar_108,- Sinäkö kilpailisit ylimysten rikkauksien kanssa sienilläsi?,finnish,polar,1.8,2.0,0,3.0,0.6666666666666666,8,0.0,1.0
-fi_polar_109,Pitäisikö varsinaissuomalaisia ammattioppilaitoksia yhdistää?,finnish,polar,1.6666666666666667,2.0,0,1.0,0.75,5,0.0,1.0
-fi_polar_110,"Jos näin tapahtuisi, niin silloinhan ei näitä uudelleenvirittelyoppaita tarvittaisi ollenkaan, eikö niin?",finnish,polar,2.6363636363636362,2.0,1.0,3.0,0.75,15,66.66666666666667,3.0
-fi_polar_111,"”Voisiko vaimosi paremmin jos pyytäisit tätä lupaa tai kertoisit, että harrastat seksiä toisen naisen kanssa?",finnish,polar,1.8571428571428572,5.0,1.0,2.75,0.6,18,66.66666666666667,4.0
-fi_polar_112,"Voisitko itse paremmin, jos seksielämäsi jatkuisi?”",finnish,polar,2.4,2.0,1.0,2.5,0.8333333333333334,9,50.0,2.0
-fi_polar_113,Päästäänkö kolmanteen pilariin kuuluvaa tietosuojaa koskevasta puitepäätöksestä poliittiseen yhteisymmärrykseen tämän vuoden loppuun mennessä?,finnish,polar,2.5,7.0,1.0,1.3333333333333333,0.8461538461538461,14,66.66666666666667,3.0
-fi_polar_114,Ratkaiseeko puitesopimus kaikki ongelmat?,finnish,polar,1.6666666666666667,2.0,0,2.0,0.75,5,0.0,1.0
-fi_polar_115,Onko tietosuojaviranomaisilla asianmukaiset voimavarat tietosuojaa koskevien sääntöjen täytäntöönpanemiseksi SIS II -järjestelmän osalta?,finnish,polar,2.272727272727273,5.0,1.0,1.0,0.9166666666666666,13,100.0,1.0
-fi_polar_116,Toimivatko kaikki jäsenvaltiot vilpittömässä mielessä Schengen-tietoja käsitellessään?,finnish,polar,2.5,2.0,1.0,2.0,0.8571428571428571,8,50.0,2.0
-fi_polar_117,"""Eikö sinustakin?"" kysyit kolme vuotta sitten.",finnish,polar,1.8,3.0,0,1.5,0.5,10,0.0,2.0
-fi_polar_118,"Onko sitten teoriassa olemassa mahdollisuus, ettei se olisi?",finnish,polar,2.25,3.0,1.0,2.5,0.5555555555555556,11,50.0,2.0
-fi_polar_119,Eikö tämän kaltaisessa asiassa käytännön ja teorian tulisi olla samanlaisia?”,finnish,polar,2.6666666666666665,4.0,1.0,2.0,0.6,12,50.0,2.0
-fi_polar_120,Olisiko silloin kuitenkin teoriassa mahdollisuus sille ettei se olisi?,finnish,polar,2.0,4.0,1.0,2.0,0.5,11,50.0,2.0
-fi_polar_121,olisiko viininvalmistus yrittäjälle sivu- vai pääelinkeino?,finnish,polar,1.8,2.0,0,0,0.6666666666666666,7,0.0,1.0
-fi_polar_122,Pystyykö Bosniaan antamaan vielä avustusta?,finnish,polar,1.5,2.0,1.0,2.0,1.0,6,50.0,2.0
-fi_polar_123,Onko tarpeen olla noin perusteellinen?,finnish,polar,2.0,2.0,1.0,2.0,0.8,6,50.0,2.0
-fi_polar_124,"Popista, rockista vaiko iskelmästä?",finnish,polar,2.3333333333333335,2.0,0,0,0.75,6,0,0.0
-fi_polar_125,Oletteko ehkä kotoisin Raumalta?,finnish,polar,1.3333333333333333,1.0,0,0,0.75,5,0.0,1.0
-fi_polar_126,Haluaisitko sinä yhdistää vaihto-opiskelun ja eksoottisen unelmaloman jossakin Aasian vaihtokohteista?,finnish,polar,2.111111111111111,4.0,1.0,1.5,0.7,11,50.0,2.0
-fi_polar_127,Oletko tehoääliö töissä?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4,0.0,1.0
+unique_id,text,language,type,avg_links_len,avg_max_depth,avg_subordinate_chain_len,avg_verb_edges,lexical_density,n_tokens
+fi_polar_0,Onko ammatillinen uskottavuuteni noin pientä..?,finnish,polar,2.0,2.0,0,0,0.8,7
+fi_polar_1,"- Opettaja, onko sulla olemassa koti?",finnish,polar,1.75,1.0,0,0,0.4,8
+fi_polar_2,Eikö olekin kivaa?,finnish,polar,1.5,1.0,0,0,0.3333333333333333,4
+fi_polar_3,Vai onko vaatekerrosten määrä asennekysymys?,finnish,polar,2.25,2.0,0,0,0.6,6
+fi_polar_4,”Osaanko nauttia seksistä?”,finnish,polar,1.0,2.0,1.0,1.0,1.0,6
+fi_polar_5,Osaavatko ihmiset lukea toistensa silmistä tällaista itseluottamusta?,finnish,polar,1.8333333333333333,3.0,1.0,2.0,0.8571428571428571,8
+fi_polar_6,"Osaako mies ilmaista käytöksellään, että hän on varma taidoistaan tyydyttää nainen?",finnish,polar,1.9,5.0,1.5,1.6666666666666667,0.7272727272727273,13
+fi_polar_7,Osaako nainen lukea miehen käytöksestä tämän?,finnish,polar,1.8,3.0,1.0,2.0,0.8333333333333334,7
+fi_polar_8,"Entä viestivätkö naisen silmät miehelle, että ”uskon sinun kykyihisi, ota minut, saat minut hulluksi himosta?”",finnish,polar,2.5,4.0,1.0,2.75,0.7333333333333333,21
+fi_polar_9,"Kahlaavatko he läpi elämän tietämättä, minkälaista seksiä itse haluavat, tai minkälaista seksiä kumppani haluaa, jos eivät osaa lukea sitä toistensa silmistä ja eleistä?",finnish,polar,2.8636363636363638,5.0,2.0,2.5,0.6521739130434783,27
+fi_polar_10,"Voimmeko syyttää vanhempiamme siitä, ettemme ole seksuaalisesti kehittyneet vapaiksi, osaaviksi ja vastaanottavaisiksi?",finnish,polar,2.3333333333333335,5.0,1.0,2.5,0.5384615384615384,16
+fi_polar_11,Sanoinko jo jotain tästä ravaamisesta? :D,finnish,polar,2.8,2.0,0,4.0,0.5,7
+fi_polar_12,"Nää käy myös töihin, kuulostaako tutulta tää lemppariperustelu?",finnish,polar,1.8571428571428572,3.0,0,2.5,0.75,10
+fi_polar_13,Tekeekö netti meistä tyhmiä?,finnish,polar,2.0,1.0,0,3.0,0.75,5
+fi_polar_14,"Ovatko naiset siis todella mustasukkaisia toisistaan, vaan yrittävätkö he vain selvitä kuolaavien käpyaivojensa kanssa minimaalisella häpeän määrällä?",finnish,polar,2.125,4.0,1.0,2.0,0.7058823529411765,19
+fi_polar_15,Mutta uskaltaako se mennä yksin jossain metroasemalla poistamaan oksennukseensa sammuneen nistin?,finnish,polar,1.8,5.0,1.5,2.0,0.7272727272727273,12
+fi_polar_16,"PIKKUVAIMO: Jos me voitetaan tämä, niin saadaanko varmasti mitali?",finnish,polar,2.5,3.0,1.0,3.5,0.6666666666666666,12
+fi_polar_17,PIKKUVAIMO: Saadaanko sitten varmasti pronssia?,finnish,polar,2.0,2.0,0,3.0,1.0,7
+fi_polar_18,"(DE) Arvoisa puhemies, voisitteko pyytää hakemaan teknikon?",finnish,polar,2.1666666666666665,2.0,1.0,2.0,0.8571428571428571,11
+fi_polar_19,Annammeko tämän jatkua sanomatta mitään?,finnish,polar,1.75,2.0,1.0,1.3333333333333333,0.6,6
+fi_polar_20,"Mielestäni tämä keskustelu tiivistyy seuraavaan kysymykseen: uskommeko, että Göteborgin pöytäkirja oli paras tulos, jonka jäsenvaltioiden voidaan odottaa realistisesti saavuttavan?",finnish,polar,2.611111111111111,6.0,3.0,2.0,0.7368421052631579,23
+fi_polar_21,Oliko Helsingissä tehty päätös sittenkin hätiköity?,finnish,polar,2.0,3.0,1.0,2.0,0.8333333333333334,7
+fi_polar_22,"Muistatko sinä ne kerrat, kun lahkeet olivat polviin asti märät kauppareissun jäljiltä?",finnish,polar,2.727272727272727,4.0,1.0,2.0,0.5833333333333334,14
+fi_polar_23,"Luulitko sinä, että kiinnostuisin Jonesta, kiinnostuisin niin, että kävelisin hänen kanssaan teidän vierellänne?",finnish,polar,1.75,6.0,1.5,2.25,0.46153846153846156,17
+fi_polar_24,"Palasin, kaipasitko minua?",finnish,polar,1.5,2.0,0,1.0,0.6666666666666666,5
+fi_polar_25,Tarvitsevatko ne jotain?,finnish,polar,1.5,1.0,0,2.0,0.3333333333333333,4
+fi_polar_26,Pitäisikö niistä olla jotenkin erityisen huolissaan juuri siksi?,finnish,polar,2.5714285714285716,2.0,0,0,0.625,9
+fi_polar_27,Olenko minä se väärin pukeutunut?,finnish,polar,2.5,1.0,0,4.0,0.4,6
+fi_polar_28,"Vai voiko tosiaan pitää paikkansa, että minun neljäs olohuoneeni, jonne tulen arki-iltana juomaan teetä ja pelaamaan lautapelejä kavereiden kanssa, on jollekin laittautumisen, aloittelun ja jatkojen väliin jäävä bilepaikka?",finnish,polar,5.074074074074074,7.0,2.0,2.6,0.6428571428571429,33
+fi_polar_29,Pitäisikö minun mennä sisälle johonkin taloista?,finnish,polar,1.4,2.0,0,2.0,0.3333333333333333,7
+fi_polar_30,Toisiko Se tällä kertaa mukanaan siunauksen vai tuhon?,finnish,polar,2.4285714285714284,3.0,0,4.0,0.625,9
+fi_polar_31,"Kääntäisikö Se mahtavan Ahterinsa Nielun kansalle, ja siunaisi sitä ruskealla sukkulalla ja kultaisella sateella, vai laskisiko Se alas kauhistuttavan Kätensä mukanaan sininen kaikentuhoava tulva?",finnish,polar,3.0869565217391304,4.0,0,4.333333333333333,0.7083333333333334,27
+fi_polar_32,Tässäkö se muka oli?,finnish,polar,2.0,1.0,0,0,0.25,5
+fi_polar_33,Mutta sopeutuivatko ne Marsin olosuhteisiin?,finnish,polar,1.5,2.0,0,3.0,0.6,6
+fi_polar_34,Vai oliko se tanga-naisia?,finnish,polar,2.0,1.0,0,0,0.25,5
+fi_polar_35,Menikö se ylös vai alas?,finnish,polar,1.5,3.0,0,2.0,0.6,6
+fi_polar_36,Urheiluosastolle vai ulko-ovelle?,finnish,polar,1.5,2.0,0,0,0.6666666666666666,4
+fi_polar_37,Hetken hän tuijotti alas (kuolemaan?) ja mietti onko tämä koko paska vaivan arvoista.,finnish,polar,2.5833333333333335,4.0,1.0,3.0,0.6923076923076923,17
+fi_polar_38,"""Eikö ole kaunis päivä?""",finnish,polar,1.3333333333333333,2.0,0,1.0,0.75,7
+fi_polar_39,Oliko tämä unta vai todellisuutta?,finnish,polar,1.5,2.0,0,0,0.4,6
+fi_polar_40,Onko sulla joku toinen?,finnish,polar,1.3333333333333333,2.0,0,0,0.0,5
+fi_polar_41,- Jos minä lähen nyt pois enkä tuu enää koskaan takas nii lähettekö isin mukaan vai jäättekö äidin luo?,finnish,polar,2.1176470588235294,4.0,1.0,3.25,0.6666666666666666,20
+fi_polar_42,Pitäisikö heidän nyt oikeasti ryhtyä keksimään joitain ihan uusia huippujuttuja?,finnish,polar,2.2222222222222223,4.0,1.0,2.5,0.7,11
+fi_polar_43,– Semmoisen paperisenko?,finnish,polar,1.0,1.0,0,0,1.0,4
+fi_polar_44,- Eikö se ole selvää?  parrakas ryöväri ärähti.,finnish,polar,2.0,3.0,0,1.0,0.5714285714285714,10
+fi_polar_45,- Piilotitko veneen hyvin?  Juho kysyi.,finnish,polar,2.25,2.0,0,2.0,1.0,8
+fi_polar_46,- Haluatteko tupakkia?,finnish,polar,1.0,1.0,0,1.0,1.0,4
+fi_polar_47,Vai haluavatko kruunun miehet viedä ne veroina?,finnish,polar,1.6666666666666667,2.0,1.0,2.5,0.7142857142857143,8
+fi_polar_48,Entä olinko jo ostanut jotain jouluruokia?,finnish,polar,1.8,2.0,0,3.0,0.6666666666666666,7
+fi_polar_49,Onko sinulla töitä?,finnish,polar,1.0,1.0,0,0,0.3333333333333333,4
+fi_polar_50,Onko tämän asian tiimoilta tullut teille valituksia?,finnish,polar,1.8333333333333333,2.0,0,3.0,0.42857142857142855,8
+fi_polar_51,Ja sinäkö olet edelleen varma että se oli vahinko?,finnish,polar,2.5,2.0,1.0,0,0.3333333333333333,10
+fi_polar_52,Porvoostako he tulevat?,finnish,polar,1.5,1.0,0,2.0,0.6666666666666666,4
+fi_polar_53,Onko Granfeltilta tilattu tutkimustulos vai tutkimustyö?,finnish,polar,1.4,3.0,0,2.0,0.6666666666666666,7
+fi_polar_54,Ettäkö kaikki kylähulluiksi?,finnish,polar,1.0,1.0,0,0,0.3333333333333333,4
+fi_polar_55,Tulevatko he Porvoosta?,finnish,polar,1.5,1.0,0,2.0,0.6666666666666666,4
+fi_polar_56,Miks ei ne pane lapselle nimeksi Mikko?,finnish,polar,2.0,1.0,0,5.0,0.7142857142857143,8
+fi_polar_57,Suostutteko keskustapuolueen uudeksi puheenjohtajaksi?,finnish,polar,2.0,2.0,0,1.0,1.0,5
+fi_polar_58,Söitkö sinä jo?,finnish,polar,1.5,1.0,0,2.0,0.6666666666666666,4
+fi_polar_59,Taruako lienee vai totta?,finnish,polar,1.6666666666666667,2.0,0,0,0.5,5
+fi_polar_60,Leikitäänkö nyt kotia?,finnish,polar,1.5,1.0,0,2.0,1.0,4
+fi_polar_61,Onko enkeli tyttö vai poika?,finnish,polar,1.5,2.0,0,0,0.6,6
+fi_polar_62,Tulisiko tästä yhtään mitään?,finnish,polar,1.6666666666666667,2.0,0,2.0,0.5,5
+fi_polar_63,Vieläkö Bosniaan pystyy antamaan avustusta?,finnish,polar,1.5,2.0,1.0,2.0,1.0,6
+fi_polar_64,Tuleeko hän varmasti?,finnish,polar,1.5,1.0,0,2.0,0.6666666666666666,4
+fi_polar_65,annetaanko koneiden jyskyttää puoliteholla kunnes teknikko on lennätetty paikalle?,finnish,polar,2.0,3.0,2.0,2.6666666666666665,0.7777777777777778,10
+fi_polar_66,"Onko henkilöstä annettu etsintäkuulutus, koska hänellä on laiton ase?",finnish,polar,1.75,3.0,0,4.0,0.5555555555555556,11
+fi_polar_67,Onko sinne pitkä matka?,finnish,polar,2.0,2.0,0,1.0,1.0,5
+fi_polar_68,Voiko pukua käyttää häissä tai lakkiaisissa?,finnish,polar,1.4,3.0,0,2.0,0.6666666666666666,7
+fi_polar_69,Voiko äiti olla omin päin ottanut sen käyttöönsä?,finnish,polar,2.5714285714285716,2.0,0,4.0,0.625,9
+fi_polar_70,Varastoitko ruokaa pahan päivän varalta?,finnish,polar,1.5,2.0,0,2.0,0.8,6
+fi_polar_71,Onko onni ollut tänään myötä?,finnish,polar,2.5,1.0,0,0,0.6,6
+fi_polar_72,"Näinkö se alkaa, kivikuume?",finnish,polar,2.0,2.0,0,2.0,0.75,6
+fi_polar_73,"Eikö se, että tavoitteenani on olla onnellinen, ole kunnianhimoista?",finnish,polar,3.625,4.0,2.0,0,0.3333333333333333,12
+fi_polar_74,"Eikö tahdossa löytää itse se tapa, jolla eläminen tekee kaikkein onnellisimmaksi, ole kunnianhimoa kerrakseen?",finnish,polar,4.230769230769231,5.0,1.0,2.0,0.7142857142857143,17
+fi_polar_75,"Mistä tiedetään, paljonko työtä tietty kurssi on opiskelijalta vaatinut?",finnish,polar,2.75,3.0,1.0,2.5,0.7777777777777778,11
+fi_polar_76,Tai haluaisitko kokea millaista oli neuvostoajan pioneerileirillä Tallinnassa?,finnish,polar,1.2857142857142858,4.0,2.0,1.5,0.75,9
+fi_polar_77,"”Kuulostaa kivalta, mutta eikö tuo ole aika kallista?”",finnish,polar,3.4285714285714284,2.0,0,2.0,0.5,12
+fi_polar_78,Onko sinun koskaan tarvinnut nettikeskustelussa esittää olevasi kännissä?,finnish,polar,1.5714285714285714,3.0,2.0,2.0,0.75,9
+fi_polar_79,Vai oletko peräti absolutisti?,finnish,polar,2.0,1.0,0,0,0.5,5
+fi_polar_80,Onko tosiaan näin?,finnish,polar,1.5,1.0,0,0,0.6666666666666666,4
+fi_polar_81,Onko lainan ottamiseen varaa?,finnish,polar,1.6666666666666667,3.0,0,1.0,1.0,5
+fi_polar_82,Entä: onko kookkaiden lainojen ottaminen epävakaina talousaikoina järkevää?,finnish,polar,3.142857142857143,3.0,0,0,0.875,10
+fi_polar_83,"Siinä keskustelussa ydinkysymys ei ole gallup-henkinen ""kannatatko maahanmuuton lisäämistä?”",finnish,polar,3.0,2.0,0,5.0,0.6666666666666666,12
+fi_polar_84,"− Kokevatko kreikkalaiset, että isot EU-valtiot tulevat ja pakottavat heidät tekemään muutoksia?",finnish,polar,1.9,4.0,1.0,2.25,0.7272727272727273,14
+fi_polar_85,Onko lääkekehityksellä tulevaisuutta Suomessa? -symposiumin ensimmäisen puheenvuoron käytti emeritusprofessori Risto Santti.,finnish,polar,1.5,5.0,1.0,2.0,0.9090909090909091,13
+fi_polar_86,Söivätkö ritarit muuta kuin lihaa?,finnish,polar,1.5,3.0,0,2.0,0.6,6
+fi_polar_87,Tekivätkö prinsessat mitään kotitöitä?,finnish,polar,1.6666666666666667,2.0,0,2.0,0.75,5
+fi_polar_88,"Siirto 2...Lc5 sisältää myös avausansan aloittelijoille: Jos valkea jatkaa fxe5?, musta pelaa 3...Dh4+, jolloin valkea menettää joko torninsa (4.g3 Dxe4+) tai joutuu matitetuksi (4.Ke2 Dxe4#).",finnish,polar,2.375,5.0,1.0,3.1666666666666665,0.6,33
+fi_polar_89,Eivätkö olekin kivat?,finnish,polar,1.5,1.0,0,0,0.3333333333333333,4
+fi_polar_90,"Onko joku jo muistanut kertoa, että isä kuolee?",finnish,polar,2.0,3.0,2.0,2.0,0.625,10
+fi_polar_91,"Kerroinko jo, että isäsi kuolee?",finnish,polar,2.25,2.0,1.0,2.0,0.8,7
+fi_polar_92,"Millaiseksi siitä tulee, kun kaikki hokevat koko ajan, että isä kuolee kohta heti huomenna tänään koko ajan aina?",finnish,polar,2.411764705882353,5.0,2.0,3.3333333333333335,0.7777777777777778,21
+fi_polar_93,Onko kaikki se odottaminen sitten tarpeellista?,finnish,polar,2.2,2.0,0,0,0.5,7
+fi_polar_94,Onko jokaisen ihmisen välttämätöntä muistuttaa asiasta aina sopivan tai sopimattoman tilanteen tullen?,finnish,polar,2.4545454545454546,6.0,2.0,2.5,0.75,13
+fi_polar_95,"Onko se toistettava päivittäin, viikoittain, kuukausittain?",finnish,polar,2.0,2.0,0,3.0,0.6666666666666666,9
+fi_polar_96,Onko ihmisille mahdotonta keskustella isästäni ilman kuolinpäivän arvailuja?,finnish,polar,1.7142857142857142,3.0,1.0,2.0,0.75,9
+fi_polar_97,Aiheuttaako lämpenevä toimistobiosfääri toimistokuukkelin katoamisen?,finnish,polar,2.0,2.0,1.0,1.0,1.0,6
+fi_polar_98,"Muistatko, kun Juuson tarhasta karkasi järvelle 2 000 ankkaa?",finnish,polar,2.142857142857143,3.0,1.0,2.5,0.75,10
+fi_polar_99,Tunnetko hänet vielä vanhanakin?,finnish,polar,1.6666666666666667,2.0,0,2.0,0.75,5
+fi_polar_100,"Jos miehen mielestä hänen kumppanillaan on ihana peppu, jota on mukava taputella tai vähän puristaa, niin eikö siitä voisi naisena nauttia?",finnish,polar,3.05,6.0,2.0,2.6666666666666665,0.5714285714285714,24
+fi_polar_101,Olisiko se iltalenkin jälkeen peiton tuominen sohvalle yhdessä iltateen tai viinilasillisen kanssa?,finnish,polar,2.272727272727273,3.0,0,0,0.5833333333333334,13
+fi_polar_102,"Olisiko se, että itse tulee sinne peiton alle, kainaloon, vain alusvaatteisillaan?",finnish,polar,2.4,4.0,1.0,2.5,0.7272727272727273,15
+fi_polar_103,Olisiko se toisen passaaminen osa sitä arkiromantiikkaa?,finnish,polar,1.8333333333333333,2.0,0,0,0.42857142857142855,8
+fi_polar_104,"Juhlaseksiä, arkiseksiä - onko niillä eroa?",finnish,polar,2.25,2.0,1.0,0,0.6,8
+fi_polar_105,"Onko arkiseksi nopea tyydytys ennen nukkumaanmenoa, tai nopea tyydytys ennen ylösnousua aamulla?",finnish,polar,2.0,3.0,0,0,0.6666666666666666,14
+fi_polar_106,Onko juhlaseksi tuntien kestävää hyväilyä ja seksiä sille järjestetyllä ajalla?,finnish,polar,2.111111111111111,3.0,1.0,1.0,0.7,11
+fi_polar_107,– Etkö usko?,finnish,polar,1.0,1.0,0,0.0,0.5,4
+fi_polar_108,- Sinäkö kilpailisit ylimysten rikkauksien kanssa sienilläsi?,finnish,polar,1.8,2.0,0,3.0,0.6666666666666666,8
+fi_polar_109,Pitäisikö varsinaissuomalaisia ammattioppilaitoksia yhdistää?,finnish,polar,1.6666666666666667,2.0,0,1.0,0.75,5
+fi_polar_110,"Jos näin tapahtuisi, niin silloinhan ei näitä uudelleenvirittelyoppaita tarvittaisi ollenkaan, eikö niin?",finnish,polar,2.6363636363636362,2.0,1.0,3.0,0.75,15
+fi_polar_111,"”Voisiko vaimosi paremmin jos pyytäisit tätä lupaa tai kertoisit, että harrastat seksiä toisen naisen kanssa?",finnish,polar,1.8571428571428572,5.0,1.0,2.75,0.6,18
+fi_polar_112,"Voisitko itse paremmin, jos seksielämäsi jatkuisi?”",finnish,polar,2.4,2.0,1.0,2.5,0.8333333333333334,9
+fi_polar_113,Päästäänkö kolmanteen pilariin kuuluvaa tietosuojaa koskevasta puitepäätöksestä poliittiseen yhteisymmärrykseen tämän vuoden loppuun mennessä?,finnish,polar,2.5,7.0,1.0,1.3333333333333333,0.8461538461538461,14
+fi_polar_114,Ratkaiseeko puitesopimus kaikki ongelmat?,finnish,polar,1.6666666666666667,2.0,0,2.0,0.75,5
+fi_polar_115,Onko tietosuojaviranomaisilla asianmukaiset voimavarat tietosuojaa koskevien sääntöjen täytäntöönpanemiseksi SIS II -järjestelmän osalta?,finnish,polar,2.272727272727273,5.0,1.0,1.0,0.9166666666666666,13
+fi_polar_116,Toimivatko kaikki jäsenvaltiot vilpittömässä mielessä Schengen-tietoja käsitellessään?,finnish,polar,2.5,2.0,1.0,2.0,0.8571428571428571,8
+fi_polar_117,"""Eikö sinustakin?"" kysyit kolme vuotta sitten.",finnish,polar,1.8,3.0,0,1.5,0.5,10
+fi_polar_118,"Onko sitten teoriassa olemassa mahdollisuus, ettei se olisi?",finnish,polar,2.25,3.0,1.0,2.5,0.5555555555555556,11
+fi_polar_119,Eikö tämän kaltaisessa asiassa käytännön ja teorian tulisi olla samanlaisia?”,finnish,polar,2.6666666666666665,4.0,1.0,2.0,0.6,12
+fi_polar_120,Olisiko silloin kuitenkin teoriassa mahdollisuus sille ettei se olisi?,finnish,polar,2.0,4.0,1.0,2.0,0.5,11
+fi_polar_121,olisiko viininvalmistus yrittäjälle sivu- vai pääelinkeino?,finnish,polar,1.8,2.0,0,0,0.6666666666666666,7
+fi_polar_122,Pystyykö Bosniaan antamaan vielä avustusta?,finnish,polar,1.5,2.0,1.0,2.0,1.0,6
+fi_polar_123,Onko tarpeen olla noin perusteellinen?,finnish,polar,2.0,2.0,1.0,2.0,0.8,6
+fi_polar_124,"Popista, rockista vaiko iskelmästä?",finnish,polar,2.3333333333333335,2.0,0,0,0.75,6
+fi_polar_125,Oletteko ehkä kotoisin Raumalta?,finnish,polar,1.3333333333333333,1.0,0,0,0.75,5
+fi_polar_126,Haluaisitko sinä yhdistää vaihto-opiskelun ja eksoottisen unelmaloman jossakin Aasian vaihtokohteista?,finnish,polar,2.111111111111111,4.0,1.0,1.5,0.7,11
+fi_polar_127,Oletko tehoääliö töissä?,finnish,polar,1.0,1.0,0,0,0.6666666666666666,4

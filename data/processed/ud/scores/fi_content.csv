@@ -1,153 +1,153 @@
-unique_id,text,language,type,avg_links_len,avg_max_depth,avg_subordinate_chain_len,avg_verb_edges,lexical_density,n_tokens,subordinate_proposition_dist,verbal_head_per_sent
-fi_content_0,Mitä minä puhun?,finnish,content,1.5,1.0,0,2.0,0.3333333333333333,4,0.0,1.0
-fi_content_1,Mitä minä ihan oikeasti puhun?,finnish,content,2.25,2.0,0,3.0,0.6,6,0.0,1.0
-fi_content_2,Mitä tästä sanoisi enää?,finnish,content,1.3333333333333333,1.0,0,3.0,0.5,5,0.0,1.0
-fi_content_3,"- Opettaja, missä sä oikein olet töissä?",finnish,content,3.2,1.0,0,0,0.5,9,0.0,1.0
-fi_content_4,Miksi talvella pitää käyttää koko ajan ihan tylsiä kenkiä?,finnish,content,2.0,3.0,0,4.0,0.8888888888888888,10,0.0,1.0
-fi_content_5,"Mitä saadaan, kun purkitetaan sata naista?",finnish,content,1.6,3.0,1.0,2.0,0.5,8,50.0,2.0
-fi_content_6,Miksi sitten takerrumme tavaroihin?,finnish,content,1.3333333333333333,1.0,0,3.0,1.0,5,0.0,1.0
-fi_content_7,Mitä jos uudistuisimme kevään kynnyksellä juuri näin?,finnish,content,1.8333333333333333,2.0,0,4.0,0.7142857142857143,8,0.0,1.0
-fi_content_8,Mikä seksuaalinen itsetunto?,finnish,content,1.5,1.0,0,0,0.6666666666666666,4,0,0.0
-fi_content_9,Onko kenellekään tullut koskaan mieli kysyä itseltään ”Miksi minun pitäisi haluta seksiä?”,finnish,content,2.090909090909091,3.0,1.0,3.0,0.5833333333333334,15,50.0,3.0
-fi_content_10,”Mitä minun tulisi tuntea seksin aikana?”,finnish,content,1.8,3.0,1.0,2.0,0.6666666666666666,9,50.0,2.0
-fi_content_11,”Pitäisikö minun tietää mitä kumppani tuntee tai mitä hän haluaa?”,finnish,content,2.111111111111111,3.0,1.0,2.6666666666666665,0.4,13,50.0,3.0
-fi_content_12,Miten sitten saavuttaisimme tämän seksuaalisen itseluottamuksen?,finnish,content,1.8,2.0,0,3.0,0.8333333333333334,7,0.0,1.0
-fi_content_13,"Ovatko he niitä, jotka ottavat sen jonka saavat tai eivät ota ketään, kun eivät ole varmoja, kuka on se oikea, eivätkä osaa viestittää mitään oikein tai ollenkaan?",finnish,content,2.1538461538461537,8.0,1.25,2.0,0.3333333333333333,32,83.33333333333333,8.0
-fi_content_14,Miksi emme pidä seksuaalielämäämme usein kovinkaan hyvänä?,finnish,content,1.8333333333333333,2.0,0,4.0,0.8571428571428571,8,0.0,1.0
-fi_content_15,"Miksi emme hae itsellemme sitä nautintoa, jota kaipaamme?",finnish,content,1.7142857142857142,3.0,1.0,2.0,0.5,10,50.0,2.0
-fi_content_16,"Miksi emme kehitä taitojamme seksin alueella, jotta pystyisimme tyydyttämään kumppanimme?",finnish,content,1.7777777777777777,3.0,2.0,2.0,0.8,12,66.66666666666667,3.0
-fi_content_17,"Miksi tyydymme vähään ja odotamme, että se paranisi itsestään sitten joskus?",finnish,content,1.8,4.0,1.0,3.0,0.7272727272727273,13,50.0,3.0
-fi_content_18,Miksi meidän pitäisi sitten osata olla niin vapaita seksuaalisesti?,finnish,content,2.125,2.0,1.0,4.0,0.6666666666666666,10,50.0,2.0
-fi_content_19,Kuinka se on mahdollista?,finnish,content,2.0,1.0,0,0,0.5,5,0.0,1.0
-fi_content_20,"En kuitenkaan ymmärrä, miksi joku ei maksaisi kymmentä tai viittä euroa kuussa järjettömän suuresta, mobiilista musiikkikirjastosta?",finnish,content,2.6666666666666665,5.0,1.0,3.0,0.625,19,50.0,2.0
-fi_content_21,Kuinka paljon ihmiset oikeasti sitten olisivat valmiita maksamaan tästä huvista?,finnish,content,2.3333333333333335,3.0,1.0,2.0,0.8,11,50.0,2.0
-fi_content_22,Ai miten kiersin bannit?,finnish,content,1.3333333333333333,1.0,0,3.0,0.75,5,0.0,1.0
-fi_content_23,- ... Mutta miten ne ei ole vieläkään saanut rakennettua sitä Lepuskin tornia?,finnish,content,2.8,3.0,1.0,3.0,0.5454545454545454,14,50.0,2.0
-fi_content_24,Nimittäin miksi olisin tästä toiselle naiselle tästä vihainen?,finnish,content,3.7142857142857144,2.0,0,0,0.5,9,0.0,1.0
-fi_content_25,MIES: No miten siinä nyt pronssia varmasti muka saisi?,finnish,content,4.625,2.0,0,0.0,0.7777777777777778,11,0,1.0
-fi_content_26,PIKKUVAIMO: Mitä sä naurat?,finnish,content,2.3333333333333335,2.0,0,2.0,0.5,6,0,1.0
-fi_content_27,"Tämä setti toimi, sillä siinä vaiheessa kun avaimet oli vaihdettu, uskalsin jo kysyä, että ”mitä sä musta ajattelit, kun ekan kerran näit?”.",finnish,content,3.0476190476190474,6.0,3.0,3.0,0.5454545454545454,30,83.33333333333333,6.0
-fi_content_28,Mikä on puheenjohtajavaltio Alankomaiden strategia?,finnish,content,1.75,3.0,0,0,0.6,6,0.0,1.0
-fi_content_29,"Miksi ne valtiot, joiden oletetaan hyväksyneen direktiivit neuvostossa, ovat sitten kuitenkin vastahakoisia soveltamaan niitä?",finnish,content,3.230769230769231,4.0,1.5,1.6666666666666667,0.7142857142857143,17,75.0,4.0
-fi_content_30,"Mitä tapahtuu, jos itäeurooppalaiset ja keskieurooppalaiset vallan keskukset kerran siirtyvät?",finnish,content,3.111111111111111,5.0,1.0,2.5,0.7,12,50.0,2.0
-fi_content_31,Milloin ryhdymme neuvottelemaan siitä?,finnish,content,1.0,2.0,1.0,1.5,0.75,5,50.0,2.0
-fi_content_32,Mitä teemme valmistellaksemme asiaa?,finnish,content,1.0,2.0,1.0,1.5,0.75,5,50.0,2.0
-fi_content_33,Mitä teemme sen lisäksi antaaksemme Ukrainan osallistua Eurooppa-konferenssiin?,finnish,content,1.4285714285714286,3.0,2.0,2.0,0.625,9,66.66666666666667,3.0
-fi_content_34,"Miten komissio suhtautuu siihen, mitkä ovat sen näkemykset asiasta?",finnish,content,1.625,3.0,0,4.0,0.5555555555555556,11,0.0,2.0
-fi_content_35,"Voiko komissio selvittää, miten se valvoo tämän säädöksen täytäntöönpanon onnistumista?",finnish,content,1.8888888888888888,5.0,1.0,2.5,0.7,12,50.0,2.0
-fi_content_36,"Miksi minun täytyi elää kylmyydessä, miksi minä en koskaan edes elänyt?",finnish,content,3.0,2.0,0,4.0,0.6363636363636364,13,0.0,2.0
-fi_content_37,"Ei hän voi tietää, miten voisi, jos sinäkään et tiedä?",finnish,content,2.3333333333333335,3.0,1.0,2.0,0.3,13,50.0,2.0
-fi_content_38,"Miksi katsoessani niitä, näen vain tyhjän lumisen jalkakäytävän, sen, jota pitkin sinä et saavu?",finnish,content,2.6153846153846154,5.0,1.0,2.0,0.5714285714285714,18,66.66666666666667,3.0
-fi_content_39,"Miten hän osaisi kertoa, että sama kohina tuntui hänen suonissaan?",finnish,content,1.8888888888888888,4.0,2.0,2.3333333333333335,0.6,12,66.66666666666667,3.0
-fi_content_40,"Miten hän selittäisi, että hengitti samaan tahtiin sen kanssa?",finnish,content,1.5,4.0,1.0,2.5,0.4444444444444444,11,50.0,2.0
-fi_content_41,"Miten mies voisikaan tietää, ettei Pekulla enää edes ole puhelintaan?",finnish,content,2.3,2.0,0,3.0,0.6363636363636364,13,0.0,1.0
-fi_content_42,"On vain yksi, miksi?",finnish,content,2.3333333333333335,2.0,0,2.0,0.75,6,0.0,1.0
-fi_content_43,"Mitä sinulla nyt voisi hätänä olla, vakavasti, terveellä nuorella ihmisellä?",finnish,content,3.3333333333333335,2.0,0,0,0.6,13,0,0.0
-fi_content_44,Miten sitä enää jaksaa?,finnish,content,2.0,1.0,0,3.0,1.0,5,0.0,1.0
-fi_content_45,Kuka tätä ikinä näkee paitsi me?,finnish,content,1.8,2.0,0,4.0,0.3333333333333333,7,0.0,1.0
-fi_content_46,"Miksi pitää kiinni kenestäkään, kun myöhemmin pakotetaan kuitenkin päästämään irti?",finnish,content,1.8888888888888888,3.0,2.0,3.0,0.8,12,66.66666666666667,3.0
-fi_content_47,”Kuka muka pakottaa?,finnish,content,1.5,1.0,0,2.0,0.6666666666666666,5,0.0,1.0
-fi_content_48,Miten joku voi täälläkin asua?,finnish,content,2.5,1.0,0,3.0,0.6,6,0.0,1.0
-fi_content_49,"Tulipa tällänen väli stoori kirjotettua kesken matikan tunnin, kertokaa mitä ootte mieltä ja että pitäskö tälle seurata jatkoa? :DD",finnish,content,3.7777777777777777,4.0,1.0,2.6,0.631578947368421,21,66.66666666666667,5.0
-fi_content_50,"Miten selität Espanjan kesäillan sille, joka ei sitä tiedä?",finnish,content,2.25,3.0,1.0,2.5,0.5555555555555556,11,50.0,2.0
-fi_content_51,"""Kuinka voit tehdä meille näin kaiken yhdessä viettämämme ajan jälkeen?""",finnish,content,2.0,3.0,1.0,2.5,0.6,13,50.0,2.0
-fi_content_52,"”Miksi Carla sitten sanoo, että se on maanpäällinen Helvetti?”",finnish,content,2.75,2.0,1.0,4.0,0.6666666666666666,13,50.0,2.0
-fi_content_53,Mitä hän muka Luvatusta Maasta tietäisi?,finnish,content,2.8,2.0,1.0,2.0,0.6666666666666666,7,50.0,2.0
-fi_content_54,"Miksi Jumalat olisivat sinne matkalla, ellei se olisi paratiisi?”",finnish,content,2.888888888888889,2.0,1.0,0,0.5,13,50.0,2.0
-fi_content_55,"”Tietävätköhän Jumalat nyt, mitä ovat tekemässä?”",finnish,content,2.4,2.0,1.0,2.0,0.6666666666666666,10,50.0,2.0
-fi_content_56,Tuntuu kuin matkalla olisi aikaa ajatella koko elämä; mitä minä teen jos saan sen kiinni ennen ulko-ovea?,finnish,content,2.1875,5.0,1.0,2.5,0.5882352941176471,19,75.0,5.0
-fi_content_57,Mitä jos se alkaa kysymään enemmän tyttöystävästä jota minulla ei koskaan ollut?,finnish,content,1.7272727272727273,4.0,1.0,3.0,0.4166666666666667,13,50.0,2.0
-fi_content_58,Mikä sen nimi olisi?,finnish,content,2.0,2.0,0,0,0.25,5,0.0,1.0
-fi_content_59,Oliko hän varmasti tietoinen mitä teki?,finnish,content,1.8,2.0,1.0,1.0,0.5,7,50.0,2.0
-fi_content_60,Miksi hän käveli taas?,finnish,content,1.3333333333333333,1.0,0,3.0,0.75,5,0.0,1.0
-fi_content_61,"Jos roolit ovat toisinpäin, ajattelee ""Mitä vittua?""",finnish,content,1.8333333333333333,2.0,1.0,2.0,0.5714285714285714,11,50.0,2.0
-fi_content_62,- Mikä ei toimi?,finnish,content,1.5,1.0,0,1.0,0.3333333333333333,5,0.0,1.0
-fi_content_63,Mitä paskaa sä jauhat?,finnish,content,1.3333333333333333,2.0,0,2.0,0.5,5,0.0,1.0
-fi_content_64,tuu takas mikä sua vaivaa?,finnish,content,2.0,2.0,0,2.0,0.6,6,0.0,2.0
-fi_content_65,- Mitä te haluatte?  Mårten kysyi.,finnish,content,1.75,2.0,0,2.0,0.6,8,0.0,2.0
-fi_content_66,– Missä lapset ovat?,finnish,content,1.5,1.0,0,0,0.3333333333333333,5,0.0,1.0
-fi_content_67,Mitä muuta tänne ruotsinpuolelle kuuluu?,finnish,content,1.5,2.0,0,2.0,0.6,6,0.0,1.0
-fi_content_68,- Keitä te olette ja miksi tungette tänne iltamyöhällä?,finnish,content,2.0,2.0,0,4.0,0.5,10,0.0,2.0
-fi_content_69,- Kuka tuolla pihalla kulki ja miksi?  Hartikka tivasi.,finnish,content,2.4285714285714284,3.0,0,2.0,0.75,11,0.0,2.0
-fi_content_70,"- Moi, mitä kuuntelet? kysyt vilpittömästi",finnish,content,1.75,2.0,0,2.0,0.6,8,0.0,2.0
-fi_content_71,Mitä kello oikeesti on?”,finnish,content,2.0,1.0,0,0,0.5,6,0.0,1.0
-fi_content_72,Mitä se tarkottaa?”,finnish,content,1.5,1.0,0,2.0,0.3333333333333333,5,0.0,1.0
-fi_content_73,Miten pakolaisten ja suomalaisten kulttuurit saadaan kohtaamaan toisensa?,finnish,content,2.142857142857143,5.0,1.0,2.0,0.75,9,50.0,2.0
-fi_content_74,Mikä on Suomen suunta ja linja seuraavan 20.10.10 vuoden aikana?,finnish,content,2.2222222222222223,4.0,0,0,0.6,11,0.0,1.0
-fi_content_75,Millä te Australiassa eläisitte?,finnish,content,2.0,1.0,0,3.0,0.5,5,0.0,1.0
-fi_content_76,"Mikä siinä on, että myyjien on niin vaikea keskittyä palvelemaan ihan tavallista, nuorta asiakasta?",finnish,content,2.4615384615384617,6.0,3.0,1.5,0.6428571428571429,17,75.0,4.0
-fi_content_77,"Jos tämä ei riitä, mitä me sitten tehdään?",finnish,content,2.4285714285714284,2.0,1.0,3.0,0.375,10,50.0,2.0
-fi_content_78,Mutta mikä olet sinä tai kukaan muukaan nimittämään toisten pyhinä pitämiä totuuksia pakanauskonnoiksi?,finnish,content,2.4166666666666665,4.0,1.0,2.0,0.38461538461538464,14,66.66666666666667,3.0
-fi_content_79,Siis mitä et usko?,finnish,content,2.0,1.0,0,2.0,0.5,5,0.0,1.0
-fi_content_80,Mitä se tähän kuuluu?,finnish,content,2.0,1.0,0,3.0,0.25,5,0.0,1.0
-fi_content_81,Missä laatikossa niiden papereiden piti olla?,finnish,content,2.2,2.0,0,0,0.3333333333333333,7,0.0,1.0
-fi_content_82,Mitä te oikein olette tehneet kukalleni?,finnish,content,2.2,1.0,0,4.0,0.5,7,0.0,1.0
-fi_content_83,Kenen toimesta tämä on tehty?,finnish,content,1.75,2.0,0,3.0,0.4,6,0.0,1.0
-fi_content_84,"Mitähän siitä tulisi, jos kaikki kyselisivät toisiltaan, mitä makkaraa kukin syö?",finnish,content,2.1,4.0,2.0,3.0,0.36363636363636365,14,66.66666666666667,3.0
-fi_content_85,miksi meidän pitää olla Natoon intoilemassa?,finnish,content,3.0,1.0,0,3.0,0.5,7,0.0,1.0
-fi_content_86,"Aiotaanko korvauskysymykset ottaa huomioon lain uudistuksessa, ja jos, niin miten?",finnish,content,2.7777777777777777,2.0,0,4.0,0.7,13,0.0,1.0
-fi_content_87,Mitä se sillä tarkoitti?,finnish,content,2.0,1.0,0,3.0,0.25,5,0.0,1.0
-fi_content_88,"Kysyipä joku epähienotunteisesti, että miten lienee sosialidemokraattien laita?",finnish,content,2.142857142857143,3.0,1.0,3.0,0.75,10,50.0,2.0
-fi_content_89,Kuka oli Ison-Britannian kuningatar Viktorian aviomies?,finnish,content,1.8,4.0,0,0,0.6666666666666666,7,0.0,1.0
-fi_content_90,Mitä sä olet mieltä siitä asiasta?,finnish,content,1.8,2.0,0,3.0,0.5,7,0.0,1.0
-fi_content_91,"Osaatteko sanoa, missä olisi lähin R-kioski?",finnish,content,1.6,4.0,2.0,1.0,0.6666666666666666,8,66.66666666666667,3.0
-fi_content_92,Ymmärrätkö mitä yritän selittää?,finnish,content,1.3333333333333333,2.0,2.0,1.0,1.0,5,66.66666666666667,3.0
-fi_content_93,Ei kai kukaan kaipaa sinne takaisin?,finnish,content,1.8,2.0,0,3.0,0.6666666666666666,7,0.0,1.0
-fi_content_94,"Kohentaminen vaatii mielikuvitusta: mitä tehdä torilla, kun talvinen viima menee luihin ja ytimiin?",finnish,content,1.9166666666666667,5.0,1.0,3.0,0.7692307692307693,16,50.0,3.0
-fi_content_95,"Mikä mieli, järki tai merkitys tällä hirvittävän kokoisella maailmankaikkeudella on?",finnish,content,2.4444444444444446,3.0,0,0,0.6,12,0.0,1.0
-fi_content_96,Kuka rahasta juoksisi?,finnish,content,1.5,1.0,0,2.0,0.6666666666666666,4,0.0,1.0
-fi_content_97,Mutta mitä ihmettä?,finnish,content,1.0,1.0,0,0,0.3333333333333333,4,0,0.0
-fi_content_98,Mitä sinä haluaisit?,finnish,content,1.5,1.0,0,2.0,0.3333333333333333,4,0.0,1.0
-fi_content_99,"Ensinnäkin sen sijaan, että työntekijöitä komennettaisiin milloin mihinkin projektiin, saa usein kuulla kysymystä ”mitä haluaisit tehdä?”, ja työntekijän toiveita myös oikeasti kuunnellaan.",finnish,content,3.4761904761904763,5.0,1.0,2.6666666666666665,0.7272727272727273,29,75.0,6.0
-fi_content_100,Mitä tähän asti on tehty ja ennen kaikkea; mitä kaikkea kivaa on vielä vuoden aikana edessä?,finnish,content,3.8666666666666667,3.0,0,4.0,0.375,18,0.0,2.0
-fi_content_101,Ja stressittömän yhteiskunta-alan työn löytäminen nykyaikana – kuinka paljon enemmän voi itselleen haastetta asettaa?,finnish,content,2.5,4.0,0,3.0,0.7692307692307693,15,0,1.0
-fi_content_102,Tai edes kuinka paljon uutta asiaa hän on kurssilla oppinut?,finnish,content,3.4444444444444446,3.0,0,5.0,0.7,11,0.0,1.0
-fi_content_103,Mikä siis avuksi?,finnish,content,1.5,1.0,0,0,0.6666666666666666,4,0,0.0
-fi_content_104,Miksi siis nauraa naistutkimukselle?,finnish,content,1.3333333333333333,1.0,0,3.0,1.0,5,0.0,1.0
-fi_content_105,- Luennoitsija kysyy ja vastaa itse: ”Mikä on ihminen?,finnish,content,2.2857142857142856,2.0,1.0,2.5,0.625,12,50.0,3.0
-fi_content_106,Kuinka näitä sitten käsitellään?,finnish,content,2.0,1.0,0,3.0,0.75,5,0.0,1.0
-fi_content_107,"Kuinka kaiken aikaa muuttuvan, hahmottoman ja virtaavan voi asettaa pysyväksi tarkoitettuun systeemiin, ihmisten maailmankaikkeuteen?",finnish,content,2.6153846153846154,3.0,1.0,2.0,0.7857142857142857,17,66.66666666666667,4.0
-fi_content_108,Vai mitä muuta fuksiaiset ovat kuin initiaatio tietyn ryhmän jäsenyyteen?,finnish,content,1.7777777777777777,4.0,0,0,0.5,11,0.0,1.0
-fi_content_109,Mikä mahtaa olla tilanne jälkimodernissa länsimaalaisessa yhteiskunnassa?,finnish,content,2.5,2.0,0,0,0.5714285714285714,8,0.0,1.0
-fi_content_110,Miten oppiminen toimi valtion ja kirkon intressien välineenä?,finnish,content,2.142857142857143,5.0,0,3.0,0.875,9,0.0,1.0
-fi_content_111,Miten säätyjen väliset jännitteet ja vallan tasapaino ilmenivät kasvatuksessa?,finnish,content,2.5,3.0,0,3.0,0.8888888888888888,10,0.0,1.0
-fi_content_112,Mitä ihmettä tämä tarkoittaa?,finnish,content,1.6666666666666667,2.0,0,2.0,0.5,5,0.0,1.0
-fi_content_113,Mihin niitä kelaatteja sitten käytetään?,finnish,content,2.0,2.0,0,3.0,0.6,6,0.0,1.0
-fi_content_114,Mitä kuninkaallisten peruukit maksoivat?,finnish,content,1.6666666666666667,2.0,0,2.0,0.75,5,0.0,1.0
-fi_content_115,"Robert William ”Bob” Hoskins (s. 26. lokakuuta 1942 Bury St Edmunds, Suffolk) on englantilainen näyttelijä, joka on tullut tunnetuksi muun muassa tähdittämistään elokuvista Kuka viritti ansan, Roger Rabbit? (1988) ja Hook – kapteeni Koukku (1991).",finnish,content,3.121212121212121,6.0,1.0,2.5,0.7647058823529411,48,80.0,5.0
-fi_content_116,"Hoskinsin tunnetuimpiin näyttelijäsuorituksiin lukeutuvat etsivä Eddie Valiant elokuvasta Kuka viritti ansan, Roger Rabbit?, Cherin vastanäyttelijä elokuvassa Äitini on merenneito (1990), Nikita Hruštšov elokuvassa Vihollinen porteilla (2001) ja setä Bart, väkivaltainen Jet Lin isäntä elokuvassa Danny the Dog.",finnish,content,3.4166666666666665,5.0,1.0,2.5,0.8648648648648649,47,66.66666666666667,3.0
-fi_content_117,"Vaimo Veronica Lario kysyi: Miten on mahdollista hyväksyä sellainen poliittinen kulttuuri, jossa parlamenttiehdokkaaksi asetetaan pääministerin suosimia tanssityttöjä?”",finnish,content,1.875,7.0,1.3333333333333333,1.75,0.8823529411764706,21,80.0,5.0
-fi_content_118,Ja mitä kustantaa valmis dolly?,finnish,content,1.5,2.0,0,3.0,0.6,6,0.0,1.0
-fi_content_119,"Kuinka sitten tiedät, onko sinut bannattu?",finnish,content,2.0,2.0,1.0,2.5,0.6666666666666666,8,50.0,2.0
-fi_content_120,"Miksi aina silloin, kun oikeasti tarvitsee jotain, ei löydä mitään?",finnish,content,2.5555555555555554,4.0,1.0,3.0,0.6,13,50.0,2.0
-fi_content_121,"Kuka se olikaan, joka heitti väärän roskapussin ulos?",finnish,content,2.142857142857143,3.0,1.0,3.0,0.5,10,50.0,2.0
-fi_content_122,"Kuka niihin pystyy vaikuttamaan, jos ei ministeri?",finnish,content,1.8333333333333333,2.0,1.0,2.0,0.5714285714285714,9,66.66666666666667,3.0
-fi_content_123,Mikä kumma sitä oikein vaivaa?,finnish,content,1.75,2.0,0,3.0,0.6,6,0.0,1.0
-fi_content_124,"− Oppivatko lapset nopeammin, ja miten on vanhenevien eläkeläisten laita?",finnish,content,2.0,4.0,1.0,1.5,0.7777777777777778,12,50.0,3.0
-fi_content_125,"Taas tuli aika miettiä, mitä seuraavaksi, mistä aiheesta nyt keskusteltaisiin?",finnish,content,1.7777777777777777,6.0,1.0,1.6666666666666667,0.8,13,50.0,3.0
-fi_content_126,Mikä on sitä arkiromantiikkaa sitten?,finnish,content,2.25,2.0,0,0,0.4,6,0.0,1.0
-fi_content_127,Mitä se on teidän mielestänne?,finnish,content,2.0,2.0,0,0,0.2,6,0.0,1.0
-fi_content_128,Ja mikä olisi sitten sitä juhlaromantiikkaa?,finnish,content,1.8,2.0,0,0,0.3333333333333333,7,0.0,1.0
-fi_content_129,"Ja kun nyt paneudutaan näihin kysymyksiin, niin arvioidaan samalla, että mikä on sitä arkiseksiä ja mikä juhlaseksiä, sillä kai silläkin on eronsa?",finnish,content,2.761904761904762,3.0,1.0,4.5,0.45454545454545453,26,75.0,4.0
-fi_content_130,Mikä sitten avuksi tähän kaipuuseen?,finnish,content,1.5,2.0,0,0,0.6,6,0,0.0
-fi_content_131,Miten nainen voisi viljellä sitten sitä arkiromantiikkaa vähän enemmän?,finnish,content,2.125,2.0,0,5.0,0.7777777777777778,10,0.0,1.0
-fi_content_132,Mitä muuta se on kuin lempiviinin tai -oluen hankkiminen lempiruuan seuraksi?,finnish,content,2.6,5.0,0,0,0.45454545454545453,12,0.0,1.0
-fi_content_133,"Kuitenkin se on jotain, mitä nainen ei tunne passaukseksi, jos asia olisi päinvastoin - miksiköhän?",finnish,content,3.3076923076923075,3.0,2.0,4.0,0.5,18,66.66666666666667,3.0
-fi_content_134,Miten saada nainen nauttimaan arkiseksistä?,finnish,content,1.25,2.0,1.0,2.0,1.0,6,50.0,2.0
-fi_content_135,"Miten saada hänet ymmärtämään, että halailu, puristelu ja eroottinen koskettelu ovat hänelle hyväksi, että se auttaa häntä rentoutumaan, sen sijaan, että hän tuntisi itsensä pakotetuksi vastaamaan miehen haluihin saada seksiä?",finnish,content,2.793103448275862,9.0,1.75,1.875,0.5666666666666667,36,87.5,9.0
-fi_content_136,Miten saamme kansalaiset hyväksymään Euroopan yhdentymishankkeen?,finnish,content,1.4,3.0,1.0,2.0,1.0,7,50.0,2.0
-fi_content_137,Mikä on Euroopan tulevaisuus?,finnish,content,2.0,1.0,0,0,0.5,5,0.0,1.0
-fi_content_138,"Junan ovet piippaavat kuin aikapommi, tarkastaja on vihollinen Tikkurilassa, vaaraton Puistolassa, kuka tietää miksi?",finnish,content,2.1538461538461537,3.0,0,2.5,0.7857142857142857,18,0.0,3.0
-fi_content_139,"Ketä näyttelijää ja mitä elokuvaroolia olet katsellut sillä mielellä, että olisit halunnut näytellä sen itse?",finnish,content,1.9285714285714286,4.0,2.0,2.0,0.4666666666666667,17,66.66666666666667,3.0
-fi_content_140,Miksi et nauttisi ja harrastaisi seksiä näistä tuntemuksista huolimatta?,finnish,content,1.75,2.0,0,2.5,0.5555555555555556,10,0.0,2.0
-fi_content_141,"Ihokosketus, seksi ja orgasmi saavat sinut voimaan paremmin, miksi olla pidättyväinen, kun voisit saada helpotusta oloosi?",finnish,content,2.3333333333333335,4.0,1.0,2.3333333333333335,0.6875,20,66.66666666666667,4.0
-fi_content_142,"Heti ensimmäisissä bileissä helmikuussa hävitin mun Mulberry-huivin, ja mitä tapahtui tällä viikolla?",finnish,content,1.9090909090909092,3.0,0,3.0,0.6666666666666666,14,0.0,2.0
-fi_content_143,"Annan teille yhden esimerkin: mitä tehdään leluille, joissa on siruja?",finnish,content,1.6666666666666667,5.0,1.0,2.0,0.5,13,50.0,3.0
-fi_content_144,Mitä SIS II -järjestelmälle on tapahtunut?,finnish,content,2.2,3.0,0,2.0,0.6666666666666666,7,0.0,1.0
-fi_content_145,Miksi esitän näin paljon kysymyksiä nyt?,finnish,content,2.0,3.0,0,3.0,1.0,7,0.0,1.0
-fi_content_146,Kuka minä sitten olen ihmisenä?,finnish,content,2.5,1.0,0,0,0.4,6,0.0,1.0
-fi_content_147,"""Mitä vittuu noi roskikset rämisee?"" Stilsu huutaa isoon ääneen et ne kuulis kans.",finnish,content,2.0,3.0,1.0,3.0,0.6923076923076923,17,50.0,3.0
-fi_content_148,"“Mitä tarkoitit kun sanoit, että veitsi on käytännöllisesti katsoen puhdas?",finnish,content,2.7777777777777777,4.0,3.0,1.6666666666666667,0.6,13,75.0,4.0
-fi_content_149,"Käyttölupani on vanhenemassa, miten uusin sen?",finnish,content,1.6,2.0,0,2.0,0.6666666666666666,8,0.0,2.0
-fi_content_150,"Miten selität sen, että tuloksesi olivat niin hirmuisen kovia verrattuna nykyisiin aikoihin?",finnish,content,2.5454545454545454,5.0,2.0,1.5,0.75,14,66.66666666666667,3.0
-fi_content_151,Kaikki tietomme asuttamastamme maailmankaikkeudesta on lähtenyt yhdestä kysymyksestä: miten?,finnish,content,1.75,3.0,1.0,1.0,0.6666666666666666,11,50.0,2.0
+unique_id,text,language,type,avg_links_len,avg_max_depth,avg_subordinate_chain_len,avg_verb_edges,lexical_density,n_tokens
+fi_content_0,Mitä minä puhun?,finnish,content,1.5,1.0,0,2.0,0.3333333333333333,4
+fi_content_1,Mitä minä ihan oikeasti puhun?,finnish,content,2.25,2.0,0,3.0,0.6,6
+fi_content_2,Mitä tästä sanoisi enää?,finnish,content,1.3333333333333333,1.0,0,3.0,0.5,5
+fi_content_3,"- Opettaja, missä sä oikein olet töissä?",finnish,content,3.2,1.0,0,0,0.5,9
+fi_content_4,Miksi talvella pitää käyttää koko ajan ihan tylsiä kenkiä?,finnish,content,2.0,3.0,0,4.0,0.8888888888888888,10
+fi_content_5,"Mitä saadaan, kun purkitetaan sata naista?",finnish,content,1.6,3.0,1.0,2.0,0.5,8
+fi_content_6,Miksi sitten takerrumme tavaroihin?,finnish,content,1.3333333333333333,1.0,0,3.0,1.0,5
+fi_content_7,Mitä jos uudistuisimme kevään kynnyksellä juuri näin?,finnish,content,1.8333333333333333,2.0,0,4.0,0.7142857142857143,8
+fi_content_8,Mikä seksuaalinen itsetunto?,finnish,content,1.5,1.0,0,0,0.6666666666666666,4
+fi_content_9,Onko kenellekään tullut koskaan mieli kysyä itseltään ”Miksi minun pitäisi haluta seksiä?”,finnish,content,2.090909090909091,3.0,1.0,3.0,0.5833333333333334,15
+fi_content_10,”Mitä minun tulisi tuntea seksin aikana?”,finnish,content,1.8,3.0,1.0,2.0,0.6666666666666666,9
+fi_content_11,”Pitäisikö minun tietää mitä kumppani tuntee tai mitä hän haluaa?”,finnish,content,2.111111111111111,3.0,1.0,2.6666666666666665,0.4,13
+fi_content_12,Miten sitten saavuttaisimme tämän seksuaalisen itseluottamuksen?,finnish,content,1.8,2.0,0,3.0,0.8333333333333334,7
+fi_content_13,"Ovatko he niitä, jotka ottavat sen jonka saavat tai eivät ota ketään, kun eivät ole varmoja, kuka on se oikea, eivätkä osaa viestittää mitään oikein tai ollenkaan?",finnish,content,2.1538461538461537,8.0,1.25,2.0,0.3333333333333333,32
+fi_content_14,Miksi emme pidä seksuaalielämäämme usein kovinkaan hyvänä?,finnish,content,1.8333333333333333,2.0,0,4.0,0.8571428571428571,8
+fi_content_15,"Miksi emme hae itsellemme sitä nautintoa, jota kaipaamme?",finnish,content,1.7142857142857142,3.0,1.0,2.0,0.5,10
+fi_content_16,"Miksi emme kehitä taitojamme seksin alueella, jotta pystyisimme tyydyttämään kumppanimme?",finnish,content,1.7777777777777777,3.0,2.0,2.0,0.8,12
+fi_content_17,"Miksi tyydymme vähään ja odotamme, että se paranisi itsestään sitten joskus?",finnish,content,1.8,4.0,1.0,3.0,0.7272727272727273,13
+fi_content_18,Miksi meidän pitäisi sitten osata olla niin vapaita seksuaalisesti?,finnish,content,2.125,2.0,1.0,4.0,0.6666666666666666,10
+fi_content_19,Kuinka se on mahdollista?,finnish,content,2.0,1.0,0,0,0.5,5
+fi_content_20,"En kuitenkaan ymmärrä, miksi joku ei maksaisi kymmentä tai viittä euroa kuussa järjettömän suuresta, mobiilista musiikkikirjastosta?",finnish,content,2.6666666666666665,5.0,1.0,3.0,0.625,19
+fi_content_21,Kuinka paljon ihmiset oikeasti sitten olisivat valmiita maksamaan tästä huvista?,finnish,content,2.3333333333333335,3.0,1.0,2.0,0.8,11
+fi_content_22,Ai miten kiersin bannit?,finnish,content,1.3333333333333333,1.0,0,3.0,0.75,5
+fi_content_23,- ... Mutta miten ne ei ole vieläkään saanut rakennettua sitä Lepuskin tornia?,finnish,content,2.8,3.0,1.0,3.0,0.5454545454545454,14
+fi_content_24,Nimittäin miksi olisin tästä toiselle naiselle tästä vihainen?,finnish,content,3.7142857142857144,2.0,0,0,0.5,9
+fi_content_25,MIES: No miten siinä nyt pronssia varmasti muka saisi?,finnish,content,4.625,2.0,0,0.0,0.7777777777777778,11
+fi_content_26,PIKKUVAIMO: Mitä sä naurat?,finnish,content,2.3333333333333335,2.0,0,2.0,0.5,6
+fi_content_27,"Tämä setti toimi, sillä siinä vaiheessa kun avaimet oli vaihdettu, uskalsin jo kysyä, että ”mitä sä musta ajattelit, kun ekan kerran näit?”.",finnish,content,3.0476190476190474,6.0,3.0,3.0,0.5454545454545454,30
+fi_content_28,Mikä on puheenjohtajavaltio Alankomaiden strategia?,finnish,content,1.75,3.0,0,0,0.6,6
+fi_content_29,"Miksi ne valtiot, joiden oletetaan hyväksyneen direktiivit neuvostossa, ovat sitten kuitenkin vastahakoisia soveltamaan niitä?",finnish,content,3.230769230769231,4.0,1.5,1.6666666666666667,0.7142857142857143,17
+fi_content_30,"Mitä tapahtuu, jos itäeurooppalaiset ja keskieurooppalaiset vallan keskukset kerran siirtyvät?",finnish,content,3.111111111111111,5.0,1.0,2.5,0.7,12
+fi_content_31,Milloin ryhdymme neuvottelemaan siitä?,finnish,content,1.0,2.0,1.0,1.5,0.75,5
+fi_content_32,Mitä teemme valmistellaksemme asiaa?,finnish,content,1.0,2.0,1.0,1.5,0.75,5
+fi_content_33,Mitä teemme sen lisäksi antaaksemme Ukrainan osallistua Eurooppa-konferenssiin?,finnish,content,1.4285714285714286,3.0,2.0,2.0,0.625,9
+fi_content_34,"Miten komissio suhtautuu siihen, mitkä ovat sen näkemykset asiasta?",finnish,content,1.625,3.0,0,4.0,0.5555555555555556,11
+fi_content_35,"Voiko komissio selvittää, miten se valvoo tämän säädöksen täytäntöönpanon onnistumista?",finnish,content,1.8888888888888888,5.0,1.0,2.5,0.7,12
+fi_content_36,"Miksi minun täytyi elää kylmyydessä, miksi minä en koskaan edes elänyt?",finnish,content,3.0,2.0,0,4.0,0.6363636363636364,13
+fi_content_37,"Ei hän voi tietää, miten voisi, jos sinäkään et tiedä?",finnish,content,2.3333333333333335,3.0,1.0,2.0,0.3,13
+fi_content_38,"Miksi katsoessani niitä, näen vain tyhjän lumisen jalkakäytävän, sen, jota pitkin sinä et saavu?",finnish,content,2.6153846153846154,5.0,1.0,2.0,0.5714285714285714,18
+fi_content_39,"Miten hän osaisi kertoa, että sama kohina tuntui hänen suonissaan?",finnish,content,1.8888888888888888,4.0,2.0,2.3333333333333335,0.6,12
+fi_content_40,"Miten hän selittäisi, että hengitti samaan tahtiin sen kanssa?",finnish,content,1.5,4.0,1.0,2.5,0.4444444444444444,11
+fi_content_41,"Miten mies voisikaan tietää, ettei Pekulla enää edes ole puhelintaan?",finnish,content,2.3,2.0,0,3.0,0.6363636363636364,13
+fi_content_42,"On vain yksi, miksi?",finnish,content,2.3333333333333335,2.0,0,2.0,0.75,6
+fi_content_43,"Mitä sinulla nyt voisi hätänä olla, vakavasti, terveellä nuorella ihmisellä?",finnish,content,3.3333333333333335,2.0,0,0,0.6,13
+fi_content_44,Miten sitä enää jaksaa?,finnish,content,2.0,1.0,0,3.0,1.0,5
+fi_content_45,Kuka tätä ikinä näkee paitsi me?,finnish,content,1.8,2.0,0,4.0,0.3333333333333333,7
+fi_content_46,"Miksi pitää kiinni kenestäkään, kun myöhemmin pakotetaan kuitenkin päästämään irti?",finnish,content,1.8888888888888888,3.0,2.0,3.0,0.8,12
+fi_content_47,”Kuka muka pakottaa?,finnish,content,1.5,1.0,0,2.0,0.6666666666666666,5
+fi_content_48,Miten joku voi täälläkin asua?,finnish,content,2.5,1.0,0,3.0,0.6,6
+fi_content_49,"Tulipa tällänen väli stoori kirjotettua kesken matikan tunnin, kertokaa mitä ootte mieltä ja että pitäskö tälle seurata jatkoa? :DD",finnish,content,3.7777777777777777,4.0,1.0,2.6,0.631578947368421,21
+fi_content_50,"Miten selität Espanjan kesäillan sille, joka ei sitä tiedä?",finnish,content,2.25,3.0,1.0,2.5,0.5555555555555556,11
+fi_content_51,"""Kuinka voit tehdä meille näin kaiken yhdessä viettämämme ajan jälkeen?""",finnish,content,2.0,3.0,1.0,2.5,0.6,13
+fi_content_52,"”Miksi Carla sitten sanoo, että se on maanpäällinen Helvetti?”",finnish,content,2.75,2.0,1.0,4.0,0.6666666666666666,13
+fi_content_53,Mitä hän muka Luvatusta Maasta tietäisi?,finnish,content,2.8,2.0,1.0,2.0,0.6666666666666666,7
+fi_content_54,"Miksi Jumalat olisivat sinne matkalla, ellei se olisi paratiisi?”",finnish,content,2.888888888888889,2.0,1.0,0,0.5,13
+fi_content_55,"”Tietävätköhän Jumalat nyt, mitä ovat tekemässä?”",finnish,content,2.4,2.0,1.0,2.0,0.6666666666666666,10
+fi_content_56,Tuntuu kuin matkalla olisi aikaa ajatella koko elämä; mitä minä teen jos saan sen kiinni ennen ulko-ovea?,finnish,content,2.1875,5.0,1.0,2.5,0.5882352941176471,19
+fi_content_57,Mitä jos se alkaa kysymään enemmän tyttöystävästä jota minulla ei koskaan ollut?,finnish,content,1.7272727272727273,4.0,1.0,3.0,0.4166666666666667,13
+fi_content_58,Mikä sen nimi olisi?,finnish,content,2.0,2.0,0,0,0.25,5
+fi_content_59,Oliko hän varmasti tietoinen mitä teki?,finnish,content,1.8,2.0,1.0,1.0,0.5,7
+fi_content_60,Miksi hän käveli taas?,finnish,content,1.3333333333333333,1.0,0,3.0,0.75,5
+fi_content_61,"Jos roolit ovat toisinpäin, ajattelee ""Mitä vittua?""",finnish,content,1.8333333333333333,2.0,1.0,2.0,0.5714285714285714,11
+fi_content_62,- Mikä ei toimi?,finnish,content,1.5,1.0,0,1.0,0.3333333333333333,5
+fi_content_63,Mitä paskaa sä jauhat?,finnish,content,1.3333333333333333,2.0,0,2.0,0.5,5
+fi_content_64,tuu takas mikä sua vaivaa?,finnish,content,2.0,2.0,0,2.0,0.6,6
+fi_content_65,- Mitä te haluatte?  Mårten kysyi.,finnish,content,1.75,2.0,0,2.0,0.6,8
+fi_content_66,– Missä lapset ovat?,finnish,content,1.5,1.0,0,0,0.3333333333333333,5
+fi_content_67,Mitä muuta tänne ruotsinpuolelle kuuluu?,finnish,content,1.5,2.0,0,2.0,0.6,6
+fi_content_68,- Keitä te olette ja miksi tungette tänne iltamyöhällä?,finnish,content,2.0,2.0,0,4.0,0.5,10
+fi_content_69,- Kuka tuolla pihalla kulki ja miksi?  Hartikka tivasi.,finnish,content,2.4285714285714284,3.0,0,2.0,0.75,11
+fi_content_70,"- Moi, mitä kuuntelet? kysyt vilpittömästi",finnish,content,1.75,2.0,0,2.0,0.6,8
+fi_content_71,Mitä kello oikeesti on?”,finnish,content,2.0,1.0,0,0,0.5,6
+fi_content_72,Mitä se tarkottaa?”,finnish,content,1.5,1.0,0,2.0,0.3333333333333333,5
+fi_content_73,Miten pakolaisten ja suomalaisten kulttuurit saadaan kohtaamaan toisensa?,finnish,content,2.142857142857143,5.0,1.0,2.0,0.75,9
+fi_content_74,Mikä on Suomen suunta ja linja seuraavan 20.10.10 vuoden aikana?,finnish,content,2.2222222222222223,4.0,0,0,0.6,11
+fi_content_75,Millä te Australiassa eläisitte?,finnish,content,2.0,1.0,0,3.0,0.5,5
+fi_content_76,"Mikä siinä on, että myyjien on niin vaikea keskittyä palvelemaan ihan tavallista, nuorta asiakasta?",finnish,content,2.4615384615384617,6.0,3.0,1.5,0.6428571428571429,17
+fi_content_77,"Jos tämä ei riitä, mitä me sitten tehdään?",finnish,content,2.4285714285714284,2.0,1.0,3.0,0.375,10
+fi_content_78,Mutta mikä olet sinä tai kukaan muukaan nimittämään toisten pyhinä pitämiä totuuksia pakanauskonnoiksi?,finnish,content,2.4166666666666665,4.0,1.0,2.0,0.38461538461538464,14
+fi_content_79,Siis mitä et usko?,finnish,content,2.0,1.0,0,2.0,0.5,5
+fi_content_80,Mitä se tähän kuuluu?,finnish,content,2.0,1.0,0,3.0,0.25,5
+fi_content_81,Missä laatikossa niiden papereiden piti olla?,finnish,content,2.2,2.0,0,0,0.3333333333333333,7
+fi_content_82,Mitä te oikein olette tehneet kukalleni?,finnish,content,2.2,1.0,0,4.0,0.5,7
+fi_content_83,Kenen toimesta tämä on tehty?,finnish,content,1.75,2.0,0,3.0,0.4,6
+fi_content_84,"Mitähän siitä tulisi, jos kaikki kyselisivät toisiltaan, mitä makkaraa kukin syö?",finnish,content,2.1,4.0,2.0,3.0,0.36363636363636365,14
+fi_content_85,miksi meidän pitää olla Natoon intoilemassa?,finnish,content,3.0,1.0,0,3.0,0.5,7
+fi_content_86,"Aiotaanko korvauskysymykset ottaa huomioon lain uudistuksessa, ja jos, niin miten?",finnish,content,2.7777777777777777,2.0,0,4.0,0.7,13
+fi_content_87,Mitä se sillä tarkoitti?,finnish,content,2.0,1.0,0,3.0,0.25,5
+fi_content_88,"Kysyipä joku epähienotunteisesti, että miten lienee sosialidemokraattien laita?",finnish,content,2.142857142857143,3.0,1.0,3.0,0.75,10
+fi_content_89,Kuka oli Ison-Britannian kuningatar Viktorian aviomies?,finnish,content,1.8,4.0,0,0,0.6666666666666666,7
+fi_content_90,Mitä sä olet mieltä siitä asiasta?,finnish,content,1.8,2.0,0,3.0,0.5,7
+fi_content_91,"Osaatteko sanoa, missä olisi lähin R-kioski?",finnish,content,1.6,4.0,2.0,1.0,0.6666666666666666,8
+fi_content_92,Ymmärrätkö mitä yritän selittää?,finnish,content,1.3333333333333333,2.0,2.0,1.0,1.0,5
+fi_content_93,Ei kai kukaan kaipaa sinne takaisin?,finnish,content,1.8,2.0,0,3.0,0.6666666666666666,7
+fi_content_94,"Kohentaminen vaatii mielikuvitusta: mitä tehdä torilla, kun talvinen viima menee luihin ja ytimiin?",finnish,content,1.9166666666666667,5.0,1.0,3.0,0.7692307692307693,16
+fi_content_95,"Mikä mieli, järki tai merkitys tällä hirvittävän kokoisella maailmankaikkeudella on?",finnish,content,2.4444444444444446,3.0,0,0,0.6,12
+fi_content_96,Kuka rahasta juoksisi?,finnish,content,1.5,1.0,0,2.0,0.6666666666666666,4
+fi_content_97,Mutta mitä ihmettä?,finnish,content,1.0,1.0,0,0,0.3333333333333333,4
+fi_content_98,Mitä sinä haluaisit?,finnish,content,1.5,1.0,0,2.0,0.3333333333333333,4
+fi_content_99,"Ensinnäkin sen sijaan, että työntekijöitä komennettaisiin milloin mihinkin projektiin, saa usein kuulla kysymystä ”mitä haluaisit tehdä?”, ja työntekijän toiveita myös oikeasti kuunnellaan.",finnish,content,3.4761904761904763,5.0,1.0,2.6666666666666665,0.7272727272727273,29
+fi_content_100,Mitä tähän asti on tehty ja ennen kaikkea; mitä kaikkea kivaa on vielä vuoden aikana edessä?,finnish,content,3.8666666666666667,3.0,0,4.0,0.375,18
+fi_content_101,Ja stressittömän yhteiskunta-alan työn löytäminen nykyaikana – kuinka paljon enemmän voi itselleen haastetta asettaa?,finnish,content,2.5,4.0,0,3.0,0.7692307692307693,15
+fi_content_102,Tai edes kuinka paljon uutta asiaa hän on kurssilla oppinut?,finnish,content,3.4444444444444446,3.0,0,5.0,0.7,11
+fi_content_103,Mikä siis avuksi?,finnish,content,1.5,1.0,0,0,0.6666666666666666,4
+fi_content_104,Miksi siis nauraa naistutkimukselle?,finnish,content,1.3333333333333333,1.0,0,3.0,1.0,5
+fi_content_105,- Luennoitsija kysyy ja vastaa itse: ”Mikä on ihminen?,finnish,content,2.2857142857142856,2.0,1.0,2.5,0.625,12
+fi_content_106,Kuinka näitä sitten käsitellään?,finnish,content,2.0,1.0,0,3.0,0.75,5
+fi_content_107,"Kuinka kaiken aikaa muuttuvan, hahmottoman ja virtaavan voi asettaa pysyväksi tarkoitettuun systeemiin, ihmisten maailmankaikkeuteen?",finnish,content,2.6153846153846154,3.0,1.0,2.0,0.7857142857142857,17
+fi_content_108,Vai mitä muuta fuksiaiset ovat kuin initiaatio tietyn ryhmän jäsenyyteen?,finnish,content,1.7777777777777777,4.0,0,0,0.5,11
+fi_content_109,Mikä mahtaa olla tilanne jälkimodernissa länsimaalaisessa yhteiskunnassa?,finnish,content,2.5,2.0,0,0,0.5714285714285714,8
+fi_content_110,Miten oppiminen toimi valtion ja kirkon intressien välineenä?,finnish,content,2.142857142857143,5.0,0,3.0,0.875,9
+fi_content_111,Miten säätyjen väliset jännitteet ja vallan tasapaino ilmenivät kasvatuksessa?,finnish,content,2.5,3.0,0,3.0,0.8888888888888888,10
+fi_content_112,Mitä ihmettä tämä tarkoittaa?,finnish,content,1.6666666666666667,2.0,0,2.0,0.5,5
+fi_content_113,Mihin niitä kelaatteja sitten käytetään?,finnish,content,2.0,2.0,0,3.0,0.6,6
+fi_content_114,Mitä kuninkaallisten peruukit maksoivat?,finnish,content,1.6666666666666667,2.0,0,2.0,0.75,5
+fi_content_115,"Robert William ”Bob” Hoskins (s. 26. lokakuuta 1942 Bury St Edmunds, Suffolk) on englantilainen näyttelijä, joka on tullut tunnetuksi muun muassa tähdittämistään elokuvista Kuka viritti ansan, Roger Rabbit? (1988) ja Hook – kapteeni Koukku (1991).",finnish,content,3.121212121212121,6.0,1.0,2.5,0.7647058823529411,48
+fi_content_116,"Hoskinsin tunnetuimpiin näyttelijäsuorituksiin lukeutuvat etsivä Eddie Valiant elokuvasta Kuka viritti ansan, Roger Rabbit?, Cherin vastanäyttelijä elokuvassa Äitini on merenneito (1990), Nikita Hruštšov elokuvassa Vihollinen porteilla (2001) ja setä Bart, väkivaltainen Jet Lin isäntä elokuvassa Danny the Dog.",finnish,content,3.4166666666666665,5.0,1.0,2.5,0.8648648648648649,47
+fi_content_117,"Vaimo Veronica Lario kysyi: Miten on mahdollista hyväksyä sellainen poliittinen kulttuuri, jossa parlamenttiehdokkaaksi asetetaan pääministerin suosimia tanssityttöjä?”",finnish,content,1.875,7.0,1.3333333333333333,1.75,0.8823529411764706,21
+fi_content_118,Ja mitä kustantaa valmis dolly?,finnish,content,1.5,2.0,0,3.0,0.6,6
+fi_content_119,"Kuinka sitten tiedät, onko sinut bannattu?",finnish,content,2.0,2.0,1.0,2.5,0.6666666666666666,8
+fi_content_120,"Miksi aina silloin, kun oikeasti tarvitsee jotain, ei löydä mitään?",finnish,content,2.5555555555555554,4.0,1.0,3.0,0.6,13
+fi_content_121,"Kuka se olikaan, joka heitti väärän roskapussin ulos?",finnish,content,2.142857142857143,3.0,1.0,3.0,0.5,10
+fi_content_122,"Kuka niihin pystyy vaikuttamaan, jos ei ministeri?",finnish,content,1.8333333333333333,2.0,1.0,2.0,0.5714285714285714,9
+fi_content_123,Mikä kumma sitä oikein vaivaa?,finnish,content,1.75,2.0,0,3.0,0.6,6
+fi_content_124,"− Oppivatko lapset nopeammin, ja miten on vanhenevien eläkeläisten laita?",finnish,content,2.0,4.0,1.0,1.5,0.7777777777777778,12
+fi_content_125,"Taas tuli aika miettiä, mitä seuraavaksi, mistä aiheesta nyt keskusteltaisiin?",finnish,content,1.7777777777777777,6.0,1.0,1.6666666666666667,0.8,13
+fi_content_126,Mikä on sitä arkiromantiikkaa sitten?,finnish,content,2.25,2.0,0,0,0.4,6
+fi_content_127,Mitä se on teidän mielestänne?,finnish,content,2.0,2.0,0,0,0.2,6
+fi_content_128,Ja mikä olisi sitten sitä juhlaromantiikkaa?,finnish,content,1.8,2.0,0,0,0.3333333333333333,7
+fi_content_129,"Ja kun nyt paneudutaan näihin kysymyksiin, niin arvioidaan samalla, että mikä on sitä arkiseksiä ja mikä juhlaseksiä, sillä kai silläkin on eronsa?",finnish,content,2.761904761904762,3.0,1.0,4.5,0.45454545454545453,26
+fi_content_130,Mikä sitten avuksi tähän kaipuuseen?,finnish,content,1.5,2.0,0,0,0.6,6
+fi_content_131,Miten nainen voisi viljellä sitten sitä arkiromantiikkaa vähän enemmän?,finnish,content,2.125,2.0,0,5.0,0.7777777777777778,10
+fi_content_132,Mitä muuta se on kuin lempiviinin tai -oluen hankkiminen lempiruuan seuraksi?,finnish,content,2.6,5.0,0,0,0.45454545454545453,12
+fi_content_133,"Kuitenkin se on jotain, mitä nainen ei tunne passaukseksi, jos asia olisi päinvastoin - miksiköhän?",finnish,content,3.3076923076923075,3.0,2.0,4.0,0.5,18
+fi_content_134,Miten saada nainen nauttimaan arkiseksistä?,finnish,content,1.25,2.0,1.0,2.0,1.0,6
+fi_content_135,"Miten saada hänet ymmärtämään, että halailu, puristelu ja eroottinen koskettelu ovat hänelle hyväksi, että se auttaa häntä rentoutumaan, sen sijaan, että hän tuntisi itsensä pakotetuksi vastaamaan miehen haluihin saada seksiä?",finnish,content,2.793103448275862,9.0,1.75,1.875,0.5666666666666667,36
+fi_content_136,Miten saamme kansalaiset hyväksymään Euroopan yhdentymishankkeen?,finnish,content,1.4,3.0,1.0,2.0,1.0,7
+fi_content_137,Mikä on Euroopan tulevaisuus?,finnish,content,2.0,1.0,0,0,0.5,5
+fi_content_138,"Junan ovet piippaavat kuin aikapommi, tarkastaja on vihollinen Tikkurilassa, vaaraton Puistolassa, kuka tietää miksi?",finnish,content,2.1538461538461537,3.0,0,2.5,0.7857142857142857,18
+fi_content_139,"Ketä näyttelijää ja mitä elokuvaroolia olet katsellut sillä mielellä, että olisit halunnut näytellä sen itse?",finnish,content,1.9285714285714286,4.0,2.0,2.0,0.4666666666666667,17
+fi_content_140,Miksi et nauttisi ja harrastaisi seksiä näistä tuntemuksista huolimatta?,finnish,content,1.75,2.0,0,2.5,0.5555555555555556,10
+fi_content_141,"Ihokosketus, seksi ja orgasmi saavat sinut voimaan paremmin, miksi olla pidättyväinen, kun voisit saada helpotusta oloosi?",finnish,content,2.3333333333333335,4.0,1.0,2.3333333333333335,0.6875,20
+fi_content_142,"Heti ensimmäisissä bileissä helmikuussa hävitin mun Mulberry-huivin, ja mitä tapahtui tällä viikolla?",finnish,content,1.9090909090909092,3.0,0,3.0,0.6666666666666666,14
+fi_content_143,"Annan teille yhden esimerkin: mitä tehdään leluille, joissa on siruja?",finnish,content,1.6666666666666667,5.0,1.0,2.0,0.5,13
+fi_content_144,Mitä SIS II -järjestelmälle on tapahtunut?,finnish,content,2.2,3.0,0,2.0,0.6666666666666666,7
+fi_content_145,Miksi esitän näin paljon kysymyksiä nyt?,finnish,content,2.0,3.0,0,3.0,1.0,7
+fi_content_146,Kuka minä sitten olen ihmisenä?,finnish,content,2.5,1.0,0,0,0.4,6
+fi_content_147,"""Mitä vittuu noi roskikset rämisee?"" Stilsu huutaa isoon ääneen et ne kuulis kans.",finnish,content,2.0,3.0,1.0,3.0,0.6923076923076923,17
+fi_content_148,"“Mitä tarkoitit kun sanoit, että veitsi on käytännöllisesti katsoen puhdas?",finnish,content,2.7777777777777777,4.0,3.0,1.6666666666666667,0.6,13
+fi_content_149,"Käyttölupani on vanhenemassa, miten uusin sen?",finnish,content,1.6,2.0,0,2.0,0.6666666666666666,8
+fi_content_150,"Miten selität sen, että tuloksesi olivat niin hirmuisen kovia verrattuna nykyisiin aikoihin?",finnish,content,2.5454545454545454,5.0,2.0,1.5,0.75,14
+fi_content_151,Kaikki tietomme asuttamastamme maailmankaikkeudesta on lähtenyt yhdestä kysymyksestä: miten?,finnish,content,1.75,3.0,1.0,1.0,0.6666666666666666,11

@@ -1,0 +1,1196 @@
+unique_id,text,language,avg_links_len,avg_max_depth,avg_subordinate_chain_len,avg_verb_edges,n_tokens,question_type,complexity_score
+finnish_polar_500,Onko VR aina ollut monopoli Suomen matkailija junaliikenteessä?,fi,0.492,0.15,0.0,0.0,2.303,1,2.945
+finnish_content_14657,Mikä on Sastamalan nykyinen väkiluku?,fi,0.244,-0.051,0.0,0.0,1.946,0,2.139
+finnish_content_1921,Mistä lajeista teräsmieskilpailu muodostuu?,fi,-0.423,-0.051,0.0,0.333,1.792,0,1.651
+finnish_content_10728,Kuka Samuel Morse oli?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_content_9614,Milloin keskusjärjestö Suomen Partiolaiset perustettiin?,fi,0.244,-0.051,0.0,0.333,1.946,0,2.472
+finnish_polar_829,Onko Mika Salminen toiminut Nico Hülkenbergin kuntovalmentajana?,fi,0.207,1.15,0.0,0.333,2.197,1,3.887
+finnish_polar_1811,Onko iowa-intiaaneja enää olemassa?,fi,0.207,-0.85,0.0,0.333,1.792,1,1.482
+finnish_content_8086,Kuinka suuri Intian valtameren pinta-ala?,fi,-0.256,-0.051,0.0,0.0,1.946,0,1.639
+finnish_polar_2018,Onko Ortodoksisella kirkolla paavia vastaavaa instituutiota?,fi,-0.193,0.15,0.0,0.0,2.079,1,2.036
+finnish_content_3411,Kuka oli noussut Haitin presidentiksi vuonna 1902?,fi,-0.09,-0.051,0.0,0.5,2.197,0,2.556
+finnish_content_10489,Mikä on Napoléon Bonaparten suurin saavutus hallituskautensa aikana?,fi,0.101,1.949,0.0,0.0,2.303,0,4.353
+finnish_content_12724,Milloin Trine julkaistiin?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_1517,Onko koirien hännän typistäminen Suomessa kiellettyä?,fi,0.207,1.15,0.0,0.333,2.079,1,3.769
+finnish_content_6807,Milloin Meir Kahane kuoli?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_polar_78,Ovatko suomen kielen murteet olleet aina olemassa?,fi,0.54,1.15,0.0,0.333,2.197,1,4.22
+finnish_content_3571,Miksi Maximinus Thrax luopui keisarin tittelistä?,fi,0.044,-0.051,0.0,0.5,2.079,0,2.572
+finnish_polar_1794,Ovatko tataarit uskonnollisia?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_content_14214,Mitkä ääniaallot ihminen kuulee?,fi,-0.423,-0.051,0.0,0.333,1.792,0,1.651
+finnish_content_72,Mihin Karl Adam Nils Gabriel Hård af Segerstad menehtyi?,fi,2.744,-0.051,0.0,0.333,2.398,0,5.424
+finnish_polar_1747,Oliko Voltaire nainen?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_polar_1400,Onko Vaskiveden taistelun kunniaksi tehty muistomerkki?,fi,0.007,2.15,1.0,0.167,2.079,1,5.403
+finnish_content_8617,Milloin desing määritelmä on keksitty?,fi,0.244,-0.051,0.0,0.5,1.946,0,2.639
+finnish_polar_965,Onko Bhutanin sisämaavaltio asuttu?,fi,-0.127,0.15,0.0,0.333,1.792,1,2.148
+finnish_polar_1765,Onko UV-säteily vaarallista silmille?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_content_8494,Missä Italian sosialistinen puolue perustettiin?,fi,0.244,-0.051,0.0,0.333,1.946,0,2.472
+finnish_content_6433,Mitä tarkoittaa esseisti?,fi,-0.756,-1.051,0.0,0.333,1.609,0,0.135
+finnish_polar_41,Onko pastori Russelilla yksi vaimo?,fi,-0.293,0.15,0.0,0.0,1.946,1,1.803
+finnish_polar_626,Onko Tuhoaja lumottu ihmisenmuotoinen haarniska?,fi,-0.293,0.15,0.0,0.5,1.946,1,2.303
+finnish_content_3450,Miten pitkä on elokuva The Hateful Eight?,fi,-0.256,-0.051,0.0,0.0,2.197,0,1.89
+finnish_content_5685,Kuinka paljon painavin plootu painoi?,fi,-0.756,1.949,0.0,0.167,1.946,0,3.306
+finnish_polar_983,Voiko Karin-mangaa löytää Suomesta?,fi,-0.46,-0.85,0.0,0.333,1.792,1,0.815
+finnish_polar_2085,Onko Suomessa koskaan nähty vesinokkaeläintä?,fi,-0.043,-0.85,0.0,0.667,1.946,1,1.72
+finnish_polar_435,Onko Occami oikea henkilö?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_polar_1051,Onko Ryhmä Haun johtaja Riku?,fi,0.457,0.15,0.0,0.0,1.946,1,2.553
+finnish_polar_2261,Kuuluvatko jehovan todistajat kristinuskoon?,fi,0.207,0.15,0.0,0.333,1.792,1,2.482
+finnish_polar_2081,Onko kastemadolla selkäjänne?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_content_2878,Miten irtisanominen määritellään?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_13911,Milloin Charles Ponzi jäi kiinni pyramidi huijauksestaan?,fi,0.077,-0.051,0.0,0.667,2.197,0,2.89
+finnish_content_2580,Kuinka monta jaksoa Kim Possiblea on julkaistu?,fi,0.077,0.949,0.0,0.5,2.197,0,3.723
+finnish_content_5104,Kuinka monta minuuttia Lost -sarjan yksi jakso kestää?,fi,-0.042,0.949,0.0,0.333,2.303,0,3.543
+finnish_polar_1972,Oliko salaisuuksien kammio basiliskin koti?,fi,0.207,0.15,0.0,0.0,1.946,1,2.303
+finnish_polar_237,Ovatko ihmiset uskoneet että minotaurukset ovat todellisia antiikin ajalla?,fi,0.207,1.15,1.0,0.333,2.398,1,5.088
+finnish_content_15018,Mikä on Kuopion asukasluku?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_1036,Onko alkuperäinen Julistuskirja Suomen kansalle vielä olemassa?,fi,0.707,0.15,0.0,0.5,2.197,1,3.554
+finnish_content_8339,Mikä oli Akateeminen Karjala-Seura?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_173,Puhuvatko vironruotsalaiset viron kieltä?,fi,-0.127,0.15,0.0,0.333,1.792,1,2.148
+finnish_content_12982,Mikä maa on ohran suurin valmistaja?,fi,0.244,-0.051,0.0,0.0,2.079,0,2.272
+finnish_polar_1145,Tarkoittaako symboli kirjainta?,fi,-0.293,-0.85,0.0,0.333,1.609,1,0.799
+finnish_polar_753,Pelasiko Sami Salonen uransa aikana myös Ranskassa?,fi,0.54,0.15,0.0,0.5,2.197,1,3.387
+finnish_content_5241,Kuka voitti ensimmäisen mitalin Japanille talviolympiakisoissa?,fi,0.444,-0.051,0.0,0.667,2.079,0,3.139
+finnish_polar_501,Onko Kanada kuulunut Yhdysvalloille?,fi,-0.46,-0.85,0.0,0.333,1.792,1,0.815
+finnish_polar_564,Onko Mäkiluodolla linnaa?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_1781,Puhutaanko jossain maassa pelkästään latinaa?,fi,0.207,0.15,0.0,0.333,1.946,1,2.636
+finnish_polar_1227,Voiko maalämpöjärjestelmällä lämmittää rakennuksia ja käyttövettä?,fi,-0.393,1.15,0.0,0.333,2.079,1,3.169
+finnish_content_3399,Missä Gerald Durrell syntyi?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_polar_2132,Liittyikö Kongon kriisiin sotia?,fi,0.207,0.15,0.0,0.333,1.792,1,2.482
+finnish_content_12048,Mihin maahan monarkia on perustettu ensimmäisen kerran?,fi,-0.09,-0.051,0.0,0.667,2.197,0,2.723
+finnish_polar_2076,Onko Díalla asutusta?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_content_11463,Kuka näyttelee Frendit -sarjassa Ross Eustace Gelleriä?,fi,-0.423,0.949,0.0,0.5,2.197,0,3.223
+finnish_content_7801,Milloin valmistui ensimmäinen Deadpool elokuva?,fi,-0.006,-0.051,0.0,0.333,1.946,0,2.222
+finnish_polar_161,Onko Jerusalemissa aavikkoa?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_content_11878,Kuka loi sarjan Buffy vampyyrintappaja?,fi,-0.256,-0.051,0.0,0.5,1.946,0,2.139
+finnish_polar_429,Voiko liuos olla myös kaasua?,fi,0.707,-0.85,0.0,0.0,1.946,1,1.803
+finnish_content_12200,Mihin levy-yhtiöön Vuohi kuuluu?,fi,-0.423,-0.051,0.0,0.333,1.792,0,1.651
+finnish_polar_904,Kasvaako pyökki luonnonvaraisena Suomessa?,fi,0.207,-0.85,0.0,0.5,1.792,1,1.649
+finnish_content_9915,Milloin Maanpuolustuskorkeakoulun on perustettu?,fi,0.244,-1.051,0.0,0.5,1.792,0,1.485
+finnish_polar_687,Onko hyönteisten syönti edelleen yleistä ja laajasti hyväksyttyä Latinalaisessa Amerikassa?,fi,0.429,0.15,0.0,0.333,2.485,1,3.397
+finnish_content_9766,Kuinka monta luontomatkailukohdetta on Suomessa?,fi,-0.506,0.949,0.0,0.0,1.946,0,2.389
+finnish_content_15201,Kuinka monta ihmistä kuoli Kauhajoen taistelussa?,fi,-0.556,0.949,0.0,0.333,2.079,0,2.805
+finnish_content_11784,Miksi ESO perustettiin?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_476,Missä sijaitsee Tornator Oyj:n pääkonttori?,fi,-0.006,0.949,0.0,0.333,1.946,0,3.222
+finnish_content_9355,Milloin akselivaltojen eteneminen itärintamalla pysähtyi?,fi,0.244,-0.051,0.0,0.333,1.946,0,2.472
+finnish_polar_1203,Onko Suursaarella asutusta?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_content_5940,Kuinka pitkää Liu-suku hallitsi Kiinaa?,fi,-0.756,0.949,0.0,0.333,1.946,0,2.472
+finnish_polar_1282,Onko Delfiini valaslaji?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_polar_2270,Oliko Matti Arvo Armas Laurila naimisissa?,fi,1.207,0.15,0.0,0.0,2.079,1,3.436
+finnish_polar_1602,Onko Suomessa temppeliä?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_1202,Onko Walt Disneylle myönnetty 26 henkilökohtaista Oscar-palkintoa?,fi,0.207,0.15,0.0,0.5,2.197,1,3.054
+finnish_polar_109,Onko Suomessa toiminut tutkimusreaktori?,fi,-0.46,-0.85,0.0,0.333,1.792,1,0.815
+finnish_polar_413,Onko Ylen toimisto Pasilassa?,fi,-0.127,0.15,0.0,0.0,1.792,1,1.815
+finnish_content_13416,Kuka löysi Forselvin kalliopiirrokset?,fi,-0.423,-0.051,0.0,0.333,1.792,0,1.651
+finnish_polar_873,Onko muskimolilla dissosiatiivisia ominaisuuksia?,fi,-0.46,0.15,0.0,0.0,1.792,1,1.482
+finnish_content_6397,Mitkä ovat Bangladeshin rajanaapurit?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_1086,Oliko ilmasto keskiajalla lämpimämpi kuin nykyään?,fi,0.007,0.15,0.0,0.0,2.079,1,2.236
+finnish_polar_32,Monesko planeetta maa on auringosta?,fi,-0.043,-0.85,0.0,0.0,1.946,1,1.053
+finnish_content_2457,Milloin kuulakärki kynä on keksitty?,fi,0.244,-0.051,0.0,0.5,1.946,0,2.639
+finnish_content_7718,Milloin Andy Murray voitti olympiakultaa?,fi,-0.006,-0.051,0.0,0.5,1.946,0,2.389
+finnish_polar_2286,Onko Suomessa tunnettua Jazz-artistia?,fi,-0.46,0.15,0.0,0.0,1.792,1,1.482
+finnish_polar_360,Onko Tampereen rantatunneli Suomen pisin maantietunneli?,fi,0.407,0.15,0.0,0.0,2.079,1,2.636
+finnish_content_77,Miksi huippukokoukset on aloitettu?,fi,0.244,-1.051,0.0,0.5,1.792,0,1.485
+finnish_polar_794,Onko venäläisellä kulttuurissa jälkiä butovon kulttuurista?,fi,-0.393,1.15,0.0,0.0,2.079,1,2.836
+finnish_content_6090,Mikä oli ninjojen tehtävä Japanin historiassa?,fi,0.444,-0.051,0.0,0.0,2.079,0,2.472
+finnish_polar_2187,Oliko Arvo Aalto jatkosodan ajan evakossa Ruotsissa?,fi,0.373,0.15,0.0,0.0,2.197,1,2.72
+finnish_polar_638,Vaikuttaako syklitsiini aivoissa?,fi,-0.293,-0.85,0.0,0.333,1.609,1,0.799
+finnish_polar_1625,Oliko Stan Laurelin äiti näyttelijä?,fi,0.207,1.15,0.0,0.0,1.946,1,3.303
+finnish_polar_949,Käytetäänkö hasista lääketieteessä?,fi,-0.293,-0.85,0.0,0.333,1.609,1,0.799
+finnish_polar_1557,Onko poro sukua peuralle?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_content_2255,Mikä oli maailman ensimmäinen labyrintti?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_polar_151,Onko bacha posh -perinteelle sosiaaliset ja taloudelliset syyt?,fi,1.064,1.15,0.0,0.0,2.303,1,4.517
+finnish_content_3482,Kuka oli Boeing 747 -koneen pääsuunnittelija?,fi,0.244,1.949,0.0,0.0,2.079,0,4.272
+finnish_polar_1017,Onko Eddie Van Halen perustanut EVH-nimisen sähkökitaroita valmistavan yrityksen?,fi,0.332,2.15,1.0,0.25,2.398,1,6.13
+finnish_content_8500,Mikä Kuninkaiden laakso on?,fi,0.244,-0.051,0.0,0.0,1.792,0,1.985
+finnish_content_414,Kuka oli Puolan ensimmäinen presidentti vuoden 1990 jälkeen?,fi,0.387,0.949,0.0,0.0,2.303,0,3.639
+finnish_content_10802,Missä Charles Liindbergh II syntyi?,fi,0.744,-0.051,0.0,0.333,1.946,0,2.972
+finnish_polar_1426,Voidaanko laittomasti maassa oleskeleva pidättää?,fi,0.457,0.15,1.0,0.25,1.946,1,3.803
+finnish_polar_1362,Onko maailmassa ollut jo öljyhuippu?,fi,-0.043,-0.85,0.0,0.0,1.946,1,1.053
+finnish_content_4924,Kuinka valasta pyydetään?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_11167,Mitä kuohitseminen tarkoittaa?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_2612,Milloin HMHS Britannic teki neitsytmatkansa?,fi,-0.006,-0.051,0.0,0.5,1.946,0,2.389
+finnish_polar_390,"Tarkoittaako Baltian maat Viroa, Latviaa ja Liettuaa?",fi,0.373,1.15,0.0,0.333,2.303,1,4.159
+finnish_content_9520,Mistä kendō-miekka on valmistettu?,fi,0.244,-1.051,0.0,0.5,1.792,0,1.485
+finnish_content_7100,Milloin Preussin-Tanskan sota käytiin?,fi,-0.09,-0.051,0.0,0.333,1.792,0,1.984
+finnish_polar_1240,Tuleeko aseluvan hakijan olla 18-vuotias?,fi,0.207,1.15,1.0,0.167,1.946,1,4.47
+finnish_content_9300,Mihin Gordianus I kuoli?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_polar_1733,Onko Saku Salinilla epilepsia?,fi,0.207,0.15,0.0,0.0,1.792,1,2.149
+finnish_polar_1501,Onko Miikka Sakari Kiprusoff pelannut jääkiekkoa ulkomailla?,fi,0.373,0.15,0.0,0.5,2.197,1,3.22
+finnish_content_7786,Mikä on Mikael Johansson lempinimi?,fi,0.244,0.949,0.0,0.0,1.946,0,3.139
+finnish_polar_816,Onko Brian O’Neill pelannut NHL:ssä?,fi,0.407,0.15,0.0,0.333,2.079,1,2.969
+finnish_content_14704,Montako ammattilaisnyrkkeilyn maailmanmestaruutta George Foreman voitti?,fi,0.044,-0.051,0.0,0.333,2.079,0,2.405
+finnish_polar_922,Voiko kaupungin nimeä muuttaa?,fi,-0.127,0.15,0.0,0.167,1.792,1,1.982
+finnish_polar_610,Onko Triton Neptunuksen suurin kuu?,fi,0.457,0.15,0.0,0.0,1.946,1,2.553
+finnish_content_10198,Miksi vesi on joskus sinistä ja joskus ruskea-vihertävää?,fi,0.529,-0.051,0.0,0.0,2.303,0,2.781
+finnish_content_14460,Missä televisiosarjassa Salatut elämät tapahtuu?,fi,-0.256,-0.051,0.0,0.333,1.946,0,1.972
+finnish_content_11157,Milloin Stephen Hawking syntyi?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_polar_104,Onko Lillehammer Ruotsin kaupunki?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_polar_489,Onko Lemony Snicketin oikea nimi Daniel Handler?,fi,0.207,1.15,0.0,0.0,2.197,1,3.554
+finnish_polar_1639,Onko Matka maailman ympäri -piirrossarja uskollinen alkuperäisteokselle?,fi,0.207,0.15,0.0,0.0,2.197,1,2.554
+finnish_polar_1540,Voiko hevosta ohjailla äänellä?,fi,-0.46,-0.85,0.0,0.333,1.792,1,0.815
+finnish_polar_287,Onko Mount Rushmore -patsaiden takana vuoreen kaivettu huone?,fi,0.635,1.15,1.0,0.167,2.303,1,5.255
+finnish_polar_950,Onko Kellon Lyönti -seurassa mahdollista harrastaa salibandya?,fi,-0.127,0.15,1.0,0.167,2.197,1,3.387
+finnish_polar_139,Onko ajan mittaaminen fysiikan tutkimusta?,fi,0.207,0.15,0.0,0.0,1.946,1,2.303
+finnish_polar_418,Onko valaanpyynti sallitua Norjassa?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_polar_560,Oliko Ukrainan–Neuvosto-Venäjän sota osana Venäjän osaa?,fi,-0.193,0.15,0.0,0.0,2.079,1,2.036
+finnish_polar_519,Onko Bill Skarsgård mukana Se -elokuvassa?,fi,0.807,0.15,0.0,0.0,2.079,1,3.036
+finnish_content_2027,Kuka kehitti Deadpool hahmon?,fi,-0.423,-0.051,0.0,0.333,1.792,0,1.651
+finnish_content_1704,Missä Suomessa aloitettiin käyttämään valokuitua ensimmäisenä?,fi,-0.556,-0.051,1.0,0.333,2.079,0,2.805
+finnish_polar_1718,Oliko Eerik XIV taiteellinen?,fi,0.207,0.15,0.0,0.0,1.792,1,2.149
+finnish_content_12633,Milloin Alfred Hitchcock kuoli?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_content_1305,Missä Halikarnassos sijaitsi?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_14758,Milloin Aleksis Kivi syntyi?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_polar_437,Onko sarvikuono uhanalainen laji?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_polar_1117,Onko Suomessa myrkyllisiä käärmeitä?,fi,-0.46,0.15,0.0,0.0,1.792,1,1.482
+finnish_content_13732,Mitä tarkoittaa emeritusprofessori?,fi,-0.756,-1.051,0.0,0.333,1.609,0,0.135
+finnish_content_653,Milloin muukalaislegioona on perustettu?,fi,0.244,-1.051,0.0,0.5,1.792,0,1.485
+finnish_content_928,Kuinka paljon tuatara painaa?,fi,-0.423,-0.051,0.0,0.333,1.792,0,1.651
+finnish_content_9493,Milloin David Sánchez aloitti pelaamaan jalkapalloa?,fi,-0.156,-0.051,1.0,0.333,2.079,0,3.205
+finnish_content_3212,Kuka Bobby Moore oli?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_10,Onko Eldorado oikea kaupunki?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_content_833,Milloin Bernard Montgomerystä tuli marsalkka?,fi,-0.006,-0.051,0.0,0.5,1.946,0,2.389
+finnish_content_652,Mitä diskurssianalyysi tarkoittaa?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_128,Voiko ihminen tehdä hopeaa?,fi,-0.46,-0.85,0.0,0.333,1.792,1,0.815
+finnish_polar_640,Onko sijoitusrahasto yksityinen?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_polar_2026,Onko Napakymppi Daredevilin arkkivihollinen?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_content_2117,Mikä on magnesiumin kemiallinen merkki?,fi,0.244,-0.051,0.0,0.0,1.946,0,2.139
+finnish_polar_1336,"Onko totta, että S-bahn kulki myös Länsi-Berliiniin, Berliinin ollessa jaettu?",fi,0.429,1.15,2.0,0.5,2.639,1,6.718
+finnish_polar_970,Onko Espania edelleen kuningas kunta?,fi,0.707,-0.85,0.0,0.0,1.946,1,1.803
+finnish_content_14646,Milloin MAC osotteita aloitettiin käyttämään?,fi,0.244,-0.051,1.0,0.333,1.946,0,3.472
+finnish_polar_553,Onko Utajärven kirkko valmistunut vuonna 1762?,fi,-0.393,0.15,0.0,0.333,2.079,1,2.169
+finnish_polar_329,Onko Tukholma aina ollut Ruotsin pääkaupunki?,fi,1.207,-0.85,0.0,0.0,2.079,1,2.436
+finnish_polar_510,Onko rintasyöpä periytyvää?,fi,-0.293,-0.85,0.0,0.333,1.609,1,0.799
+finnish_polar_1217,Onko arabian kielessä kurkkuäänteitä?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_content_13146,Milloin HMS Castleton tilattiin?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_content_8388,Missä Pietro Deiro syntyi?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_polar_494,Onko Amerikan Samoa asutettu?,fi,-0.127,0.15,0.0,0.333,1.792,1,2.148
+finnish_content_14876,Mikä painamo painoi Perillinen -kirjasarjan kirjat?,fi,-0.156,-0.051,0.0,0.333,2.079,0,2.205
+finnish_polar_2054,Onko Half-Life 2: Episode Two -pelissä zombeja?,fi,0.873,0.15,0.0,0.0,2.303,1,3.326
+finnish_content_3741,Montako poroa Suomen Lapissa saa olla?,fi,-0.356,-0.051,0.0,0.5,2.079,0,2.172
+finnish_content_3319,Honkalalle on myönnetty vuonna 2015?,fi,-0.506,-0.051,0.0,0.5,1.946,0,1.889
+finnish_polar_21,Onko tunkioliero vaarallinen ihmiselle?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_content_7092,Mikä on Japanin nykyinen väkiluku?,fi,0.244,-0.051,0.0,0.0,1.946,0,2.139
+finnish_content_6057,Kuka kehitti ensimmäisen tietokoneen?,fi,-0.423,-0.051,0.0,0.333,1.792,0,1.651
+finnish_content_4160,Minä vuonna KELA perustettiin?,fi,0.244,-1.051,0.0,0.5,1.792,0,1.485
+finnish_content_7299,Mikä on Aleppon väkiluku?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_116,Onko Shin Megami Tensei: Persona 4 japanilainen peli?,fi,0.35,2.15,0.0,0.0,2.398,1,4.898
+finnish_content_13969,Kuka oli Tampereen teatterin ensimmäinen johtaja?,fi,0.044,1.949,0.0,0.0,2.079,0,4.072
+finnish_content_1686,Kuka oli Japanin pääministeri ennen Yasuo Fukuda?,fi,0.244,-0.051,0.0,0.0,2.197,0,2.39
+finnish_polar_1619,Ovatko hopeaionit hopean myrkyllisin muoto?,fi,0.707,-0.85,0.0,0.0,1.946,1,1.803
+finnish_content_9396,Tekken pelissä on?,fi,-0.423,-1.051,0.0,0.0,1.792,0,0.318
+finnish_polar_1479,Onko McFly yhtye eronnut?,fi,0.207,-0.85,0.0,0.333,1.792,1,1.482
+finnish_polar_547,Asuuko Etelänavalla ihmisiä?,fi,-0.293,-0.85,0.0,0.333,1.609,1,0.799
+finnish_content_6980,Miten monen oppositiovuoden jälkeen kokoomus palasi hallitukseen vuoden 1987 eduskuntavaalien jälkeen?,fi,0.244,0.949,0.0,0.833,2.565,0,4.591
+finnish_content_1806,Mikä on Etelä-Amerikan suurin vuori?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_polar_876,Onko Lesbos saarella asutusta?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_polar_1044,Oliko Hong Kongin väkiluku vuonna 2018 suurempi kuin Suomen väkiluku?,fi,0.54,1.15,0.0,0.0,2.485,1,4.175
+finnish_content_6986,Millainen sarjakuvahahmo April O'Neil on?,fi,-0.156,-0.051,0.0,0.0,2.079,0,1.872
+finnish_content_6726,Miten kierteisgalaksi määritellään?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_12914,Minä vuonna William Henry Fox Talbot on syntynyt?,fi,1.815,-0.051,0.0,0.5,2.303,0,4.567
+finnish_polar_1637,Elääkö gorillat puissa?,fi,-0.293,-0.85,0.0,0.333,1.609,1,0.799
+finnish_content_14922,Mikä on Afrikan pisin joki?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_polar_1321,Ovatko kaikki Rooman keisarit samasta suvusta?,fi,0.007,0.15,0.0,0.0,2.079,1,2.236
+finnish_polar_2142,Onko SUomen jääkäriliike vieläkin käytössä?,fi,0.207,0.15,0.0,0.0,1.946,1,2.303
+finnish_content_1491,Kuka oli Brunein ensimmäinen hallitsija?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_content_391,Mitä adenokarsinooma tarkoittaa?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_1829,Onko Skotlannilla saaria?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_content_11011,Mikä on Tampere–Pori-radan suurin sallittu nopeus henkilöliikenteelle?,fi,0.077,0.949,0.0,0.0,2.197,0,3.223
+finnish_content_12431,Mihin Nicolae Ceaușesc kuoli?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_content_866,Milloin DDR3 muisti tuli markkinoille?,fi,-0.006,-1.051,0.0,0.667,1.946,0,1.556
+finnish_content_3201,Miksi neuroblastooma on tavallisin pienillä lapsilla?,fi,1.244,-1.051,0.0,0.0,2.079,0,2.272
+finnish_content_1455,Missä Hannover sijaitsee?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_11508,Kuinka monta peliä The King of Fighters pelisarjasta on julkaistu?,fi,0.688,0.949,0.0,0.5,2.485,0,4.622
+finnish_polar_530,Onko Keralassa sademetsää?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_30,Oliko Martin Heidegger Hannah Arendtin opettajana?,fi,0.807,0.15,0.0,0.0,2.079,1,3.036
+finnish_content_5105,Mikä on Arrajärven pinta-ala?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_1238,Onko juutalainen kulttuuri kokenut uuden nousukauden Latviassa?,fi,0.04,0.15,0.0,0.5,2.197,1,2.887
+finnish_polar_22,Onko Seeley Booth erikoisagentti Bones -sarjassa?,fi,0.807,0.15,0.0,0.0,2.079,1,3.036
+finnish_content_2525,Kuka keksi käsitteen eliminatiivinen materialismi?,fi,-0.256,-0.051,0.0,0.5,1.946,0,2.139
+finnish_polar_72,Onko sunnuntai länsimaissa lakisääteinen vapaapäivä?,fi,0.707,-0.85,0.0,0.0,1.946,1,1.803
+finnish_polar_1621,Onko kenkänokka uhanalainen laji?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_content_12484,Mitä bentsodiatsepiinit ovat?,fi,-0.256,-1.051,0.0,0.0,1.609,0,0.302
+finnish_content_10918,Mikä on Raaseporin asukasluku?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_content_2581,Mikä osoitinkynä on?,fi,-0.256,-1.051,0.0,0.0,1.609,0,0.302
+finnish_polar_235,Onko Benini liitto?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_content_9484,Mikä on Suomen syvin järvi?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_polar_126,Kasvatetaanko Suomessa sikoja?,fi,-0.293,-0.85,0.0,0.333,1.609,1,0.799
+finnish_polar_402,Onko Jackson Miley Stewartin veli?,fi,0.957,0.15,0.0,0.0,1.946,1,3.053
+finnish_polar_682,Käytetäänkö tutkimusreaktoria neutronien tuottamiseen?,fi,-0.127,0.15,0.0,0.333,1.792,1,2.148
+finnish_polar_1786,Perustivatko neljä veljestä Warner Bros.,fi,-0.043,0.15,0.0,0.333,1.792,1,2.232
+finnish_content_5606,Milloin Abbas ibn Abdul-Muttalibin kuoli?,fi,0.744,-0.051,0.0,0.333,1.946,0,2.972
+finnish_polar_1732,Onko IPCC YK:n alainen järjestö?,fi,0.457,0.15,0.0,0.0,1.946,1,2.553
+finnish_content_4030,Kuinka Adjo Climbié surma muutti Englannin lastensuojelua?,fi,0.244,-0.051,0.0,0.667,2.197,0,3.057
+finnish_polar_333,Voiko sävellaji vaihtua kesken musiikkiteoksen?,fi,-0.293,0.15,0.0,0.333,1.946,1,2.136
+finnish_content_11911,MIssä Gunnar von Hertzen syntyi?,fi,0.744,-0.051,0.0,0.333,1.946,0,2.972
+finnish_polar_1572,Ovatko aminohapot tärkeitä ihmiselle?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_content_241,Minkä maalainen oli Sigmund Freud?,fi,-0.506,-0.051,0.0,0.0,1.946,0,1.389
+finnish_polar_448,Onko Final Fantasy XII -pelissä tasoja?,fi,0.407,1.15,1.0,0.0,2.079,1,4.636
+finnish_content_3687,Kuka ylläpiti vankileirejä Suomen sisällissodan aikaan?,fi,-0.156,0.949,0.0,0.5,2.079,0,3.372
+finnish_polar_777,Onko vesinokkaeläimen turkki vesitiivis?,fi,-0.127,0.15,0.0,0.0,1.792,1,1.815
+finnish_content_13933,Miten syöpä leviää?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_498,Oliko Stutthofissa suomalaisia sotilaita?,fi,-0.46,0.15,0.0,0.0,1.792,1,1.482
+finnish_polar_1981,Onko Ready Player One -elokuva saanut Oscar-ehdokkuutta?,fi,0.373,1.15,0.0,0.333,2.197,1,4.053
+finnish_polar_1945,Onko Simpsonit sarja sopiva lapsille?,fi,-0.043,-0.85,0.0,0.0,1.946,1,1.053
+finnish_polar_984,Oliko Yhdysvaltain sisällissota poliittinen?,fi,-0.127,0.15,0.0,0.0,1.792,1,1.815
+finnish_polar_1551,Monesko Yhdysvaltain presidentti Jimmy Carter oli?,fi,-0.393,0.15,0.0,0.0,2.079,1,1.836
+finnish_polar_158,Voiko ukkosen ilma aiheuttaa päänsärkyä?,fi,-0.293,0.15,0.0,0.333,1.946,1,2.136
+finnish_content_3514,Mikä on laiton uhkaus?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_1383,Onko Norjassa käyty sisällissotaa?,fi,-0.46,-0.85,0.0,0.5,1.792,1,0.982
+finnish_content_1264,Mistä Demokritos tunnetaan?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_1845,Sisältävätkö hyönteiset paljon proteiinia?,fi,-0.127,0.15,0.0,0.333,1.792,1,2.148
+finnish_polar_830,Ovatko kuubalaiset sikarit valmistettu Kuubassa?,fi,-0.293,0.15,0.0,0.5,1.946,1,2.303
+finnish_polar_1949,Onko arovisentti visentin edeltäjä?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_content_4466,Kuka perusti Ranskan kansalliskirjaston?,fi,-0.423,-0.051,0.0,0.333,1.792,0,1.651
+finnish_polar_1437,Onko Benini yhdistys?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_polar_1370,Onko petit basset griffon vendéen karvapeite karheaa?,fi,0.873,1.15,0.0,0.0,2.197,1,4.22
+finnish_polar_719,Onko uittoperinnettä muualla kuin Suomessa?,fi,-0.293,0.15,0.0,0.0,1.946,1,1.803
+finnish_polar_236,Valmistaako Valmet metsäkoneita?,fi,-0.293,-0.85,0.0,0.333,1.609,1,0.799
+finnish_content_3086,Montako valkoisten taistelijaa osallistui Ahvenkosken taisteluun?,fi,-0.356,-0.051,0.0,0.333,2.079,0,2.005
+finnish_content_9431,Missä itkumuuri sijaitsee?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_2099,Onko mainonta osa joukkotiedotusvälinettä?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_polar_1496,Onko Tuomo Karjalainen pelannut jääkiekkoa Ruotsissa?,fi,0.007,0.15,0.0,0.5,2.079,1,2.736
+finnish_polar_1724,Ovatko fetaalialkoholisyndrooman toimintahäiriöt vakavia?,fi,-0.127,0.15,0.0,0.0,1.792,1,1.815
+finnish_polar_1101,Omistaako Venäjä saaria?,fi,-0.293,-0.85,0.0,0.333,1.609,1,0.799
+finnish_content_7731,Kuka voitti ensimmäisen grand slamin?,fi,-0.256,0.949,0.0,0.333,1.946,0,2.972
+finnish_polar_1158,Syntyykö ihmisen kehossa aminohappoja?,fi,0.207,0.15,0.0,0.333,1.792,1,2.482
+finnish_polar_919,Onko Yhdysvaltain senaatissa 100 senaattoria?,fi,-0.293,0.15,0.0,0.0,1.946,1,1.803
+finnish_polar_89,Onko Tulen ja jään laulu -fantasiakirjasarjasta tehty Game of Thrones -televisiosarja?,fi,1.507,2.15,1.0,0.167,2.565,1,7.389
+finnish_polar_160,Onko ainut -alkuperäiskansan jäseniä vielä elossa?,fi,0.407,0.15,0.0,0.0,2.079,1,2.636
+finnish_content_9505,Mikä on Bulgarian suurin kaupunki?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_polar_1052,Onko Mosulin asukkaiden joukossa aramealaisia?,fi,-0.293,0.15,0.0,0.0,1.946,1,1.803
+finnish_content_13110,Kuka aloitti tutkimaan arjalaista fysiikkaa?,fi,-0.506,0.949,1.0,0.25,1.946,0,3.639
+finnish_polar_1570,Onko VR julkisesti vaihdettava yhtiö?,fi,0.457,0.15,1.0,0.167,1.946,1,3.72
+finnish_content_12908,Milloin USA sisällissota alkoi?,fi,0.244,-1.051,0.0,0.5,1.792,0,1.485
+finnish_polar_1478,Onko Sanoma Oyj toimintaa Hollannissa?,fi,-0.043,-0.85,0.0,0.0,1.946,1,1.053
+finnish_content_3958,Kuka oli HMS Brighton -aluksen ensimmäinen päällikkö?,fi,0.244,2.949,0.0,0.0,2.197,0,5.39
+finnish_polar_2070,Onko Suomessa lentokoneteollisuutta?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_614,Onko Sisilia aina kuulunut Italialle?,fi,-0.043,-0.85,0.0,0.5,1.946,1,1.553
+finnish_polar_835,Onko tietokone suomalainen keksintö?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_content_2543,Missä maassa Strasbourg sijaitsee?,fi,-0.423,-0.051,0.0,0.333,1.792,0,1.651
+finnish_polar_2247,Onko Ikaalinen Näsijärven rannalla?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_content_15067,Millä maalla oli pienin BKT vuonna 2018?,fi,0.077,-0.051,0.0,0.0,2.197,0,2.223
+finnish_content_14331,Salatut elämät sarjaa?,fi,-0.756,-0.051,0.0,0.167,1.609,0,0.969
+finnish_content_9074,Mistä udmurtit ovat tunnettuja?,fi,0.244,-1.051,0.0,0.0,1.792,0,0.985
+finnish_content_5282,Milloin käytiin Narvikin taistelu?,fi,-0.423,-0.051,0.0,0.333,1.792,0,1.651
+finnish_content_6212,Missä Richard Wagner opiskeli kapellimestariksi?,fi,-0.006,-0.051,0.0,0.5,1.946,0,2.389
+finnish_content_13935,Miksi Rooman ajan keisareilla on pitkiä nimiä?,fi,-0.09,-0.051,0.0,0.0,2.197,0,2.056
+finnish_polar_2158,Periytyykö pituus vanhemmilta lapsille?,fi,-0.127,0.15,0.0,0.333,1.792,1,2.148
+finnish_content_3195,Milloin Disney on perustettu?,fi,0.244,-1.051,0.0,0.5,1.792,0,1.485
+finnish_content_12613,Kuka päätti Helsingin katujen nimet?,fi,-0.256,0.949,0.0,0.333,1.946,0,2.972
+finnish_content_5323,Miten munkki määritellään?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_1780,Onko tammi lautapeli?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_content_7063,Milloin Dustin James Boyd pelasi Barys Astanassa ensimmäisen kautensa?,fi,0.369,-0.051,0.0,0.667,2.398,0,3.383
+finnish_polar_1206,Onko Addison Montgomery ammatiltaan sekä kirurgi että gynekologi?,fi,0.492,0.15,0.0,0.0,2.303,1,2.945
+finnish_polar_2098,Kasvaako hasis luonnossa?,fi,-0.293,-0.85,0.0,0.333,1.609,1,0.799
+finnish_content_10347,Missä Lias Andersson aloitti pelaamaan jääkiekkoa?,fi,-0.156,-0.051,1.0,0.333,2.079,0,3.205
+finnish_polar_2263,Onko Ikaalisissa kylpylä?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_content_1973,Milloin Pentti Haanpää syntyi?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_content_1124,Missä Satakunnan Liikenne Oy ajaa paikallisliikennettä?,fi,-0.156,0.949,0.0,0.5,2.079,0,3.372
+finnish_polar_1926,Sopiiko lammas lemmikiksi?,fi,-0.293,-0.85,0.0,0.333,1.609,1,0.799
+finnish_polar_1367,Onko Sabotaasi elokuvan pommikohtaus yksi Hitchcockin uran kiistellyimmistä kohtauksista?,fi,0.082,2.15,0.0,0.0,2.398,1,4.63
+finnish_polar_2241,Onko maidossa happoa?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_content_9720,Kuka rakensi Utajärven kirkon?,fi,-0.423,-0.051,0.0,0.333,1.792,0,1.651
+finnish_polar_1796,Onko Kultarannan päärakennus graniittilinna Villa Kultaranta?,fi,0.007,0.15,0.0,0.0,2.079,1,2.236
+finnish_polar_272,Onko Stig Dagerman mies?,fi,0.207,0.15,0.0,0.0,1.792,1,2.149
+finnish_content_13325,Minä vuonna Christopher Leen vanhemmat erosivat?,fi,0.044,0.949,0.0,0.333,2.079,0,3.405
+finnish_polar_29,Ovatko Resurrection Bandin jäsenet sukua toisilleen?,fi,0.007,1.15,0.0,0.0,2.079,1,3.236
+finnish_polar_215,Kuoleeko olio ilman funktiota?,fi,-0.127,0.15,0.0,0.333,1.792,1,2.148
+finnish_polar_1685,Onko suohirvi hirven sukulainen?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_content_644,Kuka voitti 2006 vuoden Formula 1 mestaruuden?,fi,0.41,0.949,0.0,0.5,2.197,0,4.056
+finnish_polar_1232,Näytteleekö Jennifer Aniston Kaameat pomot elokuvassa?,fi,1.007,1.15,0.0,0.333,2.079,1,4.569
+finnish_content_10194,Mihin Emily Brontë kuoli?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_content_10561,Millä vuosikymmenellä James Maxwell toimi fyysikkona?,fi,-0.156,-0.051,0.0,0.5,2.079,0,2.372
+finnish_polar_152,Onko Unelmien talli -kirjasarjan kirjoissa yhteinen juoni?,fi,-0.127,2.15,1.0,0.0,2.197,1,5.22
+finnish_content_15039,Milloin 2cm Flak 30 otettiin käyttöön?,fi,0.044,-0.051,0.0,0.5,2.079,0,2.572
+finnish_content_5712,Mitä Hafiz Allah Amin opiskeli Kabulin yliopistossa?,fi,0.41,-0.051,0.0,0.5,2.197,0,3.056
+finnish_polar_992,Onko Japanin saarivaltio liikkunut viimeisen vuosikymmenen aikana?,fi,-0.127,1.15,0.0,0.333,2.197,1,3.553
+finnish_content_13380,Kuinka monta ihmistä on kadonnut Mount Everest vuorelle?,fi,-0.328,0.949,0.0,0.5,2.303,0,3.424
+finnish_content_1359,Milloin Leonid Brezhnev syntyi?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_content_7102,Mikä on Sudanin pääkaupunki?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_1104,Tuliko Caravaggiosta tunnettu vasta hänen kuolemansa jälkeen?,fi,-0.127,1.15,0.0,0.333,2.197,1,3.553
+finnish_content_2550,Miten filosofiaa tutkitaan?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_327,Onko Nihewanin allas geologinen muodostuma?,fi,0.707,-0.85,0.0,0.0,1.946,1,1.803
+finnish_polar_1308,Tuleeko Raamatun mukaan Jeesus ilmestymään uudelleen maailman lopussa?,fi,-0.079,1.15,1.0,0.417,2.303,1,4.791
+finnish_polar_956,Onko Englannin kuningatar vastuussa Englannin armeijasta?,fi,-0.193,0.15,0.0,0.0,2.079,1,2.036
+finnish_polar_875,"Oliko Pyntösjärvi niin matala, että järven keskikohdasta pääsi kesällä kulkemaan ylitse jalan?",fi,0.207,2.15,2.0,0.417,2.708,1,7.482
+finnish_polar_771,Onko venuksella ilmakehää?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_1329,Minkä puolueen politikko suuri Mirabeau oli?,fi,-0.593,1.15,0.0,0.0,2.079,1,2.636
+finnish_polar_1211,Onko kappaleiden sisällä ionisoivaa säteilyä?,fi,0.207,1.15,1.0,0.167,1.946,1,4.47
+finnish_content_8552,Mitä kieliä Kalle Kurg osaa kääntää?,fi,0.044,0.949,1.0,0.25,2.079,0,4.322
+finnish_polar_1921,Onko organismejä marssissa?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_polar_1754,Onko olemassa veriruttoa?,fi,-0.793,-0.85,0.0,0.167,1.609,1,0.133
+finnish_content_8145,Missä Terijoki sijaitsee?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_743,Onko Espanjalla alueita Pohjois-Afrikassa?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_polar_1555,Onko Citizen Kane kauhuelokuva?,fi,0.207,0.15,0.0,0.0,1.792,1,2.149
+finnish_polar_2166,Onko Helsingissäkin Arabiaa?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_content_4845,Minä vuonna Peter Sellers on syntynyt?,fi,1.044,-0.051,0.0,0.5,2.079,0,3.572
+finnish_content_588,Milloin Wassily Kandinsky syntyi?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_content_7798,Kuka kuningas mestattiin Ranskan suuressa vallankumouksessa?,fi,-0.156,-0.051,0.0,0.333,2.079,0,2.205
+finnish_content_5192,Mikä on Helsingin asukasluku?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_content_1997,Mikä oli Suomen sisällisodan suurin taistelu?,fi,0.044,1.949,0.0,0.0,2.079,0,4.072
+finnish_polar_1035,Asuuko Arvo Aalto talvisin Portugalissa?,fi,0.457,0.15,0.0,0.5,1.946,1,3.053
+finnish_polar_1919,Voiko metanolin juomisesta kuolla?,fi,-0.127,0.15,0.0,0.167,1.792,1,1.982
+finnish_polar_582,Laulavatko Glee -sarjan näyttelijät laulut itse?,fi,0.207,1.15,0.0,0.333,2.079,1,3.769
+finnish_polar_76,Onko Grenadaan iskenyt useita tuhoisia hurrikaaneja?,fi,0.007,0.15,0.0,0.333,2.079,1,2.569
+finnish_polar_1004,Onko Me Too -kampanja rekisteröity?,fi,-0.043,-0.85,1.0,0.0,1.946,1,2.053
+finnish_content_5561,Mikä oli Adolf Hitlerin pituus?,fi,0.244,0.949,0.0,0.0,1.946,0,3.139
+finnish_content_8511,Minä vuonna John Lennon murhattiin?,fi,0.744,-0.051,0.0,0.5,1.946,0,3.139
+finnish_content_5536,Milloin ensimmäinen kiintolevy keksittiin?,fi,-0.09,-0.051,0.0,0.333,1.792,0,1.984
+finnish_polar_1254,Ovatko karsinoidikasvain ja lymfooma pahanlaatuisia paksusuolen syöpiä?,fi,1.04,1.15,0.0,0.0,2.197,1,4.387
+finnish_content_1828,Montako lintulajia elää Etelä-Amerikassa?,fi,-0.756,-0.051,0.0,0.333,1.792,0,1.318
+finnish_content_6852,Mikä on Etelä-Amerikan pinta-ala?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_content_10500,Mitä hajakuormitus tarkoittaa?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_1973,Onko jäänmurtaja Voima edelleen käytössä?,fi,0.707,-0.85,0.0,0.0,1.946,1,1.803
+finnish_polar_2017,Reagoivatko kaikki alkuaineet keskenään?,fi,0.207,0.15,0.0,0.333,1.792,1,2.482
+finnish_content_311,Missä Taiwan sijaitsee?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_2724,Miksi Keisari Yongzhengin alkuperäinen nimi muutettiin?,fi,0.244,0.949,0.0,0.333,2.079,0,3.605
+finnish_content_1940,Kuka on perustanut Valmetin?,fi,-0.423,-1.051,0.0,0.333,1.792,0,0.651
+finnish_polar_1188,Ottiko Ruotsi ensimmäisenä Euroopan historiassa käyttöönsä setelirahan?,fi,1.373,0.15,0.0,0.833,2.197,1,4.553
+finnish_content_2359,Mikä on Genevessä matalin korkeus merenpinnasta?,fi,0.044,-0.051,0.0,0.0,2.079,0,2.072
+finnish_content_8980,Mistä kuninkaantie alkaa?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_1913,Mistä Randall Flaggin nimi tulee?,fi,0.244,0.949,0.0,0.333,1.946,0,3.472
+finnish_polar_59,"Onko Anderson ""The Spider""",fi,-0.127,0.15,0.0,0.0,1.946,1,1.969
+finnish_polar_1231,Oliko Kuninkaallinen Turun Akatemia avoin kaikille?,fi,0.007,0.15,0.0,0.0,2.079,1,2.236
+finnish_content_6907,Mistä ajatus lähiöihin on syntynyt?,fi,0.494,-0.051,0.0,0.333,1.946,0,2.722
+finnish_content_5225,Mitä neutralointititraus tarkoittaa?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_927,Onko Aistien valtakunta kiistelty elokuva sen sisältämän pornografian takia?,fi,-0.168,1.15,1.0,0.417,2.398,1,4.797
+finnish_content_4816,Missä Bursa sijaitsee?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_6354,"Missä William R. Catton, Jr. syntyi?",fi,1.844,-0.051,0.0,0.333,2.197,0,4.323
+finnish_polar_180,Onko asiantuntijoiden mukaan terrorismin riski kasvussa Suomessa?,fi,0.373,0.15,0.0,0.0,2.197,1,2.72
+finnish_content_9734,Minä vuonna Darja Domratšava lopetti uransa ampumahiihtäjänä?,fi,-0.09,-0.051,0.0,0.667,2.197,0,2.723
+finnish_polar_1186,Voiko naisilla olla AIS?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_content_5697,Missä Jiří Tlustý on syntynyt?,fi,0.494,-0.051,0.0,0.333,1.946,0,2.722
+finnish_polar_1125,Onko Turku suurempi kaupunki väkiluvultaan kuin Tampere?,fi,0.207,1.15,0.0,0.0,2.197,1,3.554
+finnish_content_14212,Kuka on ohjannut Babel elokuvan?,fi,-0.256,-0.051,0.0,0.333,1.946,0,1.972
+finnish_polar_1862,Onko Boúrtzin saarella linna?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_content_7890,Milloin ensimmäinen Battlefield peli on julkaistu?,fi,0.444,-0.051,0.0,0.5,2.079,0,2.972
+finnish_content_5635,Mitä tarkoittaa amiraliteetti?,fi,-0.756,-1.051,0.0,0.333,1.609,0,0.135
+finnish_polar_1481,Taisteleeko Sanji Vinsmoke käyttämällä vain jalkojaan?,fi,-0.193,1.15,1.0,0.25,2.079,1,4.286
+finnish_polar_961,Asuttivatko intiaanit Yhdysvaltoja ensin?,fi,0.207,-0.85,0.0,0.5,1.792,1,1.649
+finnish_content_7685,Milloin Neotokyo -pelin kehittäminen aloitettiin?,fi,-0.006,0.949,0.0,0.333,1.946,0,3.222
+finnish_polar_539,Onko Etelänavalla jääkarhuja?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_content_6401,Mitkä olivat Venäjän miestappiot Tannenberg-linjan taistelussa?,fi,0.444,-0.051,0.0,0.0,2.079,0,2.472
+finnish_content_712,Montako kuuta Marsilla on?,fi,-0.756,-0.051,0.0,0.0,1.792,0,0.985
+finnish_polar_175,Voiko tuberkuloosiin kuolla?,fi,-0.293,-0.85,0.0,0.167,1.609,1,0.633
+finnish_polar_976,Onko Grenoblessa tunnettuja nähtävyyksiä?,fi,-0.46,0.15,0.0,0.0,1.792,1,1.482
+finnish_content_3818,Milloin NHL on perustettu?,fi,0.244,-1.051,0.0,0.5,1.792,0,1.485
+finnish_polar_1048,Onko Brian Singer ohjannut X-Men: Days of Future Past -elokuvan?,fi,1.873,1.15,0.0,0.333,2.565,1,5.921
+finnish_polar_12,Valloittiko Saksa koko Norjan vuonna 1940?,fi,0.207,0.15,0.0,0.5,2.079,1,2.936
+finnish_polar_1861,Voiko D-vitamiinia saada yliannostuksen?,fi,-0.46,-0.85,0.0,0.333,1.792,1,0.815
+finnish_polar_1212,Onko Suomea hallinnut koskaan kuningas?,fi,-0.293,-0.85,0.0,0.5,1.946,1,1.303
+finnish_content_9272,Milloin Gennaro Gattuso aloitti pelaamaan jalkapalloa?,fi,-0.156,-0.051,1.0,0.333,2.079,0,3.205
+finnish_content_4098,Kuinka ramansirontaa käytetään molekyylien tutkimiseen?,fi,-0.256,-0.051,0.0,0.5,1.946,0,2.139
+finnish_polar_1871,Onko hopea kiinteässä muodossa sallittu väriaine EU:ssa?,fi,0.54,0.15,0.0,0.0,2.197,1,2.887
+finnish_polar_388,Onko nolla suurin ei-positiivinen luku ja pienin ei-negatiivinen luku?,fi,0.707,0.15,0.0,0.0,2.398,1,3.255
+finnish_polar_2139,Onko tekniikka edesauttanut fysiikan tutkimuksen edistymistä?,fi,-0.193,1.15,0.0,0.333,2.079,1,3.369
+finnish_content_7030,Mikä on jääkiekkojoukkue New York Rangersin kotikenttä?,fi,0.577,0.949,0.0,0.0,2.197,0,3.723
+finnish_content_4026,Mihin machetea käytetään?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_749,Onko pullokuonodelfiinin selkäevässä luuta tai lihasta?,fi,-0.393,1.15,0.0,0.0,2.079,1,2.836
+finnish_content_11446,Mitkä kaksi tekijää aiheuttavat luonnonveden happamuuden?,fi,-0.356,-0.051,0.0,0.333,2.079,0,2.005
+finnish_polar_867,Onko punajalkasuulan nokka sahalaitainen reunoilta?,fi,-0.293,0.15,0.0,0.0,1.946,1,1.803
+finnish_polar_2232,Onko ohjelmointi hakkerointia?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_content_2427,Kuka keksi euron?,fi,-0.756,-1.051,0.0,0.333,1.609,0,0.135
+finnish_polar_508,Olivatko ihmisten esi-isät ihmisapinoita?,fi,-0.127,0.15,0.0,0.0,1.792,1,1.815
+finnish_content_11633,Milloin alkueliöt ekan kerran löydettiin?,fi,0.494,-0.051,0.0,0.5,1.946,0,2.889
+finnish_content_12591,Mikä oli Gregoriuksen suurin tekemä uudistus?,fi,0.044,1.949,1.0,0.167,2.079,0,5.239
+finnish_content_5493,Milloin Sonic TV-sarja julkaistiin?,fi,-0.09,-0.051,0.0,0.333,1.792,0,1.984
+finnish_polar_1439,Voiko kystiseen fibroosiin kuolla?,fi,-0.127,0.15,0.0,0.167,1.792,1,1.982
+finnish_polar_1618,Onko Kännykkä rekisteräity tuotemerkki?,fi,0.207,-0.85,1.0,0.0,1.792,1,2.149
+finnish_content_12292,Japani hyökkäsi toisen maailmansodan aikana?,fi,-0.256,0.949,0.0,0.333,1.946,0,2.972
+finnish_content_6936,Mikä on kirkkovaltuuston määritelmä?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_947,Voiko vesirokkoon kuolla?,fi,-0.293,-0.85,0.0,0.167,1.609,1,0.633
+finnish_content_5028,Muhammedin elämäkerrasta on omistettu jihadille?,fi,-0.506,-0.051,0.0,0.5,1.946,0,1.889
+finnish_polar_2071,Onko Leipzigissä vanhaa kaupunkia?,fi,-0.46,0.15,0.0,0.0,1.792,1,1.482
+finnish_polar_1285,Onko jodlaaminen laulamista?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_content_13809,Kuinka kauan Ruotsi hallitsi Suomea?,fi,-0.506,-0.051,0.0,0.5,1.946,0,1.889
+finnish_polar_1595,Onko Melanesia maa?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_polar_1653,Onko Andrew Blaken mukaan Pottereiden kristillinen arvostelu vain kristittyjen puolustusvaste?,fi,1.429,0.15,0.0,0.0,2.485,1,4.064
+finnish_polar_653,Onko Sheev Palpatine sivuhenkilö elokuvassa Tähtien sota?,fi,0.04,0.15,0.0,0.0,2.197,1,2.387
+finnish_content_12112,Kuinka molli määritellään?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_1859,Kuka on rakentanut Fairchild-Republic A-10 Thunderbolt II?,fi,-0.09,-0.051,0.0,0.333,2.197,0,2.389
+finnish_content_14288,Millä toisella nimellä Itä-Rooman valtakunta tunnettiin?,fi,-0.156,-0.051,0.0,0.333,2.079,0,2.205
+finnish_content_10082,Mikä kausi oli triaskauden jälkeen?,fi,-0.506,-0.051,0.0,0.0,1.946,0,1.389
+finnish_content_6135,Mitkä ovat Chaos Space Marinet?,fi,-0.256,-0.051,0.0,0.0,1.946,0,1.639
+finnish_polar_2137,Löytyykö berylliumia luonnosta?,fi,-0.293,-0.85,0.0,0.333,1.609,1,0.799
+finnish_polar_53,Onko endometrioosin aikana kuukautiset kivuliaat?,fi,0.207,0.15,0.0,0.0,1.946,1,2.303
+finnish_content_7537,Montako sotilaslääniä Suomessa on?,fi,-0.756,-0.051,0.0,0.0,1.792,0,0.985
+finnish_content_11536,Kuka oli Georg Magnus Sprengtportenin vanhempi veli?,fi,0.744,0.949,0.0,0.0,2.197,0,3.89
+finnish_polar_0,Tarvitaanko neutroneja radioaktiivisten aineiden valmistamiseen?,fi,-0.043,1.15,0.0,0.333,1.946,1,3.386
+finnish_polar_2268,Voiko vesikauhun parantaa?,fi,-0.293,-0.85,0.0,0.167,1.609,1,0.633
+finnish_content_6593,Mikä on pääaine tiilin valmistuksessa?,fi,-0.256,0.949,0.0,0.0,1.946,0,2.639
+finnish_content_12951,Minä vuonna Taisteluplaneetta Galactica televisiosarja esitettiin ensimmäisen kerran Suomessa?,fi,0.119,0.949,0.0,0.667,2.398,0,4.133
+finnish_polar_2041,Onko nominalismia tutkittu tieteellisesti?,fi,-0.46,-0.85,0.0,0.5,1.792,1,0.982
+finnish_polar_1688,Onko Naomi Klein aktivisti?,fi,0.207,0.15,0.0,0.0,1.792,1,2.149
+finnish_content_5737,Kuka oli 2. jääkäripataljoonan viimeisin johtaja?,fi,0.044,1.949,0.0,0.0,2.079,0,4.072
+finnish_polar_818,Onko Zack Snyder voittanut Oscar palkintoa?,fi,0.007,0.15,0.0,0.333,2.079,1,2.569
+finnish_polar_1070,Onko Jari Suorsa pelannut jääkiekkoa Italiassa?,fi,0.007,0.15,0.0,0.5,2.079,1,2.736
+finnish_polar_113,Minne Saku Sammakko oli matkalla?,fi,0.457,0.15,0.0,0.0,1.946,1,2.553
+finnish_polar_1401,Saivatko suomalaiset naiset ensimmäisenä maailmassa äänestysoikeuden?,fi,0.807,0.15,0.0,0.5,2.079,1,3.536
+finnish_polar_486,Oliko Kustaa III kansan suosima kuningas?,fi,0.407,1.15,1.0,0.333,2.079,1,4.969
+finnish_polar_1136,Onko Tammelan koulussa saksankielisiä luokkia?,fi,-0.293,0.15,0.0,0.0,1.946,1,1.803
+finnish_polar_1568,Onko Jack Daniel's maissiviskiä?,fi,0.207,0.15,0.0,0.0,1.792,1,2.149
+finnish_content_6394,Kuka johti punakaartien valtakunnallista organisaatiota vuosina 1905-1906?,fi,0.244,-0.051,0.0,0.5,2.197,0,2.89
+finnish_content_14401,Mikä on Ikaalisen asukasluku?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_content_462,Mikä oli Myyrmannin räjäytyksen motiivi?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_polar_2223,Onko Suomessa patoja?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_381,Onko Turajärvellä toiminut kiertokoulu?,fi,-0.46,-0.85,0.0,0.333,1.792,1,0.815
+finnish_content_3845,Milloin Origenes syntyi?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_4164,Mistä Counter-Strike pelin nimi tulee?,fi,0.244,-0.051,0.0,0.333,1.946,0,2.472
+finnish_polar_296,Mistä nimi Keko Salata tulee?,fi,0.207,0.15,0.0,0.333,1.946,1,2.636
+finnish_polar_974,Onko OTP pelannut Veikkausliigassa?,fi,-0.46,-0.85,0.0,0.333,1.792,1,0.815
+finnish_polar_2034,Voiko historiaa opiskella Kuopiossa?,fi,-0.46,-0.85,0.0,0.333,1.792,1,0.815
+finnish_polar_2029,Voiko jäätikön sisus räjähtää?,fi,-0.127,0.15,0.0,0.167,1.792,1,1.982
+finnish_polar_1444,Onko Snake Eyes koodinimi?,fi,0.207,0.15,0.0,0.0,1.792,1,2.149
+finnish_content_10401,Kuka oli Hollannin ensimmäinen kuninkaallinen?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_content_5930,Milloin Ned Kelly kuoli?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_content_7889,Miksi Kamputsean valtio kaatui vuonna 1979?,fi,-0.356,-0.051,0.0,0.5,2.079,0,2.172
+finnish_content_10431,Missä Akropolis-kukkula sijaitsee?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_2227,Onko Suomessa koskaan uskottu luonnon taruolentoihin?,fi,0.007,0.15,0.0,0.667,2.079,1,2.903
+finnish_polar_335,Oliko Napoléon Bonapartella perhettä?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_polar_2021,Onko Monaco monarkia?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_polar_2249,Oliko Konstantinus Suurella perhettä?,fi,0.207,0.15,0.0,0.0,1.792,1,2.149
+finnish_content_1843,Mitä hedekäpy tarkoittaa?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_224,Kuinka monta kirjaa on Perillinen -kirjasarjassa?,fi,-0.156,0.949,0.0,0.0,2.079,0,2.872
+finnish_content_12566,Mikä oli Suomen ensimmäinen panimo?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_content_6683,Mikä on Himachal Pradeshin valtakieli?,fi,0.244,0.949,0.0,0.0,1.946,0,3.139
+finnish_content_10566,Mikä on Lyydiläisten alkuperä?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_502,Onko yhteiskunnalla sama uskonto?,fi,-0.46,0.15,0.0,0.0,1.792,1,1.482
+finnish_polar_1810,Oliko Albert Parsonsin puoliso nimeltään Lucy?,fi,0.407,1.15,0.0,0.0,2.079,1,3.636
+finnish_polar_1363,Minkä mittayksikkö on Faraday?,fi,-0.46,0.15,0.0,0.0,1.792,1,1.482
+finnish_polar_343,Onko missään Euroopassa nykyisin kansallissosialistisia puolueita?,fi,-0.193,0.15,0.0,0.0,2.079,1,2.036
+finnish_polar_668,Voittiko elokuva Kuninkaan puhe Oscar-palkintoja?,fi,-0.043,-0.85,0.0,0.0,1.946,1,1.053
+finnish_content_14042,Milloin Ferdowsi kuoli?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_322,Kuuluiko Yhdysvallat alunperin Alankomaille?,fi,0.207,-0.85,0.0,0.5,1.792,1,1.649
+finnish_content_12577,Kuinka pitkä Havanganjärvi on?,fi,-0.423,-1.051,0.0,0.0,1.792,0,0.318
+finnish_content_7347,Mitä kanji tarkoittaa?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_800,Mikä on Kuninkaantien pituus?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_content_14148,Mikä oli AMC Gremlinin viimeinen valmistus vuosi?,fi,1.077,0.949,0.0,0.0,2.197,0,4.223
+finnish_polar_1376,Onko Valve Corporation suomalainen yritys?,fi,0.457,0.15,0.0,0.0,1.946,1,2.553
+finnish_polar_611,Onko vedessä happea?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_content_6746,Missä oli Suomen ensimmäinen jääkiekko kenttä?,fi,0.044,1.949,0.0,0.0,2.079,0,4.072
+finnish_polar_348,Aiheuttaako jäätiköiden sulaminen merenpinnan nousua?,fi,0.207,0.15,0.0,0.333,1.946,1,2.636
+finnish_content_3786,Kuka on kuvannut Ennen kuin ne häviävät -luontodokumenttisarjan?,fi,-0.042,0.949,1.0,0.417,2.303,0,4.627
+finnish_content_12173,Milloin Charles de Gaulle aloitti sotilasuransa?,fi,0.444,-0.051,0.0,0.5,2.079,0,2.972
+finnish_content_8371,Mikä on Michael Monroen oikea nimi?,fi,0.444,0.949,0.0,0.0,2.079,0,3.472
+finnish_polar_520,Onko täplärapu Suomen vesistöihin istutettu äyriäinen?,fi,0.607,1.15,1.0,0.167,2.079,1,5.003
+finnish_content_2829,Mitä lajia sanotaan pelien kuninkaaksi?,fi,-0.506,-0.051,0.0,0.333,1.946,0,1.722
+finnish_polar_1962,Onko Suomen kansa aloittanut konfliktia?,fi,-0.293,0.15,0.0,0.333,1.946,1,2.136
+finnish_content_9523,Milloin ensinmmäinen SSD keksittiin?,fi,-0.09,-0.051,0.0,0.333,1.792,0,1.984
+finnish_polar_860,Tuliko Suomen karkottaa maassa olevat saksalaisjoukot Moskovan välirauhan ehtojen mukaisesti?,fi,0.207,3.15,1.0,0.278,2.485,1,7.12
+finnish_polar_1512,Onko Lev Semjonovitš Vygotski kehittänyt lähikehityksen vyöhykkeen teorian?,fi,0.35,1.15,0.0,0.333,2.303,1,4.136
+finnish_polar_1953,Onko Lasse Kukkosella lapsia?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_polar_2123,Onko Israelin–Palestiinan konflikti edelleen voimassa?,fi,0.207,0.15,0.0,0.0,1.946,1,2.303
+finnish_polar_2206,Onko Tukholmaa pommitettu sotien aikaan?,fi,-0.293,0.15,0.0,0.5,1.946,1,2.303
+finnish_content_742,Kuinka monessa maassa WWF toimii?,fi,0.244,-0.051,0.0,0.5,1.946,0,2.639
+finnish_polar_628,Onko Kalkutalla sademetsää?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_content_8228,Miten määritellään kertatulipistooli?,fi,-0.756,-1.051,0.0,0.333,1.609,0,0.135
+finnish_polar_342,Oliko Romania Saksan liittolainen toisessa maailmansodassa?,fi,0.007,0.15,0.0,0.0,2.079,1,2.236
+finnish_content_5837,Mikä on Suomen juoduin viini tyyppi?,fi,0.244,0.949,0.0,0.0,2.079,0,3.272
+finnish_polar_2203,Käytiinkö Suomen sotahistorian aikana Etelä-Suomessa enemmän sotia kuin Itä-Suomessa?,fi,0.707,2.15,0.0,0.5,2.398,1,5.755
+finnish_polar_1808,Onko International Harvester -yhtiö vielä toiminnassa?,fi,0.407,1.15,0.0,0.0,2.079,1,3.636
+finnish_content_9592,Mitkä maat voittivat toisen maailmansodan?,fi,-0.506,-0.051,0.0,0.333,1.946,0,1.722
+finnish_content_14961,Milloin Cao Xueqin kuoli?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_polar_423,Ovatko talitiaiset monivärisiä?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_content_10744,Milloin pajatso keksittiin?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_2028,Onko Juha Hänninen suomalainen nyrkkeilijä?,fi,0.457,0.15,0.0,0.0,1.946,1,2.553
+finnish_content_10514,Minkä ikäinen Simo Häyhä oli talvisodan aikana?,fi,-0.09,0.949,0.0,0.0,2.197,0,3.056
+finnish_polar_915,Elääkö pingviinejä etelä navalla?,fi,-0.127,0.15,0.0,0.333,1.792,1,2.148
+finnish_polar_1142,Onko Lummenne osa Päijännettä?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_polar_1468,Onko Norjan väkiluku Suomen väkilukua suurempi?,fi,0.407,0.15,0.0,0.0,2.079,1,2.636
+finnish_polar_1716,"Onko Ingemar ""Ingo"" Johansson nyrkkeilyt suomalaista nyrkkeilijää vastaan?",fi,1.207,0.15,0.0,0.0,2.485,1,3.842
+finnish_content_274,Kuinka monta lintua loistopeippojen heimoon kuuluu?,fi,-0.356,0.949,0.0,0.333,2.079,0,3.005
+finnish_content_13427,Montako I-luokan hävittäjää Britannialla oli?,fi,-0.506,-0.051,0.0,0.0,1.946,0,1.389
+finnish_polar_1003,Onko Suomessa keksitty suomalaisia lastensatuja?,fi,-0.293,0.15,0.0,0.5,1.946,1,2.303
+finnish_content_4110,Kuka voitti kauden 2000-2001 Stanley cupin?,fi,0.244,-0.051,0.0,0.667,2.079,0,2.939
+finnish_content_11591,Minkälainen on Homestar Runner -sarjan päähenkilö?,fi,0.244,1.949,0.0,0.0,2.079,0,4.272
+finnish_polar_34,Voiko vesikauhua varten rokottaa?,fi,0.207,0.15,0.0,0.167,1.792,1,2.316
+finnish_polar_77,Onko Jani Keinänen pelannut jääkiekko Tanskassa?,fi,0.007,0.15,0.0,0.5,2.079,1,2.736
+finnish_polar_1480,Voiko suurienergistä säteilyä mitata?,fi,-0.127,0.15,0.0,0.167,1.792,1,1.982
+finnish_polar_1378,Voiko liikkeenjohdon strategiaa opiskella yliopistossa?,fi,-0.293,0.15,0.0,0.333,1.946,1,2.136
+finnish_polar_828,Ovatko udmurtit venäläisiä?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_content_7286,Kuka näyttelee Mark Sloania Greyn anatomia -sarjassa?,fi,-0.09,0.949,0.0,0.5,2.197,0,3.556
+finnish_polar_1281,Onko ihmisen jokaisessa elimessä verisuonia?,fi,0.207,0.15,0.0,0.0,1.946,1,2.303
+finnish_polar_1790,Elääkö Norjan vesistöissä kaskelotteja?,fi,0.207,0.15,0.0,0.333,1.792,1,2.482
+finnish_content_11789,Mihin James Pierson Beckwourth kuoli?,fi,0.744,-0.051,0.0,0.333,1.946,0,2.972
+finnish_polar_2229,Näkeekö värisokea keltaisen värin?,fi,-0.127,0.15,0.0,0.333,1.792,1,2.148
+finnish_content_5713,Mikä oli ns. samettivallankumous?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_content_13235,Mikä on Sami Yaffan oikea nimi?,fi,0.444,0.949,0.0,0.0,2.079,0,3.472
+finnish_content_14009,Miten ravintoverkko määritellään?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_1638,Onko Kaspianmeren vesi suolaista?,fi,-0.127,0.15,0.0,0.0,1.792,1,1.815
+finnish_content_10207,"Keitä olivat gootit, historiallisesti?",fi,-0.09,-1.051,0.0,0.0,1.946,0,0.805
+finnish_polar_594,Onko mytologia kehitetty antiikin aikana?,fi,-0.293,0.15,0.0,0.5,1.946,1,2.303
+finnish_content_11065,Milloin oli Juhana Idänpään-Heikkilän viimeiset valtiopäivät?,fi,0.444,0.949,0.0,0.0,2.079,0,3.472
+finnish_content_15160,Mihin Suomessa perustettiin ensimmäinen lasin valmistus tehdas?,fi,0.244,0.949,0.0,0.5,2.197,0,3.89
+finnish_polar_869,Onko Rio Ferdinand ollut kilpailukiellossa?,fi,0.457,0.15,0.0,0.0,1.946,1,2.553
+finnish_content_5155,Milloin viimeinen tunnettu pussihukka kuoli?,fi,0.244,-0.051,0.0,0.333,1.946,0,2.472
+finnish_polar_905,Ovatko kaikki tieteet saaneet alkunsa filosofiasta?,fi,-0.393,0.15,0.0,0.333,2.079,1,2.169
+finnish_content_13195,Mikä on Budd Companyn henkilöstön määrä?,fi,0.244,1.949,0.0,0.0,2.079,0,4.272
+finnish_polar_2060,Voiko Kajaanin linnassa vierailla vuonna 2019?,fi,-0.393,0.15,0.0,0.333,2.079,1,2.169
+finnish_content_3912,Milloin Afganistan itsenäistyi?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_2234,Onko ohjelmointi sama asia kuin koodaaminen?,fi,0.207,1.15,0.0,0.0,2.079,1,3.436
+finnish_content_4055,Eddie Läck pelaa?,fi,-0.256,-0.051,0.0,0.167,1.609,0,1.469
+finnish_content_3358,Milloin Bruce Boudreau lopetti ammattilais uransa?,fi,0.044,-0.051,0.0,0.5,2.079,0,2.572
+finnish_content_13580,Mitä tarkoittaa hovimarsalkka?,fi,-0.756,-1.051,0.0,0.333,1.609,0,0.135
+finnish_polar_1072,Onko laissa mainittu eettisen toiminnan periaatteista?,fi,-0.193,1.15,0.0,0.5,2.079,1,3.536
+finnish_content_13740,Kuinka monta katsojaa mahtuu Raatin Stadionille?,fi,-0.556,0.949,0.0,0.333,2.079,0,2.805
+finnish_content_3209,Missä Pispan asuinpaikka sijaitsee?,fi,-0.09,-0.051,0.0,0.333,1.792,0,1.984
+finnish_polar_16,Oliko Gunnar Nordströmilla vaimoa?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_content_12088,Missä Sumeri sijaitsi?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_528,Onko maapallo ollut alkujaan vain tähti?,fi,1.207,-0.85,0.0,0.0,2.079,1,2.436
+finnish_polar_2231,Onko pelaaminen hyväksi aivoille?,fi,-0.46,1.15,0.0,0.0,1.792,1,2.482
+finnish_content_6655,Mikä oli Kanadan GDP vuonna 2018?,fi,0.244,-0.051,0.0,0.0,2.079,0,2.272
+finnish_polar_54,Onko tammiarkkuhauta tehty tammesta?,fi,-0.46,-0.85,0.0,0.5,1.792,1,0.982
+finnish_content_1218,Missä Kuolan niemimaa sijaitsee?,fi,-0.09,-0.051,0.0,0.333,1.792,0,1.984
+finnish_polar_515,Asuuko Andeilla eläimiä?,fi,-0.293,-0.85,0.0,0.333,1.609,1,0.799
+finnish_content_13925,Missä Thomas Hobbes syntyi?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_content_5932,Milloin kansalaisaloitetta ensimmäisen kerran ehdotettiin otettavaksi käyttöön?,fi,0.077,-0.051,1.0,0.417,2.197,0,3.64
+finnish_content_12626,Missä sijaitsee Guam?,fi,-0.756,-1.051,0.0,0.333,1.609,0,0.135
+finnish_content_13453,Mikä on jalkapallojoukkue Glasgow Rangersin kotikenttä?,fi,0.244,0.949,0.0,0.0,2.079,0,3.272
+finnish_content_5227,Milloin Suomi otti Si-järjestelmän käyttöön?,fi,-0.256,-1.051,0.0,0.667,1.946,0,1.306
+finnish_content_7946,Kuinka monta päivää Saskatchewanin kapina kesti?,fi,-0.356,0.949,0.0,0.333,2.079,0,3.005
+finnish_polar_834,Voittiko Vadim Šipatšov olympiakultaa vuonna 2018?,fi,0.207,0.15,0.0,0.5,2.079,1,2.936
+finnish_content_13691,Mikä on Filippiinien kansallisruoka?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_709,Onko Atlus japanilainen yhtiö?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_polar_801,Voiko keripukkiin kuolla?,fi,-0.293,-0.85,0.0,0.167,1.609,1,0.633
+finnish_content_11715,Milloin Homeros kuoli?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_5161,Mitä Oulun valtauksessa tapahtui?,fi,-0.09,-0.051,0.0,0.333,1.792,0,1.984
+finnish_polar_650,Onko Michael Schumacher menestynein Formula 1 -ajaja kautta aikojen?,fi,0.832,0.15,0.0,0.0,2.398,1,3.38
+finnish_content_14906,Mikä on Oulun ja Rovaniemen välinen etäisyys linnuntietä pitkin?,fi,0.244,2.949,0.0,0.0,2.398,0,5.591
+finnish_polar_328,Voiko öljy loppua maapallolta?,fi,-0.46,-0.85,0.0,0.333,1.792,1,0.815
+finnish_polar_268,Onko Jäämerentie kokonaan asfalttia?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_polar_945,Ovatko kehrääjä-linnut hämärä- tai yöaktiivisia?,fi,-0.293,0.15,0.0,0.0,1.946,1,1.803
+finnish_content_7596,Mikä on Intian itsenäisyys päivä?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_content_6023,Miksi Eric Harris ja Dylan Klebold suorittivat Columbinen verilöylyn?,fi,0.744,0.949,0.0,0.5,2.398,0,4.591
+finnish_content_12289,Milloin keksittiin tyhjiöpakkaaminen?,fi,-0.756,-1.051,0.0,0.333,1.609,0,0.135
+finnish_content_2859,Mitä jalokaasut tarkoittavat?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_2083,Onko Saaristomeri Euroopan laajin saaristo?,fi,0.457,0.15,0.0,0.0,1.946,1,2.553
+finnish_polar_1312,Ruskettaako UV-säteily ihoa?,fi,-0.293,-0.85,0.0,0.333,1.609,1,0.799
+finnish_polar_325,Onko eläimillä havaittu uskonnollista käyttäytymistä?,fi,-0.293,0.15,0.0,0.5,1.946,1,2.303
+finnish_content_9983,Kuka on kehittänyt RNA-maailman?,fi,-0.423,-1.051,0.0,0.333,1.792,0,0.651
+finnish_polar_2214,Onko Shōjo kakumei Utena esitetty Suomessa?,fi,0.407,-0.85,0.0,0.833,2.079,1,2.469
+finnish_content_9757,Miten inkerinsuomalaiset määritellään?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_3477,Mikä on Brazilian pääkaupunki?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_549,Turpoavatko naisen häpyhuulet kiihottumisen seurauksena?,fi,0.207,0.15,0.0,0.333,1.946,1,2.636
+finnish_content_11950,Kuinka monta automallia Ford on julkaissut?,fi,-0.156,0.949,0.0,0.333,2.079,0,3.205
+finnish_content_3132,Ketkä ovat Salaiset kansiot -sarjan päähenkilöitä?,fi,0.444,-0.051,0.0,0.0,2.079,0,2.472
+finnish_polar_946,Onko Final Fantasy XV -pelissä yö- ja päiväkierto?,fi,0.207,1.15,0.0,0.0,2.303,1,3.66
+finnish_polar_365,Onko Amerikassa luonnossa kuningaskalastajien heimoon kuuluvia lintuja?,fi,-0.127,2.15,1.0,0.167,2.197,1,5.387
+finnish_polar_1307,Onko Sin City -sarja voittanut useita Eisner-palkintoja?,fi,0.04,1.15,0.0,0.333,2.197,1,3.72
+finnish_content_2989,Kuka oli Tanskan ensimmäinen kuningatar?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_polar_2069,Onko ihmisellä ah-reseptoria?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_content_6355,Minä vuonna Suomessa on pelattu ensimmäisen kerran salibandya?,fi,0.529,-0.051,0.0,1.0,2.303,0,3.781
+finnish_polar_398,Onko alaska kokonaan tundran peitossa?,fi,0.707,-0.85,0.0,0.0,1.946,1,1.803
+finnish_polar_1860,New Yorkin pörssissä?,fi,-0.293,0.15,0.0,0.0,1.609,1,1.466
+finnish_content_9059,Milloin Saksan ensimmäisen moottoritie valmistettiin?,fi,-0.006,0.949,0.0,0.333,1.946,0,3.222
+finnish_polar_2134,Oliko Mantineia useiden taisteluiden paikka?,fi,0.457,0.15,0.0,0.0,1.946,1,2.553
+finnish_content_2700,Milloin selvyityjät sarjaa aloitettiin esittämään Suomessa?,fi,0.044,-0.051,1.0,0.417,2.079,0,3.489
+finnish_polar_1859,Onko PerkinElmer Inc.,fi,-0.793,0.15,0.0,0.167,1.609,1,1.133
+finnish_content_10079,Mikä on Raaseporin pinta-ala?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_content_5883,Milloin Pakistan perustettiin?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_4721,Mistä Batman v Superman: Dawn of Justice -elokuvan idea on lähtenyt?,fi,2.244,1.949,0.0,0.333,2.639,0,7.165
+finnish_content_14434,Mikä oli Madeiran BKT vuonna 2018?,fi,0.244,-0.051,0.0,0.0,2.079,0,2.272
+finnish_content_5051,Mikä on San Diegon kaupungin asukasluku?,fi,0.244,1.949,0.0,0.0,2.079,0,4.272
+finnish_content_4232,Ketkä ovat mukana Darfurin konfliktissa?,fi,0.744,-1.051,0.0,0.0,1.946,0,1.639
+finnish_polar_1315,Sisältääkö naisen klitoris paisuvakudosta?,fi,-0.46,0.15,0.0,0.167,1.792,1,1.649
+finnish_content_2113,Milloin Stanley Kubrick syntyi?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_polar_552,Onko basso matalin miesääni?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_polar_2257,Voiko Suomessa kasvattaa oliiveja?,fi,-0.46,-0.85,0.0,0.333,1.792,1,0.815
+finnish_polar_117,Kävikö Iso-Britannia sodassa Jaakko I hallintokaudella?,fi,0.407,1.15,0.0,0.5,2.079,1,4.136
+finnish_polar_1368,Onko samba Brasiliasta kotoisin?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_polar_1566,Ovatko nokkaeläimet rauhoitettuja eläimiä?,fi,0.207,-0.85,1.0,0.0,1.792,1,2.149
+finnish_polar_2172,Onko lentotukialus aina vedessä?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_polar_45,Onko kannabiksen vaikutuksia tutkittu Suomessa?,fi,-0.293,0.15,0.0,0.5,1.946,1,2.303
+finnish_content_876,Mikä on yleisin aminohappo?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_1709,Harjoittiko Joseph Smith moniavioisuutta Nauvoossa?,fi,-0.293,0.15,0.0,0.333,1.946,1,2.136
+finnish_content_132,Mitä litografia tarkoittaa?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_12155,Mitä struuma tarkoittaa?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_1567,Onko Suomen luonnon suojelusta lakia?,fi,-0.043,2.15,0.0,0.0,1.946,1,4.053
+finnish_content_12842,Mikä on Oulun asutuin kaupunginosa?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_polar_1357,Oliko oikeustapauksessa keskeinen kysymys Internet Explorer -selaimen liittäminen Windows-käyttöjärjestelmän mukaan?,fi,-0.015,2.15,0.0,0.0,2.485,1,4.62
+finnish_content_6190,Kuka jääkiekkoilija tunnettiin lempinimellä Moukari?,fi,-0.756,-0.051,0.0,0.333,1.946,0,1.472
+finnish_content_2519,Milloin Choi Seung-hyun aloitti näyttelemään?,fi,-0.006,-0.051,1.0,0.25,1.946,0,3.139
+finnish_content_11679,Kuinka monta kilometriä on Luulajasta Haaparantaan?,fi,-0.556,0.949,0.0,0.0,2.079,0,2.472
+finnish_content_115,Miten skolastiikka määritellään?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_4376,Mikä on William Faulknerin tunnetuin teos?,fi,0.244,1.949,0.0,0.0,2.079,0,4.272
+finnish_content_13082,Mitkä voimankäyttö välineet ovat sallittuja vartijoilla Suomessa?,fi,-0.59,0.949,0.0,0.0,2.197,0,2.556
+finnish_polar_323,Onko Jämijärvi rehevä järvi?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_polar_1164,Onko Poseidon Percy Jacksonin isoisä?,fi,0.707,0.15,0.0,0.0,1.946,1,2.803
+finnish_content_6718,Mikä on marssin ympärys?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_1800,Onko Suomen presidentti puollustusvoimien päällikkö?,fi,0.207,0.15,0.0,0.0,1.946,1,2.303
+finnish_content_14284,Minkä ikäisenä Walt Disney perusti Disneyn?,fi,-0.156,-0.051,0.0,0.5,2.079,0,2.372
+finnish_polar_1571,Käytettiinkö Blackburn Ripon -koneita Suomessa?,fi,0.707,1.15,0.0,0.333,1.946,1,4.136
+finnish_polar_677,Onko arviolta 20 % maapallon kasvillisuuspinnasta heinien peittämää?,fi,0.207,0.15,1.0,0.167,2.303,1,3.827
+finnish_content_11490,Milloin SpaceX CRS-8 laukaistiin avaruuteen?,fi,-0.006,-0.051,0.0,0.5,1.946,0,2.389
+finnish_content_12041,Mikä on tomismin tärkein opetus?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_polar_2159,Onko Van Halen -yhtye hajonnut?,fi,0.207,1.15,0.0,0.167,1.946,1,3.47
+finnish_polar_1398,Onko Brasilialla saaria?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_content_761,Milloin samuraiperinne kehittyi?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_1240,Kuka on Syyrian hallitsija?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_content_3738,Milloin Emu Lehtinen kuoli?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_polar_585,"Onko mustan aukon painovoima niin voimakas, ettei sähkömagneettinen säteily pysty pakenemaan alueelta?",fi,0.457,1.15,2.0,0.333,2.773,1,6.713
+finnish_polar_1983,Oliko Medeia noita?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_polar_8,Oliko tyttöpop-ryhmä t.A.T.u. venäläinen?,fi,-0.127,-0.85,0.0,0.0,1.946,1,0.969
+finnish_content_6046,Milloin Suomessa tuli opiskeluvelvollisuus käyttöön?,fi,-0.256,-1.051,0.0,0.667,1.946,0,1.306
+finnish_content_1721,Minä vuonna allekirjoitettiin Liettuan-Neuvosto-Venäjän rauha?,fi,-0.256,-0.051,0.0,0.5,1.946,0,2.139
+finnish_content_793,Mikä on Marokkon pinta-ala?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_content_208,Milloin Pennsylvania liitty USA?,fi,-0.423,-1.051,0.0,0.5,1.792,0,0.818
+finnish_polar_540,Onko manga ja anime sama asia?,fi,0.807,1.15,0.0,0.0,2.079,1,4.036
+finnish_content_4137,Mihin Boris Jeltsin menehtyi?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_polar_1454,Onko koirilla umpirauhasia?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_1365,Onko manga alunperin kotoisin Japanista?,fi,-0.043,-0.85,0.0,0.0,1.946,1,1.053
+finnish_polar_1440,Onko Valkoinen talo Washingtonissa?,fi,-0.127,0.15,0.0,0.0,1.792,1,1.815
+finnish_content_13351,Mikä on Japanin valtiomuoto?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_content_9630,Minkä maalainen yhtiö Red Barrels on?,fi,-0.356,-0.051,0.0,0.0,2.079,0,1.672
+finnish_polar_1525,Onko Jesperi Kotkaniemi pelannut SM-liigassa?,fi,-0.043,0.15,0.0,0.333,1.946,1,2.386
+finnish_polar_1386,Onko ihminen osa luontoa?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_polar_862,Oliko Qing-dynastia ankara kiinalaisille?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_content_15057,Missä kaupungissa lava-tanssit on keksitty?,fi,-0.006,-0.051,0.0,0.5,1.946,0,2.389
+finnish_polar_1122,Onko Final Fantasy XV -pelin päähenkilön nimi Noct?,fi,0.492,3.15,0.0,0.0,2.303,1,5.945
+finnish_content_7771,Kuinka kauan Viron vapaussotaa sodittiin?,fi,-0.256,-0.051,0.0,0.333,1.946,0,1.972
+finnish_content_2555,Mikä on bidi?,fi,-0.256,-1.051,0.0,0.0,1.609,0,0.302
+finnish_polar_2058,Oliko suomalaisilla käytössään Karjalankannaksen taisteluissa 129 000 miestä?,fi,0.207,0.15,0.0,0.0,2.197,1,2.554
+finnish_polar_1783,Oliko Jack Nicholsonin viimeinen rooli elokuvassa How Do You Know?,fi,0.096,1.15,0.0,0.0,2.485,1,3.731
+finnish_polar_1838,Onko nokkosessa myrkkyä?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_content_12280,Milloin Kreikka perustettiin?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_618,Onko Suomea koskaan hallinnut diktaattori?,fi,-0.043,-0.85,0.0,0.5,1.946,1,1.553
+finnish_polar_593,Sodittiinko Pohjois-Afrikan rintaman tapahtumien aikaan aavikolla?,fi,0.607,2.15,0.0,0.333,2.079,1,5.169
+finnish_polar_1545,Onko mainosvalokuvaus kallista yrityksille?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_content_312,Montako maata EU:ssa oli ennen Suomen liittymistä siihen?,fi,-0.185,-0.051,0.0,0.0,2.303,0,2.067
+finnish_content_2686,Missä Drayson Bowman aloitti ammattilaisuransa?,fi,-0.006,-0.051,0.0,0.5,1.946,0,2.389
+finnish_polar_230,Ovatko elokuvat kielletty jossain maassa?,fi,-0.293,0.15,0.0,0.5,1.946,1,2.303
+finnish_content_6538,Kuinka monta maata kuuluu Eurooppaan?,fi,-0.756,0.949,0.0,0.333,1.946,0,2.472
+finnish_polar_1867,Onko Hạ Longin lahti Unescon maailmanperintöluettelossa?,fi,0.007,0.15,0.0,0.333,2.079,1,2.569
+finnish_content_10111,Kuka oli Mary Jane Watsonin lempisukulainen perheen ulkopuolelta?,fi,0.958,0.949,0.0,0.0,2.303,0,4.21
+finnish_content_7271,Montako itämerensuomalaista kansaa on?,fi,-0.423,-0.051,0.0,0.0,1.792,0,1.318
+finnish_content_1101,Mikä Ikaalisten Kylpylän kaupunginosan aiempi nimi oli?,fi,0.41,0.949,1.0,0.0,2.197,0,4.556
+finnish_polar_2062,Voisiko ihminen selvitä maapallolla ilman tekniikkaa?,fi,-0.193,0.15,0.0,0.5,2.079,1,2.536
+finnish_polar_62,Ovatko afrikaanerit vaalea ihoisia?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_content_589,Kuka oli Immanuel Kant?,fi,-0.423,-0.051,0.0,0.0,1.792,0,1.318
+finnish_content_4097,Milloin Edwin Linkomies oli Suomen pääministerinä?,fi,0.844,-0.051,0.0,0.0,2.079,0,2.872
+finnish_content_14416,Mikä oli Ginger Rogersin ensimmäinen elokuva rooli?,fi,0.244,2.949,0.0,0.0,2.197,0,5.39
+finnish_content_10114,Kuinka monta tuntia ihmisen tulee keskimäärin nukkua?,fi,-0.09,0.949,1.0,0.333,2.197,0,4.389
+finnish_polar_707,Voiko paavi vaikuttaa toisten maiden asioihin?,fi,-0.193,1.15,0.0,0.333,2.079,1,3.369
+finnish_polar_1257,Elääkö enemmistö Yhdysvaltojen intiaaneista reservaateissa?,fi,0.207,1.15,0.0,0.333,1.946,1,3.636
+finnish_content_506,Minä vuonna Auto Union lopetti toimintansa?,fi,0.444,-0.051,0.0,0.667,2.079,0,3.139
+finnish_polar_1915,Onko kungfutselaisuus uskonto?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_polar_1235,Onko Sukkula Venukseen Kikan kappale?,fi,0.707,-0.85,0.0,0.0,1.946,1,1.803
+finnish_content_4077,Minä vuonna ensimmäinen Mannerheim-risti on annettu?,fi,0.844,-0.051,0.0,0.667,2.079,0,3.539
+finnish_polar_2093,Onko plutonium vaarallista ihmiselle?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_polar_193,Uskoivatko mayat Jumalaan tai Jeesukseen?,fi,-0.293,1.15,0.0,0.333,1.946,1,3.136
+finnish_polar_603,Onko Brandon Kozun pelannut NHL:ssä?,fi,-0.043,0.15,0.0,0.333,1.946,1,2.386
+finnish_content_978,Minä vuonna elokuva Tie Eldoradoon julkaistiin?,fi,1.244,-0.051,0.0,0.667,2.079,0,3.939
+finnish_content_7692,Montako kehää Danten helvetissä mytologian mukaan oli?,fi,0.077,1.949,0.0,0.0,2.197,0,4.223
+finnish_polar_934,Onko Kiina noudattanut Suuri harppaus suunnitelmaa?,fi,-0.393,0.15,0.0,0.333,2.079,1,2.169
+finnish_polar_797,Onko Rodimus Autobotti?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_content_10590,Milloin HMS Amazon valmistui?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_content_2874,Mitä tyrosiini on?,fi,-0.256,-1.051,0.0,0.0,1.609,0,0.302
+finnish_content_1610,Mistä Taranton taistelu on saanut nimensä?,fi,0.044,-0.051,0.0,0.5,2.079,0,2.572
+finnish_content_8316,Kuka Mauro Berruto on?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_1908,Oliko Kalle Kaihari Urho Kekkosen ystävä?,fi,0.807,0.15,0.0,0.0,2.079,1,3.036
+finnish_content_11255,Mikä on Belgian väkiluku miljoonan asukkaan tarkkuudella?,fi,0.41,0.949,0.0,0.0,2.197,0,3.556
+finnish_polar_1606,Onko Linnanmäen huvipuistossa peilitaloa?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_polar_591,Ovatko eksoottiset lemmikkieläimet kiellettyjä Suomessa?,fi,-0.293,0.15,0.0,0.5,1.946,1,2.303
+finnish_content_519,Kuinka moneen maakuntaan Katalonia on jaettu?,fi,0.644,-0.051,0.0,0.667,2.079,0,3.339
+finnish_polar_542,Onko lumikola suomalainen keksintö?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_content_10795,Mikä on maahanmuuttajien osuus väkivaltaisista ja seksuaalirikoksista Ruotsissa nykyään?,fi,0.869,1.949,0.0,0.0,2.398,0,5.216
+finnish_content_5325,Mikä Porthania on?,fi,-0.256,-1.051,0.0,0.0,1.609,0,0.302
+finnish_polar_15,Onko sopraano kaikista äänialoista korkein?,fi,0.457,0.15,0.0,0.0,1.946,1,2.553
+finnish_content_9665,Kuinka pitkä Tengeliönjoki on?,fi,-0.423,-1.051,0.0,0.0,1.792,0,0.318
+finnish_polar_2143,Onko feminismi maailmanlaajuista?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_content_661,Minkä palkinnon Geórgios Papanikoláou sai vuonna 1950?,fi,-0.256,-0.051,0.0,0.5,2.197,0,2.39
+finnish_content_12965,Kuka on kehittänyt jääsiiderin?,fi,-0.423,-1.051,0.0,0.333,1.792,0,0.651
+finnish_polar_807,Onko salibandy kotoisin Ruotsista?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_content_6939,Mikä oli Saksan asukasluku vuonna 1950?,fi,0.244,-0.051,0.0,0.0,2.079,0,2.272
+finnish_polar_2171,Onko lääkärin peruskoulutus Suomessa lääketieteen lisensiaatin tutkinto?,fi,0.873,0.15,0.0,0.0,2.197,1,3.22
+finnish_content_5002,Mitä Rico Fata tekee nykyisin CIHL-junioriliigassa?,fi,0.044,-0.051,0.0,0.667,2.079,0,2.739
+finnish_polar_118,Kaatuiko Vilho Koskela jatkosodassa 1944?,fi,-0.293,0.15,0.0,0.333,1.946,1,2.136
+finnish_content_12553,Kuinka monta päivää Guadalcanalin taistelu kesti?,fi,-0.356,0.949,0.0,0.333,2.079,0,3.005
+finnish_content_2484,Mistä kavevalan kulttuuri on alkanut?,fi,0.244,-0.051,0.0,0.333,1.946,0,2.472
+finnish_content_895,Mikä oli Pohjolan unionivaltio?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_2104,Onko Japanissa tulivuoria?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_1979,Onko Shin Megami Tensei: Persona 4 -peliä julkaistu Suomessa?,fi,1.207,2.15,0.0,0.5,2.485,1,6.342
+finnish_content_13963,Kuinka suuri Pyhäjärvi on?,fi,-0.423,-1.051,0.0,0.0,1.792,0,0.318
+finnish_content_13946,Kuinka pitkä on koripalloilijan keskimääräinen ura?,fi,0.044,-0.051,0.0,0.0,2.079,0,2.072
+finnish_polar_1262,Onko Suomen kielessä puhekieli sama kuin kirjakieli?,fi,0.04,0.15,0.0,0.0,2.197,1,2.387
+finnish_content_2647,Mikä alykkyysosamäärä on imbesillin määritelmänä?,fi,-0.006,-0.051,0.0,0.0,1.946,0,1.889
+finnish_polar_535,Onko kalasääksi täysin rauhoitettu lintu?,fi,-0.043,0.15,1.0,0.5,1.946,1,3.553
+finnish_content_7525,Milloin Mannerheim kuoli?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_9893,Minä vuonna Alvar Aalto syntyi?,fi,0.744,-0.051,0.0,0.5,1.946,0,3.139
+finnish_polar_1263,Onko Koraanissa samoja kertomuksia kuin Raamatussa?,fi,-0.193,2.15,0.0,0.0,2.079,1,4.036
+finnish_polar_2144,Voiko synteettisen biologian avulla kloonata eliöitä?,fi,-0.193,1.15,0.0,0.333,2.079,1,3.369
+finnish_content_9987,Mikä on Amerikoiden korkein vuori?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_content_6022,Kuka on tehnyt pieni merenneito patsaan?,fi,0.044,-0.051,0.0,0.5,2.079,0,2.572
+finnish_polar_9,Onko merivesi aina suolaista?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_content_8285,Mistä suojeluskuntaselkkaus sai alkunsa?,fi,-0.423,-1.051,0.0,0.5,1.792,0,0.818
+finnish_content_9318,Milloin tapahtui Saksan antautuminen toisessa maailmansodassa?,fi,-0.356,0.949,0.0,0.333,2.079,0,3.005
+finnish_polar_648,Pauli seurasta tullut kultti-ilmiö?,fi,-0.127,0.15,1.0,0.167,1.792,1,2.982
+finnish_polar_763,Onko huroneja olemassa vuonna 2019?,fi,-0.543,0.15,0.0,0.333,1.946,1,1.886
+finnish_content_6194,Milloin Westwood Studios perustettiin?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_polar_993,Ovatko huronit alkuperäiskansaa?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_polar_132,Onko Georg Magnus Sprengtporten luonnehdittu maanpetturiksi?,fi,0.407,0.15,0.0,0.5,2.079,1,3.136
+finnish_content_12030,Milloin Nintendo Wii julkaistiin?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_content_11159,Montako saamelais ryhmää on?,fi,0.244,-0.051,0.0,0.0,1.792,0,1.985
+finnish_content_7572,Milloin S/S Yorkbrook -alus lähti viimeiselle Helsingistä Espanjaan suuntautuneelle matkalleen?,fi,0.244,1.949,1.0,0.417,2.485,0,6.095
+finnish_content_5990,Mitkä olivat Ap Bacin tappiot?,fi,0.244,0.949,0.0,0.0,1.946,0,3.139
+finnish_polar_409,Millaisia vaikutuksia pakko-oireista kärsivällä ihmisellä esiintyy?,fi,-0.193,1.15,1.0,0.25,2.079,1,4.286
+finnish_content_7017,Mikä Rodoksen kolossi oli?,fi,0.244,-0.051,0.0,0.0,1.792,0,1.985
+finnish_polar_179,Onko Captain Marvel ensimmäinen Marvel Comicsin elokuva jossa päähenkilö on nainen?,fi,1.007,0.15,1.0,0.0,2.565,1,4.722
+finnish_polar_1609,Voiko Suomessa kasvattaa sitruunaa?,fi,-0.46,-0.85,0.0,0.333,1.792,1,0.815
+finnish_polar_1739,Onko Ranskassa ollut koskaan sisällissotaa?,fi,-0.043,-0.85,0.0,0.0,1.946,1,1.053
+finnish_content_6137,Miten keisarin rooli keksittiin?,fi,-0.09,-0.051,0.0,0.333,1.792,0,1.984
+finnish_content_6578,Mikä puolue sai eniten ääniä vuoden 1966 Suomen eduskuntavaaleissa?,fi,0.244,0.949,0.0,0.667,2.398,0,4.258
+finnish_polar_2290,Onko Hergé luonut muita sarjakuvia kuin Tintti?,fi,-0.127,2.15,0.0,0.333,2.197,1,4.553
+finnish_content_1427,Minä vuonna Grande Armée on perustettu?,fi,1.044,-0.051,0.0,0.667,2.079,0,3.739
+finnish_content_9432,Mikä on Andrei Svetšnikovin kasvattajaseura?,fi,0.244,0.949,0.0,0.0,1.946,0,3.139
+finnish_content_6921,Milloin kommunismi syntyi?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_5258,Missä päin Ruotsia Strömma sijaitsee?,fi,0.244,-0.051,0.0,0.5,1.946,0,2.639
+finnish_polar_1102,Onko Pitkäjärvellä peruskoulua?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_content_7733,Miten hepatiitti määritellään?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_12600,Mitä lyhenne VPN tarkoittaa?,fi,-0.09,-0.051,0.0,0.333,1.792,0,1.984
+finnish_polar_1335,Oliko vieraskielisten osuus Helsingissä vuonna 2004 yli kuusi prosenttia?,fi,0.957,0.15,0.0,0.0,2.398,1,3.505
+finnish_polar_2279,Suomalaiset jääkiekko kentät on?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_content_3882,Milloin HMCS Huron -alus siirrettiin reserviin ja poistolistalle?,fi,-0.042,0.949,0.0,0.5,2.303,0,3.71
+finnish_polar_998,Onko Eläinten vapautusrintama muodollinen organisaatio?,fi,0.207,0.15,0.0,0.0,1.946,1,2.303
+finnish_polar_800,Onko Sia kotoisin Australiasta?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_content_4521,Mikä on Runes of Magic pelin lajityyppi?,fi,0.577,1.949,0.0,0.0,2.197,0,4.723
+finnish_content_12809,Mikä oli Walter Chryslerin vaimon nimi?,fi,0.244,1.949,0.0,0.0,2.079,0,4.272
+finnish_polar_661,Onko massa negatiivinen yhtälö?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_content_12595,Kuka keksi elektroniputken?,fi,-0.756,-1.051,0.0,0.333,1.609,0,0.135
+finnish_polar_362,Oliko Aristoteles ensimmäinen filosofi?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_polar_457,Kasvaako valkosipulia Suomessa?,fi,-0.293,-0.85,0.0,0.333,1.609,1,0.799
+finnish_content_9150,Mikä seura varasi Ludvig Rensfeldtin toisella kierroksella 35. pelaajana NHL:n varaustilaisuudessa 2010?,fi,0.789,0.949,0.0,0.667,2.639,0,5.044
+finnish_content_990,Mikä on Turkin BKT?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_790,Pudotettiinko Nagasakin ydinpommi ennen Hirosiman vastaavaa pommia?,fi,0.707,0.15,0.0,0.333,2.197,1,3.387
+finnish_polar_2273,Kauanko Suomessa on ollut asutusta?,fi,-0.043,-0.85,0.0,0.0,1.946,1,1.053
+finnish_polar_239,Voiko alkoholilla puhdistaa haavan?,fi,-0.46,-0.85,0.0,0.333,1.792,1,0.815
+finnish_content_1874,Mikä on Arch Linux?,fi,-0.423,-0.051,0.0,0.0,1.792,0,1.318
+finnish_content_9714,Kuka on Kantonin pormestari?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_637,Onko Levillä kaksi gondolihissiä?,fi,-0.46,0.15,0.0,0.0,1.792,1,1.482
+finnish_polar_300,Onko Martinique Ranskan hallinnollinen alue?,fi,0.457,0.15,0.0,0.0,1.946,1,2.553
+finnish_polar_318,Oliko Robert Walker näyttelijä?,fi,0.207,0.15,0.0,0.0,1.792,1,2.149
+finnish_polar_1603,Onko Venäjällä vuoristoa?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_1309,Onko ihmisen suolistossa luonnollisesti myrkkyjä?,fi,-0.293,-0.85,0.0,0.0,1.946,1,0.803
+finnish_polar_1835,Onko tornadossa vettä?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_1768,Onko Oulujärveä kutsuttu Kainuun mereksi?,fi,-0.293,0.15,0.0,0.5,1.946,1,2.303
+finnish_polar_2178,Oliko Heinävesi Suomen väkiluvultaan kahdensadan suurimman kunnan joukossa vuonna 2018?,fi,0.873,0.15,0.0,0.0,2.485,1,3.508
+finnish_content_3803,Missä kirkkorakennuksessa on Suomen suurimmat urut?,fi,-0.156,0.949,0.0,0.0,2.079,0,2.872
+finnish_polar_1898,Onko nisäkkäiden siittimessä luita?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_polar_782,Asuuko Suomen presidentti Presidentinlinnassa?,fi,0.207,0.15,0.0,0.333,1.792,1,2.482
+finnish_polar_1963,Onko Hondalla Honda Monkey lisäksi muita apinoiden mukaan nimettyjä mopo- ja moottoripyörämalleja?,fi,0.389,2.15,1.0,0.167,2.639,1,6.345
+finnish_polar_2100,Puhutaanko Korsikan saarella ranskaa?,fi,0.207,0.15,0.0,0.333,1.792,1,2.482
+finnish_polar_1330,Pelataanko tammipeliä shakkilaudalla?,fi,-0.293,-0.85,0.0,0.333,1.609,1,0.799
+finnish_content_5961,Missä maassa Smart valmistaa autojaan?,fi,-0.506,-0.051,0.0,0.5,1.946,0,1.889
+finnish_polar_849,Onko Parkanonjärvi pohjois-etelä-suuntainen järvi?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_content_13172,Mitä poolinen tarkoittaa?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_534,Onko Serbian pohjoisosa hedelmällistä tasankoa?,fi,0.207,0.15,0.0,0.0,1.946,1,2.303
+finnish_content_5873,Mikä on Melanesian pinta-ala?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_854,Asuiko Tanskassa viikinkejä?,fi,-0.293,-0.85,0.0,0.333,1.609,1,0.799
+finnish_content_12324,Milloin Tiehallinto oli toiminnassa?,fi,0.244,-1.051,0.0,0.0,1.792,0,0.985
+finnish_polar_2032,Onko Alan Moore koskaan kirjoittanut kirjaa?,fi,0.207,0.15,0.0,0.5,2.079,1,2.936
+finnish_content_9943,Kuka perusti Rooman valtakunnan vuonna 600 eaa.?,fi,0.41,-0.051,0.0,0.667,2.197,0,3.223
+finnish_polar_419,Onko Tuhat ja yksi yötä satukokoelman kertomukset arabialaisia?,fi,-0.222,2.15,0.0,0.0,2.303,1,4.231
+finnish_polar_1913,Sotivatko Etelä-Afrikan heimot keskenään?,fi,0.207,0.15,0.0,0.333,1.792,1,2.482
+finnish_content_11250,Miten dissosiaatiohäiriö määritellään?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_68,Onko Nepalissa koskaan käyty sisällissotaa?,fi,-0.043,-0.85,0.0,0.667,1.946,1,1.72
+finnish_content_12444,Milloin Erich Fromm kuoli?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_polar_1923,Näkyvätkö sähköhoidon tulokset välittömästi?,fi,0.207,0.15,0.0,0.333,1.792,1,2.482
+finnish_content_8597,Miten korkotaso vaikuttaa asuntojen hintakehitykseen?,fi,-0.256,-0.051,0.0,0.5,1.946,0,2.139
+finnish_polar_1760,Onko Pohjois-Suomen vesistöissä jokirapuja?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_content_7959,Milloin stoalaisuutta harjoitettiin?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_1616,Onko Banat Al-Riyadh -teos ravisuttanut saudiarabialaista yhteiskuntaa?,fi,0.04,1.15,0.0,0.333,2.197,1,3.72
+finnish_polar_2252,Voiko valuutta loppua?,fi,-0.293,-0.85,0.0,0.167,1.609,1,0.633
+finnish_polar_2292,Onko Down-kreivikunta olemassa vuonna 2019?,fi,-0.543,0.15,0.0,0.333,1.946,1,1.886
+finnish_content_11512,Mikä on trigonometria?,fi,-0.256,-1.051,0.0,0.0,1.609,0,0.302
+finnish_polar_808,Oliko ennen vanhaan Geishoilla oikeuksia?,fi,-0.043,-0.85,0.0,0.0,1.946,1,1.053
+finnish_content_9985,Kuka valittiin USA presidentiksi Ronald Reaganin jälkeen?,fi,-0.09,-0.051,0.0,0.667,2.197,0,2.723
+finnish_polar_1767,Onko saariharmaakettu uhanalainen laji?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_content_2926,Mikä on Tsekin BKT?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_1658,Oliko Italia Saksan liittolainen toisessa maailmansodassa?,fi,0.007,0.15,0.0,0.0,2.079,1,2.236
+finnish_polar_918,Onko Pyhä Alphonsus Maria Antony John Francis Cosmas Damian Michael Gaspard de Liguori C.Ss.R. mies?,fi,4.473,0.15,0.0,0.0,2.89,1,7.513
+finnish_content_37,Missä 2004 iso tsunami iski?,fi,-0.006,-0.051,0.0,0.333,1.946,0,2.222
+finnish_content_10811,Mikä on Malmin pinta-ala?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_content_3217,Milloin Platon eli?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_14625,Kuka kehitti pelitutkimuksen?,fi,-0.756,-1.051,0.0,0.333,1.609,0,0.135
+finnish_polar_937,Onko Merkurius planeetta?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_content_11498,Kuka kirjoitt kirjan Maailmojen sota?,fi,-0.256,-0.051,0.0,0.5,1.946,0,2.139
+finnish_content_13502,Miten pitkä matka on Lahden ja Heinolan välillä?,fi,-0.185,0.949,0.0,0.0,2.303,0,3.067
+finnish_polar_789,Onko Punainenmeri oikeasti punainen?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_polar_1326,Onko Rutger Hauer kotoisin Alankomaista?,fi,-0.043,0.15,0.0,0.0,1.946,1,2.053
+finnish_polar_431,Tuottaako Venäjä itse kaikki tarvitsemansa tuotteet?,fi,0.407,0.15,1.0,0.25,2.079,1,3.886
+finnish_polar_385,Voiko Bangkokissa ostaa asunnon?,fi,-0.46,-0.85,0.0,0.333,1.792,1,0.815
+finnish_content_10610,Milloin Richard Stallman syntyi?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_polar_37,Onko Uranuksella vettä?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_1038,Onko Suomessa työosuuskuntia?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_1190,Onko Aarne Honkajoki tunnollinen sotilas?,fi,0.457,0.15,0.0,0.0,1.946,1,2.553
+finnish_content_4330,Mikä on Suomen eteläisin kunta?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_polar_990,Vaikuttaako nisäkkään siittimen koko sen rooliin heimossa?,fi,0.873,0.15,0.0,0.667,2.197,1,3.887
+finnish_content_15119,Missä Suomessa on pisiten ollut asutusta?,fi,0.444,-1.051,0.0,0.0,2.079,0,1.472
+finnish_content_14014,Mihin hanke suurmoskeijan perustamisesta Helsinkiin kaatui?,fi,0.844,0.949,0.0,0.333,2.079,0,4.205
+finnish_polar_908,Onko Sisiliassa mafiosoja?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_content_4044,Kuinka suuri oli Mongolian valtakunta suurimmillaan?,fi,0.244,-0.051,0.0,0.0,2.079,0,2.272
+finnish_content_10311,Mikä oli segan ensimmäinen konsoli?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_content_6664,Mikä on argueriitti?,fi,-0.256,-1.051,0.0,0.0,1.609,0,0.302
+finnish_polar_406,Onko Hala'ibin kolmion alueella asutusta?,fi,-0.293,0.15,0.0,0.0,1.946,1,1.803
+finnish_content_10963,Miten Šaria määritellään?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_112,Onko NCsoft suomalainen yhtiö?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_polar_1928,Onko kultaisella taljalla taikavoimia?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_content_12678,Millaisen vaikutuksen Suomen sisällissota jätti jälkeensä?,fi,-0.356,-0.051,0.0,0.5,2.079,0,2.172
+finnish_polar_1007,Vaikuttiko myöhäisantiikki Suomessa?,fi,-0.293,-0.85,0.0,0.333,1.609,1,0.799
+finnish_polar_1171,Ovatko David ja Richard Attenborough veljeksiä?,fi,0.807,1.15,0.0,0.0,2.079,1,4.036
+finnish_content_5216,Minä vuonna aloitettiin käyttämään tulkkeja?,fi,-0.506,-0.051,1.0,0.333,1.946,0,2.722
+finnish_content_7310,Minkä värisestä naamiosta Leonardo tunnistetaan?,fi,-0.506,0.949,0.0,0.333,1.946,0,2.722
+finnish_content_13751,Mitä Jehovan todistajat korostavat uskonnossaan?,fi,-0.256,-0.051,0.0,0.5,1.946,0,2.139
+finnish_polar_2275,Onko lapsityö sallittua Kiinassa?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_content_4219,Missä nykyisessä maassa sijaitsee Karthago?,fi,-0.506,-0.051,0.0,0.333,1.946,0,1.722
+finnish_content_13710,Kuka oli Rooman viimeinen keisari?,fi,0.244,-0.051,0.0,0.0,1.946,0,2.139
+finnish_polar_559,Onko Alex Plante pelannut NHL:ssä?,fi,-0.043,0.15,0.0,0.333,1.946,1,2.386
+finnish_polar_474,Onko Charles Goodyear perustanut Goodyear -autonrengas yrityksen?,fi,0.04,1.15,0.0,0.333,2.197,1,3.72
+finnish_content_1551,Milloin Charleston on perustettu?,fi,0.244,-1.051,0.0,0.5,1.792,0,1.485
+finnish_content_243,Kuinka kaukana München on Berliinistä?,fi,-0.006,-1.051,0.0,0.0,1.946,0,0.889
+finnish_polar_157,Onko Portugalissa trooppinen ilmasto?,fi,-0.46,0.15,0.0,0.0,1.792,1,1.482
+finnish_polar_261,Onko Nicklas Bäckström pelannut Oulun Kärpissä?,fi,0.007,0.15,0.0,0.333,2.079,1,2.569
+finnish_content_12378,Kuka perusti Friittala Oy?,fi,-0.423,-0.051,0.0,0.333,1.792,0,1.651
+finnish_polar_1141,Onko Malakan asukasluku noin 800 000?,fi,0.207,0.15,0.0,0.0,1.946,1,2.303
+finnish_polar_36,Onko Andien huiput kokonaan lumen peitossa?,fi,0.607,0.15,0.0,0.0,2.079,1,2.836
+finnish_content_13506,Kuka perusti SISU merkin?,fi,-0.423,-0.051,0.0,0.333,1.792,0,1.651
+finnish_polar_1419,Onko vartijoilla salassapitovelvollisuutta?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_content_504,Milloin Aku Ankka lehteä on aloitettu julkaisemaan Suomessa?,fi,0.244,1.949,1.0,0.417,2.303,0,5.913
+finnish_polar_1373,Onko Blastaar superroisto Marvel-kustantamon sarjakuvissa?,fi,-0.293,0.15,0.0,0.0,1.946,1,1.803
+finnish_content_5642,Millä aika kaudella Samurait palvelivat Japanissa?,fi,-0.156,-0.051,0.0,0.667,2.079,0,2.539
+finnish_polar_484,Onko kristinusko pohjimmiltaan henkilökultti?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_content_10035,Milloin Mosambik itsenäistyi?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_784,"Onko Cheekin ""Sokka irti"" -kappale Keko Salatan tuotantoa?",fi,1.35,2.15,0.0,0.0,2.485,1,5.985
+finnish_content_13744,Minä vuonna itä- ja länsi-Saksan muuri purettiin?,fi,1.244,1.949,0.0,0.5,2.197,0,5.89
+finnish_content_4586,Mihin Whitney Houston kuoli?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_polar_2225,Onko Maybach automerkki?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_content_13064,Milloin Norja on perustettu?,fi,0.244,-1.051,0.0,0.5,1.792,0,1.485
+finnish_content_9460,Mikä on luonteenomaista korkeakirkolliselle spiritualiteetille?,fi,-0.256,-0.051,0.0,0.0,1.946,0,1.639
+finnish_polar_347,Monesko Tribal-luokan hävittäjä HMS Ashanti oli?,fi,-0.393,0.15,0.0,0.0,2.079,1,1.836
+finnish_content_1132,Missä Alsace sijaitsee?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_1313,Onko Kim Il-sung Kim Jong-unin isä?,fi,1.207,0.15,0.0,0.0,2.079,1,3.436
+finnish_content_6877,Mikä on Venäjän suurin federaatiopiiri?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_content_13177,Mihin Michelangelo kuoli?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_780,Onko Alankomaissa monarkia?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_1062,Onko Venetsiassa Unescon tieteen ja teknologian Euroopan-aluetoimisto?,fi,0.373,2.15,0.0,0.0,2.197,1,4.72
+finnish_polar_513,Onko ajattelu ja ajatus samanlainen prosessi aivoissa?,fi,0.54,1.15,0.0,0.0,2.197,1,3.887
+finnish_polar_111,Käytetäänkö helikoptereita paljon sotilaallisissa tehtävissä?,fi,0.207,0.15,0.0,0.5,1.946,1,2.803
+finnish_polar_420,Oliko Yhdysvaltain vapaussota osa Amerikan vallankumousta?,fi,-0.193,0.15,0.0,0.0,2.079,1,2.036
+finnish_content_14215,Missä Perparim Hetemaj aloitti ammattilais uransa?,fi,0.044,-0.051,0.0,0.667,2.079,0,2.739
+finnish_polar_979,Onko Chaconpekari uhanalainen laji?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_content_9538,Kuinka pitkä salibandy maila on keskimäärin?,fi,-0.556,1.949,0.0,0.0,2.079,0,3.472
+finnish_polar_607,Olivatko kaikki Suomen kaartiin kuuluvat sotilaat suomalaisia?,fi,0.54,2.15,1.0,0.167,2.197,1,6.054
+finnish_polar_1544,Onko latina on lääketieteellinen kieli?,fi,0.707,-0.85,0.0,0.0,1.946,1,1.803
+finnish_polar_2146,Valmistetaanko videopelejä Suomessa?,fi,-0.293,-0.85,0.0,0.333,1.609,1,0.799
+finnish_polar_243,Onko Helsingin kaupunginkirjasto osa HelMet-kirjastoa?,fi,-0.293,0.15,0.0,0.0,1.946,1,1.803
+finnish_polar_1750,Onko Patvinsuon kansallispuisto osa Pohjois-Karjalan biosfäärialuetta?,fi,-0.193,0.15,0.0,0.0,2.079,1,2.036
+finnish_content_13557,Mitä tarkoittaa buurit?,fi,-0.756,-1.051,0.0,0.333,1.609,0,0.135
+finnish_content_5542,Milloin Lady Jane Grey syntyi?,fi,0.744,-0.051,0.0,0.333,1.946,0,2.972
+finnish_polar_1000,Oliko Jesaja lojaali kuningas Hiskialle?,fi,-0.043,-0.85,0.0,0.0,1.946,1,1.053
+finnish_polar_133,Onko filosofia kansainvälisesti tunnettu termi?,fi,0.457,0.15,0.0,0.0,1.946,1,2.553
+finnish_polar_1824,Elääkö Suomen vesistöissä kaskelotteja?,fi,0.207,0.15,0.0,0.333,1.792,1,2.482
+finnish_content_10526,Mikä on Texasin suurin kaupunki?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_polar_1077,Onko syytä kutsua siiliä eläväksi fossiiliksi?,fi,-0.393,1.15,1.0,0.167,2.079,1,4.003
+finnish_content_4452,Millä vuosisadalla valtio kielsi muinaisuskon harjoittamisen?,fi,-0.356,-0.051,0.0,0.5,2.079,0,2.172
+finnish_polar_1195,Oliko Johannes Brahms naimissa?,fi,0.207,0.15,0.0,0.0,1.792,1,2.149
+finnish_polar_1627,Voittiko Venäjä ulkovaltojen intervention?,fi,0.207,0.15,0.0,0.167,1.792,1,2.316
+finnish_polar_240,Onko Climax Studios suomalainen yhtiö?,fi,0.457,0.15,0.0,0.0,1.946,1,2.553
+finnish_polar_147,Voiko karjalankarhukoiran häntä olla synnynnäisesti töpö?,fi,1.207,-0.85,0.0,0.0,2.079,1,2.436
+finnish_polar_1899,Onko maaperä talvisin huomattavasti lämpimämpää kuin ulkoilma?,fi,0.373,0.15,0.0,0.0,2.197,1,2.72
+finnish_content_13720,Milloin ensimmäinen kondomi on kehitetty?,fi,0.244,-0.051,0.0,0.5,1.946,0,2.639
+finnish_content_11845,Mikä on tunnetuin Georgian kirjallisuuden teos?,fi,0.444,0.949,0.0,0.0,2.079,0,3.472
+finnish_polar_1049,Onko Urkeš kukkula?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_polar_2294,Onko tunteita ja tuoksuja sarjassa vielä alkuperäisiä näyttelijöitä?,fi,0.635,2.15,0.0,0.0,2.303,1,5.088
+finnish_content_8650,Missä Liutprand Cremonalainen syntyi?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_polar_103,Onko Maxim Noreaulla pikkuveljiä?,fi,0.207,0.15,0.0,0.0,1.792,1,2.149
+finnish_content_4058,Milloin Shane Black on syntynyt?,fi,0.494,-0.051,0.0,0.333,1.946,0,2.722
+finnish_polar_866,Onko Dubaissa vuoria?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_90,Onko Oscar Robertson voittanut NBA-mestaruuden?,fi,-0.043,0.15,0.0,0.333,1.946,1,2.386
+finnish_polar_2213,Onko pankkitilillä oleva valuutta vain numeroita?,fi,-0.393,1.15,1.0,0.0,2.079,1,3.836
+finnish_content_10101,Missä sijaitsee suurin maatila maailmassa?,fi,-0.006,-0.051,0.0,0.5,1.946,0,2.389
+finnish_content_7683,Mikä on Islannin pinta-ala,fi,-0.09,-0.051,0.0,0.0,1.609,0,1.468
+finnish_polar_2248,Onko tuuli aaltoliikettä ilmassa?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_content_7752,Milloin keisari Leo IV hallitsi?,fi,0.244,-0.051,0.0,0.333,1.946,0,2.472
+finnish_content_14329,Mitkä ovat Bonifacin luvut?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_893,Näyttelikö Avery Brooks televisiosarja Star Trekissä?,fi,0.207,0.15,0.0,0.5,2.079,1,2.936
+finnish_content_7847,Montako perustaja jäsentä oli Suomen kääntäjien ja tulkkien liitto ry:ssä,fi,0.577,0.949,0.0,0.0,2.398,0,3.924
+finnish_polar_980,Onko Kuriilien saariryhmän saarilla asutusta?,fi,-0.293,0.15,0.0,0.0,1.946,1,1.803
+finnish_content_8469,Milloin Aliens vs. Predator elokuva julkaistiin?,fi,0.644,0.949,0.0,0.333,2.079,0,4.005
+finnish_polar_897,Uskovatko buddhalaiset vain yhteen jumalaan?,fi,-0.043,1.15,0.0,0.333,1.946,1,3.386
+finnish_content_8721,Miksi Israel perustettiin?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_370,Onko Itämeressä valaita?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_1694,Voiko vuorella asua?,fi,-0.293,-0.85,0.0,0.167,1.609,1,0.633
+finnish_polar_1325,Onko Bermudan kolmion alueella maanjäristyksiä?,fi,-0.293,0.15,0.0,0.0,1.946,1,1.803
+finnish_content_10174,Kuka on luonut internetin?,fi,-0.423,-1.051,0.0,0.333,1.792,0,0.651
+finnish_polar_757,Onko Lisa Marie Elvis Presley ainoa lapsi?,fi,1.373,0.15,0.0,0.0,2.197,1,3.72
+finnish_polar_84,Onko Boliviassa heimoja?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_1706,Onko Kuuba saarivaltio?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_polar_281,Onko Miles ”Tails” Prower 8-vuotias?,fi,-0.043,2.15,0.0,0.0,2.197,1,4.304
+finnish_polar_315,Onko sunnuntai edelleen roomalaisessa ja juutalaisessa kalentereissa viikon ensimmäinen päivä?,fi,2.096,2.15,0.0,0.0,2.485,1,6.731
+finnish_polar_98,Monesko USA presidentti Ronald Reagan oli?,fi,-0.593,1.15,0.0,0.0,2.079,1,2.636
+finnish_polar_732,Onko lämpösäteily vaarallista ihmiselle?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_polar_525,Oliko Iasonin puoliso Medeia?,fi,-0.127,0.15,0.0,0.0,1.792,1,1.815
+finnish_content_8413,Ketkä loivat Mary Jane Watsonin?,fi,-0.506,-0.051,0.0,0.333,1.946,0,1.722
+finnish_content_518,Mitä nimeä elamilaiset käyttivät itse maastaan?,fi,-0.356,-0.051,0.0,0.667,2.079,0,2.339
+finnish_polar_2082,Onko Tornion joessa lohta?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_content_1968,Mitä tarkoittaa ro-ro-rahtialus?,fi,-0.756,-1.051,0.0,0.333,1.609,0,0.135
+finnish_polar_1703,Onko Yhdysvaltain perustuslain mukaan liittovaltion kaikki lainsäädännöllinen valta kongressilla?,fi,0.832,0.15,0.0,0.0,2.398,1,3.38
+finnish_polar_1550,Maksetaanko Suomessa palkkiota verenluovutuksesta?,fi,0.207,-0.85,0.0,0.5,1.792,1,1.649
+finnish_content_6088,Missä Jürgen Klopp on syntynyt?,fi,0.494,-0.051,0.0,0.333,1.946,0,2.722
+finnish_content_10732,Missä markkinoiden tehokkuutta on aloitettu tutkimaan?,fi,0.244,0.949,1.0,0.333,2.079,0,4.605
+finnish_content_13297,Kuinka monta lasta Kustaa Vaasalla oli?,fi,-0.556,0.949,0.0,0.0,2.079,0,2.472
+finnish_content_5497,Kuinka Hevosen värit määräytyvät?,fi,-0.09,-0.051,0.0,0.333,1.792,0,1.984
+finnish_content_760,Kuka rakensi ensimmäisen massaspektrometrin?,fi,-0.423,-0.051,0.0,0.333,1.792,0,1.651
+finnish_content_14269,Mikä on CATALISE-paneeli?,fi,-0.256,-1.051,0.0,0.0,1.609,0,0.302
+finnish_polar_995,Onko Anthony Hopkinsilla kaksi Emmy-palkintoa?,fi,-0.293,0.15,0.0,0.0,1.946,1,1.803
+finnish_content_12790,Minkä maalainen Alan Turing oli?,fi,-0.256,-0.051,0.0,0.0,1.946,0,1.639
+finnish_content_2654,Minä vuosina Sokrates oli elossa?,fi,0.744,-1.051,0.0,0.0,1.946,0,1.639
+finnish_content_10498,Mitä tarkoitetaan ns. ekologisella lokerolla?,fi,-0.006,-0.051,0.0,0.333,1.946,0,2.222
+finnish_content_4380,Milloin Leonardo da Vinci syntyi?,fi,0.744,-0.051,0.0,0.333,1.946,0,2.972
+finnish_content_5362,Mikä oli Suomen ensimmäinen vartiointi yritys?,fi,0.044,1.949,0.0,0.0,2.079,0,4.072
+finnish_content_14802,Milloin Power Rangers luotiin?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_content_10134,Missä Julius Caesar syntyi?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_polar_1536,Mainitaanko Pyhä Yrjänä Raamatussa?,fi,0.207,-0.85,0.0,0.5,1.792,1,1.649
+finnish_polar_2039,Onko Sudanissa käyty koskaan sotaa?,fi,-0.293,-0.85,0.0,0.667,1.946,1,1.47
+finnish_polar_688,Onko maya-heimosta jäänyt eloon jälkeläisiä?,fi,-0.293,-0.85,0.0,0.5,1.946,1,1.303
+finnish_polar_450,Onko Indira Gandhi Intian ainoa naispääministeri?,fi,0.807,0.15,0.0,0.0,2.079,1,3.036
+finnish_content_10928,Kuka rakensi Muumitalon?,fi,-0.756,-1.051,0.0,0.333,1.609,0,0.135
+finnish_content_11716,Mikä on Queensin pinta-ala?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_content_5490,Mikä on Tuupovaaran asukasluku?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_156,Onko Ruskean koiran tapauksesta tuomittu ketään?,fi,-0.193,1.15,0.0,0.5,2.079,1,3.536
+finnish_polar_1393,Onko Suomen kaarti osallistunut sotaan Suomessa?,fi,-0.193,0.15,0.0,0.5,2.079,1,2.536
+finnish_polar_1074,Kuuluuko Dodekanesian saariryhmä Kreikalle?,fi,0.207,0.15,0.0,0.333,1.792,1,2.482
+finnish_content_3377,Kenen mukaan Pretorian kaupunki on nimetty?,fi,0.244,-0.051,0.0,0.5,2.079,0,2.772
+finnish_content_9775,Mikä oli ensimmäinen äänielokuva?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_content_15035,Mikä oli ns. Paasikiven-Kekkosen linja?,fi,0.244,-0.051,0.0,0.0,1.946,0,2.139
+finnish_polar_1280,Oliko Botswana siirtomaa?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_polar_1584,Voiko lehtipuu ja kuusipuu kasvaa vierekkäin?,fi,0.407,1.15,0.0,0.333,2.079,1,3.969
+finnish_content_12520,Kuka oli Kansallis teatterin ensimmäinen johtaja?,fi,0.044,1.949,0.0,0.0,2.079,0,4.072
+finnish_content_10543,Mitä valkea aine on aivoissa?,fi,0.244,-0.051,0.0,0.0,1.946,0,2.139
+finnish_content_4442,Mistä erottaa sorsan sukupuolen?,fi,-0.423,-0.051,0.0,0.333,1.792,0,1.651
+finnish_content_1325,Mitkä ovat Suomen viralliset valtionkirkot vuonna 2019?,fi,0.577,-0.051,0.0,0.0,2.197,0,2.723
+finnish_content_13276,Miten suurta osaa maailman väestöstä ja pinta-alasta,fi,-0.256,0.949,0.0,0.0,2.079,0,2.772
+finnish_content_5029,Milloin kommunismi aate syntyi?,fi,-0.09,-0.051,0.0,0.333,1.792,0,1.984
+finnish_polar_1472,Onko Kristinuskon pyhä kolmiyhteys Islamin näkökulmasta tulkittavissa pakanalliseksi?,fi,0.492,1.15,0.0,0.5,2.303,1,4.445
+finnish_polar_1623,Onko mäyräkoiran turkille erityisiä hoito-ohjeita?,fi,0.207,0.15,0.0,0.0,1.946,1,2.303
+finnish_polar_201,Voiko vaitiolovelvollisuus olla vain suullinen sopimus?,fi,1.207,-0.85,0.0,0.0,2.079,1,2.436
+finnish_content_10451,Missä Sarah Michelle Gellar on syntynyt?,fi,0.844,-0.051,0.0,0.333,2.079,0,3.205
+finnish_content_3128,Kuinka monta lakia Suomessa on yhteensä?,fi,-0.556,0.949,0.0,0.0,2.079,0,2.472
+finnish_polar_2048,Oliko Kapteeni Haddock ensiesiintymisessään alkoholisti?,fi,0.207,0.15,0.0,0.0,1.946,1,2.303
+finnish_polar_248,Onko Jupiter kylmä planeetta?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_content_11588,Mitkä ovat mineraalin eri ominaisuudet?,fi,0.244,-0.051,0.0,0.0,1.946,0,2.139
+finnish_content_11674,Milloin Pontoksen kuningaskunta koki ensimmäisen tappionsa?,fi,-0.156,-0.051,0.0,0.5,2.079,0,2.372
+finnish_content_10837,Mihin puettavan tietokoneen voi liittää?,fi,0.244,-0.051,0.0,0.333,1.946,0,2.472
+finnish_polar_962,Onko Kytäjän kolmoissurman tekijä tuomittu?,fi,-0.043,1.15,0.0,0.333,1.946,1,3.386
+finnish_content_6274,Milloin Humppilan vaakunan on vahvistettu?,fi,0.244,-0.051,0.0,0.5,1.946,0,2.639
+finnish_polar_1877,Asuuko Kiinan vuoristossa ihmisiä?,fi,0.207,0.15,0.0,0.333,1.792,1,2.482
+finnish_content_8938,Milloin Suomessa alkoi opintovelvollisuus?,fi,-0.423,-1.051,0.0,0.5,1.792,0,0.818
+finnish_content_2160,Mikä on maantiepyörän paino?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_content_12639,Kuka keksi massan yhtälön?,fi,-0.423,-0.051,0.0,0.333,1.792,0,1.651
+finnish_polar_499,Oliko Suomessa arjalaisen fysiikan tutkijoita?,fi,-0.293,1.15,0.0,0.0,1.946,1,2.803
+finnish_content_4668,Mistä orientalisoiva kausi sai nimensä?,fi,-0.256,-0.051,0.0,0.5,1.946,0,2.139
+finnish_content_14767,Montako jaksoa oli Happy Tree Friendsin ensimmäisessä tuotantokaudessa?,fi,1.101,-0.051,0.0,0.0,2.303,0,3.353
+finnish_content_15190,Mikä on viljellyin ravintokasvi?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_content_3451,Milloin Zenobia syntyi?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_10729,Mikä oli lentokonekaapparin ja nicaragualaisen sandinistin Patrick Arguellon kohtalo?,fi,1.119,2.949,0.0,0.0,2.398,0,6.466
+finnish_content_10037,Mistä yleisvenäläinen neuvostokongressi syntyi alkujaan?,fi,-0.256,-0.051,0.0,0.5,1.946,0,2.139
+finnish_content_10368,Mikä on USA:n pinta-ala?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_2208,Onko Atlantilla jäävuoria?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_1547,Onko maha- ja keuhkosyöpä yleistä tšuktšien keskuudessa?,fi,0.207,1.15,0.0,0.0,2.197,1,3.554
+finnish_content_6639,Kuka oli Böömin kuningaskunnan kuningas?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_content_13115,Mitä tarkoittaa ruhtinas?,fi,-0.756,-1.051,0.0,0.333,1.609,0,0.135
+finnish_content_13745,Kuka löysi Eeta Carinae tähtijärjestelmän?,fi,-0.256,-0.051,0.0,0.5,1.946,0,2.139
+finnish_content_12961,Mikä on Australian pääkaupunki?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_1248,Onko Thaimaassa kuningas?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_content_7131,Kuka keksi liikennevalot?,fi,-0.756,-1.051,0.0,0.333,1.609,0,0.135
+finnish_polar_2266,Voiko neste jäätyä ihmisen sisällä?,fi,-0.543,0.15,0.0,0.333,1.946,1,1.886
+finnish_polar_213,Onko barbadoksenakerolan hedelmä kirkkaanpunainen luumarja?,fi,0.207,0.15,0.0,0.0,1.946,1,2.303
+finnish_polar_1697,Onko sulkapallo olympialaji?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_content_1012,Miten Ali Abdullah Saleh kuoli?,fi,0.744,-0.051,0.0,0.333,1.946,0,2.972
+finnish_polar_2293,Onko Aleksanteri I:n rintakuvasta tehty toinen kappale?,fi,0.04,1.15,0.0,0.5,2.197,1,3.887
+finnish_polar_1654,Virtaako Amazon sademetsien läpi?,fi,-0.46,0.15,0.0,0.167,1.792,1,1.649
+finnish_polar_1560,Onko Maltalla demokratia?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_1521,Auttoiko Saksa Suomea sisällissodan aikana?,fi,-0.043,0.15,0.0,0.333,1.946,1,2.386
+finnish_polar_710,Onko Italiassa rautamalmiesiintymiä?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_2063,Kauanko kestää junalla Helsingistä Moskovaan?,fi,-0.043,-0.85,0.0,0.667,1.946,1,1.72
+finnish_polar_1704,"Oliko Reino Oittinen suomalaisen peruskoulun ""isä""?",fi,1.207,0.15,0.0,0.0,2.303,1,3.66
+finnish_content_3688,Minkä tyylilajin mangasarja Karin on?,fi,-0.506,-0.051,0.0,0.0,1.946,0,1.389
+finnish_content_2125,Keitä Lumièren veljekset olivat?,fi,0.244,-0.051,0.0,0.0,1.792,0,1.985
+finnish_content_11606,Milloin Kingdom Hearts III -peli julkaistiin Japanissa?,fi,0.41,0.949,0.0,0.5,2.197,0,4.056
+finnish_content_11018,Kuinka vanha soitin rumpu on?,fi,-0.256,-1.051,0.0,0.0,1.946,0,0.639
+finnish_content_12945,Kuinka pitkään länsirintama pysyi samana?,fi,-0.506,-0.051,0.0,0.5,1.946,0,1.889
+finnish_polar_1023,Ovatko kaikki toisen maailmansodan jälkeiset sopimukset voimassa tänä päivänä?,fi,0.332,2.15,0.0,0.0,2.398,1,4.88
+finnish_polar_1825,Onko yhtiöiden tuotoista pidetty kirjaa 1910-luvulla?,fi,-0.193,0.15,0.0,0.667,2.079,1,2.703
+finnish_content_2227,Montako joukkuetta pelasi ensimmäisellä Korisliiga kaudella?,fi,-0.156,-0.051,0.0,0.5,2.079,0,2.372
+finnish_content_13723,Kuka kehitti MAC osoitteet?,fi,-0.423,-0.051,0.0,0.333,1.792,0,1.651
+finnish_content_3677,Milloin Nuorsuomalaiset ryhmittyivät itsenäiseksi puolueeksi?,fi,-0.256,-0.051,0.0,0.5,1.946,0,2.139
+finnish_polar_303,Ovatko abessinialaiset kissat koti-eläimiä?,fi,-0.127,0.15,0.0,0.0,1.792,1,1.815
+finnish_polar_263,Pauli seura ollut ensimmäinen seura joka kielsi nationalisteilta pääsyn areenalle?,fi,-0.015,0.15,1.0,0.667,2.485,1,4.287
+finnish_content_14418,Kuka perusti Preussin?,fi,-0.756,-1.051,0.0,0.333,1.609,0,0.135
+finnish_content_12773,Milloin Venäjästä tuli demokratia?,fi,-0.423,-1.051,0.0,0.5,1.792,0,0.818
+finnish_content_10780,Milloin Neste on perustettu?,fi,0.244,-1.051,0.0,0.5,1.792,0,1.485
+finnish_polar_1123,Oliko Roald Amundsen ensimmäinen ihminen joka vieraili Etelänavalla?,fi,-0.079,1.15,1.0,0.333,2.303,1,4.707
+finnish_content_3536,Mikä yhtiö osti Air Charterin ja Channel Air Bridgen vuonna 1959?,fi,0.144,0.949,0.0,0.5,2.565,0,4.158
+finnish_polar_566,Onko Wall Street Manhattanin finanssialan keskittymän Financial Districtin keskus?,fi,1.332,0.15,1.0,0.167,2.398,1,5.047
+finnish_content_7951,Milloin James Prescott Joule syntyi?,fi,0.744,-0.051,0.0,0.333,1.946,0,2.972
+finnish_content_7598,Kuka on kehittänyt sävelten etäisyydet?,fi,-0.256,-0.051,0.0,0.333,1.946,0,1.972
+finnish_content_12956,Kuka perusti stoalaisuuden?,fi,-0.756,-1.051,0.0,0.333,1.609,0,0.135
+finnish_polar_44,Onko alumiininen putki yleinen varmistusväline?,fi,0.207,0.15,0.0,0.0,1.946,1,2.303
+finnish_polar_1993,Onko Surinamessa kaksi Unescon maailmanperintöluettelon kohdetta?,fi,0.207,1.15,0.0,0.0,2.079,1,3.436
+finnish_content_7568,Missä puolueessa Mario Scelba oli?,fi,-0.256,-0.051,0.0,0.0,1.946,0,1.639
+finnish_content_10515,Mitä luova tuho tarkoittaa?,fi,-0.09,-0.051,0.0,0.333,1.792,0,1.984
+finnish_polar_914,Onko Kalkutalla aavikkoa?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_196,Onko Oulun kaupungilla eniten omatoimikirjastojen toimipisteitä?,fi,0.007,0.15,0.0,0.0,2.079,1,2.236
+finnish_content_10686,Miten leinikkikasvi määritellään?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_2422,Montako mallia Daimler Benz on valmistanut tähän mennessä?,fi,-0.042,-0.051,0.0,0.5,2.303,0,2.71
+finnish_content_3248,Milloin Jämsänkosken Ilves on perustettu?,fi,0.244,-0.051,0.0,0.5,1.946,0,2.639
+finnish_content_11121,Milloin HPK voitti ensimmäisen jääkiekon Suomen mestaruutensa?,fi,0.077,0.949,0.0,0.5,2.197,0,3.723
+finnish_polar_264,Onko Montreal maailman neljänneksi suurin ranskankielinen kaupunki?,fi,1.04,0.15,0.0,0.0,2.197,1,3.387
+finnish_content_11778,Kuinka paljon kettu painaa?,fi,-0.423,-0.051,0.0,0.333,1.792,0,1.651
+finnish_content_10629,Päijänteessä on saaria?,fi,-0.256,-1.051,0.0,0.0,1.609,0,0.302
+finnish_content_3476,Missä Stanley Kubrick syntyi?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_content_2124,Minä vuonna Englantiin valittiin ensimmäinen kuningas?,fi,0.044,-0.051,0.0,0.667,2.079,0,2.739
+finnish_polar_1464,Ovatko Nassau suvun jäsenet aatelisia?,fi,-0.043,1.15,0.0,0.0,1.946,1,3.053
+finnish_content_14192,Mikä oli Moskovan asukasluku vuonna 2018?,fi,0.244,-0.051,0.0,0.0,2.079,0,2.272
+finnish_polar_1132,Onko ihmisen sisällä kaasuja?,fi,-0.127,0.15,0.0,0.0,1.792,1,1.815
+finnish_content_13198,Keitä olivat Mensevikit?,fi,-0.256,-1.051,0.0,0.0,1.609,0,0.302
+finnish_polar_1261,Onko Antikytheran saarella asutusta?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_content_13053,Missä ensimmäinen Eurovision järjestettiin?,fi,-0.09,-0.051,0.0,0.333,1.792,0,1.984
+finnish_polar_555,Onko Kauhajoella muistomerkkiä Kauhajoen taistelusta?,fi,-0.543,1.15,0.0,0.0,1.946,1,2.553
+finnish_content_13137,Mikä on Tokyon pinta-ala?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_content_10246,Mitä lyhenne SOTEVA tarkoittaa?,fi,-0.09,-0.051,0.0,0.333,1.792,0,1.984
+finnish_content_1587,Minä vuonna pastori Russell on syntynyt?,fi,0.844,-0.051,0.0,0.5,2.079,0,3.372
+finnish_content_6235,Missä maassa golf on keksitty?,fi,-0.006,-0.051,0.0,0.5,1.946,0,2.389
+finnish_content_6819,Missä kivennäisaineet vaikuttavat kehossa?,fi,-0.423,-1.051,0.0,0.5,1.792,0,0.818
+finnish_content_9633,Mitä doktriini tarkoittaa?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_222,Miksi Neuvostoliitolla oli talousongelmia?,fi,-0.423,-1.051,0.0,0.0,1.792,0,0.318
+finnish_polar_1406,Onko Tommy Leellä lapsia?,fi,0.207,0.15,0.0,0.0,1.792,1,2.149
+finnish_content_5411,Milloin vietetään Norjan itsenäisyyspäivää?,fi,-0.423,-0.051,0.0,0.333,1.792,0,1.651
+finnish_polar_488,Onko bostoninterrieri luonteeltaan vilkas?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_polar_2106,Onko Palestiina maa?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_content_7542,Milloin Naisasialiitto Unioni perustettiin?,fi,-0.09,-0.051,0.0,0.333,1.792,0,1.984
+finnish_polar_1265,Voiko nuorella ihmisellä ilmetä rytmihäiriötä?,fi,-0.293,0.15,0.0,0.333,1.946,1,2.136
+finnish_content_4809,Miten Transkaukasia määritellään?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_24,Ovatko Japani ja Venäjä sotineet?,fi,0.707,1.15,0.0,0.167,1.946,1,3.97
+finnish_polar_277,Onko Israelia hallinnut koskaan kuningas?,fi,-0.293,-0.85,0.0,0.5,1.946,1,1.303
+finnish_content_2349,Artemis oli antiikin tarustossa?,fi,0.244,-1.051,0.0,0.0,1.792,0,0.985
+finnish_content_12612,Mihin Julius Caesar kuoli?,fi,0.244,-0.051,0.0,0.333,1.792,0,2.318
+finnish_content_8864,Mikä oli Eskolan metsäradan raideleveys?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_content_7117,Miksi Kolumbian sisällissota alkoi?,fi,-0.09,-0.051,0.0,0.333,1.792,0,1.984
+finnish_content_5354,1980-luvulta on Kyoto Song?,fi,-0.423,-0.051,0.0,0.0,1.792,0,1.318
+finnish_polar_1446,Onko Suomen luonnossa vartijoita huolehtimassa metsistä?,fi,0.007,0.15,0.0,0.5,2.079,1,2.736
+finnish_polar_2192,Onko Tudor-suvusta tehty televisiosarjaa?,fi,-0.46,-0.85,0.0,0.5,1.792,1,0.982
+finnish_polar_393,Onko Victor Ortiz otellut Floyd Mayweatheria vastaan?,fi,-0.127,0.15,0.0,0.333,2.197,1,2.553
+finnish_content_8330,Milloin valmistui maailman ensimmäinen äänielokuva?,fi,-0.256,0.949,0.0,0.333,1.946,0,2.972
+finnish_content_9461,Milloin Microsoft perustettiin?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_1053,Onko peniksessä rustoa?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_1039,Onko Esmeralda ystävällinen Quasimodolle Notre Damen kellonsoittaja -elokuvassa?,fi,0.35,2.15,0.0,0.0,2.303,1,4.803
+finnish_content_1136,Mikä on Kiinan kansalliseläin?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_content_12534,Kuinka monen maan läpi,fi,-0.423,-1.051,0.0,0.0,1.609,0,0.135
+finnish_content_1236,Montako hahmoa Simpsoneiden perhe käsittää?,fi,-0.256,-0.051,0.0,0.333,1.946,0,1.972
+finnish_polar_1113,Tapahtuuko ihmisessä funktiota?,fi,-0.293,-0.85,0.0,0.333,1.609,1,0.799
+finnish_polar_310,Onko Sagaholmin hautakumpu rakennettu pronssista?,fi,-0.293,0.15,0.0,0.5,1.946,1,2.303
+finnish_polar_597,Onko norsunluusta tehty pianon koskettimia?,fi,-0.293,0.15,0.0,0.5,1.946,1,2.303
+finnish_content_1541,Kuka keksi röntgensäteen?,fi,-0.756,-1.051,0.0,0.333,1.609,0,0.135
+finnish_polar_584,Monenko ihmisen tiedetään suden tappaneen 1900-luvulla?,fi,-0.193,1.15,1.0,0.333,2.079,1,4.369
+finnish_content_5993,Mikä on Michiganin osavaltion pääkaupunki?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_content_7639,Mitä tarkoittaa psykopatologinen?,fi,-0.756,-1.051,0.0,0.333,1.609,0,0.135
+finnish_content_2136,Mikä oli yleisin lapsen etu nimi Suomessa vuonna 2018?,fi,1.244,0.949,0.0,0.0,2.398,0,4.591
+finnish_content_467,Kuinka pitkään Taginaen taistelu kesti?,fi,-0.256,-0.051,0.0,0.333,1.946,0,1.972
+finnish_content_13884,Missä Englannin liigan joukkueessa Keijo 'Keke' Armstrong aloitti uransa?,fi,1.119,0.949,0.0,0.5,2.565,0,5.133
+finnish_content_6912,Milloin lentopallo tuli Suomeen?,fi,-0.423,-1.051,0.0,0.5,1.792,0,0.818
+finnish_polar_987,Voittiko Kanada Suomen vuoden 1994 jääkiekon maailmanmestaruuskilpailussa?,fi,0.373,1.15,0.0,0.333,2.197,1,4.053
+finnish_content_4606,Mikä oli Hermann Göringin vastuualue kansallissosialistisessa Saksassa?,fi,0.744,0.949,0.0,0.0,2.197,0,3.89
+finnish_content_8206,Missä Lias Andersson aloitti ammattilaisuransa?,fi,-0.006,-0.051,0.0,0.5,1.946,0,2.389
+finnish_content_4334,Kuinka lämmintä Baikaljärven vesi on?,fi,-0.006,-0.051,0.0,0.0,1.946,0,1.889
+finnish_polar_1001,Oliko ruoka vähissä koko Suomessa talvisodan aikana?,fi,0.04,0.15,0.0,0.0,2.197,1,2.387
+finnish_content_8847,Miten elementtitalo määritellään?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_5981,Mistä supikoira on kehittynyt?,fi,0.244,-1.051,0.0,0.333,1.792,0,1.318
+finnish_content_13367,Mikä 343 Industries on?,fi,0.244,-1.051,0.0,0.0,1.792,0,0.985
+finnish_polar_1802,Onko sarkainmerkki tulostumaton merkki?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_content_10286,Miksi Viktor Tsoi hakeutui mielisairaalaan vuonna 1983?,fi,-0.09,-0.051,0.0,0.667,2.197,0,2.723
+finnish_polar_2242,Onko kouluratsastuksessa alalajeja?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_content_12065,Mitä urheilua Kambodžassa harrastetaan eniten?,fi,-0.506,-0.051,0.0,0.5,1.946,0,1.889
+finnish_polar_19,Onko Dima Bilan venäläinen?,fi,0.207,0.15,0.0,0.0,1.792,1,2.149
+finnish_content_9568,Mikä on etäisyys Rovaniemeltä Helsinkiin rautatietä pitkin?,fi,-0.09,0.949,0.0,0.0,2.197,0,3.056
+finnish_content_11062,Mikä on Napakympin oikea nimi?,fi,0.244,-0.051,0.0,0.0,1.946,0,2.139
+finnish_content_11811,Kuka oli Steauan vastustaja jalkapallon Euroopan cupissa 1985–1986?,fi,0.387,-0.051,0.0,0.0,2.303,0,2.639
+finnish_polar_377,Onko Konnivedessä viisi suurta saarta?,fi,-0.043,0.15,0.0,0.0,1.946,1,2.053
+finnish_polar_2180,Kauanko suklaan valmistamisessa kestää?,fi,-0.127,0.15,0.0,0.333,1.792,1,2.148
+finnish_content_10654,Minä vuonna Wii-konsoli julkaistiin?,fi,0.244,-1.051,0.0,0.5,1.792,0,1.485
+finnish_content_779,Mikä on Silmarillion?,fi,-0.256,-1.051,0.0,0.0,1.609,0,0.302
+finnish_polar_1587,Olivatko ihmisten esi-isät luolamiehiä?,fi,-0.127,0.15,0.0,0.0,1.792,1,1.815
+finnish_polar_1187,Onko District of Columbia osavaltio?,fi,0.707,0.15,0.0,0.0,1.946,1,2.803
+finnish_content_4113,Kuinka monessa maassa Metsä Group -konserni toimii?,fi,0.077,0.949,0.0,0.333,2.197,0,3.556
+finnish_content_12475,Milloin Daniel Cormier aloitti UFC uransa?,fi,0.044,-0.051,0.0,0.5,2.079,0,2.572
+finnish_content_3181,Miksi Amerikka on jaettu pohjois- ja eteläosiin?,fi,-0.09,0.949,0.0,0.667,2.197,0,3.723
+finnish_polar_1988,Onko halotaanille Suomessa nykyisin myyntilupaa?,fi,0.457,0.15,0.0,0.0,1.946,1,2.553
+finnish_content_14486,Kuinka talvisota alkoi?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_5115,Milloin Helsingfors Simsällskap -seura on perustettu?,fi,0.444,0.949,0.0,0.5,2.079,0,3.972
+finnish_polar_2253,Onko Suomen jääkäriliike toiminnassa?,fi,-0.127,0.15,0.0,0.0,1.792,1,1.815
+finnish_content_12060,Mikä oli Jakob Wegeliuksen ensimmäinen teos?,fi,0.244,1.949,0.0,0.0,2.079,0,4.272
+finnish_polar_803,"Ovatko Venäjä, Saudi-Arabia ja Yhdistyneet arabiemiirikunnat julistaneet Muslimiveljeskunnan terroristijärjestöksi?",fi,1.457,1.15,0.0,0.333,2.485,1,5.425
+finnish_polar_386,Onko inuiiteilla lemmikkejä?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_polar_693,Minä vuonna Vladimir Krasno Solnyško on syntynyt?,fi,1.373,0.15,0.0,0.5,2.197,1,4.22
+finnish_content_3843,Kuka näytteli Bumblebeetä?,fi,-0.756,-1.051,0.0,0.333,1.609,0,0.135
+finnish_polar_1333,Onko mau-mau-heimoa olemassa?,fi,-0.293,-0.85,0.0,0.167,1.609,1,0.633
+finnish_polar_1580,Voiko ihminen rakentaa tietokoneohjelman?,fi,-0.46,-0.85,0.0,0.333,1.792,1,0.815
+finnish_polar_1503,Puhuvatko Vatjalaiset Suomea äidin kielenään?,fi,0.207,0.15,0.0,0.5,1.946,1,2.803
+finnish_content_240,Kovat kaulassa -sarjaa on valmistunut?,fi,-0.006,-0.051,0.0,0.333,1.946,0,2.222
+finnish_polar_1590,Onko Darren Shanin naimisissa?,fi,0.207,0.15,0.0,0.0,1.792,1,2.149
+finnish_content_1446,Kuka oli Aleksandr Solzhenitsyn?,fi,-0.423,-0.051,0.0,0.0,1.792,0,1.318
+finnish_content_7429,Kuka perusti bahai-uskonnon?,fi,-0.756,-1.051,0.0,0.333,1.609,0,0.135
+finnish_content_7095,Mikä on Saksan kansallislaulu?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_567,Onko verkkosarjakuva internetissä julkaistava sarjakuva?,fi,0.457,0.15,1.0,0.167,1.946,1,3.72
+finnish_content_11301,Kuka Snoke on?,fi,-0.256,-1.051,0.0,0.0,1.609,0,0.302
+finnish_polar_384,Onko Rapid Wien voittanut myös Saksan liigamestaruuden?,fi,0.207,0.15,0.0,0.333,2.197,1,2.887
+finnish_polar_1533,Onko strippi lyhyt sarjakuva?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_content_10719,Mikä on vastasyntyneen tarkin näkökenttä?,fi,-0.006,0.949,0.0,0.0,1.946,0,2.889
+finnish_polar_725,Voiko oluessa käyttää ruista?,fi,-0.46,-0.85,0.0,0.333,1.792,1,0.815
+finnish_polar_27,Onko Rachel Berry adoptoitu?,fi,0.207,0.15,0.0,0.333,1.792,1,2.482
+finnish_content_8647,Milloin alkuperäinen Diesneyland perustettiin?,fi,-0.09,-0.051,0.0,0.333,1.792,0,1.984
+finnish_polar_302,Onko Ukraina kieltänyt ydinvoimalat?,fi,-0.46,-0.85,0.0,0.333,1.792,1,0.815
+finnish_polar_1019,Onko kungfutse kamppailulaji?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_content_13785,Milloin Nerosta tuli Rooman keisari?,fi,-0.256,-0.051,0.0,0.5,1.946,0,2.139
+finnish_polar_1271,Taalintehtaan historiallisen teollisuusalueen valtakunnallisesti merkittäväksi rakennetuksi kulttuuriympäristöksi?,fi,-0.127,1.15,1.0,0.167,2.197,1,4.387
+finnish_polar_1530,Onko telkkää kutsuttu Suomessa joskus sorsaksi?,fi,-0.193,0.15,0.0,0.667,2.079,1,2.703
+finnish_polar_1608,Ovatko dominikaanit alunperin kotoisin Dominikaanisesta tasavallasta?,fi,0.007,0.15,0.0,0.0,2.079,1,2.236
+finnish_content_12722,Missä Gaius Vibius Trebonianus Gallus syntyi?,fi,1.244,-0.051,0.0,0.333,2.079,0,3.605
+finnish_polar_2068,Onko seminoleilla oma kieli?,fi,-0.46,0.15,0.0,0.0,1.792,1,1.482
+finnish_polar_1276,Onko toteutettavan kilpailupolitiikan tavoitteena EU:ssa taata markkinoiden mahdollisimman tehokas toiminta?,fi,0.096,2.15,1.0,0.083,2.485,1,5.814
+finnish_polar_358,Onko partamakakien turkki musta?,fi,-0.127,0.15,0.0,0.0,1.792,1,1.815
+finnish_content_8510,Milloin USA perustulaki kirjoitettiin?,fi,0.244,-1.051,0.0,0.5,1.792,0,1.485
+finnish_content_14382,Mikä on Kiovan pinta-ala?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_167,Voiko molekyylin nähdä silmillä?,fi,-0.46,-0.85,0.0,0.333,1.792,1,0.815
+finnish_polar_1453,Ovatko Totoro-olennot ystävällisiä?,fi,-0.293,-0.85,0.0,0.0,1.609,1,0.466
+finnish_content_6673,Mikä on Etelänavan keskilämpötila?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_1559,Onko Moe Szyslakilla perhettä?,fi,0.207,0.15,0.0,0.0,1.792,1,2.149
+finnish_polar_285,Onko Tornion joessa kova virtaus?,fi,-0.293,0.15,0.0,0.0,1.946,1,1.803
+finnish_polar_47,Olivatko viikingit olemassa Skandinavian pronssikauden aikaan?,fi,-0.193,1.15,0.0,0.333,2.079,1,3.369
+finnish_content_10486,Kuka on käsikirjoittanut Transformer -elokuvien ensimmäisen osan?,fi,0.077,0.949,0.0,0.333,2.197,0,3.556
+finnish_content_490,Miten korkeaksi ristisypressi voi kasvaa?,fi,-0.006,-0.051,0.0,0.333,1.946,0,2.222
+finnish_content_7646,Kuka oli Akhenatenin äiti?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_content_3744,Kuka tunnettu saksalainen ralli kuski ajoi Audilla B ryhmän aikaan?,fi,-0.09,0.949,0.0,0.5,2.485,0,3.844
+finnish_content_9763,Missä GPS-paikannin sijaitsee matkapuhelimessa?,fi,-0.423,-1.051,0.0,0.5,1.792,0,0.818
+finnish_polar_1842,Onko Hakoisten linna turistinähtävyys?,fi,-0.127,0.15,0.0,0.0,1.792,1,1.815
+finnish_polar_1723,Onko Suomen laivastolla saattuetukialusta?,fi,-0.46,-0.85,0.0,0.0,1.792,1,0.482
+finnish_content_994,Kuinka pitkä on Tiberjoki?,fi,-0.423,-1.051,0.0,0.0,1.792,0,0.318
+finnish_content_3894,Mikä on Havanganjärven pinta-ala?,fi,-0.09,-0.051,0.0,0.0,1.792,0,1.651
+finnish_polar_1037,Onko Jeesuksen ilmestymiset kuvattu Raamatun jokaisessa evankeliumissa?,fi,0.04,0.15,0.0,0.5,2.197,1,2.887
+finnish_content_12796,Kuinka ensimmäiset asukkaat ovat matkanneet Malediiveille?,fi,0.044,-0.051,0.0,0.5,2.079,0,2.572
+finnish_content_14381,Kuinka monta kautta Supernatural -sarjaa on kuvattu?,fi,0.244,0.949,0.0,0.5,2.197,0,3.89
+finnish_content_3107,Milloin Ford GT 40 malli on julkaistu?,fi,0.744,0.949,0.0,0.5,2.197,0,4.39
+finnish_content_3496,Montako luonnonilmiötä on?,fi,-0.256,-1.051,0.0,0.0,1.609,0,0.302
+finnish_content_4982,Mitä virkamiesoikeus käsittelee?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_content_8724,Kuka on Moe Szyslakin ääninäyttelijä?,fi,0.244,0.949,0.0,0.0,1.946,0,3.139
+finnish_content_12417,Milloin Suomessa aloitettiin tekemään järvenlaskuja?,fi,-0.506,-0.051,1.0,0.333,1.946,0,2.722
+finnish_polar_1427,Onko kehrääjä-linnuilla suuri kita?,fi,-0.46,0.15,0.0,0.0,1.792,1,1.482
+finnish_polar_224,Onko Udmurti suomalaisugrilainen kieli?,fi,0.207,-0.85,0.0,0.0,1.792,1,1.149
+finnish_content_6400,Mistä furokumariinit syntyvät?,fi,-0.256,-1.051,0.0,0.333,1.609,0,0.635
+finnish_polar_66,Ylettyykö Atlantin meri Suomeen?,fi,0.207,0.15,0.0,0.333,1.792,1,2.482
+finnish_content_2238,Millä nimellä kutsutaan toimintakyvytöntä henkilöä?,fi,-0.506,-0.051,0.0,0.333,1.946,0,1.722
+finnish_polar_573,Onko Suomessa kuristajakäärmeitä?,fi,-0.793,-0.85,0.0,0.0,1.609,1,-0.034
+finnish_content_134,Kuinka monta säätyluokkaa Ruotsissa on ollut?,fi,-0.556,0.949,0.0,0.0,2.079,0,2.472
+finnish_polar_2131,Onko Suomen jääkäriliike vieläkin olemassa?,fi,0.207,0.15,0.0,0.333,1.946,1,2.636
+finnish_polar_339,Onko Coco Bandicoot Crashin sisko?,fi,0.707,0.15,0.0,0.0,1.946,1,2.803
+finnish_polar_2148,Monessako valtiossa puhutaan ranskaa yhtenä pääkielenä?,fi,-0.393,0.15,0.0,0.5,2.079,1,2.336
+finnish_content_557,Missä kaupungissa Kuusrock järjestettiin?,fi,-0.423,-0.051,0.0,0.333,1.792,0,1.651
+finnish_content_10084,Kuka istutti fasaanit Suomeen vuosina 1901-1902?,fi,-0.156,-0.051,0.0,0.667,2.079,0,2.539

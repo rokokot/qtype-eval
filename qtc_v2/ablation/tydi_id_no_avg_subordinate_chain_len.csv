@@ -1,0 +1,955 @@
+unique_id,text,language,avg_links_len,avg_max_depth,avg_verb_edges,lexical_density,n_tokens,question_type,complexity_score
+indonesian_polar_265,Apakah istilah Boys' Love hanya ditujukan pada wanita?,id,0.709,0.518,1.0,0.778,2.485,1,5.49
+indonesian_content_1413,Kapan Uni Soviet memulai industri pembuatan nuklir ?,id,-0.136,0.219,0.5,1.0,2.197,0,3.78
+indonesian_content_9093,dimanakah Mojokerto ?,id,-0.136,-1.781,0.0,0.667,1.609,0,0.359
+indonesian_content_4481,Siapakah tokoh villain dalam Harry Potter ?,id,-0.136,0.219,0.0,0.571,2.197,0,2.851
+indonesian_content_5762,Siapa penguasa pertama Mesopotamia?,id,-0.303,-0.781,0.0,0.75,1.792,0,1.458
+indonesian_polar_29,Apakah lagenda Robin Hood berasal dari Nottingham?,id,0.209,0.518,0.75,0.75,2.303,1,4.53
+indonesian_content_10900,Berapakah UMR Jakarta tahun 2018 ?,id,-0.236,-0.781,0.0,0.667,2.079,0,1.729
+indonesian_content_5738,Kapan Kongres Fasis Internasional diadakan?,id,0.614,0.219,0.333,1.0,1.946,0,4.112
+indonesian_content_7437,kapankah Deforestasi pertama kali terjadi di malaysia?,id,0.364,-0.781,0.667,0.75,2.303,0,3.303
+indonesian_polar_357,apakah mayoritas Iran adalah Syi'ah?,id,0.209,-0.482,0.0,0.714,2.197,1,2.638
+indonesian_polar_45,Apakah Islam Nusantara mempertimbangkan unsur budaya Indonesia dalam merumuskan fikih?,id,0.009,0.518,0.75,0.818,2.565,1,4.66
+indonesian_polar_198,Adakah Flash disk termasuk teknologi Informasi?,id,-0.124,0.518,0.5,0.857,2.197,1,3.948
+indonesian_polar_411,Apakah kenosis terdapat di dalam alkitab?,id,0.043,-0.482,0.75,0.571,2.197,1,3.079
+indonesian_content_2606,Berapa populasi Roma tahun 2017?,id,-0.386,-0.781,0.0,0.8,1.946,0,1.579
+indonesian_content_6050,siapakah pendiri merek ban dunlop?,id,-0.436,1.219,0.0,0.667,2.079,0,3.529
+indonesian_content_2532,Berapakah populasi penduduk Kampung Naga tahun 2010 ?,id,-0.065,0.219,0.0,0.75,2.303,0,3.207
+indonesian_content_4574,Kapan Determinisme biologis pertama diterapkan?,id,0.864,-0.781,0.333,1.0,1.946,0,3.362
+indonesian_content_3247,Apa yang dimaksud dengan Zaman Viking Eropa?,id,-0.303,1.219,0.333,0.571,2.197,0,4.017
+indonesian_content_2365,tahun berapakah Li Baoyu dilairkan?,id,0.964,-0.781,0.5,0.833,2.079,0,3.595
+indonesian_content_6782,Dimana letak daerah Jepara ?,id,-0.636,0.219,0.0,0.75,1.792,0,2.125
+indonesian_polar_224,apakah homoseksualitas di thailand di legalkan?,id,0.376,0.518,0.75,0.571,2.197,1,4.412
+indonesian_content_5227,Dari mana kata gilda berasal ?,id,0.114,-0.781,0.333,0.6,1.946,0,2.212
+indonesian_polar_222,Apakah Seni Jaranan menggunakan musik latar?,id,-0.124,-0.482,0.75,0.857,2.197,1,3.198
+indonesian_polar_231,apakah Indonesia terlibat dalam Perang Dunia II?,id,-0.362,0.518,0.75,0.625,2.303,1,3.834
+indonesian_polar_3,Apakah ular sanca termasuk hewan yang dilindungi?,id,-0.076,0.518,0.5,0.75,2.303,1,3.995
+indonesian_polar_146,apakah Minangkabau suku yang berasal dari Pulau Sumatra?,id,-0.416,1.518,0.5,0.667,2.398,1,4.667
+indonesian_polar_331,Apakah buah melinjo baik untuk kesehatan ?,id,-0.124,-0.482,1.0,0.714,2.197,1,3.305
+indonesian_content_303,dimanakah Abdullah Said dilahirkan?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_content_1782,berapakah luas negara palestina di tahun 2009?,id,-0.065,-0.781,0.0,0.625,2.303,0,2.082
+indonesian_content_4675,dimanakah Konstantinus Agung dilahirkan?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_polar_37,apakah Edmontosaurus pemakan tumbuhan?,id,-0.541,-0.482,0.0,0.8,1.946,1,1.723
+indonesian_polar_111,Apakah pemerintah menyediakan pekerjaan bagi peserta transmigrasi di daerah tujuan ?,id,-0.291,1.518,0.75,0.727,2.565,1,5.269
+indonesian_content_10737,berapa lamakah Perjalanan Nabi Muhammad SAW ke Tai'f?,id,-0.065,1.219,0.0,0.875,2.303,0,4.332
+indonesian_content_386,Dimana kekaisaran Jepang dibentuk?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_content_11438,kapan teknologi nuklir pertama kali diciptakan?,id,0.764,-0.781,0.5,1.0,2.079,0,3.562
+indonesian_polar_58,apakah WWE sebuah pertunjukan Gulat?,id,-0.391,-0.482,0.0,0.667,2.079,1,1.873
+indonesian_polar_232,apakah ada standar pisau yang di gunakan dalam seni Lempar pisau?,id,-0.336,2.518,0.625,0.667,2.639,1,6.113
+indonesian_polar_227,Apakah wabah demam Zika dapat menyebabkan kematian?,id,0.495,-0.482,0.75,0.75,2.303,1,3.816
+indonesian_content_1387,Bagaimanakah sistem pemerintahan di Lebanon ?,id,-0.036,-0.781,0.0,0.667,2.079,0,1.929
+indonesian_polar_22,Apakah Enzim restriksi bersifat asam?,id,0.009,-0.482,0.75,0.833,2.079,1,3.189
+indonesian_content_9069,Siapa raja pertama Kekaisaran Persia?,id,-0.386,0.219,0.0,0.8,1.946,0,2.579
+indonesian_content_2384,Berapa luas provinsi Aceh?,id,-0.636,-0.781,0.0,1.0,1.792,0,1.375
+indonesian_polar_135,apakah ada cacing pipih yang hidup di air?,id,-0.291,1.518,0.5,0.667,2.398,1,4.792
+indonesian_polar_426,Apakah kota Atambua masih ada?,id,0.409,-0.482,0.75,0.833,2.079,1,3.589
+indonesian_content_3778,Mengapa badan terasa sakit pada saat PMS?,id,-0.136,-0.781,0.667,0.857,2.197,0,2.804
+indonesian_polar_369,Apakah Raymond IV pernah menikah?,id,0.409,-0.482,0.75,0.667,2.079,1,3.423
+indonesian_content_3689,Kapan Bandara Juanda dibangun ?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_content_3463,Berasal dari manakah grup musik Bee Gees?,id,0.078,0.219,0.333,0.625,2.303,0,3.558
+indonesian_polar_278,apakah MSDM mencakup ilmu komunikasi?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_polar_238,apakah Mahabharata dari kepercayaan Hindu?,id,-0.391,-0.482,0.0,0.667,2.079,1,1.873
+indonesian_content_99,Siapa pendiri Gereja Asiria Timur?,id,-0.636,1.219,0.0,0.8,1.946,0,3.329
+indonesian_content_8777,siapakah sutradara dari serial animasi Phineas dan Ferb?,id,-0.261,3.219,0.0,0.556,2.398,0,5.912
+indonesian_polar_401,Apakah Learning Management System memerlukan jaringan internet?,id,0.209,-0.482,0.75,0.875,2.303,1,3.655
+indonesian_content_8507,Ada berapa dewa yang dipercaya oleh masyrakat Hindu ?,id,-0.208,1.219,0.25,0.75,2.303,0,4.314
+indonesian_content_9759,Berapa jenis Asteroid?,id,-0.636,-1.781,0.0,1.0,1.609,0,0.192
+indonesian_content_6925,siapakah karakter utama pada Naamkarann ?,id,-0.036,0.219,0.0,0.5,2.079,0,2.762
+indonesian_content_10017,Kapan Adobe Illustrator dirilis?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_polar_375,apakah ospek di indonesia pernah memakan korban?,id,0.495,0.518,1.0,0.75,2.303,1,5.066
+indonesian_polar_33,apakah Teori modernisasi adalah teori dari Ilmu sosial?,id,0.084,-0.482,0.0,0.667,2.398,1,2.667
+indonesian_content_3199,Dimanakah Formula Satu pertama diadakan ?,id,0.764,-0.781,0.333,0.667,2.079,0,3.062
+indonesian_content_4795,berapakah luas Tivoli ?,id,-0.303,-0.781,0.0,0.75,1.792,0,1.458
+indonesian_content_1950,siapakah orang tua Saleh Partaonan Daulay?,id,-0.303,1.219,0.0,0.714,2.197,0,3.827
+indonesian_polar_220,Apakah penyakit Herpes bisa disembuhkan ?,id,0.409,-0.482,0.5,0.667,2.079,1,3.173
+indonesian_content_5027,Kapan musik pop-punk masuk ke Indonesia?,id,0.164,-0.781,0.5,0.833,2.079,0,2.795
+indonesian_polar_108,Apakah internet sudah digunakan sebagai medium pembelajaran di sekolah dasar?,id,-0.091,0.518,0.75,0.636,2.565,1,4.378
+indonesian_content_2516,Kapan agama kristen masuk ke kota Medan ?,id,0.03,-0.781,0.5,0.857,2.197,0,2.803
+indonesian_polar_419,Apakah sampah yang tidak dikelola penyebab utama banjir?,id,-0.166,1.518,0.75,0.556,2.398,1,5.056
+indonesian_content_11810,Berapa jumlah siswa SMK Negeri 1 Cikampek tahun pertama didirikan?,id,1.03,1.219,0.167,0.9,2.485,0,5.801
+indonesian_content_7948,kapankah Serikat Yesus didirikan?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_polar_210,Apakah Myanmar dulunya disebut Burma ?,id,0.209,0.518,0.75,0.714,2.197,1,4.388
+indonesian_polar_422,apakah sastra Jawa Kuno ditulis menggunakan Sanskerta?,id,0.066,0.518,0.5,0.875,2.303,1,4.262
+indonesian_content_7363,berapakah umur Konstantinus Agung saat dia meninggal?,id,0.221,-0.781,0.333,0.625,2.303,0,2.701
+indonesian_content_4616,Berapakah suhu planet Mars ?,id,-0.386,-0.781,0.0,0.6,1.946,0,1.379
+indonesian_polar_120,Pernahkah Michael Gerard Tyson kalah dalam pertarungan tinju ?,id,0.084,0.518,0.75,0.778,2.398,1,4.528
+indonesian_content_3146,Siapakah yang dikenal sebagai bapak ekonomi ?,id,-0.136,0.219,0.333,0.429,2.197,0,3.042
+indonesian_polar_100,apakah Plutarkhos nama seorang dewa?,id,-0.391,1.518,0.0,0.5,2.079,1,3.706
+indonesian_polar_121,Apakah Jepara menghasilkan kayu jati?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_polar_169,apakah seorang detektif harus mempelajari dasar ilmu Kimia forensik?,id,-0.235,1.518,0.75,0.7,2.485,1,5.218
+indonesian_polar_349,Apakah Pemasaran Internasional dapat menyebabkan inflasi?,id,0.209,-0.482,0.75,0.714,2.197,1,3.388
+indonesian_polar_229,apakah Prof. Dr. Sutan Remy Sjahdeini mempunyai anak?,id,1.459,1.518,0.75,0.889,2.565,1,7.181
+indonesian_polar_161,Apakah keris termasuk senjata?,id,-0.291,-0.482,0.75,0.8,1.946,1,2.723
+indonesian_content_11288,Kapan Crest Animation Productions berdiri ?,id,0.614,0.219,0.333,1.0,1.946,0,4.112
+indonesian_content_11618,Siapakah ketua Mahkamah Konstitusi Republik Indonesia yang pertama?,id,0.114,2.219,0.0,0.667,2.398,0,5.398
+indonesian_polar_400,apakah cahaya lebih cepat dari suara?,id,0.043,0.518,0.0,0.571,2.197,1,3.329
+indonesian_content_6995,berapakah jumlah kecamatan yang ada di Yogyakarta?,id,-0.065,0.219,0.333,0.625,2.303,0,3.415
+indonesian_polar_340,Apakah Buster dan Babs sejenis binatang ?,id,-0.124,-0.482,0.0,0.714,2.197,1,2.305
+indonesian_content_6549,Berapa panjang usus besar manusia dewasa,id,-0.436,0.219,0.0,1.0,1.946,0,2.729
+indonesian_content_11747,Kapan Karavan pertama Amerika Tengah terjadi?,id,0.964,0.219,0.333,1.0,2.079,0,4.595
+indonesian_content_2873,Siapakah yang memproduksi kapal U-Boot?,id,-0.236,0.219,0.333,0.5,2.079,0,2.895
+indonesian_polar_436,Apakah Yesus seorang nabi dalam Islam?,id,-0.291,0.518,0.0,0.571,2.197,1,2.995
+indonesian_content_4484,Kapan Christopher Johnson lulus perguruan tinggi ?,id,-0.036,-0.781,0.5,1.0,2.079,0,2.762
+indonesian_polar_418,Apakah Alkitab Ibrani adalah Alkitab Yahudi?,id,0.209,-0.482,0.0,0.714,2.197,1,2.638
+indonesian_content_7519,Kapan karya pertama yang ditulis Fujiko F. Fujio ?,id,-0.208,1.219,0.333,0.875,2.398,0,4.617
+indonesian_content_345,kapankah Sugondo Djojopuspito dilahirkan?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_content_2298,Ada berapa cara pemrosesan transaksi kartu debit?,id,-0.47,2.219,0.167,1.0,2.197,0,5.113
+indonesian_content_2283,Kapan senter pertama kali diciptakan ?,id,0.614,-0.781,0.5,1.0,1.946,0,3.279
+indonesian_content_10656,kapankah grup musik Disturbed mengeluarkan album pertama nya?,id,0.114,0.219,0.5,0.778,2.398,0,4.009
+indonesian_content_6305,Berapakah luas wilayah Pompeii ?,id,-0.386,-0.781,0.0,0.8,1.946,0,1.579
+indonesian_content_3167,Vitamin apa yang dapat membantu saluran pencernaan ?,id,0.03,0.219,0.333,0.571,2.197,0,3.35
+indonesian_content_1993,Siapakah nama presiden Israel tahun 2010 ?,id,-0.136,0.219,0.0,0.571,2.197,0,2.851
+indonesian_polar_410,apakah Syi'ah legal di Indonesia?,id,0.543,-0.482,0.0,0.714,2.303,1,3.078
+indonesian_content_9275,tahun berapakah Belanda menginvasi Indonesia?,id,0.364,-0.781,0.667,0.833,2.079,0,3.162
+indonesian_content_11501,Kapan Sunan Ampel meninggal?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_polar_158,Apakah buah kosambi bisa dimakan ?,id,0.409,-0.482,0.5,0.667,2.079,1,3.173
+indonesian_content_1736,Siapa istri kedua Kaisar Gojong?,id,-0.386,0.219,0.0,0.8,1.946,0,2.579
+indonesian_content_8491,Sejak kapan tradisi penamaan dalam suku bali dimulai?,id,0.935,0.219,0.333,0.75,2.303,0,4.54
+indonesian_content_6309,siapakah raja pertama Kasunanan Kartasura?,id,-0.236,0.219,0.0,0.667,2.079,0,2.729
+indonesian_polar_8,"apakah Joseph Patrick ""Joe"" Kennedy masih hidup?",id,1.066,-0.482,0.25,0.875,2.485,1,4.194
+indonesian_content_10788,Kapan majalah Saikyou Jump berdiri ?,id,0.614,0.219,0.333,1.0,1.946,0,4.112
+indonesian_content_763,Kapan Gardner Fox pertama ditulis?,id,0.614,-0.781,0.5,1.0,1.946,0,3.279
+indonesian_polar_156,Apakah ada upacara untuk memperingati Hari Anzac?,id,-0.362,0.518,0.625,0.75,2.303,1,3.834
+indonesian_polar_273,Apakah Hindu mempercayai Kehidupan setelah kematian?,id,-0.291,0.518,0.75,0.714,2.197,1,3.888
+indonesian_polar_336,Apakah Anikonisme bertentangan dengan ajaran agama Islam?,id,-0.362,0.518,0.75,0.75,2.303,1,3.959
+indonesian_content_318,berapakah luas kota jepara?,id,-0.386,-0.781,0.0,0.8,1.946,0,1.579
+indonesian_polar_407,Apakah asam deoksiribonukleat terdapat ditubuh manusia?,id,-0.124,-0.482,0.5,0.857,2.197,1,2.948
+indonesian_polar_425,apakah Ehud Olmert pernah menikah?,id,0.409,-0.482,0.75,0.833,2.079,1,3.589
+indonesian_polar_243,Apakah komik sama dengan manga?,id,-0.191,-0.482,0.0,0.667,2.079,1,2.073
+indonesian_polar_408,Apakah Freiherr von Münchhausen pernah menikah ?,id,0.543,0.518,0.75,0.857,2.197,1,4.865
+indonesian_polar_279,apakah Garuda Indonesia mempunyai kerja sama dengan Airbus S.A.S?,id,-0.013,-0.482,1.0,0.8,2.485,1,3.79
+indonesian_content_7667,Dimana Albatros pertama ditemukan?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_polar_12,apakah Kriptografi digunakan untuk sistem firewall sebuah situs web?,id,-0.235,0.518,0.75,0.7,2.485,1,4.218
+indonesian_polar_104,apakah Karabin banyak digunakan pada PD II?,id,-0.076,-0.482,1.0,0.625,2.303,1,3.37
+indonesian_polar_170,apakah John Winston Lennon mempunyai anak?,id,0.209,0.518,0.75,0.857,2.197,1,4.531
+indonesian_content_807,Dimana kantor pusat Partai Demokrasi Rakyat Afganistan?,id,-0.636,3.219,0.0,0.857,2.197,0,5.637
+indonesian_content_4446,Siapa yang membawa islam pertama kali ke Yunani ?,id,0.364,0.219,0.667,0.625,2.303,0,4.178
+indonesian_content_4617,berapakah jumlah bahasa daerah di Filipina?,id,0.03,-0.781,0.0,0.714,2.197,0,2.16
+indonesian_polar_432,apakah Koko Liem seorang muallaf?,id,-0.191,-0.482,0.0,0.667,2.079,1,2.073
+indonesian_content_11627,Kapan Katolik masuk ke Roma ?,id,-0.136,-0.781,0.5,0.8,1.946,0,2.329
+indonesian_polar_417,Apakah tumbuhan Gambir dapat dimakan?,id,0.409,-0.482,0.5,0.667,2.079,1,3.173
+indonesian_polar_134,apakah kerajaan tertua di kepulauan maluku?,id,-0.291,0.518,0.0,0.571,2.197,1,2.995
+indonesian_content_10322,Siapa raja Raja Hongaria pertama?,id,-0.636,1.219,0.0,0.8,1.946,0,3.329
+indonesian_content_7335,Kapan Komputer ditemukan ?,id,-0.136,-1.781,0.333,1.0,1.609,0,1.025
+indonesian_content_3780,siapakah orang tua Vishal Karwal?,id,-0.236,0.219,0.0,0.667,2.079,0,2.729
+indonesian_content_7828,dari manakah asal kata sakramental?,id,-0.236,0.219,0.0,0.5,2.079,0,2.562
+indonesian_polar_167,bisakah ratu inggris mendeklarasikan perang?,id,0.409,-0.482,0.75,0.667,2.079,1,3.423
+indonesian_polar_376,pernahkah Putri Di Dalam Petung menikah?,id,1.043,0.518,0.5,0.571,2.197,1,4.829
+indonesian_content_9255,Kapan Nani Wartabone lahir ?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_content_4932,Dimana Kazimierz II meninggal?,id,0.364,-0.781,0.333,0.75,1.792,0,2.458
+indonesian_content_3826,berapakah jumlah korban Peristiwa Kapal Tujuh Provinsi?,id,-0.494,2.219,0.0,0.75,2.303,0,4.778
+indonesian_polar_50,apakah Clair Cameron Patterson masih hidup?,id,0.543,0.518,0.75,0.857,2.197,1,4.865
+indonesian_polar_296,Apakah serial gundam merupakan tokoh robot ?,id,-0.124,-0.482,0.75,0.857,2.197,1,3.198
+indonesian_content_3218,Berapa luas Nigeria?,id,-0.636,-1.781,0.0,1.0,1.609,0,0.192
+indonesian_content_4413,berapakah jenis kecipir?,id,-0.303,-0.781,0.0,0.75,1.792,0,1.458
+indonesian_content_9213,kapankah Love Nikki-Dress Up Queen dirilis pertama kali?,id,0.489,1.219,0.5,0.889,2.398,0,5.495
+indonesian_content_4507,Siapa pewaris tunggal Britania Romawi?,id,-0.386,0.219,0.0,0.8,1.946,0,2.579
+indonesian_content_11977,siapakah pembalap Lotus Cars di formula1 tahun 2016?,id,0.364,0.219,0.0,0.556,2.398,0,3.537
+indonesian_content_7246,Kapan Peristiwa Woyla terjadi ?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_polar_320,Apakah The Flash bercerita tentang superhero ?,id,0.043,-0.482,0.75,0.714,2.197,1,3.222
+indonesian_polar_110,Apakah HBx terdapat dalam tubuh manusia?,id,-0.291,-0.482,0.75,0.714,2.197,1,2.888
+indonesian_polar_415,apakah bahasa Ibrani bahasa asli Alkitab?,id,-0.291,0.518,0.0,0.714,2.197,1,3.138
+indonesian_content_8211,Kapan kerajaan Negeri Sembilan terbentuk ?,id,0.614,0.219,0.333,0.8,1.946,0,3.912
+indonesian_polar_20,Apakah Skizofrenia bisa diturunkan melalui gen ?,id,0.043,-0.482,0.75,0.571,2.197,1,3.079
+indonesian_content_173,Siapakah tokoh logaritma?,id,-0.303,-0.781,0.0,0.5,1.792,0,1.208
+indonesian_polar_358,apakah Plutarkhos masih hidup?,id,0.209,-0.482,0.5,0.6,1.946,1,2.773
+indonesian_polar_319,Apakah Seoul dilalui Sungai Han?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_content_11831,Berapa halaman kitab Bhagawad Gita?,id,-0.636,0.219,0.0,1.0,1.946,0,2.529
+indonesian_content_1,Dari manakah asal Dr. H. Shofwan Karim Elha?,id,-0.011,2.219,0.0,0.667,2.565,0,5.44
+indonesian_polar_470,Apakah Balon Lebaran Ponorogo berbahaya?,id,0.409,0.518,0.5,0.833,2.079,1,4.339
+indonesian_polar_191,apakah gastronomi mempelajari sejarah?,id,-0.291,-0.482,0.75,0.8,1.946,1,2.723
+indonesian_polar_405,Apakah bakteri Bacillus thuringiensis berbaya pada manusia?,id,0.209,0.518,0.75,0.75,2.303,1,4.53
+indonesian_polar_11,apakah Spam termasuk tindakan kriminal?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_polar_79,apakah spam dapat dihindari?,id,0.209,-0.482,0.5,0.6,1.946,1,2.773
+indonesian_polar_332,Apakah PES sama dengan FIFA ?,id,-0.191,-0.482,0.0,0.667,2.079,1,2.073
+indonesian_polar_46,apakah teh mengandung kafein?,id,-0.291,-0.482,0.75,0.8,1.946,1,2.723
+indonesian_content_7113,siapakah penulis cerita Harry Potter?,id,-0.436,1.219,0.0,0.667,2.079,0,3.529
+indonesian_polar_150,Adakah bendungan dapat digunakan untuk PLTA?,id,0.043,0.518,0.5,0.571,2.197,1,3.829
+indonesian_polar_69,apakah Bianca Maria Visconti keturunan Raja?,id,-0.291,0.518,0.0,0.857,2.197,1,3.281
+indonesian_polar_350,Apakah Ya’juj dan Ma’juj manusia?,id,-0.391,-0.482,0.0,0.667,2.079,1,1.873
+indonesian_polar_216,Apakah hepatitis B dapat disembuhkan?,id,0.409,-0.482,0.5,0.667,2.079,1,3.173
+indonesian_content_5820,jenis kucing domestik apakah yang paling kecil?,id,0.221,0.219,0.0,0.625,2.303,0,3.368
+indonesian_polar_143,Apakah sistem kasta berlaku di India?,id,0.043,-0.482,0.75,0.714,2.197,1,3.222
+indonesian_polar_277,apakah Wasabi pedas?,id,-0.457,-0.482,0.0,0.75,1.792,1,1.603
+indonesian_content_5908,Kapan Galileo Galilei lahir?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_content_11323,mata uang apakah yang digunakan di jepang?,id,0.221,0.219,0.333,0.5,2.303,0,3.576
+indonesian_content_12019,Siapa yang menemukan paham Reduksionisme?,id,-0.386,0.219,0.333,0.6,1.946,0,2.712
+indonesian_content_3347,bisakah manusia melihat wujud elektron valensi?,id,-0.136,0.219,0.5,0.714,2.197,0,3.494
+indonesian_content_2241,Dimanakah kota suci agama Yahudi ?,id,-0.236,0.219,0.0,0.667,2.079,0,2.729
+indonesian_content_6816,Siapakah libretto oleh Lorenzo da Ponte?,id,-0.303,1.219,0.0,0.571,2.197,0,3.684
+indonesian_content_7557,Berapa lama Kerusuhan Poso terjadi?,id,0.864,-0.781,0.5,1.0,1.946,0,3.529
+indonesian_polar_444,Apakah gunung Bromo terletak di kota Malang?,id,-0.076,-0.482,0.75,0.75,2.303,1,3.245
+indonesian_content_1179,berapakah jumlah orangutan yang amsih ada tahun 2015?,id,0.614,0.219,0.5,0.667,2.398,0,4.398
+indonesian_polar_372,Adakah Kashmir dilalui oleh Sungai Indus?,id,-0.291,0.518,0.5,0.714,2.197,1,3.638
+indonesian_content_10246,Berapa lama Belanda menjajah Indonesia?,id,0.114,-1.781,0.667,1.0,1.946,0,1.946
+indonesian_content_10063,dimanakah radio pertama kali diciptakan?,id,0.564,-0.781,0.5,0.833,2.079,0,3.195
+indonesian_polar_183,apakah Telepon video bisa dilakukan dengan koneksi 3G?,id,0.084,-0.482,0.75,0.667,2.398,1,3.417
+indonesian_polar_235,apakah malin kundang berasal dari minangkabau?,id,0.043,-0.482,0.75,0.714,2.197,1,3.222
+indonesian_content_9086,Berapa kerajaan Perlak I berlangsung?,id,0.614,0.219,0.333,1.0,1.946,0,4.112
+indonesian_content_11958,berapakah jumlah kecamatan di Nusa Tenggara Timur?,id,-0.208,0.219,0.0,0.75,2.303,0,3.064
+indonesian_polar_395,pernahkah Raja Rama IX menikah?,id,0.409,0.518,0.5,0.667,2.079,1,4.173
+indonesian_polar_141,Adakah tank menggunakan peluru?,id,-0.291,-0.482,0.5,0.8,1.946,1,2.473
+indonesian_content_4363,Apa yang mempengaruhi kecepatan CPU?,id,-0.386,0.219,0.333,0.6,1.946,0,2.712
+indonesian_content_5114,Kapan Guglielmo I lahir?,id,0.364,-0.781,0.333,0.75,1.792,0,2.458
+indonesian_content_3830,dimanakah Osias Beert dilahirkan?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_polar_455,Apakah Sukra seorang dewa dalam mitologi Hindu?,id,-0.362,0.518,0.0,0.625,2.303,1,3.084
+indonesian_content_1488,berapakah tinggi Patung Buddha Mengshan?,id,0.764,-0.781,0.5,0.833,2.079,0,3.395
+indonesian_polar_144,Apakah Salat Witir boleh dikerjakan setelah solat fardu?,id,0.084,-0.482,0.75,0.667,2.398,1,3.417
+indonesian_content_10913,siapakah dewa utama dalam agama Buddha ?,id,-0.136,0.219,0.0,0.571,2.197,0,2.851
+indonesian_polar_307,Apakah Krustasea dapat dikonsumsi manusia?,id,0.009,-0.482,0.75,0.667,2.079,1,3.023
+indonesian_polar_212,Apakah Buddha mempercayai Kehidupan setelah kematian?,id,-0.291,0.518,0.75,0.714,2.197,1,3.888
+indonesian_content_6597,Kapan Zainal Sabaruddin Nasution lahir ?,id,0.614,0.219,0.333,1.0,1.946,0,4.112
+indonesian_polar_181,Apakah Perusahaan Jawatan Kereta Api termasuk BUMN?,id,0.352,1.518,0.75,0.875,2.303,1,5.798
+indonesian_content_11316,siapakah istri George Herbert Walker Bush?,id,-0.47,2.219,0.0,0.714,2.197,0,4.66
+indonesian_polar_371,Apakah dewa brahmana berasal dari kepercayaan Hindu ?,id,-0.076,-0.482,0.75,0.75,2.303,1,3.245
+indonesian_polar_178,Adakah minum bir dapat menyebabkan kecanduan?,id,0.209,0.518,0.5,0.714,2.197,1,4.138
+indonesian_content_10536,Kapan Raden Mas Soewardi Soerjaningrat lahir?,id,0.764,1.219,0.333,1.0,2.079,0,5.395
+indonesian_polar_356,apakah ada populasi manusia di Pulau Selaru?,id,-0.362,0.518,0.5,0.75,2.303,1,3.709
+indonesian_polar_218,apakah Dana desa masuk dalam Undang-Undang Desa?,id,-0.076,-0.482,0.75,0.75,2.303,1,3.245
+indonesian_content_343,tahun berapakah Indonesia merdeka?,id,0.614,-0.781,0.5,0.8,1.946,0,3.079
+indonesian_polar_397,Adakah Yesus Kristus disalib?,id,0.209,0.518,0.375,0.8,1.946,1,3.848
+indonesian_content_9326,Siapakah Julie Brown?,id,-0.303,-0.781,0.0,0.5,1.792,0,1.208
+indonesian_polar_190,apakah Baitul Maqdis tempat Ibadah umat Yahudi?,id,-0.505,1.518,0.0,0.875,2.303,1,4.191
+indonesian_polar_84,bisakah kita bertani di pinggir pantai?,id,-0.124,-0.482,0.75,0.429,2.197,1,2.77
+indonesian_polar_76,Apakah smartphone adalah telepon genggam?,id,0.009,-0.482,0.0,0.667,2.079,1,2.273
+indonesian_content_4478,Berapa luas Kepulauan Masalembo?,id,-0.636,-0.781,0.0,1.0,1.792,0,1.375
+indonesian_polar_48,Apakah Konversi dibolehkan di dalam Islam?,id,0.043,-0.482,0.75,0.571,2.197,1,3.079
+indonesian_content_1444,siapakah yang menemukan ilmu Epistemologi?,id,-0.236,0.219,0.333,0.5,2.079,0,2.895
+indonesian_content_9230,Kapan The Art Of War pertama kali dicetak?,id,0.935,1.219,0.5,1.0,2.303,0,5.957
+indonesian_content_976,kapankah Amalric meninggal?,id,0.03,-0.781,0.333,0.75,1.792,0,2.124
+indonesian_polar_338,Apakah kata dengan kalimat sama ?,id,-0.391,0.518,0.0,0.667,2.079,1,2.873
+indonesian_polar_217,Apakah Jamur kuping bisa dimakan ?,id,0.409,-0.482,0.5,0.667,2.079,1,3.173
+indonesian_content_11464,Di daerah bersuhu berapa tanaman temu mangga bisa hiup ?,id,0.989,0.219,0.25,0.778,2.398,0,4.634
+indonesian_content_3160,Pernahkah Hamka dipenjara ?,id,0.03,-0.781,0.333,0.75,1.792,0,2.124
+indonesian_content_8690,berapakah jumlah Gereja Katolik di Indonesia?,id,0.03,-0.781,0.0,0.714,2.197,0,2.16
+indonesian_content_413,Apa yang dimaksud dengan perangkat lunak?,id,-0.236,0.219,0.333,0.5,2.079,0,2.895
+indonesian_polar_378,Apakah penyembuhan ambien memerlukan operasi ?,id,0.009,-0.482,0.75,0.833,2.079,1,3.189
+indonesian_content_5854,dimanakah letak Bioskop terbesar di Indoensia?,id,0.197,0.219,0.0,0.571,2.197,0,3.184
+indonesian_content_1072,berapakah jumlah huruf dalam bahasa mandarin?,id,-0.136,-0.781,0.0,0.714,2.197,0,1.994
+indonesian_polar_439,apakah Sidik jari setiap manusia berbeda?,id,0.209,-0.482,0.0,0.714,2.197,1,2.638
+indonesian_polar_308,apakah Michael Schumacher masih mengikuti Grand Prix F1 Kanada 2005?,id,-0.191,2.518,1.0,0.818,2.565,1,6.71
+indonesian_polar_248,pernahkah Israel diserang negara lain?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_content_4506,Berapa luas Kabupaten Wonogiri ?,id,-0.636,-0.781,0.0,1.0,1.792,0,1.375
+indonesian_content_7,Kapan PBB mulai terbentuk ?,id,-0.303,-1.781,0.25,1.0,1.792,0,0.958
+indonesian_polar_82,Apakah ajaran Anikonisme mempercayai adanya tuhan?,id,-0.124,-0.482,0.5,0.857,2.197,1,2.948
+indonesian_content_6281,Kapan peristiwa Brexit terjadi?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_content_11389,kapankah Musik rock di perkenalkan di indonesia?,id,-0.065,0.219,0.0,0.5,2.303,0,2.957
+indonesian_content_7752,siapakah presiden pertama republik indonesia?,id,-0.236,0.219,0.0,0.667,2.079,0,2.729
+indonesian_content_7801,Berapa lama proses kebiri?,id,-0.303,-1.781,0.0,1.0,1.792,0,0.708
+indonesian_content_7137,Kapan Nusa tenggara timur berpisah dengan Nusa Tenggara Barat ?,id,0.239,0.219,0.5,0.889,2.398,0,4.245
+indonesian_content_1563,Siapakah yang menjadi musuh supergirl ?,id,-0.236,0.219,0.333,0.5,2.079,0,2.895
+indonesian_content_3679,berapakah luas Thailand?,id,-0.303,-0.781,0.0,0.75,1.792,0,1.458
+indonesian_content_3902,Kapan Hitoshi Iwaaki mulai menulis manga ?,id,-0.036,-0.781,0.333,1.0,2.079,0,2.595
+indonesian_content_7812,Siapakah tokoh utama dalam Fairy Tail ?,id,-0.136,0.219,0.0,0.571,2.197,0,2.851
+indonesian_content_11310,Dimana Liu Ju lahir?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_polar_30,apakah bakteri bisa hidup di luar angkasa?,id,0.209,-0.482,0.75,0.625,2.303,1,3.405
+indonesian_content_4584,dari manakah asal kata Maladewa?,id,-0.236,0.219,0.0,0.5,2.079,0,2.562
+indonesian_content_11472,Siapa pendiri Institut Leimena?,id,-0.636,0.219,0.0,0.75,1.792,0,2.125
+indonesian_content_11246,kapankah Konferensi Habitat III dilaksanakan?,id,0.564,0.219,0.333,0.667,2.079,0,3.862
+indonesian_polar_234,Adakah bendungan dapat mencegah banjir?,id,0.009,-0.482,0.5,0.667,2.079,1,2.773
+indonesian_content_11314,berapakah Jumlah Suku yang sudah punah di Indonesia?,id,0.114,0.219,0.333,0.556,2.398,0,3.62
+indonesian_content_5580,siapakah pencipta Kereta rel listrik pertama?,id,-0.47,2.219,0.0,0.714,2.197,0,4.66
+indonesian_content_723,Berapa kode telepon India?,id,-0.636,-0.781,0.0,1.0,1.792,0,1.375
+indonesian_polar_450,Apakah Nokia PC Suite memerlukan koneksi Internet?,id,0.066,0.518,0.75,0.875,2.303,1,4.512
+indonesian_content_204,Berapa lama perayaan Paskah berlangsung?,id,0.864,-0.781,0.5,1.0,1.946,0,3.529
+indonesian_content_1017,Siapa penulis Alkitab Ibrani?,id,-0.636,0.219,0.0,0.75,1.792,0,2.125
+indonesian_content_11044,Siapakah yang memperkenalkan istilah Sekularisme pertama kali ?,id,-0.065,1.219,0.333,0.625,2.303,0,4.415
+indonesian_content_4064,Kapan Teologi kontekstual mulai diterapkan di Indonesia?,id,0.03,0.219,0.333,0.857,2.197,0,3.636
+indonesian_polar_260,Apakah koran bisa dijadikan bahan Kesenian dari barang bekas?,id,-0.124,0.518,0.75,0.7,2.485,1,4.329
+indonesian_polar_34,apakah presiden soeharto menjalankan sistem diktatur di saat menjabat?,id,-0.013,-0.482,0.5,0.8,2.485,1,3.29
+indonesian_content_2168,berapakah anggota Raelian tahun 2015?,id,-0.236,-0.781,0.0,0.667,2.079,0,1.729
+indonesian_polar_31,Apakah sistem pembelajaran virtual memerlukan internet?,id,0.209,0.518,0.75,0.857,2.197,1,4.531
+indonesian_content_914,berapakah jumlah pesantren didunia?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_polar_149,apakah bahasa Tokharia sudah punah?,id,0.409,-0.482,0.5,0.667,2.079,1,3.173
+indonesian_polar_343,Apakah Yesus disalib?,id,-0.124,-0.482,0.5,0.75,1.792,1,2.436
+indonesian_content_2175,berapakah jumlah episode dalam Heart Series?,id,-0.136,-0.781,0.0,0.714,2.197,0,1.994
+indonesian_polar_9,apakah ganja mengandung zat adiktif?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_polar_313,Apakah agama Children of God diterima di Indonesia?,id,0.334,1.518,0.75,0.778,2.398,1,5.778
+indonesian_content_6285,kapankah novel novel Harry Potter pertama kali diciptakan?,id,0.864,1.219,0.5,0.889,2.398,0,5.87
+indonesian_polar_284,Apakah eceng termasuk tumbuhan perusak ?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_polar_160,apakah Xiao Baojuan mempunyai anak?,id,0.009,-0.482,0.75,0.833,2.079,1,3.189
+indonesian_polar_262,Apakah kayu pohon Shorea dapat dijadikan perabot?,id,0.352,0.518,0.75,0.75,2.303,1,4.673
+indonesian_content_10492,dari manakah asal Tantowi Yahya?,id,-0.036,-0.781,0.0,0.5,2.079,0,1.762
+indonesian_content_8890,Siapa penrbit film Spirited Away?,id,-0.636,0.219,0.0,0.8,1.946,0,2.329
+indonesian_polar_19,apakah perjalanan waktu secara ilmiah bisa dilakukan?,id,0.924,0.518,0.5,0.625,2.303,1,4.87
+indonesian_content_11321,Siapakah Perdana menteri Israel sebelum Yitzhak Shamir?,id,-0.065,0.219,0.0,0.625,2.303,0,3.082
+indonesian_polar_5,Apakah perakam ketikan dapat menyebabkan pencurian kata sandi?,id,0.084,0.518,1.0,0.778,2.398,1,4.778
+indonesian_polar_249,Apakah PT Kimia Farma Tbk. adalah perusahaan BUMN?,id,0.709,1.518,0.0,0.778,2.485,1,5.49
+indonesian_content_7485,Berapakah jarak kota Malang ke Surabaya?,id,0.03,-0.781,0.0,0.714,2.197,0,2.16
+indonesian_polar_459,Apakah asam dehidroaskorbat dapat larut dalam etanol?,id,0.209,-0.482,0.75,0.625,2.303,1,3.405
+indonesian_polar_393,Apakah Gunung Semeru tergolong gunung aktif ?,id,-0.124,-0.482,0.75,0.857,2.197,1,3.198
+indonesian_polar_448,Apakah tebu dapat dijadikan minuman?,id,0.009,-0.482,0.75,0.667,2.079,1,3.023
+indonesian_polar_387,Adakah Gilgames seorang Raja?,id,-0.291,0.518,0.5,0.6,1.946,1,3.273
+indonesian_content_3174,siapakah pencipta Phineas dan Ferb?,id,-0.236,1.219,0.0,0.5,2.079,0,3.562
+indonesian_content_242,Berapakah luas wilayah Hongnong?,id,-0.386,-0.781,0.0,0.6,1.946,0,1.379
+indonesian_polar_72,Apakah Material butiran berwujud zat padat?,id,-0.124,-0.482,0.75,0.857,2.197,1,3.198
+indonesian_polar_133,apakah Jean Todt pernah menjadi pembalap professional?,id,0.066,-0.482,1.0,0.875,2.303,1,3.762
+indonesian_polar_182,Apakah agama Shinto percaya terhadap dewa ?,id,0.043,-0.482,0.75,0.714,2.197,1,3.222
+indonesian_polar_90,Bisakah SARS disembuhkan ?,id,0.209,-1.482,0.5,0.5,1.792,1,1.519
+indonesian_polar_93,apakah Fidiricu II mempunyai anak?,id,0.009,-0.482,0.75,0.667,2.079,1,3.023
+indonesian_content_7602,Kapan Madrasah Aliyah Negeri Insan Cendekia pertama dibangun ?,id,0.935,2.219,0.5,1.0,2.303,0,6.957
+indonesian_content_2721,Dimana Manusia bertopeng besi dipenjara?,id,-0.136,-1.781,0.333,1.0,1.946,0,1.362
+indonesian_content_3891,Kapan cultuurstelsel diterapkan di Indonesia?,id,-0.136,-0.781,0.5,0.8,1.946,0,2.329
+indonesian_polar_176,Apakah Kristen mempercayai Kehidupan setelah kematian?,id,-0.291,0.518,0.75,0.714,2.197,1,3.888
+indonesian_content_1422,berapa lamakah proses pembuatan Perpustakaan Kongres Amerika Serikat?,id,-0.636,3.219,0.0,1.0,2.303,0,5.886
+indonesian_content_10209,Siapakah bupati jombang kedua?,id,-0.386,0.219,0.0,0.6,1.946,0,2.379
+indonesian_polar_28,Apakah Hindia Belanda sekarang disebut Indonesia?,id,0.209,-0.482,1.0,0.857,2.197,1,3.781
+indonesian_polar_347,Apakah agama islam termasuk agama Monoteisme ?,id,-0.124,-0.482,0.75,0.857,2.197,1,3.198
+indonesian_content_4083,Kapan Elon Musk lahir ?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_content_7636,berapakah jumlah provinsi di dunia tahun 2015?,id,0.221,-0.781,0.0,0.625,2.303,0,2.368
+indonesian_polar_71,apakah dinosaurus sudah hidup pada zaman Mesozoikum?,id,-0.076,-0.482,0.75,0.625,2.303,1,3.12
+indonesian_polar_366,apakah David Émile Durkheim masih hidup?,id,-0.124,0.518,0.5,0.857,2.197,1,3.948
+indonesian_polar_440,Apakah Baudouin seorang raja ?,id,-0.291,-0.482,0.0,0.4,1.946,1,1.573
+indonesian_polar_215,apakah kepercayaan Taoisme ada di Indonesia?,id,0.043,-0.482,0.75,0.714,2.197,1,3.222
+indonesian_content_11007,Siapa pendiri DisneyToon ?,id,-0.636,-0.781,0.0,0.667,1.609,0,0.859
+indonesian_polar_186,apakah smartphone termasuk Pocket PC Phone?,id,-0.457,0.518,0.75,0.857,2.197,1,3.865
+indonesian_polar_165,apakah Tuanku Imam Bonjol mempunyai anak?,id,0.495,-0.482,1.0,0.75,2.303,1,4.066
+indonesian_content_1192,Kapan serial Scream pertama dirilis ?,id,0.864,-0.781,0.333,1.0,1.946,0,3.362
+indonesian_polar_55,apakah vietnam menganut sitem demokrasi?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_polar_257,Apakah penyakit Hepatitis C dapat disembuhkan?,id,0.543,0.518,0.5,0.714,2.197,1,4.472
+indonesian_polar_174,pernahkah Napoleon menikah?,id,-0.124,-0.482,0.5,0.75,1.792,1,2.436
+indonesian_content_7908,Dimana tempat kelahiran Riichi Ueshiba?,id,-0.636,1.219,0.0,1.0,1.946,0,3.529
+indonesian_polar_458,Apakah Urochordata adalah jenis hewan air?,id,-0.124,-0.482,0.0,0.714,2.197,1,2.305
+indonesian_content_10335,Berapa luas daerah Balkan?,id,-0.636,-0.781,0.0,1.0,1.792,0,1.375
+indonesian_polar_157,apakah schizophrenia penyakit psikologi?,id,-0.541,0.518,0.0,0.6,1.946,1,2.523
+indonesian_content_7100,ada berapakah jenis Lalat ?,id,0.114,0.219,0.167,0.8,1.946,0,3.246
+indonesian_polar_140,Apakah Dildo terbuat dari Batu?,id,-0.191,-0.482,0.75,0.667,2.079,1,2.823
+indonesian_polar_125,apakah kecanduan alkohol memungkinkan untuk terjadi?,id,0.043,-0.482,0.5,0.714,2.197,1,2.972
+indonesian_polar_276,apakah ketam kenari bisa bernafas dalam air?,id,0.352,-0.482,1.0,0.625,2.303,1,3.798
+indonesian_polar_2,Apakah Baladewa seorang manusia?,id,-0.291,0.518,0.0,0.4,1.946,1,2.573
+indonesian_polar_32,Apakah Kitab Yosua dikarang manusia?,id,0.009,-0.482,0.75,0.833,2.079,1,3.189
+indonesian_polar_334,Apakah Turki dan Turkistan adalah negara yang sama ?,id,0.459,0.518,0.0,0.556,2.398,1,3.931
+indonesian_polar_304,Apakah agama Kristen menyakini kehidupan setelah mati?,id,-0.076,0.518,0.75,0.75,2.303,1,4.245
+indonesian_content_4994,kapankah Yesus dilahirkan?,id,0.03,-0.781,0.333,0.75,1.792,0,2.124
+indonesian_content_11406,siapakah yang menemukan Ötzi?,id,-0.136,-0.781,0.333,0.4,1.946,0,1.762
+indonesian_content_11377,Kapan PDRM dibentuk ?,id,-0.136,-1.781,0.333,1.0,1.609,0,1.025
+indonesian_polar_230,apakah Masakan khas Kazakhstan menggunakan daging kuda?,id,0.209,-0.482,0.75,0.875,2.303,1,3.655
+indonesian_content_4088,Kapankah manga muncul pertama kali di Jeoang,id,0.221,-0.781,0.667,0.75,2.197,0,3.054
+indonesian_content_4220,Kapan Kaisar Liu Yilong lahir?,id,0.614,0.219,0.333,1.0,1.946,0,4.112
+indonesian_polar_435,Apakah sistem windows digunakan untuk menggunakan Nokia PC Suite?,id,-0.235,1.518,0.625,0.8,2.485,1,5.193
+indonesian_polar_452,Apakah biji wijen dapat dimakan manusia?,id,0.209,-0.482,0.75,0.714,2.197,1,3.388
+indonesian_content_1926,Kapankah Reki Kawahara mulai menulis ?,id,0.164,-0.781,0.25,0.833,2.079,0,2.545
+indonesian_polar_341,apakah dorce adalah seorang laki-laki?,id,0.609,-0.482,0.0,0.5,2.079,1,2.706
+indonesian_content_10873,Siapakah sutradara Qayamat Ki Raat?,id,-0.436,1.219,0.0,0.667,2.079,0,3.529
+indonesian_content_10237,Kapankah Jamie-Lee lahir ?,id,0.03,-0.781,0.333,0.75,1.792,0,2.124
+indonesian_content_8331,Kapankah Walt Disney lahir ?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_content_3108,Berapa jumlah versi kisah Sampuraga?,id,-0.636,0.219,0.0,1.0,1.946,0,2.529
+indonesian_content_5871,berapakah jumlah surah dalam al-Qur'an?,id,-0.136,-0.781,0.0,0.714,2.197,0,1.994
+indonesian_polar_275,Apakah mesin jet dan mesin roket termasuk dalam mesin pembakaran dalam?,id,0.482,0.518,0.75,0.667,2.639,1,5.056
+indonesian_polar_254,apakah berbicara kepada diri sendiri termasuk salah satu bentuk Komunikasi intrapribadi ?,id,-0.154,1.518,0.5,0.583,2.639,1,5.086
+indonesian_polar_342,apakah film pertama asli dari orang Indonesia?,id,-0.076,0.518,0.0,0.625,2.303,1,3.37
+indonesian_polar_394,Apakah Pewarna indigo aman digunakan pada makanan?,id,0.209,-0.482,1.0,0.75,2.303,1,3.78
+indonesian_polar_314,Adakah Pandemik sebuah virus?,id,-0.291,0.518,0.5,0.6,1.946,1,3.273
+indonesian_content_2366,sayur apakah yang paling banyak mengandung vitamin a?,id,0.364,0.219,0.667,0.778,2.398,0,4.426
+indonesian_content_7293,Berapa jumlah penari dalam seni tari Dayak?,id,-0.303,0.219,0.0,0.857,2.197,0,2.97
+indonesian_content_7548,berapakah jumlah kecamatan di kabupaten Sukabumi?,id,-0.136,-0.781,0.0,0.714,2.197,0,1.994
+indonesian_content_10064,Siapa itu Tu Di Gong ?,id,-0.136,0.219,0.0,0.4,1.946,0,2.429
+indonesian_polar_416,adakah mikroorganisme yang bisa bertahan di planet mars?,id,-0.166,1.518,0.5,0.556,2.398,1,4.806
+indonesian_content_3989,berapakah suhu terdingin di Selat Malaka?,id,-0.136,-0.781,0.0,0.714,2.197,0,1.994
+indonesian_content_4249,berapakah durasi film Pulau Hantu?,id,-0.436,0.219,0.0,0.833,2.079,0,2.695
+indonesian_polar_201,apakah kavaleri pasukan berkuda?,id,-0.541,-0.482,0.0,0.8,1.946,1,1.723
+indonesian_polar_392,apakah Daspletosaurus bertelur?,id,-0.124,-0.482,0.5,0.75,1.792,1,2.436
+indonesian_content_9036,dimanakah Akira Toriyama dilahirkan?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_content_9823,Kapankah Kadokawa Shoten berdiri ?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_content_693,siapakah pendiri Band Element ?,id,-0.386,0.219,0.0,0.6,1.946,0,2.379
+indonesian_polar_0,Apakah Melissa Brannen telah ditemukan ?,id,0.409,-0.482,0.5,0.667,2.079,1,3.173
+indonesian_content_2987,siapakah pencipta Gitar?,id,-0.303,-0.781,0.0,0.5,1.792,0,1.208
+indonesian_polar_433,apakah Livemocha termasuk sebuah situs gratis?,id,-0.291,-0.482,0.75,0.714,2.197,1,2.888
+indonesian_polar_145,Apakah musik Okinawa merupakan musik tradisional ?,id,-0.124,-0.482,0.75,0.857,2.197,1,3.198
+indonesian_content_1505,siapakah yang menciptakan jenis bahasa isyarat pertama kali?,id,-0.011,1.219,0.333,0.667,2.398,0,4.606
+indonesian_polar_344,Apakah Nina Wang adalah seorang pengusaha ?,id,0.709,-0.482,0.0,0.571,2.197,1,2.995
+indonesian_content_2976,Kapan Polikarpus lahir?,id,-0.136,-1.781,0.333,1.0,1.609,0,1.025
+indonesian_content_10416,Jamur apa yang tidak dapat dikonsumsi oleh manusia?,id,0.506,0.219,0.5,0.375,2.303,0,3.903
+indonesian_content_10820,Bagaimanakah sistem pemerintahan di Jepang ?,id,-0.036,-0.781,0.0,0.667,2.079,0,1.929
+indonesian_content_1902,Apa yang dimaksud dengan gizi ?,id,-0.136,0.219,0.333,0.4,1.946,0,2.762
+indonesian_content_1842,berapakah umur Heraklius Tua saat dia meninggal dunia?,id,0.114,-0.781,0.5,0.667,2.398,0,2.898
+indonesian_polar_374,Apakah Binokular digunakan untuk mengamati Planet?,id,-0.291,-0.482,0.625,0.714,2.197,1,2.763
+indonesian_polar_301,apakah Yogyakarta terletak di Provinsi Jawa Tengah?,id,-0.362,0.518,0.75,0.75,2.303,1,3.959
+indonesian_polar_462,apakah Indonesia sudah memiliki jaringan 5G?,id,-0.124,-0.482,0.75,0.714,2.197,1,3.055
+indonesian_polar_197,Apa nama candi terbesar di Indonesia?,id,-0.391,1.518,0.0,0.667,2.079,1,3.873
+indonesian_content_3398,kapankah Amerika Serikat resmi menjadi negara?,id,0.364,-0.781,0.667,0.857,2.197,0,3.304
+indonesian_content_5701,Kapan industri film muncul pertama kali ?,id,0.164,-0.781,0.5,1.0,2.079,0,2.962
+indonesian_polar_242,Pernahkah tim sepak bola Jepang ikut dalam Piala dunia ?,id,0.209,1.518,0.75,0.8,2.485,1,5.762
+indonesian_polar_225,apakah bahasa Yunani adalah bahasa tertua di dunia?,id,0.209,-0.482,0.0,0.667,2.398,1,2.792
+indonesian_content_1130,Siapakah yang mendirikan Majelis Rasulullah ?,id,-0.236,0.219,0.333,0.5,2.079,0,2.895
+indonesian_content_7074,Kapan Hayao Miyazaki mulai menjadi sutradara ?,id,-0.036,-0.781,0.333,1.0,2.079,0,2.595
+indonesian_polar_437,apakah lumba-lumba termasuk mamalia?,id,-0.291,-0.482,0.75,0.8,1.946,1,2.723
+indonesian_content_8560,Kapan Nokia Asha 308 dirilis?,id,0.614,0.219,0.333,0.8,1.946,0,3.912
+indonesian_polar_402,Apakah Perhimpunan Anak adalah nama sebuah organisasi ?,id,0.209,-0.482,0.0,0.625,2.303,1,2.655
+indonesian_content_4038,Siapakah direktur utama pertama Volkswagen ?,id,0.164,-0.781,0.0,0.667,2.079,0,2.129
+indonesian_content_6467,Kapan ilmu anatomi ditemukan ?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_content_8175,apa yang dimaksud dengan Etnografi ?,id,-0.136,0.219,0.333,0.4,1.946,0,2.762
+indonesian_polar_173,apakah Yesus meninggal karena disalip?,id,-0.191,-0.482,0.5,0.667,2.079,1,2.573
+indonesian_polar_414,Apakah orang yang mengeluarkan nifas boleh solat?,id,-0.219,1.518,0.75,0.625,2.303,1,4.977
+indonesian_polar_17,Apakah gereja protestan berbeda dengan katolik?,id,0.043,-0.482,0.75,0.714,2.197,1,3.222
+indonesian_polar_330,apakah Uni Soviet mengikuti perang dunia II?,id,-0.219,0.518,0.75,0.75,2.303,1,4.102
+indonesian_content_83,berapakah luas Republik Afrika Selatan?,id,-0.436,0.219,0.0,0.833,2.079,0,2.695
+indonesian_polar_154,apakah handphone termasuk teknologi komunikasi?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_polar_43,apakah Prof. Dr. Sutan Remy Sjahdeini mempunyai perusahaan?,id,1.459,1.518,0.75,0.889,2.565,1,7.181
+indonesian_polar_153,apakah Foto esei digunakan untuk bidang jurnalisme fotografi?,id,-0.166,0.518,0.75,0.778,2.398,1,4.278
+indonesian_content_4812,berapakah jumlah manga yang di buat Eiichiro Oda?,id,-0.136,0.219,0.5,0.667,2.398,0,3.648
+indonesian_polar_327,apakah Command & Conquer: Generals mempunyai sekuel?,id,1.043,-0.482,1.0,0.857,2.398,1,4.816
+indonesian_content_7925,bisakah Ejakulasi Dini Pria di obati?,id,0.03,-0.781,0.0,0.571,2.197,0,2.017
+indonesian_polar_333,Apakah Ludwig II pernah menjabat sebagai raja ?,id,0.209,-0.482,1.0,0.625,2.303,1,3.655
+indonesian_content_9478,Di manakah letak Samudra hindia?,id,-0.236,-0.781,0.0,0.5,2.079,0,1.562
+indonesian_polar_47,Apakah Wawancara daring dapat dilakukan jarak jauh?,id,0.209,-0.482,1.0,0.75,2.303,1,3.78
+indonesian_content_1181,kapankah Epistemologi dipelajari?,id,0.03,-0.781,0.333,0.75,1.792,0,2.124
+indonesian_content_3948,dimanakah Jabir Ibn Hayyan dilahirkan?,id,0.564,0.219,0.333,0.833,2.079,0,4.028
+indonesian_polar_441,apakah Yaman terletak di benua asia?,id,-0.291,-0.482,0.75,0.714,2.197,1,2.888
+indonesian_content_1284,kapankah organisasi palang merah indonesia didirikan?,id,0.864,0.219,0.333,0.857,2.197,0,4.47
+indonesian_polar_245,apakah Moldova memiliki wilayah laut?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_polar_274,Apakah Candy Candy pernah difilmkan ?,id,0.409,-0.482,0.75,0.833,2.079,1,3.589
+indonesian_content_6985,berapakah berat Panzerkampfwagen VIII Maus?,id,-0.236,-0.781,0.0,0.667,2.079,0,1.729
+indonesian_polar_282,Apakah Theodore Beza pernah menulis buku?,id,0.209,-0.482,1.0,0.857,2.197,1,3.781
+indonesian_polar_113,apakah orangutan terancam punah?,id,-0.291,-0.482,0.75,0.8,1.946,1,2.723
+indonesian_content_9504,Siapa pembentuk Konfederasi Jerman?,id,-0.636,0.219,0.0,0.75,1.792,0,2.125
+indonesian_content_9773,dimanakah Elena and the Secret of Avalor dibuat?,id,1.114,1.219,0.333,0.889,2.398,0,5.953
+indonesian_content_2623,siapakah penerus tahta Basileios II?,id,-0.436,0.219,0.0,0.5,2.079,0,2.362
+indonesian_polar_329,Apakah Penyakit Crohn perlu dioperasi?,id,0.409,-0.482,0.75,0.833,2.079,1,3.589
+indonesian_content_11667,Kapan Johnny Hiromu Kitagawa lahir?,id,0.614,0.219,0.333,1.0,1.946,0,4.112
+indonesian_polar_325,apakah Tubagus Alipan seorang anggota PKI?,id,-0.291,-0.482,0.0,0.714,2.197,1,2.138
+indonesian_content_10519,Berapa luas laut Shiraz?,id,-0.636,-0.781,0.0,1.0,1.792,0,1.375
+indonesian_content_10509,Adakah Turki Negara yang berbatasan dengan Laut Hitam?,id,-0.136,1.219,0.333,0.667,2.398,0,4.481
+indonesian_polar_430,apakah Henri Lefebvre masih hidup?,id,-0.191,-0.482,0.25,0.833,2.079,1,2.489
+indonesian_content_5656,Siapa pendiri KMBPalembang?,id,-0.636,-0.781,0.0,0.667,1.609,0,0.859
+indonesian_content_5774,Kapankah Piala FA pertama kali diselenggarakan ?,id,0.697,-0.781,0.5,0.857,2.197,0,3.47
+indonesian_content_1075,kapankah bahasa sanskrit ditemukan di indonesia?,id,0.197,-0.781,0.5,0.714,2.197,0,2.827
+indonesian_polar_360,"apakah Kenneth Ray ""Kenny"" Rogers mempunyai anak ?",id,1.352,0.518,0.75,0.875,2.485,1,5.98
+indonesian_content_9440,Kapan peradaban Timur Dekat Kuno berlangsung?,id,0.764,1.219,0.333,1.0,2.079,0,5.395
+indonesian_polar_244,Apakah ambien bisa disembuhkan ?,id,0.209,-0.482,0.5,0.6,1.946,1,2.773
+indonesian_polar_385,Apakah Dildo terbuat dari Kayu?,id,-0.191,-0.482,0.75,0.667,2.079,1,2.823
+indonesian_polar_321,apakah Sabino Arana mempelajari Ilmu Politik?,id,-0.124,-0.482,0.75,0.857,2.197,1,3.198
+indonesian_content_1688,berapakah luas Brasil?,id,-0.303,-0.781,0.0,0.75,1.792,0,1.458
+indonesian_content_7642,Siapa pemeran utama Tutur Tinular versi 2011?,id,0.03,0.219,0.0,0.714,2.197,0,3.16
+indonesian_polar_78,apakah kristen protestan juga melakukan perayaan misa?,id,0.066,-0.482,1.0,0.875,2.303,1,3.762
+indonesian_content_10401,Kapan Friedrich Nietzsche meninggal?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_polar_172,Apakah Urraca pernah menikah ?,id,0.209,-0.482,0.75,0.8,1.946,1,3.223
+indonesian_content_7501,Kapan konsep Melayu Raya pertama diterapkan di Indonesia?,id,0.792,0.219,0.5,0.875,2.303,0,4.689
+indonesian_content_10151,Berapa jumlah anggota dari G7?,id,-0.386,0.219,0.0,0.8,1.946,0,2.579
+indonesian_content_10556,Di manakah letak Menara eiffel?,id,-0.236,-0.781,0.0,0.5,2.079,0,1.562
+indonesian_content_856,Berapa jumlah sungai yang berada di wilayah DKI Jakarta ?,id,-0.261,1.219,0.333,0.778,2.398,0,4.467
+indonesian_polar_379,Apakah orang yang mengeluarkan nifas dibolehkan puasa?,id,0.495,0.518,0.625,0.75,2.303,1,4.691
+indonesian_content_4588,Siapa pemimpin pertama Dinasti Umayyah ?,id,-0.386,0.219,0.0,0.8,1.946,0,2.579
+indonesian_polar_114,Apakah perakam ketikan dapat menyebabkan pencurian data pribadi?,id,0.084,0.518,1.0,0.778,2.398,1,4.778
+indonesian_polar_359,Apakah Laut Aegea masuk kedalam wilayah Yunani ?,id,-0.076,-0.482,0.75,0.75,2.303,1,3.245
+indonesian_content_3539,Daun apakah yang digunakan untuk membungkus tape?,id,-0.065,0.219,0.333,0.5,2.303,0,3.29
+indonesian_content_7941,Kapan Partai Buruh Malta berdiri ?,id,0.614,0.219,0.333,1.0,1.946,0,4.112
+indonesian_content_3107,Kapan Taman Raya Bung Hatta diresmikan?,id,0.764,1.219,0.333,1.0,2.079,0,5.395
+indonesian_polar_241,Apakah GSM pada sistem telepon menggunakan Time-Division Multiplexing?,id,0.334,0.518,0.75,0.778,2.398,1,4.778
+indonesian_content_1403,Siapa presiden pertama Indonesia?,id,-0.303,-0.781,0.0,0.75,1.792,0,1.458
+indonesian_content_9198,Siapakah CEO pertama Isuzu?,id,-0.136,-0.781,0.0,0.6,1.946,0,1.629
+indonesian_polar_264,Apakah menggunakan bra saat tidur itu baik?,id,-0.219,-0.482,0.75,0.625,2.303,1,2.977
+indonesian_content_11391,siapakah teman baik karakter SpongeBob SquarePants?,id,-0.303,1.219,0.0,0.714,2.197,0,3.827
+indonesian_content_2274,Kapan Pertempuran Okinawa berakhir?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_polar_202,apakah August Theis masih hidup?,id,-0.191,-0.482,0.25,0.833,2.079,1,2.489
+indonesian_content_1311,dimanakah letak gereja tertua di dunia?,id,-0.136,1.219,0.0,0.714,2.197,0,3.994
+indonesian_polar_192,Apakah tanaman Nilam dapat dikonsumsi manusia?,id,0.209,-0.482,0.75,0.714,2.197,1,3.388
+indonesian_polar_59,apakah ada penyakit tumor pada tumbuhan?,id,-0.124,-0.482,0.75,0.714,2.197,1,3.055
+indonesian_content_431,Kapankah UFO pertama kali ditemukan ?,id,0.564,-0.781,0.5,0.833,2.079,0,3.195
+indonesian_content_777,Dimana letak Jam Gadang?,id,-0.636,0.219,0.0,0.75,1.792,0,2.125
+indonesian_polar_87,Adakah Bintang merek bir?,id,-0.541,0.518,0.5,0.8,1.946,1,3.223
+indonesian_content_7973,siapakah orang tua Aurangzeb?,id,-0.136,-0.781,0.0,0.6,1.946,0,1.629
+indonesian_polar_299,apakah badai la-nina dan el-nino sama?,id,0.043,0.518,0.0,0.714,2.197,1,3.472
+indonesian_content_6468,Kapan Antoine-Laurent de Lavoisier lahir ?,id,0.614,0.219,0.333,1.0,1.946,0,4.112
+indonesian_content_2485,Kapan situs Malaysiakini dirilis ?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_content_4399,pernahkah Han Xin menikah ?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_polar_97,Apakah Yesus memiliki Ibu?,id,-0.291,-0.482,0.75,0.8,1.946,1,2.723
+indonesian_polar_16,Apakah penggunaan Spotify berbayar ?,id,0.209,-0.482,0.5,0.8,1.946,1,2.973
+indonesian_content_4377,Ada berapa jumlah vokalis dalam Musik gospel?,id,-0.136,0.219,0.167,0.857,2.197,0,3.304
+indonesian_content_316,kapankah Super Junior dibentuk?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_polar_288,Apakah matahari termasuk bintang?,id,-0.291,-0.482,0.75,0.8,1.946,1,2.723
+indonesian_content_3128,Kapan Wu Zetian meninggal?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_content_11550,Kapan Kritik atas Nalar Murni diterbitkan?,id,0.964,0.219,0.333,0.833,2.079,0,4.428
+indonesian_content_138,Dimanakah kantor pusat PT Djakarta Lloyd ?,id,-0.303,0.219,0.0,0.714,2.197,0,2.827
+indonesian_content_1704,Berapa populasi Kota Vatikan tahun 2017?,id,-0.236,-0.781,0.0,0.833,2.079,0,1.895
+indonesian_polar_6,Apaakh kaset menggunakan pita magnetik?,id,-0.541,-0.482,0.75,1.0,1.946,1,2.673
+indonesian_polar_363,bisakah semut berkomunikasi?,id,0.209,-1.482,0.5,0.5,1.792,1,1.519
+indonesian_content_12038,Dimana Kolonel Zulkifli Lubis lahir?,id,0.614,0.219,0.333,1.0,1.946,0,4.112
+indonesian_polar_467,Apakah bakteri tidak baik bagi tubuh manusia?,id,-0.362,0.518,0.0,0.625,2.303,1,3.084
+indonesian_content_3985,berapakah episode dari anime Naruto?,id,-0.236,-0.781,0.0,0.667,2.079,0,1.729
+indonesian_content_5561,Bagaimana cara mengerjakan Salat Witir?,id,-0.636,0.219,0.167,1.0,1.946,0,2.696
+indonesian_polar_13,Apakah kesalahan yang dilakukan Mohammad Hatta sehingga dihukum pengasingan?,id,-0.235,1.518,0.625,0.7,2.485,1,5.093
+indonesian_content_6231,Berapakah jumlah surah dalam al-Qur'an?,id,-0.136,-0.781,0.0,0.714,2.197,0,1.994
+indonesian_content_8431,berapakah wilayah kekuasaan Kesultanan Demak?,id,-0.436,0.219,0.0,0.833,2.079,0,2.695
+indonesian_polar_148,Apakah Nicolas Erik Rosberg pernah menjuarai F1 ?,id,0.352,0.518,1.0,0.875,2.303,1,5.048
+indonesian_polar_396,apakah Raden Adjeng Kartinipernah menikah?,id,0.409,0.518,0.5,0.833,2.079,1,4.339
+indonesian_content_11687,berapakah jumlah kandungan gula dalam 100gr anggur?,id,0.221,-0.781,0.0,0.625,2.303,0,2.368
+indonesian_polar_211,apakah biseksual penyakit?,id,-0.457,-0.482,0.0,0.5,1.792,1,1.353
+indonesian_polar_461,Apakah negara Nepal terletak di Himalaya?,id,0.043,-0.482,0.75,0.714,2.197,1,3.222
+indonesian_content_7566,Siapa yang menandatangani Peraturan Presiden Republik Indonesia No. 10 tahun 1959?,id,0.364,2.219,0.333,0.636,2.639,0,6.191
+indonesian_polar_70,Apakah Negasonic Teenage Warhead seorang mutan?,id,-0.124,-0.482,0.0,0.714,2.197,1,2.305
+indonesian_content_8263,berapa lamakah proses pembuatan Harry Potter dan Batu Bertuah?,id,-0.386,2.219,0.0,0.889,2.398,0,5.12
+indonesian_polar_259,bisakah Pemanfaatan mikroorganisme digunakan untuk kesehatan manusia?,id,0.209,-0.482,0.75,0.625,2.303,1,3.405
+indonesian_content_9545,Kapan Blasius diangkat menjadi uskup?,id,-0.386,-0.781,0.333,1.0,1.946,0,2.112
+indonesian_content_893,Kapan Rizal Mallarangeng lahir ?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_content_2796,Siapa yang memenangi Pengepungan Baler?,id,-0.386,0.219,0.333,0.6,1.946,0,2.712
+indonesian_polar_429,Apakah monster adalah dewa?,id,0.209,-0.482,0.0,0.6,1.946,1,2.273
+indonesian_content_3656,Siapakah pemeran utama Si Buta Lawan Jaka Sembung?,id,-0.386,3.219,0.0,0.778,2.398,0,6.009
+indonesian_polar_4,apakah Plato hidup di zaman yang sama dengan Aristoteles?,id,-0.013,0.518,0.75,0.6,2.485,1,4.34
+indonesian_polar_64,Apakah William Adams masih hidup?,id,-0.191,0.518,0.25,0.667,2.079,1,3.323
+indonesian_polar_384,Apakah permainan rugbi membutuhkan wasit ?,id,0.009,-0.482,0.75,0.833,2.079,1,3.189
+indonesian_content_11524,kapankah kapal pertama diciptakan?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_content_8987,Ada berapa negara yang masuk ke dalam negara bangsa Arab ?,id,-0.081,2.219,0.25,0.7,2.485,0,5.573
+indonesian_content_4654,Dimana Kekaisaran Trebizond didirikan?,id,0.364,-0.781,0.333,0.75,1.792,0,2.458
+indonesian_content_10066,Berapa jauh jangkauan yang dapat dilakukan oleh telegraf untuk mengirim pesan ?,id,0.164,0.219,0.417,0.636,2.565,0,4.001
+indonesian_polar_348,Apakah Observatorium Bosscha dibuka untuk tempat wisata?,id,-0.076,-0.482,0.75,0.75,2.303,1,3.245
+indonesian_content_6400,berapakaj jumlah metal/logam di tabel periodik?,id,-0.236,0.219,0.167,0.833,2.079,0,3.062
+indonesian_content_10290,siapakah orang tua Al-Musta'shim Billah?,id,-0.136,1.219,0.0,0.714,2.303,0,4.1
+indonesian_content_8436,kapankah Republik Demokratik Somali didirikan?,id,0.564,0.219,0.333,0.833,2.079,0,4.028
+indonesian_content_6579,kapankah RPG diciptakan?,id,0.03,-0.781,0.333,0.75,1.792,0,2.124
+indonesian_polar_83,apakah Wikipedia situs yang di akses secara gratis?,id,-0.041,-0.482,1.0,0.556,2.398,1,3.431
+indonesian_polar_109,apakah kerajaan romawi menggunakan bahasa Yunani?,id,-0.124,-0.482,0.75,0.857,2.197,1,3.198
+indonesian_polar_297,Adakah E-commerce termasuk teknologi Informasi?,id,-0.191,0.518,0.5,0.833,2.079,1,3.739
+indonesian_content_6465,Kapankah Sigmund Freud lahir ?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_content_8113,Berapa suhu normal tubuh manusia sehat ?,id,-0.236,-0.781,0.0,1.0,2.079,0,2.062
+indonesian_polar_268,Apakah virus Parvovirus mematikan ?,id,0.209,-0.482,0.5,0.8,1.946,1,2.973
+indonesian_polar_175,Apakah Tuberkulosis dapat menular?,id,0.209,-0.482,0.5,0.6,1.946,1,2.773
+indonesian_content_10942,Kapan Shanghai Transrapid dibuka umum?,id,0.114,-0.781,0.5,1.0,1.946,0,2.779
+indonesian_polar_328,bisakah baja berkarat?,id,0.209,-1.482,0.5,0.5,1.792,1,1.519
+indonesian_polar_189,Apakah aplikasi VSCOCAM berbayar?,id,0.209,-0.482,0.5,0.8,1.946,1,2.973
+indonesian_content_2668,berapakah jumlah kecamatan di kabupaten Solok Selatan?,id,-0.208,0.219,0.0,0.75,2.303,0,3.064
+indonesian_polar_365,apakah Badak jawa terancam punah?,id,0.009,-0.482,0.75,0.833,2.079,1,3.189
+indonesian_polar_61,Adakah waduk dapat dijadikan sumber air Irigasi?,id,-0.219,1.518,0.5,0.75,2.303,1,4.852
+indonesian_content_6987,Kapan Kazimierz II lahir?,id,0.364,-0.781,0.333,0.75,1.792,0,2.458
+indonesian_content_6746,Berapa populasi Sichuan?,id,-0.636,-1.781,0.0,1.0,1.609,0,0.192
+indonesian_polar_60,Apakah bisa Ular laut berperut kuning mematikan ?,id,1.066,1.518,0.375,0.75,2.303,1,6.012
+indonesian_content_1484,Siapa nama vokalis The Beatles?,id,-0.636,1.219,0.0,0.8,1.946,0,3.329
+indonesian_polar_73,apakah Indonesia negara Islam terbesar di dunia?,id,-0.076,1.518,0.0,0.75,2.303,1,4.495
+indonesian_polar_240,apakah Sunan Kudus pernah menikah?,id,0.409,-0.482,0.75,0.833,2.079,1,3.589
+indonesian_content_1534,Berapa lama Yoweri Kaguta Museveni menjabat presiden Uganda?,id,0.078,0.219,0.5,1.0,2.303,0,4.1
+indonesian_content_6575,berapakah jumlah karakter wiracarita Mahabharata?,id,-0.436,0.219,0.0,0.833,2.079,0,2.695
+indonesian_polar_345,apakah Command and Conquer mempunyai sekuel?,id,0.209,0.518,0.75,0.857,2.197,1,4.531
+indonesian_polar_206,Apakah Windows Explorer menggunakan Nama NetBIOS?,id,-0.124,-0.482,0.75,0.857,2.197,1,3.198
+indonesian_polar_116,Apakah Yamcha adalah tokoh antagonis ?,id,0.009,-0.482,0.0,0.667,2.079,1,2.273
+indonesian_polar_398,Apakah karakter Avatar seorang laki laki?,id,-0.291,0.518,0.0,0.571,2.197,1,2.995
+indonesian_polar_24,apakah Marga Raja Basa adalah marga kerajaan?,id,0.352,0.518,0.0,0.75,2.303,1,3.923
+indonesian_polar_49,Apakah Ferit Orhan Pamuk pernah meraih penghargaan?,id,0.352,0.518,1.0,0.875,2.303,1,5.048
+indonesian_polar_317,Apakah Alamat IP versi 4 digunakan pada komputer?,id,0.459,0.518,0.75,0.667,2.398,1,4.792
+indonesian_content_6479,Berapa luas Kabupaten Pemalang?,id,-0.636,-0.781,0.0,1.0,1.792,0,1.375
+indonesian_polar_353,Adakah Iran termasuk dalam Liga Arab?,id,-0.291,0.518,0.5,0.714,2.197,1,3.638
+indonesian_content_8737,Siapa pendiri Kastil Nottingham?,id,-0.636,0.219,0.0,0.75,1.792,0,2.125
+indonesian_polar_41,Apakah Kerajaan Mataram merupakan kerajaan Hindu ?,id,-0.124,-0.482,0.75,0.857,2.197,1,3.198
+indonesian_polar_14,apakah lelaki mempunyai hormon estrogen?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_content_164,Berapakah luas Kabupaten Kendal ?,id,-0.386,-0.781,0.0,0.8,1.946,0,1.579
+indonesian_polar_151,Aapakah merokok penyebab utama penyakit jantung koroner?,id,-0.505,1.518,0.5,0.875,2.303,1,4.691
+indonesian_polar_162,Apakah Albert Einstein‎ filsuf berasal dari Jerman?,id,0.209,-0.482,1.0,0.75,2.303,1,3.78
+indonesian_content_10821,Kenapa Negeri Naga Guntur dikenal sebagai Negeri Naga Guntur?,id,0.114,0.219,0.5,0.889,2.398,0,4.12
+indonesian_polar_204,apakah ada kerajaan di kota Singaraja?,id,-0.457,0.518,0.5,0.714,2.197,1,3.472
+indonesian_polar_310,"apakah Joseph Patrick ""Joe"" Kennedy mempunyai isteri?",id,1.781,-0.482,0.75,0.875,2.485,1,5.409
+indonesian_polar_139,apakah limbah fosfat berbahaya bagi hewan?,id,0.043,-0.482,0.75,0.714,2.197,1,3.222
+indonesian_content_8625,tahun berapakah M.net didirikan?,id,0.614,-0.781,0.5,0.8,1.946,0,3.079
+indonesian_polar_468,apakah nabi Isma'il pernah menikah?,id,1.043,0.518,0.75,0.857,2.303,1,5.471
+indonesian_content_5565,Berapa lama Kerajaan Singhasari berkuasa ?,id,0.864,-0.781,0.5,1.0,1.946,0,3.529
+indonesian_content_8520,Berapa luas wilayah Probolinggo?,id,-0.636,-0.781,0.0,1.0,1.792,0,1.375
+indonesian_polar_306,Adakah proses Fotosintesis memerlukan cahaya matahari?,id,-0.124,0.518,0.5,0.857,2.197,1,3.948
+indonesian_content_10731,Kapan Avatar: The Legend of Aang pertama tayang di Indonesia?,id,1.141,1.219,0.667,0.9,2.565,0,6.492
+indonesian_polar_51,apakah ada manusia yang tinggal di Kepulauan kutub Svalbard?,id,-0.457,2.518,0.5,0.7,2.485,1,5.746
+indonesian_content_6908,Apa yang dimaksud dengan cerita fiksi ?,id,-0.236,0.219,0.333,0.5,2.079,0,2.895
+indonesian_polar_91,Apakah Louis Braille adalah seorang tunanetra ?,id,0.709,-0.482,0.0,0.571,2.197,1,2.995
+indonesian_polar_339,apakah jerman pernah menjuarai liga sepakbola dunia?,id,-0.219,0.518,1.0,0.875,2.303,1,4.477
+indonesian_polar_312,apakah komunikasi hewan bisa dipelajari oleh manusia?,id,0.209,-0.482,0.75,0.625,2.303,1,3.405
+indonesian_content_2077,Siapa pendiri Sekolah Tinggi Agama Islam Nahdlatul Ulama Temanggung?,id,-0.386,3.219,0.0,0.889,2.398,0,6.12
+indonesian_polar_67,Apakah Hirohito masih hidup?,id,0.209,-0.482,0.75,0.8,1.946,1,3.223
+indonesian_content_561,Apa yang dimaksud dengan kepercayaan?,id,-0.136,0.219,0.333,0.4,1.946,0,2.762
+indonesian_content_9299,Dimanakah Dinasti Jin berkuasa ?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_content_9163,Apa yang dimaksud dengan aplikasi iOS?,id,-0.236,0.219,0.333,0.5,2.079,0,2.895
+indonesian_polar_107,Apakah K'tut Tantri seorang penulis buku?,id,0.352,-0.482,0.0,0.75,2.398,1,3.018
+indonesian_content_5759,Siapa ibu Yesus kristus?,id,-0.636,0.219,0.0,0.75,1.792,0,2.125
+indonesian_polar_180,apakah palem memiliki buah?,id,-0.291,-0.482,0.75,0.8,1.946,1,2.723
+indonesian_polar_322,apakah ada kerajaan yang berasal dari Jambi?,id,-0.362,1.518,0.5,0.625,2.303,1,4.584
+indonesian_content_8282,Kapan Penghormatan Leluhur perlu dilakukan?,id,0.614,-0.781,0.5,1.0,1.946,0,3.279
+indonesian_polar_221,Apaakh Nuzi nama daerah di Mesopotamia?,id,-0.591,2.518,0.0,0.833,2.079,1,4.839
+indonesian_content_3265,berapakah luas kota Al-Khader?,id,-0.386,-0.781,0.0,0.8,1.946,0,1.579
+indonesian_polar_44,Apakah musik keroncong terkenal sampai keluar negeri ?,id,0.209,-0.482,0.0,0.75,2.303,1,2.78
+indonesian_polar_63,apakah kalsium termasuk mineral?,id,-0.291,-0.482,0.75,0.8,1.946,1,2.723
+indonesian_polar_355,Apakah orang yang mengeluarkan nifas dibolehkan melakukan hubungan suami istri?,id,0.109,1.518,0.5,0.818,2.565,1,5.51
+indonesian_content_2421,Berapa jumlah kota di Venezuela?,id,-0.136,-0.781,0.0,0.8,1.946,0,1.829
+indonesian_content_1724,dimanakah Yerusalem terletak?,id,0.03,-0.781,0.333,0.75,1.792,0,2.124
+indonesian_polar_35,Apakah Najelaa Shihab seorang dosen?,id,-0.191,-0.482,0.0,0.667,2.079,1,2.073
+indonesian_content_10595,Apa yang dimaksud dengan vestimentum ?,id,-0.136,0.219,0.333,0.4,1.946,0,2.762
+indonesian_polar_346,bisakah kita mengganti Alamat IP pada komputer personal kita?,id,-0.013,-0.482,1.0,0.5,2.485,1,3.49
+indonesian_polar_196,apakah Genghis Khan berasal dari Kekaisaran Mongol?,id,-0.076,-0.482,0.75,0.75,2.303,1,3.245
+indonesian_polar_250,Apakah Bebandung sebuah puisi?,id,-0.291,-0.482,0.5,0.4,1.946,1,2.073
+indonesian_polar_261,apakah bima termasuk karakter antagonis?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_content_8395,berapa lamakah Kekaisaran Mongolia berkuasa?,id,0.864,-0.781,0.5,1.0,1.946,0,3.529
+indonesian_content_2732,Pada umur berapa Muhammad diangkat menjadi nabi ?,id,-0.136,-0.781,0.417,0.857,2.197,0,2.554
+indonesian_content_9566,Siapakah yang menemukan benua Amerika?,id,-0.236,0.219,0.333,0.5,2.079,0,2.895
+indonesian_content_2550,Milik agama apakah Alkitab Ibrani?,id,0.164,0.219,0.0,0.667,2.079,0,3.129
+indonesian_polar_92,Apakah Tempo memiliki majalah Elektronik?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_content_4892,berapa lamakh proses pembuatan drama seri Heroes?,id,-0.636,2.219,0.0,1.0,2.197,0,4.78
+indonesian_polar_368,Apakah watak Petruk seorang laki laki?,id,-0.291,-0.482,0.0,0.571,2.197,1,1.995
+indonesian_content_10984,Kapan Creative Eye Limited didirikan?,id,0.614,0.219,0.333,1.0,1.946,0,4.112
+indonesian_content_7400,dimanakah letak Karang Penghalang Besar?,id,-0.436,1.219,0.0,0.833,2.079,0,3.695
+indonesian_polar_233,Apakah Intrusi air asin dapat membahayakan ekosistem laut?,id,0.209,0.518,0.75,0.778,2.398,1,4.653
+indonesian_content_3890,Kapan Pengeboman Masjid Al-Rawdah terjadi ?,id,0.614,0.219,0.333,1.0,1.946,0,4.112
+indonesian_polar_289,Apakah meminum Cherrybelle dapat menyebabkan kematian?,id,0.209,-0.482,0.5,0.714,2.197,1,3.138
+indonesian_polar_471,Apakah Psikologi kognitif diperlukan dalam pendidikan anak TK?,id,-0.166,0.518,0.75,0.778,2.398,1,4.278
+indonesian_polar_126,Adakah matahari itu bintang?,id,-0.291,-0.482,0.5,0.6,1.946,1,2.273
+indonesian_content_1765,Di kendaraan apakah dapat ditemukan mesin pembakaran dalam?,id,0.114,-0.781,0.5,0.556,2.398,0,2.787
+indonesian_polar_370,apakah Pangeran Arya Jepara mempunyai anak?,id,0.209,0.518,0.75,0.857,2.197,1,4.531
+indonesian_content_1790,dimankah gereja katolik tertua di jakarta?,id,0.197,0.219,0.0,0.571,2.197,0,3.184
+indonesian_content_6667,dimanakah Santo Athanasius meninggal?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_content_1409,Adakah Rusia Negara yang berbatasan dengan Laut Hitam?,id,-0.136,1.219,0.333,0.667,2.398,0,4.481
+indonesian_polar_94,Adakah bendungan dapat dijadikan tempat rekreasi?,id,-0.124,0.518,0.5,0.714,2.197,1,3.805
+indonesian_content_2718,berapakah luas negara Islandia?,id,-0.386,-0.781,0.0,0.8,1.946,0,1.579
+indonesian_polar_443,apakah ikan Koi termasuk spesies ikan hias air tawar?,id,-0.235,1.518,0.375,0.9,2.485,1,5.043
+indonesian_content_7317,Siapa yang menemukan gitar pertama kali ?,id,-0.236,0.219,0.333,0.667,2.079,0,3.062
+indonesian_polar_246,Apakah pohon Weru memiliki buah?,id,0.009,-0.482,0.75,0.833,2.079,1,3.189
+indonesian_content_9204,Siapa nama orang tua Dion Momongan?,id,-0.436,1.219,0.0,0.833,2.079,0,3.695
+indonesian_content_7541,berapakah besar planet Yupiter?,id,-0.136,-0.781,0.0,0.8,1.946,0,1.829
+indonesian_polar_295,Apakah pertunjukan Reog menggunakan musik latar?,id,-0.124,-0.482,0.75,0.857,2.197,1,3.198
+indonesian_content_6713,Berapakah luas Samudra Atlantik ?,id,-0.386,-0.781,0.0,0.8,1.946,0,1.579
+indonesian_content_3091,abad berapakah alat batu pertama kali diciptakan?,id,1.364,-0.781,0.667,0.875,2.303,0,4.428
+indonesian_polar_208,Apakah Gen dapat mempengaruhi warna kulit?,id,-0.124,-0.482,0.75,0.714,2.197,1,3.055
+indonesian_content_5250,Siapakah yang mendirikan organisasi PETA ?,id,-0.236,0.219,0.333,0.5,2.079,0,2.895
+indonesian_polar_293,apakah Tama masih hidup?,id,0.209,-0.482,0.75,0.8,1.946,1,3.223
+indonesian_polar_1,Apakah Bosun sama dengan Nahkoda kapal?,id,-0.291,-0.482,0.0,0.714,2.197,1,2.138
+indonesian_polar_388,apakah Michael Dell mendirikan perusahaan nya dengan menggunakan dana investor?,id,-0.091,0.518,0.75,0.727,2.565,1,4.469
+indonesian_content_10373,berapakah luas kota surakarta?,id,-0.386,-0.781,0.0,0.8,1.946,0,1.579
+indonesian_content_3599,kapankah Singapura resmi didirikan sebagai negara?,id,0.197,-0.781,0.667,0.714,2.197,0,2.994
+indonesian_polar_300,Apakah jamu secara medik adalah minuman yang sehat?,id,0.459,0.518,0.0,0.556,2.398,1,3.931
+indonesian_polar_105,Apakah Binokular sebuah teleskop?,id,-0.291,0.518,0.0,0.4,1.946,1,2.573
+indonesian_content_3936,Siapa pemain utama Kekasih The Lovers?,id,-0.436,1.219,0.0,0.833,2.079,0,3.695
+indonesian_content_1857,berapakah luas Masjid Jami' Tuhfaturroghibin?,id,-0.036,-0.781,0.0,0.833,2.197,0,2.213
+indonesian_polar_258,Apakah film Dragon Ball Z diangkat dari anime ?,id,0.334,1.518,0.75,0.778,2.398,1,5.778
+indonesian_polar_75,apakah Santo Fransiskus Xaverius masih hidup?,id,-0.124,0.518,0.5,0.857,2.197,1,3.948
+indonesian_polar_380,apakah bahasa Jawa Kuno masih digunakan?,id,0.543,0.518,0.75,0.857,2.197,1,4.865
+indonesian_polar_457,apakah Dehidroepiandrosteron berbahaya bagi manusia?,id,-0.191,-0.482,0.75,0.667,2.079,1,2.823
+indonesian_content_9540,pernahkah Kaisar Qianlong menikah?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_content_4832,berapakah sekuel The Amazing Spider-Man?,id,-0.436,0.219,0.0,0.833,2.079,0,2.695
+indonesian_content_4335,kapankah klub bola manchester united didirikan?,id,0.697,1.219,0.333,0.857,2.197,0,5.303
+indonesian_polar_118,apakah Kapal Putih sebuah kapal perang?,id,-0.291,-0.482,0.0,0.571,2.197,1,1.995
+indonesian_content_3777,Dimana Formula 1 kedua diadakan ?,id,0.864,-0.781,0.333,0.8,1.946,0,3.162
+indonesian_polar_25,Apakah Masjid Al-Aqsa dan Kubah Batu termasuk situs-situs suci Yerusalem?,id,0.509,0.518,0.75,0.818,2.565,1,5.16
+indonesian_content_437,siapakah pencipta sistem Berlin S-Bahn?,id,-0.436,1.219,0.0,0.667,2.079,0,3.529
+indonesian_polar_164,Apakah makanan bisa tengik sebelum tanggal kedaluarsa?,id,-0.076,-0.482,0.75,0.625,2.303,1,3.12
+indonesian_polar_323,Apakah depresi membahayakan kesehatan?,id,-0.291,-0.482,0.75,0.8,1.946,1,2.723
+indonesian_polar_469,Apakah Ijmak termasuk Ijtihad?,id,-0.291,-0.482,0.75,0.8,1.946,1,2.723
+indonesian_polar_129,apakah badak hewan omnivora?,id,-0.541,0.518,0.0,0.6,1.946,1,2.523
+indonesian_content_9375,Bagaimanakah sistem pemerintahan di China ?,id,-0.036,-0.781,0.0,0.667,2.079,0,1.929
+indonesian_content_7393,Dari manakah sumber air Irigasi?,id,-0.236,0.219,0.0,0.5,2.079,0,2.562
+indonesian_polar_474,Apakah Roehana Koeddoes pernah meraih penghargaan ?,id,0.209,-0.482,1.0,0.857,2.197,1,3.781
+indonesian_polar_404,Apakah penggunaan kondom dapat mencegah HIV/AIDS?,id,0.209,-0.482,0.75,0.714,2.197,1,3.388
+indonesian_content_5475,Berapa simbol dalam Ukiran batu di Val Camonica?,id,-0.208,0.219,0.0,0.75,2.303,0,3.064
+indonesian_polar_303,Apakah Skype memiliki fitur Panggilan konferensi?,id,-0.457,0.518,0.75,0.857,2.197,1,3.865
+indonesian_polar_23,Apakah Gunung Tandikat termasuk gunung api aktif ?,id,-0.219,0.518,0.75,0.875,2.303,1,4.227
+indonesian_polar_193,apakah rusia mempunyai bom nuklir?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_polar_291,apakah all of Duty: Black Ops II mempunyai sekuel?,id,1.098,1.518,0.75,0.8,2.565,1,6.731
+indonesian_content_5442,dimanakah Max Stirner dilahirkan?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_polar_88,apakah candi borobudur terletak di Provinsi Jawa Tengah?,id,-0.166,0.518,0.75,0.778,2.398,1,4.278
+indonesian_polar_65,pernahkah amerika mengalami krisis ekonomi?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_content_2586,Siapa ketua unit Legiun Asing Prancis?,id,-0.636,2.219,0.0,0.833,2.079,0,4.495
+indonesian_content_4579,Mengapa ajaran Setanisme menolak tuhan?,id,0.114,-0.781,0.5,1.0,1.946,0,2.779
+indonesian_polar_442,Apakah Vihara Buddhagaya terletak di Indonesia?,id,0.043,-0.482,0.75,0.714,2.197,1,3.222
+indonesian_polar_127,apakah Bruce Lee murid dari Ip Man?,id,-0.362,0.518,0.0,0.75,2.303,1,3.209
+indonesian_content_11500,berapa lamakah yang diperlukan untuk memanen tembakau?,id,-0.303,0.219,0.333,0.714,2.197,0,3.16
+indonesian_content_11572,Kapan buku Stardust diterbitkan di Inggris?,id,0.164,-0.781,0.5,0.833,2.079,0,2.795
+indonesian_polar_66,apakah Deinococcus radiodurans terdapat dalam hewan?,id,0.043,-0.482,0.75,0.714,2.197,1,3.222
+indonesian_content_7457,berapakah luas Kabupaten Sekadau?,id,-0.386,-0.781,0.0,0.8,1.946,0,1.579
+indonesian_polar_52,Apakah Rosela dapat dijadikan minuman Jus?,id,-0.124,-0.482,0.75,0.714,2.197,1,3.055
+indonesian_content_9458,Dimana Paus Fransiskus lahir ?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_polar_352,apakah cahaya matahari meberikan efek pada proses pigmentasi?,id,-0.041,-0.482,1.0,0.778,2.398,1,3.653
+indonesian_content_1604,Bagaimana konsep tuhan dalam Teologi apofatis?,id,-0.236,-0.781,0.0,0.833,2.079,0,1.895
+indonesian_content_11469,siapakah pemimpin Kekaisaran Bizantium yang terlama?,id,0.03,0.219,0.167,0.571,2.197,0,3.184
+indonesian_polar_15,apakah Belanda masuk dalam Perang Dunia I?,id,-0.362,0.518,0.75,0.75,2.303,1,3.959
+indonesian_polar_391,Apakah Meningitis bisa disembuhkan?,id,0.209,-0.482,0.5,0.6,1.946,1,2.773
+indonesian_polar_390,apakah kerajaan Persia terletak di negara Iran?,id,-0.076,-0.482,0.75,0.75,2.303,1,3.245
+indonesian_content_9854,berapakah jumlah episode iCarly ?,id,-0.386,-0.781,0.0,0.8,1.946,0,1.579
+indonesian_polar_446,Apakah Nokia PC Suite memerlukan kabel sambungan?,id,0.066,0.518,0.75,0.875,2.303,1,4.512
+indonesian_polar_449,apakah Pulau Anak Krakatau memiliki gunung api ?,id,0.066,0.518,0.75,0.875,2.303,1,4.512
+indonesian_polar_270,Apakah orang yang mengeluarkan nifas boleh melakukan hubungan suami istri?,id,0.309,0.518,0.625,0.727,2.565,1,4.744
+indonesian_content_4649,berapakah luas Nikaragua?,id,-0.303,-0.781,0.0,0.75,1.792,0,1.458
+indonesian_content_122,Kapankah Islam masuk ke Indonesia?,id,-0.036,-0.781,0.5,0.667,2.079,0,2.429
+indonesian_polar_266,apakah penyakit Diabetes melitus disebabkan oleh garis keturunan?,id,0.084,0.518,0.375,0.778,2.398,1,4.153
+indonesian_polar_438,Apakah Ikan pari manta membahayakan manusia?,id,0.209,0.518,0.75,0.857,2.197,1,4.531
+indonesian_content_8373,Di umur berapa Kenneth Joseph Alford mulai menjadi pemusik?,id,0.489,0.219,0.417,0.889,2.398,0,4.412
+indonesian_content_10291,dimanakah Mangkunegara IX dilahirkan?,id,0.364,-0.781,0.333,0.6,1.946,0,2.462
+indonesian_content_5334,Siapakah tokoh utama dalam serial The Simpsons ?,id,-0.208,1.219,0.0,0.625,2.303,0,3.939
+indonesian_polar_427,Apakah Joule merupakan satuan energi?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_polar_399,kapankah Naruto masuk dalam siaran tv Indonesia?,id,-0.362,0.518,0.75,0.75,2.303,1,3.959
+indonesian_polar_101,Apakah obat sakit kepala dapat menyababkan kantuk?,id,0.495,-0.482,0.75,0.75,2.303,1,3.816
+indonesian_content_950,Kapan Pertempuran Okinawa terjadi?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_content_36,Siapa pendiri Poltekkes Semarang?,id,-0.636,0.219,0.0,0.75,1.792,0,2.125
+indonesian_polar_199,apakah Sekolah pintar atau smart school ada di Indonesia?,id,0.876,0.518,0.75,0.7,2.485,1,5.329
+indonesian_content_8379,Kapan orangtua Kaisar Konstantinus Agung menikah?,id,0.764,1.219,0.333,1.0,2.079,0,5.395
+indonesian_polar_309,apakah ada kerajaan Minangkabau?,id,-0.541,-0.482,0.5,0.8,1.946,1,2.223
+indonesian_content_4958,sinetron apakah yang pertama diperankan oleh Andriani Marshanda?,id,0.114,0.219,0.5,0.667,2.398,0,3.898
+indonesian_content_3940,Di manakah pusat pemerintahan Dinasti Ayyubiyyah?,id,-0.303,0.219,0.0,0.571,2.197,0,2.684
+indonesian_polar_147,provinsi jawa apakah yang terpadat tahun 2015?,id,-0.362,1.518,0.5,0.5,2.303,1,4.459
+indonesian_content_5665,kapankah Rising Star Indonesia dimulai pertama kali?,id,0.364,0.219,0.5,0.875,2.303,0,4.261
+indonesian_polar_256,apakah Kerajaan Medang sebuah kerajaan Hindu?,id,-0.291,-0.482,0.0,0.714,2.197,1,2.138
+indonesian_polar_294,Apakah Islam mempercayai Kehidupan setelah kematian?,id,-0.291,0.518,0.75,0.714,2.197,1,3.888
+indonesian_content_9577,siapakah karakter utama dalam serial anime Mobile Suit Gundam?,id,-0.192,2.219,0.0,0.7,2.485,0,5.212
+indonesian_polar_36,Apakah aroma bahan dari koktail berasal dari buah ?,id,0.584,0.518,0.75,0.667,2.398,1,4.917
+indonesian_content_11590,Abad keberapakah zaman feodal Jepang?,id,-0.036,-0.781,0.0,0.833,2.079,0,2.095
+indonesian_polar_283,Apakah candi Borobudur candi agama Hindu?,id,-0.457,0.518,0.0,0.857,2.197,1,3.115
+indonesian_polar_136,apakah Guillaume IX pernah menikah?,id,0.409,-0.482,0.75,0.833,2.079,1,3.589
+indonesian_content_10879,berapakah jarak dari Poso ke Palu?,id,-0.136,0.219,0.0,0.571,2.197,0,2.851
+indonesian_polar_39,apakah dr.,id,-0.291,-0.482,0.0,0.667,1.609,1,1.503
+indonesian_polar_383,apakah fosil bisa dijadikan energi terbaharui?,id,-0.124,-0.482,0.375,0.714,2.197,1,2.68
+indonesian_content_1144,"kapankah Christopher Scott ""Chris"" Kyle meninggal dunia?",id,1.935,-0.781,0.5,0.875,2.485,0,5.014
+indonesian_content_4982,Dimana Uesugi Kenshin lahir?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_polar_465,apakah Taumatawhakatangi­hangakoauauotamatea­turipukakapikimaunga­horonukupokaiwhen­uakitanatahu nama bukit terpanjang di dunia?,id,-0.362,1.518,0.0,0.75,2.303,1,4.209
+indonesian_content_2616,Kapan Habel lahir?,id,-0.136,-1.781,0.333,1.0,1.609,0,1.025
+indonesian_content_1799,berapakah luas wilayah Kesultanan Utsmaniyah?,id,-0.436,0.219,0.0,0.833,2.079,0,2.695
+indonesian_polar_62,Apakah Tuak nira memabukkan?,id,0.209,-0.482,0.5,0.8,1.946,1,2.973
+indonesian_content_1732,berapakah laus kota frankfurt ?,id,-0.386,-0.781,0.0,0.8,1.946,0,1.579
+indonesian_content_3325,berapakah jumlah anak yang dimiliki Olybrius?,id,-0.136,-0.781,0.333,0.714,2.197,0,2.327
+indonesian_content_8797,kapankah Kristen masuk di Indonesia?,id,-0.036,-0.781,0.5,0.667,2.079,0,2.429
+indonesian_content_5919,Siapa yang memerankan karakter Iron man ?,id,-0.436,1.219,0.333,0.667,2.079,0,3.862
+indonesian_polar_413,apakah ada pupuk untuk jagung?,id,-0.391,0.518,0.5,0.667,2.079,1,3.373
+indonesian_content_5719,Siapa yang membawa Kristen ke Indonesia ?,id,-0.036,0.219,0.5,0.5,2.079,0,3.262
+indonesian_content_9959,Dimana Christiaan Snouck Hurgronje lahir ?,id,0.614,0.219,0.333,1.0,1.946,0,4.112
+indonesian_polar_434,Apakah Longsor Sukabumi 2018 menelan korban jiwa?,id,0.066,0.518,0.75,0.75,2.303,1,4.387
+indonesian_polar_54,Apakah garam mengandung air kristal?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_content_11824,boleh kah sarjana Ilmu politik melanjutkan S2 manajemen bisnis?,id,0.489,0.219,0.5,0.778,2.398,0,4.384
+indonesian_polar_228,Apakah Yesus boleh menghidupkan orang mati?,id,-0.124,-0.482,0.75,0.714,2.197,1,3.055
+indonesian_content_3876,Berapa jenis variasi alat Dildo?,id,-0.636,0.219,0.0,1.0,1.946,0,2.529
+indonesian_content_4586,Siapa ayah nabi Shālih?,id,-0.636,0.219,0.0,0.75,1.792,0,2.125
+indonesian_content_7194,Kapan satuan Furlong pertama digunakan?,id,0.864,-0.781,0.333,1.0,1.946,0,3.362
+indonesian_content_10361,darimanakah asal kata spam?,id,-0.386,-0.781,0.0,0.8,1.946,0,1.579
+indonesian_content_8611,Bagaimanakah bentuk alarm pertama kali ?,id,-0.036,-0.781,0.0,0.833,2.079,0,2.095
+indonesian_polar_290,apakah Marcell Siahaan pernah menikah?,id,0.409,-0.482,0.75,0.833,2.079,1,3.589
+indonesian_content_8188,Bagaimana bentuk daun tanaman bambu?,id,-0.636,0.219,0.0,1.0,1.946,0,2.529
+indonesian_content_7583,kapankah Beyond Televition Productions didirikan?,id,0.564,0.219,0.333,0.833,2.079,0,4.028
+indonesian_polar_409,apakah manusia memiliki Retikulum endoplasma?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_polar_424,Apakah minyak atsiri digunakan untuk pengobatan tradisional?,id,-0.076,-0.482,0.75,0.75,2.303,1,3.245
+indonesian_polar_389,Apakah masakan Belanda banyak menggunakan produk susu?,id,0.066,-0.482,1.0,0.875,2.303,1,3.762
+indonesian_content_5916,Apa yang dimaksud dengan norma kebudayaan?,id,-0.236,0.219,0.333,0.5,2.079,0,2.895
+indonesian_polar_247,apakah Raja Anund Jacob mempunyai anak?,id,0.209,0.518,0.75,0.857,2.197,1,4.531
+indonesian_polar_324,Apakah sakit gigi dapat disembuhkan?,id,0.409,-0.482,0.5,0.667,2.079,1,3.173
+indonesian_polar_195,bisakah Command & Conquer: Generals dimainkan secara offline?,id,1.638,-0.482,1.0,0.625,2.485,1,5.266
+indonesian_polar_219,Apakah pohon yangmei memiliki buah?,id,-0.391,0.518,0.5,0.667,2.079,1,3.373
+indonesian_content_4689,Kapan teknik Fraksinasi sel muncul ?,id,0.614,0.219,0.333,1.0,1.946,0,4.112
+indonesian_polar_123,Apakah Kamen Rider adalah seorang tokoh super hero ?,id,0.459,-0.482,0.0,0.667,2.398,1,3.042
+indonesian_content_1298,Kapan NEONOMORA lahir?,id,-0.136,-1.781,0.333,1.0,1.609,0,1.025
+indonesian_content_6862,Berapakah populasi kota Bagdad tahun 2014?,id,-0.136,-0.781,0.0,0.714,2.197,0,1.994
+indonesian_polar_159,apakah agama hindu melakukan Penitensi?,id,0.009,-0.482,0.75,0.833,2.079,1,3.189
+indonesian_content_9521,berapakah jumlah halaman Alkitab Perjanjian Baru?,id,-0.47,1.219,0.0,0.857,2.197,0,3.803
+indonesian_polar_472,Apakah simbol sama dengan lambang ?,id,-0.191,-0.482,0.0,0.667,2.079,1,2.073
+indonesian_content_9888,Kapan novel We Need to Talk About Kevin dirilis?,id,0.989,4.219,0.333,1.0,2.398,0,8.939
+indonesian_content_2743,Apa yang dimaksud dengan Zaman Batu ?,id,-0.236,0.219,0.333,0.5,2.079,0,2.895
+indonesian_content_5210,kapankah Instagram didirikan?,id,0.03,-0.781,0.333,0.75,1.792,0,2.124
+indonesian_content_8347,Dimana letak Tanjungkarang?,id,-0.636,-0.781,0.0,0.667,1.609,0,0.859
+indonesian_content_6792,Siapakah George Otto Gey?,id,-0.386,0.219,0.0,0.6,1.946,0,2.379
+indonesian_content_1180,Siapa sultan terlama yang memimpin Kesultanan Utsmaniyah?,id,-0.303,1.219,0.333,0.714,2.197,0,4.16
+indonesian_content_4951,Berapakah jumlah sultan di kesultanan Aceh?,id,-0.136,-0.781,0.0,0.714,2.197,0,1.994
+indonesian_polar_185,apakah UUD 1945 dibuat berdasarkan Pancasila?,id,-0.124,-0.482,0.5,0.714,2.197,1,2.805
+indonesian_content_7271,Kapan Kamera digital ditemukan ?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_content_6627,Berapa jumlah pemain dalam pementasan kesenian ketoprak?,id,-0.303,0.219,0.0,0.857,2.197,0,2.97
+indonesian_content_7411,Siapakah raja pertama Kesultanan Mataram?,id,-0.236,0.219,0.0,0.667,2.079,0,2.729
+indonesian_polar_132,Apakah nabi Sulaiman memiliki mukjizat?,id,0.009,-0.482,0.75,0.833,2.079,1,3.189
+indonesian_content_4607,Berapa negara yang menggunakan bahasa Maori?,id,-0.436,0.219,0.333,0.833,2.079,0,3.028
+indonesian_polar_431,Apakah Internet Explorer juga termasuk mesin pencari?,id,0.066,-0.482,1.0,0.875,2.303,1,3.762
+indonesian_content_4885,Mengapa Pemberontakan Morotai terjadi?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_polar_302,Adakah pembuatan pupuk meggunakan Kimia anorganik?,id,-0.124,0.518,0.5,0.857,2.197,1,3.948
+indonesian_content_6963,Dimanakah letak Mihama ?,id,-0.303,-0.781,0.0,0.5,1.792,0,1.208
+indonesian_content_5545,kapankah telepon genngam pertama diciptakan?,id,0.564,0.219,0.333,0.833,2.079,0,4.028
+indonesian_polar_403,Apakah suku Sasak adalah penduduk asli pulau Lombok ?,id,0.084,-0.482,0.0,0.778,2.398,1,2.778
+indonesian_content_10030,kapankah Sekolah Tinggi Teologi Amanat Agung didirikan?,id,0.792,2.219,0.333,0.875,2.303,0,6.522
+indonesian_content_10599,Dari mana asal Zainal Sabaruddin Nasution?,id,-0.436,0.219,0.0,0.667,2.079,0,2.529
+indonesian_content_6212,Siapa pendiri Bendungan Atatürk?,id,-0.636,0.219,0.0,0.75,1.792,0,2.125
+indonesian_polar_38,apakah seorang uskup harus lelaki?,id,0.209,-0.482,0.0,0.5,2.079,1,2.306
+indonesian_polar_53,Apakah Kalsium hipoklorit berbahay jika tertelan manusia ?,id,-0.076,-0.482,0.625,0.75,2.303,1,3.12
+indonesian_polar_263,apakah PKI membantu kemerdekaan Indonesia?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_polar_464,Apakah Prostitusi legal di Yunani Kuno ?,id,-0.291,0.518,0.0,0.571,2.197,1,2.995
+indonesian_polar_364,Apakah kesultanan Utsmaniyah termasuk zaman keemasan Islam?,id,-0.219,0.518,0.75,0.875,2.303,1,4.227
+indonesian_content_7123,Apa yang dimaksud dengan zaman batu ?,id,-0.236,0.219,0.333,0.5,2.079,0,2.895
+indonesian_polar_447,apakah korea utara juga memakai doktrin diktator proletariat Trotskyisme?,id,-0.124,1.518,1.0,0.9,2.485,1,5.779
+indonesian_content_10402,Kapan ratu Henry I mulai menjabat ?,id,0.564,0.219,0.167,0.833,2.079,0,3.862
+indonesian_content_4935,siapakah karakter utama dalam Kamen Rider?,id,-0.136,0.219,0.0,0.571,2.197,0,2.851
+indonesian_polar_373,Apakah Siklon Tropis Cempaka menelan korban jiwa?,id,0.066,-0.482,1.0,0.875,2.303,1,3.762
+indonesian_polar_203,Apakah Hepatitis B bisa disembuhkan ?,id,0.409,-0.482,0.5,0.667,2.079,1,3.173
+indonesian_polar_106,apakah ada penganut islam di korea utara?,id,-0.362,0.518,0.5,0.75,2.303,1,3.709
+indonesian_content_11847,Kapan organisasi Muhammadiyah berdiri ?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_polar_179,pernahkah Thaksin Shinawatra membeli klub sepakbola?,id,-0.124,-0.482,0.75,0.857,2.197,1,3.198
+indonesian_polar_473,apakah ada tempat belajar bahasa Ibrani di Indonesia?,id,-0.416,2.518,0.375,0.778,2.398,1,5.653
+indonesian_content_2588,kapankah stoikiometri diperkenalkan pertama kali?,id,-0.036,-0.781,0.5,0.833,2.079,0,2.595
+indonesian_polar_213,Apa Emosikon yang mengekspresikan kesedihan?,id,-0.541,0.518,0.5,0.6,1.946,1,3.023
+indonesian_content_6758,di provinsi manakah Makassar terletak?,id,-0.036,0.219,0.333,0.5,2.079,0,3.095
+indonesian_content_3973,berapakah luas negara Rusia?,id,-0.386,-0.781,0.0,0.8,1.946,0,1.579
+indonesian_polar_269,Apakah Peter Jackson mensutradarai semua serial film The Lord of the Rings?,id,-0.124,2.518,0.75,0.846,2.708,1,6.698
+indonesian_polar_117,Apakah tumbuhan getah sontek boleh dijadikan obat?,id,0.352,0.518,0.75,0.75,2.303,1,4.673
+indonesian_polar_251,Apakah dukun bisa menyembuhkan orang sakit ?,id,-0.124,-0.482,0.75,0.714,2.197,1,3.055
+indonesian_polar_381,Apakah Material butiran berwujud zat cair?,id,-0.124,-0.482,0.75,0.857,2.197,1,3.198
+indonesian_content_880,siapakah yang menciptakan GMT?,id,-0.136,-0.781,0.333,0.4,1.946,0,1.762
+indonesian_content_477,dimanakah konsep Hak cipta mulai di implementasikan pertama kali?,id,0.252,0.219,0.417,0.8,2.485,0,4.173
+indonesian_polar_223,apakah kurikulum tersembunyi dapat digunakan untuk sekolah dasar?,id,0.084,-0.482,0.375,0.667,2.398,1,3.042
+indonesian_content_9164,siapakah orang tua J. K. Rowling?,id,0.364,0.219,0.0,0.714,2.398,0,3.695
+indonesian_content_4955,Kapan Minecraft pertama kali diciptakan?,id,0.614,-0.781,0.5,1.0,1.946,0,3.279
+indonesian_content_10286,Dimana letak Korintus ?,id,-0.636,-0.781,0.0,0.667,1.609,0,0.859
+indonesian_content_5692,Siapakah Ridley Scott?,id,-0.303,-0.781,0.0,0.5,1.792,0,1.208
+indonesian_content_9109,Kapan Rudolf Rocker lahir ?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_content_11816,sejak kapankah adat Barong Banyuwangi dilakukan?,id,0.364,0.219,0.333,0.714,2.197,0,3.827
+indonesian_polar_239,Apakah The Longest Ride film adaptasi novel?,id,-0.362,1.518,0.0,0.875,2.303,1,4.334
+indonesian_polar_142,apakah seurakarta memiliki kerajaan?,id,-0.291,-0.482,0.75,0.8,1.946,1,2.723
+indonesian_polar_286,Apakah Ibnu Taimiyah seorang ilmuwan Islam?,id,-0.291,-0.482,0.0,0.714,2.197,1,2.138
+indonesian_content_9395,Ada berapa serial game Uncharted ?,id,-0.386,0.219,0.333,1.0,1.946,0,3.112
+indonesian_polar_316,apakah Nasi jollof bisa menggunakan nasi basmati?,id,0.066,-0.482,0.75,0.75,2.303,1,3.387
+indonesian_polar_163,Apakah Amy Rose adalah tokoh utama dalam serian Sonic?,id,0.098,-0.482,0.0,0.7,2.485,1,2.801
+indonesian_content_2991,Bagaimana proses upacara Tiwah Lale dilakukan ?,id,0.764,1.219,0.333,1.0,2.079,0,5.395
+indonesian_polar_451,Apakah Guan Yu memiliki hubungan darah dengan Zhang Fe?,id,-0.013,-0.482,1.0,0.8,2.485,1,3.79
+indonesian_content_11546,siapakah jenderal pertama TNI ?,id,-0.136,-0.781,0.0,0.6,1.946,0,1.629
+indonesian_polar_298,apakah ada Gereja Ortodoks di Indonesia?,id,-0.291,0.518,0.5,0.714,2.197,1,3.638
+indonesian_content_4301,tahun berapakah Tancredi dilahirkan?,id,0.614,-0.781,0.5,0.8,1.946,0,3.079
+indonesian_content_10458,dimanakah Marsekal Madya Udara TNI Omar Dhani dilahirkan?,id,1.114,1.219,0.333,0.889,2.398,0,5.953
+indonesian_content_6731,kapankah wifi pertama kali di ciptakan?,id,0.364,-0.781,0.667,0.714,2.197,0,3.161
+indonesian_polar_168,apakah Pierre Felix Bourdieu perah menikah?,id,0.543,0.518,0.75,0.857,2.197,1,4.865
+indonesian_content_3248,erapakah jumlah dinasti yang pernah ada di Korea?,id,0.114,0.219,0.5,0.667,2.398,0,3.898
+indonesian_content_4128,siapakah karakter utama dalam serial Majisuka Gakuen?,id,-0.208,1.219,0.0,0.625,2.303,0,3.939
+indonesian_content_8183,Berapa luas kerajaan Sisilia ?,id,-0.636,-0.781,0.0,1.0,1.792,0,1.375
+indonesian_content_4991,Berapa jenis etnis dalam Suku Bantu?,id,-0.236,-0.781,0.0,0.833,2.079,0,1.895
+indonesian_content_9627,Dimana Kampanye Jawa 1806–1807 diadakan?,id,0.964,0.219,0.333,0.667,2.079,0,4.262
+indonesian_content_2975,kapankah Menteri Kelautan dan Perikanan Indonesia didirikan?,id,1.078,0.219,0.333,0.75,2.303,0,4.683
+indonesian_content_9861,Dimanakah tumbuhan Rosela dapat tumbuh?,id,0.564,-0.781,0.333,0.667,2.079,0,2.862
+indonesian_content_8054,berapakah jumlah bandara di Singapura ?,id,-0.036,-0.781,0.0,0.667,2.079,0,1.929
+indonesian_content_2033,Berapa luas wilayah Sogdia ?,id,-0.636,-0.781,0.0,1.0,1.792,0,1.375
+indonesian_polar_361,Apakah heliocentric model dikenalkan oleh Galileo Galilei?,id,-0.076,-0.482,0.75,0.75,2.303,1,3.245
+indonesian_polar_155,apakah Visakhi festival keagamaan?,id,-0.541,-0.482,0.0,0.8,1.946,1,1.723
+indonesian_polar_171,Apakah obat Antihistamin dapat menyebabkan rasa kantuk?,id,0.066,-0.482,0.75,0.75,2.303,1,3.387
+indonesian_content_8363,Bercerita tentang apakah Fire and Fury: Inside the Trump White House?,id,0.182,2.219,0.333,0.75,2.708,0,6.192
+indonesian_polar_21,Apakah buah kawung memiliki biji?,id,0.009,-0.482,0.75,0.833,2.079,1,3.189
+indonesian_polar_226,apakah ada cara lain dalam menghasilkan listrik menggunakan lautan?,id,-0.235,0.518,0.583,0.8,2.485,1,4.151
+indonesian_content_11533,kapankah Brasília Metro diresmikan pertama kali?,id,0.197,-0.781,0.5,0.857,2.197,0,2.97
+indonesian_polar_281,apakah penyakit HIV/AIDS menyerang sistem imun?,id,-0.124,-0.482,0.75,0.857,2.197,1,3.198
+indonesian_content_7313,Kapan Frederick III menjabat menjadi Kaisar ?,id,-0.036,-0.781,0.333,0.833,2.079,0,2.428
+indonesian_content_578,Berapakah populasi penduduk Kepulauan Sunda Kecil tahun 2010 ??,id,-0.011,1.219,0.0,0.778,2.485,0,4.471
+indonesian_polar_337,apakah Bioskop Metropole adalah bioskop tertua di Indonesia?,id,0.209,-0.482,0.0,0.667,2.398,1,2.792
+indonesian_content_3090,Apa yang dimaksud dengan nama Kakawin?,id,-0.236,0.219,0.333,0.5,2.079,0,2.895
+indonesian_polar_86,Adakah komet anggota tata surya?,id,-0.591,1.518,0.5,0.833,2.079,1,4.339
+indonesian_content_6606,Ada berapa cerita pendek yang terdapat dalam Kisah Aneh Liaozha?,id,-0.192,2.219,0.25,0.8,2.485,0,5.562
+indonesian_content_6906,Siapakah yang membunuh Muhammad Nadir Shah?,id,-0.303,1.219,0.333,0.571,2.197,0,4.017
+indonesian_content_3719,Berapa luas Amerika Serikat ?,id,-0.636,-0.781,0.0,1.0,1.792,0,1.375
+indonesian_polar_188,apakah Slamet Gundono masih hidup?,id,0.409,-0.482,0.75,0.833,2.079,1,3.589
+indonesian_polar_119,apakah Cirebon mempunyai pelabuhan?,id,-0.291,-0.482,0.75,0.8,1.946,1,2.723
+indonesian_polar_315,apakah Raelian termasuk atheist ?,id,-0.291,-0.482,0.75,0.8,1.946,1,2.723
+indonesian_polar_138,apakah aksara han digunakan di bahasa mandarin?,id,-0.076,-0.482,0.75,0.75,2.303,1,3.245
+indonesian_polar_103,Apakah kelok sembilan terletak di Kota Payakumbuh?,id,-0.076,-0.482,0.75,0.625,2.303,1,3.12
+indonesian_polar_42,Apakah Babilonia sekarang disebut Iraq?,id,0.009,-0.482,1.0,0.833,2.079,1,3.439
+indonesian_polar_428,apakah fosil bisa digunakan sebagai Energi alternatif?,id,-0.076,-0.482,0.75,0.625,2.303,1,3.12
+indonesian_polar_335,Apakah Pasar Beringharjo termasuk pasar tradisional?,id,-0.124,-0.482,0.75,0.857,2.197,1,3.198
+indonesian_content_8739,Siapakah yang pertama kali mendirikan HAM?,id,0.364,0.219,0.5,0.571,2.197,0,3.851
+indonesian_polar_311,Apakah semua warga Indonesia berkewajiban memiliki BPJS Kesehatan?,id,-0.166,0.518,0.5,0.778,2.398,1,4.028
+indonesian_polar_463,Apakah proses sedimentasi terjadi pada Estuari?,id,0.043,-0.482,0.75,0.714,2.197,1,3.222
+indonesian_content_7663,Siapakah yang menciptakan telepon pertama kali ?,id,-0.136,1.219,0.333,0.571,2.197,0,4.184
+indonesian_polar_252,Apakah Kubis mengandung vitamin?,id,-0.291,-0.482,0.75,0.8,1.946,1,2.723
+indonesian_content_9650,Dimana Robert Guiscard lahir ?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_content_5499,Dari manakah asal kata singularitas ?,id,-0.036,-0.781,0.0,0.5,2.079,0,1.762
+indonesian_polar_362,Apakah Sistem Penamaan Domain digunakan dalam pembuatan website?,id,0.084,0.518,0.75,0.778,2.398,1,4.528
+indonesian_content_511,Dimanakah letak Tibet ?,id,-0.303,-0.781,0.0,0.5,1.792,0,1.208
+indonesian_polar_112,apakah bluetooth termasuk teknologi berbagi berkas?,id,-0.457,0.518,0.5,0.857,2.197,1,3.615
+indonesian_polar_166,Apakah Kungfu termasuk bidang olahraga?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_polar_27,Adakah depresi bisa menyebabkan seseorang bubuh diri?,id,-0.219,1.518,0.417,0.5,2.303,1,4.519
+indonesian_content_11791,Dimana Raja Aurangzeb dilahirkan?,id,0.364,-0.781,0.333,1.0,1.792,0,2.708
+indonesian_content_11678,berapakah luas Kepulauan Marshall?,id,-0.386,-0.781,0.0,0.8,1.946,0,1.579
+indonesian_content_555,siapakah pebasket NBA tertinggi dalam sejarah?,id,0.197,0.219,0.0,0.571,2.197,0,3.184
+indonesian_content_4364,bahasa apakah yang digunakan di Bourgogne?,id,0.03,0.219,0.333,0.429,2.197,0,3.208
+indonesian_polar_40,Oen Boen Ing masih hidup?,id,-0.041,-0.482,0.0,1.0,1.946,1,2.423
+indonesian_content_2663,kapankah Maria Fyodorovna dilahirkan?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_content_11895,siapakah pendiri India Tobacco Company?,id,-0.436,1.219,0.0,0.667,2.079,0,3.529
+indonesian_content_9608,dimanakah krisis ekonomi terburuk yang pernah terjadi?,id,0.364,-0.781,0.333,0.75,2.303,0,2.969
+indonesian_polar_267,Apakah Panggilan konferensi memerlukan koneksi internet?,id,-0.124,-0.482,0.75,0.857,2.197,1,3.198
+indonesian_polar_382,Apakah tumor bisa diobati ?,id,0.209,-0.482,0.5,0.6,1.946,1,2.773
+indonesian_content_1709,Siapakah William Monahan?,id,-0.303,-0.781,0.0,0.5,1.792,0,1.208
+indonesian_polar_68,apakah Dollar berpengaruh pada krisis ekonomi?,id,-0.291,-0.482,0.75,0.714,2.197,1,2.888
+indonesian_polar_124,Apakah Jalur informasi super cepat memerlukan koneksi internet?,id,0.459,0.518,0.75,0.889,2.398,1,5.014
+indonesian_content_10452,Siapakah sultan ketiga puluh kesultanan Aceh?,id,-0.136,0.219,0.0,0.571,2.197,0,2.851
+indonesian_polar_406,apakah Václav I mempunyai seorang anak?,id,0.043,-0.482,0.75,0.714,2.197,1,3.222
+indonesian_content_5622,Kapan pertandingan catur dunia pertama diadakan ?,id,0.764,1.219,0.333,1.0,2.079,0,5.395
+indonesian_content_9170,kapankah Dream Theater dibentuk?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_content_6714,kapankah penyakit Diabetes melitus pertama kali ditemukan?,id,0.792,0.219,0.25,0.875,2.303,0,4.439
+indonesian_content_4700,Apa yang menyebabkan hujan?,id,-0.303,-0.781,0.333,0.5,1.792,0,1.541
+indonesian_content_11582,Ada berapa jumlah bentuk molekul?,id,-0.386,0.219,0.167,1.0,1.946,0,2.946
+indonesian_content_6604,Kapan Pyotr III mengakhiri masa pemerintahan ?,id,-0.036,-0.781,0.5,0.833,2.079,0,2.595
+indonesian_polar_305,apakah Banksia dentata memiliki buah?,id,0.009,-0.482,0.75,0.833,2.079,1,3.189
+indonesian_content_5711,Siapakah yang membiayai stasiun luar angkasa Mir?,id,-0.208,1.219,0.333,0.5,2.303,0,4.147
+indonesian_content_10782,Berapa luas Kota Freiburg?,id,-0.636,-0.781,0.0,1.0,1.792,0,1.375
+indonesian_content_1033,berapakah luas wilayah kesultanan Palembang-Darussalam?,id,-0.436,0.219,0.0,0.833,2.079,0,2.695
+indonesian_content_5415,Dimana Kampanye Selat Sunda dilakukan?,id,0.614,0.219,0.333,1.0,1.946,0,4.112
+indonesian_polar_89,apakah Ipad adalah salah satu Pocket PC Phone?,id,0.459,-0.482,0.0,0.667,2.398,1,3.042
+indonesian_content_5705,Kapankah Nahdlatul Ulama berdiri ?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_polar_207,Apakah Hermafrodit juga terjadi pada manusia?,id,0.043,-0.482,1.0,0.714,2.197,1,3.472
+indonesian_polar_56,Apakah masyarakat Jerman memakan roti sebagai sarapan?,id,0.066,-0.482,1.0,0.75,2.303,1,3.637
+indonesian_content_11120,Darimana asal Asmara Nababan?,id,-0.636,0.219,0.0,1.0,1.792,0,2.375
+indonesian_polar_184,Apakah Don Juan de Austria memiliki saudara ?,id,0.352,1.518,0.75,0.875,2.303,1,5.798
+indonesian_content_11619,Kapan Pieter Willem Botha menjabat sebagai perdana menteri ?,id,0.506,0.219,0.5,0.875,2.303,0,4.403
+indonesian_content_7075,Kapan Kekaisaran Romawi mengalami masa jaya?,id,-0.036,-0.781,0.5,1.0,2.079,0,2.762
+indonesian_content_3242,berapakah suhu terdingin yang pernah ada di Siberia?,id,0.114,0.219,0.5,0.667,2.398,0,3.898
+indonesian_content_60,Siapakah yang menciptakan kloset toilet pertama kali ?,id,-0.065,1.219,0.333,0.625,2.303,0,4.415
+indonesian_polar_466,apakah Gerakan Kebangunan Rohani ada di indonesia?,id,0.209,0.518,0.75,0.75,2.303,1,4.53
+indonesian_polar_318,Apakah pernikahan semasa jenis legal di Indonesia ?,id,-0.219,1.518,0.0,0.5,2.303,1,4.102
+indonesian_polar_454,apakah Feminisme sebuah ideologi?,id,-0.291,-0.482,0.0,0.6,1.946,1,1.773
+indonesian_polar_354,apakah Kepulauan Seribu mempunyai jaringan telepon?,id,-0.124,-0.482,0.75,0.857,2.197,1,3.198
+indonesian_polar_253,Apakah Muhammad bin ʿAbd al-Wahhāb berpaham Wahhabi?,id,0.495,0.518,0.75,0.875,2.303,1,4.941
+indonesian_content_11562,berapakah luas wilayah Uighur Xinjiang?,id,-0.436,0.219,0.0,0.833,2.079,0,2.695
+indonesian_content_5794,"dimanakah Christopher Scott ""Chris"" Kyle ditugaskan semasa dia hidup?",id,1.697,-0.781,0.417,0.7,2.639,0,4.672
+indonesian_content_5965,meneliti apakah percobaan Stern-Gerlach?,id,0.114,0.219,0.167,0.8,1.946,0,3.246
+indonesian_polar_200,Adakah HIV penyakit Pandemik?,id,-0.541,0.518,0.5,0.8,1.946,1,3.223
+indonesian_content_10772,Siapakah peran utama Patterns of Evidence?,id,-0.303,1.219,0.0,0.714,2.197,0,3.827
+indonesian_content_4109,siapakah sutradara Ishq Mein Marjawan?,id,-0.436,1.219,0.0,0.667,2.079,0,3.529
+indonesian_content_9465,Kapan serial Transformers pertama kali tayang ?,id,0.764,-0.781,0.5,1.0,2.079,0,3.562
+indonesian_content_457,Berapa jumlah korban jiwa pada kecelakaan LOT Polish Airlines Penerbangan 5055?,id,-0.136,1.219,0.0,0.818,2.565,0,4.466
+indonesian_content_11279,Kapan musik DJ pertama kali muncul di dunia ?,id,0.506,-0.781,0.667,0.875,2.303,0,3.57
+indonesian_polar_137,apakah di Indonesia terdapat Lamun?,id,-0.191,-0.482,0.75,0.667,2.079,1,2.823
+indonesian_content_518,siapakah orang tua Raymond Hart Massey?,id,-0.303,1.219,0.0,0.714,2.197,0,3.827
+indonesian_content_9727,Dimana torium bisa ditemukan ?,id,0.364,-1.781,0.333,0.75,1.792,0,1.458
+indonesian_polar_122,Apakah di Singapura dibolehkan menjual permen karet?,id,-0.362,0.518,0.5,0.75,2.303,1,3.709
+indonesian_content_6499,Siapa yang menciptakan Bismarck?,id,-0.303,-0.781,0.333,0.5,1.792,0,1.541
+indonesian_polar_280,apakah Hidayat Martaatmaja pernah menikah?,id,0.409,-0.482,0.75,0.833,2.079,1,3.589
+indonesian_content_9046,apa yang di maksud dengan Hellenistik?,id,-0.036,0.219,0.5,0.333,2.079,0,3.095
+indonesian_content_3208,Ada berapa jenis Alkitab dalam agama Kristen?,id,-0.136,0.219,0.167,0.857,2.197,0,3.304
+indonesian_content_9949,Kapankah Dinasti Han berdiri?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_content_206,siapakah pendiri ajang Miss Universe?,id,-0.436,1.219,0.0,0.667,2.079,0,3.529
+indonesian_content_34,Siapa Raja Inggris pertama?,id,-0.303,-0.781,0.0,0.75,1.792,0,1.458
+indonesian_polar_377,apakah bima termasuk karakter protagonis?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_polar_102,Apakah Al-Mas'udi pernah menulis buku ?,id,0.709,-0.482,1.0,0.857,2.303,1,4.387
+indonesian_polar_285,bisakah etanol dikonsumsi manusia?,id,-0.041,-1.482,0.75,0.6,1.946,1,1.773
+indonesian_polar_445,Apakah al-Khatib al-Tibrizi pernah menulis buku ?,id,0.209,-0.482,1.0,0.857,2.197,1,3.781
+indonesian_polar_128,apakah Illuminati benar benar ada?,id,0.609,-0.482,1.0,0.833,2.079,1,4.039
+indonesian_content_5012,Siapakah yang dikenal dengan bapak filsafat ?,id,-0.136,0.219,0.333,0.429,2.197,0,3.042
+indonesian_content_3410,Siapa yang menciptakan Giroskop?,id,-0.303,-0.781,0.333,0.5,1.792,0,1.541
+indonesian_content_5001,Kapan Sastra Anglo-Saxon pertama kali ditulis?,id,0.764,-0.781,0.5,1.0,2.079,0,3.562
+indonesian_content_5203,Berapa lama Kim Yushin menjadi jenderal kerajaan Silla?,id,-0.208,0.219,0.5,1.0,2.303,0,3.814
+indonesian_content_1540,Teknologi apa yang digunakan dalam sistem Linguatronik?,id,-0.136,0.219,0.333,0.571,2.197,0,3.184
+indonesian_content_2147,Darimana asal J. K. Rowling?,id,-0.136,0.219,0.0,1.0,2.197,0,3.28
+indonesian_polar_209,apakah Ordnungspolizei bekerja dibawah Nazi?,id,-0.191,-0.482,0.75,0.667,2.079,1,2.823
+indonesian_polar_187,Apakah Pemasaran Internasional dapat menyebabkan kenaikan harga?,id,0.066,-0.482,0.75,0.75,2.303,1,3.387
+indonesian_polar_421,apakah Shofar terbuat dari tanduk kerbau?,id,-0.291,-0.482,0.75,0.714,2.197,1,2.888
+indonesian_polar_152,Apakah Hari Anzac dijadikan hari libur nasional di Australia?,id,0.098,0.518,0.75,0.8,2.485,1,4.651
+indonesian_content_810,kapankah Kepler-10 ditemukan?,id,0.03,-0.781,0.333,0.75,1.792,0,2.124
+indonesian_content_5077,siapakah yang menciptakan istilah Proletariat ?,id,-0.236,0.219,0.333,0.5,2.079,0,2.895
+indonesian_content_1518,Kapan Raden Adipati Aria Soeroadiningrat V lahir?,id,0.864,2.219,0.333,1.0,2.197,0,6.613
+indonesian_polar_423,apakah Video call termasuk Telepresensi ?,id,0.009,-0.482,0.75,0.833,2.079,1,3.189
+indonesian_content_4816,Kapan Lambertus Nicodemus Palar lahir ?,id,0.614,0.219,0.333,1.0,1.946,0,4.112
+indonesian_polar_81,apakah olahraga Kronum menggunakan Bola?,id,0.009,-0.482,0.75,0.833,2.079,1,3.189
+indonesian_polar_98,Apakah Imam Mahdī muncul sebelum Dajjal ?,id,0.043,-0.482,0.75,0.714,2.197,1,3.222
+indonesian_polar_131,Apakah manusia bisa tinggal di Mars?,id,0.043,-0.482,0.75,0.571,2.197,1,3.079
+indonesian_content_9337,Ada berapakah lapisan perut bumi ?,id,-0.036,0.219,0.167,0.833,2.079,0,3.262
+indonesian_content_2816,kapankah plato meninggal?,id,0.03,-0.781,0.333,0.75,1.792,0,2.124
+indonesian_content_9373,Ada berapa dinasti yang pernah berkuasa di Tiongkok ?,id,0.078,1.219,0.417,0.75,2.303,0,4.767
+indonesian_content_3594,Dimanakah Hideaki Anno lahir ?,id,0.364,-0.781,0.333,0.8,1.946,0,2.662
+indonesian_polar_271,Apakah semua tumbuhan mengalami fotosintesis?,id,-0.191,-0.482,0.75,0.667,2.079,1,2.823
+indonesian_content_260,Berapa luas hutan di Kalimantan ?,id,-0.136,-0.781,0.0,0.8,1.946,0,1.829
+indonesian_polar_177,Apakah serai boleh dijadikan minuman?,id,0.009,-0.482,0.75,0.667,2.079,1,3.023
+indonesian_polar_351,apakah MSDM mencakup ilmu psikologi?,id,-0.391,-0.482,0.75,0.833,2.079,1,2.789
+indonesian_polar_272,Apakah siklus nitrogen dapat terjadi secara nonbiologis?,id,0.209,-0.482,1.0,0.625,2.303,1,3.655
+indonesian_content_1173,Siapakah yang mengembankan Spotify ?,id,-0.136,-0.781,0.333,0.4,1.946,0,1.762
+indonesian_content_503,Agama apakah yang memiliki Alkitab Ibrani ?,id,-0.136,0.219,0.333,0.571,2.197,0,3.184
+indonesian_content_9052,Siapakah pemilik Microsoft ?,id,-0.303,-0.781,0.0,0.5,1.792,0,1.208
+indonesian_polar_115,Apakah Blok Cepu merupakah ladang penghasil minyak tertua di dunia?,id,0.028,1.518,1.0,0.75,2.639,1,5.935
+indonesian_content_5806,Siapa penulis komik yang paling terkenal di Jepang?,id,0.078,1.219,0.0,0.625,2.303,0,4.225
+indonesian_polar_412,apakah paus balin mamalia?,id,-0.291,-0.482,0.0,0.6,1.946,1,1.773
+indonesian_polar_96,apakah Elizabeth Bowes-Lyon seorang Ibu suri?,id,-0.291,-0.482,0.0,0.714,2.197,1,2.138
+indonesian_polar_367,Apakah hepatitis B sejenis penyakit?,id,-0.391,0.518,0.0,0.667,2.079,1,2.873
+indonesian_content_3505,berapakah populasi masyarakat Aceh tahun 2010?,id,-0.136,-0.781,0.0,0.714,2.197,0,1.994
+indonesian_polar_236,apakah pulau Flores memiliki gunung api aktif?,id,-0.076,-0.482,0.75,0.875,2.303,1,3.37
+indonesian_polar_194,apakah Homosapiens hidup di zaman Paleozoikum Era?,id,-0.362,0.518,0.75,0.75,2.303,1,3.959
+indonesian_polar_10,Apakah serial pokemon berasal dari komik ?,id,0.043,-0.482,0.75,0.714,2.197,1,3.222
+indonesian_polar_292,Apakah agama Bahá'í percaya pada tuhan?,id,0.043,-0.482,0.75,0.714,2.197,1,3.222
+indonesian_content_11190,dimanakah pusat Kerajaan Bourgogne?,id,-0.386,0.219,0.0,0.8,1.946,0,2.579
+indonesian_polar_420,Apakah Isoroku Yamamoto seorang pakar dalam strategi perang?,id,-0.291,0.518,0.0,0.667,2.398,1,3.292
+indonesian_polar_456,apakah ubur-ubur termasuk dalam filum Cnidaria ?,id,-0.291,-0.482,0.75,0.714,2.197,1,2.888
+indonesian_content_7142,siapakah yang menemukan penyakit epilepsi?,id,-0.236,0.219,0.333,0.5,2.079,0,2.895
+indonesian_content_6744,Kapan Michael Wolff mulai menulis buku ?,id,-0.036,-0.781,0.333,1.0,2.079,0,2.595
+indonesian_polar_214,Apakah kuskus termasuk hewan yang dilindungi ?,id,-0.291,0.518,0.5,0.714,2.197,1,3.638
+indonesian_polar_57,Apakah kaum mardiker terdapat di Indonesia?,id,0.043,-0.482,0.75,0.714,2.197,1,3.222

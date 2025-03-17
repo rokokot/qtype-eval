@@ -1,0 +1,111 @@
+unique_id,text,language,avg_links_len,avg_max_depth,avg_subordinate_chain_len,avg_verb_edges,n_tokens,question_type,complexity_score
+id_polar_209,Ingin menikmati foto di layar yang lebih besar?,id,-0.527,0.638,0.0,0.167,2.303,1,2.581
+id_polar_219,Apakah hubungan Rado Habeahan dan Intan berlangsung dengan mulus?,id,0.346,0.638,0.0,0.667,2.485,1,4.136
+id_content_116,- Apa yang Disebut Berpikir?,id,-0.544,-1.226,2.0,0.2,1.946,0,2.376
+id_polar_108,"Ia bertanya, “Bisakah kita membuat sebuah mobil mewah terbaik di dunia?” Pertanyaan Eiji ini membuat Toyota memulai sebuah proyek super - rahasia yang diberi kode F1 (“Flagship” (Unggulan) + “No. 1 vehicle” (Mobil No. 1)).",id,0.813,6.638,1.333,0.4,3.989,1,13.173
+id_content_144,"Pada saat itu, ia mempertanyakan apa arti MASOVU?",id,-0.449,-0.226,0.0,0.6,2.398,0,2.323
+id_content_180,"Lalu, mengapa para pengembang menggunakan nama ``Catfiz''?",id,0.289,-1.226,0.0,0.8,2.485,0,2.348
+id_polar_213,Konstankah interval PR?,id,-0.765,-1.362,0.0,0.0,1.792,1,-0.335
+id_polar_40,``Apakah engkau memperhatikan hamba-Ku Ayub?,id,-0.598,-1.362,0.0,0.5,2.303,1,0.843
+id_polar_39,Apakah yang engkau serukan kepada kami?,id,-0.265,-0.362,1.0,0.5,2.197,1,3.07
+id_content_149,Namun apa yang terjadi?,id,-0.544,-1.226,1.0,0.2,1.792,0,1.222
+id_content_221,"Jika aku tidak menangis untuknya, lalu siapa lagi?",id,0.122,-1.226,0.0,1.0,2.485,0,2.381
+id_content_3,Siapakah sebenarnya gadis yang mirip si Cemong?,id,-0.021,-0.226,0.0,0.0,2.303,0,2.056
+id_content_111,"Sekarang, siapa yang menolak Partai Komunis ini?",id,-0.378,-0.226,1.0,0.4,2.303,0,3.099
+id_polar_98,Apa urusan NU?,id,-1.098,-1.362,0.0,0.0,1.609,1,-0.851
+id_content_131,Sampai kapankah Aladin sanggup mempertahankan lampu ajaib tersebut di tangannya?,id,-0.06,-1.226,0.0,1.0,2.639,0,2.353
+id_polar_84,Apakah Azzam mampu menyelamatkan rumah tangga Husna dan Ilyas?,id,-0.432,0.638,0.0,0.5,2.485,1,3.191
+id_polar_4,Apa nama lembaga yang akan melayani radio-radio ini?,id,-0.384,-0.362,1.0,0.333,2.303,1,2.89
+id_content_269,Kan kamu yang bilang? - Bukankah kamu yang bilang demikian?,id,0.122,-0.226,1.0,0.3,2.639,0,3.835
+id_polar_178,"Pergilah masak segera, apa digaduhkan masak nasi ransom?",id,-0.348,-0.362,1.0,0.333,2.485,1,3.108
+id_content_123,"Kenapa marah, kenapa murka?",id,-0.211,-1.226,0.0,0.3,1.946,0,0.809
+id_polar_235,"Bisakah Superboy mendapati cinta, menyembuhkan penyakit adiknya dan sekaligus menyelamatkan jakarta dari kejahatan?",id,-0.17,0.638,0.0,0.556,2.89,1,3.914
+id_polar_206,"Lalu, ia juga mengasuh siaran kuis lain seperti Herkent u deze melodie?",id,-0.28,0.638,0.0,0.0,2.708,1,3.066
+id_content_174,Bagaimana kalau pemberian lain sebagai hadiah untukmu?,id,-0.306,-0.226,0.0,0.0,2.303,0,1.771
+id_content_258,``Mengapa tidak memakai piano?,id,-0.544,-2.226,0.0,0.6,1.946,0,-0.224
+id_content_160,``Mengapakah kamu tidak mau menyembah Allah SWT?,id,0.122,-1.226,0.0,0.8,2.398,0,2.094
+id_content_18,"Pak Douw, anda telah berusaha untuk maju menjadi Bupati, bagaimana kalau seandainya nanti anda gagal mendapatkan dukungan dan tidak terpilih di PILKADA Nabire?",id,0.622,0.774,1.5,0.6,3.296,0,6.792
+id_polar_25,Bau apakah yang tercium olehku?,id,-0.432,-0.362,1.0,0.333,2.197,1,2.736
+id_polar_120,Kemudian muridnya itu bertanya: ``Didaerah mana Mama ingin mendirikan Pesantren itu?,id,0.538,-0.362,1.0,0.583,2.773,1,4.532
+id_polar_96,"Bukankah kami ini dianggapnya sebagai orang asing, karena ia telah menjual kami?",id,0.209,-1.362,1.0,0.667,2.833,1,3.347
+id_polar_251,"Engkau telah berzinah dengan banyak kekasih, dan mau kembali kepada-Ku?",id,0.002,-0.362,0.0,0.417,2.639,1,2.696
+id_polar_225,Adakah gelombang P?,id,-0.765,-1.362,0.0,0.333,1.792,1,-0.002
+id_content_56,Apa arti globalisasi buat Lippo?,id,-0.128,-1.226,0.0,0.0,1.946,0,0.592
+id_content_25,"Namun, apa saja yang ditata oleh pemerintah kolonial selanjutnya?",id,-0.378,0.774,1.0,0.4,2.485,0,4.281
+id_polar_260,Apakah Maria ini ``isteri'' atau ``putri'' Klopas?,id,0.045,-0.362,0.0,0.0,2.639,1,2.322
+id_content_271,Bagaimanakah kisah selanjutnya?,id,-0.544,-1.226,0.0,0.0,1.792,0,0.022
+id_content_13,Kemana impian jiwa muda ini membawa mereka?,id,0.456,-0.226,0.0,0.6,2.197,0,3.027
+id_polar_135,``Kalau begitu kamu memang bermaksud membohongiku?,id,-0.098,-1.362,1.0,0.5,2.303,1,2.343
+id_content_246,"Jadi Abah Buyut sendiri merupakan sebuah misteri terpisah, darimana beliau belajar Maenpo ini, apakah hasil perenungan sendiri atau ada yang mengajari?",id,0.17,2.774,1.0,0.44,3.258,0,7.642
+id_content_256,(C) Di mana kita saat ini?,id,0.722,-0.226,0.0,0.0,2.303,0,2.799
+id_content_21,"Bila kita menggunakan semua ini untuk melawan musuh, musuh mana yang tak akan kalah?",id,0.43,-0.226,1.0,0.6,2.833,0,4.637
+id_content_27,Apa yang herus dilakukan Winnie?,id,-0.128,-1.226,1.0,0.6,1.946,0,2.192
+id_content_216,Isteri yang cakap siapakah akan mendapatkannya?,id,0.265,-0.226,0.0,0.6,2.303,0,2.942
+id_content_33,"Maka kata Pak Belalang, dari mana datang dan apakah hajat?",id,0.222,-0.226,1.0,0.5,2.639,0,4.135
+id_content_255,Yaksa: Siapakah yang benar-benar berbahagia?,id,0.122,-0.226,1.0,0.4,2.197,0,3.493
+id_polar_18,Apakah SAFIRA akan berhasil dengan segala rencana liciknya?,id,-0.321,-0.362,0.0,0.5,2.485,1,2.302
+id_polar_27,"Mayumi Thyme adalah karakter pendukung dalam Shuffle!, dan salah satu tokoh utama dalam Really?",id,0.132,-0.362,0.0,0.0,2.89,1,2.66
+id_content_119,Bagaimana pula jika peristiwa ``kehabisan cita'' dalam hidup pasangan suami-istri?,id,0.567,-0.226,1.0,0.4,2.639,0,4.38
+id_polar_106,Akankah Niki dan Gio dapat bersatu di tengah begitu banyak pertentangan diantara mereka?,id,0.517,-0.362,0.0,0.833,2.773,1,3.761
+id_polar_258,Alternatif apa lagi selain itu?,id,0.402,-2.362,0.0,0.0,1.946,1,-0.014
+id_content_268,Di manakah harta raja itu sekarang?,id,-0.211,-1.226,0.0,0.0,2.197,0,0.76
+id_content_107,Maka bagaimana sebuah sistem prosesor tunggal dapat menjalankan multi-proses?,id,0.872,-0.226,0.0,0.8,2.398,0,3.844
+id_content_220,"Allahku, Allahku, mengapa Engkau meninggalkan aku?",id,0.837,-1.226,0.0,1.0,2.485,0,3.096
+id_polar_139,Apa pengaruhnya terhadap konflik cinta segitiga Cinta-Dante-Cahaya?,id,-0.67,1.638,0.0,0.0,2.303,1,3.271
+id_polar_111,Lalu berkatalah Yakub kepada Laban: ``Apakah yang kauperbuat terhadap aku ini?,id,-0.015,0.638,1.0,0.583,2.833,1,5.039
+id_content_39,Berfirmanlah TUHAN kepada Samuel: ``Berapa lama lagi engkau berdukacita karena Saul?,id,0.668,-0.226,1.0,0.7,2.773,0,4.915
+id_polar_19,Begitu mudahkah semua itu berdiri di kompleks Regina Pacis?,id,-0.543,-0.362,0.0,0.5,2.485,1,2.08
+id_polar_150,Mereka berkata kepada Nabi Yunus: ``Apakah kata-kata yang engkau ucapkan itu dan kedustaan apakah yang engkau anjurkan kepada kami tentang agama barumu itu?,id,0.182,2.638,1.0,0.556,3.401,1,7.777
+id_polar_34,Apakah layak sesuatu disebut pengasih akan tetapi sebenarnya merupakan penghukum atau penyiksa?,id,-0.182,0.638,0.0,0.667,2.708,1,3.831
+id_content_114,Bagaimanakah cara Sultan dan Atikah mengatasi semua rintangan yang menghadang hubungan cinta mereka?,id,0.122,0.774,1.0,0.5,2.833,0,5.229
+id_polar_57,Sejauh mana ilmu berupaya mencapai perubahan sosial?,id,-0.932,-0.362,1.0,0.333,2.197,1,2.236
+id_polar_56,Akankah dia masih mengingat Ibu dan kampung halamannya?,id,-0.321,0.638,0.0,0.667,2.485,1,3.469
+id_content_223,"Berapa perkiraan omzet penjualan dari seorang marketing yang memiliki pengalaman kerjanya 3,5 tahun?",id,-0.185,1.774,1.0,0.4,2.773,0,5.762
+id_content_188,Mengapa Ibu Pertiwi belum juga bisa menjadi mercusuar dunia?,id,0.622,-1.226,0.0,1.0,2.398,0,2.794
+id_content_49,Mengapa Indonesia tidak mampu berbuat seperti negara-negara tesebut?,id,0.122,-1.226,0.0,0.8,2.303,0,1.999
+id_content_117,Fadil bilang apa benar Kamila belum ditemukan?,id,-0.211,-0.226,1.0,0.2,2.197,0,2.96
+id_polar_31,"Ketika ditangkap dan dihadirkannya dalam tenda sang Sheik, dan ditanyai soal namanya, ia menjawabnya dengan kalimat: ``Namaku?",id,0.652,1.638,1.0,0.542,3.296,1,7.128
+id_polar_114,"Kemudian ia kembali bertanya, apakah mungkin membangkitkan Islam kembali?",id,0.013,-1.362,1.0,0.389,2.565,1,2.605
+id_content_80,"Kalo Nadya sakit, siapa yang akan mengurus mereka?",id,-0.163,-1.226,1.0,0.4,2.398,0,2.409
+id_polar_12,Dia lalu bertanya apakah negeri kita pernah berperang?,id,0.402,-0.362,1.0,0.5,2.398,1,3.938
+id_polar_88,Apakah kita semua harus berbalik dan semuanya mendengarkan dia?,id,0.102,-0.362,0.0,0.5,2.565,1,2.805
+id_polar_76,"Sering orang bertanya, apa cita-cita Amek kelak?",id,-0.598,-0.362,0.0,0.5,2.303,1,1.843
+id_content_6,"Bagaimana nasib Maya, Naomy dan Ryan?",id,-0.078,-0.226,0.0,0.0,2.197,0,1.893
+id_content_79,"Apabila didengarnya segala kedursilaan yang dilakukan anak-anaknya, berkatalah ia kepada mereka: ``Mengapa kamu melakukan hal-hal yang begitu, sehingga kudengar dari segenap bangsa ini tentang perbuatan-perbuatanmu yang jahat itu?",id,0.435,2.774,1.0,0.68,3.664,0,8.553
+id_content_252,Jika elektron tidak jadi jatuh ke-pusatnya apa yang terjadi?,id,0.122,-1.226,1.0,0.6,2.398,0,2.894
+id_content_28,Apa saja 3 ranah berbeda warna itu?,id,-0.378,-0.226,0.0,0.0,2.197,0,1.593
+id_content_121,Mengapa hal ini tidak terjadi dalam Protestanisme?,id,0.122,-1.226,0.0,0.8,2.197,0,1.893
+id_content_10,Bagaimana manusia sebagai individu dapat masuk ke dalam suatu hubungan dengan Allah?,id,0.486,-0.226,0.0,0.6,2.639,0,3.499
+id_polar_210,"Lalu yang menjadi pertanyaan besar adalah, mungkinkah Yesus berdua-duaan dengan wanita pezina?",id,0.152,0.638,1.0,0.583,2.773,1,5.146
+id_polar_189,Bait kedua juga bertanya... dan adakah engkau percaya kepada Tuhan di atas sana?,id,-0.021,0.638,0.0,0.583,2.833,1,4.033
+id_polar_261,"Lagi apakah sangkut pautmu dengan Aku, hai Tirus dan Sidon dan seluruh wilayah Filistin?",id,0.102,-0.362,0.0,0.0,2.944,1,2.684
+id_polar_87,``Kang mas apa menangis?,id,-0.432,-1.362,0.0,0.333,1.946,1,0.485
+id_polar_262,Dan apakah lagi yang harus aku sebut?,id,1.33,-1.362,0.0,0.833,2.303,1,3.104
+id_polar_169,Kakak perempuan yang manis dan baik hati?,id,-0.432,0.638,0.0,0.0,2.197,1,2.403
+id_content_93,Berapakah harga emas 3 bulan mendatang?,id,-0.378,-1.226,0.0,0.0,2.197,0,0.593
+id_polar_195,Akankah Heru tetap baik hati menghadapi mereka?,id,-0.241,-1.362,1.0,0.417,2.303,1,2.117
+id_content_157,Indy bertanya memang siapa yang sakit?,id,-0.478,-0.226,0.0,0.6,2.079,0,1.975
+id_content_218,Kapankah kalian bisa menang?,id,0.122,-1.226,0.0,0.4,1.946,0,1.242
+id_polar_51,"Iye, wah foto kopian-ku, mau kalian lihat saya?",id,-0.098,-0.362,0.0,0.5,2.565,1,2.605
+id_polar_54,Akan kah pertemanan sepihak ini dapat berubah menjadi Cinta?,id,0.527,-1.362,1.0,0.333,2.398,1,2.896
+id_polar_238,Akankah dia menemukan kebahagiaan yang selama ini dia dambakan?,id,0.346,-0.362,1.0,0.583,2.485,1,4.052
+id_content_266,Siapa namanya dan siapa nama anaknya?,id,-0.449,0.774,0.0,0.0,2.303,0,2.628
+id_polar_81,"Bukankah (keadaannya) sama kami dengan anda, tidak bisa jauh dari air?",id,0.235,-0.362,0.0,0.0,2.89,1,2.763
+id_polar_118,"Masakan Aku membiarkan engkau seperti Adma, membuat engkau seperti Zeboim?",id,-0.098,-0.362,1.0,0.583,2.565,1,3.688
+id_content_48,"Berkata Ibrahim kepada Namrud itu: ``Jika demikian halnya, mengapa kamu sembah patung-patung itu, yang tidak dapat berkata, tidak dapat melihat dan tidak dapat mendengar, tidak dapat membawa manfaat atau menolak mudharat, bahkan tidak dapat menolong dirinya dari kehancuran dan kebinasaan?",id,1.073,3.774,1.0,0.625,3.932,0,10.404
+id_polar_187,"apakah artinya tidak beroperasi hari sabtu, minggu / libur?",id,-0.098,0.638,0.0,0.333,2.639,1,3.512
+id_polar_208,Berhasilkah Ali memperjuangkan rasa cintanya kepada Jamilah?,id,-0.321,0.638,1.0,0.417,2.485,1,4.219
+id_content_132,"Sebuah pertanyaan, mengapa dipahatkan relief Garudeya?",id,-0.478,-1.226,0.0,0.6,2.197,0,1.093
+id_content_122,Bagaimana perjuangan hidup Isabella?,id,-0.878,-1.226,0.0,0.0,1.792,0,-0.312
+id_polar_223,"Kemudian pada satu titik, dua belahan jiwa ini tersadar; Apakah cinta mereka akan bisa terus abadi?",id,0.652,-0.362,0.0,0.667,3.045,1,4.002
+id_content_59,Mengapa Kanade ada lebih dulu di dunia Afterlife?,id,-0.163,-1.226,0.0,0.8,2.303,0,1.714
+id_content_158,Indy bilang ada apa mereka menyuruhnya datang?,id,-0.592,0.774,1.5,0.3,2.303,0,4.285
+id_polar_52,Apakah gelasnya setengah kosong atau setengah penuh?,id,-0.348,0.638,0.0,0.0,2.398,1,2.688
+id_polar_85,"``Apakah (Tuhan) berniat mencegah kejahatan, namun tidak dapat?",id,0.277,-1.362,1.0,0.389,2.708,1,3.012
+id_polar_127,"Hei, Jack tidak selalu kalah oleh Wilson kan?",id,0.33,-1.362,0.0,1.0,2.398,1,2.366
+id_polar_143,"Beliau bertanya lagi, ``Maukah ku tuliskan surat untukmu kepada gubernur Kuffah agar melayanimu?",id,-0.032,0.638,1.0,0.5,2.996,1,5.102
+id_content_141,Apa yang terjadi jika Yellowstone meletus?,id,-0.078,-0.226,2.0,0.4,2.079,0,4.175
+id_content_228,Mengapa engkau lari diam-diam dan mengakali aku?,id,-0.378,-1.226,0.0,0.6,2.197,0,1.193
+id_content_54,"Persoalan berikutnya, bagaimana menentukan mana pelaku dan mana korban?",id,-0.003,0.774,1.0,0.4,2.485,0,4.656
+id_content_82,"Dan pada siapakah Siera akhirnya jatuh cinta, Tristan atau Rian?",id,0.222,0.774,0.0,1.0,2.639,0,4.635
+id_polar_245,Apa juga yang akan terjadi dengan perseteruan keluarga mereka?,id,-0.223,0.638,1.0,0.5,2.398,1,4.313
