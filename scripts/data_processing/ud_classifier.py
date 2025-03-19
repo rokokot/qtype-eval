@@ -1,3 +1,26 @@
+"""
+This script processes Universal Dependencies treebanks to identify and classify questions across mutliple languages. The core functionality of the file is question identification, type classifcation, and question filtering. 
+
+The is_question function checks for sentence final question marks
+
+The classify function calls the required _classify_{language} function and runs the text of the sentence through our regex, token span classifier.
+
+def filter_question is an optional function that filters the final selection of sentences by checking for repeating punctuation patterns (?!, !!, unbalances brackets etc), removes sentences that are too short or too long, and filters for sentences containing emojis or non-text characters.
+
+The scripts categorizes identified questions into either polar questions (yes/no questions) or content questions (wh-words). It has multilingual support and currently works with English, Russian, Japanese, Arabic, Finnish, Korean, Indonesian. For each language, the script ouputs a plain text of polar questions, content questions, questions in CoNLLu format, text file of questions that have been filtered and sentences that were passed by the filtration methods.
+
+The script takes the following arguments, and can be used to process a single CoNLLu file or a directory of CoNLLu files recursively:
+
+    --input         Path to input conllu files
+    --output-dir    Path to output directory
+    --language      Language of the sentences, used for annotation
+    --min-tokens
+    --max-tokens
+    --no-filter     Optionally cancel the filtering functionality
+
+Author: Robin Kokot
+Date: March 2025        
+"""
 import argparse
 import logging
 import os
@@ -30,40 +53,45 @@ class QuestionClassifier:
         self.language = language
         
         # English patterns
-        #self.en_wh_words = r'\b(what|What|who|Who|where|Where|when|When|why|Why|how|How|which|Which|Whose|whose|Whom|whom)\b'
-        #self.en_polar_starters = r'^(is|Is|are|Are|Do|do|Does|does|Did|Did|Have|have|Has|has|Can|can|Could|could|will|Will|would|Would|should|Should|May|may|Might|might)'
+        
         self.en_wh_words = r'\b(what|who|where|when|why|how|which|whose|whom)\b'
+
         self.en_polar_starters = r'^(is|are|am|do|does|did|have|has|had|can|could|will|would|should|may|might|must|shall|isn\'t|aren\'t|don\'t|doesn\'t|didn\'t|won\'t|haven\'t)'
+
         self.embedded_verbs = r'\b(know|tell|confirm|explain|understand|think|show|mean|see)\b'
         
         # Finnish patterns
         self.fi_wh_words = r'\b(mik(?:ä|si)|montako|mit(?:ä|en)|miss(?:ä|tä)|mihin|mill(?:oin|ä)|kuk(?:a|aan)|ket(?:ä|kä)|ken(?:en|eltä)|kumpi|kuinka|montako)\b'
+
         self.fi_polar = r'\b\w+(?:ko|kö)\b'
 
         # Korean patterns
         self.ko_wh_words = r'(무엇|뭐|뭣|무슨|누구|누가|어디|어느|언제|왜|어째서|어떻게|어떤|몇|얼마)'
+
         self.ko_ending_pattern = r'(까요|니까|나요|는가|을까|가요|니|까|냐|가|나)\s*\??$'
 
         # Japanese patterns
         self.ja_ka_pattern = r'(か|かな|のか|のかな|だろう|でしょう|ですか|[いな]|の|ん)[\s。]*[\?？]*$'
+
         self.ja_wh_words = r'(何|なに|なん|どこ|どちら|いつ|誰|だれ|なぜ|どうして|どう|どのよう|どの|どんな|いくつ|いくら|どれ|どんな風|いかが|どのくらい)'
 
         # Russian patterns
         self.ru_li_pattern = r'\s+ли\b'
+
         self.ru_wh_words = r'\b(что|чего|чему|чем|кто|кого|кому|кем|где|куда|откуда|когда|почему|зачем|как|каким\s+образом|который|как(?:ой|ая|ое|ие)|сколько)\b'
 
         # Arabic patterns
         self.ar_polar_pattern = r'^(هل|أ)\b|\bهل\b' 
+
         self.ar_wh_words = r'\b(ما(?:ذا)?|من|أين|وين|متى|لماذا|ليش|كيف|أي|كم)\b|ف(ماذا|من|أين|متى|لماذا|كيف|أي)'
 
         # Indonesian patterns
-        #self.id_polar_pattern = r'^(apakah|apa\s+kah|apa)\b'  
         self.id_polar_pattern = [r'^(apakah|apa\s+kah|apa)\b', 
         r'(?:^|kah\s+)(apa|ada|akankah|mau|bisa|boleh|sudah|dapat|sanggup|mungkin|perlu|harus|benar|betul|ingin|suka|mampu)',
         r'^(ada|bukan|bukankah|tidakkah|haruskah|bisakah|maukah|dapatkah|mampukah|perlukah|benarkah|betulkah|masakan)',
         r'(kan|bukan|ya|tidak|toh|dong)\s*\?',
         r'([\?\？])\s*$'] 
-        #self.id_wh_words = r'\b(apa\s+yang|apa\s+saja|siapa(?:kah)?|di\s+mana|dimana|ke\s+mana|kemana|dari\s+mana|darimana|kapan|bila|mengapa|kenapa|bagaimana|yang\s+mana|berapa)\b'
+
         self.id_wh_words = [r'\b(apa\s+yang|siapa(?:kah)?|di\s*mana|dimana|ke\s*mana|kemana|dari\s*mana|darimana)',
         r'\b(kapan|bila(?:kah)?|bilamana|mengapa|kenapa|bagaimana(?:kah)?|yang\s+mana|berapa)',
         r'\b(bagaimana(?:kah)?\s+(?:cara|nasib|kisah|kelanjutan|reaksi|hubungan))',
@@ -73,7 +101,9 @@ class QuestionClassifier:
 
 
     def classify(self, text):
+
         """Classify a question as polar or content"""
+
         if self.language == "en":
             return self._classify_english(text)
         elif self.language == "fi":
@@ -205,8 +235,6 @@ class QuestionClassifier:
 
 
 def is_question(text):
-
- 
     question_marks = ['?', '؟', '︖', '﹖', '？']
     
     if any(mark in text for mark in question_marks):
@@ -342,13 +370,11 @@ def process_conllu_file(input_file, output_dir, lang, min_tokens=3, max_tokens=4
                                     stats["unclassified"] += 1
                                     unclassified_txt.write(sentence_text + '\n')
                             
-                    # Reset for the next sentence
                     current_sentence = []
                     is_question_sentence = False
                     sentence_text = ""
                     english_translation = ""
                     
-        # Handle the last sentence if there's no final newline
         if current_sentence and is_question_sentence and sentence_text:
             stats["questions"] += 1
 
@@ -375,7 +401,6 @@ def process_conllu_file(input_file, output_dir, lang, min_tokens=3, max_tokens=4
         raise
         
     finally:
-        # Close all output files
         polar_conllu.close()
         content_conllu.close()
         polar_txt.close()
@@ -395,7 +420,6 @@ def process_directory(input_dir, output_dir, lang, min_tokens=3, max_tokens=40, 
     
     logger.info(f"Found {len(conllu_files)} CoNLL-U files in {input_dir}")
     
-    # Aggregate statistics
     all_stats = {
         "total_files": len(conllu_files),
         "total_sentences": 0,
@@ -407,16 +431,13 @@ def process_directory(input_dir, output_dir, lang, min_tokens=3, max_tokens=40, 
         "by_file": {}
     }
     
-    # Process all files into a single output directory with language-based filenames
     logger.info(f"Processing all files using language: {lang}")
     
-    # Process each file separately, but aggregate the results
     for file_path in tqdm(conllu_files, desc="Processing CoNLL-U files"):
         logger.info(f"Processing {file_path}")
         try:
             file_stats = process_conllu_file(file_path, output_dir, lang, min_tokens=min_tokens, max_tokens=max_tokens, filter_questions=filter_questions)
             
-            # Update aggregate statistics
             all_stats["total_sentences"] += file_stats["total_sentences"]
             all_stats["questions"] += file_stats["questions"]
             all_stats["polar"] += file_stats["polar"]
