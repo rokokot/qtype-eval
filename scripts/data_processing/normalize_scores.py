@@ -2,14 +2,7 @@
 """
 Linguistic Complexity Data Normalization and Pre-processing
 
-This script processes linguistic complexity data from TyDi and UD datasets, creating:
-
-1. Training sets with normalized features based on command-line flags
-- normalization procedures are configured in the filter_and_preprocess function
-
-2. Validation sets from leftover data per language
-
-3. Ablation sets for feature importance analysis
+This script processes linguistic complexity data from TyDi and UD question datasets:
 
 
 4. The script runs the csv files through a cleaning function, removes unused columns, formats the floats, encodes question types, and converts language names to iso codes
@@ -23,7 +16,7 @@ To reproduce the final version of the dataset run:
     python normalize_scores.py --tydi-dir [path] --ud-dir [path] --output-dir [path] --min-tokens 4 --max-tokens 100 --remove-ablated-features --no-score-normalization
 
 Author: Robin Kokot
-Date: 10/03/2025
+Date: March 2025
 """
 
 import argparse

@@ -1,3 +1,32 @@
+"""
+This script processes the TyDi QA dataset to identify and classify questions across mutliple languages. The core functionality of the file is metadata analysis, question identification, type classifcation, and question filtering. 
+
+The script analyzes both human annotations from the TyDi dataset and linguistic patterns to classify questions. For each question, it:
+
+1. Examines the 'yes_no_answer' annotations to determine if human annotators classified it as a polar question
+2. Applies language-specific regex patterns to identify question types based on linguistic markers
+4. Validates content questions by checking for the presence of language-specific wh-words
+5. Filters out questions with inconsistent annotations or without clear question markers
+
+It supports seven languages: English, Russian, Japanese, Arabic, Finnish, Korean, and Indonesian. For each language, the script outputs plain text files of polar and content questions, along with comprehensive statistics about classification decisions.
+
+The final dataset was generate using the following flags:
+
+    python tydi_classifier.py --cached-dataset data/tydi_validation.pkl --txt-output TyDi-questions/ --output results/classification.csv --simple-output results/tydi_simple.csv
+
+The script takes the following arguments:
+    --split              Dataset split to process (train or validation)
+    --output             Path to output CSV with detailed classification results
+    --languages          Comma-separated list of languages to process
+    --txt-output         Directory to save text files with one question per line
+    --cached-dataset     Path to a cached version of the dataset
+    --save-dataset       Path to save the dataset for future use
+    --use-classifier     Use pattern-based classifier for final decisions, instead of relying on the annotations
+
+Author: Robin Kokot
+Date: March 2025
+"""
+
 import argparse
 import json
 import logging
@@ -18,22 +47,6 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(level
 logger = logging.getLogger(__name__)
 
 
-"""
-    This script loads and processes the TyDi QA dataset. For example, to download the validation split, run the following commands:
-
-    python src/data/tydi_classifier.py --save-dataset data/tydi_validation.pkl --txt-output TyDi-questions/
-
-    python src/data/tydi_classifier.py --split train --cached-dataset data/tydi_train.pkl --txt-output TyDi-questions-train/
-    
-    after downloading, the dataset is cached and can be accessed with the --cached-dataset flag
-
-    python src/data/tydi_classifier.py --cached-dataset data/tydi_validation.pkl --txt-output TyDi-questions/
-
-    note the args in main for more options such as:
-    
-    save data to .csv: python src/data/tydi_classifier.py --cached-dataset data/tydi_validation.pkl --txt-output TyDi-questions/ --output custom/path/results.csv --disagreements custom/path/disagreements.csv
-"""
-
 LANGUAGE_MAP = {
     "english": "en",
     "russian": "ru",
@@ -53,16 +66,21 @@ class QuestionClassifier:
     def __init__(self, language):
         self.language = language
         
+        # English patterns
         self.en_wh_words = r'\b(what*|who*|where*|when*|why*|how*|which*)\b'
         self.en_polar_starters = r'^(is|Is|are|Are|Do|do|Does|does|Did|Did|Have|have|Has|has|Can|can|Could|could|will|Will|would|Would|should|Should|May|may|Might|might)'
         self.embedded_verbs = r'\b(know|tell|confirm|explain|understand|think|show|mean|see)\b'
         
+        # Finnish patterns
         self.fi_wh_words = r'\b(mik(?:ä|si)|montako|mit(?:ä|en)|miss(?:ä|tä)|mihin|mill(?:oin|ä)|kuk(?:a|aan)|ket(?:ä|kä)|ken(?:en|eltä)|kumpi|kuinka|montako)\b'
         self.fi_polar = r'\b\w+(?:ko|kö)\b'
 
+        # Korean patterns
         self.ko_wh_words = r'(무엇|뭐|뭣|무슨|누구|누가|어디|어느|언제|왜|어째서|어떻게|어떤|몇|얼마)'
         self.ko_ending_pattern = r'(습니까|읍니까|ㅂ니까|나요|가요|군요|네요|죠|인가요|인가|은가요|는가요|ㄴ가요|까요|을까요|를까요|ㄹ까요|지요|하나요|한가요|할까요|하겠나요|겠나요)\s*\??$'
 
+
+        # Japanese patterns
         self.ja_polar_pattern = [
             r'(か|かな|のか|のかな|だろうか|でしょうか|ですか)[\s。]*[\?？]*$',  
             r'(ますか|ませんか|ましたか|ませんでしたか)[\s。]*[\?？]*$',         
@@ -89,12 +107,16 @@ class QuestionClassifier:
             r'いかが\b',    
         ]
 
+        # Russian patterns
         self.ru_li_pattern = r'\s+ли\b'
         self.ru_wh_words = r'\b(что|чего|чему|чем|кто|кого|кому|кем|где|куда|откуда|когда|почему|зачем|как|каким\s+образом|который|как(?:ой|ая|ое|ие)|сколько)\b'
 
+
+        # Arabic patterns
         self.ar_polar_pattern = r'^(هل|أ)\b' 
         self.ar_wh_words = r'\b(ما(?:ذا)?|من|أين|وين|متى|لماذا|ليش|كيف|أي|كم)\b'
 
+        # Indonesian patterns
         self.id_polar_pattern = r'^(apakah|apa\s+kah|apa)\b'  
         self.id_wh_words = r'\b(apa\s+yang|apa\s+saja|siapa(?:kah)?|di\s+mana|dimana|ke\s+mana|kemana|dari\s+mana|darimana|kapan|bila|mengapa|kenapa|bagaimana|yang\s+mana|berapa)\b'
     
@@ -158,8 +180,7 @@ class QuestionClassifier:
             r'(한가요|은가요|는가요)\?$',
             r'(할까요|을까요|를까요)\?$',
             r'(하겠\w+가|겠\w+가)\?$',
-            r'\?$'  # As a fallback, any question mark ending without explicit WH structure
-        ]
+            r'\?$' ]
 
         for pattern in strong_polar_indicators:
             if re.search(pattern, text):
@@ -171,11 +192,9 @@ class QuestionClassifier:
         if re.search(self.ko_wh_words, text):
             return 'content'
     
-    # If ends with a question mark but doesn't have clear WH structure, classify as polar
         if text.endswith('?'):
             return 'polar'
     
-    # If has common polar endings
         if re.search(self.ko_ending_pattern, text):
             return 'polar'
     
@@ -648,7 +667,6 @@ class TyDiClassifier:
             
             results_df = pd.DataFrame(results)
             
-            # Log info about skipped and filtered questions
             for lang in ["japanese", "korean"]:
                 if (filter_languages and lang in filter_languages) or not filter_languages:
                     if skipped_questions[lang] > 0 or filtered_content[lang] > 0 or added_polar[lang] > 0:
