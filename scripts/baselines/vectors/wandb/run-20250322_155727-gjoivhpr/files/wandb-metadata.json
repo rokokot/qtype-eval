@@ -1,0 +1,31 @@
+{
+  "os": "Linux-6.8.0-53-generic-x86_64-with-glibc2.39",
+  "python": "CPython 3.12.3",
+  "startedAt": "2025-03-22T14:57:27.294098Z",
+  "program": "/home/robin/Research/qtype-eval/scripts/baselines/vectors/tfidf_vectors.ipynb",
+  "codePath": "scripts/baselines/vectors/tfidf_vectors.ipynb",
+  "git": {
+    "remote": "https://github.com/rokii3/qtype-eval.git",
+    "commit": "6ba5c5089348e00c924e8be52e18867cb5016897"
+  },
+  "email": "robin.edu.hr@gmail.com",
+  "root": "/home/robin/Research/qtype-eval/scripts/baselines/vectors",
+  "host": "robin-x1",
+  "executable": "/home/robin/.cache/pypoetry/virtualenvs/qtype-eval-pAepV5Z2-py3.12/bin/python",
+  "codePathLocal": "tfidf_vectors.ipynb",
+  "cpu_count": 4,
+  "cpu_count_logical": 8,
+  "disk": {
+    "/": {
+      "total": "982820896768",
+      "used": "296417636352"
+    }
+  },
+  "memory": {
+    "total": "16434016256"
+  },
+  "cpu": {
+    "count": 4,
+    "countLogical": 8
+  }
+}

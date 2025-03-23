@@ -1,0 +1,64 @@
+unique_id,text,language,avg_links_len,avg_max_depth,avg_subordinate_chain_len,avg_verb_edges,lexical_density,n_tokens,question_type,complexity_score
+finnish_polar_6,Onko elinkelpoisia kuita?,fi,0.095,0.25,0.0,0.0,0.5,0.0,1,0.845
+finnish_content_10090,Milloin GameCube on julkaistu?,fi,0.173,0.0,0.0,0.5,0.688,0.059,0,1.42
+finnish_content_11752,Milloin Vince McMahon on syntynyt?,fi,0.216,0.167,0.0,0.333,0.75,0.118,0,1.584
+finnish_polar_70,Minä vuonna Englantilainen muusikko Richard Wright kuoli?,fi,0.316,0.5,0.0,0.5,0.786,0.308,1,2.41
+fi_content_104,Miksi siis nauraa naistutkimukselle?,fi,0.092,0.0,0.0,0.6,1.0,0.023,0,1.715
+fi_polar_124,"Popista, rockista vaiko iskelmästä?",fi,0.327,0.167,0.0,0.0,0.75,0.069,1,1.313
+finnish_content_4964,Mistä Gabriel Lippmann voitti Nobelin fysiikanpalkinnon?,fi,0.138,0.167,0.0,0.5,0.792,0.176,0,1.773
+finnish_content_2471,Mistä liekkikupolit tunnetaan?,fi,0.086,0.0,0.0,0.333,0.583,0.0,0,1.002
+fi_content_33,Mitä teemme sen lisäksi antaaksemme Ukrainan osallistua Eurooppa-konferenssiin?,fi,0.118,0.25,0.667,0.4,0.531,0.114,0,1.413
+fi_content_32,Mitä teemme valmistellaksemme asiaa?,fi,0.0,0.125,0.333,0.3,0.688,0.023,0,1.136
+finnish_polar_541,Onko Jasser Arafatilla perhettä?,fi,0.19,0.25,0.0,0.0,0.625,0.077,1,1.142
+finnish_polar_844,Kuoleeko Lost -sarjan päähenkilö?,fi,0.127,0.5,0.0,0.167,1.0,0.077,1,1.871
+finnish_content_7910,Milloin Hiei laskettiin vesille?,fi,0.058,0.0,0.0,0.5,1.0,0.059,0,1.617
+finnish_content_14640,Mikä on arktisen alueen eteläisin kaupunki?,fi,0.138,0.5,0.0,0.0,0.583,0.176,0,1.397
+fi_polar_121,olisiko viininvalmistus yrittäjälle sivu- vai pääelinkeino?,fi,0.196,0.167,0.0,0.0,0.667,0.103,1,1.133
+finnish_polar_319,Voiko lämpötila nousta jopa 43 asteeseen Khartumissa?,fi,0.19,0.5,0.0,0.5,0.571,0.308,1,2.069
+fi_content_144,Mitä SIS II -järjestelmälle on tapahtunut?,fi,0.331,0.25,0.0,0.4,0.583,0.068,0,1.632
+fi_polar_115,Onko tietosuojaviranomaisilla asianmukaiset voimavarat tietosuojaa koskevien sääntöjen täytäntöönpanemiseksi SIS II -järjestelmän osalta?,fi,0.312,0.667,0.333,0.2,0.917,0.31,1,2.406
+finnish_content_15097,Mikä on uunin panko?,fi,0.115,0.167,0.0,0.0,0.375,0.059,0,0.716
+finnish_polar_2014,Onko X-Men: Days of Future Past -elokuva saanut Oscar -ehdokkuutta?,fi,0.401,0.75,0.0,0.333,0.85,0.615,1,2.949
+finnish_content_25,Milloin Nancy Spungen syntyi?,fi,0.173,0.167,0.0,0.333,1.0,0.059,0,1.732
+finnish_polar_177,Onko gilalisko myrkyllinen?,fi,0.095,0.0,0.0,0.0,0.5,0.0,1,0.595
+fi_content_71,Mitä kello oikeesti on?”,fi,0.276,0.0,0.0,0.0,0.375,0.045,0,0.696
+fi_polar_52,Porvoostako he tulevat?,fi,0.123,0.0,0.0,0.4,0.667,0.0,1,1.19
+fi_polar_19,Annammeko tämän jatkua sanomatta mitään?,fi,0.184,0.167,0.333,0.267,0.6,0.069,1,1.287
+finnish_polar_2291,Voiko Kalliovuorille kiivetä?,fi,0.095,0.0,0.0,0.167,0.5,0.0,1,0.762
+fi_content_77,"Jos tämä ei riitä, mitä me sitten tehdään?",fi,0.394,0.125,0.333,0.6,0.219,0.136,0,1.474
+fi_content_4,Miksi talvella pitää käyttää koko ajan ihan tylsiä kenkiä?,fi,0.276,0.25,0.0,0.8,0.861,0.136,0,2.323
+finnish_content_6781,Mitä tarkoittaa synteettinen?,fi,0.0,0.0,0.0,0.333,0.583,0.0,0,0.916
+finnish_polar_338,Onko Gaara Temarin ja Kankuron pikkuveli?,fi,0.342,0.5,0.0,0.0,0.5,0.231,1,1.573
+finnish_polar_2287,Oliko Berliinin muurissa rajanylityspaikkoja?,fi,0.063,0.0,0.0,0.0,0.625,0.077,1,0.765
+finnish_polar_1160,Onko Suomessa koskaan ollut isoa maanjäristystä?,fi,0.152,0.25,0.0,0.0,0.5,0.231,1,1.133
+finnish_content_11012,Milloin Mach1 Mustang mallia aloitettiin valmistamaan?,fi,0.173,0.5,0.5,0.25,1.0,0.176,0,2.099
+finnish_polar_1209,Onko Islannissa Jokamiehenoikeudet?,fi,0.0,0.0,0.0,0.0,0.5,0.0,1,0.5
+fi_content_143,"Annan teille yhden esimerkin: mitä tehdään leluille, joissa on siruja?",fi,0.184,0.5,0.333,0.4,0.375,0.205,0,1.664
+finnish_content_11951,Mikä on Ruoveden asukasluku?,fi,0.115,0.167,0.0,0.0,0.375,0.059,0,0.716
+fi_polar_8,"Entä viestivätkö naisen silmät miehelle, että ”uskon sinun kykyihisi, ota minut, saat minut hulluksi himosta?”",fi,0.368,0.5,0.333,0.55,0.733,0.586,1,2.737
+fi_content_50,"Miten selität Espanjan kesäillan sille, joka ei sitä tiedä?",fi,0.345,0.25,0.333,0.5,0.444,0.159,0,1.698
+fi_polar_72,"Näinkö se alkaa, kivikuume?",fi,0.245,0.167,0.0,0.4,0.75,0.069,1,1.631
+finnish_content_10211,Mikä oli ensimmäinen Kiinalainen auto jota aloitettiin tuomaan Suomeen?,fi,0.13,0.5,1.0,0.25,0.583,0.353,0,1.816
+finnish_polar_28,Onko Ídan luola yksi Kreetan merkittävimmistä luolapyhäköistä?,fi,0.127,0.5,0.0,0.0,0.571,0.308,1,1.506
+fi_content_146,Kuka minä sitten olen ihmisenä?,fi,0.414,0.0,0.0,0.0,0.25,0.045,0,0.709
+fi_polar_83,"Siinä keskustelussa ydinkysymys ei ole gallup-henkinen ""kannatatko maahanmuuton lisäämistä?”",fi,0.491,0.167,0.0,1.0,0.667,0.276,1,2.601
+finnish_polar_1027,Voiko skitsofreniaa sairastava henkilö käydä normaalisti töissä?,fi,0.127,0.5,0.5,0.333,0.786,0.308,1,2.054
+finnish_polar_1736,Ovatko ydinaineet vaarallisia ihmiselle?,fi,0.063,0.0,0.0,0.0,0.625,0.077,1,0.765
+fi_content_8,Mikä seksuaalinen itsetunto?,fi,0.138,0.0,0.0,0.0,0.583,0.0,0,0.721
+fi_polar_30,Toisiko Se tällä kertaa mukanaan siunauksen vai tuhon?,fi,0.351,0.333,0.0,0.8,0.625,0.172,1,2.281
+fi_polar_119,Eikö tämän kaltaisessa asiassa käytännön ja teorian tulisi olla samanlaisia?”,fi,0.409,0.5,0.333,0.4,0.6,0.276,1,2.185
+finnish_polar_1429,Onko Yhdysvaltojen presidenttinä ollut useammin republikaani kuin demokraatti?,fi,0.136,0.75,0.0,0.0,0.438,0.385,1,1.709
+finnish_content_6085,Missä Kansas sijaitsee?,fi,0.086,0.0,0.0,0.333,0.583,0.0,0,1.002
+finnish_content_9692,Mikä oli Ensemble Studiosin ensimmäinen kehittämä peli?,fi,0.23,0.5,0.5,0.167,0.643,0.235,0,1.775
+fi_polar_42,Pitäisikö heidän nyt oikeasti ryhtyä keksimään joitain ihan uusia huippujuttuja?,fi,0.3,0.5,0.333,0.5,0.7,0.241,1,2.241
+finnish_content_10877,Milloin Diablo 2 julkaistiin?,fi,0.173,0.167,0.0,0.333,0.688,0.059,0,1.42
+fi_content_150,"Miten selität sen, että tuloksesi olivat niin hirmuisen kovia verrattuna nykyisiin aikoihin?",fi,0.426,0.5,0.667,0.3,0.688,0.227,0,2.141
+finnish_content_1360,Mikä on Islannin BKT?,fi,0.115,0.167,0.0,0.0,0.375,0.059,0,0.716
+fi_content_66,– Missä lapset ovat?,fi,0.138,0.0,0.0,0.0,0.167,0.023,0,0.328
+finnish_content_12666,Kuinka kauan yhden talon rakentamisessa kestää?,fi,0.104,0.333,0.0,0.333,0.792,0.176,0,1.738
+fi_content_20,"En kuitenkaan ymmärrä, miksi joku ei maksaisi kymmentä tai viittä euroa kuussa järjettömän suuresta, mobiilista musiikkikirjastosta?",fi,0.46,0.5,0.333,0.6,0.531,0.341,0,2.432
+finnish_content_2952,Milloin hedelmöityshoitoa on aloitettu käyttämään?,fi,0.173,0.167,0.5,0.333,0.75,0.118,0,1.541
+fi_polar_95,"Onko se toistettava päivittäin, viikoittain, kuukausittain?",fi,0.245,0.167,0.0,0.6,0.667,0.172,1,1.851
+finnish_polar_1610,Oliko RMS Olympic -laivassa turkkilaisia saunoja?,fi,0.152,0.25,0.0,0.0,0.75,0.231,1,1.383
+finnish_polar_1645,Onko Silppuri Teenage Mutant Ninja Turtlesien vihollinen?,fi,0.475,0.25,0.0,0.0,0.786,0.308,1,1.819
+fi_content_85,miksi meidän pitää olla Natoon intoilemassa?,fi,0.552,0.0,0.0,0.6,0.375,0.068,0,1.595

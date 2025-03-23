@@ -1,0 +1,720 @@
+unique_id,text,language,avg_links_len,avg_max_depth,avg_subordinate_chain_len,avg_verb_edges,lexical_density,n_tokens,question_type,complexity_score
+en_content_242,What is the problem?,en,0.153,0.143,0.0,0.0,0.3,0.024,0,0.62
+en_polar_104,"So we ""lost"" some weapon?",en,0.244,0.25,0.0,0.5,0.6,0.08,1,1.674
+ar_content_5,قبل الإقدام على خطوات يعلن ـ هو نفسه ـ أنها تتناقض تماماً مع قرارات الشرعية الدولية والمبدأ الذي انطلقت منه مسيرة مدريد؟,ar,0.278,0.357,0.333,0.667,0.545,0.423,0,2.604
+ko_polar_69,정치 경제 사회의 국가적 추이를 이보다 더 화끈하게 변화시킨 사건이 뭔가?,ko,0.159,0.444,0.5,0.25,0.864,0.444,1,2.662
+fi_content_83,Kenen toimesta tämä on tehty?,fi,0.207,0.125,0.0,0.6,0.25,0.045,0,1.227
+ko_content_25,사랑하는 시민 여러분 세상에 큰 것을 싫어하는 사람이 어디 있겠습니까?,ko,0.255,0.333,0.333,0.167,0.7,0.259,0,2.048
+ar_content_12, أين سيكون مقر المحكمة؟,ar,0.076,0.071,0.0,0.4,0.727,0.038,0,1.313
+ko_content_135,해보지도 않고 시합에 이겼다는 주장이 대체 어디 있니?,ko,0.263,0.333,0.0,0.167,0.438,0.185,0,1.385
+en_polar_214,Shouldn't all the liquidation values from the beginning of the month be a negative (representing positive liquidation) for the puts?,en,0.396,0.5,0.25,0.167,0.429,0.4,1,2.142
+ko_content_66,누가 어디서 어떻게 살고 있나?,ko,0.0,0.222,0.0,0.167,0.1,0.074,0,0.563
+ru_polar_22,Можно ли лечить пищевую аллергию?,ru,0.14,0.25,0.333,0.3,0.874,0.047,1,1.944
+en_polar_471,Is it normal for dogs to throw up blood while having gastroenteritis?,en,0.217,0.375,0.5,0.667,0.5,0.18,1,2.439
+id_polar_194,Mampukah Bunga mel epaskan diri dari cengkeraman Harun dan seorang perempuan yang menyamar sebagai Tante Reno?,id,0.226,0.444,0.333,0.583,0.529,0.286,1,2.402
+en_polar_123,"Do you return fire, if you are attacked from a hospital?",en,0.239,0.375,0.25,0.583,0.364,0.18,1,1.991
+fi_content_11,”Pitäisikö minun tietää mitä kumppani tuntee tai mitä hän haluaa?”,fi,0.307,0.25,0.333,0.533,0.25,0.205,0,1.878
+ja_polar_42,玉置氏は信者ではないのか?,ja,0.38,0.2,0.0,0.0,0.333,0.171,1,1.085
+ja_content_28,中日の次期監督に決まっている高木守道氏からラブコールを送られている福留に、巨人も再び手を伸ばすことになるかどうか。,ja,0.39,1.0,0.4,0.367,0.879,0.721,0,3.756
+ru_polar_178,Так ли это?,ru,0.14,0.0,0.0,0.0,0.214,0.0,1,0.355
+ru_polar_136,"Если просто разбавить водой, останется ли цвет на одежде?",ru,0.245,0.125,0.333,0.7,0.529,0.163,1,2.095
+id_content_85,Apa yang akan terjadi kali ini?,id,0.244,0.25,0.333,0.4,0.167,0.065,0,1.459
+ar_content_45,"ترتيبات للقاء بين مبارك وشارون بعد ""تقارب"" مصري ـ إسرائيلي؟",ar,0.427,0.214,0.0,0.0,0.463,0.192,0,1.296
+fi_content_63,Mitä paskaa sä jauhat?,fi,0.092,0.125,0.0,0.4,0.375,0.023,0,1.015
+ru_polar_90,Ходят ли транзитом поезда или есть автобус?,ru,0.327,0.125,0.0,0.6,0.753,0.093,1,1.898
+ko_polar_102,또는 '나' 라고 부를 수 있는 것이 과연 존재하는가?,ko,0.597,0.444,0.0,0.333,0.5,0.444,1,2.319
+ja_polar_14,こんなことできない?,ja,0.0,0.2,0.0,0.25,0.667,0.029,1,1.145
+en_content_362,What influenced Picasso's cubism style of painting?,en,0.196,0.286,0.0,0.333,0.75,0.122,0,1.687
+id_content_14,Bagaimana dengan ramalan Florence tentang akan terjadinya pasang tertinggi tersebut?,id,0.447,0.125,0.0,1.0,0.432,0.174,0,2.178
+ar_polar_13,"هل لا تزال ""الوطنية العربية"" قادرة على الخروج من رجعيتها الحالية كمجرد قوة دفاع عن اوضاع قائمة مفلسة... لكي يكون ممكنا مواجهة السياسة الاميركية بما هو قادر على كسر وحدانية مشروعها التغييري؟",ar,0.429,0.7,0.5,0.8,0.404,0.692,1,3.525
+en_content_354,How are things going with you?,en,0.183,0.143,0.0,0.5,0.6,0.073,0,1.499
+ar_content_29,فهل يستطيع شيراك اقناع بوش بضرورة التحرك وممارسة الضغوط المطلوبة، لكي توافق اسرائيل على تطبيق توصيات لجنة ميتشل الأميركية؟,ar,0.203,0.571,0.333,0.6,0.711,0.365,0,2.784
+en_polar_291,(c) Are you happy with the draft letter to Beachcrofts I sent you?,en,0.235,0.375,0.25,0.333,0.385,0.24,1,1.818
+en_content_50,Do you get what's wrong with this picture?,en,0.201,0.286,0.333,0.333,0.4,0.146,0,1.699
+ru_polar_75,"Хочу поменять его на что-то чёрное, стоит ли?",ru,0.321,0.25,0.333,0.333,0.45,0.14,1,1.827
+ja_content_33,幸いなことに、ソニー・オーストラリアにいた誰かは、「おい、ところで、君たちはこれに気づいたかい？」という様子だった、とポールは言った。,ja,0.979,0.571,0.533,0.15,0.295,0.93,0,3.459
+en_content_334,And what do we get for this effort?,en,0.295,0.143,0.0,0.667,0.3,0.122,0,1.526
+en_content_59,Which airlines should I look into and when should I buy my ticket?,en,0.344,0.286,0.0,0.583,0.462,0.244,0,1.918
+en_polar_112,Does the distinction actually exist?,en,0.217,0.25,0.0,0.333,0.6,0.04,1,1.44
+en_content_206,What manner of maniac would undertake such a dangerous course?,en,0.255,0.286,0.0,0.333,0.6,0.171,0,1.644
+en_polar_70,I need creative art ideas?,en,0.19,0.25,0.0,0.333,0.8,0.04,1,1.613
+id_polar_79,"Musa bertanya Samiri, seperti diceritakan dalam al-Quran: ``Berkata Musa; apakah yang mendorongmu berbuat demikian Samiri?",id,0.361,0.333,0.333,0.375,0.688,0.347,1,2.437
+en_polar_213,Does this mean that for June and for a certain portion of July we should not do anything and just make adjustments on a going forward basis (and assume everything will work out at month end)?,en,0.357,0.75,0.25,0.528,0.444,0.7,1,3.029
+fi_polar_80,Onko tosiaan näin?,fi,0.123,0.0,0.0,0.0,0.667,0.0,1,0.789
+ru_polar_87,Можно ли бюджетно и недорого отдохнуть в Америке ?,ru,0.321,0.375,0.333,0.4,0.627,0.116,1,2.172
+id_polar_229,"Akhirnya, dari pertanyaan yang dilontarkan oleh Pierre Beguin, Hergé itu dianggap rasis karena ia mengangap Jepang sebagai penjahat?",id,0.288,0.333,0.333,0.556,0.611,0.347,1,2.469
+fi_content_56,Tuntuu kuin matkalla olisi aikaa ajatella koko elämä; mitä minä teen jos saan sen kiinni ennen ulko-ovea?,fi,0.328,0.5,0.333,0.5,0.485,0.341,0,2.487
+ar_content_15, وهل ستكون المحكمة علنية؟,ar,0.244,0.071,0.0,0.6,0.545,0.058,0,1.519
+id_content_195,sudah berapa tahun berapa jumlahnya?,id,0.162,0.125,0.0,0.0,0.792,0.065,0,1.144
+id_polar_31,"Ketika ditangkap dan dihadirkannya dalam tenda sang Sheik, dan ditanyai soal namanya, ia menjawabnya dengan kalimat: ``Namaku?",id,0.452,0.444,0.333,0.542,0.476,0.449,1,2.696
+fi_polar_62,Tulisiko tästä yhtään mitään?,fi,0.164,0.167,0.0,0.4,0.5,0.034,1,1.265
+id_polar_45,Apakah UMMI mampu menghadapi kerasnya hidup di usia senjanya ya yang datang silih berganti tanpa henti?,id,0.344,0.444,1.0,0.375,0.579,0.327,1,3.069
+en_content_382,Which one should i get ?,en,0.172,0.143,0.0,0.333,0.48,0.049,0,1.177
+fi_content_72,Mitä se tarkottaa?”,fi,0.138,0.0,0.0,0.4,0.167,0.023,0,0.727
+fi_polar_34,Vai oliko se tanga-naisia?,fi,0.245,0.0,0.0,0.0,0.25,0.034,1,0.53
+id_content_260,Mengapa kami menggunakan Fusebox sebagai framework?,id,0.244,0.125,0.0,0.8,0.583,0.065,0,1.817
+ru_polar_194,Можно ли поехать детям 13-ти лет в москву без родителей ?,ru,0.218,0.375,0.333,0.4,0.591,0.163,1,2.081
+ja_polar_24,"きちんと説明し,堂々と市長として頑張ったらいいじゃないですか。",ja,0.631,0.4,0.5,0.625,0.292,0.4,1,2.847
+ar_polar_12,"هل هناك في هذه ""اللحظة"" مشروع تغييري آخر في المنطقة؟",ar,0.778,0.1,0.0,0.0,0.273,0.135,1,1.285
+fi_content_96,Kuka rahasta juoksisi?,fi,0.138,0.0,0.0,0.4,0.583,0.0,0,1.121
+fi_content_51,"""Kuinka voit tehdä meille näin kaiken yhdessä viettämämme ajan jälkeen?""",fi,0.276,0.25,0.333,0.5,0.5,0.205,0,2.064
+fi_polar_5,Osaavatko ihmiset lukea toistensa silmistä tällaista itseluottamusta?,fi,0.205,0.333,0.333,0.4,0.857,0.138,1,2.266
+ar_content_60,من يمكن أن يلوم من يتيح المجال لغليندا كي تؤدي بهذا الشكل الرائع؟,ar,0.218,0.357,0.5,0.45,0.606,0.212,0,2.343
+en_polar_168,Can we get together Friday morning July 7 at 800 am at your office?,en,0.317,0.25,0.0,1.0,0.5,0.22,1,2.287
+ko_content_52,우리는 어떤 근거에서 그들을 광신이라고 말할 수 있는가?,ko,0.23,0.222,0.0,0.278,0.625,0.185,0,1.54
+fi_content_137,Mikä on Euroopan tulevaisuus?,fi,0.276,0.0,0.0,0.0,0.375,0.023,0,0.674
+ko_content_128,그는 왜 대답을 하지 못했을까?,ko,0.172,0.0,0.333,0.333,0.7,0.074,0,1.613
+fi_content_28,Mikä on puheenjohtajavaltio Alankomaiden strategia?,fi,0.207,0.25,0.0,0.0,0.5,0.045,0,1.002
+ja_polar_38,"特に個人ページに関して言えば,今後ユビキタス社会が進んでいけば,リアルの世界の行動タイムラインに集約されていくんじゃないでしょうか。",ja,0.737,0.6,0.625,0.542,0.667,0.943,1,4.113
+ko_content_248,아니면 주변 어디에 남아있는 걸까?,ko,0.115,0.111,0.333,0.25,0.7,0.074,0,1.583
+ko_content_201,그렇다면 우리는 어떻게 별의 종류를 구별할 수 있었을까?,ko,0.296,0.111,0.0,0.833,0.438,0.185,0,1.863
+ru_polar_128,Способна ли девочка в 13 лет получить оргазм во время секса?,ru,0.309,0.375,0.333,0.6,0.643,0.186,1,2.446
+ja_content_32,彼らは誰ですか。,ja,0.128,0.143,0.0,0.0,0.0,0.07,0,0.341
+ru_content_449,Кто знает что это?,ru,0.0,0.125,0.0,0.333,0.25,0.024,0,0.733
+id_polar_245,Apa juga yang akan terjadi dengan perseteruan keluarga mereka?,id,0.226,0.333,0.333,0.5,0.444,0.122,1,1.959
+en_polar_24,"Attached are clean and blacklined drafts of the Enron guaranties to be made in support of EPMI's obligations under the Indian Mesa II Renewable Energy Purchase Agreement (""PPA"") and Green Premium Sharing Agreement (""GSPA"").?",en,0.345,0.875,0.25,0.389,0.629,0.8,1,3.287
+en_content_353,How are you?,en,0.115,0.0,0.0,0.0,0.4,0.0,0,0.515
+fi_polar_53,Onko Granfeltilta tilattu tutkimustulos vai tutkimustyö?,fi,0.098,0.333,0.0,0.4,0.667,0.103,1,1.602
+ja_polar_37,ではJBSには“統一教会”との認識はあったということか?,ja,0.718,0.6,0.5,0.5,0.49,0.457,1,3.265
+ru_content_566,Какой периметр консоли нинтендо свитч и Джой-конов?,ru,0.255,0.5,0.0,0.0,0.625,0.146,0,1.527
+ja_content_18,"信者の人権を守るために身体の自由をどの程度侵してもやむを得ないと言えるのか,という議論ではないでしょうか。",ja,0.465,0.714,1.0,0.5,0.417,0.698,0,3.793
+fi_content_128,Ja mikä olisi sitten sitä juhlaromantiikkaa?,fi,0.221,0.125,0.0,0.0,0.167,0.068,0,0.581
+en_content_357,How are you doing?,en,0.229,0.0,0.0,0.333,0.6,0.024,0,1.187
+id_polar_172,"Bukankah kami ini dianggapnya sebagai orang asing, karena ia telah menjual kami?",id,0.337,0.111,0.333,0.667,0.286,0.245,1,1.979
+ar_content_8,أليس هذا أفضل من أن نزرع القمح في رومانيا؟!,ar,0.271,0.143,0.333,0.8,0.182,0.135,0,1.864
+ru_polar_81,"Есть ли в России бренды, у которых есть магазин и такая одежда?",ru,0.28,0.5,0.333,0.5,0.45,0.233,1,2.296
+ko_content_265,혹은 어떻게 해서 자신이 자기 의식임을 자각하게끔 될까?,ko,0.328,0.111,0.333,0.222,0.438,0.185,0,1.618
+ko_polar_84,그렇다면 어찌 할 것인가?,ko,0.088,0.0,0.5,0.25,0.625,0.056,1,1.519
+id_content_17,Sesudah itu aku bertanya kepadanya: Anak siapakah engkau?,id,0.316,0.25,0.0,0.8,0.0,0.174,0,1.54
+ja_polar_20,テレビの都市伝説芸人ですか?,ja,0.282,0.2,0.0,0.0,0.81,0.114,1,1.405
+ko_polar_185,오늘 오후의 영하 24.0가 끝인가?,ko,0.066,0.222,0.0,0.167,0.7,0.111,1,1.266
+ar_content_57,وماذا عن وضع أستراليا؟,ar,0.076,0.071,0.0,0.0,0.364,0.019,0,0.531
+id_content_218,Kapankah kalian bisa menang?,id,0.406,0.125,0.0,0.4,0.25,0.043,0,1.225
+id_content_214,"Lalu bagaimana dengan Vino, suami Clarissa, yang mendadak muncul untuk mencari keuntungan dari pernikahan kedua Clarissa?",id,0.352,0.5,0.667,0.6,0.609,0.326,0,3.054
+ja_polar_61,その時からのだから?,ja,0.27,0.2,0.0,0.0,0.0,0.086,1,0.556
+id_polar_108,"Ia bertanya, “Bisakah kita membuat sebuah mobil mewah terbaik di dunia?” Pertanyaan Eiji ini membuat Toyota memulai sebuah proyek super - rahasia yang diberi kode F1 (“Flagship” (Unggulan) + “No. 1 vehicle” (Mobil No. 1)).",id,0.493,1.0,0.444,0.4,0.657,1.0,1,3.995
+ar_content_42,ماذا سيفعل عندما سيعود إليها باسم الانتقام؟,ar,0.305,0.214,0.333,0.5,0.298,0.135,0,1.785
+ar_content_35,"وتساءل الشاب في الرسالة التي بثها موقع ""الإخوان"" على الإنترنت تحت عنوان ""من شاب مقهور إلى المرشد العام: متى تظهر القوة الحقيقية للإخوان في الميدان؟",ar,0.474,0.5,0.333,0.733,0.74,0.538,0,3.32
+fi_content_69,- Kuka tuolla pihalla kulki ja miksi?  Hartikka tivasi.,fi,0.394,0.25,0.0,0.4,0.688,0.159,0,1.891
+fi_content_21,Kuinka paljon ihmiset oikeasti sitten olisivat valmiita maksamaan tästä huvista?,fi,0.368,0.25,0.333,0.4,0.75,0.159,0,2.26
+fi_polar_65,annetaanko koneiden jyskyttää puoliteholla kunnes teknikko on lennätetty paikalle?,fi,0.245,0.333,0.667,0.533,0.778,0.207,1,2.763
+ru_polar_39,Посадят ли его на самолёт? и что его ждёт по прилёту?,ru,0.449,0.25,0.0,0.8,0.257,0.209,1,1.965
+id_content_275,Bagaimana ia mempelajarinya?,id,0.135,0.0,0.0,0.6,0.375,0.022,0,1.132
+ko_content_72,옐친의 포고령에 대해서는 어떻게 생각하는가?,ko,0.057,0.222,0.0,0.333,0.7,0.074,0,1.387
+ko_polar_56,그렇다면 뻬레스트로이카의 어떠한 측면이 그 반동적 성격을 강화했으며 또 어떠한 측면이 고르비를 뿌치의 반동으로부터 구해낼 수 있었는가?,ko,0.564,0.222,0.0,0.0,0.735,0.778,1,2.299
+id_content_122,Bagaimana perjuangan hidup Isabella?,id,0.0,0.125,0.0,0.0,1.0,0.022,0,1.147
+ko_polar_99,남을 위해서만 일하는 사람은 자신을 위해서는 일하지 않는가?,ko,0.076,0.333,0.5,0.25,0.625,0.278,1,2.062
+en_polar_452,"Sorry, almost forgot to ask - Would it be cheaper to walk-in to these hotels rather than pre book?",en,0.277,0.75,0.75,0.417,0.474,0.38,1,3.048
+fi_polar_127,Oletko tehoääliö töissä?,fi,0.0,0.0,0.0,0.0,0.667,0.0,1,0.667
+ja_content_14,"なのに,どうして住民が説明会を拒否しているなんて建築指導課に報告するんですか?",ja,0.813,0.286,0.4,0.667,0.467,0.535,0,3.167
+ru_content_384,Для значков какая лучше подойдёт?,ru,0.128,0.125,0.0,0.333,0.6,0.049,0,1.235
+id_content_233,Kok kamu terlambat? - Kenapa kamu terlambat?,id,0.488,0.125,0.0,0.5,0.375,0.109,0,1.596
+en_content_136,Why didn't Craig show Ma his appartment?,en,0.262,0.143,0.0,0.833,0.75,0.122,0,2.11
+en_polar_153,And do you want to do it on a Saturday or Sunday?,en,0.197,0.5,0.25,0.5,0.333,0.18,1,1.961
+id_polar_119,"Yaksa: Hal apakah yang jika ditinggalkan membuat seseorang dicintai, bahagia dan kaya?",id,0.215,0.556,0.5,0.333,0.538,0.245,1,2.387
+id_polar_74,Kira kira antara Tadase dan Ikuto mana yang Amu pilih?,id,0.401,0.222,0.333,0.5,0.6,0.143,1,2.2
+id_content_56,Apa arti globalisasi buat Lippo?,id,0.305,0.125,0.0,0.0,0.5,0.043,0,0.973
+ar_content_19, وفي السجن ماذا سيرتدي؟,ar,0.427,0.143,0.0,0.4,0.242,0.058,0,1.27
+en_polar_478,Have I just fallen victim in a cultural trap?,en,0.244,0.25,0.0,0.667,0.556,0.12,1,1.837
+ar_polar_2,رئيس الجمعية موافق وقسم هام من الاعضاء رافضون والاختلاف محوره هذه المرة قضية التطبيع وتداعياتها المعقدة المحمولة على اجنحة متعددة بين السياسي والثقافي والفكري والعلمي مشدودة الى الاشكال الحارق الوحيد: هل نقبل باسرائيل ام نصمد على خط القطيعة؟,ar,0.543,1.0,0.0,0.0,0.629,0.827,1,2.999
+ar_polar_3, هل حدد القانون عدد القضاة؟,ar,0.083,0.1,0.0,0.6,1.0,0.019,1,1.803
+ja_content_36,彼女の全エネルギーはどこから来ているのだろうか。もしくは、衝撃波を引き起こす力を以って打ちのめすことのできるあの声？,ja,0.676,0.571,0.4,0.267,0.595,0.628,0,3.137
+id_content_269,Kan kamu yang bilang? - Bukankah kamu yang bilang demikian?,id,0.406,0.25,0.333,0.3,0.0,0.196,0,1.485
+ar_polar_4, هل سيكون القضاة عراقيين؟,ar,0.167,0.0,0.0,0.6,0.636,0.019,1,1.422
+fi_content_27,"Tämä setti toimi, sillä siinä vaiheessa kun avaimet oli vaihdettu, uskalsin jo kysyä, että ”mitä sä musta ajattelit, kun ekan kerran näit?”.",fi,0.565,0.625,1.0,0.6,0.432,0.591,0,3.813
+ar_content_56,من بوسعه إيقاف منتخب أستراليا هذا؟,ar,0.087,0.214,0.0,0.0,0.545,0.077,0,0.924
+id_content_140,"'Kalau seandainya kamu memiliki dunia dan apa yang ada di dalamnya dan sepertinya lagi, apakah kamu akan menebus dirimu?",id,0.561,0.625,0.333,0.667,0.205,0.457,0,2.847
+ja_polar_43,一番希望するのは?,ja,0.253,0.0,0.0,0.75,0.467,0.057,1,1.527
+fi_polar_77,"”Kuulostaa kivalta, mutta eikö tuo ole aika kallista?”",fi,0.596,0.167,0.0,0.4,0.5,0.276,1,1.939
+fi_polar_112,"Voisitko itse paremmin, jos seksielämäsi jatkuisi?”",fi,0.344,0.167,0.333,0.5,0.833,0.172,1,2.349
+id_content_224,Siapakah pastor Dwidjosoesastro ini?,id,0.203,0.125,0.0,0.0,0.25,0.043,0,0.622
+ja_polar_17,仕事では孤独、プライベートは意外と華やかということか。,ja,0.394,0.6,0.5,0.0,0.744,0.314,1,2.552
+ru_content_74,— Что это?— перебил его Петрович.,ru,0.255,0.125,0.0,0.333,0.4,0.122,0,1.236
+id_polar_227,Lensa makro buat fullframe atau bukan?,id,0.155,0.222,0.0,0.0,0.5,0.061,1,0.938
+ru_polar_116,Вопрос такой: будет ли это тот же самый человек или нет?,ru,0.617,0.25,0.333,0.0,0.0,0.209,1,1.41
+ko_content_79,왜 군은 게까쩨페 (비상위원회) 의 명령을 듣지 않았는가?,ko,0.69,0.222,0.0,0.5,0.438,0.259,0,2.109
+ar_content_14, ربما أم مؤكد؟,ar,0.152,0.071,0.0,0.0,0.242,0.0,0,0.466
+ru_content_325,Сколько стоит Glock 17 в среднем?,ru,0.153,0.125,0.0,0.5,0.333,0.073,0,1.185
+ja_content_38,警官は私に作者Günter de Bruynを知っているか？同業者なのか？と、極めて言葉少なに質問した。,ja,1.0,0.429,0.6,0.467,0.627,0.581,0,3.703
+ko_polar_73,"한비자가 행한, 앞서 인용했던 바 있는 도의 해석에서 그가 주장하는 점도 바로 이것이 아니겠는가?",ko,0.265,0.556,0.5,0.278,0.786,0.667,1,3.051
+fi_content_6,Miksi sitten takerrumme tavaroihin?,fi,0.092,0.0,0.0,0.6,1.0,0.023,0,1.715
+en_polar_400,Can I text from Canada to the united states?,en,0.244,0.25,0.0,0.5,0.444,0.12,1,1.559
+fi_content_37,"Ei hän voi tietää, miten voisi, jos sinäkään et tiedä?",fi,0.368,0.25,0.333,0.4,0.125,0.205,0,1.681
+id_polar_93,"MBC berkata, ``Anda, apakah Anda akan menonton 'Home Alone' di rumah lagi?",id,0.495,0.222,0.333,0.583,0.615,0.306,1,2.555
+ar_content_28,لماذا لم تنطلق الحركة التجارية بعد؟,ar,0.183,0.071,0.0,0.8,0.545,0.038,0,1.638
+en_content_361,What foods do you eat in Miramar?,en,0.153,0.143,0.0,0.5,0.514,0.098,0,1.407
+ru_content_203,кто у вас отметил мини маркет ?,ru,0.153,0.125,0.0,0.5,0.5,0.073,0,1.351
+ar_content_13,ـ لأسباب أمنية سيتم التكتم على موقعها حتى يعلن عنها؟,ar,0.254,0.143,0.333,0.6,0.476,0.192,0,1.998
+id_polar_77,"Rasul Paulus dalam Surat Roma melukiskannya demikian: ``Atau tidak tahukah kamu, bahwa kita semua yang telah dibaptis dalam Kristus, telah dibaptis dalam kematian-Nya?",id,0.475,0.556,0.333,0.583,0.385,0.551,1,2.883
+ko_polar_17,우리 사회의 안녕과 질서를 지키기 위해서 부름을 받고 존재하야 하는 경찰이 이래서 되겠습니까?,ko,0.155,0.889,0.5,0.222,0.308,0.556,1,2.629
+ko_content_163,그러나 그중에서 가장 중심이 되는 것은 무엇일까?,ko,0.307,0.222,0.333,0.417,0.786,0.148,0,2.213
+ar_content_6,حتى لا يعاني شعب مصر من تأخر وصول القمح الروماني إلى موانينا؟!,ar,0.178,0.214,0.0,0.8,0.755,0.192,0,2.14
+ru_polar_89,"Подскажите пожалуйста, можно ли как то снять или вывести черную шариковую ручку с бумаги?",ru,0.388,0.375,0.333,0.45,0.652,0.279,1,2.478
+ru_content_708,жадно иволга кричит врач сипит акушерочка сестра спит голубо-шерстяноглазая под жестом топора почему это не Азия?,ru,0.443,0.25,0.0,0.444,0.812,0.317,0,2.267
+fi_content_68,- Keitä te olette ja miksi tungette tänne iltamyöhällä?,fi,0.276,0.125,0.0,0.8,0.375,0.136,0,1.712
+id_content_141,Apa yang terjadi jika Yellowstone meletus?,id,0.325,0.25,0.667,0.4,0.375,0.065,0,2.082
+ru_polar_88,"В тик-ток смотрю онлайн трансляцию в польском регионе, но язык не понимаю, подскажите есть ли софт для перевода в режиме онлайн, поток комментариев на польском языке ?",ru,0.438,0.75,0.0,0.533,0.668,0.605,1,2.993
+en_polar_310,Anyone know a release date?,en,0.19,0.25,0.0,0.333,0.6,0.04,1,1.413
+en_content_75,"so, enemy, what's your point?",en,0.596,0.0,0.0,0.0,0.6,0.122,0,1.318
+ar_content_40,ما معنى هذا الكلام؟,ar,0.102,0.143,0.0,0.0,0.545,0.0,0,0.79
+fi_polar_29,Pitäisikö minun mennä sisälle johonkin taloista?,fi,0.098,0.167,0.0,0.4,0.333,0.103,1,1.102
+ko_content_129,과연 누가 수수께끼를 풀어 장자를 설득시킬 것인지?,ko,0.153,0.111,0.333,0.333,0.571,0.148,0,1.651
+ja_polar_10,"では,霊芝は免疫システムの病気であるリューマチにもよいのでしょうか?",ja,0.655,0.6,0.5,0.0,0.49,0.429,1,2.673
+id_content_10,Bagaimana manusia sebagai individu dapat masuk ke dalam suatu hubungan dengan Allah?,id,0.554,0.25,0.0,0.6,0.375,0.196,0,1.975
+fi_polar_78,Onko sinun koskaan tarvinnut nettikeskustelussa esittää olevasi kännissä?,fi,0.14,0.333,0.667,0.4,0.75,0.172,1,2.463
+fi_polar_2,Eikö olekin kivaa?,fi,0.123,0.0,0.0,0.0,0.333,0.0,1,0.456
+ru_polar_176,И можно ли обучиться на переводчика заочно?,ru,0.187,0.25,0.333,0.5,0.551,0.093,1,1.914
+ar_content_54,"وتساءل: ""أين دعوة المسيح الآن من سيل الهجوم على الإيمان وتحقير أهله وكيل الاتهامات لهم وتزيين الإلحاد والدفاع عنه؟""",ar,0.561,0.429,0.0,0.2,0.545,0.481,0,2.216
+fi_polar_57,Suostutteko keskustapuolueen uudeksi puheenjohtajaksi?,fi,0.245,0.167,0.0,0.2,1.0,0.034,1,1.647
+fi_polar_105,"Onko arkiseksi nopea tyydytys ennen nukkumaanmenoa, tai nopea tyydytys ennen ylösnousua aamulla?",fi,0.245,0.333,0.0,0.0,0.667,0.345,1,1.59
+ja_polar_48,これでも関係がないと言えるのか?,ja,0.375,0.4,0.0,1.0,0.267,0.2,1,2.242
+fi_content_26,PIKKUVAIMO: Mitä sä naurat?,fi,0.368,0.125,0.0,0.4,0.375,0.045,0,1.313
+ar_content_27,ماذا حصل في الحزب الديموقراطي التقدمي؟,ar,0.122,0.071,0.0,0.4,0.848,0.038,0,1.48
+fi_content_22,Ai miten kiersin bannit?,fi,0.092,0.0,0.0,0.6,0.688,0.023,0,1.402
+ko_polar_106,즉 다 갖추었는데 존재하지 않은 이 여인을 '완전한 미인' 이라 할 수 있을까요?,ko,0.464,0.333,0.5,0.208,0.423,0.667,1,2.596
+ar_polar_8, هل تتوقع أن يحكم صدام حسين بالإعدام؟,ar,0.238,0.2,0.0,0.4,0.0,0.077,1,0.915
+ko_content_103,"내 혀가 온전한가, 어떤가?",ko,0.077,0.222,0.333,0.167,0.625,0.074,0,1.498
+id_content_225,Siapa yang peduli dengan kehormatan mereka?,id,0.162,0.25,0.333,0.4,0.167,0.065,0,1.378
+ja_content_31,文書をどのようにファイルするか。,ja,0.274,0.143,0.4,0.6,0.417,0.116,0,1.95
+id_polar_34,Apakah layak sesuatu disebut pengasih akan tetapi sebenarnya merupakan penghukum atau penyiksa?,id,0.237,0.333,0.0,0.667,0.615,0.204,1,2.056
+ja_polar_15,直径30cmはあるかな?,ja,0.169,0.2,0.0,0.75,0.524,0.114,1,1.757
+ru_content_368,Что лучше настойка или заваривать траву?,ru,0.102,0.125,0.0,0.333,0.667,0.073,0,1.3
+ko_polar_89,하지만 그 차와 비행기가 자주 엄청난 사고를 일으키지 않나?,ko,0.431,0.222,0.0,0.667,0.333,0.333,1,1.987
+ja_polar_33,スポーツを頑張っている子供たちにランクをつけるような言動ができるのでしょうか?,ja,0.263,1.0,0.5,0.438,0.614,0.457,1,3.271
+ko_polar_181,아니면 요 며칠 눈보라 칠 때 마리안소만 안쪽으로 피신했는가?,ko,0.332,0.333,0.5,0.417,0.833,0.333,1,2.748
+ja_polar_21,それで生き方、変わりますか?,ja,0.338,0.2,0.5,0.375,0.524,0.143,1,2.08
+id_polar_28,"Titahnya, apakah kabar Juragan?",id,0.258,0.222,0.0,0.0,0.667,0.082,1,1.229
+ko_polar_72,그렇다면 일반적으로 도덕경의 주석자들은 무와 도를 동일시했던 것인가?,ko,0.455,0.111,0.5,0.417,0.625,0.278,1,2.385
+en_content_121,"How about a pre-meeting web site cruise on Friday, July 7 at 11AM EDT?",en,0.393,0.429,0.0,0.0,0.72,0.317,0,1.859
+fi_polar_48,Entä olinko jo ostanut jotain jouluruokia?,fi,0.196,0.167,0.0,0.6,0.667,0.103,1,1.733
+ko_polar_92,그렇다면 어음도 자금이라고 할 수 있을까?,ko,0.106,0.222,0.0,0.333,0.75,0.167,1,1.578
+id_content_210,dan apa yang dimaksud dengan 'kemahakuasaan'?,id,0.325,0.25,0.333,0.4,0.167,0.109,0,1.584
+fi_content_67,Mitä muuta tänne ruotsinpuolelle kuuluu?,fi,0.138,0.125,0.0,0.4,0.5,0.045,0,1.208
+ru_polar_190,"Есть ли в США подобие ЦУМа, и можно ли заказывать вещи из московского цума за границу?",ru,0.411,0.375,0.333,0.667,0.627,0.326,1,2.739
+en_content_16,how fare of kolkatta?,en,0.076,0.143,0.0,0.0,0.9,0.024,0,1.144
+id_content_68,"Apa yang ia lakukan, dan mengapa ia melakukannya?",id,0.457,0.25,0.333,0.4,0.167,0.152,0,1.759
+ru_content_548,Так чем он притягивает людей?,ru,0.191,0.0,0.0,0.667,0.6,0.049,0,1.507
+ja_polar_49,地区予選で敗者復活戦に回った雪辱を果たせるか。,ja,0.253,0.6,0.5,0.5,0.897,0.286,1,3.037
+ko_polar_58,"생명의 출현, 그것은 우연들의 거의 가능하지 않은 축적에 기인하는 유일한 사건인가?",ko,0.557,0.333,0.5,0.25,0.727,0.5,1,2.868
+ru_content_475,Также недавно застала сына за мастурбацией на это АНИМЭ. что мне делать?,ru,0.348,0.25,0.0,0.5,0.583,0.244,0,1.925
+ja_polar_23,調達先はUK拠点のDFJ EspritとフランスのSofinnovaだとか。,ja,0.338,0.4,0.0,0.0,0.733,0.343,1,1.814
+ko_polar_184,길을 잃고 아직도 돌아가지 못했을까?,ko,0.066,0.111,0.5,0.167,0.7,0.111,1,1.655
+en_polar_77,need help finding irish music?,en,0.136,0.5,0.25,0.167,1.0,0.04,1,2.092
+en_content_12,What language is talked in Iguazu?,en,0.092,0.143,0.0,0.5,0.6,0.073,0,1.408
+ru_content_399,Как вы думаете?,ru,0.128,0.0,0.0,0.333,0.667,0.0,0,1.128
+fi_polar_108,- Sinäkö kilpailisit ylimysten rikkauksien kanssa sienilläsi?,fi,0.196,0.167,0.0,0.6,0.667,0.138,1,1.768
+ru_polar_28,"У меня вопрос по этому поводу, может ли из-за антибиотиков и новобисмола быть сильная тошнота и слабость?",ru,0.351,0.625,0.667,0.4,0.492,0.349,1,2.883
+ru_content_116,Что нам делать?,ru,0.128,0.0,0.0,0.333,0.333,0.0,0,0.794
+en_polar_264,Do you miss me?,en,0.145,0.125,0.0,0.333,0.25,0.02,1,0.873
+ar_polar_20,هل بات حقهم الإلهي بارتداء عباءة أفضل فريقٍ في العالم غير مضمون؟,ar,1.0,0.5,0.0,0.6,0.714,0.173,1,2.987
+en_content_155,"After that, what do we do?",en,0.321,0.143,0.0,0.5,0.2,0.098,0,1.261
+ko_polar_142,아니라면 애초부터 한국 역사의 독자성을 처음부터 무시할 목적으로 위와 같은 잘못을 범한 것인가?,ko,0.42,0.444,0.5,0.389,0.769,0.556,1,3.078
+id_content_278,Supir pribadi Eyang Tini bertanya berapa lama lagi mereka akan mencari Kamila?,id,0.48,0.25,0.333,0.5,0.792,0.196,0,2.551
+ko_content_150,과거를 재창조해 보려는 시도에서 우리는 얼마나 멀 과거까지 거슬러 올라가야 하는가?,ko,0.299,0.333,0.667,0.278,0.591,0.296,0,2.464
+id_polar_82,"Prospero menghadapi dilema yang sulit, apakah ia akan menggunakan kemampuan sihirnya untuk memperoleh kembali jabatannya, atau ia akan membalas dendam kepada musuhnya?",id,0.351,0.444,0.667,0.467,0.538,0.51,1,2.977
+ru_content_256,Подскажите что это за разгрузка?,ru,0.383,0.125,0.0,0.167,0.4,0.049,0,1.123
+ko_content_85,지구는 어디에서 왔는가?,ko,0.115,0.0,0.0,0.333,1.0,0.0,0,1.448
+en_content_391,why do i want to do work experience at an animal center?,en,0.271,0.286,0.333,0.5,0.7,0.22,0,2.309
+ar_content_0,ويعود الصائم، بعد افطاره الشهي، الى حيث تستقبله، في كل الفضائيات العربية، مشاهد المآسي التي تجري في فلسطين، والمجازر التي يرتكبها العدو الصهيوني ضد شعبنا العربي المسلم في هذه الارض العربية المغتصبة والمدماة... فماذا يفعل؟,ar,0.741,0.643,0.333,0.6,0.609,0.904,0,3.83
+ar_content_23, بالرغم مما عاناه الشعب العراقي من نظامهم؟,ar,0.244,0.143,0.333,0.6,0.463,0.154,0,1.937
+ar_content_46,"وأشار إلى أن ""عصبة الأمم المتحدة اعترفت قبل نحو 70 عاماً بملكية حائط البراق للمسلمين باعتباره وقفاً إسلامياً وجزءاً من الأقصى، ثم يأتي هؤلاء ليسلموه لليهود ويطلقون عليه زوراً وبهتاناً اسم حائط المبكى؟"".",ar,0.548,0.571,1.0,0.44,0.606,0.865,0,4.03
+ar_content_30,كيف يمكن الدولة ان تقيم حواراً انقاذيا تقريبا مع الدول والمؤسسات الغريبة، وهي لا تقيم حوار - الحد الادنى من التفاهم مع بعض القوى اللبنانية؟,ar,0.573,0.357,0.333,0.733,0.685,0.462,0,3.144
+en_content_37,what is a good slogan for an Argentinian restaurant?,en,0.286,0.286,0.0,0.0,0.533,0.146,0,1.252
+ko_polar_125,유토피아 같은 이야기일까?,ko,0.0,0.111,0.0,0.167,1.0,0.0,1,1.278
+ru_polar_124,Можно ли писать знак корня над интегралом?,ru,0.187,0.25,0.333,0.4,0.753,0.093,1,2.016
+ar_polar_7, هل سيقف صدام حسين في قصف الاتهام؟,ar,0.238,0.1,0.0,0.6,0.0,0.077,1,1.015
+ar_content_1,"فهلا اقلع المسلمون عن ""بدعة مآدب الافطار"" هذه، واكتفوا بالعادي من الافطار، ووفروا من اموالهم بعض الفرح للمليون جائع، في الضفة الغربية وغزة، أولئك الذين لم يعرفوا منذ اعوام للفرح طعما ولا للعيد بهجة؟",ar,0.688,0.429,0.333,0.55,0.421,0.885,0,3.306
+id_polar_178,"Pergilah masak segera, apa digaduhkan masak nasi ransom?",id,0.194,0.222,0.333,0.333,0.778,0.143,1,2.003
+ko_content_167,그러나 마치 만화영화와도 같은 이 일이 가능해진다면 우리 생활은 어떻게 변할까?,ko,0.345,0.333,0.0,0.667,0.318,0.296,0,1.959
+en_polar_101,But will Posada be given up?,en,0.239,0.125,0.0,0.667,0.333,0.06,1,1.424
+ja_polar_34,同日開会の都議会で、石原氏は施政方針演説に臨むが、一歩踏み込むか。,ja,0.413,0.6,0.5,0.875,0.93,0.514,1,3.832
+id_polar_138,"Schopenhauer juga menegaskan jika tidak ada keinginan bebas, haruskah kejahatan dihukum?",id,0.375,0.222,0.333,0.5,0.667,0.204,1,2.302
+ja_content_0,犯人は一体誰なのか?,ja,0.267,0.143,0.0,0.0,0.238,0.093,0,0.741
+ja_content_1,どうするか?,ja,0.0,0.0,0.0,0.4,1.0,0.0,0,1.4
+ja_polar_50,"抗議デモの継続を宣言した統一教会,日本でも韓国東亜日報の様に襲撃事件が起こる惧れはないのか?",ja,0.538,0.8,0.75,0.5,0.81,0.743,1,4.14
+en_content_349,How is it going?,en,0.229,0.0,0.0,0.333,0.6,0.024,0,1.187
+ja_polar_32,他だとkawara cafeくらいでしょうか?,ja,0.338,0.2,0.5,0.0,0.417,0.143,1,1.597
+ko_polar_183,남극의 엄숙한 겨울에 자숙함일까?,ko,0.088,0.111,0.0,0.083,1.0,0.056,1,1.338
+en_polar_467,yoga and horses.....?,en,0.163,0.25,0.0,0.0,0.667,0.02,1,1.1
+fi_content_87,Mitä se sillä tarkoitti?,fi,0.276,0.0,0.0,0.6,0.062,0.023,0,0.961
+ja_polar_66,労働者たちは、机の上に宗教関係の物を置くことが許容されているか？,ja,0.515,0.8,0.5,0.5,0.758,0.571,1,3.644
+ru_content_282,Кто собирается лететь за рубеж?,ru,0.064,0.25,0.333,0.25,0.6,0.049,0,1.546
+ru_polar_163,"У нас есть проблема: мы не можем решить, может ли пешка пропустить врага и пойти вперёд, или он обязан съесть фигуру?",ru,0.351,0.625,0.333,0.429,0.618,0.488,1,2.844
+ko_polar_54,"아니면 그들은 정말로 자신들이 주장하듯, 그들이 정당한 일을 하고 있는 것으로 생각했는가?",ko,0.772,0.333,0.5,0.333,0.375,0.556,1,2.869
+ja_polar_0,そんなことで許されるのでしょうか?,ja,0.241,0.2,0.0,0.75,0.167,0.143,1,1.501
+en_content_96,Can you recommend where these companies each fit within the new organization?,en,0.313,0.286,0.333,0.5,0.6,0.22,0,2.251
+ar_content_62,"وماذا عن الأحزاب في ماذا, في الحقوق التاريخية؟",ar,0.229,0.143,0.0,0.0,0.242,0.115,0,0.729
+ar_polar_9, هل ستشارك الأمم المتحدة في محاكمات صدام حسين وبقية أعضاء النظام السابق؟,ar,0.154,0.5,0.0,0.6,0.584,0.192,1,2.031
+ko_polar_15,타락한 선거에는 아예 참여조차 하지 않는 것이 옳은 일이겠습니까?,ko,0.166,0.333,0.5,0.278,0.833,0.333,1,2.444
+ru_content_153,Какие принимать ферменты?,ru,0.128,0.125,0.0,0.167,0.667,0.0,0,1.086
+id_polar_198,"Lalu para pegawai Saul menyampaikan perkataan itu kepada Daud, tetapi Daud menjawab: ``Perkara ringankah pada pemandanganmu menjadi menantu raja?",id,0.4,0.444,0.667,0.458,0.619,0.429,1,3.017
+fi_polar_93,Onko kaikki se odottaminen sitten tarpeellista?,fi,0.295,0.167,0.0,0.0,0.5,0.103,1,1.065
+ko_polar_136,그렇다고 하면 칠지도에 의해 임나설을 뒷받침하려는 행위는 결국 거짓된 역사를 꾸며 내기 위해 또 다른 허구를 덧씌우는 것에 불과하지 않은가?,ko,0.6,0.667,0.625,0.262,0.7,0.944,1,3.798
+fi_polar_94,Onko jokaisen ihmisen välttämätöntä muistuttaa asiasta aina sopivan tai sopimattoman tilanteen tullen?,fi,0.357,0.833,0.667,0.5,0.75,0.31,1,3.417
+id_content_4,Dan bagaimanakah kamu lihat keadaannya sekarang?,id,0.348,0.125,0.0,0.8,0.375,0.109,0,1.757
+id_content_124,Yang Islami itu yang mana?,id,0.406,0.125,0.0,0.0,0.25,0.043,0,0.825
+id_content_294,Jadi dicoba untuk menjawab pertanyaan-pertanyaan seperti kebutuhan apa yang dicoba dipuaskan oleh seseorang?,id,0.169,0.75,0.5,0.35,0.423,0.217,0,2.41
+en_polar_83,Should I be concerned?,en,0.217,0.125,0.0,0.0,0.25,0.02,1,0.612
+id_polar_231,Fadil bertanya apa Kamila tidak datang juga?,id,0.258,0.111,0.333,0.5,0.857,0.082,1,2.141
+id_content_90,Siapakah sebenarnya sosok tersebut?,id,0.305,0.125,0.0,0.0,0.25,0.043,0,0.723
+fi_polar_0,Onko ammatillinen uskottavuuteni noin pientä..?,fi,0.245,0.167,0.0,0.0,0.8,0.103,1,1.316
+id_content_242,``Mengapa bukan Jenderal Gatot Subroto?,id,0.102,0.125,0.0,0.0,0.75,0.065,0,1.042
+ar_content_59,من أين تستمد كل هذه الطاقة؟ أو ذلك الصوت الذي يخرج قوياً بحيث يحدث موجة صادمة؟,ar,0.248,0.357,0.667,0.467,0.599,0.269,0,2.606
+fi_content_2,Mitä tästä sanoisi enää?,fi,0.092,0.0,0.0,0.6,0.375,0.023,0,1.09
+ar_content_58,أم أنها تكلفة قياسية أو تعرفة مسبقة الدفع؟,ar,0.191,0.143,0.0,0.0,0.646,0.096,0,1.076
+fi_content_62,- Mikä ei toimi?,fi,0.138,0.0,0.0,0.2,0.167,0.023,0,0.527
+ru_polar_138,Нужны ли в жизни школьные отметки?,ru,0.337,0.125,0.0,0.0,0.686,0.07,1,1.217
+ru_content_468,Как называется вещество (CoOH)2CO3 и какая у него графическая формула?,ru,0.199,0.25,0.0,0.5,0.5,0.171,0,1.619
+id_polar_95,Kemunduran atau kemajuankah?,id,0.086,0.111,0.0,0.0,0.5,0.02,1,0.718
+ru_content_248,Так зачем скауты это делают?,ru,0.383,0.0,0.0,0.667,0.8,0.049,0,1.898
+fi_polar_33,Mutta sopeutuivatko ne Marsin olosuhteisiin?,fi,0.123,0.167,0.0,0.6,0.6,0.069,1,1.558
+ja_polar_35,未来の英雄?,ja,0.169,0.2,0.0,0.0,1.0,0.0,1,1.369
+en_polar_317,Are you ready?,en,0.163,0.125,0.0,0.0,0.333,0.0,1,0.621
+id_content_84,Taufan (Fadil) bertanya apa maksudnya pada Ambar?,id,0.348,0.375,0.0,0.4,0.531,0.152,0,1.807
+fi_polar_103,Olisiko se toisen passaaminen osa sitä arkiromantiikkaa?,fi,0.205,0.167,0.0,0.0,0.429,0.138,1,0.938
+ja_content_15,「12星座別キーワード」では、あなたがどんな人か?,ja,0.524,0.143,0.0,0.0,0.5,0.279,0,1.446
+en_content_56,"so im a little confused , why is there two statues of David?",en,0.267,0.429,0.0,0.5,0.646,0.268,0,2.11
+ko_polar_63,혹시 훔친 것이 아닐까?,ko,0.177,0.111,0.5,0.0,1.0,0.056,1,1.844
+id_content_193,Dan bagaimanakah Malin Kundang yang sudah menjadi orang Jakarta?,id,0.316,0.25,0.333,0.4,0.5,0.152,0,1.951
+en_content_132,Which do you prefer?,en,0.229,0.0,0.0,0.333,0.3,0.024,0,0.887
+ar_content_55,فأين ذلك كله مما تعانيه البشرية اليوم من ويلات وحروب؟..,ar,0.258,0.357,0.333,1.0,0.286,0.231,0,2.465
+id_content_44,Tetapi Ia berkata kepada mereka: ``Berapa banyak roti yang ada padamu?,id,0.406,0.625,0.333,0.5,0.375,0.239,0,2.479
+fi_content_91,"Osaatteko sanoa, missä olisi lähin R-kioski?",fi,0.166,0.375,0.667,0.2,0.583,0.091,0,2.081
+ar_content_16, متى سيحال صدام حسين وأعضاء نظامه إلى المحكمة؟,ar,0.305,0.214,0.0,0.8,0.298,0.154,0,1.771
+id_content_274,"Tapi pada anime OVA Angel Beats, Angel Beats!: Another Epilogue Menceritakan Otonashi yang belum reinkarnasi dan membantu orang-orang yang sudah meninggal di dunia Afterlife Kapan Otonashi Yuzuru mendonorkan jantungnya kepada Kanade?",id,0.695,0.5,0.333,0.6,0.648,0.696,0,3.472
+fi_polar_55,Tulevatko he Porvoosta?,fi,0.123,0.0,0.0,0.4,0.667,0.0,1,1.189
+fi_polar_68,Voiko pukua käyttää häissä tai lakkiaisissa?,fi,0.098,0.333,0.0,0.4,0.667,0.103,1,1.602
+fi_content_52,"”Miksi Carla sitten sanoo, että se on maanpäällinen Helvetti?”",fi,0.483,0.125,0.333,0.8,0.583,0.205,0,2.529
+en_content_225,Does your train pass Asansol when starting from Howrah?,en,0.143,0.286,0.333,0.417,0.8,0.146,0,2.125
+ko_polar_173,김영삼 정부는 한국 자본주의병을 치료할 수 있을까?,ko,0.088,0.111,0.0,0.5,1.0,0.222,1,1.922
+en_content_366,How many days will speed post take to reach from Delhi to Mumbai?,en,0.191,0.286,0.333,0.5,0.831,0.244,0,2.385
+en_polar_528,Well I think a blown engine falls under the catagory of mechanics right?,en,0.235,0.5,0.25,0.333,0.462,0.2,1,1.98
+ko_content_181,그러면 실수로 한 말 자체에 의미가 있다고 함은 어떤 뜻일까?,ko,0.281,0.444,0.333,0.389,0.7,0.259,0,2.407
+fi_polar_99,Tunnetko hänet vielä vanhanakin?,fi,0.164,0.167,0.0,0.4,0.75,0.034,1,1.515
+fi_content_47,”Kuka muka pakottaa?,fi,0.138,0.0,0.0,0.4,0.583,0.023,0,1.144
+ar_content_43,إذا وصفوني بالخيانة فهل تستبعد أن أقول إنهم جهلاء؟,ar,0.28,0.143,0.333,0.6,0.196,0.173,0,1.725
+ru_content_283,Есть вероятность что зимой 2021 года можно лететь без маски?,ru,0.312,0.5,0.667,0.278,0.8,0.171,0,2.727
+ru_polar_36,Могу ли я есть финики после такой операции?,ru,0.28,0.25,0.333,0.5,0.45,0.116,1,1.93
+ko_content_77,'당신은 지금 여기에 무엇 때문에 왔는지 아는가?' 병사는 머뭇거리며 대답을 못했다.,ko,0.345,0.444,0.333,0.417,0.455,0.407,0,2.401
+ja_content_27,皆さんもインドアエンタメを楽しむ際のお供に、いかがですか?,ja,0.389,0.571,0.4,0.2,0.867,0.302,0,2.729
+fi_polar_39,Oliko tämä unta vai todellisuutta?,fi,0.123,0.167,0.0,0.0,0.4,0.069,1,0.758
+en_content_289,How long should I go for to each place?,en,0.286,0.143,0.0,0.5,0.533,0.146,0,1.609
+fi_content_23,- ... Mutta miten ne ei ole vieläkään saanut rakennettua sitä Lepuskin tornia?,fi,0.497,0.25,0.333,0.6,0.432,0.227,0,2.339
+ko_content_221,어떤 빛깔로 어둠 속에서 한 점 반딧불 같이 반짝이는 삶을 가진 것일까?,ko,0.209,0.556,0.333,0.208,0.75,0.333,0,2.39
+id_polar_48,"Di hiruk pikuk kemajuan dan keblinger manusia, tidakkah mengucapkan serupa ini merupakan pengucapan yang sangat pedih dan dengan cara sederhana sekalipun, mengingatkan dan mendidik kita akan harga sebuah kehidupan?",id,0.387,0.556,0.333,0.5,0.581,0.612,1,2.969
+fi_polar_79,Vai oletko peräti absolutisti?,fi,0.245,0.0,0.0,0.0,0.5,0.034,1,0.78
+ja_content_21,具体的には、どのようなことが行われるのか。,ja,0.453,0.286,0.4,0.8,0.282,0.256,0,2.477
+en_content_286,What countries are the best to travel to?,en,0.098,0.286,0.333,0.333,0.45,0.122,0,1.623
+ja_polar_57,...あなたが涙を流した「SATC」のエピソードは?,ja,0.45,0.4,0.5,0.5,0.467,0.343,1,2.66
+id_polar_19,Begitu mudahkah semua itu berdiri di kompleks Regina Pacis?,id,0.143,0.222,0.0,0.5,0.6,0.143,1,1.608
+ru_polar_101,"Возможно ли самим ставить “ловушки "" для птиц и кольцевать их?",ru,0.343,0.375,0.333,0.5,0.45,0.209,1,2.21
+ko_content_55,어째서 그들 사이에는 쉽게 친구가 될 수 있을까?,ko,0.23,0.111,0.0,0.833,0.812,0.185,0,2.172
+fi_polar_104,"Juhlaseksiä, arkiseksiä - onko niillä eroa?",fi,0.307,0.167,0.333,0.0,0.6,0.138,1,1.545
+ru_polar_97,Будет ли он встречаться с хинатой?,ru,0.224,0.125,0.0,0.6,0.214,0.07,1,1.233
+id_content_202,Siapa yang menjadi raja?,id,0.135,0.125,0.333,0.4,0.375,0.022,0,1.39
+id_polar_196,Adakah Organisasi yang menaungi pembekam di Indonesia?,id,0.111,0.444,0.333,0.333,0.625,0.102,1,1.949
+ar_polar_15,وأبدى شيخ الأزهر دهشته ممن يقولون إنه لا يؤمن بالرأي الآخر وقال: إن بابي مفتوح يدخله العامل والشحات وإنني قلت لمكتبي: لا تمنعوا أحداً من الدخول، وقال ساخراً من هؤلاء: هل هناك حرية رأي أكثر من ذلك؟,ar,0.7,0.7,1.0,0.533,0.365,0.962,1,4.26
+fi_content_40,"Miten hän selittäisi, että hengitti samaan tahtiin sen kanssa?",fi,0.138,0.375,0.333,0.5,0.306,0.159,0,1.811
+fi_polar_38,"""Eikö ole kaunis päivä?""",fi,0.082,0.167,0.0,0.2,0.75,0.103,1,1.302
+ru_content_352,Что такое с яндекс метро и где теперь узнать где едет автобус?,ru,0.348,0.25,0.333,0.5,0.667,0.22,0,2.318
+ko_polar_62,천하의 야마구치 시절은 과연 다오카가쓰오 시대에서 끝난 것인가?,ko,0.227,0.111,0.5,0.333,1.0,0.278,1,2.45
+en_polar_48,thx for your ans.?,en,0.217,0.25,0.0,0.0,0.5,0.02,1,0.987
+ru_content_618,Какая загадка спасла жизнь Бильбо?,ru,0.064,0.125,0.0,0.5,0.8,0.049,0,1.538
+ko_content_268,그러면 한국은 세계경제의 지역주의 추세에 어떻게 대응해야 하는가?,ko,0.361,0.111,0.0,0.667,0.438,0.185,0,1.762
+ru_content_527,"Итак, когда ставить метку?",ru,0.17,0.0,0.0,0.5,1.0,0.049,0,1.719
+en_content_28,What do you think of Air France?,en,0.229,0.143,0.0,0.5,0.514,0.098,0,1.484
+ja_polar_30,そんな夏にぴったり?,ja,0.113,0.2,0.0,0.0,0.667,0.029,1,1.008
+ru_content_636,"Единственное место где есть напряжение это 1V, если можно, объясните пожалуйста что за линия где 1V, память?",ru,0.287,0.5,0.333,0.333,0.529,0.415,0,2.398
+ru_content_160,а куда именно в Карелии хотите попасть?,ru,0.383,0.25,0.333,0.25,0.571,0.098,0,1.885
+id_polar_38,"Seperti banyak kaum sofis lain, Hippias mencurahkan perhatian terhadap pertanyaan, ``Apakah yang menentukan tingkah laku manusia?",id,0.226,0.333,0.333,0.5,0.647,0.347,1,2.386
+en_polar_569,cos ill be going to baguio alone and i have tight?,en,0.257,0.25,0.0,0.667,0.417,0.18,1,1.77
+id_polar_115,Apakah Neo benar-benar tak akan pernah jatuh cinta pada Aurelie?,id,0.594,0.111,0.333,0.0,0.727,0.163,1,1.929
+ru_polar_188,И есть ли у вас знакомые?,ru,0.28,0.125,0.0,0.8,0.214,0.07,1,1.49
+ru_content_344,"Как пройти, чтоб нас пропустили?",ru,0.255,0.125,0.333,0.333,0.6,0.073,0,1.72
+en_content_65,So what happened?,en,0.115,0.0,0.0,0.333,0.8,0.0,0,1.248
+en_polar_578,information on the Eurostar train?,en,0.271,0.25,0.0,0.0,0.6,0.04,1,1.161
+ko_polar_100,그러면 러셀이 이 역설을 만들어낸 이유는 무얼까?,ko,0.31,0.333,0.5,0.333,0.571,0.222,1,2.27
+ru_polar_93,"Можно ли в The division начать дополнение ""выживание"" без прохождения компании?",ru,0.309,0.25,0.333,0.5,0.514,0.233,1,2.139
+en_content_324,How much could it possibly cost?,en,0.275,0.143,0.0,0.5,0.8,0.073,0,1.791
+ru_polar_181,Я имею ввиду. могут ли сейчас взять кредит на человека только по фото паспорта?,ru,0.28,0.625,0.667,0.467,0.652,0.279,1,2.97
+ja_polar_6,自分たちが所属する組織の構造や社会的布置を知ることができるのではないでしょうか。,ja,0.491,1.0,0.5,0.625,0.449,0.571,1,3.637
+ru_polar_37,Можно ли принимать Лаксигал?,ru,0.093,0.125,0.333,0.3,0.804,0.023,1,1.679
+id_polar_241,Apakah Anda mengalami rasa berulang seperti terdapat pasir atau kerikil pada mata?,id,0.215,0.333,0.333,0.583,0.615,0.204,1,2.285
+id_content_176,"Mentari pun shock, siapakah Bulan?",id,0.244,0.125,0.0,0.6,0.375,0.087,0,1.431
+ru_content_614,Где провести день?,ru,0.0,0.0,0.0,0.333,1.0,0.0,0,1.333
+en_polar_194,Then it's real easy to call Ben Taub to find out a room number.? The address is below.?,en,0.283,0.5,0.375,0.5,0.579,0.34,1,2.577
+en_content_351,"also, what's the deal with the weather this weekend?",en,0.178,0.429,0.0,0.0,0.48,0.195,0,1.282
+ru_polar_109,"Повлияет ли то, что муж военнослужащий на вероятность выигрыша в лотерее?",ru,0.365,0.375,0.0,0.6,0.514,0.209,1,2.063
+id_content_229,Mengapa ajibon memberontak?,id,0.203,0.0,0.0,0.4,1.0,0.0,0,1.603
+ar_content_24, ومتى سيتم تسليمهم إليكم؟,ar,0.261,0.143,0.0,0.6,0.091,0.096,0,1.191
+en_polar_116,"Similarly, is invoking ancient Egyptian gods and goddesses a reaffirmation of an oppressive and hierarchical system?",en,0.405,0.5,0.25,0.167,0.625,0.28,1,2.227
+ko_polar_7,그 마음의 자세가 예쁘지 않느냐?,ko,0.0,0.222,0.0,0.0,0.4,0.111,1,0.733
+id_polar_35,Apakah yang akan terjadi selanjutnya?,id,0.206,0.111,0.333,0.333,0.333,0.061,1,1.379
+ru_content_311,Чем опасны волны на море в Австралии?,ru,0.128,0.25,0.0,0.0,0.571,0.098,0,1.047
+ar_content_36,"وانتهى مرشد ""الإخوان"" إلى القول ""علينا أن نسأل أنفسنا كم حققنا على مستوى النفس وعلى مستوى الأسرة وعلى مستوى المجتمع؟",ar,0.318,0.5,0.0,0.4,0.218,0.462,0,1.897
+id_polar_236,"Namun, apakah demokrasi benar-benar menguntungkan ketika pemimpin merespons secara langsung, bahkan mungkin secara implusif, kepada sentiment publik?",id,0.471,0.222,0.333,0.75,0.611,0.367,1,2.755
+ar_polar_16,وقال للمذيع بلغة عتاب: هل فهمت كلامي ولا لسه؟,ar,0.41,0.3,0.5,0.6,0.325,0.192,1,2.327
+ko_content_33,도시의 경관을 도시의 얼굴이라고 한다면 눈빛에 해당하는 것은 무엇일까?,ko,0.115,0.333,0.333,0.25,0.667,0.222,0,1.92
+en_polar_260,Amelia Island Plantation?,en,0.109,0.25,0.0,0.0,1.0,0.0,1,1.359
+ru_polar_26,Нужно ли идти на прием к гастроэнтерологу?,ru,0.234,0.25,0.333,0.4,0.551,0.093,1,1.861
+ja_polar_60,お皿は全て重ねてたのですが、しばらくすると女性の従業員が来て、こちらのトロ刺身のお皿はお取りになられましたか?,ja,0.647,0.6,0.833,0.8,0.611,1.0,1,4.491
+fi_content_122,"Kuka niihin pystyy vaikuttamaan, jos ei ministeri?",fi,0.23,0.125,0.333,0.4,0.464,0.114,0,1.666
+id_polar_220,Apakah Anda mengalami perasaan mulut kering setiap harinya selama lebih dari 3 bulan?,id,0.369,0.333,0.0,0.667,0.533,0.245,1,2.147
+ko_polar_61,아미타불이 과연 극락정토에만 계실까?,ko,0.265,0.0,0.0,0.5,1.0,0.056,1,1.821
+fi_content_54,"Miksi Jumalat olisivat sinne matkalla, ellei se olisi paratiisi?”",fi,0.521,0.125,0.333,0.0,0.375,0.205,0,1.559
+en_polar_577,would someone give me some information about migratory birds in punjab ?,en,0.185,0.5,0.0,0.5,0.455,0.16,1,1.799
+en_content_175,The real focus of the meeting will be on how we should build these services to meet the needs of businesses operating in B2B marketplaces.?,en,0.353,0.714,0.333,0.167,0.576,0.537,0,2.68
+ko_polar_119,"그런 점에서 1894 년 농민전쟁을 민주주의혁명을 완결시킬 변혁주체세력이 형성, 발전하는 단계의 시점이었다고 볼 수 있지 않을까?",ko,0.424,0.556,0.5,0.292,0.719,0.778,1,3.268
+id_polar_185,Di samping itu bukankah Baginda sendiri yang menganjurkan kita untuk menghaturkan sanjungan (madah) terhadap diri beliau?,id,0.21,0.444,0.667,0.417,0.353,0.327,1,2.417
+fi_content_130,Mikä sitten avuksi tähän kaipuuseen?,fi,0.138,0.125,0.0,0.0,0.5,0.045,0,0.808
+en_polar_436,Do dogs enjoy watching T.V.?,en,0.136,0.25,0.25,0.25,0.8,0.04,1,1.726
+ja_content_39,民間企業において宗教的信念に関する発言を妨げる危険のある制限は何であるか？,ja,0.381,1.0,0.4,0.08,0.758,0.442,0,3.06
+en_content_244,What is the typical lifespan of a cat?,en,0.229,0.286,0.0,0.0,0.45,0.122,0,1.087
+ko_polar_120,그런데 조선에서도 1876 1894 년 시기의 반침략투쟁을 반제국주의 투쟁으로 규정할 수 있을까?,ko,0.41,0.444,0.0,0.833,0.625,0.5,1,2.813
+id_content_116,- Apa yang Disebut Berpikir?,id,0.135,0.125,0.667,0.2,0.375,0.043,0,1.546
+ar_content_48,وهل سيمتد هذا التأثير على الاحتياطي النقدي الدولاري في البنك المركزي المصري؟,ar,0.282,0.214,0.0,0.6,0.675,0.192,0,1.963
+ja_content_5,ぜひ立ち寄ってみてはいかがでしょうか?,ja,0.4,0.286,0.4,0.4,0.556,0.14,0,2.181
+fi_content_42,"On vain yksi, miksi?",fi,0.368,0.125,0.0,0.4,0.688,0.045,0,1.626
+fi_content_105,- Luennoitsija kysyy ja vastaa itse: ”Mikä on ihminen?,fi,0.355,0.125,0.333,0.5,0.531,0.182,0,2.026
+ar_polar_17,هل تشهد سيناء حرباً جديدة بين مصر وإسرائيل؟,ar,0.167,0.4,0.0,0.4,0.758,0.077,1,1.801
+ja_polar_56,宗教は怖い?,ja,0.169,0.2,0.0,0.0,1.0,0.0,1,1.369
+id_content_49,Mengapa Indonesia tidak mampu berbuat seperti negara-negara tesebut?,id,0.406,0.125,0.0,0.8,0.375,0.109,0,1.815
+fi_polar_26,Pitäisikö niistä olla jotenkin erityisen huolissaan juuri siksi?,fi,0.386,0.167,0.0,0.0,0.625,0.172,1,1.35
+ja_content_40,党内のどこに歴史的正当性があるのだろうか？,ja,0.507,0.286,0.0,0.8,0.436,0.233,0,2.261
+ru_content_322,Все раздрожает все надоедают что делать?,ru,0.204,0.125,0.0,0.278,0.5,0.073,0,1.18
+fi_polar_85,Onko lääkekehityksellä tulevaisuutta Suomessa? -symposiumin ensimmäisen puheenvuoron käytti emeritusprofessori Risto Santti.,fi,0.123,0.667,0.333,0.4,0.909,0.31,1,2.742
+ru_polar_134,"Мне отправляют антидепрессант, будут ли в сдэк проверять содержимое?",ru,0.386,0.25,0.0,0.6,0.529,0.163,1,1.927
+ru_polar_130,Есть ли польза от секса в 13 лет?,ru,0.2,0.375,0.0,0.2,0.45,0.116,1,1.342
+id_polar_188,Adakah hubungan Farah dengan sosok misterius yang melakukan teror hingga menghabisi nyawa orang tersebut?,id,0.184,0.444,0.667,0.444,0.667,0.245,1,2.651
+en_content_41,what is the fall of hanoi?,en,0.138,0.286,0.0,0.0,0.4,0.073,0,0.896
+en_polar_601,they will talk to me if i am mexican?,en,0.244,0.25,0.25,0.5,0.222,0.12,1,1.587
+id_content_154,"Siapakah yang Nando pilih, Idayu atau Mira?",id,0.58,0.25,0.333,0.4,0.375,0.13,0,2.069
+ja_polar_58,企業経営者の、そして企業人一人ひとりの意識改革ではないだろうか。,ja,0.495,0.2,0.0,0.0,0.667,0.4,1,1.762
+ko_polar_71,그대가 왕인 나에게 복종하기를 거부하는 것은 그대가 자기자신을 너무 과신하고 있기 때문이 아니겠는가?,ko,0.287,0.444,0.5,0.278,0.538,0.556,1,2.604
+ja_content_35,また、オーストラリアの位置づけはどうなのか？,ja,0.427,0.286,0.0,0.0,0.467,0.186,0,1.365
+ja_polar_1,疲労回復では他に譲るか?,ja,0.29,0.2,0.0,0.75,0.667,0.143,1,2.049
+ru_polar_49,Легко ли найти жилье и работу?,ru,0.112,0.375,0.333,0.2,0.686,0.07,1,1.776
+ko_polar_90,그것이 과연 진보인가?,ko,0.133,0.0,0.0,0.333,0.5,0.0,1,0.966
+ar_content_37,لحرب شرق أوسطية؟,ar,0.102,0.071,0.0,0.0,1.0,0.0,0,1.173
+ru_content_195,Кто вообще до этого додумался?,ru,0.319,0.125,0.0,0.5,0.4,0.049,0,1.393
+ar_polar_11,ما دام لا خلاف بين أميركا وسوريا حول لبنان هل يُعقل أن يراهن مسيحيون على واشنطن؟,ar,0.396,0.4,0.5,0.333,0.187,0.231,1,2.047
+ko_polar_116,현재생활을 영위해나가는 데 있어서 통 반장으로부터 주민들이 어떠한 도움을 받고 있는가?,ko,0.318,0.222,0.5,0.333,0.727,0.444,1,2.546
+ko_content_13,"언제 어떤 암초에 걸릴는지 모르는데, 누가 안개 자욱한 바다를 향해하려 하겠습니까?",ko,0.23,0.333,0.0,0.25,0.455,0.333,0,1.601
+en_polar_413,100 years ago?,en,0.109,0.25,0.0,0.0,0.667,0.0,1,1.025
+ar_content_20, تعني أنه لا يرتدي الملابس الخاصة بالسجن؟,ar,0.305,0.214,0.333,0.5,0.646,0.115,0,2.114
+ar_content_9, ما هي طبيعة المحكمة الخاصة التي شكلها مجلس الحكم لمحاكمة صدام حسين وأعضاء النظام السابق؟,ar,0.126,0.571,0.333,0.6,0.646,0.288,0,2.565
+ru_polar_16,Отмечались ли случаи заражения бешенством от белки?,ru,0.14,0.375,0.0,0.4,0.753,0.093,1,1.761
+ru_content_129,Сколько раз в день малыш писает?,ru,0.204,0.25,0.0,0.333,0.667,0.073,0,1.527
+ar_content_25, متى بدأت مهنتك كقاض؟,ar,0.183,0.071,0.0,0.6,0.545,0.058,0,1.458
+ru_polar_165,Нужно ли сохранять такие цветы на зиму или выбрасывать?,ru,0.351,0.25,0.333,0.4,0.529,0.14,1,2.002
+ja_polar_45,本気で譲ってほしいという人はいるのかしらん?,ja,0.276,0.6,0.5,0.5,0.5,0.257,1,2.634
+id_content_38,Lalu bagaimana dengan kisah cinta Mutia dan Fadel?,id,0.116,0.5,0.0,0.0,0.531,0.109,0,1.256
+ru_content_464,"В общем как вы считаете, это нормально?",ru,0.213,0.125,0.0,0.667,0.571,0.122,0,1.698
+fi_content_31,Milloin ryhdymme neuvottelemaan siitä?,fi,0.0,0.125,0.333,0.3,0.688,0.023,0,1.469
+en_content_91,How about dinner on Wednesday after that ?,en,0.191,0.286,0.0,0.0,0.514,0.098,0,1.089
+fi_polar_49,Onko sinulla töitä?,fi,0.0,0.0,0.0,0.0,0.333,0.0,1,0.333
+ko_content_174,그러나 누가 아리스토텔레스와 엠페도클레스를 의심했겠는가?,ko,0.345,0.111,0.0,0.5,0.1,0.074,0,1.13
+fi_content_88,"Kysyipä joku epähienotunteisesti, että miten lienee sosialidemokraattien laita?",fi,0.315,0.25,0.333,0.6,0.688,0.136,0,2.322
+ar_content_49,وإذا كنا لا نريد للحوار الفلسطيني أن ينتهي لهذه النتيجة، فإن الفصائل الأثنتى عشرة ليس عليها سوى التفكير في إجابة سؤال واحد فقط هو: كيف تتحول أحرف كتابة البيانات الختامية إلى فعل حقيقي على أرض الواقع؟,ar,0.526,0.571,0.333,0.667,0.523,0.75,0,3.371
+ko_polar_87,그렇다면 종교도 철학의 일종인가?,ko,0.265,0.0,0.0,0.5,0.625,0.056,1,1.446
+fi_content_125,"Taas tuli aika miettiä, mitä seuraavaksi, mistä aiheesta nyt keskusteltaisiin?",fi,0.215,0.625,0.333,0.333,0.75,0.205,0,2.461
+ar_content_2,"و""الوفد"" تسأل الحكومة المصرية أين الحقيقة في هذه التصريحات المعلنة يوم 16/2 الحالي من جانب إسرائيل بشأن الغاز الطبيعي؟!",ar,0.465,0.5,0.0,0.6,0.793,0.423,0,2.781
+id_content_178,Pembagian isi pasal: Dari manakah datangnya sengketa dan pertengkaran di antara kamu?,id,0.375,0.375,0.0,0.6,0.375,0.261,0,1.986
+fi_content_103,Mikä siis avuksi?,fi,0.138,0.0,0.0,0.0,0.583,0.0,0,0.721
+ar_polar_21,هل المسلسل الثاني ناجحٌ حتى الآن؟,ar,0.267,0.1,0.0,0.0,0.758,0.019,1,1.143
+en_polar_105,"They really are milking the incompetence angle though, aren't they?",en,0.271,0.25,0.0,0.833,0.455,0.18,1,1.989
+fi_content_132,Mitä muuta se on kuin lempiviinin tai -oluen hankkiminen lempiruuan seuraksi?,fi,0.441,0.5,0.0,0.0,0.318,0.182,0,1.441
+ru_content_561,Как называется обложка из толстого картона?,ru,0.153,0.25,0.0,0.333,0.833,0.073,0,1.643
+id_polar_32,"Yesus membuat rujukan pada kalimat-kalimat dari Kitab Kejadian dalam khotbah-khotbahnya mengenai pernikahan di dalam Kitab Matius 19:4-6: ``Tidakkah kamu baca, bahwa Ia yang menciptakan manusia sejak semula menjadikan mereka laki-laki dan perempuan?",id,0.399,0.667,0.333,0.5,0.529,0.694,1,3.122
+id_content_179,Andara bertanya ini villa siapa?,id,0.102,0.125,0.0,0.4,0.5,0.043,0,1.17
+en_polar_28,Any feedback from Rick Buy?,en,0.136,0.25,0.0,0.0,0.6,0.04,1,1.026
+ru_content_320,"Почему живые обои из тик тока не ставятся на обои, и как это исправить? (телефон honor 10 lite)",ru,0.39,0.375,0.0,0.75,0.556,0.439,0,2.51
+ko_content_107,그러면 이들은 왜 관광을 하는가?,ko,0.345,0.0,0.0,0.667,0.4,0.074,0,1.486
+ko_polar_166,그런데 과연 약속했던 낙원은 건설되었던가?,ko,0.199,0.222,0.5,0.25,0.7,0.111,1,1.982
+fi_polar_81,Onko lainan ottamiseen varaa?,fi,0.164,0.333,0.0,0.2,1.0,0.034,1,1.731
+ru_polar_2,"Ты помнишь ли, что я Еще живу в сем мире?",ru,0.343,0.25,0.333,0.7,0.309,0.186,1,2.121
+ru_polar_80,"Правда ли, что в Бангладаше население больше чем в нашей необъятной Родине - России?",ru,0.514,0.5,0.0,0.0,0.504,0.279,1,1.798
+ja_polar_39,値段の安さも含め、この周辺では一番では無いでしょうか。,ja,0.45,0.6,0.5,0.25,0.292,0.4,1,2.492
+ko_content_213,그러면 가이아는 도대체 무엇인가?,ko,0.23,0.0,0.0,0.5,0.625,0.037,0,1.392
+ko_content_93,이렇게 적지 않은 문학가들이 주장하듯이 문학이 죽음을 맞이했다면 그 원인은 어디에 있을까?,ko,0.293,0.333,0.0,0.0,0.375,0.333,0,1.334
+ru_content_314,Что с ней делали?,ru,0.17,0.125,0.0,0.333,0.25,0.024,0,0.903
+ko_content_227,무엇을 하는 여자일까?,ko,0.0,0.111,0.333,0.167,0.5,0.0,0,1.111
+ru_content_72,Зачем они идут на цыпочках?,ru,0.128,0.125,0.0,0.5,0.6,0.049,0,1.401
+ar_content_61,ما هي القيود التي من شأنها منع التعبير عن المعتقدات الدينية في الشركات الخاصة؟,ar,0.24,0.286,0.0,0.0,0.606,0.212,0,1.343
+ja_polar_40,最高裁と大マスコミはネット表現の敵ですか?,ja,0.246,0.4,0.0,0.0,0.833,0.257,1,1.736
+en_polar_254,Do you also have a SSD we can use?,en,0.204,0.375,0.25,0.333,0.444,0.12,1,1.726
+ja_polar_65,目覚まし時計と格闘しますか？,ja,0.225,0.2,0.0,0.5,0.524,0.114,1,1.563
+ru_content_155,"Подскажите, пожалуйста, чем её снимать?",ru,0.447,0.125,0.333,0.333,0.4,0.098,0,1.736
+en_content_331,"Hmmm, she says, Then why are you calling here, we don't go past broad?",en,0.458,0.286,0.0,0.222,0.56,0.366,0,1.892
+id_content_245,Bagaimana ini bisa terjadi?,id,0.406,0.0,0.0,0.4,0.375,0.022,0,1.203
+fi_polar_123,Onko tarpeen olla noin perusteellinen?,fi,0.245,0.167,0.333,0.4,0.8,0.069,1,2.014
+ko_polar_24,세계 각국이 간통죄를 없앤다고 우리마저 그래서 되겠습니까?,ko,0.133,0.222,0.0,0.333,0.786,0.222,1,1.696
+id_polar_5,Akankah Mat Bunglon dan Dul Bajing berhasil mendapatkan patung yang diinginkannya?,id,0.387,0.333,0.333,0.333,0.615,0.204,1,2.207
+id_content_147,Bagaimana kelanjutan kisah mereka?,id,0.0,0.125,0.0,0.0,0.688,0.022,0,0.834
+ru_polar_65,"Получив справку со школы, могу ли я зимой ехать в плацкарте за полцены?",ru,0.257,0.375,0.333,0.467,0.613,0.256,1,2.301
+ko_content_43,왜 노동자의 꾸가에서 노동자의 상태개선이 아니라 농민의 상태개선인가?,ko,0.296,0.222,0.0,0.5,0.812,0.185,0,2.015
+en_content_191,"Subject: What is ""food for the NSA line-eater""?",en,0.63,0.286,0.333,0.0,0.667,0.244,0,2.16
+ja_polar_8,"“シャクブくん”や“池田小作”にいたっては,別のカルト団体のネタではないでしょうか。",ja,0.551,0.4,0.5,0.0,0.567,0.629,1,2.646
+ja_polar_9,警察は摘発しないのか?,ja,0.394,0.2,0.0,0.75,0.238,0.114,1,1.697
+fi_content_114,Mitä kuninkaallisten peruukit maksoivat?,fi,0.184,0.125,0.0,0.4,0.688,0.023,0,1.419
+ko_polar_1,그것 때문에 배달원의 월급을 밀리게 하면 되겠느냐?,ko,0.133,0.222,0.5,0.25,0.571,0.222,1,1.899
+ko_polar_144,그러나 세계적 성격을 과시하고자 하는 의욕이 앞선 때문일까?,ko,0.265,0.444,0.5,0.222,0.625,0.278,1,2.335
+en_polar_256,Can you please help with this one?,en,0.217,0.25,0.0,0.5,0.286,0.08,1,1.333
+ja_content_24,霊はいつ肉体から離れていくのか?,ja,0.427,0.143,0.4,0.6,0.467,0.163,0,2.199
+ja_polar_41,もっと良く撮れた写真はなかったのか?,ja,0.188,0.6,0.5,0.25,0.667,0.2,1,2.404
+ru_content_141,Но что помогло пройти тошноте?,ru,0.128,0.0,0.333,0.333,0.6,0.049,0,1.443
+ko_polar_14,수권정당임을 자부하는 제1야당이 이래서 되겠습니까?,ko,0.0,0.333,0.5,0.167,0.4,0.111,1,1.511
+ar_content_39,"صديقة قريبة منه باغتته حين أخبرها بإشهاره إسلامه قبل أيام بقولها""حقيقي؟",ar,0.642,0.214,0.333,0.8,0.364,0.327,0,2.68
+en_content_377,How about empanadas arabes or other empanadas from that area of Argentina?,en,0.187,0.571,0.0,0.0,0.7,0.22,0,1.678
+ja_content_25,"どういう人のどういう夢かはさておき,夢の中に出てくる寺社って,こんな感じなんじゃないだろうか?",ja,0.443,0.571,0.4,0.2,0.63,0.605,0,2.849
+ru_polar_112,Подойтет ли пинокио?,ru,0.14,0.0,0.0,0.4,0.686,0.0,1,1.226
+en_content_302,How would you know?,en,0.229,0.0,0.0,0.333,0.6,0.024,0,1.187
+ar_polar_6, هل ستكون أنت ضمن القضاة باعتبارك قاضياً وعضواً في مجلس الحكم؟,ar,0.405,0.2,0.0,1.0,0.394,0.212,1,2.21
+en_content_224,How can I change my boarding station against the ticket I booked a month back from counter?,en,0.258,0.429,0.333,0.583,0.635,0.341,0,2.58
+id_content_227,Bagaimana kira-kira kisah mereka?,id,0.135,0.0,0.0,0.0,0.688,0.022,0,0.845
+ru_polar_145,"Продолжать ли делать такие ""процедуры"", или их уже никак?",ru,0.456,0.25,0.333,0.4,0.529,0.209,1,2.177
+fi_polar_18,"(DE) Arvoisa puhemies, voisitteko pyytää hakemaan teknikon?",fi,0.286,0.167,0.333,0.4,0.857,0.241,1,2.285
+ja_polar_31,眼科医だって患者だって、朝鮮人じゃないか。,ja,0.307,0.4,1.0,0.0,0.5,0.286,1,2.493
+ko_polar_154,그리스어로 대지의 여신을 의미하는 이 말보다 적절한 용어가 과연 있을 수 있을까?,ko,0.096,0.556,0.5,0.25,1.0,0.5,1,2.902
+ja_polar_46,横浜市近辺で英会話を習いたいという人にはかなりいいのではないでしょうか?,ja,0.418,0.6,0.5,0.375,0.576,0.543,1,3.012
+ko_polar_93,스스로 도산을 간파할 수 있는가?,ko,0.066,0.111,0.0,0.5,1.0,0.111,1,1.789
+ar_polar_10, هل زرتم أنتم أو أي من القضاة صدام حسين أو أياً من أعضاء نظامه؟,ar,0.119,0.7,0.0,0.4,0.273,0.212,1,1.703
+ko_polar_0,유리나 도자기 같은 것은 부분에 따라 온도 차가 심하면 곧 깨지지 않는가?,ko,0.314,0.333,0.0,0.5,0.5,0.5,1,2.147
+ar_content_52,وكم عدد العمال المصريين الذين ساهموا في بناء الكويت وتعميرها فتحولت من صحراء جرداء إلى ما هي عليه الآن؟,ar,0.331,0.429,0.333,0.5,0.47,0.385,0,2.448
+ja_content_8,これ以上何を望むというのか?,ja,0.2,0.286,0.4,0.6,0.333,0.14,0,1.959
+en_content_100,What are some good interview questions?,en,0.321,0.143,0.0,0.0,0.6,0.073,0,1.137
+fi_polar_64,Tuleeko hän varmasti?,fi,0.123,0.0,0.0,0.4,0.667,0.0,1,1.189
+id_polar_238,Akankah dia menemukan kebahagiaan yang selama ini dia dambakan?,id,0.373,0.222,0.333,0.583,0.3,0.143,1,1.955
+ko_content_38,도대체 무엇을 규제한단 말인가?,ko,0.077,0.111,0.333,0.25,0.625,0.037,0,1.433
+ko_content_15,그럼 우리 성도들은 어떻게 해야 합니까?,ko,0.184,0.111,0.0,0.5,0.25,0.111,0,1.156
+id_content_134,"Di mana posisi Islam vis a vis ideologi-ideologi sekular seperti demokrasi, sosialisme dan Marxisme?",id,0.406,0.375,0.0,0.0,0.643,0.261,0,1.685
+ar_polar_22,هل تقرع المنبه الخاص بك؟,ar,0.067,0.3,0.0,0.4,0.455,0.019,1,1.24
+en_content_345,why do you think they are mean?,en,0.229,0.143,0.333,0.5,0.514,0.098,0,1.817
+ko_content_122,흑인을 노예 취급하는 게 그처럼 부당하다면 왜 그들을 노예로 사고 팔았을까?,ko,0.276,0.444,0.333,0.5,0.591,0.296,0,2.441
+ko_content_118,그러면 인간의 육체에 영혼이 깃들어서 그 움직임을 지배하고 있다는 사고는 어디에서 생긴 것인가?,ko,0.287,0.444,0.333,0.333,0.538,0.37,0,2.307
+ru_content_499,Как сделать акрил жидким?,ru,0.085,0.0,0.0,0.5,1.0,0.024,0,1.609
+fi_content_7,Mitä jos uudistuisimme kevään kynnyksellä juuri näin?,fi,0.23,0.125,0.0,0.8,0.643,0.091,0,1.889
+ko_content_247,어떻게 하면 경영상태를 객관적으로 파악할 수 있을까?,ko,0.115,0.111,0.0,0.667,0.571,0.148,0,1.612
+id_polar_153,"Bisa saja kita memilih berdasarkan iklan di TV, radio, internet atau media lainnya, tapi apakah pasti benda atau jasa tersebut benar seperti yang terlihat di iklan?",id,0.467,0.333,0.333,0.583,0.556,0.551,1,2.823
+ja_polar_7,1議席で連立するか?,ja,0.135,0.2,0.0,0.5,0.333,0.086,1,1.254
+ja_content_12,ではどのような行動によって「細かい男」だと思われるのでしょうか。,ja,0.696,0.286,0.4,0.5,0.333,0.395,0,2.611
+en_content_197,How has Katrina changed the US?,en,0.183,0.143,0.0,0.5,0.8,0.073,0,1.699
+ja_polar_18,"宗教であるから,詐欺罪には当たらない?",ja,0.488,0.4,0.5,0.25,0.667,0.229,1,2.533
+ko_polar_57,그렇다면 당신에게 일말의 책임이 없는가?,ko,0.332,0.111,0.0,0.0,0.7,0.111,1,1.254
+ja_polar_16,知恵とアイディアを結集させたこの「推し面メーカー」は、最初から公開予定だったのだろうか。,ja,0.515,0.8,0.5,0.125,0.485,0.629,1,3.053
+ru_polar_143,Пойдут ли трещины дальше или можно не переживать по этому поводу?,ru,0.309,0.375,0.333,0.533,0.514,0.186,1,2.251
+fi_polar_27,Olenko minä se väärin pukeutunut?,fi,0.368,0.0,0.0,0.8,0.4,0.069,1,1.637
+ru_content_263,"Чем КОНКРЕТНО отличаются ""мавик эир 2"" для разных територий?",ru,0.351,0.125,0.0,0.667,0.556,0.195,0,1.893
+id_content_149,Namun apa yang terjadi?,id,0.135,0.125,0.333,0.2,0.375,0.022,0,1.19
+ru_content_690,"Сколько вы отдали денег, за ремонт стиральной машины,, /,?",ru,0.219,0.25,0.0,0.5,0.625,0.22,0,1.813
+ar_content_3,فإذن أين يكمن الخلاف؟!,ar,0.229,0.071,0.0,0.6,0.727,0.038,0,1.666
+en_content_260,where would you go?,en,0.229,0.0,0.0,0.333,0.6,0.024,0,1.187
+ja_polar_27,"彼が誠実であれ不誠実であれ,摂理を出た以上,摂理とからめる必要があるのでしょうか?",ja,0.599,0.8,0.5,0.4,0.71,0.629,1,3.638
+ja_content_2,"飲んで頭痛とか出たら,どうしたらいいんですか?",ja,0.394,0.286,0.8,0.467,0.381,0.279,0,2.606
+ja_content_10,その審査ではどのような資料と基準で許可されたのでしょうか。,ja,0.489,0.429,0.4,0.8,0.222,0.349,0,2.689
+en_polar_463,Is there any tricks I could use?,en,0.199,0.375,0.25,0.25,0.429,0.08,1,1.583
+en_polar_286,Is there any question?,en,0.181,0.25,0.0,0.333,0.5,0.02,1,1.284
+ko_polar_28,그렇다면 사회주의적 생산에서는 어떠한 변화를 겪게 되는가?,ko,0.265,0.111,0.5,0.222,0.786,0.222,1,2.107
+ru_content_83,"Где твоя мама?""...",ru,0.128,0.125,0.0,0.0,0.667,0.049,0,0.968
+ko_content_42,소위 남한의 PDR이란 무엇인가?,ko,0.153,0.111,0.0,0.333,1.0,0.037,0,1.635
+id_content_190,Lalu bagaimana dampaknya terhadap posisi keuangan PT CPOKU?,id,0.135,0.5,0.0,0.0,0.5,0.152,0,1.288
+ja_content_26,一連の事態をどのように理解すればいいのでしょうか。,ja,0.369,0.286,0.4,1.0,0.238,0.256,0,2.549
+id_polar_67,"Singel Jepang TVXQ, ``Why?",id,0.344,0.111,0.0,0.0,1.0,0.061,1,1.516
+en_polar_464,Should I just settle and book on line?,en,0.171,0.375,0.0,0.417,0.5,0.1,1,1.562
+en_content_356,Could this be what your referencing?,en,0.229,0.143,0.333,0.167,0.171,0.098,0,1.141
+ru_content_268,Парки? что интересное есть в Тюмени? какие торговые центры?,ru,0.415,0.25,0.0,0.0,0.556,0.195,0,1.416
+en_polar_433,"Also, can animals remember images on TV like us, humans?",en,0.229,0.375,0.0,0.667,0.6,0.18,1,2.051
+ru_polar_50,Нормально ли будет в нём спать без палатки?,ru,0.24,0.25,0.333,0.4,0.273,0.116,1,1.613
+fi_content_35,"Voiko komissio selvittää, miten se valvoo tämän säädöksen täytäntöönpanon onnistumista?",fi,0.245,0.5,0.333,0.5,0.625,0.182,0,2.385
+fi_polar_9,"Kahlaavatko he läpi elämän tietämättä, minkälaista seksiä itse haluavat, tai minkälaista seksiä kumppani haluaa, jos eivät osaa lukea sitä toistensa silmistä ja eleistä?",fi,0.457,0.667,0.667,0.5,0.652,0.793,1,3.736
+fi_content_1,Mitä minä ihan oikeasti puhun?,fi,0.345,0.125,0.0,0.6,0.5,0.045,0,1.615
+id_polar_123,"Setelah Moon pingsan untuk kedua kalinya, Townshend bertanya kepada penonton, ``Ada di sini yang bisa main drum?",id,0.288,0.333,0.333,0.417,0.611,0.367,1,2.35
+en_polar_346,New Zealand skilled migrant visa?,en,0.163,0.25,0.0,0.0,1.0,0.04,1,1.453
+en_content_298,what are you having problems with?,en,0.367,0.286,0.0,0.333,0.4,0.073,0,1.459
+fi_polar_4,”Osaanko nauttia seksistä?”,fi,0.0,0.167,0.333,0.2,1.0,0.069,1,1.769
+ja_polar_51,すごくそういうところを引っかかる感じですか?,ja,0.253,0.6,0.5,0.375,1.0,0.171,1,2.9
+fi_polar_1,"- Opettaja, onko sulla olemassa koti?",fi,0.184,0.0,0.0,0.0,0.4,0.138,1,0.722
+ja_content_11,このことに澤田氏はどう弁明するのだろうか?,ja,0.32,0.143,0.0,1.0,0.5,0.209,0,2.172
+ru_content_678,Как найти компромисс?,ru,0.0,0.0,0.0,0.333,1.0,0.0,0,1.333
+en_polar_354,Would pledge be ok?,en,0.217,0.125,0.0,0.0,0.5,0.02,1,0.862
+id_content_221,"Jika aku tidak menangis untuknya, lalu siapa lagi?",id,0.406,0.125,0.0,1.0,0.028,0.152,0,1.711
+ru_polar_60,Тяжело ли жить в хостеле? (кто там живёт обычно),ru,0.386,0.25,0.333,0.4,0.686,0.186,1,2.241
+ko_content_144,고령화 사회가 도래하면 우리사회에는 어떤 문제가 발생할 것인가?,ko,0.164,0.222,0.333,0.333,0.438,0.185,0,1.676
+fi_content_126,Mikä on sitä arkiromantiikkaa sitten?,fi,0.345,0.125,0.0,0.0,0.25,0.045,0,0.765
+ru_polar_169,"Чувствовали ли вы, что на вас все смотрят?",ru,0.481,0.25,0.333,0.6,0.096,0.14,1,1.9
+ko_content_159,"1894 년 농민전쟁의 객관적 정세와 주체, 그리고 원인에 대해 위와 같이 보았을 때 농민군이 지향하는 바는 어떻게 정리될 수 있을까?",ko,0.242,0.778,0.333,0.389,0.475,0.667,0,2.884
+ru_polar_157,Пустят ли меня если мне нет данного возраста?,ru,0.28,0.25,0.333,0.6,0.45,0.116,1,2.03
+ko_polar_9,민주화를 열망하는 국민의 한 사람으로서 과연 이래도 괜찮겠습니까?,ko,0.152,0.333,0.5,0.167,0.812,0.278,1,2.242
+id_polar_247,"Tidak ada perampok yang rela membagi hasil rampokannya dengan cuma-cuma, bukan?",id,0.469,0.444,0.333,0.667,0.583,0.204,1,2.701
+ru_polar_46,"И видел ли хоть кто-то, что кого-то не пускают из-за температуры?",ru,0.365,0.25,0.333,0.8,0.129,0.209,1,2.086
+ko_content_215,도대체 이러한 이론이 무슨 쓸모가 있겠는가?,ko,0.276,0.111,0.0,0.0,0.75,0.111,0,1.248
+fi_polar_61,Onko enkeli tyttö vai poika?,fi,0.123,0.167,0.0,0.0,0.6,0.069,1,0.958
+ja_content_9,民間に運営を任せてはいかがでしょうか。,ja,0.284,0.286,0.4,0.8,0.467,0.163,0,2.4
+ja_polar_19,私を犯罪の構成要件を満たす刑法犯として告発するために110番通報したんじゃなかったのか?,ja,0.613,1.0,0.5,0.833,0.31,0.714,1,3.97
+en_content_310,What is the best time of year?,en,0.191,0.286,0.0,0.0,0.514,0.098,0,1.089
+fi_polar_17,PIKKUVAIMO: Saadaanko sitten varmasti pronssia?,fi,0.245,0.167,0.0,0.6,1.0,0.103,1,2.116
+ru_content_672,Но никогда ни при как их условии никогда что там у россиян?,ru,0.627,0.25,0.0,0.0,0.417,0.22,0,1.513
+id_content_187,Bagaimanakah Dini dan Adrian menyiasati pernikahan mereka?,id,0.406,0.25,0.0,0.6,0.531,0.109,0,1.896
+fi_content_102,Tai edes kuinka paljon uutta asiaa hän on kurssilla oppinut?,fi,0.674,0.25,0.0,1.0,0.625,0.159,0,2.708
+ru_content_545,Почему все они влюблены в Ученого?,ru,0.153,0.125,0.0,0.0,0.5,0.073,0,0.851
+id_polar_133,Lalu berhasilkah Toyib mempelajari silat di padepokan Perisai Suci demi melindungi ibunya?,id,0.199,0.333,0.667,0.5,0.714,0.224,1,2.637
+ja_polar_13,一点突破したものがあなたにあるか。,ja,0.473,0.4,0.5,0.5,0.394,0.229,1,2.495
+ru_polar_85,"Скажите пожалуйста, не стремная ли печатка, можно ли ее носить?",ru,0.28,0.375,0.333,0.333,0.45,0.209,1,1.981
+id_content_8,Bagaimana kisah selanjutnya?,id,0.0,0.0,0.0,0.0,1.0,0.0,0,1.0
+fi_content_45,Kuka tätä ikinä näkee paitsi me?,fi,0.221,0.125,0.0,0.8,0.167,0.068,0,1.381
+fi_polar_24,"Palasin, kaipasitko minua?",fi,0.123,0.167,0.0,0.2,0.667,0.034,1,1.191
+id_polar_204,``Dan bahwa engkau diperbolehkan mendekat bersama-sama dengan semua saudaramu bani Lewi?,id,0.188,0.333,0.333,0.5,0.5,0.204,1,2.058
+id_polar_23,Apakah MAT PEI sampai hati menolak cinta SAFINA yang begitu dekat dengan kedua orang tuanya?,id,0.226,0.556,0.0,0.667,0.647,0.286,1,2.381
+fi_content_18,Miksi meidän pitäisi sitten osata olla niin vapaita seksuaalisesti?,fi,0.31,0.125,0.333,0.8,0.583,0.136,0,2.288
+ru_polar_5,Есть ли крыша над головой?,ru,0.14,0.25,0.0,0.4,0.591,0.047,1,1.428
+ko_polar_40,아이들이 유일하게 이야기를 재미있게 듣고 즐기는 기회였으므로 당연하지 않겠습니까?,ko,0.166,0.222,0.5,0.25,0.167,0.333,1,1.638
+ja_content_37,しかし、グレンダに素晴らしい技を披露させたとして、誰がそれを咎めることができるだろうか。,ja,0.742,0.429,0.8,0.733,0.275,0.512,0,3.491
+id_content_216,Isteri yang cakap siapakah akan mendapatkannya?,id,0.464,0.25,0.0,0.6,0.219,0.109,0,1.642
+ko_polar_157,"그렇다면 다른 커다란 실체, 즉 생태계나 가이아에 대해서는 어떠한가?",ko,0.531,0.444,0.0,0.0,0.5,0.389,1,1.864
+ru_content_629,И сколько можно заработать на фрилансе?,ru,0.153,0.25,0.333,0.333,0.5,0.073,0,1.643
+ru_polar_92,Можно ли как-то сделать её чёрной?,ru,0.168,0.125,0.333,0.5,0.686,0.07,1,1.882
+ru_content_388,У кого остались скрины этих видео или сами видео?,ru,0.191,0.25,0.0,0.333,0.444,0.146,0,1.366
+ru_content_422,Как называются эти травы?,ru,0.085,0.125,0.0,0.333,0.75,0.024,0,1.318
+ko_content_58,돌부처 냉가슴 앓는 데는 무엇이 약이오?,ko,0.092,0.222,0.333,0.333,0.75,0.111,0,1.842
+ko_polar_171,과연 문학비평이 오늘날의 문제적 상황을 외면하거나 침묵해도 좋을 것인가?,ko,0.398,0.111,0.5,0.0,0.667,0.333,1,2.009
+ko_polar_59,유러비전 방송국은 사정에 따라 중계권을 이탈리아로부터 사야 할까?,ko,0.265,0.111,0.0,0.667,0.438,0.278,1,1.758
+en_polar_252,Do we have 2 sessions today?,en,0.195,0.25,0.0,0.5,0.5,0.06,1,1.505
+fi_polar_107,– Etkö usko?,fi,0.0,0.0,0.0,0.0,0.5,0.0,1,0.5
+en_polar_571,Any information about CRAZY HORSE SCULPTURE?,en,0.217,0.375,0.0,0.0,0.667,0.06,1,1.319
+ko_content_243,중소기업의 토대가 허약한 가운데 재벌기업이 쓰러지면 그 혼란을 누가 감당할 수 있을 것인가?,ko,0.134,0.444,0.333,0.333,0.769,0.37,0,2.385
+ar_content_33,فما الذي دفع بهما الى قول ما قالاه؟,ar,0.152,0.357,0.333,0.3,0.132,0.135,0,1.41
+ko_content_266,그러면 자본주의와 공산주의의 이론 및 실제 경험이 우리에게 가르치는 바는 무엇인가?,ko,0.391,0.444,0.333,0.333,0.591,0.296,0,2.389
+en_content_264,What is Italian High Renaissance?,en,0.229,0.143,0.0,0.0,0.72,0.049,0,1.141
+ru_content_508,"""шурша коленями"" - это как фото?",ru,0.383,0.125,0.333,0.167,0.6,0.122,0,1.73
+ko_content_222,그런데 왜 마담으로 변모해 버린 걸까?,ko,0.184,0.0,0.333,0.278,0.75,0.111,0,1.656
+ru_content_487,Почему так происходит?,ru,0.128,0.0,0.0,0.333,1.0,0.0,0,1.461
+en_polar_91,Out of business?,en,0.163,0.125,0.0,0.0,0.333,0.0,1,0.621
+ko_content_203,도대체 어떻게 해야 오감으로 가이아를 인식할 수 있는 것일까?,ko,0.287,0.111,0.333,0.333,0.833,0.222,0,2.121
+fi_polar_10,"Voimmeko syyttää vanhempiamme siitä, ettemme ole seksuaalisesti kehittyneet vapaiksi, osaaviksi ja vastaanottavaisiksi?",fi,0.327,0.667,0.333,0.5,0.538,0.414,1,2.78
+ko_content_137,"그런데 육체가 어떤 항구성, 지속성을 갖고 있나요?",ko,0.536,0.222,0.0,0.25,0.571,0.185,0,1.765
+ja_polar_11,天ざるではちょっと多いかな?,ja,0.241,0.2,0.0,0.0,0.667,0.143,1,1.251
+ko_content_204,물리학자들 중에는 소위 그들이 말하는 '소프트 사이언스' 에 대하여 무지한 것을 오히려 자랑스럽게 생각하는 사람들이 얼마나 많은가?,ko,0.402,0.667,0.333,0.278,0.647,0.593,0,2.92
+ru_content_176,"Повернулся к жене и спрашиваю, ты знаешь где мы?",ru,0.191,0.375,0.333,0.333,0.556,0.171,0,1.959
+fi_content_93,Ei kai kukaan kaipaa sinne takaisin?,fi,0.221,0.125,0.0,0.6,0.583,0.068,0,1.597
+id_polar_216,Maukah kalian aku ceritakan kisah tentang masuk Islamnya Abu Dzar?,id,0.235,0.222,0.333,0.667,0.5,0.184,1,2.14
+id_content_81,Kapan ia tidak terikat lagi?,id,0.305,0.0,0.0,0.8,0.5,0.043,0,1.648
+ko_content_183,"이처럼 한국에 관련된 역사 전반에 걸친 왜곡이 10년에 이른 지금 얼마나 시정되었고, 또 그들은 시정하기 위해 얼마나 노력하였는가?",ko,0.325,0.889,0.333,0.3,0.667,0.593,0,3.106
+fi_polar_43,– Semmoisen paperisenko?,fi,0.0,0.0,0.0,0.0,1.0,0.0,1,1.0
+ar_content_34,وقال سليمان الجندي ـ صاحب شركة صرافة ـ من الأفضل إغلاق أبواب الشركات والبحث عن مجال آخر للعمل خاصة أن مجال الصرافة أصبح جريمة في نظر الحكومة وتتم محاصرته بكل هذه القوانين والقرارات التي تهدف لإغلاق المزيد من الشركات؟!,ar,0.312,0.929,0.333,0.55,0.768,0.846,0,3.738
+ru_polar_126,Не торопится ли он?,ru,0.093,0.0,0.0,0.6,0.096,0.023,1,0.813
+ko_polar_45,종교에 삼위일체가 있고 우주 구성에도 삼계가 있는가 하면 불교에서는 삼세의 인연을 말하고 있지 않습니까?,ko,0.306,0.333,0.0,0.333,0.571,0.611,1,2.155
+en_polar_80,you live in NZ and you eat McDonalds ice cream?,en,0.228,0.5,0.0,0.5,0.545,0.16,1,1.933
+ko_content_188,즉 이 칠지도를 백제가 왜에게 하사했는가?,ko,0.322,0.111,0.0,0.667,0.5,0.111,0,1.711
+id_polar_177,Kesenian Lais Diambil Dari Nama Seseorang Yang Sangat Terampil Dalam Memanjat Pohon Kelapa Yang Bernama?,id,0.258,0.556,0.333,0.278,0.667,0.245,1,2.336
+ko_polar_43,그가 만물전 안으로 거리낌 없이 들어가는 것이 아니겠습니까?,ko,0.227,0.333,0.5,0.25,0.625,0.278,1,2.214
+ar_polar_23,هل يسمح للعاملين بإبقاء أغراض دينية على مكاتبهم؟,ar,0.233,0.2,0.0,0.6,0.537,0.115,1,1.686
+ar_content_22, كيف تنظر إلى صدام حسين؟,ar,0.229,0.071,0.0,0.4,0.0,0.038,0,0.739
+fi_polar_25,Tarvitsevatko ne jotain?,fi,0.123,0.0,0.0,0.4,0.333,0.0,1,0.856
+en_polar_81,best burger chain in the Chicago area?,en,0.235,0.25,0.0,0.0,0.714,0.08,1,1.28
+ar_content_53,وكم عدد جنود الجيش المصري الذين ساهموا في تحرير الكويت؟,ar,0.122,0.357,0.333,0.4,0.793,0.135,0,2.14
+ru_polar_121,"В интернете это написано, но правда ли это?",ru,0.321,0.25,0.0,0.6,0.273,0.14,1,1.583
+fi_content_140,Miksi et nauttisi ja harrastaisi seksiä näistä tuntemuksista huolimatta?,fi,0.207,0.125,0.0,0.5,0.444,0.136,0,1.413
+ja_polar_63,またはそれは高価な基準または前払関税なのか？,ja,0.65,0.4,0.0,0.0,0.238,0.314,1,1.602
+id_polar_215,Apakah Sekar dengan Agung dapat bersatu?,id,0.387,0.111,0.0,0.5,0.571,0.082,1,1.651
+fi_polar_11,Sanoinko jo jotain tästä ravaamisesta? :D,fi,0.442,0.167,0.0,0.8,0.5,0.103,1,2.012
+ja_polar_5,ホームページもキレイな感じで女性向けなのかな?,ja,0.338,0.4,0.0,0.0,0.59,0.286,1,1.613
+id_polar_164,"Apakah itu berarti bahwa Syeol memaksudkan sebuah liang kubur tertentu, tempat kita mungkin memakamkan orang yang kita cintai?",id,0.287,0.444,0.5,0.5,0.526,0.347,1,2.604
+ko_content_180,그런데 이 여러 가지 가능한 말들 가운데에서 하필이면 어느 하나의 말을 가지고 특별한 경우에 실수로 말하도록 강요하는 것은 무엇인가?,ko,0.473,0.667,0.0,0.167,0.526,0.593,0,2.425
+ja_polar_55,"まさか松田氏は,男性が倒れる前から消防に通報していたとでもいうつもりだったのでしょうか。",ja,1.0,1.0,0.667,0.562,0.513,0.686,1,4.428
+en_content_61,Where can I go on a first date (adults)?,en,0.401,0.143,0.0,0.667,0.667,0.195,0,2.072
+ar_polar_5, هل تم تعيين القضاة؟,ar,0.0,0.1,0.0,0.4,0.909,0.0,1,1.409
+ja_polar_2,"貴市および貴財団では,本申入にかかる事実が判っても,今後もAPTFによる使用を許可し続けるのですか。",ja,0.639,0.8,0.5,0.2,0.701,0.8,1,3.641
+en_content_363,What do you eat in Miramar?,en,0.183,0.143,0.0,0.5,0.4,0.073,0,1.299
+ru_content_441,Как думаете это хорошая идея?,ru,0.128,0.125,0.0,0.5,0.8,0.049,0,1.601
+ko_polar_158,생물과 환경이 밀접하게 연관되어 있다는 가정만으로 전체 시스템의 성질이 과연 크게 달라질 수 있을까?,ko,0.224,0.333,0.5,0.583,0.571,0.611,1,2.824
+ar_content_38,"تحت هذا العنوان نشرت جريدة ""الاتحاد"" تحقيقاً مطولاً جاء فيه: لماذا نشرت إسرائيل خارطة لدمشق ما أسمته مراكز ومكاتب لمنظمات فلسطينية في قلب العاصمة السورية؟",ar,0.61,0.357,0.5,0.6,0.788,0.558,0,3.413
+ar_content_41,غير أن هذا ممكن، في أي بلد، إلا في مصر، التي يقال فيها الوزير، ولا يستقيل، دون أن يعرف أحد لماذا؟!,ar,0.402,0.357,0.333,0.667,0.427,0.481,0,2.667
+en_polar_498,Disney cruise line with young ones?,en,0.195,0.25,0.0,0.0,0.833,0.06,1,1.339
+ar_content_21, ما هو الوقت الذي ستستغرقه هذه المحاكمات؟,ar,0.229,0.143,0.333,0.6,0.242,0.115,0,1.663
+ja_content_16,日中間の首脳会談や、民間交流でも停止しているものがあるが、どう手をつけていくのか,ja,0.333,0.857,0.4,0.4,0.744,0.558,0,3.292
+id_polar_235,"Bisakah Superboy mendapati cinta, menyembuhkan penyakit adiknya dan sekaligus menyelamatkan jakarta dari kejahatan?",id,0.24,0.333,0.0,0.556,0.667,0.265,1,2.06
+fi_polar_56,Miks ei ne pane lapselle nimeksi Mikko?,fi,0.245,0.0,0.0,1.0,0.714,0.138,1,2.098
+fi_polar_45,- Piilotitko veneen hyvin?  Juho kysyi.,fi,0.307,0.167,0.0,0.4,1.0,0.138,1,2.011
+ar_content_10, إذن هي محكمة خاصة؟,ar,0.102,0.0,0.0,0.0,1.0,0.019,0,1.121
+id_content_198,"Tanpa diri sendiri mencapai pencerahan terlebih dahulu, bagaimana mungkin dapat mencerahkan mahkluk lain?",id,0.406,0.25,0.0,0.5,0.519,0.239,0,1.915
+fi_content_15,"Miksi emme hae itsellemme sitä nautintoa, jota kaipaamme?",fi,0.197,0.25,0.333,0.4,0.375,0.136,0,1.692
+fi_content_108,Vai mitä muuta fuksiaiset ovat kuin initiaatio tietyn ryhmän jäsenyyteen?,fi,0.215,0.375,0.0,0.0,0.375,0.159,0,1.124
+ja_polar_59,って言ってる年齢不詳?,ja,0.169,0.2,0.5,0.25,0.867,0.057,1,2.043
+ja_content_23,じゃあ次はどうなるのか?,ja,0.32,0.143,0.0,1.0,0.524,0.093,0,2.08
+ru_polar_106,Можно ли копать чермет с металлоискателем не нарушая закон?,ru,0.21,0.375,0.667,0.4,0.686,0.14,1,2.477
+fi_polar_76,Tai haluaisitko kokea millaista oli neuvostoajan pioneerileirillä Tallinnassa?,fi,0.07,0.5,0.667,0.3,0.75,0.172,1,2.459
+fi_content_70,"- Moi, mitä kuuntelet? kysyt vilpittömästi",fi,0.207,0.125,0.0,0.4,0.5,0.091,0,1.323
+en_polar_347,Is there any cure for mouse poison?,en,0.199,0.375,0.0,0.333,0.571,0.08,1,1.559
+ko_polar_195,정신의 어떠한 형태가 등장하고 그것들이 어떠한 연결 방식으로 잇달아 나타나는가?,ko,0.324,0.333,0.0,0.111,0.55,0.389,1,1.708
+id_polar_145,"Seandainya pikirku: Ada harapan bagiku, dan sekalipun malam ini aku bersuami, bahkan sekalipun aku masih melahirkan anak laki-laki, masakan kamu menanti sampai mereka dewasa?",id,0.726,0.333,0.667,0.75,0.536,0.592,1,3.604
+ja_content_22,"自分たちの会員であるホメオパシー信者の活動の中で人が一人亡くなっているのに,“HOMOEOPATHYYES”とは,日本ホメオパシー医学協会は,いったい,どういう神経をしているのでしょうか。",ja,0.673,0.857,0.4,0.233,0.817,1.0,0,3.98
+en_polar_63,Bay of Plenty- Are you even old enough to vote?,en,0.253,0.375,0.25,0.167,0.6,0.16,1,1.805
+ko_polar_152,우리가 그릇된 결론을 끌어내도록 결정할 수도 있지 않을까?,ko,0.152,0.222,0.5,0.167,0.438,0.278,1,1.756
+id_polar_209,Ingin menikmati foto di layar yang lebih besar?,id,0.147,0.333,0.0,0.167,0.625,0.102,1,1.375
+ar_polar_1,هل دفعت الخلافات العائلية الشيخ إلى الانتحار؟,ar,0.333,0.1,0.0,0.8,0.844,0.038,1,2.116
+ru_polar_119,Есть ли фф где Ван Со попадает в наше время?,ru,0.312,0.375,0.333,0.5,0.733,0.163,1,2.416
+ko_content_4,법을 어기면서 금권타락선거를 조성하고 폭력을 앞세우는 사람이 대통령이 되면 앞으로 우리나라 꼴이 뭐가 되겠습니가?,ko,0.301,0.444,0.0,0.417,0.571,0.407,0,2.141
+en_polar_188,"If you do add all the entities, does that mean that we would not need to put in place a separate agreement for ECCL?",en,0.255,0.625,0.375,0.542,0.375,0.44,1,2.612
+fi_polar_71,Onko onni ollut tänään myötä?,fi,0.368,0.0,0.0,0.0,0.6,0.069,1,1.037
+ar_polar_14,"ولولا قوة شخصية الريحاني، وفرضه نفسه ""بطريركا"" على وسطه وبيئته، لكان غرق في تفاهات الناس العاديين الذين خشيهم جبران (وهو على حق) في رسالته الى ذلك الـ ""منصور"" صديقه (هل من يعرف من هو؟).",ar,0.815,0.9,0.5,0.55,0.178,1.0,1,3.943
+ko_content_145,그렇다면 앞으로 산업활동에 필요한 노동력의 수요와 공급은 어떤 상황이 될 것인가?,ko,0.299,0.444,0.333,0.333,0.591,0.296,0,2.297
+ja_polar_29,関西ではスタンダードな部類の味ではないでしょうか。,ja,0.479,0.4,0.0,0.0,0.282,0.286,1,1.446
+ja_content_20,削除しないのはなぜだろう?,ja,0.533,0.143,0.4,0.4,0.238,0.093,0,1.807
+id_polar_109,Atau cinta membuat Aril terus bertahan hidup?,id,0.129,0.111,0.333,0.5,0.857,0.082,1,2.012
+en_content_313,sorta wonder what it would have been like?,en,0.315,0.143,0.333,0.333,0.267,0.146,0,1.538
+id_content_111,"Sekarang, siapa yang menolak Partai Komunis ini?",id,0.203,0.25,0.333,0.4,0.464,0.109,0,1.759
+ko_polar_65,도대체 일인 일살이란 것이 뭔가?,ko,0.199,0.222,0.5,0.25,1.0,0.111,1,2.282
+id_polar_160,Apakah mereka berdua akan benar-benar saling mencinta?,id,0.479,0.111,0.0,0.667,0.5,0.102,1,1.859
+fi_content_17,"Miksi tyydymme vähään ja odotamme, että se paranisi itsestään sitten joskus?",fi,0.221,0.375,0.333,0.6,0.659,0.205,0,2.393
+ar_polar_0,هل تتعمق الأزمة السياسية والاقتصادية في لبنان؟,ar,0.238,0.3,0.0,0.2,0.682,0.058,1,1.478
+id_polar_167,``Kamu bersama teman?,id,0.0,0.0,0.0,0.333,0.667,0.02,1,1.02
+ko_polar_146,"단지 이것만으로, 외세에 맞서 국가를 지키려 한 숭고한 민중 의지의 표상으로서 삼별초의 의의를 우리 2세들에게 가르칠 수 있겠는가?",ko,0.375,0.444,0.5,0.333,0.75,0.889,1,3.291
+id_content_3,Siapakah sebenarnya gadis yang mirip si Cemong?,id,0.348,0.25,0.0,0.0,0.375,0.109,0,1.082
+fi_content_48,Miten joku voi täälläkin asua?,fi,0.414,0.0,0.0,0.6,0.5,0.045,0,1.559
+en_polar_263,In a new franchise business?,en,0.271,0.125,0.0,0.0,0.6,0.04,1,1.036
+ru_content_360,Что это за мутант?,ru,0.255,0.0,0.0,0.0,0.25,0.024,0,0.53
+ru_polar_135,Все ли мужчины и женщины изменяют?,ru,0.224,0.25,0.0,0.2,0.45,0.07,1,1.194
+ja_content_3,また、目標についてどんなイメージをお持ちでしょうか。,ja,0.582,0.286,0.4,0.5,0.5,0.233,0,2.5
+ru_content_77,— Но почему ее никто не полечит?,ru,0.511,0.0,0.0,0.833,0.333,0.098,0,1.775
+ko_content_28,나 자신의 가치관이 변화되지 않고 어떻게 타인의 가치관을 변화시킬 수 있겠습니까?,ko,0.138,0.333,0.333,0.417,0.591,0.296,0,2.108
+fi_polar_125,Oletteko ehkä kotoisin Raumalta?,fi,0.082,0.0,0.0,0.0,0.75,0.034,1,0.866
+ko_content_71,"고르비는 현재 어디에 있으며, 그에게 무슨 일이 있는가?",ko,0.263,0.222,0.0,0.0,0.625,0.222,0,1.332
+ko_content_78,그러나 우리에게 뻬레스트로이카와 자유는 누가 주었는가?,ko,0.414,0.111,0.0,0.667,0.25,0.111,0,1.553
+fi_content_12,Miten sitten saavuttaisimme tämän seksuaalisen itseluottamuksen?,fi,0.221,0.125,0.0,0.6,0.792,0.068,0,1.806
+ja_content_29,そのモサは今何をしているか。,ja,0.249,0.143,0.4,0.4,0.467,0.163,0,1.821
+ru_polar_149,"Если я нанесу капли воды на листок, получит ли он эту воду?",ru,0.331,0.25,0.0,0.8,0.45,0.233,1,2.064
+ko_content_212,가이아 모델은 어떤 점에서 이제까지의 생물 지구 화학적 모델들과 다를까?,ko,0.409,0.222,0.0,0.0,0.85,0.259,0,1.74
+ar_content_47,وإذا كان الدولار قد انخفض بنسبة 20% مقابل العملات الأوروبية الأخرى وخاصة اليورو والإسترليني فإن السؤال الذي يدور الآن ما أثر هذا الانخفاض على السوق المصري؟,ar,0.63,0.429,0.5,0.467,0.602,0.538,0,3.166
+ja_polar_3,そうですか。,ja,0.169,0.0,0.0,0.0,0.333,0.0,1,0.502
+ko_content_169,사회적 경제적으로 어떤 영향을 미칠 것인가?,ko,0.092,0.111,0.333,0.25,0.75,0.111,0,1.648
+fi_polar_69,Voiko äiti olla omin päin ottanut sen käyttöönsä?,fi,0.386,0.167,0.0,0.8,0.625,0.172,1,2.15
+ar_content_32,اذاً، انتصرت السلطة او هكذا تعتقد. انتصرت على المعارضة؟ لا، بل هي على الدولة انتصرت. فمع انتهاء ما بدا فصلاً من معركتها مع المعارضة، بات جلياً ان مفهوم الدولة سقط، بل ان الممارسات الدؤوبة للسلطة ومحاسيبها قد اسقطته.,ar,1.0,0.5,0.333,0.45,0.587,0.904,0,3.774
+id_polar_40,``Apakah engkau memperhatikan hamba-Ku Ayub?,id,0.129,0.111,0.0,0.5,0.571,0.102,1,1.414
+ja_content_6,これがどれだけすごいことなのか。,ja,0.28,0.286,0.0,0.0,0.111,0.14,0,0.816
+en_content_159,To what do I owe this small pleasure?,en,0.196,0.143,0.0,0.5,0.45,0.122,0,1.411
+fi_polar_54,Ettäkö kaikki kylähulluiksi?,fi,0.0,0.0,0.0,0.0,0.333,0.0,1,0.333
+fi_content_60,Miksi hän käveli taas?,fi,0.092,0.0,0.0,0.6,0.688,0.023,0,1.402
+id_polar_46,Setelah itu Rianti bermain dalam Inikah Rasanya Cinta?,id,0.172,0.222,0.0,0.667,0.4,0.143,1,1.604
+ja_content_30,"いったい,“次世紀ファーム研究所”とは何なのか。",ja,0.727,0.143,0.0,0.0,0.667,0.279,0,1.816
+ja_content_13,いったいどんな話になったのでしょうか。,ja,0.32,0.143,0.0,0.8,0.333,0.14,0,1.736
+id_content_121,Mengapa hal ini tidak terjadi dalam Protestanisme?,id,0.406,0.125,0.0,0.8,0.464,0.087,0,1.882
+id_content_112,Bagaimana kisah selanjutnya?,id,0.0,0.0,0.0,0.0,1.0,0.0,0,1.0
+ru_content_64,— Что?— глухо в подушку отозвался он.,ru,0.357,0.25,0.0,0.5,0.5,0.146,0,1.754
+en_polar_68,would I be able to go back to school after a year break at a university to get a Bachelors degree in business administration?,en,0.276,0.625,0.5,0.5,0.48,0.44,1,2.821
+ru_polar_55,Возможно ли выжить спрыгнув с парашютом с пассажирского самолета?,ru,0.245,0.375,0.667,0.3,0.686,0.14,1,2.412
+en_content_315,"Who knows what the future might hold, and it might be expensive?",en,0.5,0.286,0.333,0.417,0.4,0.244,0,2.18
+id_content_35,Bagaimanakah kisah selanjutnya?,id,0.135,0.125,0.0,0.0,0.688,0.022,0,0.97
+en_content_36,"out of carnival, royal caribbean, and norweigan (cruises) which is the best and why?",en,0.546,0.286,0.0,0.0,0.6,0.366,0,1.798
+ja_content_7,毎日のことですからなんとか解決していきたいと日々努力していらっしゃるのではないでしょうか。,ja,0.64,0.429,0.533,0.5,0.227,0.512,0,2.84
+id_polar_13,"Apakah benar Neo adalah cinta sejatinya, seperti yang selama ini diyakininya?",id,0.397,0.111,0.333,0.833,0.5,0.245,1,2.42
+fi_polar_51,Ja sinäkö olet edelleen varma että se oli vahinko?,fi,0.368,0.167,0.333,0.0,0.333,0.207,1,1.408
+ja_polar_12,日本の高野山カフェや坊主バーは大丈夫でしょうか。,ja,0.246,0.6,0.0,0.0,0.833,0.257,1,1.936
+en_polar_98,That his daddy got him in?,en,0.174,0.25,0.0,0.667,0.5,0.06,1,1.65
+ru_polar_0,"ветра, духа ли печного сумрак стоны растерял?",ru,0.467,0.375,0.0,0.4,0.955,0.116,1,2.314
+ar_content_11, ما هي التهم التي ستوجه إلى صدام حسين وأعضاء قيادته؟,ar,0.203,0.286,0.333,0.6,0.196,0.192,0,1.81
+ru_content_104,Но что за громкий тамо звон?,ru,0.511,0.0,0.0,0.0,0.5,0.073,0,1.084
+ar_content_17, ما هي آلية إحالتهم إلى المحكمة؟,ar,0.152,0.143,0.0,0.0,0.416,0.077,0,0.788
+en_polar_40,Do you know the online streaming link for Red FM 93.5 delhi ?,en,0.217,0.375,0.0,0.333,0.583,0.18,1,1.689
+fi_content_79,Siis mitä et usko?,fi,0.276,0.0,0.0,0.4,0.375,0.023,0,1.074
+ja_polar_47,でも、リニューアルしたゲストハウス風のロビー?,ja,0.718,0.2,0.5,0.0,0.333,0.2,1,1.951
+en_content_249,Which rat cage is better?,en,0.115,0.143,0.0,0.0,0.72,0.049,0,1.026

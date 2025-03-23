@@ -169,36 +169,19 @@ def filter_and_preprocess(df, min_tokens, max_tokens, normalize_features=True, l
     
     if normalize_features:
 
-  
-        for feature in ['avg_links_len', 'avg_max_depth']:       # Mean centering for avg_links_len and avg_max_depth
+        for feature in FEATURE_COLUMNS:
             if feature in filtered_df.columns:
                 for language in filtered_df['language'].unique():
-                    mask = filtered_df['language'] == language      # We normalize the scores for each language separately
+                    mask = filtered_df['language'] == language
 
-                    feature_mean = filtered_df.loc[mask, feature].mean() # Mean looks only at the masked rows
+                    min_val = filtered_df.loc[mask, feature].min()
+                    max_val = filtered_df.loc[mask, feature].max()
+                    range_val = max_val - min_val
 
-                    filtered_df.loc[mask, feature] = filtered_df.loc[mask, feature] - feature_mean     # Value of the feature - Language mean
-        
-
-
-        if 'n_tokens' in filtered_df.columns:             # Log normalization for n_tokens
-            filtered_df['n_tokens'] = np.log1p(filtered_df['n_tokens'])
-        
-
-
-        if 'avg_verb_edges' in filtered_df.columns:                 # Min-max scaling for avg_verb_edges
-
-            for language in filtered_df['language'].unique():
-                mask = filtered_df['language'] == language
-
-                min_val = filtered_df.loc[mask, 'avg_verb_edges'].min()
-                max_val = filtered_df.loc[mask, 'avg_verb_edges'].max()
-                range_val = max_val - min_val
-                
-                if range_val > 0:
-                    filtered_df.loc[mask, 'avg_verb_edges'] = (
-                        (filtered_df.loc[mask, 'avg_verb_edges'] - min_val) / range_val
-                    )
+                    if range_val > 0:
+                        filtered_df.loc[mask, feature] = (
+                            (filtered_df.loc[mask, feature] - min_val) / range_val
+                        )
     
 
     return filtered_df
@@ -554,7 +537,6 @@ def process_files(args):
                 
                 if dev_size > 0:
                     dev_samples = scored_df.sample(n=dev_size, random_state=seed)
-                    dev_samples['source'] = 'tydi'  # Explicitly mark source
                     dev_tydi_samples.append(dev_samples)
                     
                     # Remove dev samples from the training data
@@ -630,7 +612,6 @@ def process_files(args):
                 
                 if dev_size > 0:
                     dev_samples = scored_df.sample(n=dev_size, random_state=seed)
-                    dev_samples['source'] = 'ud'  # Explicitly mark source
                     dev_ud_samples.append(dev_samples)
                     
                     # Remove dev samples from the test data
@@ -747,13 +728,7 @@ def process_files(args):
         for lang, dev_df in dev_samples_by_lang.items():
             all_dev_samples.append(dev_df)
             
-            # Count by source
-            if 'source' in dev_df.columns:
-                tydi_count = len(dev_df[dev_df['source'] == 'tydi'])
-                ud_count = len(dev_df[dev_df['source'] == 'ud'])
-                tydi_total += tydi_count
-                ud_total += ud_count
-        
+            
         if all_dev_samples:
             all_dev_df = pd.concat(all_dev_samples, ignore_index=True)
             all_dev_df = all_dev_df.sample(frac=1, random_state=42).reset_index(drop=True)
@@ -762,7 +737,7 @@ def process_files(args):
             final_dev_df.to_csv(os.path.join(dev_dir, "all_dev.csv"), index=False)
             
             logger.info(f"Created combined development dataset with {len(final_dev_df)} rows total")
-            logger.info(f"  - Dev set composition: {tydi_total} TyDi samples, {ud_total} UD samples")
+            
     
 
 
