@@ -176,3 +176,7 @@ src/sbox.ipynb
 docs/notebook.md 
 
 *.conllu
+
+/home/robin/Research/qtype-eval/scripts/wandb
+
+/home/robin/Research/qtype-eval/scripts/baselines/wandb
