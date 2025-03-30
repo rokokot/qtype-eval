@@ -1,9 +1,0 @@
-configs:
-- config_name: base
-  splits:
-  - file: tydi_train_base.csv
-    split_name: train
-  - file: ud_test_base.csv
-    split_name: test
-  - file: dev_base.csv
-    split_name: validation
