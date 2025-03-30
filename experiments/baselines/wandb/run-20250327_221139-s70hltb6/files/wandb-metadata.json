@@ -1,0 +1,31 @@
+{
+  "os": "Linux-6.8.0-53-generic-x86_64-with-glibc2.39",
+  "python": "CPython 3.12.3",
+  "startedAt": "2025-03-27T21:11:39.453782Z",
+  "program": "/home/robin/Research/qtype-eval/scripts/experiments/baselines/baseline_clf.ipynb",
+  "codePath": "scripts/experiments/baselines/baseline_clf.ipynb",
+  "git": {
+    "remote": "https://github.com/rokii3/qtype-eval.git",
+    "commit": "594f9628c01a36f9827a15977d52446676d4e515"
+  },
+  "email": "robin.edu.hr@gmail.com",
+  "root": "/home/robin/Research/qtype-eval/scripts/experiments/baselines",
+  "host": "robin-x1",
+  "executable": "/home/robin/.cache/pypoetry/virtualenvs/qtype-eval-pAepV5Z2-py3.12/bin/python",
+  "codePathLocal": "baseline_clf.ipynb",
+  "cpu_count": 4,
+  "cpu_count_logical": 8,
+  "disk": {
+    "/": {
+      "total": "982820896768",
+      "used": "294719086592"
+    }
+  },
+  "memory": {
+    "total": "16434016256"
+  },
+  "cpu": {
+    "count": 4,
+    "countLogical": 8
+  }
+}
