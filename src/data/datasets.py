@@ -10,6 +10,8 @@ from torch.utils.data import Dataset, DataLoader
 from typing import List, Tuple, Dict, Any, Optional, Union
 from datasets import load_dataset
 from transformers import AutoTokenizer
+from scipy.sparse import vstack
+from scipy import sparse
 import logging
 
 logger = logging.getLogger(__name__)
@@ -143,6 +145,14 @@ def load_hf_data(language: str,
         logger.error(f"Error loading data: {e}")
         raise
 
+def prepare_sparse_matrices(features):
+ 
+    if not isinstance(features, sparse.coo_matrix):
+        features = features.tocoo()
+    
+    return sparse.csr_matrix(features)
+
+
 def load_tfidf_features(split: str, vectors_dir: str = "./data/features"):
 
     file_path = os.path.join(vectors_dir, f"tfidf_vectors_{split}.pkl")
@@ -182,7 +192,20 @@ def load_sklearn_data(
     val_features = load_tfidf_features("dev", vectors_dir) 
     test_features = load_tfidf_features("test", vectors_dir)
     
+    train_matrices = [prepare_sparse_matrices(train_features) for _ in languages]
+    val_matrices = [prepare_sparse_matrices(val_features) for _ in languages]
+    test_matrices = [prepare_sparse_matrices(test_features) for _ in languages]
     
+    if len(languages) > 1:
+        train_features = vstack(train_matrices)
+        val_features = vstack(val_matrices)
+        test_features = vstack(test_matrices)
+    else:
+        train_features = train_matrices[0]
+        val_features = val_matrices[0]
+        test_features = test_matrices[0]
+
+
     if task == "question_type":
         feature_name = "question_type"
     elif task == "complexity":
@@ -247,6 +270,7 @@ def create_lm_dataloaders(
         batch_size=batch_size,
         shuffle=False,
         num_workers=num_workers,
-        pin_memory=True)
+        pin_memory=True
+    )
     
     return train_loader, val_loader, test_loader

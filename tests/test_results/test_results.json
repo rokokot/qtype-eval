@@ -1,0 +1,98 @@
+[
+  {
+    "name": "test_python_version",
+    "passed": true,
+    "message": "Python version 3.12.3 meets minimum requirement of 3.10",
+    "details": {},
+    "elapsed_time": 3.147125244140625e-05
+  },
+  {
+    "name": "test_required_packages",
+    "passed": false,
+    "message": "Missing required packages: scikit-learn, hydra-core",
+    "details": {
+      "installed_packages": {
+        "numpy": "1.26.4",
+        "pandas": "2.2.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.50.3",
+        "datasets": "3.5.0",
+        "matplotlib": "3.9.4",
+        "seaborn": "0.13.2",
+        "xgboost": "2.1.4",
+        "scipy": "1.13.1"
+      },
+      "missing_packages": [
+        "scikit-learn",
+        "hydra-core"
+      ]
+    },
+    "elapsed_time": 2.8369297981262207
+  },
+  {
+    "name": "test_gpu_availability",
+    "passed": false,
+    "message": "No GPU available. Some experiments may be slow or impossible to run.",
+    "details": {
+      "recommendation": "Consider running on a machine with a GPU or using a smaller model."
+    },
+    "elapsed_time": 0.0004951953887939453
+  },
+  {
+    "name": "test_data_directories",
+    "passed": true,
+    "message": "All required data directories exist",
+    "details": {},
+    "elapsed_time": 4.9114227294921875e-05
+  },
+  {
+    "name": "test_tfidf_vectors",
+    "passed": false,
+    "message": "Issues with TF-IDF vector files: data/features/tfidf_vectors_train.pkl (not a sparse matrix), data/features/tfidf_vectors_dev.pkl (not a sparse matrix), data/features/tfidf_vectors_test.pkl (not a sparse matrix)",
+    "details": {
+      "loaded_shapes": {},
+      "missing_files": [
+        "data/features/tfidf_vectors_train.pkl (not a sparse matrix)",
+        "data/features/tfidf_vectors_dev.pkl (not a sparse matrix)",
+        "data/features/tfidf_vectors_test.pkl (not a sparse matrix)"
+      ]
+    },
+    "elapsed_time": 0.18632769584655762
+  },
+  {
+    "name": "test_dataset_loading",
+    "passed": true,
+    "message": "Successfully loaded dataset with 10 examples",
+    "details": {
+      "features": [
+        "unique_id",
+        "text",
+        "language",
+        "avg_links_len",
+        "avg_max_depth",
+        "avg_subordinate_chain_len",
+        "avg_verb_edges",
+        "lexical_density",
+        "n_tokens",
+        "question_type",
+        "complexity_score",
+        "lang_norm_complexity_score"
+      ]
+    },
+    "elapsed_time": 3.505779504776001
+  },
+  {
+    "name": "test_code_imports",
+    "passed": true,
+    "message": "All code modules imported successfully",
+    "details": {},
+    "elapsed_time": 8.398890018463135
+  },
+  {
+    "name": "test_sklearn_experiment",
+    "passed": false,
+    "message": "Failed to run sklearn experiment: 'numpy.ndarray' object has no attribute 'tocoo'",
+    "details": {},
+    "elapsed_time": 7.3173534870147705
+  }
+]
