@@ -3,12 +3,12 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "package_name"
+name = "qtype-eval"
 version = "0.1"
 requires-python = ">= 3.10"
 authors = [{ name = "Robin Kokot", email = "robin.edu.hr@gmail.com" }]
 maintainers = [{ name = "Robin Kokot", email = "robin.edu.hr@gmail.com" }]
-description = "A package to **description** (package_name)."
+description = "Probing multilingual question types and linguistic complexity in language models."
 readme = "README.md"
 license = { file = "LICENSE" }
 classifiers = [
@@ -16,7 +16,21 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-
+python = "^3.10"
+numpy = "^1.22.0"
+pandas = "^1.4.0"
+scikit-learn = "^1.0.0"
+torch = "^1.10.0"
+transformers = "^4.16.0"
+datasets = "^2.0.0"
+hydra-core = "^1.1.0"
+hydra-submitit-launcher = "^1.2.0"
+matplotlib = "^3.5.0"
+seaborn = "^0.11.2"
+tqdm = "^4.62.3"
+wandb = "^0.12.9"
+xgboost = "^1.5.0"
+text2text = "^0.3.0"
 ]
 
 [project.optional-dependencies]
