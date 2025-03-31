@@ -1,0 +1,17 @@
+{
+  "model_type": "DummyClassifier",
+  "task_type": "classification",
+  "train_time": 0.0016338825225830078,
+  "train_metrics": {
+    "accuracy": 0.6,
+    "f1": 0.75
+  },
+  "val_metrics": {
+    "accuracy": 0.4,
+    "f1": 0.5714285714285714
+  },
+  "test_metrics": {
+    "accuracy": 0.5,
+    "f1": 0.6666666666666666
+  }
+}

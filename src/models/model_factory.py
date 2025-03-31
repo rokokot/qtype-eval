@@ -59,18 +59,30 @@ class LMProbe(nn.Module):    # Neural probe for language model representations
         self.num_outputs = num_outputs
     
     def forward(self, input_ids, attention_mask, token_type_ids=None, **kwargs):
-       
-        outputs = self.model(
-            input_ids=input_ids, 
-            attention_mask=attention_mask,
-            token_type_ids=token_type_ids if token_type_ids is not None else None)
         
+        # Check model type to handle DistilBERT vs BERT
+        model_type = self.model.__class__.__name__
+        
+        if "DistilBert" in model_type:
+            # DistilBERT doesn't use token_type_ids
+            outputs = self.model(
+                input_ids=input_ids,
+                attention_mask=attention_mask)
+        else:
+            # BERT and others use token_type_ids
+            outputs = self.model(
+                input_ids=input_ids,
+                attention_mask=attention_mask,
+                token_type_ids=token_type_ids if token_type_ids is not None else None)
+        
+        # Get the sentence representation from [CLS] token
         sentence_repr = outputs.last_hidden_state[:, 0, :]
         
         outputs = self.head(sentence_repr)
         
         return outputs
-
+        
+        
 def create_model(model_type, task_type, **kwargs):
     logger.info(f"Creating {model_type} model for {task_type} task")
     

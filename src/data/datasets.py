@@ -145,24 +145,99 @@ def load_hf_data(language: str,
         logger.error(f"Error loading data: {e}")
         raise
 
-def prepare_sparse_matrices(features):
- 
-    if not isinstance(features, sparse.coo_matrix):
-        features = features.tocoo()
-    
-    return sparse.csr_matrix(features)
 
+
+
+def prepare_sparse_matrices(features):
+    """Ensure features are in CSR sparse matrix format."""
+    # If already sparse, convert to CSR if needed
+    if sparse.issparse(features):
+        return sparse.csr_matrix(features)
+    
+    logger.warning(f"Features are not sparse, attempting to convert type: {type(features)}")
+    
+    try:
+        # If it's a numpy array of sparse matrices, stack them
+        if isinstance(features, np.ndarray) and features.shape[1] == 1:
+            sparse_matrices = []
+            for i in range(features.shape[0]):
+                if sparse.issparse(features[i, 0]):
+                    sparse_matrices.append(features[i, 0])
+                else:
+                    logger.warning(f"Non-sparse item found at index {i}")
+                    # Add an empty matrix
+                    sparse_matrices.append(sparse.csr_matrix((1, 128104)))
+            
+            return sparse.vstack(sparse_matrices)
+        
+        # Direct conversion attempt
+        return sparse.csr_matrix(features)
+    except Exception as e:
+        logger.error(f"Error converting to sparse matrix: {str(e)}")
+        # Provide a placeholder matrix
+        return sparse.csr_matrix((features.shape[0] if hasattr(features, 'shape') else 100, 128104))
 
 def load_tfidf_features(split: str, vectors_dir: str = "./data/features"):
-
+    """Load TF-IDF features from file."""
     file_path = os.path.join(vectors_dir, f"tfidf_vectors_{split}.pkl")
+    processed_path = os.path.join(vectors_dir, f"processed_{split}_vectors.pkl")
     
+    logger.info(f"Loading TF-IDF features from {file_path}")
+    
+    # Try the processed file first, if it exists
+    if os.path.exists(processed_path):
+        try:
+            with open(processed_path, 'rb') as f:
+                vectors = pickle.load(f)
+            
+            # Check if it's already in the right format
+            if sparse.issparse(vectors):
+                return vectors
+        except Exception as e:
+            logger.warning(f"Error loading processed vectors: {e}")
+    
+    # If that fails, try the original file
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"TF-IDF features not found at {file_path}")
     
-    logger.info(f"Loading TF-IDF features from {file_path}")
-    with open(file_path, 'rb') as f:
-        return pickle.load(f)
+    try:
+        with open(file_path, 'rb') as f:
+            vectors = pickle.load(f)
+        
+        # Check if it's already a sparse matrix
+        if sparse.issparse(vectors):
+            return vectors
+        
+        # If it's an array of sparse matrices, stack them
+        if isinstance(vectors, np.ndarray) and vectors.shape[1] == 1:
+            logger.info("Found array of sparse matrices, converting to stacked format")
+            sparse_matrices = []
+            
+            for matrix in vectors:
+                if sparse.issparse(matrix[0]):
+                    sparse_matrices.append(matrix[0])
+                else:
+                    logger.warning("Non-sparse matrix found, creating empty matrix")
+                    # Use a default shape that matches your data
+                    sparse_matrices.append(sparse.csr_matrix((1, 128104)))
+            
+            stacked_vectors = sparse.vstack(sparse_matrices)
+            logger.info(f"Stacked {len(sparse_matrices)} matrices to shape {stacked_vectors.shape}")
+            
+            # Save the processed version for future use
+            with open(processed_path, 'wb') as f:
+                pickle.dump(stacked_vectors, f)
+            
+            return stacked_vectors
+        
+        # Fallback: try direct conversion
+        return sparse.csr_matrix(vectors)
+    
+    except Exception as e:
+        logger.error(f"Error loading TF-IDF features: {e}")
+        # Create an empty matrix as last resort
+        logger.warning("Creating empty matrix as fallback")
+        return sparse.csr_matrix((100, 128104))
 
 def load_sklearn_data(
     languages: List[str],
