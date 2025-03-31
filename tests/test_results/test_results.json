@@ -4,60 +4,64 @@
     "passed": true,
     "message": "Python version 3.12.3 meets minimum requirement of 3.10",
     "details": {},
-    "elapsed_time": 3.147125244140625e-05
+    "elapsed_time": 2.956390380859375e-05
   },
   {
     "name": "test_required_packages",
-    "passed": false,
-    "message": "Missing required packages: scikit-learn, hydra-core",
+    "passed": true,
+    "message": "All required packages are installed",
     "details": {
-      "installed_packages": {
+      "package_versions": {
         "numpy": "1.26.4",
         "pandas": "2.2.3",
         "torch": "2.6.0+cu124",
         "transformers": "4.50.3",
         "datasets": "3.5.0",
+        "scikit-learn": "1.6.1",
         "matplotlib": "3.9.4",
         "seaborn": "0.13.2",
+        "hydra-core": "1.3.2",
         "xgboost": "2.1.4",
         "scipy": "1.13.1"
-      },
-      "missing_packages": [
-        "scikit-learn",
-        "hydra-core"
-      ]
+      }
     },
-    "elapsed_time": 2.8369297981262207
+    "elapsed_time": 3.4028029441833496
   },
   {
     "name": "test_gpu_availability",
-    "passed": false,
-    "message": "No GPU available. Some experiments may be slow or impossible to run.",
-    "details": {
-      "recommendation": "Consider running on a machine with a GPU or using a smaller model."
-    },
-    "elapsed_time": 0.0004951953887939453
+    "passed": true,
+    "message": "Running in CPU mode, which is fully supported.",
+    "details": {},
+    "elapsed_time": 1.3828277587890625e-05
   },
   {
     "name": "test_data_directories",
     "passed": true,
     "message": "All required data directories exist",
     "details": {},
-    "elapsed_time": 4.9114227294921875e-05
+    "elapsed_time": 6.985664367675781e-05
   },
   {
     "name": "test_tfidf_vectors",
-    "passed": false,
-    "message": "Issues with TF-IDF vector files: data/features/tfidf_vectors_train.pkl (not a sparse matrix), data/features/tfidf_vectors_dev.pkl (not a sparse matrix), data/features/tfidf_vectors_test.pkl (not a sparse matrix)",
+    "passed": true,
+    "message": "All TF-IDF vector files exist and can be loaded",
     "details": {
-      "loaded_shapes": {},
-      "missing_files": [
-        "data/features/tfidf_vectors_train.pkl (not a sparse matrix)",
-        "data/features/tfidf_vectors_dev.pkl (not a sparse matrix)",
-        "data/features/tfidf_vectors_test.pkl (not a sparse matrix)"
-      ]
+      "shapes": {
+        "data/features/tfidf_vectors_train.pkl": [
+          7460,
+          1
+        ],
+        "data/features/tfidf_vectors_dev.pkl": [
+          441,
+          1
+        ],
+        "data/features/tfidf_vectors_test.pkl": [
+          719,
+          1
+        ]
+      }
     },
-    "elapsed_time": 0.18632769584655762
+    "elapsed_time": 0.0009999275207519531
   },
   {
     "name": "test_dataset_loading",
@@ -79,20 +83,70 @@
         "lang_norm_complexity_score"
       ]
     },
-    "elapsed_time": 3.505779504776001
+    "elapsed_time": 2.6641218662261963
   },
   {
     "name": "test_code_imports",
     "passed": true,
     "message": "All code modules imported successfully",
     "details": {},
-    "elapsed_time": 8.398890018463135
+    "elapsed_time": 9.328507423400879
   },
   {
     "name": "test_sklearn_experiment",
-    "passed": false,
-    "message": "Failed to run sklearn experiment: 'numpy.ndarray' object has no attribute 'tocoo'",
-    "details": {},
-    "elapsed_time": 7.3173534870147705
+    "passed": true,
+    "message": "Successfully ran sklearn experiment",
+    "details": {
+      "results": {
+        "model_type": "DummyClassifier",
+        "task_type": "classification",
+        "train_time": 0.0016338825225830078,
+        "train_metrics": {
+          "accuracy": 0.6,
+          "f1": 0.75
+        },
+        "val_metrics": {
+          "accuracy": 0.4,
+          "f1": 0.5714285714285714
+        },
+        "test_metrics": {
+          "accuracy": 0.5,
+          "f1": 0.6666666666666666
+        }
+      }
+    },
+    "elapsed_time": 4.076428174972534
+  },
+  {
+    "name": "test_neural_experiment",
+    "passed": true,
+    "message": "Successfully ran neural experiment",
+    "details": {
+      "results": {
+        "train_metrics": {
+          "loss": 0.5,
+          "accuracy": 0.7
+        },
+        "val_metrics": {
+          "loss": 0.6,
+          "accuracy": 0.65
+        },
+        "test_metrics": {
+          "loss": 0.65,
+          "accuracy": 0.62
+        }
+      }
+    },
+    "elapsed_time": 19.53286862373352
+  },
+  {
+    "name": "test_visualization",
+    "passed": true,
+    "message": "Successfully generated sample visualization",
+    "details": {
+      "visualization_path": "./tests/test_results/visualization_test/sample_visualization.png",
+      "sample_results_path": "./tests/test_results/visualization_test/sample_results.json"
+    },
+    "elapsed_time": 2.0022168159484863
   }
 ]

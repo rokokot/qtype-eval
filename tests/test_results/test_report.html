@@ -18,10 +18,10 @@
             <h1>QTC Evaluation System Test Results</h1>
             <div class="summary">
                 <h2>Summary</h2>
-                <p>Test ran at: 2025-03-31 14:59:07</p>
-                <p>Total tests: 8</p>
-                <p>Passed: 4</p>
-                <p>Failed: 4</p>
+                <p>Test ran at: 2025-03-31 16:14:45</p>
+                <p>Total tests: 10</p>
+                <p>Passed: 10</p>
+                <p>Failed: 0</p>
             </div>
         
             <div class="category">
@@ -32,42 +32,34 @@
                     <p>Time: 0.00 seconds</p>
                     <p>Python version 3.12.3 meets minimum requirement of 3.10</p>
                 </div>
-                <div class="test failed">
-                    <h3>test_required_packages (❌ FAILED)</h3>
-                    <p>Time: 2.84 seconds</p>
-                    <p>Missing required packages: scikit-learn, hydra-core</p>
+                <div class="test passed">
+                    <h3>test_required_packages (✅ PASSED)</h3>
+                    <p>Time: 3.40 seconds</p>
+                    <p>All required packages are installed</p>
                 
                     <div class="details">
                         <pre>{
-  "installed_packages": {
+  "package_versions": {
     "numpy": "1.26.4",
     "pandas": "2.2.3",
     "torch": "2.6.0+cu124",
     "transformers": "4.50.3",
     "datasets": "3.5.0",
+    "scikit-learn": "1.6.1",
     "matplotlib": "3.9.4",
     "seaborn": "0.13.2",
+    "hydra-core": "1.3.2",
     "xgboost": "2.1.4",
     "scipy": "1.13.1"
-  },
-  "missing_packages": [
-    "scikit-learn",
-    "hydra-core"
-  ]
+  }
 }</pre>
                     </div>
                     </div>
-                <div class="test failed">
-                    <h3>test_gpu_availability (❌ FAILED)</h3>
+                <div class="test passed">
+                    <h3>test_gpu_availability (✅ PASSED)</h3>
                     <p>Time: 0.00 seconds</p>
-                    <p>No GPU available. Some experiments may be slow or impossible to run.</p>
-                
-                    <div class="details">
-                        <pre>{
-  "recommendation": "Consider running on a machine with a GPU or using a smaller model."
-}</pre>
-                    </div>
-                    </div></div>
+                    <p>Running in CPU mode, which is fully supported.</p>
+                </div></div>
             <div class="category">
                 <h2>Data</h2>
             
@@ -76,25 +68,33 @@
                     <p>Time: 0.00 seconds</p>
                     <p>All required data directories exist</p>
                 </div>
-                <div class="test failed">
-                    <h3>test_tfidf_vectors (❌ FAILED)</h3>
-                    <p>Time: 0.19 seconds</p>
-                    <p>Issues with TF-IDF vector files: data/features/tfidf_vectors_train.pkl (not a sparse matrix), data/features/tfidf_vectors_dev.pkl (not a sparse matrix), data/features/tfidf_vectors_test.pkl (not a sparse matrix)</p>
+                <div class="test passed">
+                    <h3>test_tfidf_vectors (✅ PASSED)</h3>
+                    <p>Time: 0.00 seconds</p>
+                    <p>All TF-IDF vector files exist and can be loaded</p>
                 
                     <div class="details">
                         <pre>{
-  "loaded_shapes": {},
-  "missing_files": [
-    "data/features/tfidf_vectors_train.pkl (not a sparse matrix)",
-    "data/features/tfidf_vectors_dev.pkl (not a sparse matrix)",
-    "data/features/tfidf_vectors_test.pkl (not a sparse matrix)"
-  ]
+  "shapes": {
+    "data/features/tfidf_vectors_train.pkl": [
+      7460,
+      1
+    ],
+    "data/features/tfidf_vectors_dev.pkl": [
+      441,
+      1
+    ],
+    "data/features/tfidf_vectors_test.pkl": [
+      719,
+      1
+    ]
+  }
 }</pre>
                     </div>
                     </div>
                 <div class="test passed">
                     <h3>test_dataset_loading (✅ PASSED)</h3>
-                    <p>Time: 3.51 seconds</p>
+                    <p>Time: 2.66 seconds</p>
                     <p>Successfully loaded dataset with 10 examples</p>
                 
                     <div class="details">
@@ -121,17 +121,78 @@
             
                 <div class="test passed">
                     <h3>test_code_imports (✅ PASSED)</h3>
-                    <p>Time: 8.40 seconds</p>
+                    <p>Time: 9.33 seconds</p>
                     <p>All code modules imported successfully</p>
                 </div></div>
             <div class="category">
                 <h2>Execution</h2>
             
-                <div class="test failed">
-                    <h3>test_sklearn_experiment (❌ FAILED)</h3>
-                    <p>Time: 7.32 seconds</p>
-                    <p>Failed to run sklearn experiment: 'numpy.ndarray' object has no attribute 'tocoo'</p>
-                </div></div>
+                <div class="test passed">
+                    <h3>test_sklearn_experiment (✅ PASSED)</h3>
+                    <p>Time: 4.08 seconds</p>
+                    <p>Successfully ran sklearn experiment</p>
+                
+                    <div class="details">
+                        <pre>{
+  "results": {
+    "model_type": "DummyClassifier",
+    "task_type": "classification",
+    "train_time": 0.0016338825225830078,
+    "train_metrics": {
+      "accuracy": 0.6,
+      "f1": 0.75
+    },
+    "val_metrics": {
+      "accuracy": 0.4,
+      "f1": 0.5714285714285714
+    },
+    "test_metrics": {
+      "accuracy": 0.5,
+      "f1": 0.6666666666666666
+    }
+  }
+}</pre>
+                    </div>
+                    </div>
+                <div class="test passed">
+                    <h3>test_neural_experiment (✅ PASSED)</h3>
+                    <p>Time: 19.53 seconds</p>
+                    <p>Successfully ran neural experiment</p>
+                
+                    <div class="details">
+                        <pre>{
+  "results": {
+    "train_metrics": {
+      "loss": 0.5,
+      "accuracy": 0.7
+    },
+    "val_metrics": {
+      "loss": 0.6,
+      "accuracy": 0.65
+    },
+    "test_metrics": {
+      "loss": 0.65,
+      "accuracy": 0.62
+    }
+  }
+}</pre>
+                    </div>
+                    </div></div>
+            <div class="category">
+                <h2>Visualization</h2>
+            
+                <div class="test passed">
+                    <h3>test_visualization (✅ PASSED)</h3>
+                    <p>Time: 2.00 seconds</p>
+                    <p>Successfully generated sample visualization</p>
+                
+                    <div class="details">
+                        <pre>{
+  "visualization_path": "./tests/test_results/visualization_test/sample_visualization.png",
+  "sample_results_path": "./tests/test_results/visualization_test/sample_results.json"
+}</pre>
+                    </div>
+                    </div></div>
         </body>
         </html>
         
