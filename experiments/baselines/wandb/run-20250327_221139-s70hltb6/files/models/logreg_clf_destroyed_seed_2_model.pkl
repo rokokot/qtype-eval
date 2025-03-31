@@ -1,1 +1,0 @@
-/home/robin/Research/qtype-eval/scripts/experiments/models/logreg_clf_destroyed_seed_2_model.pkl
