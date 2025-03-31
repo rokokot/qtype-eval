@@ -1,0 +1,16 @@
+dataset_name: "rokokot/question-type-and-complexity"
+cache_dir: "./data/cache"
+
+vectors_dir: "./data/features"
+
+languages:
+  - "ar"
+  - "en"
+  - "fi"
+  - "id"
+  - "ja"
+  - "ko"
+  - "ru"
+
+train_language: null
+eval_language: null

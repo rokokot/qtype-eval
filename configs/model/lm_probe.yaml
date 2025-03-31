@@ -1,0 +1,7 @@
+model_type: "lm_probe"
+lm_name: "cis-lmu/glot500-base"
+dropout: 0.1
+freeze_model: false
+layer_wise: false
+layer_index: -1     # last
+

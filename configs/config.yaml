@@ -1,0 +1,37 @@
+# main config for mulitlingual question probing experiments
+defaults:
+  - _self_
+  - data: default
+  - model: default
+  - training: default
+  - experiment: default
+  - hydra/launcher: submitit_slurm
+
+# settings
+seed: 42
+output_dir: ${hydra:runtime.output_dir}
+experiment_name: "default"
+
+# wandb configuration
+wandb:
+  project: "multilingual-question-probing"
+  entity: "rokii-ku-leuven"
+  mode: "online"
+
+# slurm config
+slurm:
+  partition: "gpu"
+  time: "24:00:00"
+  gpus_per_node: 1
+  cpus_per_task: 4
+  mem_per_cpu: 8  
+  job_name: ${experiment_name}
+  account: "hpcinfo" #vsc37132
+
+# hydra settings
+hydra:
+  sweep:
+    dir: outputs/${experiment_name}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.num}
+  run:
+    dir: ${hydra.sweep.dir}/${hydra.sweep.subdir}

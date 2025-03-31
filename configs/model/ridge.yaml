@@ -1,0 +1,3 @@
+model_type: "ridge"
+alpha: 1.0
+solver: "auto"

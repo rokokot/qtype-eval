@@ -1,0 +1,19 @@
+_target_: hydra_plugins.hydra_submitit_launcher.submitit_launcher.SlurmLauncher
+submitit_folder: ${hydra.sweep.dir}/.submitit/%j
+timeout_min: 1440
+cpus_per_task: ${slurm.cpus_per_task}
+gpus_per_node: ${slurm.gpus_per_node}
+tasks_per_node: 1
+mem_gb: ${slurm.mem_per_cpu*slurm.cpus_per_task}
+nodes: 1
+name: ${slurm.job_name}
+partition: ${slurm.partition}
+account: ${slurm.account}
+qos: null
+comment: null
+constraint: null
+max_num_timeout: 5
+array_parallelism: 256
+setup:
+  - module load CUDA/11.7.0
+  - module load Python/3.9
