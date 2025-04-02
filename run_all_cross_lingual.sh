@@ -18,12 +18,12 @@ for src_lang in "${LANGUAGES[@]}"; do
         if [[ "$src_lang" == "$tgt_lang" ]]; then
             continue
         fi
-        
+
         echo "Running experiment for $src_lang -> $tgt_lang" | tee -a $LOG_FILE
-        
+
         # Create experiment name
         EXPERIMENT_NAME="cross_lingual_${src_lang}_to_${tgt_lang}"
-        
+
         # Run the experiment
         python -m src.experiments.run_experiment \
             experiment=cross_lingual \
@@ -34,7 +34,7 @@ for src_lang in "${LANGUAGES[@]}"; do
             experiment_name=$EXPERIMENT_NAME \
             output_dir="${OUTPUT_DIR}/${src_lang}_to_${tgt_lang}" \
             2>&1 | tee -a $LOG_FILE
-        
+
         echo "Completed experiment for $src_lang -> $tgt_lang" | tee -a $LOG_FILE
         echo "----------------------------------------" | tee -a $LOG_FILE
     done

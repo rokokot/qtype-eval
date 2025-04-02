@@ -82,7 +82,7 @@ Nivre, J., de Marneffe, M.-C., Ginter, F., Hajič, J., Manning, C. D., Pyysalo, 
 
 - Straka, M., Hajic, J., & Straková, J. (2016). UDPipe: Trainable Pipeline for Processing CoNLL-U Files Performing Tokenization, Morphological Analysis, POS Tagging and Parsing. In Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC'16) (pp. 4290-4297).
 
-- Kulmizev, A. & Nivre, J. (2023). Investigating UD Treebanks via Dataset Difficulty Measures. In Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics (pp. 1076-1089).  
+- Kulmizev, A. & Nivre, J. (2023). Investigating UD Treebanks via Dataset Difficulty Measures. In Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics (pp. 1076-1089).
 
 ### Linguistic Complexity Feature Scoring
 
@@ -107,7 +107,7 @@ We implemented a linguistic analysis pipeline using:
 ## Preprocessing and Feature Extraction
 
 Our preprocessing pipeline involved several key stages:
-   
+
    **Question Extraction and Classification**
 
 - TyDi: Questions were classified using a combination of annotations from the original dataset and linguistic pattern matching.
@@ -282,8 +282,8 @@ Additionally, please cite the underlying data sources and tools:
 ```bibtex
 @article{clark2020tydi,
   title={TyDi QA: A Benchmark for Information-Seeking Question Answering in Typologically Diverse Languages},
-  author={Clark, Jonathan H and Choi, Eunsol and Collins, Michael and Garrette, Dan and Kwiatkowski, Tom and 
-  Nikolaev, Vitaly and Palomaki, Jennimaria},  
+  author={Clark, Jonathan H and Choi, Eunsol and Collins, Michael and Garrette, Dan and Kwiatkowski, Tom and
+  Nikolaev, Vitaly and Palomaki, Jennimaria},
   journal={Transactions of the Association for Computational Linguistics},
   volume={8},
   pages={454--470},
@@ -293,7 +293,7 @@ Additionally, please cite the underlying data sources and tools:
 
 @inproceedings{nivre2020,
   title={Universal Dependencies v2: An Evergrowing Multilingual Treebank Collection},
-  author={Nivre, Joakim and de Marneffe, Marie-Catherine and Ginter, Filip and Haji{\v{c}}, Jan and Manning, 
+  author={Nivre, Joakim and de Marneffe, Marie-Catherine and Ginter, Filip and Haji{\v{c}}, Jan and Manning,
   Christopher D and Pyysalo, Sampo and Schuster, Sebastian and Tyers, Francis and Zeman, Daniel},
   booktitle={Proceedings of the 12th Language Resources and Evaluation Conference},
   pages={4034--4043},
@@ -301,7 +301,7 @@ Additionally, please cite the underlying data sources and tools:
 }
 
 @inproceedings{straka2016,
-  title={UDPipe: Trainable Pipeline for Processing CoNLL-U Files Performing Tokenization, Morphological Analysis, 
+  title={UDPipe: Trainable Pipeline for Processing CoNLL-U Files Performing Tokenization, Morphological Analysis,
   POS Tagging and Parsing},
   author={Straka, Milan and Haji{\v{c}}, Jan and Strakov{\'a}, Jana},
   booktitle={Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC'16)},

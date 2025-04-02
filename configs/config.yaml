@@ -24,7 +24,7 @@ slurm:
   time: "24:00:00"
   gpus_per_node: 1
   cpus_per_task: 4
-  mem_per_cpu: 8  
+  mem_per_cpu: 8
   job_name: ${experiment_name}
   account: "hpcinfo" #vsc37132
 

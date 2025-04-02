@@ -78,7 +78,7 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/rokokot
-  
+
 
 # Math support
 extra_javascript:
@@ -105,8 +105,7 @@ nav:
     - Ablation Studies: experiments/ablation_studies.md
     - Evaluation: experiments/evaluation.md
   - Data: data/data_overview.md
-  - Software documentation: 
+  - Software documentation:
     - software/tools.md
-  - References: 
+  - References:
     - references/bibliography.md
-
