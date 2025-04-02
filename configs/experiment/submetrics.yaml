@@ -1,6 +1,6 @@
 type: "lm_probe"
 tasks:
-  - "single_submetric"  
+  - "single_submetric"
 
 submetric: "avg_links_len"
 

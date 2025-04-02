@@ -4,4 +4,3 @@ dropout: 0.1
 freeze_model: false
 layer_wise: false
 layer_index: -1     # last
-

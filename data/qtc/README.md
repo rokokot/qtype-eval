@@ -8,7 +8,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   # Question Type Control Tasks (3 seeds)
   - config_name: control_question_type_seed1
     data_files:
@@ -18,7 +18,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   - config_name: control_question_type_seed2
     data_files:
       - split: train
@@ -27,7 +27,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   - config_name: control_question_type_seed3
     data_files:
       - split: train
@@ -36,7 +36,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   # Combined Complexity Control Tasks (3 seeds)
   - config_name: control_complexity_seed1
     data_files:
@@ -46,7 +46,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   - config_name: control_complexity_seed2
     data_files:
       - split: train
@@ -55,7 +55,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   - config_name: control_complexity_seed3
     data_files:
       - split: train
@@ -64,7 +64,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   # Individual Complexity Metrics Control Tasks (3 seeds each)
   - config_name: control_avg_links_len_seed1
     data_files:
@@ -74,7 +74,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   - config_name: control_avg_links_len_seed2
     data_files:
       - split: train
@@ -83,7 +83,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   - config_name: control_avg_links_len_seed3
     data_files:
       - split: train
@@ -92,7 +92,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   - config_name: control_avg_max_depth_seed1
     data_files:
       - split: train
@@ -101,7 +101,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   - config_name: control_avg_max_depth_seed2
     data_files:
       - split: train
@@ -110,7 +110,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   - config_name: control_avg_max_depth_seed3
     data_files:
       - split: train
@@ -119,7 +119,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   - config_name: control_avg_subordinate_chain_len_seed1
     data_files:
       - split: train
@@ -128,7 +128,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   - config_name: control_avg_subordinate_chain_len_seed2
     data_files:
       - split: train
@@ -137,7 +137,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   - config_name: control_avg_subordinate_chain_len_seed3
     data_files:
       - split: train
@@ -146,7 +146,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   - config_name: control_avg_verb_edges_seed1
     data_files:
       - split: train
@@ -155,7 +155,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   - config_name: control_avg_verb_edges_seed2
     data_files:
       - split: train
@@ -164,7 +164,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   - config_name: control_avg_verb_edges_seed3
     data_files:
       - split: train
@@ -173,7 +173,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   - config_name: control_lexical_density_seed1
     data_files:
       - split: train
@@ -182,7 +182,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   - config_name: control_lexical_density_seed2
     data_files:
       - split: train
@@ -191,7 +191,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   - config_name: control_lexical_density_seed3
     data_files:
       - split: train
@@ -200,7 +200,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   - config_name: control_n_tokens_seed1
     data_files:
       - split: train
@@ -209,7 +209,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   - config_name: control_n_tokens_seed2
     data_files:
       - split: train
@@ -218,7 +218,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-        
+
   - config_name: control_n_tokens_seed3
     data_files:
       - split: train
@@ -227,7 +227,7 @@ configs:
         path: ud_test_base.csv
       - split: validation
         path: dev_base.csv
-language: 
+language:
   - ar
   - en
   - fi
@@ -303,7 +303,7 @@ Our classification system used the `ud_classifier.py` script to identify and cat
 **Reference:**
 Straka, M., Hajic, J., & Straková, J. (2016). UDPipe: Trainable Pipeline for Processing CoNLL-U Files Performing Tokenization, Morphological Analysis, POS Tagging and Parsing. In Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC'16) (pp. 4290-4297).
 
-Kulmizev, A. & Nivre, J. (2023). Investigating UD Treebanks via Dataset Difficulty Measures. In Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics (pp. 1076-1089).  
+Kulmizev, A. & Nivre, J. (2023). Investigating UD Treebanks via Dataset Difficulty Measures. In Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics (pp. 1076-1089).
 
 ### Linguistic Complexity Feature Scoring
 
@@ -328,19 +328,19 @@ The dataset is organized into three main components corresponding to the train/d
 
 ```text
 QTC-Dataset
-├── base                               
-│   ├── tydi_train_base.csv           
-│   ├── dev_base.csv                   
-│   └── ud_test_base.csv               
-├── control_question_type_seed1        
+├── base
+│   ├── tydi_train_base.csv
+│   ├── dev_base.csv
+│   └── ud_test_base.csv
+├── control_question_type_seed1
 │   ├── tydi_train_control_question_type_seed1.csv
 │   ├── dev_base.csv
 │   └── ud_test_base.csv
-├── control_complexity_seed1          
+├── control_complexity_seed1
 │   ├── tydi_train_control_complexity_seed1.csv
 │   ├── dev_base.csv
 │   └── ud_test_base.csv
-└── control_[metric]_seed[n]           
+└── control_[metric]_seed[n]
     ├── tydi_train_control_[metric]_seed[n].csv
     ├── dev_base.csv
     └── ud_test_base.csv
@@ -480,8 +480,8 @@ Additionally, please cite the underlying data sources and tools:
 ```bibtex
 @article{clark2020tydi,
   title={TyDi QA: A Benchmark for Information-Seeking Question Answering in Typologically Diverse Languages},
-  author={Clark, Jonathan H and Choi, Eunsol and Collins, Michael and Garrette, Dan and Kwiatkowski, Tom and 
-  Nikolaev, Vitaly and Palomaki, Jennimaria},  
+  author={Clark, Jonathan H and Choi, Eunsol and Collins, Michael and Garrette, Dan and Kwiatkowski, Tom and
+  Nikolaev, Vitaly and Palomaki, Jennimaria},
   journal={Transactions of the Association for Computational Linguistics},
   volume={8},
   pages={454--470},
@@ -491,7 +491,7 @@ Additionally, please cite the underlying data sources and tools:
 
 @inproceedings{nivre2020universal,
   title={Universal Dependencies v2: An Evergrowing Multilingual Treebank Collection},
-  author={Nivre, Joakim and de Marneffe, Marie-Catherine and Ginter, Filip and Haji{\v{c}}, Jan and Manning, 
+  author={Nivre, Joakim and de Marneffe, Marie-Catherine and Ginter, Filip and Haji{\v{c}}, Jan and Manning,
   Christopher D and Pyysalo, Sampo and Schuster, Sebastian and Tyers, Francis and Zeman, Daniel},
   booktitle={Proceedings of the 12th Language Resources and Evaluation Conference},
   pages={4034--4043},
@@ -499,7 +499,7 @@ Additionally, please cite the underlying data sources and tools:
 }
 
 @inproceedings{straka2016udpipe,
-  title={UDPipe: Trainable Pipeline for Processing CoNLL-U Files Performing Tokenization, Morphological Analysis, 
+  title={UDPipe: Trainable Pipeline for Processing CoNLL-U Files Performing Tokenization, Morphological Analysis,
   POS Tagging and Parsing},
   author={Straka, Milan and Haji{\v{c}}, Jan and Strakov{\'a}, Jana},
   booktitle={Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC'16)},

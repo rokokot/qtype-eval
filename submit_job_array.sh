@@ -6,8 +6,8 @@ TIME="24:00:00"
 MAX_JOBS=100
 START_ID=1
 END_ID=100
-CLUSTER="genius"    
-MEMORY_PER_CPU=8  
+CLUSTER="genius"
+MEMORY_PER_CPU=8
 CPUS_PER_TASK=4
 GPUS_PER_NODE=1
 MAIL_TYPE="NONE"  # : NONE, BEGIN, END, FAIL, ALL
@@ -16,7 +16,7 @@ MAIL_USER=""
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 RED='\033[0;31m'
-NC='\033[0m' 
+NC='\033[0m'
 
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -218,7 +218,7 @@ if [ $? -eq 0 ]; then
     echo "Use 'squeue -j $JOBID' to check status"
     echo "Use 'scancel $JOBID' to cancel the entire job array"
     echo "Logs will be written to logs/exp_${JOBID}_*.log"
-    
+
     SUMMARY_FILE="submissions_${JOBID}.txt"
     cat > $SUMMARY_FILE << SUMMARY
 Job Array ID: $JOBID
@@ -229,7 +229,7 @@ Cluster: $CLUSTER
 Array range: $START_ID-$END_ID
 Max concurrent jobs: $MAX_JOBS
 SUMMARY
-    
+
     echo "Summary saved to $SUMMARY_FILE"
 else
     echo -e "${RED}Error submitting job array${NC}"
