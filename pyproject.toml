@@ -29,7 +29,9 @@ text2text = ">=0.3.0"
 [tool.poetry.group.dev.dependencies]
 ruff = "*"
 pre-commit = "*"
-pytest = "*"
+pytest = "^7.0.0"
+pytest-cov = "^4.0.0"
+pytest-xdist = "^3.0.0"
 
 [tool.ruff]
 line-length = 120

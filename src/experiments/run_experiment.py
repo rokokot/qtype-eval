@@ -17,6 +17,68 @@ from src.training.lm_trainer import LMTrainer
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
 
+
+# Add after the existing imports
+import os
+import logging
+import hydra
+from omegaconf import DictConfig, OmegaConf
+import wandb
+import numpy as np
+import torch
+from datetime import datetime
+from typing import Optional, Dict, Any, List
+
+# ... existing code ...
+
+def setup_wandb(cfg: DictConfig,experiment_type: str,task: str,model_type: str,language: Optional[str] = None,languages: Optional[List[str]] = None,train_language: Optional[str] = None,eval_language: Optional[str] = None) -> Optional[wandb.Run]:
+  
+    if cfg.wandb.mode == "disabled":
+        return None
+    
+    tags = [experiment_type, task, model_type]
+    
+    if language:
+        tags.append(f"lang_{language}")
+    elif languages:
+        for lang in languages:
+            tags.append(f"lang_{lang}")
+    
+    if train_language and eval_language:
+        tags.append(f"cross_{train_language}_to_{eval_language}")
+    
+    if cfg.experiment.use_controls:
+        tags.append(f"control_{cfg.experiment.control_index}")
+    
+    wandb_config = {"experiment": {"type": experiment_type,
+            "task": task,
+            "language": language,
+            "languages": languages,
+            "train_language": train_language,
+            "eval_language": eval_language,
+            "use_controls": cfg.experiment.use_controls,
+            "control_index": cfg.experiment.control_index if cfg.experiment.use_controls else None,
+        },"model": OmegaConf.to_container(cfg.model, resolve=True),
+        "training": OmegaConf.to_container(cfg.training, resolve=True),
+        "data": OmegaConf.to_container(cfg.data, resolve=True),
+        "seed": cfg.seed,}
+    
+    run = wandb.init(project=cfg.wandb.project,entity=cfg.wandb.entity,name=cfg.experiment_name,config=wandb_config,tags=tags,mode=cfg.wandb.mode,job_type=experiment_type)
+    
+    config_artifact = wandb.Artifact(name=f"config_{cfg.experiment_name}",type="config")
+    
+    with open(os.path.join(cfg.output_dir, "config.yaml"), "w") as f:
+        f.write(OmegaConf.to_yaml(cfg))
+    
+    config_artifact.add_file(os.path.join(cfg.output_dir, "config.yaml"))
+    run.log_artifact(config_artifact)
+    
+    return run
+
+
+
+
+
 @hydra.main(config_path="../../configs", config_name="config")
 def main(cfg: DictConfig):
     
@@ -27,13 +89,6 @@ def main(cfg: DictConfig):
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(cfg.seed)
     
-    if cfg.wandb.mode != "disabled":
-        wandb.init(
-            project=cfg.wandb.project,
-            entity=cfg.wandb.entity,
-            name=cfg.experiment_name,
-            config=OmegaConf.to_container(cfg, resolve=True),
-            mode=cfg.wandb.mode)
     
     # === get task 
     task = cfg.experiment.tasks[0] if isinstance(cfg.experiment.tasks, list) else cfg.experiment.tasks
@@ -47,11 +102,30 @@ def main(cfg: DictConfig):
     
 
     if cfg.experiment.type == "sklearn_baseline":
-        run_sklearn_experiment(cfg, task, task_type, submetric)
+        wandb_run = setup_wandb(cfg=cfg,experiment_type=cfg.experiment.type,task=task if not submetric else submetric,
+            model_type=cfg.model.model_type,languages=cfg.data.languages)
+        
+        results = run_sklearn_experiment(cfg, task, task_type, submetric)
+        
+        if wandb_run:
+            wandb_run.finish()
+
+
     elif cfg.experiment.type == "lm_probe":
-        run_lm_experiment(cfg, task, task_type, submetric)
+        results = run_lm_experiment(cfg, task, task_type, submetric)
+
     elif cfg.experiment.type == "lm_probe_cross_lingual":
-        run_cross_lingual_experiment(cfg, task, task_type)
+        wandb_run = setup_wandb(cfg=cfg,
+            experiment_type=cfg.experiment.type,
+            task=task,
+            model_type=cfg.model.model_type,
+            train_language=cfg.data.train_language,
+            eval_language=cfg.data.eval_language)
+        
+        results = run_cross_lingual_experiment(cfg, task, task_type)
+    
+        if wandb_run:
+            wandb_run.finish()
     else:
         logger.error(f"Unknown experiment type: {cfg.experiment.type}")
     
@@ -125,10 +199,15 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
     for language in cfg.data.languages:
         logger.info(f"Processing language: {language}")
         
-        # Get control settings
+        wandb_run = setup_wandb(
+            cfg=cfg,
+            experiment_type=cfg.experiment.type,
+            task=task if not submetric else submetric,
+            model_type=cfg.model.model_type,
+            language=language)
+        
         control_index = cfg.experiment.control_index if cfg.experiment.use_controls else None
         
-        # Create dataloaders
         train_loader, val_loader, test_loader = create_lm_dataloaders(
             language=language,
             task=task if not submetric else submetric,
@@ -139,59 +218,40 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
             num_workers=cfg.training.num_workers
         )
         
-        # Create model
         model_params = OmegaConf.to_container(cfg.model, resolve=True)
         model = create_model("lm_probe", task_type, **model_params)
         
-        # Create language-specific output directory
         language_output_dir = os.path.join(cfg.output_dir, language)
         os.makedirs(language_output_dir, exist_ok=True)
         
-        # Train and evaluate
-        trainer = LMTrainer(
-            model=model,
-            task_type=task_type,
-            learning_rate=cfg.training.lr,
-            weight_decay=cfg.training.weight_decay,
-            num_epochs=cfg.training.num_epochs,
-            patience=cfg.training.patience,
-            output_dir=language_output_dir
-        )
+        trainer = LMTrainer(model=model,task_type=task_type,learning_rate=cfg.training.lr,weight_decay=cfg.training.weight_decay,num_epochs=cfg.training.num_epochs,patience=cfg.training.patience,output_dir=language_output_dir,wandb_run=wandb_run)
         
-        results = trainer.train(
-            train_loader=train_loader,
-            val_loader=val_loader,
-            test_loader=test_loader
-        )
+        results = trainer.train(train_loader=train_loader,val_loader=val_loader,test_loader=test_loader)
         
-        # Add metadata
         results.update({
             "language": language,
             "task": task,
             "task_type": task_type,
             "model_type": cfg.model.model_type,
             "is_control": cfg.experiment.use_controls,
-            "control_index": cfg.experiment.control_index
-        })
+            "control_index": cfg.experiment.control_index})
         
         if submetric:
             results["submetric"] = submetric
         
         all_results[language] = results
         
-        # Log to WandB
-        if cfg.wandb.mode != "disabled":
-            for metric_type in ["train_metrics", "val_metrics", "test_metrics"]:
-                if metric_type in results and results[metric_type]:
-                    for metric_name, metric_value in results[metric_type].items():
-                        wandb.log({
-                            f"{language}_{metric_type}_{metric_name}": metric_value,
-                            "language": language,
-                            "task": task,
-                            "is_control": cfg.experiment.use_controls
-                        })
+        if wandb_run:
+            model_artifact = wandb.Artifact(
+                name=f"model_{task}_{language}",
+                type="model",
+                description=f"Trained model for {task} on {language}")
+            
+            model_artifact.add_dir(language_output_dir)
+            wandb_run.log_artifact(model_artifact)
+            
+            wandb_run.finish()
     
-    # Save combined results
     with open(os.path.join(cfg.output_dir, "all_results.json"), "w") as f:
         import json
         json.dump(all_results, f, indent=2)
@@ -199,34 +259,27 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
     return all_results
 
 def run_cross_lingual_experiment(cfg, task, task_type):
-    """Run cross-lingual transfer experiment."""
     logger.info(f"Running cross-lingual experiment: {cfg.data.train_language} -> {cfg.data.eval_language}")
     
-    # Get source language data
     train_loader, val_loader, _ = create_lm_dataloaders(
         language=cfg.data.train_language,
         task=task,
         model_name=cfg.model.lm_name,
         batch_size=cfg.training.batch_size,
         cache_dir=cfg.data.cache_dir,
-        num_workers=cfg.training.num_workers
-    )
+        num_workers=cfg.training.num_workers)
     
-    # Get target language data (test set)
     _, _, test_loader = create_lm_dataloaders(
         language=cfg.data.eval_language,
         task=task,
         model_name=cfg.model.lm_name,
         batch_size=cfg.training.batch_size,
         cache_dir=cfg.data.cache_dir,
-        num_workers=cfg.training.num_workers
-    )
+        num_workers=cfg.training.num_workers)
     
-    # Create model
     model_params = OmegaConf.to_container(cfg.model, resolve=True)
     model = create_model("lm_probe", task_type, **model_params)
     
-    # Train and evaluate
     trainer = LMTrainer(
         model=model,
         task_type=task_type,
@@ -234,25 +287,20 @@ def run_cross_lingual_experiment(cfg, task, task_type):
         weight_decay=cfg.training.weight_decay,
         num_epochs=cfg.training.num_epochs,
         patience=cfg.training.patience,
-        output_dir=cfg.output_dir
-    )
+        output_dir=cfg.output_dir)
     
     results = trainer.train(
         train_loader=train_loader,
         val_loader=val_loader,
-        test_loader=test_loader
-    )
+        test_loader=test_loader)
     
-    # Add metadata
     results.update({
         "train_language": cfg.data.train_language,
         "eval_language": cfg.data.eval_language,
         "task": task,
         "task_type": task_type,
-        "model_type": cfg.model.model_type
-    })
+        "model_type": cfg.model.model_type})
     
-    # Log to WandB
     if cfg.wandb.mode != "disabled":
         for metric_type in ["train_metrics", "val_metrics", "test_metrics"]:
             if metric_type in results and results[metric_type]:
@@ -264,7 +312,6 @@ def run_cross_lingual_experiment(cfg, task, task_type):
                         "task": task
                     })
     
-    # Save results
     with open(os.path.join(cfg.output_dir, "cross_lingual_results.json"), "w") as f:
         import json
         json.dump(results, f, indent=2)

@@ -1,6 +1,6 @@
 
 # Analysis script for multilingual question probing experiments.
-# This script processes all experiment results and generates visualizations and tables.
+# This script processes  results of all experiments and generates visualizations and tables.
 
 import os
 import argparse
@@ -33,16 +33,7 @@ SUBMETRICS = ["avg_links_len", "avg_max_depth", "avg_subordinate_chain_len",
 MODEL_TYPES = ["dummy", "logistic", "ridge", "xgboost", "lm_probe"]
 
 def load_results(results_dir: str) -> List[Dict]:
-    """
-    Load all results from JSON files in the results directory.
-    
-    Args:
-        results_dir: Path to results directory
-        
-    Returns:
-        List of result dictionaries
-    """
-    # Find all JSON result files
+   
     result_files = glob.glob(os.path.join(results_dir, "**", "results.json"), recursive=True)
     result_files += glob.glob(os.path.join(results_dir, "**", "results_with_metadata.json"), recursive=True)
     result_files += glob.glob(os.path.join(results_dir, "**", "all_results.json"), recursive=True)
@@ -50,14 +41,14 @@ def load_results(results_dir: str) -> List[Dict]:
     
     logger.info(f"Found {len(result_files)} result files")
     
-    # Load each file
+    
     results = []
     for file in result_files:
         try:
             with open(file, "r") as f:
                 result = json.load(f)
             
-            # Add experiment name from directory
+        
             parts = file.split(os.sep)
             experiment_name = parts[-3] if len(parts) >= 3 else parts[-2]
             result["experiment_name"] = experiment_name

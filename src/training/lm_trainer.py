@@ -24,7 +24,8 @@ class LMTrainer:
         num_epochs: int = 10,
         patience: int = 3,
         device: Optional[str] = None,
-        output_dir: Optional[str] = None):
+        output_dir: Optional[str] = None,
+        wandb_run: Optional[Any] = None):
         self.model = model
         self.task_type = task_type
         self.learning_rate = learning_rate
@@ -33,36 +34,33 @@ class LMTrainer:
         self.patience = patience
         self.device = device if device else ('cuda' if torch.cuda.is_available() else 'cpu')
         self.output_dir = output_dir
+        self.wandb_run = wandb_run
+
         
         if output_dir:
             os.makedirs(output_dir, exist_ok=True)
         
         self.criterion = nn.BCELoss() if task_type == "classification" else nn.MSELoss()
     
-    def train(
-        self,
-        train_loader,
-        val_loader=None,
-        test_loader=None) -> Dict[str, Any]:
+    def train(self,train_loader,val_loader=None,test_loader=None) -> Dict[str, Any]:
         self.model = self.model.to(self.device)
         
-        optimizer = optim.AdamW(
-            self.model.parameters(),
-            lr=self.learning_rate,
-            weight_decay=self.weight_decay)
+        optimizer = optim.AdamW(self.model.parameters(),lr=self.learning_rate,weight_decay=self.weight_decay)
         
         scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=2, verbose=True)
         
         best_val_loss = float('inf')
         best_model_state = None
         patience_counter = 0
-        
         start_time = time.time()
+        
         
         for epoch in range(self.num_epochs):
             self.model.train()
             train_loss = 0.0
             
+            progress_bar = tqdm(train_loader, desc=f"Epoch {epoch+1}/{self.num_epochs}")
+
             for batch in tqdm(train_loader, desc=f"Epoch {epoch+1}/{self.num_epochs}"):
                 batch = {k: v.to(self.device) for k, v in batch.items()}
                 
@@ -80,17 +78,37 @@ class LMTrainer:
             
             avg_train_loss = train_loss / len(train_loader)
             logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Train Loss: {avg_train_loss:.4f}")
+
+            if self.wandb_run:
+                self.wandb_run.log({"epoch": epoch + 1,"train_loss": avg_train_loss,"learning_rate": optimizer.param_groups[0]['lr']})
+            
             
             if val_loader:
                 val_loss, val_metrics = self._evaluate(val_loader)
                 logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Val Loss: {val_loss:.4f}, Metrics: {val_metrics}")
                 
                 scheduler.step(val_loss)
-                
+
+                if self.wandb_run:
+                    self.wandb_run.log({
+                        "epoch": epoch + 1,
+                        "val_loss": val_loss,
+                        **{f"val_{k}": v for k, v in val_metrics.items()}
+                    })
+
+
+
                 if val_loss < best_val_loss:
                     best_val_loss = val_loss
                     best_model_state = {k: v.cpu() for k, v in self.model.state_dict().items()}
                     patience_counter = 0
+
+                    if self.wandb_run:
+                        self.wandb_run.log({
+                            "best_val_loss": best_val_loss,
+                            **{f"best_val_{k}": v for k, v in val_metrics.items()}})
+
+
                 else:
                     patience_counter += 1
                 
@@ -115,6 +133,17 @@ class LMTrainer:
             "val_metrics": {"loss": val_loss, **val_metrics} if val_metrics else None,
             "test_metrics": {"loss": test_loss, **test_metrics} if test_metrics else None}
         
+        if self.wandb_run:
+            self.wandb_run.log({
+                "train_time": train_time,
+                **{f"final_train_{k}": v for k, v in train_metrics.items()},
+                **(
+                    {f"final_val_{k}": v for k, v in val_metrics.items()} 
+                    if val_metrics else {}
+                ),**({f"final_test_{k}": v for k, v in test_metrics.items()} 
+                    if test_metrics else {})})
+
+
         if self.output_dir:
             with open(os.path.join(self.output_dir, "results.json"), "w") as f:
                 json.dump(results, f, indent=2)
