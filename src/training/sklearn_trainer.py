@@ -6,6 +6,8 @@ from typing import Dict, Any, Tuple, Optional, Union, List
 from sklearn.metrics import accuracy_score, f1_score, mean_squared_error, r2_score
 import logging
 import time
+import joblib
+import wandb
 import json
 import os
 
@@ -17,10 +19,12 @@ class SklearnTrainer:
         self,
         model,
         task_type: str = "classification",
-        output_dir: Optional[str] = None):
+        output_dir: Optional[str] = None,
+        wandb_run: Optional[Any] = None):
         self.model = model
         self.task_type = task_type
         self.output_dir = output_dir
+        self.wandb_run = wandb_run 
         
         if output_dir:
             os.makedirs(output_dir, exist_ok=True)
@@ -29,17 +33,7 @@ class SklearnTrainer:
         train_data: Tuple[np.ndarray, np.ndarray],
         val_data: Optional[Tuple[np.ndarray, np.ndarray]] = None,
         test_data: Optional[Tuple[np.ndarray, np.ndarray]] = None) -> Dict[str, Any]:
-        
-        """
-        Args:
-            train_data: Training data (X, y)
-            val_data: Validation data (X, y)
-            test_data: Test data (X, y)
-            
-        Returns:
-            Dictionary with training results
-        """
-
+  
         X_train, y_train = train_data
         
       
@@ -50,15 +44,52 @@ class SklearnTrainer:
         start_time = time.time()
         
    
-        self.model.fit(X_train, y_train)
+        is_xgboost = "XGB" in self.model.__class__.__name__
         
+        if is_xgboost and val_data is not None:
+            X_val, y_val = val_data
+            self.model.fit(X_train, y_train, eval_set=[(X_train, y_train), (X_val, y_val)],
+                eval_metric='logloss' if self.task_type == "classification" else 'rmse',
+                verbose=True)
+            
+            if self.wandb_run:
+                evals_result = self.model.evals_result()
+                train_metrics = list(evals_result['validation_0'].values())[0]
+                val_metrics = list(evals_result['validation_1'].values())[0]
+                
+                for i, (train_val, val_val) in enumerate(zip(train_metrics, val_metrics)):
+                    self.wandb_run.log({'epoch': i,'train_metric': train_val,'val_metric': val_val})
+        else:
+            self.model.fit(X_train, y_train)
+        
+
         train_time = time.time() - start_time
         logger.info(f"Training completed in {train_time:.2f} seconds")
         
         train_preds = self.model.predict(X_train)
         train_metrics = self._calculate_metrics(y_train, train_preds)
         
+
         logger.info(f"Training metrics: {train_metrics}")
+
+        if is_xgboost and hasattr(self.model, 'feature_importances_') and self.wandb_run:
+            feature_importance = self.model.feature_importances_
+            
+            if len(feature_importance) > 50:
+                top_indices = np.argsort(feature_importance)[-50:]
+                top_importances = feature_importance[top_indices]
+                feature_names = [f"feature_{i}" for i in top_indices]
+            else:
+                top_importances = feature_importance
+                feature_names = [f"feature_{i}" for i in range(len(feature_importance))]
+            
+            importance_table = wandb.Table(
+                data=[[name, importance] for name, importance in zip(feature_names, top_importances)],
+                columns=["feature", "importance"]
+            )
+            self.wandb_run.log({"feature_importance": importance_table})
+
+
 
         val_metrics = None
         if val_data is not None:
@@ -77,6 +108,9 @@ class SklearnTrainer:
             
             logger.info(f"Test metrics: {test_metrics}")
         
+        if self.wandb_run:
+            self.wandb_run.log({"train_time": train_time,**{f"train_{k}": v for k, v in train_metrics.items()},**({f"val_{k}": v for k, v in val_metrics.items()} if val_metrics else {}),**({f"test_{k}": v for k, v in test_metrics.items()} if test_metrics else {})})
+        
 
         results = {
             "model_type": self.model.__class__.__name__,
@@ -92,9 +126,13 @@ class SklearnTrainer:
                 
 
             try:
-                import joblib
                 joblib.dump(self.model, os.path.join(self.output_dir, "model.joblib"))
                 logger.info(f"Model saved to {self.output_dir}/model.joblib")
+
+                if self.wandb_run:
+                    model_artifact = wandb.Artifact(name=f"model_{self.model.__class__.__name__}",type="model",description=f"Trained {self.model.__class__.__name__} for {self.task_type}")
+                    model_artifact.add_file(os.path.join(self.output_dir, "model.joblib"))
+                    self.wandb_run.log_artifact(model_artifact)
             except Exception as e:
                 logger.warning(f"Could not save model: {e}")
         
