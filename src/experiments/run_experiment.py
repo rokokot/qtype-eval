@@ -27,7 +27,7 @@ def setup_wandb(
     languages: Optional[List[str]] = None,
     train_language: Optional[str] = None,
     eval_language: Optional[str] = None,
-) -> Optional[wandb.Run]:
+) -> Optional[wandb.run]:
     """Set up W&B with structured config and tags.
 
     Args:
