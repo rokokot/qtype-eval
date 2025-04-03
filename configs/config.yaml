@@ -1,4 +1,4 @@
-# main config for mulitlingual question probing experiments
+# main config
 defaults:
   - _self_
   - data: default
@@ -26,7 +26,7 @@ slurm:
   cpus_per_task: 4
   mem_per_cpu: 8
   job_name: ${experiment_name}
-  account: "vsc37132" 
+  account: "intro_vsc37132" 
 
 # hydra settings
 hydra:

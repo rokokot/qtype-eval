@@ -123,7 +123,6 @@ def load_combined_dataset(
     logger.info(f"Loading {config_name} dataset (all languages, {split})")
 
     try:
-        # Use explicit cache_dir for better control on VSC
         dataset = load_dataset(DATASET_NAME, name=config_name, split=split, cache_dir=cache_dir)
         df = dataset.to_pandas()
         logger.info(f"Loaded {len(df)} examples for {split}")
@@ -131,7 +130,7 @@ def load_combined_dataset(
     except Exception as e:
         logger.error(f"Error loading data: {e}")
         raise
-
+    
 def load_hf_data(language, task, split, control_index=None, cache_dir=CACHE_DIR):
     config_name = "base"
     if control_index is not None:
@@ -145,13 +144,39 @@ def load_hf_data(language, task, split, control_index=None, cache_dir=CACHE_DIR)
     logger.info(f"Loading {config_name} dataset for {language} language ({split})")
 
     try:
-        dataset = load_dataset(
-            DATASET_NAME, 
-            name=config_name, 
-            split=split, 
-            cache_dir=cache_dir,
-            use_auth_token=False  
-        )
+        # Try loading with local_files_only first if offline mode is set
+        local_only = os.environ.get("HF_DATASETS_OFFLINE", "0") == "1"
+        
+        try:
+            if local_only:
+                dataset = load_dataset(
+                    DATASET_NAME, 
+                    name=config_name, 
+                    split=split, 
+                    cache_dir=cache_dir,
+                    local_files_only=True  # Force using cached version
+                )
+                logger.info("Successfully loaded dataset from local cache")
+            else:
+                dataset = load_dataset(
+                    DATASET_NAME, 
+                    name=config_name, 
+                    split=split, 
+                    cache_dir=cache_dir
+                )
+        except Exception as cache_error:
+            if local_only:
+                logger.warning(f"Could not load from cache with local_files_only=True: {cache_error}")
+                logger.info("Trying again without local_files_only restriction...")
+                dataset = load_dataset(
+                    DATASET_NAME, 
+                    name=config_name, 
+                    split=split, 
+                    cache_dir=cache_dir,
+                    local_files_only=False
+                )
+            else:
+                raise
         
         if language != "all":
             dataset = dataset.filter(lambda example: example["language"] == language)
@@ -162,7 +187,6 @@ def load_hf_data(language, task, split, control_index=None, cache_dir=CACHE_DIR)
     except Exception as e:
         logger.error(f"Error loading data for {language}: {e}")
         raise
-
 
 def load_tfidf_features(split: str, vectors_dir: str = "./data/features"):
    

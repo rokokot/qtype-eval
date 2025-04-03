@@ -1,10 +1,4 @@
 #!/usr/bin/env python3
-"""
-Script to visualize cross-linguistic patterns in the QTC dataset.
-This script generates visualizations that highlight similarities and differences
-in question structures and complexity metrics across languages.
-"""
-
 import os
 import argparse
 import pandas as pd

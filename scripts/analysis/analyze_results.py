@@ -68,15 +68,7 @@ def load_results(results_dir: str) -> List[Dict]:
 
 
 def process_results(results: List[Dict]) -> pd.DataFrame:
-    """
-    Process results into a DataFrame.
-
-    Args:
-        results: List of result dictionaries
-
-    Returns:
-        DataFrame with processed results
-    """
+   
     processed_results = []
 
     for result in results:

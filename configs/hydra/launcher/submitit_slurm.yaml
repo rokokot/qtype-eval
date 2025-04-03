@@ -18,4 +18,4 @@ setup:
   - module purge
   - module load Python/3.9
   - export PYTHONPATH=$PYTHONPATH:$PWD
-  - export HF_HOME=$VSC_SCRATCH/hf_cache
+  - export HF_HOME=$VSC_DATA/hf_cache
