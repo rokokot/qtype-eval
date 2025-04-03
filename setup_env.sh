@@ -44,3 +44,8 @@ fi
 
 echo -e "\nSetup complete! To run an experiment, use:"
 echo "python -m src.experiments.run_experiment experiment=question_type model=dummy data.languages=\"[en]\""
+
+echo 'export HF_DATASETS_OFFLINE=1' >> ~/.bashrc
+export HF_DATASETS_OFFLINE=1
+echo 'export TRANSFORMERS_OFFLINE=1' >> ~/.bashrc
+export TRANSFORMERS_OFFLINE=1

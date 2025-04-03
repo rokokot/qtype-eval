@@ -132,7 +132,36 @@ def load_combined_dataset(
         logger.error(f"Error loading data: {e}")
         raise
 
+def load_hf_data(language, task, split, control_index=None, cache_dir=CACHE_DIR):
+    config_name = "base"
+    if control_index is not None:
+        if task == "question_type":
+            config_name = f"control_question_type_seed{control_index}"
+        elif task == "complexity":
+            config_name = f"control_complexity_seed{control_index}"
+        else:
+            config_name = f"control_{task}_seed{control_index}"
 
+    logger.info(f"Loading {config_name} dataset for {language} language ({split})")
+
+    try:
+        dataset = load_dataset(
+            DATASET_NAME, 
+            name=config_name, 
+            split=split, 
+            cache_dir=cache_dir,
+            use_auth_token=False  
+        )
+        
+        if language != "all":
+            dataset = dataset.filter(lambda example: example["language"] == language)
+            
+        df = dataset.to_pandas()
+        logger.info(f"Loaded {len(df)} examples for {language} ({split})")
+        return df
+    except Exception as e:
+        logger.error(f"Error loading data for {language}: {e}")
+        raise
 
 
 def load_tfidf_features(split: str, vectors_dir: str = "./data/features"):
@@ -176,7 +205,7 @@ def load_sklearn_data(languages: List[str],task: str = "question_type",submetric
     logger.info(f"Loaded feature matrices with shapes: {train_features.shape}, {val_features.shape}, {test_features.shape}")
 
     train_df = load_combined_dataset("train", task, control_index, cache_dir)
-    val_df = load_combined_dataset("validation", task, None, cache_dir)
+    val_df = load_combined_dataset("validation", task, control_index, cache_dir)
     test_df = load_combined_dataset("test", None, cache_dir)  
     
     if task == "question_type":
@@ -217,10 +246,25 @@ def create_lm_dataloaders(
     cache_dir: str = "./data/cache",
     num_workers: int = 4,
 ):
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+
+    try:
+        # Use offline-compatible tokenizer loading
+        tokenizer = AutoTokenizer.from_pretrained(
+            model_name, 
+            cache_dir=cache_dir,
+            local_files_only=True,  # Force using cache
+            use_fast=True  # Use faster tokenizer implementation
+        )
+        logger.info(f"Loaded tokenizer: {model_name}")
+    except Exception as e:
+        logger.warning(f"Error loading tokenizer with local_files_only=True: {e}")
+        logger.info("Trying again without local_files_only...")
+        tokenizer = AutoTokenizer.from_pretrained(model_name, cache_dir=cache_dir)
+
 
     train_df = load_hf_data(language, task, "train", control_index, cache_dir)
-    val_df = load_hf_data(language, task, "validation", control_index, cache_dir)
+    val_df = load_hf_data(language, task, "validation", None, cache_dir)
     test_df = load_hf_data(language, task, "test", None, cache_dir)  # Always use real test data
 
     train_dataset = LMQuestionDataset(train_df, tokenizer, task)
@@ -228,7 +272,7 @@ def create_lm_dataloaders(
     test_dataset = LMQuestionDataset(test_df, tokenizer, task)
 
     train_loader = DataLoader(
-        train_dataset, batch_size=batch_size, shuffle=False, num_workers=num_workers, pin_memory=True
+        train_dataset, batch_size=batch_size, shuffle=True, num_workers=num_workers, pin_memory=True
     )
 
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=num_workers, pin_memory=True)
