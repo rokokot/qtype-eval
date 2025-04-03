@@ -17,10 +17,12 @@ import logging
 logger = logging.getLogger(__name__)
 
 DATASET_NAME = "rokokot/question-type-and-complexity"
+CACHE_DIR = os.environ.get("HF_CACHE_DIR", "./data/cache")
+
 
 TASK_TO_FEATURE = {
     "question_type": "question_type",
-    "complexity": "lang_norm_complexity_score",  # lang_norm_complexity_score
+    "complexity": "lang_norm_complexity_score",
     "avg_links_len": "avg_links_len",
     "avg_max_depth": "avg_max_depth",
     "avg_subordinate_chain_len": "avg_subordinate_chain_len",
@@ -89,9 +91,7 @@ class LMQuestionDataset(Dataset):
         text = self.texts[idx]
         label = self.labels[idx]
 
-        encoding = self.tokenizer(
-            text, max_length=self.max_length, padding="max_length", truncation=True, return_tensors="pt"
-        )
+        encoding = self.tokenizer(text, max_length=self.max_length, padding="max_length", truncation=True, return_tensors="pt")
 
         encoding = {k: v.squeeze(0) for k, v in encoding.items()}
 
@@ -104,14 +104,13 @@ class LMQuestionDataset(Dataset):
 
         return encoding
 
-
-def load_hf_data(
-    language: str,
+def load_combined_dataset(
+    split: str,
     task: str = "question_type",
-    split: str = "train",
     control_index: Optional[int] = None,
-    cache_dir: str = "./data/cache",
+    cache_dir: str = CACHE_DIR,
 ) -> pd.DataFrame:
+    """Load the combined dataset for all languages."""
     config_name = "base"
     if control_index is not None:
         if task == "question_type":
@@ -121,152 +120,65 @@ def load_hf_data(
         else:
             config_name = f"control_{task}_seed{control_index}"
 
-    logger.info(f"Loading {config_name} dataset ({language}, {split})")
+    logger.info(f"Loading {config_name} dataset (all languages, {split})")
 
     try:
+        # Use explicit cache_dir for better control on VSC
         dataset = load_dataset(DATASET_NAME, name=config_name, split=split, cache_dir=cache_dir)
         df = dataset.to_pandas()
-
-        df = df[df["language"] == language].reset_index(drop=True)
-        logger.info(f"Loaded {len(df)} examples for {language}, {task}, {split}")
-
+        logger.info(f"Loaded {len(df)} examples for {split}")
         return df
     except Exception as e:
         logger.error(f"Error loading data: {e}")
         raise
 
 
-def prepare_sparse_matrices(features):
-    """Ensure features are in CSR sparse matrix format."""
-    # If already sparse, convert to CSR if needed
-    if sparse.issparse(features):
-        return sparse.csr_matrix(features)
-
-    logger.warning(f"Features are not sparse, attempting to convert type: {type(features)}")
-
-    try:
-        # If it's a numpy array of sparse matrices, stack them
-        if isinstance(features, np.ndarray) and features.shape[1] == 1:
-            sparse_matrices = []
-            for i in range(features.shape[0]):
-                if sparse.issparse(features[i, 0]):
-                    sparse_matrices.append(features[i, 0])
-                else:
-                    logger.warning(f"Non-sparse item found at index {i}")
-                    # Add an empty matrix
-                    sparse_matrices.append(sparse.csr_matrix((1, 128104)))
-
-            return sparse.vstack(sparse_matrices)
-
-        # Direct conversion attempt
-        return sparse.csr_matrix(features)
-    except Exception as e:
-        logger.error(f"Error converting to sparse matrix: {str(e)}")
-        # Provide a placeholder matrix
-        return sparse.csr_matrix((features.shape[0] if hasattr(features, "shape") else 100, 128104))
 
 
 def load_tfidf_features(split: str, vectors_dir: str = "./data/features"):
-    """Load TF-IDF features from file."""
+   
     file_path = os.path.join(vectors_dir, f"tfidf_vectors_{split}.pkl")
-    processed_path = os.path.join(vectors_dir, f"processed_{split}_vectors.pkl")
-
+    
     logger.info(f"Loading TF-IDF features from {file_path}")
-
-    # Try the processed file first, if it exists
-    if os.path.exists(processed_path):
-        try:
-            with open(processed_path, "rb") as f:
-                vectors = pickle.load(f)
-
-            # Check if it's already in the right format
-            if sparse.issparse(vectors):
-                return vectors
-        except Exception as e:
-            logger.warning(f"Error loading processed vectors: {e}")
-
-    # If that fails, try the original file
+    
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"TF-IDF features not found at {file_path}")
-
+    
     try:
         with open(file_path, "rb") as f:
             vectors = pickle.load(f)
+        
+        if isinstance(vectors, list) or (isinstance(vectors, np.ndarray) and vectors.ndim > 1):
+            sparse_matrices = [matrix[0] for matrix in vectors]
+            stacked_vectors = sparse.vstack(sparse_matrices)
 
-        # Check if it's already a sparse matrix
+            logger.info(f"Stacked {len(sparse_matrices)} matrices to shape {stacked_vectors.shape}, all ok")
+            return stacked_vectors
+        
         if sparse.issparse(vectors):
             return vectors
-
-        # If it's an array of sparse matrices, stack them
-        if isinstance(vectors, np.ndarray) and vectors.shape[1] == 1:
-            logger.info("Found array of sparse matrices, converting to stacked format")
-            sparse_matrices = []
-
-            for matrix in vectors:
-                if sparse.issparse(matrix[0]):
-                    sparse_matrices.append(matrix[0])
-                else:
-                    logger.warning("Non-sparse matrix found, creating empty matrix")
-                    # Use a default shape that matches your data
-                    sparse_matrices.append(sparse.csr_matrix((1, 128104)))
-
-            stacked_vectors = sparse.vstack(sparse_matrices)
-            logger.info(f"Stacked {len(sparse_matrices)} matrices to shape {stacked_vectors.shape}")
-
-            # Save the processed version for future use
-            with open(processed_path, "wb") as f:
-                pickle.dump(stacked_vectors, f)
-
-            return stacked_vectors
-
-        # Fallback: try direct conversion
+        
         return sparse.csr_matrix(vectors)
-
+    
     except Exception as e:
         logger.error(f"Error loading TF-IDF features: {e}")
-        # Create an empty matrix as last resort
         logger.warning("Creating empty matrix as fallback")
         return sparse.csr_matrix((100, 128104))
 
 
-def load_sklearn_data(
-    languages: List[str],
-    task: str = "question_type",
-    submetric: Optional[str] = None,
-    control_index: Optional[int] = None,
-    cache_dir: str = "./data/cache",
-    vectors_dir: str = "./data/features",
-):
-    train_dfs = []
-    val_dfs = []
-    test_dfs = []
-
-    for language in languages:
-        train_dfs.append(load_hf_data(language, task, "train", control_index, cache_dir))
-        val_dfs.append(load_hf_data(language, task, "validation", control_index, cache_dir))
-        test_dfs.append(load_hf_data(language, task, "test", None, cache_dir))
-
-    train_df = pd.concat(train_dfs, ignore_index=True)
-    val_df = pd.concat(val_dfs, ignore_index=True)
-    test_df = pd.concat(test_dfs, ignore_index=True)
+def load_sklearn_data(languages: List[str],task: str = "question_type",submetric: Optional[str] = None,control_index: Optional[int] = None,cache_dir: str = "./data/cache",vectors_dir: str = "./data/features",):
 
     train_features = load_tfidf_features("train", vectors_dir)
     val_features = load_tfidf_features("dev", vectors_dir)
     test_features = load_tfidf_features("test", vectors_dir)
 
-    train_matrices = [prepare_sparse_matrices(train_features) for _ in languages]
-    val_matrices = [prepare_sparse_matrices(val_features) for _ in languages]
-    test_matrices = [prepare_sparse_matrices(test_features) for _ in languages]
 
-    if len(languages) > 1:
-        train_features = vstack(train_matrices)
-        val_features = vstack(val_matrices)
-        test_features = vstack(test_matrices)
-    else:
-        train_features = train_matrices[0]
-        val_features = val_matrices[0]
-        test_features = test_matrices[0]
+    logger.info(f"Loaded feature matrices with shapes: {train_features.shape}, {val_features.shape}, {test_features.shape}")
 
+    train_df = load_combined_dataset("train", task, control_index, cache_dir)
+    val_df = load_combined_dataset("validation", task, None, cache_dir)
+    test_df = load_combined_dataset("test", None, cache_dir)  
+    
     if task == "question_type":
         feature_name = "question_type"
     elif task == "complexity":
@@ -275,11 +187,13 @@ def load_sklearn_data(
         feature_name = submetric
     else:
         feature_name = TASK_TO_FEATURE.get(task, task)
-
+    
+    # Extract labels
     train_labels = train_df[feature_name].values
     val_labels = val_df[feature_name].values
     test_labels = test_df[feature_name].values
-
+    
+    # Convert to appropriate types
     if task == "question_type":
         train_labels = train_labels.astype(np.int64)
         val_labels = val_labels.astype(np.int64)
@@ -288,9 +202,11 @@ def load_sklearn_data(
         train_labels = train_labels.astype(np.float32)
         val_labels = val_labels.astype(np.float32)
         test_labels = test_labels.astype(np.float32)
-
+    
     return (train_features, train_labels), (val_features, val_labels), (test_features, test_labels)
 
+
+    
 
 def create_lm_dataloaders(
     language: str,

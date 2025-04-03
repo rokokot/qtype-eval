@@ -26,27 +26,11 @@ def setup_wandb(
     language: Optional[str] = None,
     languages: Optional[List[str]] = None,
     train_language: Optional[str] = None,
-    eval_language: Optional[str] = None,
-) -> Optional[wandb.run]:
-    """Set up W&B with structured config and tags.
+    eval_language: Optional[str] = None):
 
-    Args:
-        cfg: Hydra config
-        experiment_type: Type of experiment (e.g., "sklearn_baseline", "lm_probe")
-        task: Task name (e.g., "question_type", "complexity")
-        model_type: Model type (e.g., "dummy", "lm_probe")
-        language: Single language for monolingual experiments
-        languages: List of languages for multilingual experiments
-        train_language: Source language for cross-lingual experiments
-        eval_language: Target language for cross-lingual experiments
-
-    Returns:
-        wandb.Run or None if WandB is disabled
-    """
     if cfg.wandb.mode == "disabled":
         return None
 
-    # Create tags for easier filtering in the WandB UI
     tags = [experiment_type, task, model_type]
 
     if language:
@@ -61,7 +45,6 @@ def setup_wandb(
     if cfg.experiment.use_controls:
         tags.append(f"control_{cfg.experiment.control_index}")
 
-    # Create a more structured config for better experiment tracking
     wandb_config = {
         "experiment": {
             "type": experiment_type,
@@ -79,7 +62,6 @@ def setup_wandb(
         "seed": cfg.seed,
     }
 
-    # Initialize wandb
     run = wandb.init(
         project=cfg.wandb.project,
         entity=cfg.wandb.entity,
@@ -90,7 +72,6 @@ def setup_wandb(
         job_type=experiment_type,
     )
 
-    # Log the full Hydra config as an artifact
     config_artifact = wandb.Artifact(name=f"config_{cfg.experiment_name}", type="config")
 
     with open(os.path.join(cfg.output_dir, "config.yaml"), "w") as f:
@@ -107,25 +88,20 @@ def main(cfg: DictConfig):
     """Main function to run experiments based on config."""
     logger.info(f"Configuration:\n{OmegaConf.to_yaml(cfg)}")
 
-    # Set random seeds for reproducibility
     np.random.seed(cfg.seed)
     torch.manual_seed(cfg.seed)
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(cfg.seed)
 
-    # Get task and type
     task = cfg.experiment.tasks[0] if isinstance(cfg.experiment.tasks, list) else cfg.experiment.tasks
     task_type = "classification" if task == "question_type" else "regression"
 
-    # Handle submetrics
     submetric = None
     if task == "single_submetric" and hasattr(cfg.experiment, "submetric"):
         submetric = cfg.experiment.submetric
         task_type = "regression"
 
-    # Main experiment switch based on type
     if cfg.experiment.type == "sklearn_baseline":
-        # Initialize WandB for sklearn baselines
         wandb_run = setup_wandb(
             cfg=cfg,
             experiment_type=cfg.experiment.type,
@@ -134,10 +110,8 @@ def main(cfg: DictConfig):
             languages=cfg.data.languages,
         )
 
-        # Run experiment and get results
         run_sklearn_experiment(cfg, task, task_type, submetric)
 
-        # Finish wandb run
         if wandb_run:
             wandb_run.finish()
 

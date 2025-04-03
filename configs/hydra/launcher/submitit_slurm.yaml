@@ -15,5 +15,7 @@ constraint: null
 max_num_timeout: 5
 array_parallelism: 256
 setup:
-  - module load CUDA/11.7.0
+  - module purge
   - module load Python/3.9
+  - export PYTHONPATH=$PYTHONPATH:$PWD
+  - export HF_HOME=$VSC_SCRATCH/hf_cache
