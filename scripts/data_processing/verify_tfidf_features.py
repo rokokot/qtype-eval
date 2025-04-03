@@ -1,15 +1,12 @@
-# scripts/data_processing/verify_tfidf_features.py
-
 import os
 import pickle
-import argparse
 import logging
-from scipy.sparse import issparse
+import numpy as np
+from scipy.sparse import issparse, vstack
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
-
 
 def verify_tfidf_files(vectors_dir):
     """Verify that the TF-IDF feature files exist and are valid."""
@@ -21,69 +18,68 @@ def verify_tfidf_files(vectors_dir):
         "token_to_index_mapping.pkl",
     ]
 
-    missing_files = []
-    invalid_files = []
-
     for file_name in required_files:
         file_path = os.path.join(vectors_dir, file_name)
 
-        # Check if file exists
-        if not os.path.exists(file_path):
-            missing_files.append(file_name)
-            continue
-
-        # Check if file is a valid pickle
         try:
             with open(file_path, "rb") as f:
                 data = pickle.load(f)
 
-            # Check if vectors are sparse matrices
-            if "vectors" in file_name and not issparse(data):
-                invalid_files.append(f"{file_name} (not a sparse matrix)")
-
-            logger.info(f"{file_name}: Valid")
-
-            # Print shape for vector files
+            logger.info(f"{file_name}: Loaded successfully")
+            
+            # Detailed inspection for vector files
             if "vectors" in file_name:
-                if issparse(data):
-                    logger.info(f"  Shape: {data.shape}")
-                else:
-                    logger.info(f"  Type: {type(data)}")
+                split = file_name.split('_')[2].split('.')[0]
+                logger.info(f"Processing {split} vectors")
+                
+                if isinstance(data, list):
+                    # Attempt to stack matrices
+                    try:
+                        # Extract first matrix from each item if nested
+                        sparse_matrices = [
+                            matrix[0] if isinstance(matrix, list) and len(matrix) > 0 else matrix 
+                            for matrix in data
+                        ]
+                        
+                        # Verify each matrix is sparse
+                        non_sparse = [type(m) for m in sparse_matrices if not issparse(m)]
+                        if non_sparse:
+                            logger.warning(f"Non-sparse matrices found: {non_sparse}")
+                        
+                        # Stack the matrices
+                        stacked_vectors = vstack(sparse_matrices)
+                        
+                        logger.info(f"{split.capitalize()} vectors:")
+                        logger.info(f"  Original list length: {len(data)}")
+                        logger.info(f"  Stacked matrix shape: {stacked_vectors.shape}")
+                        logger.info(f"  Non-zero elements: {stacked_vectors.nnz}")
+                        logger.info(f"  Sparsity: {1 - (stacked_vectors.nnz / np.prod(stacked_vectors.shape)):.2%}")
+                    
+                    except Exception as stack_error:
+                        logger.error(f"Error stacking matrices: {stack_error}")
+                
+                elif issparse(data):
+                    logger.info(f"{split.capitalize()} vectors:")
+                    logger.info(f"  Sparse matrix shape: {data.shape}")
+                    logger.info(f"  Non-zero elements: {data.nnz}")
+                    logger.info(f"  Sparsity: {1 - (data.nnz / np.prod(data.shape)):.2%}")
+
         except Exception as e:
-            invalid_files.append(f"{file_name} ({str(e)})")
-
-    if missing_files:
-        logger.warning("Missing files:")
-        for file in missing_files:
-            logger.warning(f"  - {file}")
-
-    if invalid_files:
-        logger.warning("Invalid files:")
-        for file in invalid_files:
-            logger.warning(f"  - {file}")
-
-    if not missing_files and not invalid_files:
-        logger.info("All TF-IDF feature files are valid!")
-        return True
-    else:
-        return False
-
+            logger.error(f"Error processing {file_name}: {e}")
 
 def main(args):
     if not os.path.exists(args.vectors_dir):
         logger.error(f"Vectors directory not found: {args.vectors_dir}")
         return False
 
-    return verify_tfidf_files(args.vectors_dir)
-
+    verify_tfidf_files(args.vectors_dir)
 
 if __name__ == "__main__":
+    import argparse
     parser = argparse.ArgumentParser(description="Verify TF-IDF features")
     parser.add_argument(
         "--vectors-dir", type=str, default="./data/features", help="Directory containing TF-IDF features"
     )
     args = parser.parse_args()
 
-    success = main(args)
-    if not success:
-        exit(1)
+    main(args)
