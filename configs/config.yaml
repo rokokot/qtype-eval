@@ -26,7 +26,7 @@ slurm:
   cpus_per_task: 4
   mem_per_cpu: 8
   job_name: ${experiment_name}
-  account: "hpcinfo" #vsc37132
+  account: "vsc37132" 
 
 # hydra settings
 hydra:

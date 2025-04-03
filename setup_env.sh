@@ -1,5 +1,5 @@
 #!/bin/bash
-# Setup script for multilingual question probing experiments
+# Setup script for multilingual question probing experiments on VSC
 
 set -e  # Exit on error
 
@@ -8,18 +8,30 @@ echo "Setting up environment for multilingual question probing experiments..."
 # Create necessary directories
 mkdir -p data/cache data/features
 mkdir -p outputs logs
-mkdir -p configs/{data,model,training,experiment,hydra/launcher}
 
-# Check if poetry is installed
-if ! command -v poetry &> /dev/null; then
-    echo "Poetry not found. Please install poetry first."
-    echo "See https://python-poetry.org/docs/#installation for instructions."
-    exit 1
+# Load Python module
+module purge
+module load Python/3.9
+
+# Set up Miniconda if needed
+if [ ! -d "$VSC_DATA/miniconda3" ]; then
+    echo "Setting up Miniconda in VSC_DATA..."
+    cd $VSC_DATA
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    bash Miniconda3-latest-Linux-x86_64.sh -b -p $VSC_DATA/miniconda3
+    rm Miniconda3-latest-Linux-x86_64.sh
+    
+    echo 'export PATH="$VSC_DATA/miniconda3/bin:$PATH"' >> ~/.bashrc
+    export PATH="$VSC_DATA/miniconda3/bin:$PATH"
 fi
 
-# Install dependencies
-echo "Installing dependencies..."
-poetry install
+# Add project to PYTHONPATH
+echo 'export PYTHONPATH=$PYTHONPATH:$PWD' >> ~/.bashrc
+export PYTHONPATH=$PYTHONPATH:$PWD
+
+# Configure cache directories to use scratch
+echo 'export HF_HOME=$VSC_SCRATCH/hf_cache' >> ~/.bashrc
+export HF_HOME=$VSC_SCRATCH/hf_cache
 
 # Check if TF-IDF vectors exist
 echo "Checking for TF-IDF vectors..."
@@ -31,6 +43,4 @@ if [ ! -f "data/features/tfidf_vectors_train.pkl" ] || \
 fi
 
 echo -e "\nSetup complete! To run an experiment, use:"
-echo "./submit_jobs.sh --experiment sklearn_baseline --model logistic --task question_type"
-echo -e "\nOr for a submetric experiment:"
-echo "./submit_jobs.sh --experiment sklearn_baseline --model ridge --task single_submetric --submetric avg_links_len"
+echo "python -m src.experiments.run_experiment experiment=question_type model=dummy data.languages=\"[en]\""
