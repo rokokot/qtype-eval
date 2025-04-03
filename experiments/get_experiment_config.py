@@ -1,5 +1,5 @@
-# Helper script to generate hydra command line overrides for a specific experiment ID.
-# This is used by the job array script to determine which experiment to run.
+# Helper script to generate hydra command line overrides for a specific experiment
+# This is used by the job array script to determine which experiment to run
 
 import sys
 from itertools import product
@@ -103,15 +103,7 @@ def generate_experiments():
 
 
 def get_experiment_config(experiment_id):
-    """
-    Get the hydra command line overrides for a specific experiment ID.
-
-    Args:
-        experiment_id: Experiment ID (1-based index)
-
-    Returns:
-        String of hydra command line overrides
-    """
+    
     experiments = generate_experiments()
 
     if experiment_id < 1 or experiment_id > len(experiments):

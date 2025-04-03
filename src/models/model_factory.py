@@ -1,6 +1,7 @@
 # creating instances of models used in our experiments
 
 import torch.nn as nn
+import os
 from sklearn.dummy import DummyClassifier, DummyRegressor
 from sklearn.linear_model import LogisticRegression, Ridge
 import xgboost as xgb
@@ -22,11 +23,26 @@ class LMProbe(nn.Module):  # Neural probe for language model representations
         super().__init__()
 
         try:
-            self.model = AutoModel.from_pretrained(model_name)
-            logger.info(f"Loaded model: {model_name}")
+            local_only = os.environ.get("TRANSFORMERS_OFFLINE", "0") == "1"
+        
+            try:
+                if local_only:
+                    self.model = AutoModel.from_pretrained(
+                        model_name, 
+                        local_files_only=True,  # Force using cached version
+                        cache_dir=os.environ.get("HF_HOME", None)
+                    )
+                    logger.info(f"Loaded model from local cache: {model_name}")
+                else:
+                    self.model = AutoModel.from_pretrained(model_name)
+            except Exception as e:
+                logger.error(f"Error loading model {model_name}: {e}")
+                raise
+
         except Exception as e:
             logger.error(f"Error loading model {model_name}: {e}")
             raise
+        
 
         if freeze_model:
             for param in self.model.parameters():

@@ -163,7 +163,7 @@ cython_debug/
 
 .python-version
 
-
+data/
 data/raw
 data/features/
 data/qtc-raw/

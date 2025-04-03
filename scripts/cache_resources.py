@@ -1,0 +1,81 @@
+#!/usr/bin/env python3
+import os
+import argparse
+import logging
+from datasets import load_dataset
+from transformers import AutoTokenizer, AutoModel
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+logger = logging.getLogger(__name__)
+
+DATASET_NAME = "rokokot/question-type-and-complexity"
+MODEL_NAME = "cis-lmu/glot500-base"
+LANGUAGES = ["ar", "en", "fi", "id", "ja", "ko", "ru"]
+
+# Base config + all control configurations
+CONFIGS = ["base"]
+
+# Question type control configs
+CONFIGS += [f"control_question_type_seed{i}" for i in range(1, 4)]
+
+# Complexity control configs
+CONFIGS += [f"control_complexity_seed{i}" for i in range(1, 4)]
+
+# Individual submetric control configs
+SUBMETRICS = [
+    "avg_links_len", 
+    "avg_max_depth", 
+    "avg_subordinate_chain_len", 
+    "avg_verb_edges", 
+    "lexical_density", 
+    "n_tokens"
+]
+
+# Add all submetric control configurations
+for submetric in SUBMETRICS:
+    CONFIGS += [f"control_{submetric}_seed{i}" for i in range(1, 4)]
+
+SPLITS = ["train", "validation", "test"]
+
+def cache_datasets(cache_dir):
+    """Cache all dataset configurations."""
+    logger.info(f"Caching datasets to {cache_dir}")
+    
+    for config in CONFIGS:
+        logger.info(f"Caching dataset config: {config}")
+        for split in SPLITS:
+            try:
+                dataset = load_dataset(DATASET_NAME, name=config, split=split, cache_dir=cache_dir)
+                logger.info(f"Successfully cached {config} ({split}): {len(dataset)} examples")
+            except Exception as e:
+                logger.error(f"Error caching {config} ({split}): {e}")
+                logger.warning(f"Skipping {config} ({split}) - may not exist or may require authentication")
+
+def cache_model(cache_dir):
+    """Cache model and tokenizer."""
+    logger.info(f"Caching model: {MODEL_NAME}")
+    
+    try:
+        tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, cache_dir=cache_dir)
+        logger.info(f"Successfully cached tokenizer: {MODEL_NAME}")
+        
+        model = AutoModel.from_pretrained(MODEL_NAME, cache_dir=cache_dir)
+        logger.info(f"Successfully cached model: {MODEL_NAME}")
+    except Exception as e:
+        logger.error(f"Error caching model: {e}")
+
+def main():
+    parser = argparse.ArgumentParser(description="Cache HuggingFace resources for offline use")
+    parser.add_argument("--cache-dir", type=str, default="./data/cache", help="Cache directory for datasets and models")
+    args = parser.parse_args()
+    
+    os.makedirs(args.cache_dir, exist_ok=True)
+    
+    logger.info(f"Will cache {len(CONFIGS)} dataset configurations in total")
+    cache_datasets(args.cache_dir)
+    cache_model(args.cache_dir)
+    
+    logger.info("Caching complete!")
+
+if __name__ == "__main__":
+    main()
