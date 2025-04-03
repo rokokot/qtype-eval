@@ -74,7 +74,6 @@ class LMProbe(nn.Module):  # Neural probe for language model representations
         self.num_outputs = num_outputs
 
     def forward(self, input_ids, attention_mask, token_type_ids=None, **kwargs):
-        # Check model type to handle DistilBERT vs BERT
         model_type = self.model.__class__.__name__
 
         if "DistilBert" in model_type:

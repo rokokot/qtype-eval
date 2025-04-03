@@ -6,6 +6,7 @@ import argparse
 import json
 import glob
 import pandas as pd
+import wandb
 import matplotlib.pyplot as plt
 import seaborn as sns
 from typing import Dict, List
@@ -430,9 +431,11 @@ def main(args):
     # Load results
     results = load_results(args.results_dir)
 
+
     # Process results
     df = process_results(results)
 
+    
     # Save processed results
     os.makedirs(args.output_dir, exist_ok=True)
     df.to_csv(os.path.join(args.output_dir, "processed_results.csv"), index=False)
@@ -443,6 +446,19 @@ def main(args):
     generate_submetric_plots(df, os.path.join(args.output_dir, "submetrics"))
     generate_cross_lingual_plots(df, os.path.join(args.output_dir, "cross_lingual"))
     generate_summary_tables(df, os.path.join(args.output_dir, "tables"))
+    
+    summary_tables = generate_summary_tables(df, os.path.join(args.output_dir, "tables"))
+
+    if args.log_to_wandb:
+        wandb.init(project="multilingual-question-probing", name="analysis_results")
+
+        for table_name, df in summary_tables.items():
+            wandb.log({table_name: wandb.Table(dataframe=df)})
+            
+        # Log images
+        for plot_path in glob.glob(os.path.join(args.output_dir, "**/*.png"), recursive=True):
+            plot_name = os.path.basename(plot_path).replace(".png", "")
+            wandb.log({plot_name: wandb.Image(plot_path)})
 
     logger.info(f"Analysis complete. Results saved to {args.output_dir}")
 
@@ -451,6 +467,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Analyze experiment results")
     parser.add_argument("--results-dir", type=str, required=True, help="Directory containing experiment results")
     parser.add_argument("--output-dir", type=str, default="analysis", help="Directory to save analysis outputs")
+    parser.add_argument("--log-to-wandb", action="store_true", help="Log analysis results to W&B")
     args = parser.parse_args()
 
     main(args)

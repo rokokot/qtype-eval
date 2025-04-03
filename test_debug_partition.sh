@@ -1,15 +1,14 @@
 #!/bin/bash
-# Test script for debug partition on VSC
 
-# Slurm configurations (uncomment and modify for sbatch submission)
 #SBATCH --time=00:30:00
-#SBATCH --account=vsc37132  # Replace with your actual project
+#SBATCH --account=intro_vsc37132 
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem-per-cpu=8G
 #SBATCH --gres=gpu:1
+#SBATCH --partition=gpu_a100_debug  
+#SBATCH --clusters=wice            
 
-# Check if running on a compute node
 if [[ $(hostname) == *"r"* || $(hostname) == *"c"* || $(hostname) == *"s"* || $(hostname) == *"m"* ]]; then
     echo "Running on a compute node: $(hostname)"
     
