@@ -1,4 +1,17 @@
 #!/bin/bash
+#SBATCH --job-name=glot500_basic_experiments
+#SBATCH --time=72:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=18
+#SBATCH --mem=126G
+#SBATCH --gres=gpu:1
+#SBATCH --partition=gpu_a100
+#SBATCH --clusters=wice
+#SBATCH --account=intro_vsc37132
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=robin.edu.hr@gmail.com
+
 set -e 
 
 LANGUAGES=("ar" "en" "fi" "id" "ja" "ko" "ru")
