@@ -3,15 +3,14 @@
 #SBATCH --time=72:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
-#SBATCH --mem-per-cpu=8G
+#SBATCH --cpus-per-task=18     
+#SBATCH --mem=126G             
 #SBATCH --gres=gpu:1
 #SBATCH --partition=gpu_a100
 #SBATCH --clusters=wice
 #SBATCH --account=intro_vsc37132
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=robin.edu.hr@gmail.com
-
 module purge
 module load Python/3.9
 
@@ -19,6 +18,10 @@ export PYTHONPATH=$PYTHONPATH:$PWD
 export HF_HOME=$VSC_DATA/hf_cache
 export HF_DATASETS_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
+
+export WANDB_API_KEY="282936b31f3ab3415a24a3dba88151d5f7e5bf10"
+export WANDB_ENTITY="rokii-ku-leuven"
+export WANDB_PROJECT="multilingual-question-probing"
 
 bash setup_vsc_environment.sh
 

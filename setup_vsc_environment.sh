@@ -34,6 +34,9 @@ source $VSC_DATA/miniconda3/bin/activate
 
 # Install required packages
 pip install -r requirements.txt
+pip install --no-cache-dir wandb
+
+wandb login
 
 # Check if TF-IDF vectors exist
 echo "Checking for TF-IDF vectors..."
