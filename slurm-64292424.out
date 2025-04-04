@@ -1,0 +1,97 @@
+SLURM_JOB_ID: 64292424
+SLURM_JOB_USER: vsc37132
+SLURM_JOB_ACCOUNT: intro_vsc37132
+SLURM_JOB_NAME: check_configs
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: batch
+SLURM_NNODES: 1
+SLURM_NODELIST: l33c30n3
+SLURM_JOB_CPUS_PER_NODE: 2
+Date: Fri Apr  4 16:50:03 CEST 2025
+Walltime: 00-00:10:00
+========================================================================
+
+EnvironmentNameNotFound: Could not find conda environment: qtype_env
+You can list all discoverable environments with `conda info --envs`.
+
+
+Checking configuration directories...
+configs
+configs/data
+configs/experiment
+configs/hydra
+configs/hydra/launcher
+configs/model
+configs/training
+Checking main config files...
+# main config
+defaults:
+  - _self_
+  - data: default
+  - model: default
+  - training: default
+  - experiment: default
+  - hydra/launcher: submitit_slurm
+
+# settings
+seed: 42
+output_dir: ${hydra:runtime.output_dir}
+experiment_name: "default"
+
+# wandb configuration
+wandb:
+  project: "multilingual-question-probing"
+  entity: "rokii-ku-leuven"
+  mode: "online"
+
+# slurm config
+slurm:
+  partition: "gpu"
+  time: "24:00:00"
+  gpus_per_node: 1
+  cpus_per_task: 4
+  mem_per_cpu: 8
+  job_name: ${experiment_name}
+  account: "intro_vsc37132" 
+
+# hydra settings
+hydra:
+  sweep:
+    dir: outputs/${experiment_name}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.num}
+  run:
+    dir: outputs/${experiment_name}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+Checking experiment configs...
+# Question type classification experiment configuration
+type: "lm_probe"
+tasks:
+  - "question_type"
+use_controls: false
+control_index: null
+num_controls: 3
+eval_on_orig_test: true
+cross_lingual: false
+Checking model configs...
+model_type: "lm_probe"
+lm_name: "cis-lmu/glot500-base"
+dropout: 0.1
+freeze_model: false
+layer_wise: false
+layer_index: -1     # last
+Checking training configs...
+task_type: "classification"
+batch_size: 16
+num_epochs: 10
+lr: 0.00001
+weight_decay: 0.01
+patience: 3
+scheduler_factor: 0.5
+scheduler_patience: 2
+
+random_state: 42
+num_workers: 4
+Verifying Hydra can parse configs...
+Multiple values for hydra/launcher. To override a value use 'override hydra/launcher: submitit_slurm'
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Config check completed!

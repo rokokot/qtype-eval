@@ -1,0 +1,44 @@
+Starting basic experiments at Fri Apr  4 02:16:50 CEST 2025
+Running question_type experiment for ar
+Completed question_type experiment for ar
+----------------------------------------
+Running complexity experiment for ar
+Completed complexity experiment for ar
+----------------------------------------
+Running question_type experiment for en
+Completed question_type experiment for en
+----------------------------------------
+Running complexity experiment for en
+Completed complexity experiment for en
+----------------------------------------
+Running question_type experiment for fi
+Completed question_type experiment for fi
+----------------------------------------
+Running complexity experiment for fi
+Completed complexity experiment for fi
+----------------------------------------
+Running question_type experiment for id
+Completed question_type experiment for id
+----------------------------------------
+Running complexity experiment for id
+Completed complexity experiment for id
+----------------------------------------
+Running question_type experiment for ja
+Completed question_type experiment for ja
+----------------------------------------
+Running complexity experiment for ja
+Completed complexity experiment for ja
+----------------------------------------
+Running question_type experiment for ko
+Completed question_type experiment for ko
+----------------------------------------
+Running complexity experiment for ko
+Completed complexity experiment for ko
+----------------------------------------
+Running question_type experiment for ru
+Completed question_type experiment for ru
+----------------------------------------
+Running complexity experiment for ru
+Completed complexity experiment for ru
+----------------------------------------
+All basic experiments completed at Fri Apr  4 02:16:51 CEST 2025
