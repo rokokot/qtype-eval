@@ -17,7 +17,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 DATASET_NAME = "rokokot/question-type-and-complexity"
-CACHE_DIR = os.environ.get("HF_CACHE_DIR", "./data/cache")
+CACHE_DIR = os.environ.get("HF_HOME", "./data/cache")
 
 
 TASK_TO_FEATURE = {
