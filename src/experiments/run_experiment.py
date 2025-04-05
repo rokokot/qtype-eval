@@ -4,6 +4,7 @@ import os
 import logging
 import hydra
 from omegaconf import DictConfig, OmegaConf
+import json
 import wandb
 import numpy as np
 import torch
@@ -13,6 +14,11 @@ from src.data.datasets import load_sklearn_data, create_lm_dataloaders
 from src.models.model_factory import create_model
 from src.training.sklearn_trainer import SklearnTrainer
 from src.training.lm_trainer import LMTrainer
+
+os.environ["TRANSFORMERS_OFFLINE"] = "1"
+os.environ["HF_DATASETS_OFFLINE"] = "1"
+os.environ["HF_HOME"] = os.environ.get("HF_HOME", "./data/cache")
+
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
@@ -31,7 +37,17 @@ def setup_wandb(
     if cfg.wandb.mode == "disabled":
         return None
 
-    tags = [experiment_type, task, model_type]
+    tags = [str(experiment_type)]
+
+    if isinstance(task, (list, dict)) and hasattr(task, '__iter__'):
+        task_str = str(task[0]) if task else ""
+    else:
+        task_str = str(task)
+    tags.append(task_str)
+
+    tags.append(str(model_type))
+
+
 
     if language:
         tags.append(f"lang_{language}")
@@ -61,29 +77,43 @@ def setup_wandb(
         "data": OmegaConf.to_container(cfg.data, resolve=True),
         "seed": cfg.seed,
     }
+    try:
+        run = wandb.init(
+            project=cfg.wandb.project,
+            entity=cfg.wandb.entity,
+            name=cfg.experiment_name,
+            config=wandb_config,
+            tags=tags,
+            mode=cfg.wandb.mode,
+            job_type=experiment_type,
+        )
+        
+        # Create artifact only if wandb initialized successfully
+        if run is not None:
+            try:
+                config_artifact = wandb.Artifact(name=f"config_{cfg.experiment_name}", type="config")
+                config_path = os.path.join(cfg.output_dir, "config.yaml")
+                
+                # Ensure directory exists
+                os.makedirs(os.path.dirname(config_path), exist_ok=True)
+                
+                # Write config
+                with open(config_path, "w") as f:
+                    f.write(OmegaConf.to_yaml(cfg))
+                    
+                config_artifact.add_file(config_path)
+                run.log_artifact(config_artifact)
+            except Exception as e:
+                logger.warning(f"Failed to log config artifact: {e}")
+        
+        return run
+        
+    except Exception as e:
+        logger.warning(f"Failed to initialize wandb: {e}")
+        return None
 
-    run = wandb.init(
-        project=cfg.wandb.project,
-        entity=cfg.wandb.entity,
-        name=cfg.experiment_name,
-        config=wandb_config,
-        tags=tags,
-        mode=cfg.wandb.mode,
-        job_type=experiment_type,
-    )
 
-    config_artifact = wandb.Artifact(name=f"config_{cfg.experiment_name}", type="config")
-
-    with open(os.path.join(cfg.output_dir, "config.yaml"), "w") as f:
-        f.write(OmegaConf.to_yaml(cfg))
-
-    config_artifact.add_file(os.path.join(cfg.output_dir, "config.yaml"))
-    run.log_artifact(config_artifact)
-
-    return run
-
-
-@hydra.main(config_path="../../configs", config_name="config")
+@hydra.main(config_path="../../configs", config_name="config", version_base="1.1")
 def main(cfg: DictConfig):
     """Main function to run experiments based on config."""
     logger.info(f"Configuration:\n{OmegaConf.to_yaml(cfg)}")
@@ -202,92 +232,122 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
     logger.info(f"Running LM probe experiment for {task} on languages: {cfg.data.languages}")
     if submetric:
         logger.info(f"Submetric: {submetric}")
-
+    
+    # Ensure output directory exists
+    os.makedirs(cfg.output_dir, exist_ok=True)
+    
+    # Save configuration
+    with open(os.path.join(cfg.output_dir, "config.yaml"), "w") as f:
+        f.write(OmegaConf.to_yaml(cfg))
+    
     all_results = {}
-
+    
     for language in cfg.data.languages:
         logger.info(f"Processing language: {language}")
-
-        # Setup WandB for this language
-        wandb_run = setup_wandb(
-            cfg=cfg,
-            experiment_type=cfg.experiment.type,
-            task=task if not submetric else submetric,
-            model_type=cfg.model.model_type,
-            language=language,
-        )
-
-        # Get control settings
-        control_index = cfg.experiment.control_index if cfg.experiment.use_controls else None
-
-        # Create dataloaders
-        train_loader, val_loader, test_loader = create_lm_dataloaders(
-            language=language,
-            task=task if not submetric else submetric,
-            model_name=cfg.model.lm_name,
-            batch_size=cfg.training.batch_size,
-            control_index=control_index,
-            cache_dir=cfg.data.cache_dir,
-            num_workers=cfg.training.num_workers,
-        )
-
-        # Create model
-        model_params = OmegaConf.to_container(cfg.model, resolve=True)
-        model = create_model("lm_probe", task_type, **model_params)
-
-        # Create language-specific output directory
-        language_output_dir = os.path.join(cfg.output_dir, language)
-        os.makedirs(language_output_dir, exist_ok=True)
-
-        # Train and evaluate
-        trainer = LMTrainer(
-            model=model,
-            task_type=task_type,
-            learning_rate=cfg.training.lr,
-            weight_decay=cfg.training.weight_decay,
-            num_epochs=cfg.training.num_epochs,
-            patience=cfg.training.patience,
-            output_dir=language_output_dir,
-            wandb_run=wandb_run,
-        )
-
-        results = trainer.train(train_loader=train_loader, val_loader=val_loader, test_loader=test_loader)
-
-        # Add metadata
-        results.update(
-            {
+        
+        # Setup WandB with error handling
+        try:
+            wandb_run = setup_wandb(
+                cfg=cfg,
+                experiment_type=cfg.experiment.type,
+                task=task if not submetric else submetric,
+                model_type=cfg.model.model_type,
+                language=language,
+            )
+        except Exception as e:
+            logger.warning(f"Failed to initialize wandb for language {language}: {str(e)}")
+            wandb_run = None
+        
+        try:
+            # Get control settings
+            control_index = cfg.experiment.control_index if cfg.experiment.use_controls else None
+            
+            # Create dataloaders with error handling
+            try:
+                train_loader, val_loader, test_loader = create_lm_dataloaders(
+                    language=language,
+                    task=task[0] if isinstance(task, list) else task,
+                    model_name=cfg.model.lm_name,
+                    batch_size=cfg.training.batch_size,
+                    control_index=control_index,
+                    cache_dir=cfg.data.cache_dir,
+                    num_workers=cfg.training.num_workers,
+                )
+            except Exception as loader_error:
+                logger.error(f"Failed to create dataloaders for {language}: {loader_error}")
+                raise
+            
+            # Create model
+            model_params = OmegaConf.to_container(cfg.model, resolve=True)
+            model = create_model("lm_probe", task_type, **model_params)
+            
+            # Create language-specific output directory
+            language_output_dir = os.path.join(cfg.output_dir, language)
+            os.makedirs(language_output_dir, exist_ok=True)
+            
+            # Train and evaluate
+            trainer = LMTrainer(
+                model=model,
+                task_type=task_type,
+                learning_rate=cfg.training.lr,
+                weight_decay=cfg.training.weight_decay,
+                num_epochs=cfg.training.num_epochs,
+                patience=cfg.training.patience,
+                output_dir=language_output_dir,
+                wandb_run=wandb_run,
+            )
+            
+            results = trainer.train(
+                train_loader=train_loader, 
+                val_loader=val_loader, 
+                test_loader=test_loader
+            )
+            
+            # Add metadata
+            results.update({
                 "language": language,
                 "task": task,
                 "task_type": task_type,
                 "model_type": cfg.model.model_type,
                 "is_control": cfg.experiment.use_controls,
                 "control_index": cfg.experiment.control_index,
-            }
-        )
-
-        if submetric:
-            results["submetric"] = submetric
-
-        all_results[language] = results
-
-        # Log model as an artifact if WandB is enabled
-        if wandb_run:
-            model_artifact = wandb.Artifact(
-                name=f"model_{task}_{language}", type="model", description=f"Trained model for {task} on {language}"
-            )
-
-            model_artifact.add_dir(language_output_dir)
-            wandb_run.log_artifact(model_artifact)
-
-            # Finish this language's run
-            wandb_run.finish()
-
+            })
+            
+            if submetric:
+                results["submetric"] = submetric
+            
+            all_results[language] = results
+            
+            # Log model as an artifact if WandB is enabled
+            if wandb_run:
+                try:
+                    model_artifact = wandb.Artifact(
+                        name=f"model_{task}_{language}", 
+                        type="model", 
+                        description=f"Trained model for {task} on {language}"
+                    )
+                    model_artifact.add_dir(language_output_dir)
+                    wandb_run.log_artifact(model_artifact)
+                except Exception as artifact_error:
+                    logger.warning(f"Failed to log model artifact: {artifact_error}")
+                
+                # Finish this language's run
+                wandb_run.finish()
+        
+        except Exception as language_error:
+            logger.error(f"Error processing language {language}: {language_error}")
+            # Optionally, you might want to continue with other languages
+            continue
+    
     # Save combined results
-    with open(os.path.join(cfg.output_dir, "all_results.json"), "w") as f:
-        import json
-
-        json.dump(all_results, f, indent=2)
-
+    results_path = os.path.join(cfg.output_dir, "all_results.json")
+    try:
+        with open(results_path, "w") as f:
+            json.dump(all_results, f, indent=2)
+        logger.info(f"Results saved to {results_path}")
+    except Exception as save_error:
+        logger.error(f"Failed to save results: {save_error}")
+    
     return all_results
 
 

@@ -4,7 +4,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=18     
-#SBATCH --mem=126G             
+#SBATCH --mem=123G             
 #SBATCH --gres=gpu:1
 #SBATCH --partition=gpu_a100
 #SBATCH --clusters=wice
@@ -17,10 +17,10 @@ export PATH="$VSC_DATA/miniconda3/bin:$PATH"
 source "$VSC_DATA/miniconda3/etc/profile.d/conda.sh"
 
 # Create the environment if it doesn't exist
-conda create -n qtype_env python=3.9 -y || echo "Environment already exists"
+conda create -n qtype-eval python=3.9 -y || echo "Environment already exists"
 
 # Activate the environment
-conda activate qtype_env
+conda activate qtype-eval
 
 echo "Installing PyTorch with CUDA support..."
 conda install -y pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia

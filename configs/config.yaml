@@ -16,7 +16,7 @@ experiment_name: "default"
 wandb:
   project: "multilingual-question-probing"
   entity: "rokii-ku-leuven"
-  mode: "online"
+  mode: "offline"
 
 # slurm config
 slurm:

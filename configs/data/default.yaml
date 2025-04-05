@@ -1,5 +1,5 @@
 dataset_name: "rokokot/question-type-and-complexity"
-cache_dir: "./data/cache"
+cache_dir: "$VSC_DATA/qtype-eval/data/cache"
 
 vectors_dir: "./data/features"
 

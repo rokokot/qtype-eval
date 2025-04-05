@@ -15,8 +15,8 @@ export PATH="$VSC_DATA/miniconda3/bin:$PATH"
 source "$VSC_DATA/miniconda3/etc/profile.d/conda.sh"
 
 # Create and activate environment
-conda create -n test_env python=3.9 -y || echo "Environment already exists"
-conda activate test_env
+conda create -n qtype-eval python=3.9 -y || echo "Environment already exists"
+conda activate qtype-eval
 
 conda install -y pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
 
