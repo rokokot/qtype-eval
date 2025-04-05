@@ -1,0 +1,9 @@
+- experiment=question_type
+- model=lm_probe
+- model.lm_name=cis-lmu/glot500-base
+- data.languages=[en]
+- data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache
+- training.num_epochs=3
+- training.batch_size=8
+- experiment_name=mini_test_glot500_en
+- output_dir=./mini_test_output
