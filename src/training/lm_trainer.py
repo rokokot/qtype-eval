@@ -170,7 +170,10 @@ class LMTrainer:
                     if outputs.size(-1) == 1:
                         batch["labels"] = batch["labels"].view(-1, 1).float()
                 else:
-                    batch["labels"] = batch["labels"].view(outputs.size()).float()
+                    if outputs.ndim == 2 and outputs.size(1) == 1:
+                        batch["labels"] = batch["labels"].view(-1, 1).float()
+                    else:
+                        batch["labels"] = batch["labels"].float()
             
                     
                 loss = self.criterion(outputs, batch["labels"])
