@@ -33,6 +33,21 @@ TASK_TO_FEATURE = {
 }
 
 
+def ensure_string_task(task):
+    """Make sure a task is a string, not a list."""
+    if isinstance(task, list) and len(task) > 0:
+        return task[0]
+    elif isinstance(task, str):
+        return task
+    else:
+        return "question_type"  # Default fallback
+
+def get_feature_name_from_task(task):
+    """Get the feature name from a task, handling both string and list inputs."""
+    task_str = ensure_string_task(task)
+    return TASK_TO_FEATURE.get(task_str)
+
+
 class MultilingualQuestionDataset(Dataset):  # Dataset for sklearn models using TF-IDF features
     def __init__(
         self, data: pd.DataFrame, features: np.ndarray, labels: np.ndarray, language_ids: Optional[np.ndarray] = None
@@ -58,14 +73,28 @@ class LMQuestionDataset(Dataset):
     def __init__(self, data: pd.DataFrame, tokenizer: AutoTokenizer, task: str, max_length: int = 128):
         self.data = data
         self.tokenizer = tokenizer
-        self.task = task
+        self.task = ensure_string_task
         self.max_length = max_length
 
         self.is_classification = task == "question_type"
 
+        if "text" not in data.columns:
+            available_columns = data.columns.tolist()
+            logger.error(f"Required column 'text' not found in data. Available columns: {available_columns}")
+            raise ValueError(f"Required column 'text' not found in data")
+
         self.texts = data["text"].tolist()
 
-        feature_name = TASK_TO_FEATURE[task]
+        feature_name = get_feature_name_from_task(self.task)
+        if feature_name is None:
+            logger.error(f"Unknown task: {self.task}, available tasks: {list(TASK_TO_FEATURE.keys())}")
+            raise ValueError(f"Unknown task: {self.task}")
+        
+        if feature_name not in data.columns:
+            available_columns = data.columns.tolist()
+            logger.error(f"Feature '{feature_name}' not found in data columns: {available_columns}")
+            raise ValueError(f"Feature '{feature_name}' not found in data")
+
 
         if task == "sub_metrics":
             submetrics = [
@@ -89,21 +118,28 @@ class LMQuestionDataset(Dataset):
         return len(self.texts)
 
     def __getitem__(self, idx):
-        text = self.texts[idx]
-        label = self.labels[idx]
+        try:
+            text = self.texts[idx]
+            label = self.labels[idx]
 
-        encoding = self.tokenizer(text, max_length=self.max_length, padding="max_length", truncation=True, return_tensors="pt")
+            encoding = self.tokenizer(text, max_length=self.max_length, padding="max_length", truncation=True, return_tensors="pt")
 
-        encoding = {k: v.squeeze(0) for k, v in encoding.items()}
+            encoding = {k: v.squeeze(0) for k, v in encoding.items()}
 
-        if self.is_classification:
-            encoding["labels"] = torch.tensor(label, dtype=torch.long)
-        elif self.task == "sub_metrics":
-            encoding["labels"] = torch.tensor(label, dtype=torch.float)
-        else:
-            encoding["labels"] = torch.tensor(label, dtype=torch.float).view(1)
+            if self.is_classification:
+                encoding["labels"] = torch.tensor(label, dtype=torch.long)
+            elif self.task == "sub_metrics":
+                encoding["labels"] = torch.tensor(label, dtype=torch.float)
+            else:
+                encoding["labels"] = torch.tensor(label, dtype=torch.float).view(1)
 
-        return encoding
+            return encoding
+        except Exception as e:
+            logger.error(f"Error processing item {idx}: {e}")
+            logger.error(f"Text: {self.texts[idx] if idx < len(self.texts) else 'Index out of range'}")
+            logger.error(f"Label type: {type(self.labels).__name__}")
+            logger.error(f"Label shape: {self.labels.shape if hasattr(self.labels, 'shape') else 'N/A'}")
+            raise
 
 def load_combined_dataset(
     split: str,
@@ -240,16 +276,21 @@ def load_sklearn_data(languages: List[str],task: str = "question_type",submetric
 
 def create_lm_dataloaders(
     language: str,
-    task: str = "question_type",
+    task = "question_type",
     model_name: str = "cis-lmu/glot500-base",
     batch_size: int = 16,
     control_index: Optional[int] = None,
     cache_dir: str = "./data/cache",
     num_workers: int = 4
 ):
+    
+    task_str = ensure_string_task(task)  # Convert to string
+    logger.info(f"Creating dataloaders for task: {task_str} (original: {task})")
+    
     model_path = os.path.join(cache_dir, f"models--{model_name.replace('/', '--')}")
     
     try:
+        # Load tokenizer with improved error handling
         try:
             snapshot_path = os.path.join(model_path, "snapshots")
             if os.path.exists(snapshot_path):
@@ -280,67 +321,104 @@ def create_lm_dataloaders(
                     model_name,
                     use_fast=True
                 )
+        except Exception as tokenizer_error:
+            logger.error(f"Error loading tokenizer: {tokenizer_error}")
+            raise
         
-        except Exception as local_load_error:
-            logger.warning(f"Error loading local tokenizer: {local_load_error}")
-            # Final fallback
-            tokenizer = AutoTokenizer.from_pretrained(
-                model_name,
-                use_fast=True
-            )
-        
-        # Logging for debugging
         logger.info(f"Successfully loaded tokenizer for {model_name}")
         
-        # Load datasets
-        train_df = load_hf_data(language, task, "train", control_index, cache_dir)
-        val_df = load_hf_data(language, task, "validation", None, cache_dir)
-        test_df = load_hf_data(language, task, "test", None, cache_dir)
+        # Load datasets with improved error handling
+        try:
+            train_df = load_hf_data(language, task, "train", control_index, cache_dir)
+            val_df = load_hf_data(language, task, "validation", None, cache_dir)
+            test_df = load_hf_data(language, task, "test", None, cache_dir)
+        except Exception as load_error:
+            logger.error(f"Error loading datasets: {load_error}")
+            raise
         
-        # Create datasets
-        train_dataset = LMQuestionDataset(train_df, tokenizer, task)
-        val_dataset = LMQuestionDataset(val_df, tokenizer, task)
-        test_dataset = LMQuestionDataset(test_df, tokenizer, task)
+        # Log dataset info for debugging
+        logger.info(f"Train data columns: {train_df.columns.tolist()}")
+        if 'text' in train_df.columns and len(train_df) > 0:
+            logger.info(f"Sample text: {train_df['text'].iloc[0][:100]}...")
         
-        # Create dataloaders
-        train_loader = DataLoader(
-            train_dataset,
-            batch_size=batch_size,
-            shuffle=True,
-            num_workers=num_workers,
-            pin_memory=True
-        )
-        val_loader = DataLoader(
-            val_dataset,
-            batch_size=batch_size,
-            shuffle=False,
-            num_workers=num_workers,
-            pin_memory=True
-        )
-        test_loader = DataLoader(
-            test_dataset,
-            batch_size=batch_size,
-            shuffle=False,
-            num_workers=num_workers,
-            pin_memory=True
-        )
+        feature_name = get_feature_name_from_task(task_str)
+        if feature_name and feature_name in train_df.columns:
+            logger.info(f"Sample {feature_name}: {train_df[feature_name].iloc[0] if len(train_df) > 0 else 'No samples'}")
+        else:
+            logger.warning(f"Feature for task '{task_str}' not found in columns: {train_df.columns.tolist()}")
         
-        return train_loader, val_loader, test_loader
+        # Create datasets with improved error handling
+        try:
+            train_dataset = LMQuestionDataset(train_df, tokenizer, task_str)
+            logger.info(f"Created train dataset with {len(train_dataset)} examples")
+            
+            val_dataset = LMQuestionDataset(val_df, tokenizer, task_str)
+            logger.info(f"Created validation dataset with {len(val_dataset)} examples")
+            
+            test_dataset = LMQuestionDataset(test_df, tokenizer, task_str)
+            logger.info(f"Created test dataset with {len(test_dataset)} examples")
+            
+            # Test processing a sample to validate
+            sample = train_dataset[0]
+            logger.info(f"Sample processed successfully with keys: {list(sample.keys())}")
+            
+        except Exception as dataset_error:
+            logger.error(f"Error creating datasets for task {task_str}: {dataset_error}")
+            import traceback
+            logger.error(f"Traceback: {traceback.format_exc()}")
+            raise
+        
+        # Create dataloaders with improved error handling
+        try:
+            # Reduce num_workers for debugging if needed
+            debug_mode = os.environ.get("DEBUG", "0") == "1"
+            actual_workers = 0 if debug_mode else num_workers
+            
+            logger.info(f"Creating dataloaders with {actual_workers} workers")
+            
+            train_loader = DataLoader(
+                train_dataset,
+                batch_size=batch_size,
+                shuffle=True,
+                num_workers=actual_workers,
+                pin_memory=True
+            )
+            
+            val_loader = DataLoader(
+                val_dataset,
+                batch_size=batch_size,
+                shuffle=False,
+                num_workers=actual_workers,
+                pin_memory=True
+            )
+            
+            test_loader = DataLoader(
+                test_dataset,
+                batch_size=batch_size,
+                shuffle=False,
+                num_workers=actual_workers,
+                pin_memory=True
+            )
+            
+            logger.info("Successfully created all dataloaders")
+            return train_loader, val_loader, test_loader
+        except Exception as loader_error:
+            logger.error(f"Error creating dataloaders: {loader_error}")
+            import traceback
+            logger.error(f"Traceback: {traceback.format_exc()}")
+            raise
     
     except Exception as e:
-        logger.error(f"Error in create_lm_dataloaders: {e}")
-        # Add more detailed logging about the environment
+        logger.error(f"Error in create_lm_dataloaders for task {task_str}: {e}")
+        # Additional detailed logging
+        import traceback
+        logger.error(f"Traceback: {traceback.format_exc()}")
+        
+        # Log detailed information about the task and model
+        logger.error(f"Task (original format): {task}")
+        logger.error(f"Task (string format): {task_str}")
         logger.error(f"Model name: {model_name}")
         logger.error(f"Cache directory: {cache_dir}")
         logger.error(f"Language: {language}")
-        logger.error(f"Task: {task}")
-        
-        # Optional: print contents of cache directory for debugging
-        if os.path.exists(cache_dir):
-            logger.error("Cache directory contents:")
-            for root, dirs, files in os.walk(cache_dir):
-                logger.error(f"Dir: {root}")
-                for d in dirs:
-                    logger.error(f" - {d}")
         
         raise
