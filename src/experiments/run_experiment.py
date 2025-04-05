@@ -123,8 +123,21 @@ def main(cfg: DictConfig):
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(cfg.seed)
 
-    task = cfg.experiment.tasks[0] if isinstance(cfg.experiment.tasks, list) else cfg.experiment.tasks
-    task_type = "classification" if task == "question_type" else "regression"
+
+    if isinstance(cfg.experiment.tasks, list):
+        if cfg.experiment.tasks:
+            task = cfg.experiment.tasks[0]  # Extract first item
+            logger.info(f"Using first task from list: '{task}'")
+        else:
+            task = "question_type"  # Default
+            logger.info(f"Using default task: '{task}'")
+    else:
+        task = cfg.experiment.tasks
+        logger.info(f"Using task: '{task}'")
+    
+    task_type = "classification" if ensure_string_task(task) == "question_type" else "regression"
+    logger.info(f"Task type: {task_type}")
+
 
     submetric = None
     if task == "single_submetric" and hasattr(cfg.experiment, "submetric"):
@@ -229,7 +242,14 @@ def run_sklearn_experiment(cfg, task, task_type, submetric=None):
 
 def run_lm_experiment(cfg, task, task_type, submetric=None):
     """Run language model probing experiment."""
+    
+    if isinstance(task, list):
+        task_str = task[0] if task else "question_type"
+        logger.info(f"Converting task list {task} to string '{task_str}'")
+        task = task_str
+        
     logger.info(f"Running LM probe experiment for {task} on languages: {cfg.data.languages}")
+    
     if submetric:
         logger.info(f"Submetric: {submetric}")
     
@@ -264,9 +284,12 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
             
             # Create dataloaders with error handling
             try:
+                # Handle case where task might be a list or string
+                task_str = task[0] if isinstance(task, list) else task
+                
                 train_loader, val_loader, test_loader = create_lm_dataloaders(
                     language=language,
-                    task=task[0] if isinstance(task, list) else task,
+                    task=task_str,
                     model_name=cfg.model.lm_name,
                     batch_size=cfg.training.batch_size,
                     control_index=control_index,
@@ -274,12 +297,33 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
                     num_workers=cfg.training.num_workers,
                 )
             except Exception as loader_error:
-                logger.error(f"Failed to create dataloaders for {language}: {loader_error}")
-                raise
+                logger.error(f"Failed to create dataloaders for {language}: {task}")
+                logger.error(f"Error details: {loader_error}")
+                
+                # Save error information
+                error_info = {
+                    "language": language,
+                    "task": str(task),
+                    "error": str(loader_error),
+                    "error_type": type(loader_error).__name__
+                }
+                
+                error_path = os.path.join(cfg.output_dir, f"error_{language}.json")
+                with open(error_path, "w") as f:
+                    json.dump(error_info, f, indent=2)
+                
+                continue  # Skip to next language
             
             # Create model
-            model_params = OmegaConf.to_container(cfg.model, resolve=True)
-            model = create_model("lm_probe", task_type, **model_params)
+            try:
+                model_params = OmegaConf.to_container(cfg.model, resolve=True)
+                model = create_model("lm_probe", task_type, **model_params)
+                logger.info(f"Successfully created model for {language}")
+            except Exception as model_error:
+                logger.error(f"Failed to create model for {language}: {model_error}")
+                import traceback
+                logger.error(f"Traceback: {traceback.format_exc()}")
+                continue
             
             # Create language-specific output directory
             language_output_dir = os.path.join(cfg.output_dir, language)
@@ -306,7 +350,7 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
             # Add metadata
             results.update({
                 "language": language,
-                "task": task,
+                "task": str(task),
                 "task_type": task_type,
                 "model_type": cfg.model.model_type,
                 "is_control": cfg.experiment.use_controls,
@@ -317,6 +361,10 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
                 results["submetric"] = submetric
             
             all_results[language] = results
+            
+            # Save language-specific results
+            with open(os.path.join(language_output_dir, "results.json"), "w") as f:
+                json.dump(results, f, indent=2)
             
             # Log model as an artifact if WandB is enabled
             if wandb_run:
@@ -336,7 +384,23 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
         
         except Exception as language_error:
             logger.error(f"Error processing language {language}: {language_error}")
-            # Optionally, you might want to continue with other languages
+            import traceback
+            logger.error(f"Traceback: {traceback.format_exc()}")
+            
+            # Save error information
+            error_info = {
+                "language": language,
+                "task": str(task),
+                "error": str(language_error),
+                "error_type": type(language_error).__name__,
+                "traceback": traceback.format_exc()
+            }
+            
+            error_path = os.path.join(cfg.output_dir, f"error_{language}.json")
+            with open(error_path, "w") as f:
+                json.dump(error_info, f, indent=2)
+                
+            # Continue with other languages
             continue
     
     # Save combined results
