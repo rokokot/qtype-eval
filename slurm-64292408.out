@@ -1,2525 +1,0 @@
-SLURM_JOB_ID: 64292408
-SLURM_JOB_USER: vsc37132
-SLURM_JOB_ACCOUNT: intro_vsc37132
-SLURM_JOB_NAME: test_env
-SLURM_CLUSTER_NAME: wice
-SLURM_JOB_PARTITION: gpu_a100_debug
-SLURM_NNODES: 1
-SLURM_NODELIST: k28i22
-SLURM_JOB_CPUS_PER_NODE: 4
-SLURM_JOB_GPUS: 0
-Date: Fri Apr  4 16:44:33 CEST 2025
-Walltime: 00-00:30:00
-========================================================================
-Channels:
- - defaults
-Platform: linux-64
-Collecting package metadata (repodata.json): ...working... done
-Solving environment: ...working... done
-
-
-==> WARNING: A newer version of conda exists. <==
-    current version: 25.1.1
-    latest version: 25.3.1
-
-Please update conda by running
-
-    $ conda update -n base -c defaults conda
-
-
-
-## Package Plan ##
-
-  environment location: /data/leuven/371/vsc37132/miniconda3/envs/test_env
-
-  added / updated specs:
-    - python=3.9
-
-
-The following NEW packages will be INSTALLED:
-
-  _libgcc_mutex      pkgs/main/linux-64::_libgcc_mutex-0.1-main 
-  _openmp_mutex      pkgs/main/linux-64::_openmp_mutex-5.1-1_gnu 
-  ca-certificates    pkgs/main/linux-64::ca-certificates-2025.2.25-h06a4308_0 
-  ld_impl_linux-64   pkgs/main/linux-64::ld_impl_linux-64-2.40-h12ee557_0 
-  libffi             pkgs/main/linux-64::libffi-3.4.4-h6a678d5_1 
-  libgcc-ng          pkgs/main/linux-64::libgcc-ng-11.2.0-h1234567_1 
-  libgomp            pkgs/main/linux-64::libgomp-11.2.0-h1234567_1 
-  libstdcxx-ng       pkgs/main/linux-64::libstdcxx-ng-11.2.0-h1234567_1 
-  ncurses            pkgs/main/linux-64::ncurses-6.4-h6a678d5_0 
-  openssl            pkgs/main/linux-64::openssl-3.0.16-h5eee18b_0 
-  pip                pkgs/main/linux-64::pip-25.0-py39h06a4308_0 
-  python             pkgs/main/linux-64::python-3.9.21-he870216_1 
-  readline           pkgs/main/linux-64::readline-8.2-h5eee18b_0 
-  setuptools         pkgs/main/linux-64::setuptools-75.8.0-py39h06a4308_0 
-  sqlite             pkgs/main/linux-64::sqlite-3.45.3-h5eee18b_0 
-  tk                 pkgs/main/linux-64::tk-8.6.14-h39e8969_0 
-  tzdata             pkgs/main/noarch::tzdata-2025a-h04d1e81_0 
-  wheel              pkgs/main/linux-64::wheel-0.45.1-py39h06a4308_0 
-  xz                 pkgs/main/linux-64::xz-5.6.4-h5eee18b_1 
-  zlib               pkgs/main/linux-64::zlib-1.2.13-h5eee18b_1 
-
-
-
-Downloading and Extracting Packages: ...working... done
-Preparing transaction: - \ | / done
-Verifying transaction: \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ done
-Executing transaction: / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - done
-#
-# To activate this environment, use
-#
-#     $ conda activate test_env
-#
-# To deactivate an active environment, use
-#
-#     $ conda deactivate
-
-Channels:
- - pytorch
- - nvidia
- - defaults
-Platform: linux-64
-Collecting package metadata (repodata.json): ...working... done
-Solving environment: ...working... done
-
-
-==> WARNING: A newer version of conda exists. <==
-    current version: 25.1.1
-    latest version: 25.3.1
-
-Please update conda by running
-
-    $ conda update -n base -c defaults conda
-
-
-
-## Package Plan ##
-
-  environment location: /data/leuven/371/vsc37132/miniconda3/envs/test_env
-
-  added / updated specs:
-    - pytorch
-    - pytorch-cuda=12.1
-    - torchaudio
-    - torchvision
-
-
-The following packages will be downloaded:
-
-    package                    |            build
-    ---------------------------|-----------------
-    blas-1.0                   |              mkl           6 KB
-    brotli-python-1.0.9        |   py39h6a678d5_9         357 KB
-    bzip2-1.0.8                |       h5eee18b_6         262 KB
-    certifi-2025.1.31          |   py39h06a4308_0         162 KB
-    charset-normalizer-3.3.2   |     pyhd3eb1b0_0          44 KB
-    cuda-cudart-12.1.105       |                0         189 KB  nvidia
-    cuda-cupti-12.1.105        |                0        15.4 MB  nvidia
-    cuda-libraries-12.1.0      |                0           2 KB  nvidia
-    cuda-nvrtc-12.1.105        |                0        19.7 MB  nvidia
-    cuda-nvtx-12.1.105         |                0          57 KB  nvidia
-    cuda-opencl-12.8.90        |                0          25 KB  nvidia
-    cuda-runtime-12.1.0        |                0           1 KB  nvidia
-    cuda-version-12.8          |                3          17 KB  nvidia
-    ffmpeg-4.3                 |       hf484d3e_0         9.9 MB  pytorch
-    filelock-3.13.1            |   py39h06a4308_0          21 KB
-    freetype-2.13.3            |       h4a9f257_0         686 KB
-    giflib-5.2.2               |       h5eee18b_0          80 KB
-    gmp-6.3.0                  |       h6a678d5_0         608 KB
-    gmpy2-2.2.1                |   py39h5eee18b_0         249 KB
-    gnutls-3.6.15              |       he1e5248_0         1.0 MB
-    idna-3.7                   |   py39h06a4308_0         113 KB
-    intel-openmp-2023.1.0      |   hdb19cb5_46306        17.2 MB
-    jinja2-3.1.6               |   py39h06a4308_0         274 KB
-    jpeg-9e                    |       h5eee18b_3         262 KB
-    lame-3.100                 |       h7b6447c_0         323 KB
-    lcms2-2.16                 |       hb9589c4_0         269 KB
-    lerc-4.0.0                 |       h6a678d5_0         261 KB
-    libcublas-12.1.0.26        |                0       329.0 MB  nvidia
-    libcufft-11.0.2.4          |                0       102.9 MB  nvidia
-    libcufile-1.13.1.3         |                0         936 KB  nvidia
-    libcurand-10.3.9.90        |                0        43.5 MB  nvidia
-    libcusolver-11.4.4.55      |                0        98.3 MB  nvidia
-    libcusparse-12.0.2.55      |                0       163.0 MB  nvidia
-    libdeflate-1.22            |       h5eee18b_0          68 KB
-    libiconv-1.16              |       h5eee18b_3         759 KB
-    libidn2-2.3.4              |       h5eee18b_0         146 KB
-    libjpeg-turbo-2.0.0        |       h9bf148f_0         950 KB  pytorch
-    libnpp-12.0.2.50           |                0       139.8 MB  nvidia
-    libnvjitlink-12.1.105      |                0        16.9 MB  nvidia
-    libnvjpeg-12.1.1.14        |                0         2.9 MB  nvidia
-    libpng-1.6.39              |       h5eee18b_0         304 KB
-    libtasn1-4.19.0            |       h5eee18b_0          63 KB
-    libtiff-4.5.1              |       hffd6297_1         534 KB
-    libunistring-0.9.10        |       h27cfd23_0         536 KB
-    libwebp-1.3.2              |       h11a3e52_0          87 KB
-    libwebp-base-1.3.2         |       h5eee18b_1         425 KB
-    llvm-openmp-14.0.6         |       h9e868ea_0         4.4 MB
-    lz4-c-1.9.4                |       h6a678d5_1         156 KB
-    markupsafe-3.0.2           |   py39h5eee18b_0          24 KB
-    mkl-2023.1.0               |   h213fc3f_46344       171.5 MB
-    mkl-service-2.4.0          |   py39h5eee18b_2          68 KB
-    mkl_fft-1.3.11             |   py39h5eee18b_0         199 KB
-    mkl_random-1.2.8           |   py39h1128e8f_0         319 KB
-    mpc-1.3.1                  |       h5eee18b_0         129 KB
-    mpfr-4.2.1                 |       h5eee18b_0         821 KB
-    mpmath-1.3.0               |   py39h06a4308_0         829 KB
-    nettle-3.7.3               |       hbbd107a_1         809 KB
-    networkx-3.2.1             |   py39h06a4308_0         2.4 MB
-    numpy-2.0.1                |   py39h5f9d8c6_1          11 KB
-    numpy-base-2.0.1           |   py39hb5e798b_1         7.9 MB
-    ocl-icd-2.3.2              |       h5eee18b_1         136 KB
-    openh264-2.1.1             |       h4ff587b_0         711 KB
-    openjpeg-2.5.2             |       he7f1fd0_0         371 KB
-    pillow-11.1.0              |   py39hcea889d_0         810 KB
-    pysocks-1.7.1              |   py39h06a4308_0          31 KB
-    pytorch-2.5.1              |py3.9_cuda12.1_cudnn9.1.0_0        1.35 GB  pytorch
-    pytorch-cuda-12.1          |       ha16c6d3_6           7 KB  pytorch
-    pytorch-mutex-1.0          |             cuda           3 KB  pytorch
-    pyyaml-6.0.2               |   py39h5eee18b_0         192 KB
-    requests-2.32.3            |   py39h06a4308_1          99 KB
-    sympy-1.13.3               |   py39h06a4308_1        11.2 MB
-    tbb-2021.8.0               |       hdb19cb5_0         1.6 MB
-    torchaudio-2.5.1           |       py39_cu121         6.2 MB  pytorch
-    torchtriton-3.1.0          |             py39       233.6 MB  pytorch
-    torchvision-0.20.1         |       py39_cu121         8.1 MB  pytorch
-    typing_extensions-4.12.2   |   py39h06a4308_0          64 KB
-    urllib3-2.3.0              |   py39h06a4308_0         187 KB
-    yaml-0.2.5                 |       h7b6447c_0          75 KB
-    zstd-1.5.6                 |       hc292b87_0         664 KB
-    ------------------------------------------------------------
-                                           Total:        2.74 GB
-
-The following NEW packages will be INSTALLED:
-
-  blas               pkgs/main/linux-64::blas-1.0-mkl 
-  brotli-python      pkgs/main/linux-64::brotli-python-1.0.9-py39h6a678d5_9 
-  bzip2              pkgs/main/linux-64::bzip2-1.0.8-h5eee18b_6 
-  certifi            pkgs/main/linux-64::certifi-2025.1.31-py39h06a4308_0 
-  charset-normalizer pkgs/main/noarch::charset-normalizer-3.3.2-pyhd3eb1b0_0 
-  cuda-cudart        nvidia/linux-64::cuda-cudart-12.1.105-0 
-  cuda-cupti         nvidia/linux-64::cuda-cupti-12.1.105-0 
-  cuda-libraries     nvidia/linux-64::cuda-libraries-12.1.0-0 
-  cuda-nvrtc         nvidia/linux-64::cuda-nvrtc-12.1.105-0 
-  cuda-nvtx          nvidia/linux-64::cuda-nvtx-12.1.105-0 
-  cuda-opencl        nvidia/linux-64::cuda-opencl-12.8.90-0 
-  cuda-runtime       nvidia/linux-64::cuda-runtime-12.1.0-0 
-  cuda-version       nvidia/noarch::cuda-version-12.8-3 
-  ffmpeg             pytorch/linux-64::ffmpeg-4.3-hf484d3e_0 
-  filelock           pkgs/main/linux-64::filelock-3.13.1-py39h06a4308_0 
-  freetype           pkgs/main/linux-64::freetype-2.13.3-h4a9f257_0 
-  giflib             pkgs/main/linux-64::giflib-5.2.2-h5eee18b_0 
-  gmp                pkgs/main/linux-64::gmp-6.3.0-h6a678d5_0 
-  gmpy2              pkgs/main/linux-64::gmpy2-2.2.1-py39h5eee18b_0 
-  gnutls             pkgs/main/linux-64::gnutls-3.6.15-he1e5248_0 
-  idna               pkgs/main/linux-64::idna-3.7-py39h06a4308_0 
-  intel-openmp       pkgs/main/linux-64::intel-openmp-2023.1.0-hdb19cb5_46306 
-  jinja2             pkgs/main/linux-64::jinja2-3.1.6-py39h06a4308_0 
-  jpeg               pkgs/main/linux-64::jpeg-9e-h5eee18b_3 
-  lame               pkgs/main/linux-64::lame-3.100-h7b6447c_0 
-  lcms2              pkgs/main/linux-64::lcms2-2.16-hb9589c4_0 
-  lerc               pkgs/main/linux-64::lerc-4.0.0-h6a678d5_0 
-  libcublas          nvidia/linux-64::libcublas-12.1.0.26-0 
-  libcufft           nvidia/linux-64::libcufft-11.0.2.4-0 
-  libcufile          nvidia/linux-64::libcufile-1.13.1.3-0 
-  libcurand          nvidia/linux-64::libcurand-10.3.9.90-0 
-  libcusolver        nvidia/linux-64::libcusolver-11.4.4.55-0 
-  libcusparse        nvidia/linux-64::libcusparse-12.0.2.55-0 
-  libdeflate         pkgs/main/linux-64::libdeflate-1.22-h5eee18b_0 
-  libiconv           pkgs/main/linux-64::libiconv-1.16-h5eee18b_3 
-  libidn2            pkgs/main/linux-64::libidn2-2.3.4-h5eee18b_0 
-  libjpeg-turbo      pytorch/linux-64::libjpeg-turbo-2.0.0-h9bf148f_0 
-  libnpp             nvidia/linux-64::libnpp-12.0.2.50-0 
-  libnvjitlink       nvidia/linux-64::libnvjitlink-12.1.105-0 
-  libnvjpeg          nvidia/linux-64::libnvjpeg-12.1.1.14-0 
-  libpng             pkgs/main/linux-64::libpng-1.6.39-h5eee18b_0 
-  libtasn1           pkgs/main/linux-64::libtasn1-4.19.0-h5eee18b_0 
-  libtiff            pkgs/main/linux-64::libtiff-4.5.1-hffd6297_1 
-  libunistring       pkgs/main/linux-64::libunistring-0.9.10-h27cfd23_0 
-  libwebp            pkgs/main/linux-64::libwebp-1.3.2-h11a3e52_0 
-  libwebp-base       pkgs/main/linux-64::libwebp-base-1.3.2-h5eee18b_1 
-  llvm-openmp        pkgs/main/linux-64::llvm-openmp-14.0.6-h9e868ea_0 
-  lz4-c              pkgs/main/linux-64::lz4-c-1.9.4-h6a678d5_1 
-  markupsafe         pkgs/main/linux-64::markupsafe-3.0.2-py39h5eee18b_0 
-  mkl                pkgs/main/linux-64::mkl-2023.1.0-h213fc3f_46344 
-  mkl-service        pkgs/main/linux-64::mkl-service-2.4.0-py39h5eee18b_2 
-  mkl_fft            pkgs/main/linux-64::mkl_fft-1.3.11-py39h5eee18b_0 
-  mkl_random         pkgs/main/linux-64::mkl_random-1.2.8-py39h1128e8f_0 
-  mpc                pkgs/main/linux-64::mpc-1.3.1-h5eee18b_0 
-  mpfr               pkgs/main/linux-64::mpfr-4.2.1-h5eee18b_0 
-  mpmath             pkgs/main/linux-64::mpmath-1.3.0-py39h06a4308_0 
-  nettle             pkgs/main/linux-64::nettle-3.7.3-hbbd107a_1 
-  networkx           pkgs/main/linux-64::networkx-3.2.1-py39h06a4308_0 
-  numpy              pkgs/main/linux-64::numpy-2.0.1-py39h5f9d8c6_1 
-  numpy-base         pkgs/main/linux-64::numpy-base-2.0.1-py39hb5e798b_1 
-  ocl-icd            pkgs/main/linux-64::ocl-icd-2.3.2-h5eee18b_1 
-  openh264           pkgs/main/linux-64::openh264-2.1.1-h4ff587b_0 
-  openjpeg           pkgs/main/linux-64::openjpeg-2.5.2-he7f1fd0_0 
-  pillow             pkgs/main/linux-64::pillow-11.1.0-py39hcea889d_0 
-  pysocks            pkgs/main/linux-64::pysocks-1.7.1-py39h06a4308_0 
-  pytorch            pytorch/linux-64::pytorch-2.5.1-py3.9_cuda12.1_cudnn9.1.0_0 
-  pytorch-cuda       pytorch/linux-64::pytorch-cuda-12.1-ha16c6d3_6 
-  pytorch-mutex      pytorch/noarch::pytorch-mutex-1.0-cuda 
-  pyyaml             pkgs/main/linux-64::pyyaml-6.0.2-py39h5eee18b_0 
-  requests           pkgs/main/linux-64::requests-2.32.3-py39h06a4308_1 
-  sympy              pkgs/main/linux-64::sympy-1.13.3-py39h06a4308_1 
-  tbb                pkgs/main/linux-64::tbb-2021.8.0-hdb19cb5_0 
-  torchaudio         pytorch/linux-64::torchaudio-2.5.1-py39_cu121 
-  torchtriton        pytorch/linux-64::torchtriton-3.1.0-py39 
-  torchvision        pytorch/linux-64::torchvision-0.20.1-py39_cu121 
-  typing_extensions  pkgs/main/linux-64::typing_extensions-4.12.2-py39h06a4308_0 
-  urllib3            pkgs/main/linux-64::urllib3-2.3.0-py39h06a4308_0 
-  yaml               pkgs/main/linux-64::yaml-0.2.5-h7b6447c_0 
-  zstd               pkgs/main/linux-64::zstd-1.5.6-hc292b87_0 
-
-
-
-Downloading and Extracting Packages: ...working...pytorch-2.5.1        | 1.35 GB   |            |   0% 
-libcublas-12.1.0.26  | 329.0 MB  |            |   0% [A
-
-torchtriton-3.1.0    | 233.6 MB  |            |   0% [A[A
-
-
-mkl-2023.1.0         | 171.5 MB  |            |   0% [A[A[A
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  |            |   0% [A[A[A[A
-
-
-
-
-libnpp-12.0.2.50     | 139.8 MB  |            |   0% [A[A[A[A[A
-
-
-
-
-
-libcufft-11.0.2.4    | 102.9 MB  |            |   0% [A[A[A[A[A[A
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   |            |   0% [A[A[A[A[A[A[A
-
-
-
-
-
-
-
-libcurand-10.3.9.90  | 43.5 MB   |            |   0% [A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-cuda-nvrtc-12.1.105  | 19.7 MB   |            |   0% [A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-intel-openmp-2023.1. | 17.2 MB   |            |   0% [A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-libnvjitlink-12.1.10 | 16.9 MB   |            |   0% [A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-cuda-cupti-12.1.105  | 15.4 MB   |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-sympy-1.13.3         | 11.2 MB   |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-ffmpeg-4.3           | 9.9 MB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-torchvision-0.20.1   | 8.1 MB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-numpy-base-2.0.1     | 7.9 MB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-torchaudio-2.5.1     | 6.2 MB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-llvm-openmp-14.0.6   | 4.4 MB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-mkl-2023.1.0         | 171.5 MB  | 2          |   2% [A[A[A
-
-torchtriton-3.1.0    | 233.6 MB  |            |   0% [A[Apytorch-2.5.1        | 1.35 GB   |            |   0% 
-libcublas-12.1.0.26  | 329.0 MB  |            |   0% [A
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  |            |   0% [A[A[A[A
-
-
-mkl-2023.1.0         | 171.5 MB  | #          |  11% [A[A[Apytorch-2.5.1        | 1.35 GB   |            |   0% 
-libcublas-12.1.0.26  | 329.0 MB  | 2          |   2% [A
-
-torchtriton-3.1.0    | 233.6 MB  | 2          |   3% [A[A
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | 4          |   5% [A[A[A[A
-
-
-mkl-2023.1.0         | 171.5 MB  | ##         |  20% [A[A[Apytorch-2.5.1        | 1.35 GB   |            |   1% 
-libcublas-12.1.0.26  | 329.0 MB  | 4          |   5% [A
-
-torchtriton-3.1.0    | 233.6 MB  | 7          |   8% [A[A
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | 7          |   8% [A[A[A[A
-
-
-mkl-2023.1.0         | 171.5 MB  | ##8        |  29% [A[A[Apytorch-2.5.1        | 1.35 GB   | 1          |   1% 
-
-torchtriton-3.1.0    | 233.6 MB  | #2         |  13% [A[A
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | #1         |  12% [A[A[A[A
-
-
-mkl-2023.1.0         | 171.5 MB  | ####       |  40% [A[A[Apytorch-2.5.1        | 1.35 GB   | 1          |   1% 
-libcublas-12.1.0.26  | 329.0 MB  | 6          |   6% [A
-
-torchtriton-3.1.0    | 233.6 MB  | #9         |  19% [A[A
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | #5         |  15% [A[A[A[Apytorch-2.5.1        | 1.35 GB   | 2          |   2% 
-
-
-mkl-2023.1.0         | 171.5 MB  | #####1     |  51% [A[A[A
-
-torchtriton-3.1.0    | 233.6 MB  | ##4        |  24% [A[A
-
-
-mkl-2023.1.0         | 171.5 MB  | ######4    |  64% [A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | 7          |   8% [A
-
-torchtriton-3.1.0    | 233.6 MB  | ##9        |  29% [A[Apytorch-2.5.1        | 1.35 GB   | 2          |   2% 
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | #8         |  18% [A[A[A[A
-
-
-mkl-2023.1.0         | 171.5 MB  | #######5   |  75% [A[A[Apytorch-2.5.1        | 1.35 GB   | 2          |   3% 
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | ##3        |  23% [A[A[A[A
-
-torchtriton-3.1.0    | 233.6 MB  | ###4       |  34% [A[A
-
-
-mkl-2023.1.0         | 171.5 MB  | ########6  |  86% [A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | 8          |   9% [A
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | ##6        |  26% [A[A[A[A
-
-
-mkl-2023.1.0         | 171.5 MB  | #########6 |  97% [A[A[Apytorch-2.5.1        | 1.35 GB   | 3          |   3% 
-libcublas-12.1.0.26  | 329.0 MB  | 9          |  10% [A
-
-torchtriton-3.1.0    | 233.6 MB  | ###8       |  38% [A[A
-
-torchtriton-3.1.0    | 233.6 MB  | ####2      |  42% [A[Apytorch-2.5.1        | 1.35 GB   | 3          |   4% 
-libcublas-12.1.0.26  | 329.0 MB  | #          |  11% [A
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | ##9        |  29% [A[A[A[Apytorch-2.5.1        | 1.35 GB   | 4          |   4% 
-libcublas-12.1.0.26  | 329.0 MB  | #1         |  11% [A
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | ###3       |  33% [A[A[A[A
-
-torchtriton-3.1.0    | 233.6 MB  | ####5      |  46% [A[Apytorch-2.5.1        | 1.35 GB   | 4          |   5% 
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | ###8       |  38% [A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | #2         |  12% [A
-
-torchtriton-3.1.0    | 233.6 MB  | #####2     |  52% [A[A
-
-
-mkl-2023.1.0         | 171.5 MB  | ########## | 100% [A[A[Apytorch-2.5.1        | 1.35 GB   | 5          |   6% 
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | ####1      |  42% [A[A[A[A
-
-
-
-
-libnpp-12.0.2.50     | 139.8 MB  |            |   0% [A[A[A[A[Apytorch-2.5.1        | 1.35 GB   | 6          |   6% 
-
-torchtriton-3.1.0    | 233.6 MB  | #####6     |  56% [A[A
-libcublas-12.1.0.26  | 329.0 MB  | #3         |  13% [A
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | ####5      |  45% [A[A[A[A
-
-
-
-
-libnpp-12.0.2.50     | 139.8 MB  | 5          |   6% [A[A[A[A[Apytorch-2.5.1        | 1.35 GB   | 6          |   7% 
-
-torchtriton-3.1.0    | 233.6 MB  | ######1    |  61% [A[A
-libcublas-12.1.0.26  | 329.0 MB  | #4         |  15% [A
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | ####9      |  50% [A[A[A[A
-
-
-
-
-libnpp-12.0.2.50     | 139.8 MB  | #1         |  11% [A[A[A[A[Apytorch-2.5.1        | 1.35 GB   | 7          |   7% 
-libcublas-12.1.0.26  | 329.0 MB  | #6         |  16% [A
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | #####5     |  55% [A[A[A[A
-
-torchtriton-3.1.0    | 233.6 MB  | ######4    |  65% [A[A
-
-
-
-
-libnpp-12.0.2.50     | 139.8 MB  | #7         |  18% [A[A[A[A[Apytorch-2.5.1        | 1.35 GB   | 8          |   8% 
-
-torchtriton-3.1.0    | 233.6 MB  | ######9    |  70% [A[A
-libcublas-12.1.0.26  | 329.0 MB  | #7         |  18% [A
-
-
-
-
-libnpp-12.0.2.50     | 139.8 MB  | ##6        |  27% [A[A[A[A[A
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | #####9     |  59% [A[A[A[Apytorch-2.5.1        | 1.35 GB   | 8          |   9% 
-
-torchtriton-3.1.0    | 233.6 MB  | #######3   |  74% [A[A
-
-
-
-
-libnpp-12.0.2.50     | 139.8 MB  | ###6       |  37% [A[A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | #8         |  19% [Apytorch-2.5.1        | 1.35 GB   | 9          |   9% 
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | ######2    |  63% [A[A[A[A
-
-torchtriton-3.1.0    | 233.6 MB  | #######8   |  78% [A[A
-
-
-
-
-libnpp-12.0.2.50     | 139.8 MB  | ####4      |  44% [A[A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | #9         |  20% [A
-
-
-
-
-libnpp-12.0.2.50     | 139.8 MB  | #####1     |  51% [A[A[A[A[A
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | ######6    |  66% [A[A[A[Apytorch-2.5.1        | 1.35 GB   | 9          |  10% 
-libcublas-12.1.0.26  | 329.0 MB  | ##1        |  22% [A
-
-
-
-
-libnpp-12.0.2.50     | 139.8 MB  | #####8     |  59% [A[A[A[A[A
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | ######9    |  69% [A[A[A[A
-
-torchtriton-3.1.0    | 233.6 MB  | ########2  |  82% [A[Apytorch-2.5.1        | 1.35 GB   | #          |  11% 
-libcublas-12.1.0.26  | 329.0 MB  | ##2        |  23% [A
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | #######7   |  78% [A[A[A[A
-
-torchtriton-3.1.0    | 233.6 MB  | ########5  |  86% [A[Apytorch-2.5.1        | 1.35 GB   | #1         |  11% 
-
-
-
-
-libnpp-12.0.2.50     | 139.8 MB  | ######5    |  66% [A[A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | ##4        |  25% [A
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | ########6  |  86% [A[A[A[A
-
-torchtriton-3.1.0    | 233.6 MB  | ########9  |  89% [A[A
-
-
-
-
-libnpp-12.0.2.50     | 139.8 MB  | #######2   |  73% [A[A[A[A[A
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | #########3 |  94% [A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | ##6        |  27% [Apytorch-2.5.1        | 1.35 GB   | #1         |  12% 
-
-
-
-
-libnpp-12.0.2.50     | 139.8 MB  | #######9   |  79% [A[A[A[A[A
-
-torchtriton-3.1.0    | 233.6 MB  | #########2 |  92% [A[Apytorch-2.5.1        | 1.35 GB   | #2         |  12% 
-libcublas-12.1.0.26  | 329.0 MB  | ##8        |  28% [A
-
-
-
-
-libnpp-12.0.2.50     | 139.8 MB  | ########5  |  86% [A[A[A[A[A
-
-torchtriton-3.1.0    | 233.6 MB  | #########5 |  95% [A[Apytorch-2.5.1        | 1.35 GB   | #2         |  13% 
-libcublas-12.1.0.26  | 329.0 MB  | ###        |  30% [A
-
-
-
-
-libnpp-12.0.2.50     | 139.8 MB  | #########2 |  93% [A[A[A[A[Apytorch-2.5.1        | 1.35 GB   | #3         |  13% 
-libcublas-12.1.0.26  | 329.0 MB  | ###1       |  32% [Apytorch-2.5.1        | 1.35 GB   | #3         |  14% 
-libcublas-12.1.0.26  | 329.0 MB  | ###4       |  34% [A
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | ########## | 100% [A[A[A[Apytorch-2.5.1        | 1.35 GB   | #4         |  15% 
-libcublas-12.1.0.26  | 329.0 MB  | ###5       |  36% [Apytorch-2.5.1        | 1.35 GB   | #5         |  15% 
-libcublas-12.1.0.26  | 329.0 MB  | ###8       |  39% [A
-
-
-
-
-
-libcufft-11.0.2.4    | 102.9 MB  |            |   0% [A[A[A[A[A[Apytorch-2.5.1        | 1.35 GB   | #6         |  16% 
-libcublas-12.1.0.26  | 329.0 MB  | ####       |  40% [A
-
-
-
-
-
-libcufft-11.0.2.4    | 102.9 MB  | #5         |  15% [A[A[A[A[A[Apytorch-2.5.1        | 1.35 GB   | #6         |  17% 
-libcublas-12.1.0.26  | 329.0 MB  | ####2      |  43% [Apytorch-2.5.1        | 1.35 GB   | #7         |  18% 
-
-
-
-
-
-libcufft-11.0.2.4    | 102.9 MB  | ##3        |  24% [A[A[A[A[A[Apytorch-2.5.1        | 1.35 GB   | #8         |  18% 
-
-
-
-
-
-libcufft-11.0.2.4    | 102.9 MB  | ###1       |  31% [A[A[A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | ####4      |  45% [A
-
-
-
-
-libnpp-12.0.2.50     | 139.8 MB  | ########## | 100% [A[A[A[A[A
-
-
-
-
-libnpp-12.0.2.50     | 139.8 MB  | ########## | 100% [A[A[A[A[A
-
-torchtriton-3.1.0    | 233.6 MB  | ########## | 100% [A[A
-
-torchtriton-3.1.0    | 233.6 MB  | ########## | 100% [A[A
-
-
-
-
-
-libcufft-11.0.2.4    | 102.9 MB  | ###8       |  38% [A[A[A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | ####8      |  48% [A
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   |            |   0% [A[A[A[A[A[A[A
-
-
-
-
-
-
-
-libcurand-10.3.9.90  | 43.5 MB   |            |   0% [A[A[A[A[A[A[A[Apytorch-2.5.1        | 1.35 GB   | #9         |  19% 
-
-
-
-
-
-libcufft-11.0.2.4    | 102.9 MB  | ####8      |  49% [A[A[A[A[A[A
-
-
-
-
-
-
-
-libcurand-10.3.9.90  | 43.5 MB   | #6         |  16% [A[A[A[A[A[A[A[A
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   | 3          |   4% [A[A[A[A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | #####      |  50% [Apytorch-2.5.1        | 1.35 GB   | #9         |  20% 
-
-
-
-
-
-
-
-libcurand-10.3.9.90  | 43.5 MB   | ##7        |  28% [A[A[A[A[A[A[A[A
-
-
-
-
-
-libcufft-11.0.2.4    | 102.9 MB  | #####6     |  57% [A[A[A[A[A[A
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   | 8          |   8% [A[A[A[A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | #####1     |  52% [Apytorch-2.5.1        | 1.35 GB   | ##         |  20% 
-
-
-
-
-
-
-
-libcurand-10.3.9.90  | 43.5 MB   | ###9       |  40% [A[A[A[A[A[A[A[A
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   | #3         |  13% [A[A[A[A[A[A[A
-
-
-
-
-
-libcufft-11.0.2.4    | 102.9 MB  | ######4    |  64% [A[A[A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | #####3     |  54% [A
-
-
-
-
-
-
-
-libcurand-10.3.9.90  | 43.5 MB   | #####1     |  51% [A[A[A[A[A[A[A[A
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   | #8         |  18% [A[A[A[A[A[A[Apytorch-2.5.1        | 1.35 GB   | ##         |  21% 
-libcublas-12.1.0.26  | 329.0 MB  | #####5     |  55% [A
-
-
-
-
-
-libcufft-11.0.2.4    | 102.9 MB  | #######    |  71% [A[A[A[A[A[A
-
-
-
-
-
-
-
-libcurand-10.3.9.90  | 43.5 MB   | ######5    |  66% [A[A[A[A[A[A[A[A
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   | ##5        |  26% [A[A[A[A[A[A[Apytorch-2.5.1        | 1.35 GB   | ##         |  21% 
-libcublas-12.1.0.26  | 329.0 MB  | #####7     |  57% [A
-
-
-
-
-
-libcufft-11.0.2.4    | 102.9 MB  | #######6   |  77% [A[A[A[A[A[A
-
-
-
-
-
-
-
-libcurand-10.3.9.90  | 43.5 MB   | #######7   |  78% [A[A[A[A[A[A[A[A
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   | ###1       |  31% [A[A[A[A[A[A[Apytorch-2.5.1        | 1.35 GB   | ##1        |  21% 
-libcublas-12.1.0.26  | 329.0 MB  | #####8     |  59% [A
-
-
-
-
-
-
-
-libcurand-10.3.9.90  | 43.5 MB   | #########  |  90% [A[A[A[A[A[A[A[A
-
-
-
-
-
-libcufft-11.0.2.4    | 102.9 MB  | ########2  |  83% [A[A[A[A[A[A
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   | ###6       |  36% [A[A[A[A[A[A[Apytorch-2.5.1        | 1.35 GB   | ##1        |  22% 
-libcublas-12.1.0.26  | 329.0 MB  | ######     |  61% [A
-
-
-
-
-
-libcufft-11.0.2.4    | 102.9 MB  | ########7  |  88% [A[A[A[A[A[A
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   | ####1      |  41% [A[A[A[A[A[A[Apytorch-2.5.1        | 1.35 GB   | ##2        |  22% 
-libcublas-12.1.0.26  | 329.0 MB  | ######2    |  62% [A
-
-
-
-
-
-libcufft-11.0.2.4    | 102.9 MB  | #########2 |  93% [A[A[A[A[A[A
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   | ####6      |  46% [A[A[A[A[A[A[Apytorch-2.5.1        | 1.35 GB   | ##2        |  23% 
-libcublas-12.1.0.26  | 329.0 MB  | ######3    |  64% [A
-
-
-
-
-
-libcufft-11.0.2.4    | 102.9 MB  | #########8 |  98% [A[A[A[A[A[A
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   | #####2     |  52% [A[A[A[A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | ######5    |  66% [Apytorch-2.5.1        | 1.35 GB   | ##3        |  23% 
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   | #####7     |  57% [A[A[A[A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | ######7    |  67% [Apytorch-2.5.1        | 1.35 GB   | ##3        |  24% 
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   | ######2    |  62% [A[A[A[A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | ######8    |  69% [Apytorch-2.5.1        | 1.35 GB   | ##3        |  24% 
-
-
-
-
-
-
-
-libcurand-10.3.9.90  | 43.5 MB   | ########## | 100% [A[A[A[A[A[A[A[A
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   | ######9    |  70% [A[A[A[A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | #######1   |  72% [Apytorch-2.5.1        | 1.35 GB   | ##4        |  24% 
-
-
-
-
-
-
-
-
-cuda-nvrtc-12.1.105  | 19.7 MB   |            |   0% [A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   | #######5   |  76% [A[A[A[A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | #######3   |  74% [A
-
-
-
-
-
-
-
-
-cuda-nvrtc-12.1.105  | 19.7 MB   | ###5       |  35% [A[A[A[A[A[A[A[A[Apytorch-2.5.1        | 1.35 GB   | ##4        |  25% 
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   | ########1  |  81% [A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-cuda-nvrtc-12.1.105  | 19.7 MB   | ######1    |  61% [A[A[A[A[A[A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | #######5   |  75% [Apytorch-2.5.1        | 1.35 GB   | ##5        |  25% 
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   | ########6  |  86% [A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-cuda-nvrtc-12.1.105  | 19.7 MB   | #########3 |  93% [A[A[A[A[A[A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | #######7   |  77% [Apytorch-2.5.1        | 1.35 GB   | ##5        |  26% 
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   | #########2 |  92% [A[A[A[A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | #######8   |  79% [Apytorch-2.5.1        | 1.35 GB   | ##6        |  26% 
-libcublas-12.1.0.26  | 329.0 MB  | ########2  |  82% [Apytorch-2.5.1        | 1.35 GB   | ##6        |  27% 
-libcublas-12.1.0.26  | 329.0 MB  | ########4  |  85% [Apytorch-2.5.1        | 1.35 GB   | ##6        |  27% 
-
-
-
-
-
-libcufft-11.0.2.4    | 102.9 MB  | ########## | 100% [A[A[A[A[A[A
-
-
-
-
-
-
-
-
-cuda-nvrtc-12.1.105  | 19.7 MB   | ########## | 100% [A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   | ########## | 100% [A[A[A[A[A[A[A
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   | ########## | 100% [A[A[A[A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | ########7  |  87% [Apytorch-2.5.1        | 1.35 GB   | ##7        |  27% 
-
-
-
-
-
-
-
-
-
-
-libnvjitlink-12.1.10 | 16.9 MB   |            |   0% [A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-intel-openmp-2023.1. | 17.2 MB   |            |   0% [A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-cuda-cupti-12.1.105  | 15.4 MB   |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | ########9  |  90% [Apytorch-2.5.1        | 1.35 GB   | ##7        |  28% 
-
-
-
-
-
-
-
-
-
-
-libnvjitlink-12.1.10 | 16.9 MB   | ####7      |  47% [A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-intel-openmp-2023.1. | 17.2 MB   | ######9    |  70% [A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-cuda-cupti-12.1.105  | 15.4 MB   | ####6      |  47% [A[A[A[A[A[A[A[A[A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | #########2 |  92% [A
-
-
-
-
-
-
-
-
-
-
-libnvjitlink-12.1.10 | 16.9 MB   | ########9  |  90% [A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-cuda-cupti-12.1.105  | 15.4 MB   | #########5 |  95% [A[A[A[A[A[A[A[A[A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | #########4 |  95% [Apytorch-2.5.1        | 1.35 GB   | ##8        |  28% 
-libcublas-12.1.0.26  | 329.0 MB  | #########6 |  97% [Apytorch-2.5.1        | 1.35 GB   | ##8        |  29% 
-
-
-
-
-
-
-
-
-
-intel-openmp-2023.1. | 17.2 MB   | ########## | 100% [A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-libnvjitlink-12.1.10 | 16.9 MB   | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-cuda-cupti-12.1.105  | 15.4 MB   | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-sympy-1.13.3         | 11.2 MB   |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-ffmpeg-4.3           | 9.9 MB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-torchvision-0.20.1   | 8.1 MB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[Apytorch-2.5.1        | 1.35 GB   | ##8        |  29% 
-libcublas-12.1.0.26  | 329.0 MB  | #########9 |  99% [Apytorch-2.5.1        | 1.35 GB   | ##9        |  29% 
-
-
-
-
-
-
-
-
-
-
-
-
-sympy-1.13.3         | 11.2 MB   | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-sympy-1.13.3         | 11.2 MB   | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-ffmpeg-4.3           | 9.9 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-ffmpeg-4.3           | 9.9 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-torchvision-0.20.1   | 8.1 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-torchvision-0.20.1   | 8.1 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-numpy-base-2.0.1     | 7.9 MB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-llvm-openmp-14.0.6   | 4.4 MB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-torchaudio-2.5.1     | 6.2 MB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Apytorch-2.5.1        | 1.35 GB   | ##9        |  30% 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-llvm-openmp-14.0.6   | 4.4 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-numpy-base-2.0.1     | 7.9 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-numpy-base-2.0.1     | 7.9 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-torchaudio-2.5.1     | 6.2 MB    | ####8      |  49% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Apytorch-2.5.1        | 1.35 GB   | ###        |  30% 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-torchaudio-2.5.1     | 6.2 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Apytorch-2.5.1        | 1.35 GB   | ###        |  31% pytorch-2.5.1        | 1.35 GB   | ###1       |  32% pytorch-2.5.1        | 1.35 GB   | ###2       |  32% pytorch-2.5.1        | 1.35 GB   | ###3       |  33% pytorch-2.5.1        | 1.35 GB   | ###3       |  34% pytorch-2.5.1        | 1.35 GB   | ###4       |  34% 
-libcublas-12.1.0.26  | 329.0 MB  | ########## | 100% [Apytorch-2.5.1        | 1.35 GB   | ###5       |  35% pytorch-2.5.1        | 1.35 GB   | ###6       |  36% pytorch-2.5.1        | 1.35 GB   | ###6       |  37% pytorch-2.5.1        | 1.35 GB   | ###7       |  38% pytorch-2.5.1        | 1.35 GB   | ###8       |  39% 
-
-
-mkl-2023.1.0         | 171.5 MB  | ########## | 100% [A[A[Apytorch-2.5.1        | 1.35 GB   | ###9       |  39% pytorch-2.5.1        | 1.35 GB   | ####       |  40% pytorch-2.5.1        | 1.35 GB   | ####       |  41% pytorch-2.5.1        | 1.35 GB   | ####1      |  41% pytorch-2.5.1        | 1.35 GB   | ####1      |  42% pytorch-2.5.1        | 1.35 GB   | ####2      |  43% pytorch-2.5.1        | 1.35 GB   | ####3      |  43% pytorch-2.5.1        | 1.35 GB   | ####3      |  44% pytorch-2.5.1        | 1.35 GB   | ####4      |  44% pytorch-2.5.1        | 1.35 GB   | ####5      |  45% pytorch-2.5.1        | 1.35 GB   | ####5      |  46% pytorch-2.5.1        | 1.35 GB   | ####6      |  46% pytorch-2.5.1        | 1.35 GB   | ####6      |  47% pytorch-2.5.1        | 1.35 GB   | ####7      |  47% pytorch-2.5.1        | 1.35 GB   | ####7      |  48% pytorch-2.5.1        | 1.35 GB   | ####8      |  49% pytorch-2.5.1        | 1.35 GB   | ####9      |  49% pytorch-2.5.1        | 1.35 GB   | ####9      |  50% pytorch-2.5.1        | 1.35 GB   | #####      |  50% pytorch-2.5.1        | 1.35 GB   | #####      |  51% pytorch-2.5.1        | 1.35 GB   | #####1     |  52% pytorch-2.5.1        | 1.35 GB   | #####3     |  53% pytorch-2.5.1        | 1.35 GB   | #####4     |  54% pytorch-2.5.1        | 1.35 GB   | #####5     |  55% pytorch-2.5.1        | 1.35 GB   | #####6     |  56% pytorch-2.5.1        | 1.35 GB   | #####7     |  57% pytorch-2.5.1        | 1.35 GB   | #####8     |  58% pytorch-2.5.1        | 1.35 GB   | #####9     |  59% pytorch-2.5.1        | 1.35 GB   | #####9     |  60% pytorch-2.5.1        | 1.35 GB   | ######     |  61% pytorch-2.5.1        | 1.35 GB   | ######1    |  61% pytorch-2.5.1        | 1.35 GB   | ######1    |  62% pytorch-2.5.1        | 1.35 GB   | ######2    |  62% pytorch-2.5.1        | 1.35 GB   | ######2    |  63% pytorch-2.5.1        | 1.35 GB   | ######3    |  63% pytorch-2.5.1        | 1.35 GB   | ######3    |  64% pytorch-2.5.1        | 1.35 GB   | ######4    |  64% pytorch-2.5.1        | 1.35 GB   | ######4    |  65% pytorch-2.5.1        | 1.35 GB   | ######5    |  65% pytorch-2.5.1        | 1.35 GB   | ######5    |  66% pytorch-2.5.1        | 1.35 GB   | ######6    |  67% pytorch-2.5.1        | 1.35 GB   | ######7    |  67% pytorch-2.5.1        | 1.35 GB   | ######7    |  68% pytorch-2.5.1        | 1.35 GB   | ######8    |  68% pytorch-2.5.1        | 1.35 GB   | ######8    |  69% pytorch-2.5.1        | 1.35 GB   | ######9    |  69% pytorch-2.5.1        | 1.35 GB   | ######9    |  70% pytorch-2.5.1        | 1.35 GB   | #######    |  70% pytorch-2.5.1        | 1.35 GB   | #######    |  71% pytorch-2.5.1        | 1.35 GB   | #######1   |  72% pytorch-2.5.1        | 1.35 GB   | #######2   |  72% pytorch-2.5.1        | 1.35 GB   | #######2   |  73% pytorch-2.5.1        | 1.35 GB   | #######3   |  73% pytorch-2.5.1        | 1.35 GB   | #######3   |  74% pytorch-2.5.1        | 1.35 GB   | #######4   |  75% pytorch-2.5.1        | 1.35 GB   | #######5   |  75% pytorch-2.5.1        | 1.35 GB   | #######5   |  76% pytorch-2.5.1        | 1.35 GB   | #######6   |  77% pytorch-2.5.1        | 1.35 GB   | #######7   |  77% pytorch-2.5.1        | 1.35 GB   | #######7   |  78% pytorch-2.5.1        | 1.35 GB   | #######8   |  78% pytorch-2.5.1        | 1.35 GB   | #######8   |  79% pytorch-2.5.1        | 1.35 GB   | #######9   |  79% pytorch-2.5.1        | 1.35 GB   | #######9   |  80% pytorch-2.5.1        | 1.35 GB   | ########   |  80% pytorch-2.5.1        | 1.35 GB   | ########   |  81% pytorch-2.5.1        | 1.35 GB   | ########1  |  82% pytorch-2.5.1        | 1.35 GB   | ########2  |  83% pytorch-2.5.1        | 1.35 GB   | ########3  |  83% pytorch-2.5.1        | 1.35 GB   | ########3  |  84% pytorch-2.5.1        | 1.35 GB   | ########4  |  85% pytorch-2.5.1        | 1.35 GB   | ########5  |  86% pytorch-2.5.1        | 1.35 GB   | ########6  |  86% pytorch-2.5.1        | 1.35 GB   | ########6  |  87% pytorch-2.5.1        | 1.35 GB   | ########7  |  88% pytorch-2.5.1        | 1.35 GB   | ########8  |  89% pytorch-2.5.1        | 1.35 GB   | ########9  |  89% pytorch-2.5.1        | 1.35 GB   | #########  |  90% pytorch-2.5.1        | 1.35 GB   | #########  |  91% pytorch-2.5.1        | 1.35 GB   | #########1 |  91% pytorch-2.5.1        | 1.35 GB   | #########1 |  92% pytorch-2.5.1        | 1.35 GB   | #########2 |  93% pytorch-2.5.1        | 1.35 GB   | #########3 |  93% pytorch-2.5.1        | 1.35 GB   | #########3 |  94% pytorch-2.5.1        | 1.35 GB   | #########3 |  94% pytorch-2.5.1        | 1.35 GB   | #########4 |  94% pytorch-2.5.1        | 1.35 GB   | #########4 |  95% pytorch-2.5.1        | 1.35 GB   | #########5 |  96% pytorch-2.5.1        | 1.35 GB   | #########6 |  96% 
-
-
-
-
-libnpp-12.0.2.50     | 139.8 MB  | ########## | 100% [A[A[A[A[Apytorch-2.5.1        | 1.35 GB   | #########6 |  97% pytorch-2.5.1        | 1.35 GB   | #########7 |  97% pytorch-2.5.1        | 1.35 GB   | #########7 |  98% pytorch-2.5.1        | 1.35 GB   | #########8 |  99% pytorch-2.5.1        | 1.35 GB   | #########9 | 100% 
-
-
-
-
-
-
-
-libcurand-10.3.9.90  | 43.5 MB   | ########## | 100% [A[A[A[A[A[A[A[A
-
-
-
-libcusparse-12.0.2.5 | 163.0 MB  | ########## | 100% [A[A[A[Apytorch-2.5.1        | 1.35 GB   | ########## | 100% 
-
-
-
-
-
-
-
-
-cuda-nvrtc-12.1.105  | 19.7 MB   | ########## | 100% [A[A[A[A[A[A[A[A[A
-
-
-
-
-
-libcufft-11.0.2.4    | 102.9 MB  | ########## | 100% [A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-intel-openmp-2023.1. | 17.2 MB   | ########## | 100% [A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-libnvjitlink-12.1.10 | 16.9 MB   | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-libcusolver-11.4.4.5 | 98.3 MB   | ########## | 100% [A[A[A[A[A[A[A
-
-torchtriton-3.1.0    | 233.6 MB  | ########## | 100% [A[A
-
-
-
-
-
-
-
-
-
-
-
-cuda-cupti-12.1.105  | 15.4 MB   | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-ffmpeg-4.3           | 9.9 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-llvm-openmp-14.0.6   | 4.4 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-llvm-openmp-14.0.6   | 4.4 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-torchvision-0.20.1   | 8.1 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-torchaudio-2.5.1     | 6.2 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-torchaudio-2.5.1     | 6.2 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-numpy-base-2.0.1     | 7.9 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-sympy-1.13.3         | 11.2 MB   | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
-libcublas-12.1.0.26  | 329.0 MB  | ########## | 100% [Apytorch-2.5.1        | 1.35 GB   | ########## | 100% 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                      [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A                                                     
-                                                     [A
-
-                                                     [A[A
-
-
-                                                     [A[A[A
-
-
-
-                                                     [A[A[A[A
-
-
-
-
-                                                     [A[A[A[A[A
-
-
-
-
-
-                                                     [A[A[A[A[A[A
-
-
-
-
-
-
-                                                     [A[A[A[A[A[A[A
-
-
-
-
-
-
-
-                                                     [A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-                                                     [A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-                                                     [A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-                                                     [A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-                                                     [A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-[A
-
-[A[A
-
-
-[A[A[A
-
-
-
-[A[A[A[A
-
-
-
-
-[A[A[A[A[A
-
-
-
-
-
-[A[A[A[A[A[A
-
-
-
-
-
-
-[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-[A
-
-[A[A
-
-
-[A[A[A
-
-
-
-[A[A[A[A
-
-
-
-
-[A[A[A[A[A
-
-
-
-
-
-[A[A[A[A[A[A
-
-
-
-
-
-
-[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-[A
-
-[A[A
-
-
-[A[A[A
-
-
-
-[A[A[A[A
-
-
-
-
-[A[A[A[A[A
-
-
-
-
-
-[A[A[A[A[A[A
-
-
-
-
-
-
-[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
-[A
-
-[A[A done
-Preparing transaction: - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | done
-Verifying transaction: - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | done
-Executing transaction: - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ done
-Collecting hydra-core
-  Using cached hydra_core-1.3.2-py3-none-any.whl.metadata (5.5 kB)
-Collecting hydra-submitit-launcher
-  Downloading hydra_submitit_launcher-1.2.0-py3-none-any.whl.metadata (1.1 kB)
-Collecting omegaconf<2.4,>=2.2 (from hydra-core)
-  Using cached omegaconf-2.3.0-py3-none-any.whl.metadata (3.9 kB)
-Collecting antlr4-python3-runtime==4.9.* (from hydra-core)
-  Using cached antlr4_python3_runtime-4.9.3-py3-none-any.whl
-Collecting packaging (from hydra-core)
-  Using cached packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
-Collecting hydra-core
-  Downloading hydra_core-1.4.0.dev1-py3-none-any.whl.metadata (5.4 kB)
-Collecting submitit>=1.3.3 (from hydra-submitit-launcher)
-  Downloading submitit-1.5.2-py3-none-any.whl.metadata (7.9 kB)
-Requirement already satisfied: PyYAML>=5.1.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/test_env/lib/python3.9/site-packages (from omegaconf<2.4,>=2.2->hydra-core) (6.0.2)
-Collecting cloudpickle>=1.2.1 (from submitit>=1.3.3->hydra-submitit-launcher)
-  Downloading cloudpickle-3.1.1-py3-none-any.whl.metadata (7.1 kB)
-Requirement already satisfied: typing_extensions>=3.7.4.2 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/test_env/lib/python3.9/site-packages (from submitit>=1.3.3->hydra-submitit-launcher) (4.12.2)
-Using cached hydra_core-1.3.2-py3-none-any.whl (154 kB)
-Using cached hydra_submitit_launcher-1.2.0-py3-none-any.whl (5.2 kB)
-Using cached omegaconf-2.3.0-py3-none-any.whl (79 kB)
-Using cached submitit-1.5.2-py3-none-any.whl (74 kB)
-Using cached packaging-24.2-py3-none-any.whl (65 kB)
-Using cached cloudpickle-3.1.1-py3-none-any.whl (20 kB)
-Installing collected packages: antlr4-python3-runtime, packaging, omegaconf, cloudpickle, submitit, hydra-core, hydra-submitit-launcher
-Successfully installed antlr4-python3-runtime-4.9.3 cloudpickle-3.1.1 hydra-core-1.3.2 hydra-submitit-launcher-1.2.0 omegaconf-2.3.0 packaging-24.2 submitit-1.5.2

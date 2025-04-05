@@ -18,7 +18,8 @@ logger = logging.getLogger(__name__)
 
 DATASET_NAME = "rokokot/question-type-and-complexity"
 CACHE_DIR = os.environ.get("HF_HOME", "./data/cache")
-
+print(f"Using Dataset: {DATASET_NAME}")
+print(f"Cache Directory: {CACHE_DIR}")
 
 TASK_TO_FEATURE = {
     "question_type": "question_type",
@@ -131,7 +132,8 @@ def load_combined_dataset(
         logger.error(f"Error loading data: {e}")
         raise
     
-def load_hf_data(language, task, split, control_index=None, cache_dir=CACHE_DIR):
+def load_hf_data(language, task, split, control_index=None, cache_dir=None):
+    
     config_name = "base"
     if control_index is not None:
         if task == "question_type":
@@ -140,50 +142,25 @@ def load_hf_data(language, task, split, control_index=None, cache_dir=CACHE_DIR)
             config_name = f"control_complexity_seed{control_index}"
         else:
             config_name = f"control_{task}_seed{control_index}"
-
+    
     logger.info(f"Loading {config_name} dataset for {language} language ({split})")
-
+    
     try:
-        # Try loading with local_files_only first if offline mode is set
-        local_only = os.environ.get("HF_DATASETS_OFFLINE", "0") == "1"
-        
-        try:
-            if local_only:
-                dataset = load_dataset(
-                    DATASET_NAME, 
-                    name=config_name, 
-                    split=split, 
-                    cache_dir=cache_dir,
-                    local_files_only=True  # Force using cached version
-                )
-                logger.info("Successfully loaded dataset from local cache")
-            else:
-                dataset = load_dataset(
-                    DATASET_NAME, 
-                    name=config_name, 
-                    split=split, 
-                    cache_dir=cache_dir
-                )
-        except Exception as cache_error:
-            if local_only:
-                logger.warning(f"Could not load from cache with local_files_only=True: {cache_error}")
-                logger.info("Trying again without local_files_only restriction...")
-                dataset = load_dataset(
-                    DATASET_NAME, 
-                    name=config_name, 
-                    split=split, 
-                    cache_dir=cache_dir,
-                    local_files_only=False
-                )
-            else:
-                raise
+        dataset = load_dataset(
+            DATASET_NAME, 
+            config_name,
+            split=split,
+            cache_dir=cache_dir,
+            verification_mode='no_checks'
+        )
         
         if language != "all":
             dataset = dataset.filter(lambda example: example["language"] == language)
-            
+        
         df = dataset.to_pandas()
         logger.info(f"Loaded {len(df)} examples for {language} ({split})")
         return df
+    
     except Exception as e:
         logger.error(f"Error loading data for {language}: {e}")
         raise
@@ -268,41 +245,102 @@ def create_lm_dataloaders(
     batch_size: int = 16,
     control_index: Optional[int] = None,
     cache_dir: str = "./data/cache",
-    num_workers: int = 4,
+    num_workers: int = 4
 ):
-
-
+    model_path = os.path.join(cache_dir, f"models--{model_name.replace('/', '--')}")
+    
     try:
-        # Use offline-compatible tokenizer loading
-        tokenizer = AutoTokenizer.from_pretrained(
-            model_name, 
-            cache_dir=cache_dir,
-            local_files_only=True,  # Force using cache
-            use_fast=True  # Use faster tokenizer implementation
+        try:
+            snapshot_path = os.path.join(model_path, "snapshots")
+            if os.path.exists(snapshot_path):
+                snapshot_dirs = [
+                    os.path.join(snapshot_path, d) 
+                    for d in os.listdir(snapshot_path) 
+                    if os.path.isdir(os.path.join(snapshot_path, d))
+                ]
+                
+                if snapshot_dirs:
+                    local_model_path = snapshot_dirs[0]
+                    logger.info(f"Found model snapshot: {local_model_path}")
+                    
+                    tokenizer = AutoTokenizer.from_pretrained(
+                        local_model_path,
+                        use_fast=True,
+                        local_files_only=True
+                    )
+                else:
+                    # Fallback to original model name if no snapshots
+                    tokenizer = AutoTokenizer.from_pretrained(
+                        model_name,
+                        use_fast=True
+                    )
+            else:
+                # Fallback to original model name if no snapshots directory
+                tokenizer = AutoTokenizer.from_pretrained(
+                    model_name,
+                    use_fast=True
+                )
+        
+        except Exception as local_load_error:
+            logger.warning(f"Error loading local tokenizer: {local_load_error}")
+            # Final fallback
+            tokenizer = AutoTokenizer.from_pretrained(
+                model_name,
+                use_fast=True
+            )
+        
+        # Logging for debugging
+        logger.info(f"Successfully loaded tokenizer for {model_name}")
+        
+        # Load datasets
+        train_df = load_hf_data(language, task, "train", control_index, cache_dir)
+        val_df = load_hf_data(language, task, "validation", None, cache_dir)
+        test_df = load_hf_data(language, task, "test", None, cache_dir)
+        
+        # Create datasets
+        train_dataset = LMQuestionDataset(train_df, tokenizer, task)
+        val_dataset = LMQuestionDataset(val_df, tokenizer, task)
+        test_dataset = LMQuestionDataset(test_df, tokenizer, task)
+        
+        # Create dataloaders
+        train_loader = DataLoader(
+            train_dataset,
+            batch_size=batch_size,
+            shuffle=True,
+            num_workers=num_workers,
+            pin_memory=True
         )
-        logger.info(f"Loaded tokenizer: {model_name}")
+        val_loader = DataLoader(
+            val_dataset,
+            batch_size=batch_size,
+            shuffle=False,
+            num_workers=num_workers,
+            pin_memory=True
+        )
+        test_loader = DataLoader(
+            test_dataset,
+            batch_size=batch_size,
+            shuffle=False,
+            num_workers=num_workers,
+            pin_memory=True
+        )
+        
+        return train_loader, val_loader, test_loader
+    
     except Exception as e:
-        logger.warning(f"Error loading tokenizer with local_files_only=True: {e}")
-        logger.info("Trying again without local_files_only...")
-        tokenizer = AutoTokenizer.from_pretrained(model_name, cache_dir=cache_dir)
-
-
-    train_df = load_hf_data(language, task, "train", control_index, cache_dir)
-    val_df = load_hf_data(language, task, "validation", None, cache_dir)
-    test_df = load_hf_data(language, task, "test", None, cache_dir)  # Always use real test data
-
-    train_dataset = LMQuestionDataset(train_df, tokenizer, task)
-    val_dataset = LMQuestionDataset(val_df, tokenizer, task)
-    test_dataset = LMQuestionDataset(test_df, tokenizer, task)
-
-    train_loader = DataLoader(
-        train_dataset, batch_size=batch_size, shuffle=True, num_workers=num_workers, pin_memory=True
-    )
-
-    val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=num_workers, pin_memory=True)
-
-    test_loader = DataLoader(
-        test_dataset, batch_size=batch_size, shuffle=False, num_workers=num_workers, pin_memory=True
-    )
-
-    return train_loader, val_loader, test_loader
+        logger.error(f"Error in create_lm_dataloaders: {e}")
+        # Add more detailed logging about the environment
+        logger.error(f"Model name: {model_name}")
+        logger.error(f"Cache directory: {cache_dir}")
+        logger.error(f"Language: {language}")
+        logger.error(f"Task: {task}")
+        
+        # Optional: print contents of cache directory for debugging
+        if os.path.exists(cache_dir):
+            logger.error("Cache directory contents:")
+            for root, dirs, files in os.walk(cache_dir):
+                logger.error(f"Dir: {root}")
+                for d in dirs:
+                    logger.error(f" - {d}")
+        
+        raise

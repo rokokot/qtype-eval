@@ -1,0 +1,83 @@
+_wandb:
+    value:
+        cli_version: 0.19.9
+        m: []
+        python_version: 3.9.21
+        t:
+            "1":
+                - 1
+                - 5
+                - 6
+                - 11
+                - 49
+                - 50
+                - 51
+                - 53
+                - 55
+                - 71
+            "2":
+                - 1
+                - 5
+                - 6
+                - 11
+                - 49
+                - 50
+                - 51
+                - 53
+                - 55
+                - 71
+            "3":
+                - 13
+                - 15
+                - 16
+                - 23
+                - 55
+            "4": 3.9.21
+            "5": 0.19.9
+            "6": 4.50.3
+            "8":
+                - 5
+            "12": 0.19.9
+            "13": linux-x86_64
+data:
+    value:
+        cache_dir: ./data/cache
+        dataset_name: rokokot/question-type-and-complexity
+        eval_language: null
+        languages:
+            - en
+        train_language: null
+        vectors_dir: ./data/features
+experiment:
+    value:
+        control_index: null
+        eval_language: null
+        language: en
+        languages: null
+        task:
+            - question_type
+        train_language: null
+        type: lm_probe
+        use_controls: false
+model:
+    value:
+        dropout: 0.1
+        freeze_model: false
+        layer_index: -1
+        layer_wise: false
+        lm_name: cis-lmu/glot500-base
+        model_type: lm_probe
+seed:
+    value: 42
+training:
+    value:
+        batch_size: 8
+        lr: 1e-05
+        num_epochs: 3
+        num_workers: 4
+        patience: 3
+        random_state: 42
+        scheduler_factor: 0.5
+        scheduler_patience: 2
+        task_type: classification
+        weight_decay: 0.01

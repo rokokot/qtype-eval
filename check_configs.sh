@@ -14,7 +14,7 @@ export PATH="$VSC_DATA/miniconda3/bin:$PATH"
 source "$VSC_DATA/miniconda3/etc/profile.d/conda.sh"
 
 # Activate the environment
-conda activate qtype_env
+conda activate qtype-eval
 
 # Set up environment variables
 export PYTHONPATH=$PYTHONPATH:$PWD
