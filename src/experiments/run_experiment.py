@@ -10,7 +10,7 @@ import numpy as np
 import torch
 from typing import Optional, List
 
-from src.data.datasets import ensure_string_task, load_sklearn_data, create_lm_dataloaders
+from src.data.datasets import ensure_string_task, load_sklearn_data, create_lm_dataloaders, TASK_TO_FEATURE
 from src.models.model_factory import create_model
 from src.training.sklearn_trainer import SklearnTrainer
 from src.training.lm_trainer import LMTrainer
@@ -113,6 +113,62 @@ def setup_wandb(
         return None
 
 
+def process_task_list(tasks):
+    """
+    Robustly process a list of tasks, ensuring a single valid task string.
+    
+    Args:
+        tasks (Union[str, List[str], None]): Input task(s)
+    
+    Returns:
+        str: A single, normalized task string
+    """
+    # Handle None input
+    if tasks is None:
+        return "question_type"
+    
+    # If tasks is already a string, convert and validate
+    if isinstance(tasks, str):
+        return ensure_string_task(tasks)
+    
+    # If tasks is a list
+    if isinstance(tasks, list):
+        # Filter out None or empty values
+        valid_tasks = [t for t in tasks if t]
+        
+        # If no valid tasks, return default
+        if not valid_tasks:
+            return "question_type"
+        
+        # Take the first valid task and normalize
+        return ensure_string_task(valid_tasks[0])
+    
+    # For any other type, default to question_type
+    return "question_type"
+    
+
+def validate_task(task):
+    """
+    Validate and log warnings about task selection.
+    
+    Args:
+        task (str): Normalized task string
+    
+    Returns:
+        str: Validated task string
+    """
+    valid_tasks = list(TASK_TO_FEATURE.keys()) + [
+        "avg_links_len", "avg_max_depth", 
+        "avg_subordinate_chain_len", "avg_verb_edges", 
+        "lexical_density", "n_tokens"
+    ]
+    
+    if task not in valid_tasks:
+        logger.warning(f"Task '{task}' may not be properly recognized. Valid tasks: {valid_tasks}")
+        return "question_type"
+    
+    return task
+
 
 
 @hydra.main(config_path="../../configs", config_name="config", version_base="1.1")
@@ -126,16 +182,26 @@ def main(cfg: DictConfig):
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(cfg.seed)
 
-    # Robust task extraction
-    if isinstance(cfg.experiment.tasks, list):
-        task = cfg.experiment.tasks[0] if cfg.experiment.tasks else "question_type"
-    else:
-        task = cfg.experiment.tasks
-    
-    # Normalize task
-    task = ensure_string_task(task)
-    logger.info(f"Processed Task: {task}")
-
+    try:
+        task = process_task_list(cfg.experiment.tasks)
+        
+        # Validate task
+        task = validate_task(task)
+        
+        logger.info(f"Processed Task: {task}")
+        
+        # Verify task is valid
+        valid_tasks = list(TASK_TO_FEATURE.keys()) + ["avg_links_len", "avg_max_depth", 
+                            "avg_subordinate_chain_len", "avg_verb_edges", 
+                            "lexical_density", "n_tokens"]
+                            
+        if task not in valid_tasks:
+            logger.warning(f"Task '{task}' may not be properly recognized. Valid tasks: {valid_tasks}")
+    except Exception as e:
+        logger.error(f"Error processing task: {e}")
+        task = "question_type"  # Default to question_type as fallback
+        logger.info(f"Defaulting to task: {task}")
+        
     # Determine task type with more robust logic
     def determine_task_type(task, cfg):
         """Dynamically determine task type based on task and configuration."""
@@ -276,6 +342,11 @@ def run_sklearn_experiment(cfg, task, task_type, submetric=None):
 def run_lm_experiment(cfg, task, task_type, submetric=None):
     """Run language model probing experiment."""
     
+    if task == "single_submetric" and not submetric:
+        submetric = getattr(cfg.experiment, "submetric", None)
+        logger.info(f"Using submetric from config: {submetric}")
+    
+    
     if isinstance(task, list):
         task_str = task[0] if task else "question_type"
         logger.info(f"Converting task list {task} to string '{task_str}'")
@@ -328,6 +399,7 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
                     control_index=control_index,
                     cache_dir=cfg.data.cache_dir,
                     num_workers=cfg.training.num_workers,
+                    submetric=submetric
                 )
             except Exception as loader_error:
                 logger.error(f"Failed to create dataloaders for {language}: {task}")
