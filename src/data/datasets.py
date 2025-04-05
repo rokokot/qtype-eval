@@ -21,31 +21,95 @@ CACHE_DIR = os.environ.get("HF_HOME", "./data/cache")
 print(f"Using Dataset: {DATASET_NAME}")
 print(f"Cache Directory: {CACHE_DIR}")
 
+
+# Train data columns: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type']
+
 TASK_TO_FEATURE = {
-    "question_type": "question_type",
-    "complexity": "lang_norm_complexity_score",
-    "avg_links_len": "avg_links_len",
-    "avg_max_depth": "avg_max_depth",
-    "avg_subordinate_chain_len": "avg_subordinate_chain_len",
-    "avg_verb_edges": "avg_verb_edges",
-    "lexical_density": "lexical_density",
-    "n_tokens": "n_tokens",
+    "question_type": {
+        "feature": "question_type",
+        "task_type": "classification",
+        "label_type": np.int64
+    },
+    "complexity": {
+        "feature": "lang_norm_complexity_score",
+        "task_type": "regression",
+        "label_type": np.float32
+    },
+    "single_submetric": {
+        "feature": None, 
+        "task_type": "regression",
+        "label_type": np.float32
+    },
+    # Submetric-specific mappings
+    "avg_links_len": {
+        "feature": "avg_links_len",
+        "task_type": "regression",
+        "label_type": np.float32
+    },
+    "avg_max_depth": {
+        "feature": "avg_max_depth",
+        "task_type": "regression",
+        "label_type": np.float32
+    },
+    "avg_subordinate_chain_len": {
+        "feature": "avg_subordinate_chain_len",
+        "task_type": "regression",
+        "label_type": np.float32
+    },
+    "avg_verb_edges": {
+        "feature": "avg_verb_edges",
+        "task_type": "regression",
+        "label_type": np.float32
+    },
+    "lexical_density": {
+        "feature": "lexical_density",
+        "task_type": "regression",
+        "label_type": np.float32
+    },
+    "n_tokens": {
+        "feature": "n_tokens",
+        "task_type": "regression",
+        "label_type": np.float32
 }
 
 
 def ensure_string_task(task):
     """Make sure a task is a string, not a list."""
-    if isinstance(task, list) and len(task) > 0:
-        return task[0]
-    elif isinstance(task, str):
+    if isinstance(task, list):
+        task = task[0] if task else "question_type"
+    
+    task = str(task).lower()
+    
+    task_mapping = {
+        "question_type": "question_type",
+        "complexity": "complexity",
+        "complexity_score": "complexity",
+        "lang_norm_complexity_score": "complexity",
+        "single_submetric": "single_submetric"
+    }
+    
+    submetrics = [
+        "avg_links_len", "avg_max_depth", "avg_subordinate_chain_len", 
+        "avg_verb_edges", "lexical_density", "n_tokens"
+    ]
+    
+    if task in submetrics:
         return task
-    else:
-        return "question_type"  # Default fallback
+    
+    return task_mapping.get(task, task)
 
 def get_feature_name_from_task(task):
     """Get the feature name from a task, handling both string and list inputs."""
     task_str = ensure_string_task(task)
-    return TASK_TO_FEATURE.get(task_str)
+    
+    # Handle special cases like submetric
+    if task_str == "single_submetric":
+        # This should be set from experiment configuration
+        return None
+    
+    # Retrieve feature from task mapping
+    task_config = TASK_TO_FEATURE.get(task_str, {})
+    return task_config.get('feature')
 
 
 class MultilingualQuestionDataset(Dataset):  # Dataset for sklearn models using TF-IDF features
@@ -73,7 +137,7 @@ class LMQuestionDataset(Dataset):
     def __init__(self, data: pd.DataFrame, tokenizer: AutoTokenizer, task: str, max_length: int = 128):
         self.data = data
         self.tokenizer = tokenizer
-        self.task = ensure_string_task
+        self.task = ensure_string_task(task)
         self.max_length = max_length
 
         self.is_classification = task == "question_type"

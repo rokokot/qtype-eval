@@ -1,6 +1,0 @@
-{
-  "language": "en",
-  "task": "['question_type']",
-  "error": "['question_type']",
-  "error_type": "KeyError"
-}

@@ -1,9 +1,8 @@
-
+# configs/experiment/cross_lingual.yaml
 type: "lm_probe_cross_lingual"
 tasks:
-  - "question_type"
-use_controls: false
-control_index: null
-num_controls: 3
-eval_on_orig_test: true
+  - "question_type"  # or "complexity"
 cross_lingual: true
+train_language: "en"
+eval_language: "fi"
+task_type: "auto"  # Dynamically determined

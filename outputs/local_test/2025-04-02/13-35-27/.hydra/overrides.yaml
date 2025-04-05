@@ -1,5 +1,0 @@
-- experiment=question_type
-- model=dummy
-- data.languages=[en]
-- wandb.mode=disabled
-- experiment_name=local_test
