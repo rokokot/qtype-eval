@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH --job-name=mini_test_debug
-#SBATCH --time=00:15:00
+#SBATCH --job-name=mini_classification_debug
+#SBATCH --time=00:10:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
@@ -32,16 +32,15 @@ echo "TRANSFORMERS_OFFLINE=${TRANSFORMERS_OFFLINE}"
 echo "HF_DATASETS_OFFLINE=${HF_DATASETS_OFFLINE}"
 
 # Clear previous output directory
-rm -rf mini_test_output
-mkdir -p mini_test_output
-
+rm -rf mini_classification_output
+mkdir -p mini_classification_output
 
 # Print environment information
 echo "Python executable: $(which python)"
 echo "PyTorch CUDA available: $(python -c 'import torch; print(torch.cuda.is_available())')"
 
 # Run a mini experiment with more verbose logging
-echo "Running mini experiment..."
+echo "Running mini classification experiment..."
 
 python -m src.experiments.run_experiment \
     "experiment=question_type" \
@@ -51,25 +50,26 @@ python -m src.experiments.run_experiment \
     "data.cache_dir=$VSC_DATA/qtype-eval/data/cache" \
     "training.num_epochs=3" \
     "training.batch_size=8" \
-    "experiment_name=mini_test_glot500_en" \
-    "output_dir=./mini_test_output"
+    "training.task_type=classification" \
+    "experiment_name=mini_test_classification_glot500_en" \
+    "output_dir=./mini_classification_output"
 
 # Check output files
 echo "Output directory contents:"
-ls -la mini_test_output
-cat mini_test_output/all_results.json || echo "No results file found"
+ls -la mini_classification_output
+cat mini_classification_output/all_results.json || echo "No results file found"
 echo "Error files if any:"
-ls -la mini_test_output/error_*.json 2>/dev/null || echo "No error files found"
+ls -la mini_classification_output/error_*.json 2>/dev/null || echo "No error files found"
 
 # If error files exist, show their contents
-for error_file in mini_test_output/error_*.json; do
+for error_file in mini_classification_output/error_*.json; do
     if [ -f "$error_file" ]; then
         echo "Contents of $error_file:"
         cat "$error_file"
     fi
 done
 
-echo "Mini test completed"
+echo "Mini classification test completed"
 
 # Show GPU usage
 echo "GPU memory usage:"

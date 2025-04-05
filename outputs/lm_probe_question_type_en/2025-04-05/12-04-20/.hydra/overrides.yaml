@@ -1,7 +1,0 @@
-- experiment=question_type
-- model=lm_probe
-- model.lm_name=cis-lmu/glot500-base
-- data.languages=[en]
-- training.task_type=classification
-- experiment_name=lm_probe_question_type_en
-- output_dir=outputs/basic_glot500_20250405_120246/question_type/en

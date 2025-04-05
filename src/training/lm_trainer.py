@@ -161,9 +161,18 @@ class LMTrainer:
         with torch.no_grad():
             for batch in data_loader:
                 batch = {k: v.to(self.device) for k, v in batch.items()}
-
+                
+                
+                
                 outputs = self.model(input_ids=batch["input_ids"], attention_mask=batch["attention_mask"])
 
+                if self.task_type == "classification":
+                    if outputs.size(-1) == 1:
+                        batch["labels"] = batch["labels"].view(-1, 1).float()
+                else:
+                    batch["labels"] = batch["labels"].view(outputs.size()).float()
+            
+                    
                 loss = self.criterion(outputs, batch["labels"])
                 total_loss += loss.item()
 
@@ -180,23 +189,23 @@ class LMTrainer:
 
     def _calculate_metrics(self, y_true, y_pred):
         
-        y_true_np = y_true.cpu().numpy()
-        y_pred_np = y_pred.cpu().numpy()
+        #y_true_np = y_true.cpu().numpy()
+        #y_pred_np = y_pred.cpu().numpy()
         
         if self.task_type == "classification":
-            y_pred_binary = (y_pred_np > 0.5).astype(int)
+            y_pred_binary = (y_pred > 0.5).astype(int)
             return {
-                "accuracy": float(accuracy_score(y_true_np, y_pred_binary)),
-                "f1": float(f1_score(y_true_np, y_pred_binary, average="binary")),
+                "accuracy": float(accuracy_score(y_true, y_pred_binary)),
+                "f1": float(f1_score(y_true, y_pred_binary, average="binary")),
             }
-        else:  # regression
-            if y_true.np.ndim > 1:
-                y_true_np = y_true_np.flatten()
+        else: 
+            if y_true.ndim > 1:
+                y_true = y_true.flatten()
             if y_pred_np.dim > 1:
-                y_pred_np = y_pred_np.flatten()
+                y_pred = y_pred.flatten()
                 
             return {
-                "mse": float(mean_squared_error(y_true_np, y_pred_np)),
-                "rmse": float(np.sqrt(mean_squared_error(y_true_np, y_pred_np))),
-                "r2": float(r2_score(y_true_np, y_pred_np)),
+                "mse": float(mean_squared_error(y_true, y_pred)),
+                "rmse": float(np.sqrt(mean_squared_error(y_true, y_pred))),
+                "r2": float(r2_score(y_true, y_pred)),
             }

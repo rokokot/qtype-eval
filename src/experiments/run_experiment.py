@@ -113,78 +113,111 @@ def setup_wandb(
         return None
 
 
-@hydra.main(config_path="../../configs", config_name="config", version_base="1.1")
-def main(cfg: DictConfig):
-    """Main function to run experiments based on config."""
-    logger.info(f"Configuration:\n{OmegaConf.to_yaml(cfg)}")
 
+
+@hydra.main(config_path="../../configs", config_name="config", version_base="1.1")
+
+def main(cfg: DictConfig):
+    """Robust main function to run experiments based on configuration."""
+    # Set random seeds for reproducibility
+    logger.info(f"Configuration:\n{OmegaConf.to_yaml(cfg)}")
     np.random.seed(cfg.seed)
     torch.manual_seed(cfg.seed)
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(cfg.seed)
 
-
+    # Robust task extraction
     if isinstance(cfg.experiment.tasks, list):
-        if cfg.experiment.tasks:
-            task = cfg.experiment.tasks[0]  # Extract first item
-            logger.info(f"Using first task from list: '{task}'")
-        else:
-            task = "question_type"  # Default
-            logger.info(f"Using default task: '{task}'")
+        task = cfg.experiment.tasks[0] if cfg.experiment.tasks else "question_type"
     else:
         task = cfg.experiment.tasks
-        logger.info(f"Using task: '{task}'")
     
-    task_type = "classification" if ensure_string_task(task) == "question_type" else "regression"
-    logger.info(f"Task type: {task_type}")
+    # Normalize task
+    task = ensure_string_task(task)
+    logger.info(f"Processed Task: {task}")
 
+    # Determine task type with more robust logic
+    def determine_task_type(task, cfg):
+        """Dynamically determine task type based on task and configuration."""
+        # Explicit task type override
+        if hasattr(cfg.training, 'task_type') and cfg.training.task_type != 'default':
+            return cfg.training.task_type
 
+        # Expanded task-specific type mapping
+        task_type_map = {
+            'question_type': 'classification',
+            'complexity': 'regression',
+            'single_submetric': 'regression',
+            # Add specific submetrics if needed
+            'avg_links_len': 'regression',
+            'avg_max_depth': 'regression',
+            'avg_subordinate_chain_len': 'regression',
+            'avg_verb_edges': 'regression',
+            'lexical_density': 'regression',
+            'n_tokens': 'regression'
+        }
+        
+        return task_type_map.get(task, 'regression')
+
+    # Determine task type
+    task_type = determine_task_type(task, cfg)
+    logger.info(f"Determined Task Type: {task_type}")
+
+    # Handle submetric specifically
     submetric = None
-    if task == "single_submetric" and hasattr(cfg.experiment, "submetric"):
-        submetric = cfg.experiment.submetric
-        task_type = "regression"
+    if task == 'single_submetric':
+        submetric = getattr(cfg.experiment, 'submetric', None)
+        if not submetric:
+            
+            logger.warning("Submetric task specified without a specific submetric. Defaulting to 'avg_links_len'")
+            submetric = 'avg_links_len'
+        logger.info(f"Submetric: {submetric}")
 
-    if cfg.experiment.type == "sklearn_baseline":
-        wandb_run = setup_wandb(
-            cfg=cfg,
-            experiment_type=cfg.experiment.type,
-            task=task if not submetric else submetric,
-            model_type=cfg.model.model_type,
-            languages=cfg.data.languages,
-        )
+    # Experiment type routing with enhanced logging
+    try:
+        if cfg.experiment.type == "sklearn_baseline":
+            wandb_run = setup_wandb(
+                cfg=cfg,
+                experiment_type=cfg.experiment.type,
+                task=submetric or task,
+                model_type=cfg.model.model_type,
+                languages=cfg.data.languages,
+            )
+            results = run_sklearn_experiment(cfg, task, task_type, submetric)
+            if wandb_run:
+                wandb_run.finish()
 
-        run_sklearn_experiment(cfg, task, task_type, submetric)
+        elif cfg.experiment.type == "lm_probe":
+            results = run_lm_experiment(cfg, task, task_type, submetric)
 
-        if wandb_run:
-            wandb_run.finish()
+        elif cfg.experiment.type == "lm_probe_cross_lingual":
+            # Cross-lingual specific wandb setup
+            wandb_run = setup_wandb(
+                cfg=cfg,
+                experiment_type=cfg.experiment.type,
+                task=task,
+                model_type=cfg.model.model_type,
+                train_language=cfg.data.train_language,
+                eval_language=cfg.data.eval_language,
+            )
+            results = run_cross_lingual_experiment(cfg, task, task_type)
+            if wandb_run:
+                wandb_run.finish()
 
-    elif cfg.experiment.type == "lm_probe":
-        # For LM probe experiments, wandb runs are handled per language inside run_lm_experiment
-        run_lm_experiment(cfg, task, task_type, submetric)
+        else:
+            raise ValueError(f"Unsupported experiment type: {cfg.experiment.type}")
 
-    elif cfg.experiment.type == "lm_probe_cross_lingual":
-        # Initialize WandB for cross-lingual experiments
-        wandb_run = setup_wandb(
-            cfg=cfg,
-            experiment_type=cfg.experiment.type,
-            task=task,
-            model_type=cfg.model.model_type,
-            train_language=cfg.data.train_language,
-            eval_language=cfg.data.eval_language,
-        )
+    except Exception as e:
+        logger.error(f"Experiment failed: {e}")
+        import traceback
+        logger.error(traceback.format_exc())
+        results = None
 
-        # Run experiment without capturing results (already logged in the function)
-        run_cross_lingual_experiment(cfg, task, task_type)
-
-        # Finish wandb run
-        if wandb_run:
-            wandb_run.finish()
-    else:
-        logger.error(f"Unknown experiment type: {cfg.experiment.type}")
-
-    # Clean up any remaining wandb sessions
+    # Final cleanup
     if wandb.run is not None:
         wandb.finish()
+
+    return results
 
 
 def run_sklearn_experiment(cfg, task, task_type, submetric=None):
@@ -423,7 +456,7 @@ def run_cross_lingual_experiment(cfg, task, task_type):
     """Run cross-lingual transfer experiment."""
     logger.info(f"Running cross-lingual experiment: {cfg.data.train_language} -> {cfg.data.eval_language}")
 
-    # Get source language data
+
     train_loader, val_loader, _ = create_lm_dataloaders(
         language=cfg.data.train_language,
         task=task,
@@ -445,7 +478,10 @@ def run_cross_lingual_experiment(cfg, task, task_type):
 
     # Create model
     model_params = OmegaConf.to_container(cfg.model, resolve=True)
-    model = create_model("lm_probe", task_type, **model_params)
+    model_params_copy = model_params.copy()
+    if 'model_type' in model_params_copy:
+        model_params_copy.pop('model_type')
+    model = create_model("lm_probe", task_type, **model_params_copy)
 
     # Train and evaluate
     trainer = LMTrainer(

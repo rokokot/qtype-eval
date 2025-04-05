@@ -1,7 +1,0 @@
-- experiment=complexity
-- model=lm_probe
-- model.lm_name=cis-lmu/glot500-base
-- data.languages=[ko]
-- training.task_type=regression
-- experiment_name=lm_probe_complexity_ko
-- output_dir=outputs/basic_glot500_20250405_120246/complexity/ko
