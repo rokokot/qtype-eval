@@ -10,7 +10,7 @@ import numpy as np
 import torch
 from typing import Optional, List
 
-from src.data.datasets import load_sklearn_data, create_lm_dataloaders
+from src.data.datasets import ensure_string_task, load_sklearn_data, create_lm_dataloaders
 from src.models.model_factory import create_model
 from src.training.sklearn_trainer import SklearnTrainer
 from src.training.lm_trainer import LMTrainer
@@ -317,7 +317,11 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
             # Create model
             try:
                 model_params = OmegaConf.to_container(cfg.model, resolve=True)
-                model = create_model("lm_probe", task_type, **model_params)
+                model_params_copy = model_params.copy()
+                if 'model_type' in model_params_copy:
+                    model_params_copy.pop('model_type')
+                model = create_model(cfg.model.model_type, task_type, **model_params_copy)
+                
                 logger.info(f"Successfully created model for {language}")
             except Exception as model_error:
                 logger.error(f"Failed to create model for {language}: {model_error}")

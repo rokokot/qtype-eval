@@ -1,0 +1,7 @@
+{
+  "language": "en",
+  "task": "['question_type']",
+  "error": "Using a target size (torch.Size([8])) that is different to the input size (torch.Size([8, 1])) is deprecated. Please ensure they have the same size.",
+  "error_type": "ValueError",
+  "traceback": "Traceback (most recent call last):\n  File \"/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py\", line 348, in run_lm_experiment\n    results = trainer.train(\n  File \"/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py\", line 67, in train\n    loss = self.criterion(outputs, batch[\"labels\"])\n  File \"/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/torch/nn/modules/module.py\", line 1739, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File \"/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/torch/nn/modules/module.py\", line 1750, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/torch/nn/modules/loss.py\", line 699, in forward\n    return F.binary_cross_entropy(\n  File \"/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/torch/nn/functional.py\", line 3560, in binary_cross_entropy\n    raise ValueError(\nValueError: Using a target size (torch.Size([8])) that is different to the input size (torch.Size([8, 1])) is deprecated. Please ensure they have the same size.\n"
+}

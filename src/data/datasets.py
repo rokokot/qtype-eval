@@ -131,7 +131,7 @@ class LMQuestionDataset(Dataset):
             elif self.task == "sub_metrics":
                 encoding["labels"] = torch.tensor(label, dtype=torch.float)
             else:
-                encoding["labels"] = torch.tensor(label, dtype=torch.float).view(1)
+                encoding["labels"] = torch.tensor(label, dtype=torch.float).reshape(1) # track shape 5/04
 
             return encoding
         except Exception as e:
