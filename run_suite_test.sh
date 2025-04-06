@@ -91,6 +91,7 @@ run_test() {
 echo "STEP 1: RUNNING CLASSIFICATION TEST"
 run_test "1_classification_en" \
     "experiment=question_type" \
+    "experiment.tasks=question_type" \
     "model=lm_probe" \
     "model.lm_name=cis-lmu/glot500-base" \
     "data.languages=[en]" \
@@ -105,6 +106,7 @@ read
 echo "STEP 2: RUNNING REGRESSION TEST"
 run_test "2_complexity_en" \
     "experiment=complexity" \
+    "experiment.tasks=complexity" \
     "model=lm_probe" \
     "model.lm_name=cis-lmu/glot500-base" \
     "data.languages=[en]" \
@@ -120,6 +122,7 @@ read
 echo "STEP 3: RUNNING SUBMETRICS TEST"
 run_test "3_submetric_en" \
     "experiment=submetrics" \
+    "experiment.tasks=single_submetric" \
     "experiment.submetric=avg_links_len" \
     "model=lm_probe" \
     "model.lm_name=cis-lmu/glot500-base" \
@@ -136,6 +139,7 @@ read
 echo "STEP 4: RUNNING CONTROL TEST"
 run_test "4_control_en" \
     "experiment=question_type" \
+    "experiment.tasks=question_type" \
     "model=lm_probe" \
     "model.lm_name=cis-lmu/glot500-base" \
     "data.languages=[en]" \
