@@ -1,0 +1,13 @@
+- output_dir=/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/sequential_debug_output/4_control_en
+- experiment_name=4_control_en
+- data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache
+- wandb.mode=offline
+- experiment=question_type
+- experiment.tasks=question_type
+- model=lm_probe
+- model.lm_name=cis-lmu/glot500-base
+- data.languages=[en]
+- experiment.use_controls=true
+- experiment.control_index=1
+- training.num_epochs=2
+- training.batch_size=8

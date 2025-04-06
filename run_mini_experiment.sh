@@ -24,16 +24,27 @@ export HF_DATASETS_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
 export DEBUG=1  # Enable debug mode (reduces workers for dataloaders)
 
+# IMPORTANT: Disable Hydra's working directory changes
+export HYDRA_JOB_CHDIR=False
+export HYDRA_FULL_ERROR=1
+
 # Print environment information
 echo "Environment variables:"
 echo "PYTHONPATH=${PYTHONPATH}"
 echo "HF_HOME=${HF_HOME}"
 echo "TRANSFORMERS_OFFLINE=${TRANSFORMERS_OFFLINE}"
 echo "HF_DATASETS_OFFLINE=${HF_DATASETS_OFFLINE}"
+echo "HYDRA_JOB_CHDIR=${HYDRA_JOB_CHDIR}"
 
 # Clear previous output directory
-rm -rf mini_classification_output
-mkdir -p mini_classification_output
+MINI_OUTPUT_DIR="${PWD}/mini_classification_output"
+rm -rf $MINI_OUTPUT_DIR
+mkdir -p $MINI_OUTPUT_DIR
+echo "Output directory: ${MINI_OUTPUT_DIR} (absolute path)"
+
+# Create language subdirectory explicitly
+mkdir -p "${MINI_OUTPUT_DIR}/ar"
+echo "Created language directory: ${MINI_OUTPUT_DIR}/ar"
 
 # Print environment information
 echo "Python executable: $(which python)"
@@ -42,8 +53,10 @@ echo "PyTorch CUDA available: $(python -c 'import torch; print(torch.cuda.is_ava
 # Run a mini experiment with more verbose logging
 echo "Running mini regression experiment for complexity..."
 
-# Note: Using 'experiment.tasks=complexity' (not a list) and setting task_type=regression
+# Use hydra command-line overrides to disable directory changes
 python -m src.experiments.run_experiment \
+    "hydra.job.chdir=False" \
+    "hydra.run.dir=." \
     "experiment=complexity" \
     "experiment.tasks=complexity" \
     "model=lm_probe" \
@@ -54,22 +67,103 @@ python -m src.experiments.run_experiment \
     "training.batch_size=8" \
     "training.task_type=regression" \
     "experiment_name=mini_complexity_regression_glot500_ar" \
-    "output_dir=./mini_classification_output"
+    "output_dir=${MINI_OUTPUT_DIR}" \
+    "wandb.mode=offline"
+
+# Function to find and check results
+check_results() {
+    echo "Output directory contents:"
+    ls -la $MINI_OUTPUT_DIR
+    
+    # Try to find results in multiple possible locations
+    all_results=()
+    all_results+=("${MINI_OUTPUT_DIR}/all_results.json")
+    all_results+=("${MINI_OUTPUT_DIR}/ar/results.json")
+    all_results+=("${MINI_OUTPUT_DIR}/results.json")
+    all_results+=("./outputs/mini_complexity_regression_glot500_ar/*/all_results.json")
+    all_results+=("./outputs/mini_complexity_regression_glot500_ar/*/*/all_results.json")
+    
+    results_found=false
+    
+    for result_path in "${all_results[@]}"; do
+        # Use compgen for wildcard expansion
+        for file in $(compgen -G "$result_path" 2>/dev/null || echo ""); do
+            if [ -f "$file" ]; then
+                echo "Found results file: $file"
+                cat "$file" | grep -E "task|task_type|language|metrics" || echo "No matching content found in file"
+                results_found=true
+                
+                # Copy the result to the standard location if it's not already there
+                if [ "$file" != "${MINI_OUTPUT_DIR}/all_results.json" ] && [ "$file" != "${MINI_OUTPUT_DIR}/ar/results.json" ]; then
+                    echo "Copying result to standard location..."
+                    if [[ "$file" == *"/ar/results.json" ]]; then
+                        mkdir -p "${MINI_OUTPUT_DIR}/ar"
+                        cp "$file" "${MINI_OUTPUT_DIR}/ar/results.json"
+                    else
+                        cp "$file" "${MINI_OUTPUT_DIR}/all_results.json"
+                    fi
+                fi
+                
+                break
+            fi
+        done
+    done
+    
+    if [ "$results_found" = false ]; then
+        echo "No results file found"
+        # Search recursively for any JSON files
+        echo "Searching recursively for any JSON files..."
+        find . -name "*.json" -mtime -1 -not -path "*/\.git/*" | sort
+    fi
+}
 
 # Check output files
-echo "Output directory contents:"
-ls -la mini_classification_output
-cat mini_classification_output/all_results.json || echo "No results file found"
-cat mini_classification_output/ar/results.json || echo "No language results file found"
-echo "Error files if any:"
-ls -la mini_classification_output/error_*.json 2>/dev/null || echo "No error files found"
+check_results
 
-# If error files exist, show their contents
-for error_file in mini_classification_output/error_*.json; do
-    if [ -f "$error_file" ]; then
+# Check for error files
+echo "Error files if any:"
+ERROR_FILES=$(find $MINI_OUTPUT_DIR -name "error_*.json" 2>/dev/null)
+if [ -n "$ERROR_FILES" ]; then
+    for error_file in $ERROR_FILES; do
         echo "Contents of $error_file:"
         cat "$error_file"
-    fi
+    done
+else 
+    echo "No error files found"
+fi
+
+# Check for wandb logs
+echo "Checking for wandb logs:"
+WANDB_DIRS=()
+WANDB_DIRS+=("${MINI_OUTPUT_DIR}/wandb")
+WANDB_DIRS+=("./wandb")
+WANDB_DIRS+=("./outputs/mini_complexity_regression_glot500_ar/*/wandb")
+
+for wandb_dir in "${WANDB_DIRS[@]}"; do
+    # Use compgen for wildcard expansion
+    for dir in $(compgen -G "$wandb_dir" 2>/dev/null || echo ""); do
+        if [ -d "$dir" ]; then
+            echo "Found wandb directory: $dir"
+            ls -la "$dir"
+            
+            # Try to get the last run ID
+            OFFLINE_RUN=$(find "$dir" -name "offline-run-*" -type d | sort | tail -n 1)
+            if [ -n "$OFFLINE_RUN" ]; then
+                echo "Latest wandb run: $OFFLINE_RUN"
+                if [ -f "${OFFLINE_RUN}/files/wandb-summary.json" ]; then
+                    echo "WandB summary:"
+                    cat "${OFFLINE_RUN}/files/wandb-summary.json" | grep -E "final_|best_"
+                fi
+            fi
+            
+            # Copy wandb logs to standard location if they're not already there
+            if [ "$dir" != "${MINI_OUTPUT_DIR}/wandb" ]; then
+                echo "Copying wandb logs to standard location..."
+                mkdir -p "${MINI_OUTPUT_DIR}/wandb"
+                cp -r "$dir"/* "${MINI_OUTPUT_DIR}/wandb/"
+            fi
+        fi
+    done
 done
 
 echo "Mini regression test completed"
@@ -77,3 +171,8 @@ echo "Mini regression test completed"
 # Show GPU usage
 echo "GPU memory usage:"
 nvidia-smi --query-gpu=memory.used --format=csv
+
+# Provide instructions for syncing WandB data
+echo ""
+echo "To sync WandB data to the cloud, run:"
+echo "wandb sync ${MINI_OUTPUT_DIR}/wandb/offline-run-*"
