@@ -103,61 +103,70 @@ def ensure_string_task(task):
     
     return task_mapping.get(task, task)
 
-def get_feature_name_from_task(task, submetric=None):
-    """
-    Get the appropriate feature name for a given task.
+def get_feature_name_from_task(task, submetric=None, available_columns=None):
     
-    Args:
-        task (str): Task name
-        submetric (str, optional): Specific submetric for single_submetric task
-        
-    Returns:
-        str: Feature name to use
-    """
-    # Standardize task name
     task = task.strip().lower() if isinstance(task, str) else "question_type"
+    logger.info(f"Getting feature name for task: '{task}', submetric: '{submetric}'")
     
-    # Handle single submetric case specifically
-    if task == "single_submetric" and submetric is not None:
-        # List of valid submetrics
-        valid_submetrics = [
-            "avg_links_len", "avg_max_depth", 
-            "avg_subordinate_chain_len", "avg_verb_edges", 
-            "lexical_density", "n_tokens"
-        ]
-        
-        # Validate submetric
-        if submetric not in valid_submetrics:
-            logger.warning(f"Invalid submetric: {submetric}. Using default 'avg_links_len'.")
-            return "avg_links_len"
-        
-        return submetric
-    
-    # Direct mapping for submetrics as tasks
-    submetrics = [
+    valid_submetrics = [
         "avg_links_len", "avg_max_depth", 
         "avg_subordinate_chain_len", "avg_verb_edges", 
         "lexical_density", "n_tokens"
     ]
     
-    if task in submetrics:
-        return task
+    feature_name = None
     
-    # Standard task mapping
-    task_mapping = {
-        "question_type": "question_type",
-        "complexity": "lang_norm_complexity_score",
-        "complexity_score": "lang_norm_complexity_score"
-    }
+    if task == "single_submetric" and submetric is not None:
+        if submetric in valid_submetrics:
+            feature_name = submetric
+        else:
+            logger.warning(f"Invalid submetric: '{submetric}'. Using default 'avg_links_len'.")
+            feature_name = "avg_links_len"
     
-    if task in task_mapping:
-        return task_mapping[task]
+    elif task in valid_submetrics:
+        feature_name = task
     
-    # Log warning and return default if task not recognized
-    logger.warning(f"Unrecognized task: {task}. Using default 'question_type'.")
-    return "question_type"
+    else:
+        task_mapping = {
+            "question_type": "question_type",
+            "complexity": "lang_norm_complexity_score",
+            "complexity_score": "lang_norm_complexity_score",
+            "lang_norm_complexity_score": "lang_norm_complexity_score"
+        }
+        
+        feature_name = task_mapping.get(task)
+        
+        if not feature_name:
+            logger.warning(f"Unrecognized task: '{task}'. Using default 'question_type'.")
+            feature_name = "question_type"
+    
+    if available_columns is not None:
+        if feature_name not in available_columns:
+            logger.error(f"Selected feature '{feature_name}' not found in available columns: {available_columns}")
+            
+            # Try to find alternative feature for complexity
+            if feature_name == "lang_norm_complexity_score" and "complexity_score" in available_columns:
+                logger.info("Falling back to 'complexity_score' feature")
+                feature_name = "complexity_score"
+            # Try to find any of the valid submetrics
+            elif any(sm in available_columns for sm in valid_submetrics):
+                for sm in valid_submetrics:
+                    if sm in available_columns:
+                        logger.info(f"Falling back to available submetric: '{sm}'")
+                        feature_name = sm
+                        break
+            # Default to a required column that should always be there
+            elif "question_type" in available_columns:
+                logger.info("Falling back to 'question_type' feature")
+                feature_name = "question_type"
+            else:
+                logger.error(f"Cannot find a valid feature in available columns: {available_columns}")
+                raise ValueError(f"No valid feature found in columns: {available_columns}")
+    
+    logger.info(f"Selected feature name: '{feature_name}' for task: '{task}'")
+    return feature_name
 
-class MultilingualQuestionDataset(Dataset):  # Dataset for sklearn models using TF-IDF features
+class MultilingualQuestionDataset(Dataset): 
     def __init__(
         self, data: pd.DataFrame, features: np.ndarray, labels: np.ndarray, language_ids: Optional[np.ndarray] = None
     ):
@@ -182,34 +191,55 @@ class LMQuestionDataset(Dataset):
     def __init__(self, data: pd.DataFrame, tokenizer: AutoTokenizer, task: str, max_length: int = 128, submetric: Optional[str] = None):
         self.data = data
         self.tokenizer = tokenizer
-
-        self.task = ensure_string_task(task)
         self.max_length = max_length
+        
+        # Validate and normalize task
+        self.task = task.strip().lower() if isinstance(task, str) else "question_type"
         self.submetric = submetric
         
-        if self.task == "question_type":
-            self.is_classification = True
-        else:
-            self.is_classification = False
-        
+        # Check required text column
         if "text" not in data.columns:
-            raise ValueError(f"Required column 'text' not found in data. Available columns: {data.columns.tolist()}")
+            available_cols = data.columns.tolist()
+            raise ValueError(f"Required column 'text' not found in data. Available columns: {available_cols}")
         
         self.texts = data["text"].tolist()
         
-        feature_name = get_feature_name_from_task(self.task, self.submetric)
+        # Determine task type
+        self.is_classification = self.task == "question_type"
+        logger.info(f"Task '{self.task}' is classification: {self.is_classification}")
         
-        if feature_name not in data.columns:
-            available = ", ".join(data.columns.tolist())
-            raise ValueError(f"Feature '{feature_name}' not found in data. Available columns: {available}")
+        # Get the appropriate feature name with validation
+        self.feature_name = get_feature_name_from_task(
+            self.task, 
+            self.submetric,
+            available_columns=data.columns.tolist()
+        )
         
-        self.labels = data[feature_name].values
+        # Validate feature column exists
+        if self.feature_name not in data.columns:
+            raise ValueError(f"Feature '{self.feature_name}' not found in data columns: {data.columns.tolist()}")
         
-        # Determine the correct feature to use based on task
+        # Extract labels
+        self.labels = data[self.feature_name].values
+        
+        # Log basic statistics about the labels
+        logger.info(f"Label statistics for {self.task} (feature: {self.feature_name}):")
         if self.is_classification:
+            # Convert to appropriate type for classification
             self.labels = self.labels.astype(np.int64)
+            unique_labels, counts = np.unique(self.labels, return_counts=True)
+            for label, count in zip(unique_labels, counts):
+                logger.info(f"  Label {label}: {count} examples ({count/len(self.labels)*100:.1f}%)")
         else:
+            # Convert to appropriate type for regression
             self.labels = self.labels.astype(np.float32)
+            logger.info(f"  Min: {np.min(self.labels):.4f}, Max: {np.max(self.labels):.4f}")
+            logger.info(f"  Mean: {np.mean(self.labels):.4f}, Std: {np.std(self.labels):.4f}")
+        
+        # Sample validation
+        if len(self.texts) > 0:
+            logger.info(f"Sample text: {self.texts[0][:50]}...")
+            logger.info(f"Sample label: {self.labels[0]}")
 
     def __len__(self):
         return len(self.texts)
@@ -219,20 +249,29 @@ class LMQuestionDataset(Dataset):
             text = self.texts[idx]
             label = self.labels[idx]
     
-            encoding = self.tokenizer(text, max_length=self.max_length, padding="max_length", truncation=True, return_tensors="pt")
+            # Tokenize text
+            encoding = self.tokenizer(
+                text, 
+                max_length=self.max_length, 
+                padding="max_length", 
+                truncation=True, 
+                return_tensors="pt"
+            )
+            
+            # Remove batch dimension
             encoding = {k: v.squeeze(0) for k, v in encoding.items()}
     
+            # Add label with appropriate type
             if self.is_classification:
                 encoding["labels"] = torch.tensor(label, dtype=torch.long)
-            else:  # All non-classification tasks are regression
-                encoding["labels"] = torch.tensor(label, dtype=torch.float).reshape(-1)  # Ensure proper shape
+            else:
+                encoding["labels"] = torch.tensor(label, dtype=torch.float).reshape(-1)
     
             return encoding
         except Exception as e:
             logger.error(f"Error processing item {idx}: {e}")
             logger.error(f"Text: {self.texts[idx] if idx < len(self.texts) else 'Index out of range'}")
-            logger.error(f"Label type: {type(self.labels).__name__}")
-            logger.error(f"Label shape: {self.labels.shape if hasattr(self.labels, 'shape') else 'N/A'}")
+            logger.error(f"Label: {self.labels[idx] if idx < len(self.labels) else 'Index out of range'}")
             raise
 
 def load_combined_dataset(
@@ -262,37 +301,63 @@ def load_combined_dataset(
         logger.error(f"Error loading data: {e}")
         raise
     
-def load_hf_data(language, task, split, control_index=None, cache_dir=None):
-    
+def load_hf_data(language, task, split, control_index=None, cache_dir=None, submetric=None):
+    """
+    Load dataset with improved configuration handling and error reporting.
+    """
+    # Determine the correct config_name based on task and control_index
     config_name = "base"
     if control_index is not None:
-        if task == "question_type":
+        # For single_submetric task, use the submetric name to find the control config
+        if task == "single_submetric" and submetric is not None:
+            config_name = f"control_{submetric}_seed{control_index}"
+        # For standard tasks
+        elif task == "question_type":
             config_name = f"control_question_type_seed{control_index}"
-        elif task == "complexity":
+        elif task in ["complexity", "complexity_score", "lang_norm_complexity_score"]:
             config_name = f"control_complexity_seed{control_index}"
-        else:
+        # For direct submetric tasks
+        elif task in ["avg_links_len", "avg_max_depth", "avg_subordinate_chain_len", 
+                      "avg_verb_edges", "lexical_density", "n_tokens"]:
             config_name = f"control_{task}_seed{control_index}"
+        else:
+            logger.warning(f"Unknown task '{task}' for control data. Using base config.")
     
-    logger.info(f"Loading {config_name} dataset for {language} language ({split})")
+    logger.info(f"Loading '{config_name}' dataset for {language} language ({split})")
     
     try:
         dataset = load_dataset(
             DATASET_NAME, 
-            config_name,
+            name=config_name,  
             split=split,
             cache_dir=cache_dir,
             verification_mode='no_checks'
         )
         
         if language != "all":
+            original_len = len(dataset)
             dataset = dataset.filter(lambda example: example["language"] == language)
+            filtered_len = len(dataset)
+            
+            if filtered_len == 0:
+                logger.warning(f"No examples found for language '{language}' in {config_name} ({split})")
+                if original_len > 0:
+                    all_langs = set(dataset["language"])
+                    logger.info(f"Available languages: {all_langs}")
+            else:
+                logger.info(f"Filtered from {original_len} to {filtered_len} examples for language '{language}'")
         
         df = dataset.to_pandas()
+        
+        logger.info(f"Columns in dataset: {list(df.columns)}")
         logger.info(f"Loaded {len(df)} examples for {language} ({split})")
+        
         return df
     
     except Exception as e:
-        logger.error(f"Error loading data for {language}: {e}")
+        logger.error(f"Error loading data for {language} from config '{config_name}': {e}")
+        import traceback
+        logger.error(f"Traceback: {traceback.format_exc()}")
         raise
 
 def load_tfidf_features(split: str, vectors_dir: str = "./data/features"):
@@ -374,97 +439,53 @@ def create_lm_dataloaders(
     submetric: Optional[str] = None
 ):
     
-    task_str = ensure_string_task(task)  # Convert to string
-    logger.info(f"Creating dataloaders for task: {task_str} (original: {task})")
-    
-    model_path = os.path.join(cache_dir, f"models--{model_name.replace('/', '--')}")
+    logger.info(f"Creating dataloaders for language: '{language}', task: '{task}', submetric: '{submetric}'")
     
     try:
-        # Load tokenizer with improved error handling
+        # Load tokenizer
         try:
-            snapshot_path = os.path.join(model_path, "snapshots")
-            if os.path.exists(snapshot_path):
-                snapshot_dirs = [
-                    os.path.join(snapshot_path, d) 
-                    for d in os.listdir(snapshot_path) 
-                    if os.path.isdir(os.path.join(snapshot_path, d))
-                ]
-                
-                if snapshot_dirs:
-                    local_model_path = snapshot_dirs[0]
-                    logger.info(f"Found model snapshot: {local_model_path}")
-                    
-                    tokenizer = AutoTokenizer.from_pretrained(
-                        model_name,
-                        use_fast=True,
-                        local_files_only=True, 
-                        cache_dir=cache_dir 
-                    )
-                else:
-                    tokenizer = AutoTokenizer.from_pretrained(
-                        model_name,
-                        use_fast=True,
-                        local_files_only=True, 
-                        cache_dir=cache_dir 
-                    )
-            else:
-                # Fallback to original model name if no snapshots directory
-                tokenizer = AutoTokenizer.from_pretrained(
-                        model_name,
-                        use_fast=True,
-                        local_files_only=True, 
-                        cache_dir=cache_dir 
-                    )
+            tokenizer = AutoTokenizer.from_pretrained(
+                model_name,
+                use_fast=True,
+                cache_dir=cache_dir,
+                local_files_only=True
+            )
+            logger.info(f"Successfully loaded tokenizer for {model_name}")
         except Exception as tokenizer_error:
             logger.error(f"Error loading tokenizer: {tokenizer_error}")
+            import traceback
+            logger.error(f"Tokenizer traceback: {traceback.format_exc()}")
             raise
-        
-        logger.info(f"Successfully loaded tokenizer for {model_name}")
         
         # Load datasets with improved error handling
         try:
-            train_df = load_hf_data(language, task, "train", control_index, cache_dir)
-            val_df = load_hf_data(language, task, "validation", None, cache_dir)
-            test_df = load_hf_data(language, task, "test", None, cache_dir)
+            # Use the enhanced load_hf_data function with submetric
+            train_df = load_hf_data(language, task, "train", control_index, cache_dir, submetric)
+            val_df = load_hf_data(language, task, "validation", None, cache_dir, submetric)
+            test_df = load_hf_data(language, task, "test", None, cache_dir, submetric)
+            
+            logger.info(f"Loaded datasets: train={len(train_df)}, val={len(val_df)}, test={len(test_df)} examples")
         except Exception as load_error:
             logger.error(f"Error loading datasets: {load_error}")
-            raise
-        
-        # Log dataset info for debugging
-        logger.info(f"Train data columns: {train_df.columns.tolist()}")
-        if 'text' in train_df.columns and len(train_df) > 0:
-            logger.info(f"Sample text: {train_df['text'].iloc[0][:100]}...")
-        
-        feature_name = get_feature_name_from_task(task_str)
-        if feature_name and feature_name in train_df.columns:
-            logger.info(f"Sample {feature_name}: {train_df[feature_name].iloc[0] if len(train_df) > 0 else 'No samples'}")
-        else:
-            logger.warning(f"Feature for task '{task_str}' not found in columns: {train_df.columns.tolist()}")
-        
-        # Create datasets with improved error handling
-        try:
-            train_dataset = LMQuestionDataset(train_df, tokenizer, task_str, submetric=submetric)
-            logger.info(f"Created train dataset with {len(train_dataset)} examples")
-            
-            val_dataset = LMQuestionDataset(val_df, tokenizer, task_str, submetric=submetric)
-            logger.info(f"Created validation dataset with {len(val_dataset)} examples")
-            
-            test_dataset = LMQuestionDataset(test_df, tokenizer, task_str, submetric=submetric)
-            logger.info(f"Created test dataset with {len(test_dataset)} examples")
-            
-            # Test processing a sample to validate
-            sample = train_dataset[0]
-            logger.info(f"Sample processed successfully with keys: {list(sample.keys())}")
-            
-        except Exception as dataset_error:
-            logger.error(f"Error creating datasets for task {task_str}: {dataset_error}")
             import traceback
-            logger.error(f"Traceback: {traceback.format_exc()}")
+            logger.error(f"Dataset loading traceback: {traceback.format_exc()}")
             raise
         
-        # Create dataloaders with improved error handling
+        # Create datasets with the enhanced LMQuestionDataset class
         try:
-            # Reduce num_workers for debugging if needed
+            train_dataset = LMQuestionDataset(train_df, tokenizer, task, submetric=submetric)
+            val_dataset = LMQuestionDataset(val_df, tokenizer, task, submetric=submetric)
+            test_dataset = LMQuestionDataset(test_df, tokenizer, task, submetric=submetric)
+            
+            logger.info(f"Created datasets: train={len(train_dataset)}, val={len(val_dataset)}, test={len(test_dataset)}")
+        except Exception as dataset_error:
+            logger.error(f"Error creating datasets: {dataset_error}")
+            import traceback
+            logger.error(f"Dataset creation traceback: {traceback.format_exc()}")
+            raise
+        
+        # Create dataloaders
+        try:
             debug_mode = os.environ.get("DEBUG", "0") == "1"
             actual_workers = 0 if debug_mode else num_workers
             
@@ -499,20 +520,11 @@ def create_lm_dataloaders(
         except Exception as loader_error:
             logger.error(f"Error creating dataloaders: {loader_error}")
             import traceback
-            logger.error(f"Traceback: {traceback.format_exc()}")
+            logger.error(f"Dataloader creation traceback: {traceback.format_exc()}")
             raise
     
     except Exception as e:
-        logger.error(f"Error in create_lm_dataloaders for task {task_str}: {e}")
-        # Additional detailed logging
+        logger.error(f"Error in create_lm_dataloaders: {e}")
         import traceback
         logger.error(f"Traceback: {traceback.format_exc()}")
-        
-        # Log detailed information about the task and model
-        logger.error(f"Task (original format): {task}")
-        logger.error(f"Task (string format): {task_str}")
-        logger.error(f"Model name: {model_name}")
-        logger.error(f"Cache directory: {cache_dir}")
-        logger.error(f"Language: {language}")
-        
         raise

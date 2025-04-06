@@ -157,56 +157,67 @@ class LMTrainer:
         total_loss = 0.0
         all_preds = []
         all_labels = []
-
+    
         with torch.no_grad():
             for batch in data_loader:
                 batch = {k: v.to(self.device) for k, v in batch.items()}
                 
-                
-                
                 outputs = self.model(input_ids=batch["input_ids"], attention_mask=batch["attention_mask"])
-
-
+                
+                # Ensure consistent dimensions for loss calculation
                 if self.task_type == "classification":
-                    if outputs.size(-1) == 1:
+                    # Binary classification handling
+                    if outputs.size(-1) == 1:  # If model outputs a single value
                         batch["labels"] = batch["labels"].view(-1, 1).float()
-                else:
-                   
-                    if outputs.ndim == 2 and outputs.size(1) == 1:
-                        batch["labels"] = batch["labels"].view(-1, 1).float()
-                    else:
-                        batch["labels"] = batch["labels"].float()
-            
                     
-                loss = self.criterion(outputs, batch["labels"])
+                    # Note: BCE loss expects float labels
+                    loss = self.criterion(outputs, batch["labels"])
+                else:
+                    # Regression handling
+                    # Ensure outputs and labels have same shape
+                    batch["labels"] = batch["labels"].view(outputs.size()).float()
+                    loss = self.criterion(outputs, batch["labels"])
+                
                 total_loss += loss.item()
-
+                
+                # Store predictions and labels for metric calculation
                 all_preds.append(outputs.detach().cpu().numpy())
                 all_labels.append(batch["labels"].detach().cpu().numpy())
-
+    
         avg_loss = total_loss / len(data_loader)
         
+        # Concatenate and ensure correct shapes
         all_preds = np.concatenate(all_preds, axis=0)
         all_labels = np.concatenate(all_labels, axis=0)
-    
+        
+        # Calculate metrics
         metrics = self._calculate_metrics(all_labels, all_preds)
-    
+        
         return avg_loss, metrics
 
     def _calculate_metrics(self, y_true, y_pred):
         if self.task_type == "classification":
+            # For binary classification
             y_pred_binary = (y_pred > 0.5).astype(int)
+            
+            # Reshape if needed
+            if y_true.ndim > 1:
+                y_true = y_true.reshape(-1)
+            if y_pred_binary.ndim > 1:
+                y_pred_binary = y_pred_binary.reshape(-1)
+            
             return {
                 "accuracy": float(accuracy_score(y_true, y_pred_binary)),
                 "f1": float(f1_score(y_true, y_pred_binary, average="binary")),
             }
         else:
-            # Original code that worked for regression
+            # For regression
+            # Ensure consistent shapes
             if y_true.ndim > 1:
                 y_true = y_true.reshape(-1)
             if y_pred.ndim > 1:
                 y_pred = y_pred.reshape(-1)
-                 
+            
             return {
                 "mse": float(mean_squared_error(y_true, y_pred)),
                 "rmse": float(np.sqrt(mean_squared_error(y_true, y_pred))),

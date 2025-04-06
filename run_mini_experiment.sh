@@ -40,10 +40,12 @@ echo "Python executable: $(which python)"
 echo "PyTorch CUDA available: $(python -c 'import torch; print(torch.cuda.is_available())')"
 
 # Run a mini experiment with more verbose logging
-echo "Running mini classification experiment..."
+echo "Running mini regression experiment for complexity..."
 
+# Note: Using 'experiment.tasks=complexity' (not a list) and setting task_type=regression
 python -m src.experiments.run_experiment \
-    "experiment=[complexity]" \
+    "experiment=complexity" \
+    "experiment.tasks=complexity" \
     "model=lm_probe" \
     "model.lm_name=cis-lmu/glot500-base" \
     "data.languages=[ar]" \
@@ -51,13 +53,14 @@ python -m src.experiments.run_experiment \
     "training.num_epochs=3" \
     "training.batch_size=8" \
     "training.task_type=regression" \
-    "experiment_name=mini_test_classification_glot500_ar" \
+    "experiment_name=mini_complexity_regression_glot500_ar" \
     "output_dir=./mini_classification_output"
 
 # Check output files
 echo "Output directory contents:"
 ls -la mini_classification_output
 cat mini_classification_output/all_results.json || echo "No results file found"
+cat mini_classification_output/ar/results.json || echo "No language results file found"
 echo "Error files if any:"
 ls -la mini_classification_output/error_*.json 2>/dev/null || echo "No error files found"
 
@@ -69,7 +72,7 @@ for error_file in mini_classification_output/error_*.json; do
     fi
 done
 
-echo "Mini classification test completed"
+echo "Mini regression test completed"
 
 # Show GPU usage
 echo "GPU memory usage:"
