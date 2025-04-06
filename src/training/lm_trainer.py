@@ -135,21 +135,31 @@ class LMTrainer:
         }
 
         if self.wandb_run:
+        # Log final metrics
             self.wandb_run.log(
                 {
                     "train_time": train_time,
                     **{f"final_train_{k}": v for k, v in train_metrics.items()},
                     **({f"final_val_{k}": v for k, v in val_metrics.items()} if val_metrics else {}),
-                    **({f"final_test_{k}": v for k, v in test_metrics.items()} if test_metrics else {}),
+                    **({f"final_test_{k}": v for k, v in test_metrics.items()} if test_metrics else {})
                 }
             )
-
+            
+            # Log summary metrics again to ensure they appear in the summary
+            self.wandb_run.summary.update({
+                "train_time": train_time,
+                "train_loss": avg_train_loss,
+                **{f"final_train_{k}": v for k, v in train_metrics.items()},
+                **({f"final_val_{k}": v for k, v in val_metrics.items()} if val_metrics else {}),
+                **({f"final_test_{k}": v for k, v in test_metrics.items()} if test_metrics else {})
+            })
+    
         if self.output_dir:
             with open(os.path.join(self.output_dir, "results.json"), "w") as f:
                 json.dump(results, f, indent=2)
-
+    
             torch.save(self.model.state_dict(), os.path.join(self.output_dir, "model.pt"))
-
+    
         return results
 
     def _evaluate(self, data_loader):

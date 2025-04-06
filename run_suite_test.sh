@@ -21,6 +21,9 @@ export HF_DATASETS_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
 export DEBUG=1  # Enable debug mode (reduces workers for dataloaders)
 
+# Important: Disable Hydra path manipulation
+export HYDRA_FULL_ERROR=1
+export HYDRA_JOB_CHDIR=False
 
 # Print environment information
 echo "Environment variables:"
@@ -28,11 +31,13 @@ echo "PYTHONPATH=${PYTHONPATH}"
 echo "HF_HOME=${HF_HOME}"
 echo "TRANSFORMERS_OFFLINE=${TRANSFORMERS_OFFLINE}"
 echo "HF_DATASETS_OFFLINE=${HF_DATASETS_OFFLINE}"
+echo "HYDRA_JOB_CHDIR=${HYDRA_JOB_CHDIR}"
 
-# Create base output directory for tests
-TESTS_OUTPUT="sequential_debug_output"
+# Create base output directory for tests with absolute path
+TESTS_OUTPUT="${PWD}/sequential_debug_output"
 rm -rf $TESTS_OUTPUT
 mkdir -p $TESTS_OUTPUT
+echo "Test output directory: ${TESTS_OUTPUT} (absolute path)"
 
 # Print environment information
 echo "Python executable: $(which python)"
@@ -49,26 +54,69 @@ run_test() {
     echo "========================================="
     
     mkdir -p "${TEST_DIR}"
+    mkdir -p "${TEST_DIR}/en"  # Create language subdirectory explicitly
     
-    # Run the experiment
+    echo "Created test directory: ${TEST_DIR}"
+    echo "Created language directory: ${TEST_DIR}/en"
+    
+    # Set environment variables to control output paths
+    export TEST_OUTPUT_DIR="${TEST_DIR}"
+    
+    # Run the experiment with absolute output directory path and hydra overrides
     python -m src.experiments.run_experiment \
+        "hydra.job.chdir=False" \
+        "hydra.run.dir=." \
         "output_dir=${TEST_DIR}" \
         "experiment_name=${TEST_NAME}" \
         "data.cache_dir=${HF_HOME}" \
-        "wandb.mode=disabled" \
+        "wandb.mode=offline" \
         "$@" \
         2>&1 | tee "${TEST_DIR}/run.log"
     
     # Check results
     echo "Results for ${TEST_NAME}:"
-    if [ -f "${TEST_DIR}/all_results.json" ]; then
-        echo "Success! Found results file."
-        cat "${TEST_DIR}/all_results.json" | grep -E "task|task_type|language"
-    elif [ -d "${TEST_DIR}/en" ] && [ -f "${TEST_DIR}/en/results.json" ]; then
-        echo "Success! Found language-specific results file."
-        cat "${TEST_DIR}/en/results.json" | grep -E "task|task_type|language"
-    else
+    
+    # Try to find results in all possible locations
+    all_results=()
+    all_results+=("${TEST_DIR}/all_results.json")
+    all_results+=("${TEST_DIR}/en/results.json")
+    all_results+=("${TEST_DIR}/results.json")
+    all_results+=("./outputs/${TEST_NAME}/*/all_results.json")
+    all_results+=("./outputs/${TEST_NAME}/*/*/all_results.json")
+    all_results+=("./outputs/${TEST_NAME}/*/*/*/all_results.json")
+    
+    results_found=false
+    
+    for result_path in "${all_results[@]}"; do
+        # Use compgen for wildcard expansion
+        for file in $(compgen -G "$result_path" 2>/dev/null || echo ""); do
+            if [ -f "$file" ]; then
+                echo "Found results file: $file"
+                cat "$file" | grep -E "task|task_type|language|metrics" || echo "No matching content found in file"
+                results_found=true
+                
+                # Copy the result to the standard location if it's not already there
+                if [ "$file" != "${TEST_DIR}/all_results.json" ] && [ "$file" != "${TEST_DIR}/en/results.json" ]; then
+                    echo "Copying result to standard location..."
+                    if [[ "$file" == *"/en/results.json" ]]; then
+                        mkdir -p "${TEST_DIR}/en"
+                        cp "$file" "${TEST_DIR}/en/results.json"
+                    else
+                        cp "$file" "${TEST_DIR}/all_results.json"
+                    fi
+                fi
+                
+                break
+            fi
+        done
+    done
+    
+    if [ "$results_found" = false ]; then
         echo "No results file found."
+        
+        # Search recursively for any results files
+        echo "Searching recursively for any results files..."
+        find . -name "*results*.json" -mtime -1 | sort
     fi
     
     # Check for errors
@@ -82,6 +130,40 @@ run_test() {
     else
         echo "No error files found."
     fi
+    
+    # Check for wandb logs
+    echo "Checking for wandb logs:"
+    WANDB_DIRS=()
+    WANDB_DIRS+=("${TEST_DIR}/wandb")
+    WANDB_DIRS+=("./wandb")
+    WANDB_DIRS+=("./outputs/${TEST_NAME}/*/*/wandb")
+    
+    for wandb_dir in "${WANDB_DIRS[@]}"; do
+        # Use compgen for wildcard expansion
+        for dir in $(compgen -G "$wandb_dir" 2>/dev/null || echo ""); do
+            if [ -d "$dir" ]; then
+                echo "Found wandb directory: $dir"
+                ls -la "$dir"
+                
+                # Try to get the last run ID
+                OFFLINE_RUN=$(find "$dir" -name "offline-run-*" -type d | sort | tail -n 1)
+                if [ -n "$OFFLINE_RUN" ]; then
+                    echo "Latest wandb run: $OFFLINE_RUN"
+                    if [ -f "${OFFLINE_RUN}/files/wandb-summary.json" ]; then
+                        echo "WandB summary:"
+                        cat "${OFFLINE_RUN}/files/wandb-summary.json" | grep -E "final_|best_"
+                    fi
+                fi
+                
+                # Copy wandb logs to standard location if they're not already there
+                if [ "$dir" != "${TEST_DIR}/wandb" ]; then
+                    echo "Copying wandb logs to standard location..."
+                    mkdir -p "${TEST_DIR}/wandb"
+                    cp -r "$dir"/* "${TEST_DIR}/wandb/"
+                fi
+            fi
+        done
+    done
     
     echo "Test ${TEST_NAME} completed."
     echo "----------------------------------------"
@@ -166,6 +248,20 @@ for test_dir in ${TESTS_OUTPUT}/*; do
             echo "${test_name}: FAILED (no results file, no errors)"
         fi
     fi
+    
+    # Check for wandb
+    if [ -d "${test_dir}/wandb" ]; then
+        echo "${test_name}: WandB metrics available"
+        
+        # Summarize metrics from WandB if available
+        OFFLINE_RUN=$(find "${test_dir}/wandb" -name "offline-run-*" -type d | sort | tail -n 1)
+        if [ -n "$OFFLINE_RUN" ] && [ -f "${OFFLINE_RUN}/files/wandb-summary.json" ]; then
+            echo "  Test metrics summary:"
+            grep "final_test" "${OFFLINE_RUN}/files/wandb-summary.json" | sed 's/\"//g' | sed 's/,//g'
+        fi
+    else
+        echo "${test_name}: WandB metrics NOT available"
+    fi
 done
 
 # Show GPU usage
@@ -173,3 +269,8 @@ echo "GPU memory usage:"
 nvidia-smi --query-gpu=memory.used --format=csv
 
 echo "All tests completed."
+
+# Provide instructions for syncing WandB data
+echo ""
+echo "To sync WandB data to the cloud, run:"
+echo "wandb sync ${TESTS_OUTPUT}/*/wandb/offline-run-*"
