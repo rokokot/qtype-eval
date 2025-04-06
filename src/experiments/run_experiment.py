@@ -114,37 +114,46 @@ def setup_wandb(
 
 
 def process_task_list(tasks):
-    """
-    Robustly process a list of tasks, ensuring a single valid task string.
     
-    Args:
-        tasks (Union[str, List[str], None]): Input task(s)
-    
-    Returns:
-        str: A single, normalized task string
-    """
-    # Handle None input
     if tasks is None:
         return "question_type"
     
-    # If tasks is already a string, convert and validate
+    # If tasks is already a string, ensure it's properly formatted
+    if isinstance(tasks, str):
+        return tasks.strip().lower()
+    
+    # If tasks is a list, take the first non-empty item
+    if isinstance(tasks, list) and len(tasks) > 0:
+        valid_tasks = [t for t in tasks if t]
+        if valid_tasks:
+            # Return the first valid task as a properly formatted string
+            return valid_tasks[0].strip().lower()
+    
+    # Default fallback
+    return "question_type"
+    
+    """
+    if tasks is None:
+        return "question_type"
+    
+   
     if isinstance(tasks, str):
         return ensure_string_task(tasks)
     
-    # If tasks is a list
+    
     if isinstance(tasks, list):
-        # Filter out None or empty values
+        
         valid_tasks = [t for t in tasks if t]
         
-        # If no valid tasks, return default
+        
         if not valid_tasks:
             return "question_type"
         
         # Take the first valid task and normalize
         return ensure_string_task(valid_tasks[0])
     
-    # For any other type, default to question_type
     return "question_type"
+    """
     
 
 def validate_task(task):
@@ -157,16 +166,23 @@ def validate_task(task):
     Returns:
         str: Validated task string
     """
-    valid_tasks = list(TASK_TO_FEATURE.keys()) + [
-        "avg_links_len", "avg_max_depth", 
-        "avg_subordinate_chain_len", "avg_verb_edges", 
-        "lexical_density", "n_tokens"
+    valid_tasks = [
+        "question_type", 
+        "complexity", 
+        "single_submetric",
+        "avg_links_len", 
+        "avg_max_depth", 
+        "avg_subordinate_chain_len", 
+        "avg_verb_edges", 
+        "lexical_density", 
+        "n_tokens"
     ]
     
+    # Check if task is valid
     if task not in valid_tasks:
-        logger.warning(f"Task '{task}' may not be properly recognized. Valid tasks: {valid_tasks}")
-        return "question_type"
-    
+        logger.warning(f"Task '{task}' is not recognized. Valid tasks: {valid_tasks}")
+        return "question_type"  # Default fallback
+        
     return task
 
 
@@ -206,24 +222,21 @@ def main(cfg: DictConfig):
     def determine_task_type(task, cfg):
         """Dynamically determine task type based on task and configuration."""
         # Explicit task type override
-        if hasattr(cfg.training, 'task_type') and cfg.training.task_type != 'default':
+        if hasattr(cfg.training, 'task_type') and cfg.training.task_type not in ['default', 'auto']:
             return cfg.training.task_type
-
-        # Expanded task-specific type mapping
-        task_type_map = {
-            'question_type': 'classification',
-            'complexity': 'regression',
-            'single_submetric': 'regression',
-            # Add specific submetrics if needed
-            'avg_links_len': 'regression',
-            'avg_max_depth': 'regression',
-            'avg_subordinate_chain_len': 'regression',
-            'avg_verb_edges': 'regression',
-            'lexical_density': 'regression',
-            'n_tokens': 'regression'
-        }
+            
         
-        return task_type_map.get(task, 'regression')
+
+        if task == "question_type":
+            return "classification"
+        elif task in ["complexity", "single_submetric", "avg_links_len", "avg_max_depth", 
+                     "avg_subordinate_chain_len", "avg_verb_edges", "lexical_density", 
+                     "n_tokens"]:
+            return "regression"
+    
+        # Default fallback
+        logger.warning(f"Could not determine task type for '{task}'. Defaulting to classification.")
+        return "classification"
 
     # Determine task type
     task_type = determine_task_type(task, cfg)
@@ -514,12 +527,8 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
     
     # Save combined results
     results_path = os.path.join(cfg.output_dir, "all_results.json")
-    try:
-        with open(results_path, "w") as f:
-            json.dump(all_results, f, indent=2)
-        logger.info(f"Results saved to {results_path}")
-    except Exception as save_error:
-        logger.error(f"Failed to save results: {save_error}")
+    with open(results_path, "w") as f:
+        json.dump(all_results, f, indent=2)
     
     return all_results
 

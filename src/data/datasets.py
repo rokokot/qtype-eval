@@ -104,32 +104,58 @@ def ensure_string_task(task):
     return task_mapping.get(task, task)
 
 def get_feature_name_from_task(task, submetric=None):
-    # Normalize task to string
-    task_str = ensure_string_task(task)
+    """
+    Get the appropriate feature name for a given task.
     
-    # Handle single submetric case
-    if task_str == "single_submetric" and submetric is not None:
+    Args:
+        task (str): Task name
+        submetric (str, optional): Specific submetric for single_submetric task
+        
+    Returns:
+        str: Feature name to use
+    """
+    # Standardize task name
+    task = task.strip().lower() if isinstance(task, str) else "question_type"
+    
+    # Handle single submetric case specifically
+    if task == "single_submetric" and submetric is not None:
+        # List of valid submetrics
         valid_submetrics = [
             "avg_links_len", "avg_max_depth", 
-            "avg_subordinate_chain_len", 
-            "avg_verb_edges", "lexical_density", "n_tokens"
+            "avg_subordinate_chain_len", "avg_verb_edges", 
+            "lexical_density", "n_tokens"
         ]
+        
+        # Validate submetric
         if submetric not in valid_submetrics:
-            logger.warning(f"Invalid submetric: {submetric}. Defaulting.")
-            submetric = "avg_links_len"
+            logger.warning(f"Invalid submetric: {submetric}. Using default 'avg_links_len'.")
+            return "avg_links_len"
+        
         return submetric
     
-    # Use existing task mapping
-    task_config = TASK_TO_FEATURE.get(task_str, {})
-    feature = task_config.get('feature')
-
-    # Fallback with logging
-    if feature is None:
-        logger.warning(f"No feature for task '{task_str}'. Defaulting.")
-        task_str = "question_type"
-        feature = TASK_TO_FEATURE["question_type"]["feature"]
+    # Direct mapping for submetrics as tasks
+    submetrics = [
+        "avg_links_len", "avg_max_depth", 
+        "avg_subordinate_chain_len", "avg_verb_edges", 
+        "lexical_density", "n_tokens"
+    ]
     
-    return feature
+    if task in submetrics:
+        return task
+    
+    # Standard task mapping
+    task_mapping = {
+        "question_type": "question_type",
+        "complexity": "lang_norm_complexity_score",
+        "complexity_score": "lang_norm_complexity_score"
+    }
+    
+    if task in task_mapping:
+        return task_mapping[task]
+    
+    # Log warning and return default if task not recognized
+    logger.warning(f"Unrecognized task: {task}. Using default 'question_type'.")
+    return "question_type"
 
 class MultilingualQuestionDataset(Dataset):  # Dataset for sklearn models using TF-IDF features
     def __init__(
@@ -156,70 +182,34 @@ class LMQuestionDataset(Dataset):
     def __init__(self, data: pd.DataFrame, tokenizer: AutoTokenizer, task: str, max_length: int = 128, submetric: Optional[str] = None):
         self.data = data
         self.tokenizer = tokenizer
+
         self.task = ensure_string_task(task)
         self.max_length = max_length
         self.submetric = submetric
         
-        # Bug fix 1: Use self.task rather than task for classification check
-        self.is_classification = self.task == "question_type"
+        if self.task == "question_type":
+            self.is_classification = True
+        else:
+            self.is_classification = False
         
         if "text" not in data.columns:
-            available_columns = data.columns.tolist()
-            logger.error(f"Required column 'text' not found in data. Available columns: {available_columns}")
-            raise ValueError(f"Required column 'text' not found in data")
+            raise ValueError(f"Required column 'text' not found in data. Available columns: {data.columns.tolist()}")
         
         self.texts = data["text"].tolist()
         
-        # Bug fix 2: Handle feature_name for submetrics
-        if self.task == "single_submetric" and self.submetric is not None:
-            feature_name = self.submetric
-        else:
-            feature_name = get_feature_name_from_task(self.task, self.submetric)
-        
-        # Bug fix 3: Better error messaging for missing feature
-        if feature_name is None:
-            available_tasks = list(TASK_TO_FEATURE.keys())
-            logger.error(f"Unknown task: {self.task}, available tasks: {available_tasks}")
-            if self.task == "single_submetric":
-                logger.error(f"For 'single_submetric' task, submetric must be provided. Got: {self.submetric}")
-            raise ValueError(f"Could not determine feature name for task: {self.task}")
+        feature_name = get_feature_name_from_task(self.task, self.submetric)
         
         if feature_name not in data.columns:
-            available_columns = data.columns.tolist()
-            logger.error(f"Feature '{feature_name}' not found in data columns: {available_columns}")
-            raise ValueError(f"Feature '{feature_name}' not found in data")
+            available = ", ".join(data.columns.tolist())
+            raise ValueError(f"Feature '{feature_name}' not found in data. Available columns: {available}")
         
-        # Bug fix 4: Fix incorrect condition - "sub_metrics" vs "single_submetric"
-        if self.task == "single_submetric":
-            # Either get all submetrics or just the specified one
-            if self.submetric is not None:
-                self.labels = data[self.submetric].values.astype(np.float32)
-            else:
-                submetrics = [
-                    "avg_links_len",
-                    "avg_max_depth",
-                    "avg_subordinate_chain_len",
-                    "avg_verb_edges",
-                    "lexical_density",
-                    "n_tokens",
-                ]
-                # Check if all submetrics exist in data
-                for metric in submetrics:
-                    if metric not in data.columns:
-                        logger.warning(f"Submetric '{metric}' not found in data columns")
-                
-                # Use available submetrics only
-                available_submetrics = [m for m in submetrics if m in data.columns]
-                if not available_submetrics:
-                    raise ValueError(f"No submetrics found in data columns: {data.columns.tolist()}")
-                    
-                self.labels = data[available_submetrics].values.astype(np.float32)
+        self.labels = data[feature_name].values
+        
+        # Determine the correct feature to use based on task
+        if self.is_classification:
+            self.labels = self.labels.astype(np.int64)
         else:
-            self.labels = data[feature_name].values
-            if self.is_classification:
-                self.labels = self.labels.astype(np.int64)
-            else:
-                self.labels = self.labels.astype(np.float32)
+            self.labels = self.labels.astype(np.float32)
 
     def __len__(self):
         return len(self.texts)
@@ -228,18 +218,15 @@ class LMQuestionDataset(Dataset):
         try:
             text = self.texts[idx]
             label = self.labels[idx]
-
+    
             encoding = self.tokenizer(text, max_length=self.max_length, padding="max_length", truncation=True, return_tensors="pt")
-
             encoding = {k: v.squeeze(0) for k, v in encoding.items()}
-
+    
             if self.is_classification:
                 encoding["labels"] = torch.tensor(label, dtype=torch.long)
-            elif self.task == "single_submetric":  # Changed from "sub_metrics" to make consistent
-                encoding["labels"] = torch.tensor(label, dtype=torch.float)
-            else:
-                encoding["labels"] = torch.tensor(label, dtype=torch.float).reshape(1)
-
+            else:  # All non-classification tasks are regression
+                encoding["labels"] = torch.tensor(label, dtype=torch.float).reshape(-1)  # Ensure proper shape
+    
             return encoding
         except Exception as e:
             logger.error(f"Error processing item {idx}: {e}")
@@ -339,12 +326,11 @@ def load_tfidf_features(split: str, vectors_dir: str = "./data/features"):
         return sparse.csr_matrix((100, 128104))
 
 
-def load_sklearn_data(languages: List[str],task: str = "question_type",submetric: Optional[str] = None,control_index: Optional[int] = None,cache_dir: str = "./data/cache",vectors_dir: str = "./data/features",):
+def load_sklearn_data(languages: List[str], task: str = "question_type", submetric: Optional[str] = None, control_index: Optional[int] = None, cache_dir: str = "./data/cache", vectors_dir: str = "./data/features"):
 
     train_features = load_tfidf_features("train", vectors_dir)
     val_features = load_tfidf_features("dev", vectors_dir)
     test_features = load_tfidf_features("test", vectors_dir)
-
 
     logger.info(f"Loaded feature matrices with shapes: {train_features.shape}, {val_features.shape}, {test_features.shape}")
 
@@ -352,14 +338,10 @@ def load_sklearn_data(languages: List[str],task: str = "question_type",submetric
     val_df = load_combined_dataset("validation", task, control_index, cache_dir)
     test_df = load_combined_dataset("test", None, cache_dir)  
     
-    if task == "question_type":
-        feature_name = "question_type"
-    elif task == "complexity":
-        feature_name = "lang_norm_complexity_score"
-    elif task == "single_submetric" and submetric is not None:
-        feature_name = submetric
-    else:
-        feature_name = TASK_TO_FEATURE.get(task, task)
+    # Use the helper function to get the correct feature name
+    feature_name = get_feature_name_from_task(task, submetric)
+    
+    logger.info(f"Using feature: {feature_name} for task: {task}")
     
     # Extract labels
     train_labels = train_df[feature_name].values
@@ -383,7 +365,7 @@ def load_sklearn_data(languages: List[str],task: str = "question_type",submetric
 
 def create_lm_dataloaders(
     language: str,
-    task = "question_type",
+    task: str = "question_type",
     model_name: str = "cis-lmu/glot500-base",
     batch_size: int = 16,
     control_index: Optional[int] = None,

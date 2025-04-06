@@ -166,10 +166,12 @@ class LMTrainer:
                 
                 outputs = self.model(input_ids=batch["input_ids"], attention_mask=batch["attention_mask"])
 
+
                 if self.task_type == "classification":
                     if outputs.size(-1) == 1:
                         batch["labels"] = batch["labels"].view(-1, 1).float()
                 else:
+                   
                     if outputs.ndim == 2 and outputs.size(1) == 1:
                         batch["labels"] = batch["labels"].view(-1, 1).float()
                     else:
@@ -179,34 +181,32 @@ class LMTrainer:
                 loss = self.criterion(outputs, batch["labels"])
                 total_loss += loss.item()
 
-                all_preds.append(outputs.cpu().numpy())
-                all_labels.append(batch["labels"].cpu().numpy())
+                all_preds.append(outputs.detach().cpu().numpy())
+                all_labels.append(batch["labels"].detach().cpu().numpy())
 
         avg_loss = total_loss / len(data_loader)
-        all_preds = np.vstack(all_preds)
-        all_labels = np.vstack(all_labels)
-
+        
+        all_preds = np.concatenate(all_preds, axis=0)
+        all_labels = np.concatenate(all_labels, axis=0)
+    
         metrics = self._calculate_metrics(all_labels, all_preds)
-
+    
         return avg_loss, metrics
 
     def _calculate_metrics(self, y_true, y_pred):
-        
-        #y_true_np = y_true.cpu().numpy()
-        #y_pred_np = y_pred.cpu().numpy()
-        
         if self.task_type == "classification":
             y_pred_binary = (y_pred > 0.5).astype(int)
             return {
                 "accuracy": float(accuracy_score(y_true, y_pred_binary)),
                 "f1": float(f1_score(y_true, y_pred_binary, average="binary")),
             }
-        else: 
+        else:
+            # Original code that worked for regression
             if y_true.ndim > 1:
-                y_true = y_true.flatten()
-            if y_pred_np.dim > 1:
-                y_pred = y_pred.flatten()
-                
+                y_true = y_true.reshape(-1)
+            if y_pred.ndim > 1:
+                y_pred = y_pred.reshape(-1)
+                 
             return {
                 "mse": float(mean_squared_error(y_true, y_pred)),
                 "rmse": float(np.sqrt(mean_squared_error(y_true, y_pred))),
