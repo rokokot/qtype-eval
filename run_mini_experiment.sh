@@ -43,15 +43,15 @@ echo "PyTorch CUDA available: $(python -c 'import torch; print(torch.cuda.is_ava
 echo "Running mini classification experiment..."
 
 python -m src.experiments.run_experiment \
-    "experiment=question_type" \
+    "experiment=[complexity]" \
     "model=lm_probe" \
     "model.lm_name=cis-lmu/glot500-base" \
-    "data.languages=[ko]" \
+    "data.languages=[ar]" \
     "data.cache_dir=$VSC_DATA/qtype-eval/data/cache" \
     "training.num_epochs=3" \
     "training.batch_size=8" \
-    "training.task_type=classification" \
-    "experiment_name=mini_test_classification_glot500_ko" \
+    "training.task_type=regression" \
+    "experiment_name=mini_test_classification_glot500_ar" \
     "output_dir=./mini_classification_output"
 
 # Check output files
