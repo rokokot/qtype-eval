@@ -17,6 +17,11 @@ source "$VSC_DATA/miniconda3/etc/profile.d/conda.sh"
 # Activate the environment
 conda activate qtype-eval
 
+conda install -y pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+
+# Install Python packages
+pip install hydra-core hydra-submitit-launcher
+pip install "transformers>=4.30.0,<4.36.0" torch datasets wandb
 # Set up environment variables
 export PYTHONPATH=$PYTHONPATH:$PWD
 export HF_HOME=$VSC_DATA/qtype-eval/data/cache
@@ -57,16 +62,19 @@ echo "Running mini regression experiment for complexity..."
 python -m src.experiments.run_experiment \
     "hydra.job.chdir=False" \
     "hydra.run.dir=." \
-    "experiment=complexity" \
-    "experiment.tasks=complexity" \
+    "experiment=submetrics" \
+    "experiment.tasks=single_submetric" \
+    "experiment.submetric=n_tokens" \
     "model=lm_probe" \
     "model.lm_name=cis-lmu/glot500-base" \
-    "data.languages=[ar]" \
+    "experiment.use_controls=true" \
+    "experiment.control_index=1" \
+    "data.languages=[ja]" \
     "data.cache_dir=$VSC_DATA/qtype-eval/data/cache" \
-    "training.num_epochs=3" \
-    "training.batch_size=8" \
+    "training.num_epochs=10" \
+    "training.batch_size=16" \
     "training.task_type=regression" \
-    "experiment_name=mini_complexity_regression_glot500_ar" \
+    "experiment_name=mini_complexity_regression_glot500_ja" \
     "output_dir=${MINI_OUTPUT_DIR}" \
     "wandb.mode=offline"
 
