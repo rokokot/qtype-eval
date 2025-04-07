@@ -1,6 +1,6 @@
 model_type: "lm_probe"
 lm_name: "cis-lmu/glot500-base"
-dropout: 0.1
+dropout: 0.3
 freeze_model: false
 layer_wise: false
 layer_index: -1

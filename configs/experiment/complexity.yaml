@@ -8,3 +8,9 @@ eval_on_orig_test: true
 cross_lingual: false
 task_type: "regression"  # Explicitly define as regression
 feature: "lang_norm_complexity_score"  # Specify the exact feature to use
+
+training:
+  patience: 5
+  scheduler_patience: 4
+  scheduler_factor: 0.8
+  dropout: 0.1

@@ -143,23 +143,25 @@ hydra:
     - hydra.run.dir=.
     - hydra.mode=RUN
     task:
-    - output_dir=/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/sequential_debug_output/4_control_en
-    - experiment_name=4_control_en
-    - data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache
-    - wandb.mode=offline
-    - experiment=question_type
-    - experiment.tasks=question_type
+    - experiment=submetrics
+    - experiment.tasks=single_submetric
+    - experiment.submetric=n_tokens
     - model=lm_probe
     - model.lm_name=cis-lmu/glot500-base
-    - data.languages=[en]
     - experiment.use_controls=true
     - experiment.control_index=1
-    - training.num_epochs=2
-    - training.batch_size=8
+    - data.languages=[ja]
+    - data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache
+    - training.num_epochs=10
+    - training.batch_size=16
+    - training.task_type=regression
+    - experiment_name=mini_complexity_regression_glot500_ja
+    - output_dir=/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/mini_classification_output
+    - wandb.mode=offline
   job:
     name: run_experiment
     chdir: false
-    override_dirname: data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache,data.languages=[en],experiment.control_index=1,experiment.tasks=question_type,experiment.use_controls=true,experiment=question_type,experiment_name=4_control_en,model.lm_name=cis-lmu/glot500-base,model=lm_probe,output_dir=/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/sequential_debug_output/4_control_en,training.batch_size=8,training.num_epochs=2,wandb.mode=offline
+    override_dirname: data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache,data.languages=[ja],experiment.control_index=1,experiment.submetric=n_tokens,experiment.tasks=single_submetric,experiment.use_controls=true,experiment=submetrics,experiment_name=mini_complexity_regression_glot500_ja,model.lm_name=cis-lmu/glot500-base,model=lm_probe,output_dir=/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/mini_classification_output,training.batch_size=16,training.num_epochs=10,training.task_type=regression,wandb.mode=offline
     id: ???
     num: ???
     config_name: config
@@ -186,7 +188,7 @@ hydra:
       provider: schema
     output_dir: /vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval
     choices:
-      experiment: question_type
+      experiment: submetrics
       training: default
       model: lm_probe
       data: default

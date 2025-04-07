@@ -1,6 +1,6 @@
 seed: 42
-output_dir: /vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/sequential_debug_output/4_control_en
-experiment_name: 4_control_en
+output_dir: /vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/mini_classification_output
+experiment_name: mini_complexity_regression_glot500_ja
 wandb:
   project: multilingual-question-probing
   entity: rokii-ku-leuven
@@ -18,21 +18,21 @@ data:
   cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
   vectors_dir: ./data/features
   languages:
-  - en
+  - ja
   train_language: null
   eval_language: null
 model:
   model_type: lm_probe
   lm_name: cis-lmu/glot500-base
-  dropout: 0.1
+  dropout: 0.3
   freeze_model: false
   layer_wise: false
   layer_index: -1
   num_outputs: 1
 training:
-  task_type: classification
-  batch_size: 8
-  num_epochs: 2
+  task_type: regression
+  batch_size: 16
+  num_epochs: 10
   lr: 1.0e-05
   weight_decay: 0.01
   patience: 3
@@ -42,9 +42,18 @@ training:
   num_workers: 4
 experiment:
   type: lm_probe
-  tasks: question_type
+  tasks: single_submetric
+  submetric: n_tokens
+  available_submetrics:
+  - avg_links_len
+  - avg_max_depth
+  - avg_subordinate_chain_len
+  - avg_verb_edges
+  - lexical_density
+  - n_tokens
   use_controls: true
   control_index: 1
   num_controls: 3
   eval_on_orig_test: true
   cross_lingual: false
+  task_type: regression
