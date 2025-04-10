@@ -1,12 +1,12 @@
 #!/bin/bash
 #SBATCH --job-name=complexity_experiments
-#SBATCH --time=00:30:00
+#SBATCH --time=03:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
-#SBATCH --mem=16G
+#SBATCH --mem=32G
 #SBATCH --gres=gpu:1
-#SBATCH --partition=gpu_a100_debug
+#SBATCH --partition=gpu_a100
 #SBATCH --clusters=wice
 #SBATCH --account=intro_vsc37132
 
@@ -24,6 +24,8 @@ export HF_DATASETS_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
 export HYDRA_JOB_CHDIR=False
 export HYDRA_FULL_ERROR=1
+export WANDB_DIR="$VSC_SCRATCH/wandb"
+mkdir -p "$VSC_SCRATCH/wandb"
 
 echo "Environment variables:"
 echo "PYTHONPATH=${PYTHONPATH}"
@@ -31,6 +33,8 @@ echo "HF_HOME=${HF_HOME}"
 echo "TRANSFORMERS_OFFLINE=${TRANSFORMERS_OFFLINE}"
 echo "HF_DATASETS_OFFLINE=${HF_DATASETS_OFFLINE}"
 echo "HYDRA_JOB_CHDIR=${HYDRA_JOB_CHDIR}"
+echo "GPU information:"
+nvidia-smi
 
 echo "Python executable: $(which python)"
 echo "PyTorch CUDA available: $(python -c 'import torch; print(torch.cuda.is_available())')"

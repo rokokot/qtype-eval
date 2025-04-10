@@ -1,6 +1,6 @@
 seed: 42
-output_dir: /scratch/leuven/371/vsc37132/question_type_output/ru/control3
-experiment_name: question_type_control3_ru
+output_dir: /scratch/leuven/371/vsc37132/submetric_output/ar/avg_max_depth
+experiment_name: avg_max_depth_ar
 wandb:
   project: multilingual-question-probing
   entity: rokii-ku-leuven
@@ -18,7 +18,7 @@ data:
   cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
   vectors_dir: ./data/features
   languages:
-  - ru
+  - ar
   train_language: null
   eval_language: null
 model:
@@ -30,7 +30,7 @@ model:
   layer_index: -1
   num_outputs: 1
 training:
-  task_type: classification
+  task_type: regression
   batch_size: 16
   num_epochs: 10
   lr: 1.0e-05
@@ -42,9 +42,18 @@ training:
   num_workers: 4
 experiment:
   type: lm_probe
-  tasks: question_type
-  use_controls: true
-  control_index: 3
+  tasks: single_submetric
+  submetric: avg_max_depth
+  available_submetrics:
+  - avg_links_len
+  - avg_max_depth
+  - avg_subordinate_chain_len
+  - avg_verb_edges
+  - lexical_density
+  - n_tokens
+  use_controls: false
+  control_index: null
   num_controls: 3
   eval_on_orig_test: true
   cross_lingual: false
+  task_type: regression
