@@ -19,6 +19,8 @@ class LMProbe(nn.Module):  # Neural probe for language model representations
         num_outputs: int = 1,
         dropout: float = 0.1,
         freeze_model: bool = False,
+        layer_wise: bool = False,
+        layer_index: int = -1,
     ):
         super().__init__()
 
@@ -72,28 +74,33 @@ class LMProbe(nn.Module):  # Neural probe for language model representations
 
         self.task_type = task_type
         self.num_outputs = num_outputs
+        self.layer_wise = layer_wise
+        self.layer_index = layer_index
+        logger.info(f"layer-wise probing: {layer_wise}, layer index: {layer_index}")
 
     def forward(self, input_ids, attention_mask, token_type_ids=None, **kwargs):
-        model_type = self.model.__class__.__name__
-
-        if "DistilBert" in model_type:
-            # DistilBERT doesn't use token_type_ids
-            outputs = self.model(input_ids=input_ids, attention_mask=attention_mask)
+        if hasattr(self, 'layer_wise') and self.layer_wise and hasattr(self, 'layer_index'):
+            
+            outputs = self.model(
+                input_ids=input_ids,
+                attention_mask=attention_mask,
+                token_type_ids=token_type_ids if token_type_ids is not None else None,
+                output_hidden_states=True
+            )
+            
+            hidden_states = outputs.hidden_states
+            layer_output = hidden_states[self.layer_index]
+            sentence_repr = layer_output[:, 0, :]
         else:
-            # BERT and others use token_type_ids
             outputs = self.model(
                 input_ids=input_ids,
                 attention_mask=attention_mask,
                 token_type_ids=token_type_ids if token_type_ids is not None else None,
             )
-
-        # Get the sentence representation from [CLS] token
-        sentence_repr = outputs.last_hidden_state[:, 0, :]
-
+            sentence_repr = outputs.last_hidden_state[:, 0, :]
         outputs = self.head(sentence_repr)
-
+        
         return outputs
-
 
 def create_model(model_type, task_type, **kwargs):
     """Create a model for the given task type with improved validation."""
@@ -121,7 +128,9 @@ def create_model(model_type, task_type, **kwargs):
             task_type=task_type,
             num_outputs=num_outputs,
             dropout=kwargs.get("dropout", 0.1),
-            freeze_model=kwargs.get("freeze_model", False)
+            freeze_model=kwargs.get("freeze_model", False),
+            layer_wise=kwargs.get("layer_wise", False),
+            layer_index=kwargs.get("layer_index", -1)
         )
     
     # Handle task type validation for sklearn models

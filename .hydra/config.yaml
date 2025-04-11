@@ -1,6 +1,6 @@
 seed: 42
-output_dir: /scratch/leuven/371/vsc37132/submetric_output/ar/avg_max_depth
-experiment_name: avg_max_depth_ar
+output_dir: /scratch/leuven/371/vsc37132/submetric_output/ru/avg_verb_edges/control3
+experiment_name: avg_verb_edges_control3_ru
 wandb:
   project: multilingual-question-probing
   entity: rokii-ku-leuven
@@ -18,7 +18,7 @@ data:
   cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
   vectors_dir: ./data/features
   languages:
-  - ar
+  - ru
   train_language: null
   eval_language: null
 model:
@@ -43,7 +43,7 @@ training:
 experiment:
   type: lm_probe
   tasks: single_submetric
-  submetric: avg_max_depth
+  submetric: avg_verb_edges
   available_submetrics:
   - avg_links_len
   - avg_max_depth
@@ -51,8 +51,8 @@ experiment:
   - avg_verb_edges
   - lexical_density
   - n_tokens
-  use_controls: false
-  control_index: null
+  use_controls: true
+  control_index: 3
   num_controls: 3
   eval_on_orig_test: true
   cross_lingual: false
