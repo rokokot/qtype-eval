@@ -1,11 +1,11 @@
 # Multilingual Question-Type and Complexity Probing Framework
 
 [![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-390/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-orange)](https://pytorch.org/)
 [![Transformers](https://img.shields.io/badge/transformers-4.30%2B-green)](https://huggingface.co/docs/transformers/index)
 [![Hydra](https://img.shields.io/badge/Hydra-1.3-blue)](https://hydra.cc/)
 [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/rokokot/question-type-and-complexity)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This repo contains the code, data, and documentation for the experimental framework developed in the scope of the research described in  "Type and Complexity Signals in Multilingual Question Representations: A Diagnostic Study with Selective Control Tasks." [link] We investigate how pre-trained multilingual contextual encoder models encode sentence-level linguistic features across 7 typollogically diverse languages (Arabic, English, Finnish, Indonesian, Japanese, Korean, and Russian).
 
@@ -42,9 +42,9 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ### References
 
-Clark et al. (2020) - TyDi QA dataset
-Nivre et al. (2020) - Universal Dependencies
-Conneau et al. (2018) - Probing task design
-Sahin et al. (2020) - LINSPECTOR multilingual probing
-Brunato et al. (2020) - Profiling-UD linguistic complexity analysis
+(Clark et al. (2020))[https://aclanthology.org/2020.tacl-1.30/] - TyDi QA dataset
+(Nivre et al. (2020))[https://aclanthology.org/2020.lrec-1.497/] - Universal Dependencies
+(Conneau et al. (2018))[https://arxiv.org/abs/1805.01070] - Probing task design
+(Sahin et al. (2020))[https://aclanthology.org/2020.cl-2.4/] - LINSPECTOR multilingual probing
+(Brunato et al. (2020))[https://aclanthology.org/2020.lrec-1.883/] - Profiling-UD linguistic complexity metric analysis
 
