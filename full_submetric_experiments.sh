@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=submetric_experiments
-#SBATCH --time=00:10:00
+#SBATCH --time=00:30:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
@@ -24,8 +24,8 @@ export HF_DATASETS_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
 export HYDRA_JOB_CHDIR=False
 export HYDRA_FULL_ERROR=1
-export WANDB_DIR="$VSC_DATA/wandb"
-mkdir -p "$VSC_DATA/wandb"
+export WANDB_DIR="$VSC_SCRATCH/wandb"
+mkdir -p "$VSC_SCRATCH/wandb"
 
 echo "Environment variables:"
 echo "PYTHONPATH=${PYTHONPATH}"
@@ -39,7 +39,7 @@ nvidia-smi
 echo "Python executable: $(which python)"
 echo "PyTorch CUDA available: $(python -c 'import torch; print(torch.cuda.is_available())')"
 
-LANGUAGES=("ar" "en" "fi" "id" "ja" "ko" "ru")
+LANGUAGES=("ru")
 SUBMETRICS=("avg_links_len" "avg_max_depth" "avg_subordinate_chain_len" "avg_verb_edges" "lexical_density" "n_tokens")
 CONTROL_INDICES=(1 2 3)
 
