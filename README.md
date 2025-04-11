@@ -1,36 +1,50 @@
-# package_name
+# Multilingual Question-Type and Complexity Probing Framework
 
-Template repo for Python software and / or research projects.
+[![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-390/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-orange)](https://pytorch.org/)
+[![Transformers](https://img.shields.io/badge/transformers-4.30%2B-green)](https://huggingface.co/docs/transformers/index)
+[![Hydra](https://img.shields.io/badge/Hydra-1.3-blue)](https://hydra.cc/)
+[![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/rokokot/question-type-and-complexity)
 
-1. Find and replace `package_name` with the name of the package and `**description**` with a brief description. Also change the author information in `pyproject.toml` and this readme where needed.
-2. Specify dependencies and minimal Python version.
-3. Choose a [license](https://choosealicense.com/) and paste it into `LICENSE`.
-4. Check if the pre-commit hooks make sense (e.g., check bash files if there are any, etc.)
-   [see here](https://pre-commit.com/hooks.html) and check `.pre-commit-config.yaml`.
-5. Run the following commands:
+This repo contains the code, data, and documentation for the experimental framework developed in the scope of the research described in  "Type and Complexity Signals in Multilingual Question Representations: A Diagnostic Study with Selective Control Tasks." [link] We investigate how pre-trained multilingual contextual encoder models encode sentence-level linguistic features across 7 typollogically diverse languages (Arabic, English, Finnish, Indonesian, Japanese, Korean, and Russian).
 
-   ```zsh
-   pyenv virtualenv <python_version> <package_name> # Create a `pyenv` virtual env
-   pyenv activate <package_name>
-   pyenv local <package_name> # And make it local so it's always active in this folder
-   pip install -e ".[dev]"
-   pre-commit install # associate with git repo
-   pre-commit autoupdate # update pre-commit hooks
-   pre-commit run --all-files
-   ```
+Our experiments address three research questions:
 
-6. Everything should be ready for development!
+1. How well do multilingual models encode sentence-level properties compared to traditional feature representations(TF-IDF)?
+2. Which linguistic property signals are most expressive at different layers of the model?
+3. Do diagnostic classifiers learn true linguistic composition or simply memorize patterns?
 
-## Optional
+We approach these by training diagnostic classifiers on top of frozen model representations in order to predict categorical and continuous linguistic properties of the input text. Diagnostic classification tasks are motivated by the idea that successfully training a classifier model to predict a property of sentences implies the property is encoded in the representation. In contrast, poor performance means the property is not encoded in a way that is useful for the model.
 
-* Additional documentation are stored in `docs`.
-* Tests are put in `tests` and require development dependencies, which are listed under `dev` in `pyproject.toml`. These are installed using `pip install <package_name>[dev]`.
-* For usage of [`hydra`](https://github.com/facebookresearch/hydra) and [`submitit`](https://github.com/facebookincubator/submitit) in combination with the VSC, I've added configs that work for requesting single GPUs in `config/slurm`. The names of the files correspond to cluster and the GPUs available there, for more details see [Genius](https://docs.vscentrum.be/leuven/tier2_genius.html) and [wICE](https://docs.vscentrum.be/leuven/tier2_wice.html). Make sure to fill in your own `project` (provided by the VSC), `mail_user` and `slurm_time` (note that `debug` partitions have a 30 minute maximum).
+## Dataset
 
-## Usage
+We make extensive use the custom  Question Type and Complexity (QTC) dataset, available at [Hugging Face]([https://huggingface.co/datasets/rokokot/question-type-and-complexity). The dataset was developed by automatically annotating data from two sources:
 
-```zsh
-pip install git+https://github.com/WPoelman/package_name
-```
+1. **Training set(silver data)**: Derived from TyDiQA-goldP (cite), automatically annotated using rule-based and regex methods for question types, and UDPipe (cite) with linguistic profiling toolkit (cite) for complexity metrics
+2. **Test set (gold data)**: Extracted from Universal Dependency treebanks with high-quality annotations
+3. **Development set**: A combination of both sources to provide a balanced validation set
 
-## License
+The dataset contains the following labels:
+
+a. Question types: Binary classification of questions as polar (yes/no) or content (wh-)
+b. 6 different complexity sub-metrics: Average dependency links length, Average maximum depth, Average subordinate chain length, Average verb edges, Lexical density, Number of tokens
+c. Combined complexity metric: One unweighted sum as an abstract complexity score
+d. Control sets: Created by intra-language shuffling of labels to test model selectivity
+
+## Experimental Framework
+
+
+
+### License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+### References
+
+Clark et al. (2020) - TyDi QA dataset
+Nivre et al. (2020) - Universal Dependencies
+Conneau et al. (2018) - Probing task design
+Sahin et al. (2020) - LINSPECTOR multilingual probing
+Brunato et al. (2020) - Profiling-UD linguistic complexity analysis
+
