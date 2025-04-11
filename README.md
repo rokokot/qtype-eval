@@ -7,7 +7,7 @@
 [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/rokokot/question-type-and-complexity)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This repo contains the code, data, and documentation for the experimental framework developed in the scope of the research described in  "Type and Complexity Signals in Multilingual Question Representations: A Diagnostic Study with Selective Control Tasks." [link] We investigate how pre-trained multilingual contextual encoder models encode sentence-level linguistic features across 7 typollogically diverse languages (Arabic, English, Finnish, Indonesian, Japanese, Korean, and Russian).
+This repo contains the code, data, and documentation for the experimental framework developed in the scope of the research described in  "Type and Complexity Signals in Multilingual Question Representations: A Diagnostic Study with Selective Control Tasks." [link] We investigate how pre-trained multilingual contextual encoder models encode sentence-level linguistic features across 7 typologically diverse languages (Arabic, English, Finnish, Indonesian, Japanese, Korean, and Russian).
 
 Our experiments address three research questions:
 
