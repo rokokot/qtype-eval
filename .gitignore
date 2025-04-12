@@ -188,10 +188,8 @@ docs/notebook.md
 /home/robin/Research/qtype-eval/scripts/baselines/wandb/
 
 archive/
-slurm-*.out
 
 outputs/
 logs/
 *.log
-*.out
 .wandb/
