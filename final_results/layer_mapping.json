@@ -1,0 +1,12 @@
+{
+  "layers": [2, 6, 11, 12],
+  "layer_sources": {
+    "2": "layerwise_output/*/layer_2/*",
+    "6": "layerwise_output/*/layer_6/*",
+    "11": "layerwise_output/*/layer_11/*",
+    "12": ["complexity_output", "question_type_output", "submetric_output"]
+  },
+  "tasks": ["question_type", "complexity", "submetric"],
+  "languages": ["ar", "en", "fi", "id", "ja", "ko", "ru"],
+  "collection_date": "2025-04-13T12:59:08Z"
+}

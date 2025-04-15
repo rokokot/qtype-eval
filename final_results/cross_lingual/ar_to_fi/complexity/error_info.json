@@ -1,0 +1,8 @@
+{
+  "error": "[Errno 116] Stale file handle",
+  "traceback": "Traceback (most recent call last):\n  File \"/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py\", line 221, in main\n    results = run_cross_lingual_experiment(cfg, task, task_type, submetric)\n  File \"/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py\", line 502, in run_cross_lingual_experiment\n    results = trainer.train(train_loader=train_loader, val_loader=val_loader, test_loader=test_loader)\n  File \"/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py\", line 62, in train\n    for batch in tqdm(train_loader, desc=f\"Epoch {epoch+1}/{self.num_epochs}\"):\n  File \"/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/tqdm/std.py\", line 1096, in __init__\n    self.sp = self.status_printer(self.fp)\n  File \"/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/tqdm/std.py\", line 448, in status_printer\n    getattr(sys.stderr, 'flush', lambda: None)()\nOSError: [Errno 116] Stale file handle\n",
+  "task": "complexity",
+  "task_type": "regression",
+  "submetric": null,
+  "experiment_type": "lm_probe_cross_lingual"
+}
