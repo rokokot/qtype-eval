@@ -195,3 +195,10 @@ logs/
 *.log
 *.out
 .wandb/
+
+./.git
+
+./data
+
+./outputs/*.out
+

@@ -1,0 +1,26 @@
+{
+  "ko": {
+    "train_time": 34.502798080444336,
+    "train_metrics": {
+      "loss": 0.08175080214092072,
+      "accuracy": 0.9878213802435724,
+      "f1": 0.9867452135493373
+    },
+    "val_metrics": {
+      "loss": 0.37753702998161315,
+      "accuracy": 0.8611111111111112,
+      "f1": 0.8611111111111112
+    },
+    "test_metrics": {
+      "loss": 0.8269902297428676,
+      "accuracy": 0.7090909090909091,
+      "f1": 0.7192982456140351
+    },
+    "language": "ko",
+    "task": "question_type",
+    "task_type": "classification",
+    "model_type": "lm_probe",
+    "is_control": false,
+    "control_index": null
+  }
+}

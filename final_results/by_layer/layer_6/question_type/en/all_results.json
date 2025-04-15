@@ -1,0 +1,26 @@
+{
+  "en": {
+    "train_time": 49.28780126571655,
+    "train_metrics": {
+      "loss": 0.022043914068490267,
+      "accuracy": 0.9966442953020134,
+      "f1": 0.9966555183946488
+    },
+    "val_metrics": {
+      "loss": 0.1499016148969531,
+      "accuracy": 0.9444444444444444,
+      "f1": 0.9473684210526315
+    },
+    "test_metrics": {
+      "loss": 0.24185040380273545,
+      "accuracy": 0.9181818181818182,
+      "f1": 0.9230769230769231
+    },
+    "language": "en",
+    "task": "question_type",
+    "task_type": "classification",
+    "model_type": "lm_probe",
+    "is_control": false,
+    "control_index": null
+  }
+}

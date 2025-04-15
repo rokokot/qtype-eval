@@ -1,0 +1,24 @@
+{
+  "train_time": 32.65176844596863,
+  "train_metrics": {
+    "loss": 0.6932200145721436,
+    "accuracy": 0.499581589958159,
+    "f1": 0.0
+  },
+  "val_metrics": {
+    "loss": 0.6926878392696381,
+    "accuracy": 0.5238095238095238,
+    "f1": 0.0
+  },
+  "test_metrics": {
+    "loss": 0.6931761588369098,
+    "accuracy": 0.5,
+    "f1": 0.0
+  },
+  "language": "fi",
+  "task": "question_type",
+  "task_type": "classification",
+  "model_type": "lm_probe",
+  "is_control": true,
+  "control_index": 2
+}

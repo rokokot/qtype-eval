@@ -1,6 +1,6 @@
 seed: 42
-output_dir: /scratch/leuven/371/vsc37132/submetric_output/ru/avg_verb_edges/control3
-experiment_name: avg_verb_edges_control3_ru
+output_dir: /scratch/leuven/371/vsc37132/cross_lingual_output/en_to_ru/complexity
+experiment_name: cross_lingual_complexity_en_to_ru
 wandb:
   project: multilingual-question-probing
   entity: rokii-ku-leuven
@@ -18,9 +18,15 @@ data:
   cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
   vectors_dir: ./data/features
   languages:
+  - ar
+  - en
+  - fi
+  - id
+  - ja
+  - ko
   - ru
-  train_language: null
-  eval_language: null
+  train_language: en
+  eval_language: ru
 model:
   model_type: lm_probe
   lm_name: cis-lmu/glot500-base
@@ -41,19 +47,10 @@ training:
   random_state: 42
   num_workers: 4
 experiment:
-  type: lm_probe
-  tasks: single_submetric
-  submetric: avg_verb_edges
-  available_submetrics:
-  - avg_links_len
-  - avg_max_depth
-  - avg_subordinate_chain_len
-  - avg_verb_edges
-  - lexical_density
-  - n_tokens
-  use_controls: true
-  control_index: 3
-  num_controls: 3
-  eval_on_orig_test: true
-  cross_lingual: false
-  task_type: regression
+  type: lm_probe_cross_lingual
+  tasks: complexity
+  cross_lingual: true
+  train_language: en
+  eval_language: fi
+  task_type: auto
+  use_controls: false

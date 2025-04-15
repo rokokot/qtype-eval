@@ -1,0 +1,30 @@
+{
+  "en": {
+    "train_time": 48.38906526565552,
+    "train_metrics": {
+      "loss": 0.002997962107571463,
+      "mse": 0.002927136607468128,
+      "rmse": 0.05410301846910326,
+      "r2": 0.8602664470672607
+    },
+    "val_metrics": {
+      "loss": 0.021468738792464137,
+      "mse": 0.023492805659770966,
+      "rmse": 0.15327363002085834,
+      "r2": 0.35893315076828003
+    },
+    "test_metrics": {
+      "loss": 0.02595736033150128,
+      "mse": 0.025933383032679558,
+      "rmse": 0.16103845203143116,
+      "r2": -0.37108147144317627
+    },
+    "language": "en",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": false,
+    "control_index": null,
+    "submetric": "n_tokens"
+  }
+}
