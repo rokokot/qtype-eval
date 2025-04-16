@@ -1,0 +1,15 @@
+{
+  "task": "complexity",
+  "model_type": "ridge",
+  "languages": [
+    "all"
+  ],
+  "submetric": "avg_max_depth",
+  "control_index": 3,
+  "task_type": "regression",
+  "experiment_name": "ridge_complexity_avg_max_depth_control3_all",
+  "model_params": {
+    "alpha": 1.0,
+    "solver": "auto"
+  }
+}

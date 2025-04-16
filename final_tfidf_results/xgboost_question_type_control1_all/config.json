@@ -1,0 +1,21 @@
+{
+  "task": "question_type",
+  "model_type": "xgboost",
+  "languages": [
+    "all"
+  ],
+  "submetric": null,
+  "control_index": 1,
+  "task_type": "classification",
+  "experiment_name": "xgboost_question_type_control1_all",
+  "model_params": {
+    "n_estimators": 200,
+    "max_depth": 6,
+    "learning_rate": 0.1,
+    "reg_alpha": 0,
+    "reg_lambda": 1,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "early_stopping_rounds": 20
+  }
+}

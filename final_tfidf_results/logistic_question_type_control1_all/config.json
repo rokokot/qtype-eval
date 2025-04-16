@@ -1,0 +1,17 @@
+{
+  "task": "question_type",
+  "model_type": "logistic",
+  "languages": [
+    "all"
+  ],
+  "submetric": null,
+  "control_index": 1,
+  "task_type": "classification",
+  "experiment_name": "logistic_question_type_control1_all",
+  "model_params": {
+    "C": 1.0,
+    "max_iter": 1000,
+    "solver": "liblinear",
+    "penalty": "l2"
+  }
+}

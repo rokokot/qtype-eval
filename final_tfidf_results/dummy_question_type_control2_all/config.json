@@ -1,0 +1,14 @@
+{
+  "task": "question_type",
+  "model_type": "dummy",
+  "languages": [
+    "all"
+  ],
+  "submetric": null,
+  "control_index": 2,
+  "task_type": "classification",
+  "experiment_name": "dummy_question_type_control2_all",
+  "model_params": {
+    "strategy": "most_frequent"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "task": "complexity",
+  "model_type": "ridge",
+  "languages": [
+    "all"
+  ],
+  "submetric": null,
+  "control_index": 1,
+  "task_type": "regression",
+  "experiment_name": "ridge_complexity_control1_all",
+  "model_params": {
+    "alpha": 1.0,
+    "solver": "auto"
+  }
+}

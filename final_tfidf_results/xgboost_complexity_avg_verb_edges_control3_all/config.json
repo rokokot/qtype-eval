@@ -1,0 +1,21 @@
+{
+  "task": "complexity",
+  "model_type": "xgboost",
+  "languages": [
+    "all"
+  ],
+  "submetric": "avg_verb_edges",
+  "control_index": 3,
+  "task_type": "regression",
+  "experiment_name": "xgboost_complexity_avg_verb_edges_control3_all",
+  "model_params": {
+    "n_estimators": 200,
+    "max_depth": 6,
+    "learning_rate": 0.1,
+    "reg_alpha": 0,
+    "reg_lambda": 1,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "early_stopping_rounds": 20
+  }
+}
