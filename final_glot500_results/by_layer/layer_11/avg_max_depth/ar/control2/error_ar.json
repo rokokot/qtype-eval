@@ -1,8 +1,0 @@
-{
-  "language": "ar",
-  "task": "single_submetric",
-  "task_type": "regression",
-  "submetric": "avg_max_depth",
-  "error": "[enforce fail at inline_container.cc:603] . unexpected pos 1568281856 vs 1568281808",
-  "traceback": "Traceback (most recent call last):\n  File \"/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/torch/serialization.py\", line 850, in save\n    _save(\n  File \"/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/torch/serialization.py\", line 1114, in _save\n    zip_file.write_record(name, storage, num_bytes)\nRuntimeError: [enforce fail at inline_container.cc:778] . PytorchStreamWriter failed writing file data/97: file write failed\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py\", line 381, in run_lm_experiment\n    results = trainer.train(\n  File \"/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py\", line 161, in train\n    torch.save(self.model.state_dict(), os.path.join(self.output_dir, \"model.pt\"))\n  File \"/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/torch/serialization.py\", line 857, in save\n    return\n  File \"/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/torch/serialization.py\", line 690, in __exit__\n    self.file_like.write_end_of_file()\nRuntimeError: [enforce fail at inline_container.cc:603] . unexpected pos 1568281856 vs 1568281808\n"
-}

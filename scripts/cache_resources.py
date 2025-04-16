@@ -12,16 +12,12 @@ DATASET_NAME = "rokokot/question-type-and-complexity"
 MODEL_NAME = "cis-lmu/glot500-base"
 LANGUAGES = ["ar", "en", "fi", "id", "ja", "ko", "ru"]
 
-# Base config + all control configurations
 CONFIGS = ["base"]
 
-# Question type control configs
 CONFIGS += [f"control_question_type_seed{i}" for i in range(1, 4)]
 
-# Complexity control configs
 CONFIGS += [f"control_complexity_seed{i}" for i in range(1, 4)]
 
-# Individual submetric control configs
 SUBMETRICS = [
     "avg_links_len", 
     "avg_max_depth", 
@@ -31,14 +27,12 @@ SUBMETRICS = [
     "n_tokens"
 ]
 
-# Add all submetric control configurations
 for submetric in SUBMETRICS:
     CONFIGS += [f"control_{submetric}_seed{i}" for i in range(1, 4)]
 
 SPLITS = ["train", "validation", "test"]
 
 def cache_datasets(cache_dir):
-    """Cache all dataset configurations."""
     logger.info(f"Caching datasets to {cache_dir}")
     
     for config in CONFIGS:
@@ -52,7 +46,6 @@ def cache_datasets(cache_dir):
                 logger.warning(f"Skipping {config} ({split}) - may not exist or may require authentication")
 
 def cache_model(cache_dir):
-    """Cache model and tokenizer."""
     logger.info(f"Caching model: {MODEL_NAME}")
     
     try:
