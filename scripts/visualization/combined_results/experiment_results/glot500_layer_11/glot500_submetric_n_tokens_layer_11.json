@@ -1,0 +1,869 @@
+{
+  "glot500_lm_probe_single_submetric_n_tokens_ar_layer11": {
+   "train_time": 65.73075819015503,
+    "train_metrics": {
+      "loss": 0.0009351525795719926,
+      "mse": 0.0009300665697082877,
+      "rmse": 0.030496992797787257,
+      "r2": 0.9520320296287537
+    },
+    "val_metrics": {
+      "loss": 0.011527354829013348,
+      "mse": 0.012122577987611294,
+      "rmse": 0.11010257938673051,
+      "r2": 0.7666019201278687
+    },
+    "test_metrics": {
+      "loss": 0.06000116690993309,
+      "mse": 0.059787504374980927,
+      "rmse": 0.24451483467262458,
+      "r2": 0.20179885625839233
+    },
+    "language": "ar",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": false,
+    "control_index": null,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/ar/all_results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_control1_n_tokens_ar_layer11": {
+    "train_time": 61.542351722717285,
+    "train_metrics": {
+      "loss": 0.019146383488698612,
+      "mse": 0.019327791407704353,
+      "rmse": 0.13902442737772508,
+      "r2": 0.0031735897064208984
+    },
+    "val_metrics": {
+      "loss": 0.05072923252979914,
+      "mse": 0.05170083045959473,
+      "rmse": 0.22737816618926876,
+      "r2": 0.004594981670379639
+    },
+    "test_metrics": {
+      "loss": 0.08163794130086899,
+      "mse": 0.08021613955497742,
+      "rmse": 0.28322453911159856,
+      "r2": -0.07093644142150879
+    },
+    "language": "ar",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 1,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/ar/control1/results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_control3_n_tokens_ar_layer11": {
+    "train_time": 71.51030659675598,
+    "train_metrics": {
+      "loss": 0.016144949647169265,
+      "mse": 0.016202257946133614,
+      "rmse": 0.12728809035465027,
+      "r2": 0.16437220573425293
+    },
+    "val_metrics": {
+      "loss": 0.053025721261898674,
+      "mse": 0.0540277361869812,
+      "rmse": 0.23243867188353404,
+      "r2": -0.04020535945892334
+    },
+    "test_metrics": {
+      "loss": 0.07985761538147926,
+      "mse": 0.07843522727489471,
+      "rmse": 0.2800628987832817,
+      "r2": -0.04716014862060547
+    },
+    "language": "ar",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 3,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/ar/control3/results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_control2_n_tokens_ar_layer11": {
+    "train_time": 41.56748652458191,
+    "train_metrics": {
+      "loss": 0.01970689230790687,
+      "mse": 0.019805382937192917,
+      "rmse": 0.14073159892928425,
+      "r2": -0.021458148956298828
+    },
+    "val_metrics": {
+      "loss": 0.0492973905056715,
+      "mse": 0.05029228702187538,
+      "rmse": 0.2242594190259918,
+      "r2": 0.03171396255493164
+    },
+    "test_metrics": {
+      "loss": 0.08303968980908394,
+      "mse": 0.08130332827568054,
+      "rmse": 0.2851373849141507,
+      "r2": -0.08545112609863281
+    },
+    "language": "ar",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 2,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/ar/control2/results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_n_tokens_en_layer11": {
+   "train_time": 30.612112283706665,
+    "train_metrics": {
+      "loss": 0.011161601152271033,
+      "mse": 0.011114312335848808,
+      "rmse": 0.10542443898759342,
+      "r2": 0.4694328308105469
+    },
+    "val_metrics": {
+      "loss": 0.02754687927663326,
+      "mse": 0.0288266409188509,
+      "rmse": 0.1697841009012649,
+      "r2": 0.2133845090866089
+    },
+    "test_metrics": {
+      "loss": 0.03289670869708061,
+      "mse": 0.03303701430559158,
+      "rmse": 0.181760871217079,
+      "r2": -0.7466459274291992
+    },
+    "language": "en",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": false,
+    "control_index": null,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/en/all_results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_control1_n_tokens_en_layer11": {
+    "train_time": 41.08414673805237,
+    "train_metrics": {
+      "loss": 0.020644097390274205,
+      "mse": 0.020680824294686317,
+      "rmse": 0.14380829007635937,
+      "r2": 0.012753546237945557
+    },
+    "val_metrics": {
+      "loss": 0.035242322646081445,
+      "mse": 0.037330616265535355,
+      "rmse": 0.19321132540701477,
+      "r2": -0.018670320510864258
+    },
+    "test_metrics": {
+      "loss": 0.02760870648281915,
+      "mse": 0.027643784880638123,
+      "rmse": 0.16626420204192519,
+      "r2": -0.4615093469619751
+    },
+    "language": "en",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 1,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/en/control1/results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_control3_n_tokens_en_layer11": {
+    "train_time": 64.33607912063599,
+    "train_metrics": {
+      "loss": 0.020482629059503477,
+      "mse": 0.020329948514699936,
+      "rmse": 0.14258312843636142,
+      "r2": 0.029503345489501953
+    },
+    "val_metrics": {
+      "loss": 0.03602808341383934,
+      "mse": 0.03799096494913101,
+      "rmse": 0.1949127111019982,
+      "r2": -0.0366896390914917
+    },
+    "test_metrics": {
+      "loss": 0.028158112029944147,
+      "mse": 0.028215883299708366,
+      "rmse": 0.16797584141687866,
+      "r2": -0.4917558431625366
+    },
+    "language": "en",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 3,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/en/control3/results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_control2_n_tokens_en_layer11": {
+    "train_time": 48.85755896568298,
+    "train_metrics": {
+      "loss": 0.020276227792104085,
+      "mse": 0.020293597131967545,
+      "rmse": 0.14245559705384533,
+      "r2": 0.031238675117492676
+    },
+    "val_metrics": {
+      "loss": 0.03576591499149799,
+      "mse": 0.03812897577881813,
+      "rmse": 0.19526642255856005,
+      "r2": -0.04045569896697998
+    },
+    "test_metrics": {
+      "loss": 0.025947366175907,
+      "mse": 0.02597680874168873,
+      "rmse": 0.16117322588348454,
+      "r2": -0.3733774423599243
+    },
+    "language": "en",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 2,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/en/control2/results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_n_tokens_fi_layer11": {
+   "train_time": 39.04975748062134,
+    "train_metrics": {
+      "loss": 0.003222977924160659,
+      "mse": 0.003209108952432871,
+      "rmse": 0.056648997806076594,
+      "r2": 0.7810719609260559
+    },
+    "val_metrics": {
+      "loss": 0.007139749941416085,
+      "mse": 0.007151960860937834,
+      "rmse": 0.08456926664538267,
+      "r2": 0.6117746233940125
+    },
+    "test_metrics": {
+      "loss": 0.011479814936007773,
+      "mse": 0.011545844376087189,
+      "rmse": 0.10745159084949459,
+      "r2": 0.16494834423065186
+    },
+    "language": "fi",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": false,
+    "control_index": null,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/fi/all_results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_control1_n_tokens_fi_layer11": {
+    "train_time": 81.57854580879211,
+    "train_metrics": {
+      "loss": 0.013214855066811046,
+      "mse": 0.013198322616517544,
+      "rmse": 0.11488395282421973,
+      "r2": 0.09959965944290161
+    },
+    "val_metrics": {
+      "loss": 0.019018696388229728,
+      "mse": 0.018924813717603683,
+      "rmse": 0.1375674878654244,
+      "r2": -0.027283787727355957
+    },
+    "test_metrics": {
+      "loss": 0.014547549055090972,
+      "mse": 0.014703874476253986,
+      "rmse": 0.12125953354789877,
+      "r2": -0.06345570087432861
+    },
+    "language": "fi",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 1,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/fi/control1/results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_control3_n_tokens_fi_layer11": {
+    "train_time": 81.3946852684021,
+    "train_metrics": {
+      "loss": 0.012808171479652325,
+      "mse": 0.012828335165977478,
+      "rmse": 0.11326224068937307,
+      "r2": 0.12484049797058105
+    },
+    "val_metrics": {
+      "loss": 0.016555042238906026,
+      "mse": 0.016506100073456764,
+      "rmse": 0.12847606809618967,
+      "r2": 0.10400974750518799
+    },
+    "test_metrics": {
+      "loss": 0.014805336881961142,
+      "mse": 0.01495633739978075,
+      "rmse": 0.12229610541542503,
+      "r2": -0.08171510696411133
+    },
+    "language": "fi",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 3,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/fi/control3/results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_control2_n_tokens_fi_layer11": {
+    "train_time": 81.51570916175842,
+    "train_metrics": {
+      "loss": 0.012760276272892952,
+      "mse": 0.012773659080266953,
+      "rmse": 0.1130206135192468,
+      "r2": 0.128570556640625
+    },
+    "val_metrics": {
+      "loss": 0.018262992380186915,
+      "mse": 0.01819080486893654,
+      "rmse": 0.1348732919036847,
+      "r2": 0.012560009956359863
+    },
+    "test_metrics": {
+      "loss": 0.014612767113638776,
+      "mse": 0.014744604006409645,
+      "rmse": 0.12142736102876339,
+      "r2": -0.06640148162841797
+    },
+    "language": "fi",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 2,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/fi/control2/results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_n_tokens_id_layer11": {
+   "train_time": 25.197683095932007,
+    "train_metrics": {
+      "loss": 0.013862798797587554,
+      "mse": 0.0139000928029418,
+      "rmse": 0.11789865479699842,
+      "r2": 0.5658883452415466
+    },
+    "val_metrics": {
+      "loss": 0.02680409178137779,
+      "mse": 0.024607248604297638,
+      "rmse": 0.15686697741812214,
+      "r2": 0.2596544027328491
+    },
+    "test_metrics": {
+      "loss": 0.04627293321703162,
+      "mse": 0.04620014503598213,
+      "rmse": 0.21494218998601028,
+      "r2": -0.5639611482620239
+    },
+    "language": "id",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": false,
+    "control_index": null,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/id/all_results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_control1_n_tokens_id_layer11": {
+    "train_time": 68.6420648097992,
+    "train_metrics": {
+      "loss": 0.027690164581872522,
+      "mse": 0.027657991275191307,
+      "rmse": 0.16630691890354804,
+      "r2": 0.1362176537513733
+    },
+    "val_metrics": {
+      "loss": 0.02883688025176525,
+      "mse": 0.028319163247942924,
+      "rmse": 0.16828298561632107,
+      "r2": 0.1479758620262146
+    },
+    "test_metrics": {
+      "loss": 0.033379026289497106,
+      "mse": 0.033358894288539886,
+      "rmse": 0.18264417397918797,
+      "r2": -0.12926077842712402
+    },
+    "language": "id",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 1,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/id/control1/results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_control3_n_tokens_id_layer11": {
+    "train_time": 54.89436936378479,
+    "train_metrics": {
+      "loss": 0.030714983275781076,
+      "mse": 0.030769668519496918,
+      "rmse": 0.17541285163720735,
+      "r2": 0.039037346839904785
+    },
+    "val_metrics": {
+      "loss": 0.0357335913926363,
+      "mse": 0.03541465848684311,
+      "rmse": 0.1881878276798027,
+      "r2": -0.06550264358520508
+    },
+    "test_metrics": {
+      "loss": 0.03613049403897354,
+      "mse": 0.03612450137734413,
+      "rmse": 0.19006446637218682,
+      "r2": -0.22288179397583008
+    },
+    "language": "id",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 3,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/id/control3/results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_control2_n_tokens_id_layer11": {
+    "train_time": 42.15696859359741,
+    "train_metrics": {
+      "loss": 0.03079265682026744,
+      "mse": 0.030865224078297615,
+      "rmse": 0.17568501381249801,
+      "r2": 0.03605306148529053
+    },
+    "val_metrics": {
+      "loss": 0.034682029485702516,
+      "mse": 0.03437984734773636,
+      "rmse": 0.18541803404128834,
+      "r2": -0.03436875343322754
+    },
+    "test_metrics": {
+      "loss": 0.03840019394244466,
+      "mse": 0.038353096693754196,
+      "rmse": 0.19583946663978177,
+      "r2": -0.2983238697052002
+    },
+    "language": "id",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 2,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/id/control2/results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_n_tokens_ja_layer11": {
+   "train_time": 75.34210896492004,
+    "train_metrics": {
+      "loss": 0.004017189706986149,
+      "mse": 0.004015512298792601,
+      "rmse": 0.0633680700257835,
+      "r2": 0.8067725896835327
+    },
+    "val_metrics": {
+      "loss": 0.006217819483329852,
+      "mse": 0.006239354144781828,
+      "rmse": 0.07898958250796005,
+      "r2": 0.6877309083938599
+    },
+    "test_metrics": {
+      "loss": 0.012684277181203166,
+      "mse": 0.012565388344228268,
+      "rmse": 0.11209544301276599,
+      "r2": 0.7893778681755066
+    },
+    "language": "ja",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": false,
+    "control_index": null,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/ja/all_results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_control1_n_tokens_ja_layer11": {
+    "train_time": 32.07009696960449,
+    "train_metrics": {
+      "loss": 0.020961642228066922,
+      "mse": 0.020974144339561462,
+      "rmse": 0.14482452948158148,
+      "r2": -0.009280800819396973
+    },
+    "val_metrics": {
+      "loss": 0.02130107581615448,
+      "mse": 0.021289201453328133,
+      "rmse": 0.14590819529186197,
+      "r2": -0.06548833847045898
+    },
+    "test_metrics": {
+      "loss": 0.06352782621979713,
+      "mse": 0.06344324350357056,
+      "rmse": 0.25187942254890644,
+      "r2": -0.06344115734100342
+    },
+    "language": "ja",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 1,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/ja/control1/results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_control3_n_tokens_ja_layer11": {
+    "train_time": 40.6038601398468,
+    "train_metrics": {
+      "loss": 0.020498667924354473,
+      "mse": 0.020424941554665565,
+      "rmse": 0.14291585480507601,
+      "r2": 0.01714688539505005
+    },
+    "val_metrics": {
+      "loss": 0.019389627501368523,
+      "mse": 0.019303226843476295,
+      "rmse": 0.1389360530729022,
+      "r2": 0.03390634059906006
+    },
+    "test_metrics": {
+      "loss": 0.061001492043336235,
+      "mse": 0.06086453050374985,
+      "rmse": 0.24670737829207673,
+      "r2": -0.02021658420562744
+    },
+    "language": "ja",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 3,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/ja/control3/results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_control2_n_tokens_ja_layer11": {
+    "train_time": 41.07507848739624,
+    "train_metrics": {
+      "loss": 0.02058282400170962,
+      "mse": 0.020685072988271713,
+      "rmse": 0.14382306139236403,
+      "r2": 0.004629313945770264
+    },
+    "val_metrics": {
+      "loss": 0.020770287762085598,
+      "mse": 0.020762482658028603,
+      "rmse": 0.14409192433314438,
+      "r2": -0.03912699222564697
+    },
+    "test_metrics": {
+      "loss": 0.06324177669982116,
+      "mse": 0.06306900829076767,
+      "rmse": 0.2511354381419868,
+      "r2": -0.05716824531555176
+    },
+    "language": "ja",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 2,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/ja/control2/results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_n_tokens_ko_layer11": {
+   "ko": {
+    "train_time": 53.843674421310425,
+    "train_metrics": {
+      "loss": 0.0007750678304681911,
+      "mse": 0.0007838169112801552,
+      "rmse": 0.027996730367672494,
+      "r2": 0.9209017753601074
+    },
+    "val_metrics": {
+      "loss": 0.023433078988455237,
+      "mse": 0.02596205845475197,
+      "rmse": 0.16112746027524907,
+      "r2": 0.39756089448928833
+    },
+    "test_metrics": {
+      "loss": 0.04118880443274975,
+      "mse": 0.04090612754225731,
+      "rmse": 0.2022526329674284,
+      "r2": 0.019051194190979004
+    },
+    "language": "ko",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": false,
+    "control_index": null,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/ko/all_results.json",
+    "layer": 11
+  },"glot500_lm_probe_single_submetric_control1_n_tokens_ko_layer11": {
+    "train_time": 20.756211519241333,
+    "train_metrics": {
+      "loss": 0.010458887510120552,
+      "mse": 0.010587102733552456,
+      "rmse": 0.10289364768319012,
+      "r2": -0.06838881969451904
+    },
+    "val_metrics": {
+      "loss": 0.04710137965157628,
+      "mse": 0.05154167860746384,
+      "rmse": 0.22702792473055783,
+      "r2": -0.19600391387939453
+    },
+    "test_metrics": {
+      "loss": 0.07419040479830333,
+      "mse": 0.07342369109392166,
+      "rmse": 0.27096806286705016,
+      "r2": -0.7607358694076538
+    },
+    "language": "ko",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 1,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/ko/control1/results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_control3_n_tokens_ko_layer11": {
+    "train_time": 20.86919593811035,
+    "train_metrics": {
+      "loss": 0.01136941115243083,
+      "mse": 0.011546546593308449,
+      "rmse": 0.10745485839788003,
+      "r2": -0.16521048545837402
+    },
+    "val_metrics": {
+      "loss": 0.04208913818001747,
+      "mse": 0.04579327628016472,
+      "rmse": 0.21399363607398403,
+      "r2": -0.0626145601272583
+    },
+    "test_metrics": {
+      "loss": 0.06356714080486979,
+      "mse": 0.06292653828859329,
+      "rmse": 0.25085162604335115,
+      "r2": -0.5090090036392212
+    },
+    "language": "ko",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 3,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/ko/control3/results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_control2_n_tokens_ko_layer11": {
+    "train_time": 20.886362314224243,
+    "train_metrics": {
+      "loss": 0.010350381977796714,
+      "mse": 0.010512161999940872,
+      "rmse": 0.10252883496822185,
+      "r2": -0.06082630157470703
+    },
+    "val_metrics": {
+      "loss": 0.04410465843975544,
+      "mse": 0.04835819453001022,
+      "rmse": 0.21990496704260734,
+      "r2": -0.12213253974914551
+    },
+    "test_metrics": {
+      "loss": 0.06920936011842319,
+      "mse": 0.06851449608802795,
+      "rmse": 0.26175273845373226,
+      "r2": -0.6430110931396484
+    },
+    "language": "ko",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 2,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/ko/control2/results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_n_tokens_ru_layer11": {
+   "train_time": 57.57914137840271,
+    "train_metrics": {
+      "loss": 0.0015143092942889779,
+      "mse": 0.0015181294875219464,
+      "rmse": 0.03896318117815775,
+      "r2": 0.8957923650741577
+    },
+    "val_metrics": {
+      "loss": 0.006267847120761871,
+      "mse": 0.006522755604237318,
+      "rmse": 0.08076357845116397,
+      "r2": 0.6685941815376282
+    },
+    "test_metrics": {
+      "loss": 0.011348302941769361,
+      "mse": 0.011381628923118114,
+      "rmse": 0.10668471738312904,
+      "r2": -0.0005404949188232422
+    },
+    "language": "ru",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": false,
+    "control_index": null,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/ru/all_results.json",
+    "layer": 11
+  },"glot500_lm_probe_single_submetric_control1_n_tokens_ru_layer11": {
+    "train_time": 80.74868202209473,
+    "train_metrics": {
+      "loss": 0.011897201103468737,
+      "mse": 0.011762694455683231,
+      "rmse": 0.10845595629417147,
+      "r2": 0.19258391857147217
+    },
+    "val_metrics": {
+      "loss": 0.02166062220931053,
+      "mse": 0.02113749459385872,
+      "rmse": 0.14538739489329439,
+      "r2": -0.07394623756408691
+    },
+    "test_metrics": {
+      "loss": 0.01207123144662806,
+      "mse": 0.012206679210066795,
+      "rmse": 0.11048384139803791,
+      "r2": -0.07306933403015137
+    },
+    "language": "ru",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 1,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/ru/control1/results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_control3_n_tokens_ru_layer11": {
+    "train_time": 47.8634877204895,
+    "train_metrics": {
+      "loss": 0.014081077494968971,
+      "mse": 0.014095621183514595,
+      "rmse": 0.11872498129506946,
+      "r2": 0.03244680166244507
+    },
+    "val_metrics": {
+      "loss": 0.02145426906645298,
+      "mse": 0.020439818501472473,
+      "rmse": 0.1429678932539487,
+      "r2": -0.038498878479003906
+    },
+    "test_metrics": {
+      "loss": 0.011937348571206843,
+      "mse": 0.012061093933880329,
+      "rmse": 0.10982301185944743,
+      "r2": -0.06027114391326904
+    },
+    "language": "ru",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 3,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/ru/control3/results.json",
+    "layer": 11
+  },
+  "glot500_lm_probe_single_submetric_control2_n_tokens_ru_layer11": {
+    "train_time": 80.09858775138855,
+    "train_metrics": {
+      "loss": 0.01295127452351153,
+      "mse": 0.013000629842281342,
+      "rmse": 0.11402030451757854,
+      "r2": 0.1076093316078186
+    },
+    "val_metrics": {
+      "loss": 0.02054364513605833,
+      "mse": 0.019851189106702805,
+      "rmse": 0.14089424795463726,
+      "r2": -0.00859212875366211
+    },
+    "test_metrics": {
+      "loss": 0.01204790933323758,
+      "mse": 0.012175162322819233,
+      "rmse": 0.11034111800602363,
+      "r2": -0.07029879093170166
+    },
+    "language": "ru",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 2,
+    "submetric": "n_tokens",
+    "source": "glot500",
+    "file_path": "by_layer/layer_11/n_tokens/ru/control2/results.json",
+    "layer": 11
+  }}
+}
