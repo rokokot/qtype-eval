@@ -1,0 +1,870 @@
+{
+  "glot500_lm_probe_single_submetric_lexical_density_ar_layer12": {
+   "train_time": 53.95589756965637,
+    "train_metrics": {
+      "loss": 0.020754099720054202,
+      "mse": 0.02099798060953617,
+      "rmse": 0.1449067997353339,
+      "r2": 0.5115671753883362
+    },
+    "val_metrics": {
+      "loss": 0.021873613819479942,
+      "mse": 0.021927980706095695,
+      "rmse": 0.14808099373685907,
+      "r2": 0.3622199296951294
+    },
+    "test_metrics": {
+      "loss": 0.07270036935806275,
+      "mse": 0.07244767248630524,
+      "rmse": 0.2691610530635984,
+      "r2": -0.24844253063201904
+    },
+    "language": "ar",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": false,
+    "control_index": null,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/ar/all_results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_control1_lexical_density_ar_layer12": {
+    "train_time": 66.83753371238708,
+    "train_metrics": {
+      "loss": 0.04708440524954644,
+      "mse": 0.047366589307785034,
+      "rmse": 0.21763866684894262,
+      "r2": -0.10179150104522705
+    },
+    "val_metrics": {
+      "loss": 0.02964730995396773,
+      "mse": 0.03024960123002529,
+      "rmse": 0.17392412492240775,
+      "r2": 0.12018382549285889
+    },
+    "test_metrics": {
+      "loss": 0.06120094060897827,
+      "mse": 0.06046772003173828,
+      "rmse": 0.24590185040324175,
+      "r2": -0.0419999361038208
+    },
+    "language": "ar",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 1,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/ar/control1/ar/results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_control3_lexical_density_ar_layer12": {
+    "train_time": 67.16742205619812,
+    "train_metrics": {
+      "loss": 0.05054380310078462,
+      "mse": 0.05027589574456215,
+      "rmse": 0.22422287069913754,
+      "r2": -0.16946470737457275
+    },
+    "val_metrics": {
+      "loss": 0.03212932621439298,
+      "mse": 0.03279276192188263,
+      "rmse": 0.18108771885990124,
+      "r2": 0.0462154746055603
+    },
+    "test_metrics": {
+      "loss": 0.061288048326969144,
+      "mse": 0.060593146830797195,
+      "rmse": 0.2461567525598215,
+      "r2": -0.044161319732666016
+    },
+    "language": "ar",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 3,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/ar/control3/ar/results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_control2_lexical_density_ar_layer12": {
+    "train_time": 60.261563777923584,
+    "train_metrics": {
+      "loss": 0.046823370935661454,
+      "mse": 0.04706427827477455,
+      "rmse": 0.2169430300211891,
+      "r2": -0.09475946426391602
+    },
+    "val_metrics": {
+      "loss": 0.0336341621975104,
+      "mse": 0.034121640026569366,
+      "rmse": 0.1847204374901959,
+      "r2": 0.007564723491668701
+    },
+    "test_metrics": {
+      "loss": 0.06072593107819557,
+      "mse": 0.060220230370759964,
+      "rmse": 0.24539810588258412,
+      "r2": -0.03773510456085205
+    },
+    "language": "ar",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 2,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/ar/control2/ar/results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_lexical_density_en_layer12": {
+   "train_time": 78.76647353172302,
+    "train_metrics": {
+      "loss": 0.01233398906265696,
+      "mse": 0.01229836791753769,
+      "rmse": 0.11089800682400784,
+      "r2": 0.5496749877929688
+    },
+    "val_metrics": {
+      "loss": 0.015880282409489153,
+      "mse": 0.016102509573101997,
+      "rmse": 0.12689566412254596,
+      "r2": 0.3828485608100891
+    },
+    "test_metrics": {
+      "loss": 0.02284693398645946,
+      "mse": 0.02300570160150528,
+      "rmse": 0.15167630533971113,
+      "r2": 0.19595319032669067
+    },
+    "language": "en",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": false,
+    "control_index": null,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/en/all_results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_control1_lexical_density_en_layer12": {
+    "train_time": 80.06575274467468,
+    "train_metrics": {
+      "loss": 0.0290983464072148,
+      "mse": 0.02904830500483513,
+      "rmse": 0.17043563302559453,
+      "r2": -0.06365156173706055
+    },
+    "val_metrics": {
+      "loss": 0.028865909576416014,
+      "mse": 0.02793111465871334,
+      "rmse": 0.1671260442262466,
+      "r2": -0.07049953937530518
+    },
+    "test_metrics": {
+      "loss": 0.029582755906241282,
+      "mse": 0.029769929125905037,
+      "rmse": 0.1725396450845574,
+      "r2": -0.04045581817626953
+    },
+    "language": "en",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 1,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/en/control1/en/results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_control3_lexical_density_en_layer12": {
+    "train_time": 79.9358012676239,
+    "train_metrics": {
+      "loss": 0.02849025556196769,
+      "mse": 0.02860761247575283,
+      "rmse": 0.16913785051180244,
+      "r2": -0.047514915466308594
+    },
+    "val_metrics": {
+      "loss": 0.026470735482871533,
+      "mse": 0.025693021714687347,
+      "rmse": 0.1602904292672752,
+      "r2": 0.01527857780456543
+    },
+    "test_metrics": {
+      "loss": 0.028722581320575306,
+      "mse": 0.028882473707199097,
+      "rmse": 0.1699484442623677,
+      "r2": -0.009439229965209961
+    },
+    "language": "en",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 3,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/en/control3/en/results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_control2_lexical_density_en_layer12": {
+    "train_time": 80.35598754882812,
+    "train_metrics": {
+      "loss": 0.027153457030653954,
+      "mse": 0.02713889628648758,
+      "rmse": 0.16473887302785453,
+      "r2": 0.0062645673751831055
+    },
+    "val_metrics": {
+      "loss": 0.027749672159552576,
+      "mse": 0.026942674070596695,
+      "rmse": 0.1641422373144606,
+      "r2": -0.03261613845825195
+    },
+    "test_metrics": {
+      "loss": 0.02856352659208434,
+      "mse": 0.028713971376419067,
+      "rmse": 0.16945197365749112,
+      "r2": -0.0035501718521118164
+    },
+    "language": "en",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 2,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/en/control2/en/results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_lexical_density_fi_layer12": {
+   "train_time": 80.16755938529968,
+    "train_metrics": {
+      "loss": 0.02042805534477035,
+      "mse": 0.02041727490723133,
+      "rmse": 0.14288903004510645,
+      "r2": 0.48954808712005615
+    },
+    "val_metrics": {
+      "loss": 0.022202334948815405,
+      "mse": 0.022439969703555107,
+      "rmse": 0.1497997653654875,
+      "r2": 0.36750102043151855
+    },
+    "test_metrics": {
+      "loss": 0.04005814982312066,
+      "mse": 0.04021386057138443,
+      "rmse": 0.20053393870211703,
+      "r2": 0.10076546669006348
+    },
+    "language": "fi",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": false,
+    "control_index": null,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/fi/all_results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_control1_lexical_density_fi_layer12": {
+    "train_time": 81.65907835960388,
+    "train_metrics": {
+      "loss": 0.04142701124151548,
+      "mse": 0.04141582176089287,
+      "rmse": 0.20350877563607145,
+      "r2": -0.035436391830444336
+    },
+    "val_metrics": {
+      "loss": 0.035649940837174654,
+      "mse": 0.03575228527188301,
+      "rmse": 0.18908274715553244,
+      "r2": -0.007723450660705566
+    },
+    "test_metrics": {
+      "loss": 0.0477273410984448,
+      "mse": 0.04801379516720772,
+      "rmse": 0.2191205037581096,
+      "r2": -0.07365131378173828
+    },
+    "language": "fi",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 1,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/fi/control1/fi/results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_control3_lexical_density_fi_layer12": {
+    "train_time": 72.31271934509277,
+    "train_metrics": {
+      "loss": 0.050394895151257516,
+      "mse": 0.050380390137434006,
+      "rmse": 0.22445576432213543,
+      "r2": -0.25955939292907715
+    },
+    "val_metrics": {
+      "loss": 0.037825850304216146,
+      "mse": 0.0379568450152874,
+      "rmse": 0.19482516525153365,
+      "r2": -0.0698617696762085
+    },
+    "test_metrics": {
+      "loss": 0.046876783083592145,
+      "mse": 0.04720840975642204,
+      "rmse": 0.2172749634827309,
+      "r2": -0.055641770362854004
+    },
+    "language": "fi",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 3,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/fi/control3/fi/results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_control2_lexical_density_fi_layer12": {
+    "train_time": 79.21921181678772,
+    "train_metrics": {
+      "loss": 0.043169937568406265,
+      "mse": 0.04304780811071396,
+      "rmse": 0.20747965710091668,
+      "r2": -0.07623755931854248
+    },
+    "val_metrics": {
+      "loss": 0.03449734812602401,
+      "mse": 0.03463343530893326,
+      "rmse": 0.18610060534273729,
+      "r2": 0.023812711238861084
+    },
+    "test_metrics": {
+      "loss": 0.04595969830240522,
+      "mse": 0.04623621329665184,
+      "rmse": 0.21502607585279473,
+      "r2": -0.03390216827392578
+    },
+    "language": "fi",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 2,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/fi/control2/fi/results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_lexical_density_id_layer12": {
+   "train_time": 65.22129893302917,
+    "train_metrics": {
+      "loss": 0.01822395990602672,
+      "mse": 0.018289390951395035,
+      "rmse": 0.13523827472795943,
+      "r2": 0.5904266238212585
+    },
+    "val_metrics": {
+      "loss": 0.02452724874019623,
+      "mse": 0.02554498426616192,
+      "rmse": 0.1598279833638713,
+      "r2": 0.48615723848342896
+    },
+    "test_metrics": {
+      "loss": 0.029673908171909198,
+      "mse": 0.029765242710709572,
+      "rmse": 0.17252606385908645,
+      "r2": 0.2725871801376343
+    },
+    "language": "id",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": false,
+    "control_index": null,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/id/all_results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_control1_lexical_density_id_layer12": {
+    "train_time": 64.5628228187561,
+    "train_metrics": {
+      "loss": 0.04519721788043777,
+      "mse": 0.045152436941862106,
+      "rmse": 0.21249102790909105,
+      "r2": -0.011145591735839844
+    },
+    "val_metrics": {
+      "loss": 0.046759127825498584,
+      "mse": 0.048674747347831726,
+      "rmse": 0.22062354214324392,
+      "r2": 0.020897209644317627
+    },
+    "test_metrics": {
+      "loss": 0.04518073158604758,
+      "mse": 0.045462869107723236,
+      "rmse": 0.2132202361590551,
+      "r2": -0.11103665828704834
+    },
+    "language": "id",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 1,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/id/control1/id/results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_control3_lexical_density_id_layer12": {
+    "train_time": 66.5192699432373,
+    "train_metrics": {
+      "loss": 0.047609957152356705,
+      "mse": 0.04755151644349098,
+      "rmse": 0.21806310197621923,
+      "r2": -0.06487071514129639
+    },
+    "val_metrics": {
+      "loss": 0.0497122973203659,
+      "mse": 0.050858981907367706,
+      "rmse": 0.22551936038257936,
+      "r2": -0.02303910255432129
+    },
+    "test_metrics": {
+      "loss": 0.046088204852172306,
+      "mse": 0.04633687809109688,
+      "rmse": 0.21526002436842953,
+      "r2": -0.13239586353302002
+    },
+    "language": "id",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 3,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/id/control3/id/results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_control2_lexical_density_id_layer12": {
+    "train_time": 66.01487231254578,
+    "train_metrics": {
+      "loss": 0.047466255041460195,
+      "mse": 0.04748031869530678,
+      "rmse": 0.21789979048935953,
+      "r2": -0.06327617168426514
+    },
+    "val_metrics": {
+      "loss": 0.05389957949519157,
+      "mse": 0.055108338594436646,
+      "rmse": 0.23475165301747428,
+      "r2": -0.10851585865020752
+    },
+    "test_metrics": {
+      "loss": 0.052889141121080945,
+      "mse": 0.053185973316431046,
+      "rmse": 0.23062084319599355,
+      "r2": -0.29977643489837646
+    },
+    "language": "id",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 2,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/id/control2/id/results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_lexical_density_ja_layer12": {
+   "train_time": 79.8112690448761,
+    "train_metrics": {
+      "loss": 0.010480418829247355,
+      "mse": 0.010515137575566769,
+      "rmse": 0.10254334486238866,
+      "r2": 0.5961918830871582
+    },
+    "val_metrics": {
+      "loss": 0.017549467273056507,
+      "mse": 0.017085818573832512,
+      "rmse": 0.13071273302105083,
+      "r2": 0.36716967821121216
+    },
+    "test_metrics": {
+      "loss": 0.08414796615640323,
+      "mse": 0.08552628755569458,
+      "rmse": 0.2924487776614814,
+      "r2": -0.6321688890457153
+    },
+    "language": "ja",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": false,
+    "control_index": null,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/ja/all_results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_control1_lexical_density_ja_layer12": {
+    "train_time": 31.822073221206665,
+    "train_metrics": {
+      "loss": 0.038851314162214594,
+      "mse": 0.03890812024474144,
+      "rmse": 0.19725141379655925,
+      "r2": -0.494171142578125
+    },
+    "val_metrics": {
+      "loss": 0.036697072287400566,
+      "mse": 0.03641491010785103,
+      "rmse": 0.1908269113826743,
+      "r2": -0.34874773025512695
+    },
+    "test_metrics": {
+      "loss": 0.08301922554771106,
+      "mse": 0.08412858843803406,
+      "rmse": 0.29004928622224546,
+      "r2": -0.6054953336715698
+    },
+    "language": "ja",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 1,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/ja/control1/ja/results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_control3_lexical_density_ja_layer12": {
+    "train_time": 79.24960899353027,
+    "train_metrics": {
+      "loss": 0.02582905917117993,
+      "mse": 0.025873569771647453,
+      "rmse": 0.16085263371063419,
+      "r2": 0.0063887834548950195
+    },
+    "val_metrics": {
+      "loss": 0.02766159859796365,
+      "mse": 0.027381163090467453,
+      "rmse": 0.1654725448238089,
+      "r2": -0.014152765274047852
+    },
+    "test_metrics": {
+      "loss": 0.06371488918860753,
+      "mse": 0.06431955844163895,
+      "rmse": 0.2536130092121438,
+      "r2": -0.22746336460113525
+    },
+    "language": "ja",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 3,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/ja/control3/ja/results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_control2_lexical_density_ja_layer12": {
+    "train_time": 63.400227069854736,
+    "train_metrics": {
+      "loss": 0.026854922510683537,
+      "mse": 0.026897381991147995,
+      "rmse": 0.16400421333352383,
+      "r2": -0.03292810916900635
+    },
+    "val_metrics": {
+      "loss": 0.02760525420308113,
+      "mse": 0.027294306084513664,
+      "rmse": 0.16520988494794633,
+      "r2": -0.010935664176940918
+    },
+    "test_metrics": {
+      "loss": 0.07108149801691373,
+      "mse": 0.07195909321308136,
+      "rmse": 0.26825192117314156,
+      "r2": -0.37325477600097656
+    },
+    "language": "ja",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 2,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/ja/control2/ja/results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_lexical_density_ko_layer12": {
+   "train_time": 53.10110139846802,
+    "train_metrics": {
+      "loss": 0.036715811990359996,
+      "mse": 0.037222400307655334,
+      "rmse": 0.19293107657309988,
+      "r2": -0.08691561222076416
+    },
+    "val_metrics": {
+      "loss": 0.048524951189756395,
+      "mse": 0.04805533587932587,
+      "rmse": 0.2192152729152918,
+      "r2": -0.15643858909606934
+    },
+    "test_metrics": {
+      "loss": 0.08461178200585502,
+      "mse": 0.08488724380731583,
+      "rmse": 0.2913541552944042,
+      "r2": -1.1235332489013672
+    },
+    "language": "ko",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": false,
+    "control_index": null,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/ko/all_results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_control1_lexical_density_ko_layer12": {
+    "train_time": 52.93265414237976,
+    "train_metrics": {
+      "loss": 0.03920671240763461,
+      "mse": 0.039467111229896545,
+      "rmse": 0.19866331123258907,
+      "r2": -0.15246248245239258
+    },
+    "val_metrics": {
+      "loss": 0.05125880911946297,
+      "mse": 0.04904735088348389,
+      "rmse": 0.221466365129073,
+      "r2": -0.18031108379364014
+    },
+    "test_metrics": {
+      "loss": 0.108270349247115,
+      "mse": 0.10844865441322327,
+      "rmse": 0.3293154330018915,
+      "r2": -1.7129437923431396
+    },
+    "language": "ko",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 1,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/ko/control1/ko/results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_control3_lexical_density_ko_layer12": {
+    "train_time": 56.45552349090576,
+    "train_metrics": {
+      "loss": 0.0409025797580785,
+      "mse": 0.041046444326639175,
+      "rmse": 0.2025992209428239,
+      "r2": -0.1985797882080078
+    },
+    "val_metrics": {
+      "loss": 0.04671013131737709,
+      "mse": 0.04331234097480774,
+      "rmse": 0.20811617182431486,
+      "r2": -0.042299628257751465
+    },
+    "test_metrics": {
+      "loss": 0.074687729456595,
+      "mse": 0.07474544644355774,
+      "rmse": 0.27339613465365187,
+      "r2": -0.8698267936706543
+    },
+    "language": "ko",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 3,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/ko/control3/ko/results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_control2_lexical_density_ko_layer12": {
+    "train_time": 53.76084089279175,
+    "train_metrics": {
+      "loss": 0.04647656748110943,
+      "mse": 0.046212512999773026,
+      "rmse": 0.21497095850317322,
+      "r2": -0.349432110786438
+    },
+    "val_metrics": {
+      "loss": 0.04603681862354279,
+      "mse": 0.042780403047800064,
+      "rmse": 0.20683424051109156,
+      "r2": -0.029498696327209473
+    },
+    "test_metrics": {
+      "loss": 0.06872502767613956,
+      "mse": 0.06888101994991302,
+      "rmse": 0.26245193836188946,
+      "r2": -0.7231227159500122
+    },
+    "language": "ko",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 2,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/ko/control2/ko/results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_lexical_density_ru_layer12": {
+   "train_time": 80.47570276260376,
+    "train_metrics": {
+      "loss": 0.020273294262588025,
+      "mse": 0.020262818783521652,
+      "rmse": 0.14234752819603735,
+      "r2": 0.14135336875915527
+    },
+    "val_metrics": {
+      "loss": 0.04449179880321026,
+      "mse": 0.0398934930562973,
+      "rmse": 0.1997335551586095,
+      "r2": 0.09125995635986328
+    },
+    "test_metrics": {
+      "loss": 0.042342444748750756,
+      "mse": 0.042021989822387695,
+      "rmse": 0.2049926579719081,
+      "r2": -0.045325517654418945
+    },
+    "language": "ru",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": false,
+    "control_index": null,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/ru/all_results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_control1_lexical_density_ru_layer12": {
+    "train_time": 81.01763987541199,
+    "train_metrics": {
+      "loss": 0.02784162788341443,
+      "mse": 0.02781587839126587,
+      "rmse": 0.1667809293392559,
+      "r2": -0.17871105670928955
+    },
+    "val_metrics": {
+      "loss": 0.052125055342912674,
+      "mse": 0.04569127783179283,
+      "rmse": 0.21375518199985896,
+      "r2": -0.040808677673339844
+    },
+    "test_metrics": {
+      "loss": 0.050880673208406994,
+      "mse": 0.05055687204003334,
+      "rmse": 0.22484855356446778,
+      "r2": -0.25763654708862305
+    },
+    "language": "ru",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 1,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/ru/control1/ru/results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_control3_lexical_density_ru_layer12": {
+    "train_time": 81.86583542823792,
+    "train_metrics": {
+      "loss": 0.041092507590850195,
+      "mse": 0.04109399393200874,
+      "rmse": 0.202716535911624,
+      "r2": -0.7413777112960815
+    },
+    "val_metrics": {
+      "loss": 0.04933846071362495,
+      "mse": 0.04460688307881355,
+      "rmse": 0.21120341635213563,
+      "r2": -0.01610708236694336
+    },
+    "test_metrics": {
+      "loss": 0.0440815162978002,
+      "mse": 0.04382704570889473,
+      "rmse": 0.20934910009095986,
+      "r2": -0.09022748470306396
+    },
+    "language": "ru",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 3,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/ru/control3/ru/results.json",
+    "layer": 12
+  },
+  "glot500_lm_probe_single_submetric_control2_lexical_density_ru_layer12": {
+    "train_time": 72.98513436317444,
+    "train_metrics": {
+      "loss": 0.03904026463627815,
+      "mse": 0.03901725634932518,
+      "rmse": 0.19752786221018334,
+      "r2": -0.6533749103546143
+    },
+    "val_metrics": {
+      "loss": 0.049174141883850095,
+      "mse": 0.04407774657011032,
+      "rmse": 0.20994700895728502,
+      "r2": -0.004053831100463867
+    },
+    "test_metrics": {
+      "loss": 0.052627499614443095,
+      "mse": 0.052449967712163925,
+      "rmse": 0.22901957932055486,
+      "r2": -0.30472850799560547
+    },
+    "language": "ru",
+    "task": "single_submetric",
+    "task_type": "regression",
+    "model_type": "lm_probe",
+    "is_control": true,
+    "control_index": 2,
+    "submetric": "lexical_density",
+    "source": "glot500",
+    "file_path": "by_layer/layer_12/lexical_density/ru/control2/ru/results.json",
+    "layer": 12
+  }
+}
