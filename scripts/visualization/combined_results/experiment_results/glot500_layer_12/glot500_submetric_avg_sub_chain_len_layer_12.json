@@ -496,7 +496,6 @@
     "layer": 12
   },
   "glot500_lm_probe_single_submetric_avg_sub_chain_len_ja_layer12": {
-   "ja": {
     "train_time": 80.5073299407959,
     "train_metrics": {
       "loss": 0.016724350151295465,
@@ -522,8 +521,7 @@
     "model_type": "lm_probe",
     "is_control": false,
     "control_index": null,
-    "submetric": "avg_subordinate_chain_len"
-  },
+    "submetric": "avg_subordinate_chain_len",
     "source": "glot500",
     "file_path": "by_layer/layer_12/avg_sub_chain_len/ja/all_results.json",
     "layer": 12
@@ -622,7 +620,6 @@
     "layer": 12
   },
   "glot500_lm_probe_single_submetric_avg_sub_chain_len_ko_layer12": {
-   "ko": {
     "train_time": 53.41502046585083,
     "train_metrics": {
       "loss": 0.01302733228720249,
@@ -648,8 +645,7 @@
     "model_type": "lm_probe",
     "is_control": false,
     "control_index": null,
-    "submetric": "avg_subordinate_chain_len"
-,
+    "submetric": "avg_subordinate_chain_len",
     "source": "glot500",
     "file_path": "by_layer/layer_12/avg_sub_chain_len/ko/all_results.json",
     "layer": 12
@@ -871,5 +867,4 @@
     "file_path": "by_layer/layer_12/avg_subordinate_chain_len/ru/control2/ru/results.json",
     "layer": 12
   }
-}
 }

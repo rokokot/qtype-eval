@@ -1,6 +1,5 @@
 {
   "glot500_lm_probe_question_type_ar_layer6": {
-    "ar": {
       "train_time": 53.463425159454346,
       "train_metrics": {
         "loss": 0.0005729096232070809,
@@ -22,17 +21,12 @@
       "task_type": "classification",
       "model_type": "lm_probe",
       "is_control": false,
-      "control_index": null
-    },
-    "source": "glot500",
-    "file_path": "by_layer/layer_6/question_type/ar/all_results.json",
-    "model_type": "lm_probe",
-    "layer": 6,
-    "language": "ar",
-    "task": "question_type"
+      "control_index": null,
+      "source": "glot500",
+      "file_path": "by_layer/layer_6/question_type/ar/all_results.json",
+      "layer": 6
   },
   "glot500_lm_probe_question_type_control1_ar_layer6": {
-    "ar": {
       "train_time": 22.132134199142456,
       "train_metrics": {
         "loss": 0.69330067199374,
@@ -54,18 +48,12 @@
       "task_type": "classification",
       "model_type": "lm_probe",
       "is_control": true,
-      "control_index": 1
-    },
-    "source": "glot500",
-    "file_path": "by_layer/layer_6/question_type/ar/control1/all_results.json",
-    "model_type": "lm_probe",
-    "layer": 6,
-    "language": "ar",
-    "control_index": 1,
-    "task": "question_type"
+      "control_index": 1,
+      "source": "glot500",
+      "file_path": "by_layer/layer_6/question_type/ar/control1/all_results.json",
+      "layer": 6
   },
   "glot500_lm_probe_question_type_control3_ar_layer6": {
-    "ar": {
       "train_time": 21.551372528076172,
       "train_metrics": {
         "loss": 0.6932591370173863,
@@ -87,15 +75,10 @@
       "task_type": "classification",
       "model_type": "lm_probe",
       "is_control": true,
-      "control_index": 3
-    },
-    "source": "glot500",
-    "file_path": "by_layer/layer_6/question_type/ar/control3/all_results.json",
-    "model_type": "lm_probe",
-    "layer": 6,
-    "language": "ar",
-    "control_index": 3,
-    "task": "question_type"
+      "control_index": 3,
+      "source": "glot500",
+      "file_path": "by_layer/layer_6/question_type/ar/control3/all_results.json",
+      "layer": 6
   },
   "glot500_lm_probe_question_type_control2_ar_layer6": {
     "train_time": 32.97153568267822,
@@ -125,7 +108,6 @@
     "layer": 6
   },
   "glot500_lm_probe_question_type_ja_layer6": {
-    "ja": {
       "train_time": 61.53119730949402,
       "train_metrics": {
         "loss": 0.016789594292640687,
@@ -147,14 +129,10 @@
       "task_type": "classification",
       "model_type": "lm_probe",
       "is_control": false,
-      "control_index": null
-    },
-    "source": "glot500",
-    "file_path": "by_layer/layer_6/question_type/ja/all_results.json",
-    "model_type": "lm_probe",
-    "layer": 6,
-    "language": "ja",
-    "task": "question_type"
+      "control_index": null,
+      "source": "glot500",
+      "file_path": "by_layer/layer_6/question_type/ja/all_results.json",
+      "layer": 6
   },
   "glot500_lm_probe_question_type_control1_ja_layer6": {
     "train_time": 64.43784856796265,
@@ -184,7 +162,6 @@
     "layer": 6
   },
   "glot500_lm_probe_question_type_control3_ja_layer6": {
-    "ja": {
       "train_time": 45.78332042694092,
       "train_metrics": {
         "loss": 0.6930884877840678,
@@ -206,15 +183,10 @@
       "task_type": "classification",
       "model_type": "lm_probe",
       "is_control": true,
-      "control_index": 3
-    },
-    "source": "glot500",
-    "file_path": "by_layer/layer_6/question_type/ja/control3/all_results.json",
-    "model_type": "lm_probe",
-    "layer": 6,
-    "language": "ja",
-    "control_index": 3,
-    "task": "question_type"
+      "control_index": 3,
+      "source": "glot500",
+      "file_path": "by_layer/layer_6/question_type/ja/control3/all_results.json",
+      "layer": 6
   },
   "glot500_lm_probe_question_type_control2_ja_layer6": {
     "train_time": 66.58474850654602,
@@ -244,7 +216,6 @@
     "layer": 6
   },
   "glot500_lm_probe_question_type_en_layer6": {
-    "en": {
       "train_time": 49.28780126571655,
       "train_metrics": {
         "loss": 0.022043914068490267,
@@ -266,14 +237,10 @@
       "task_type": "classification",
       "model_type": "lm_probe",
       "is_control": false,
-      "control_index": null
-    },
-    "source": "glot500",
-    "file_path": "by_layer/layer_6/question_type/en/all_results.json",
-    "model_type": "lm_probe",
-    "layer": 6,
-    "language": "en",
-    "task": "question_type"
+      "control_index": null,
+      "source": "glot500",
+      "file_path": "by_layer/layer_6/question_type/en/all_results.json",
+      "layer": 6
   },
   "glot500_lm_probe_question_type_control1_en_layer6": {
     "train_time": 25.610108613967896,
@@ -357,7 +324,6 @@
     "layer": 6
   },
   "glot500_lm_probe_question_type_id_layer6": {
-    "id": {
       "train_time": 30.700320959091187,
       "train_metrics": {
         "loss": 0.2896502036601305,
@@ -379,14 +345,10 @@
       "task_type": "classification",
       "model_type": "lm_probe",
       "is_control": false,
-      "control_index": null
-    },
-    "source": "glot500",
-    "file_path": "by_layer/layer_6/question_type/id/all_results.json",
-    "model_type": "lm_probe",
-    "layer": 6,
-    "language": "id",
-    "task": "question_type"
+      "control_index": null,
+      "source": "glot500",
+      "file_path": "by_layer/layer_6/question_type/id/all_results.json",
+      "layer": 6
   },
   "glot500_lm_probe_question_type_control1_id_layer6": {
     "train_time": 21.260912656784058,
@@ -416,7 +378,6 @@
     "layer": 6
   },
   "glot500_lm_probe_question_type_control3_id_layer6": {
-    "id": {
       "train_time": 21.507507801055908,
       "train_metrics": {
         "loss": 0.692394741376241,
@@ -438,15 +399,10 @@
       "task_type": "classification",
       "model_type": "lm_probe",
       "is_control": true,
-      "control_index": 3
-    },
-    "source": "glot500",
-    "file_path": "by_layer/layer_6/question_type/id/control3/all_results.json",
-    "model_type": "lm_probe",
-    "layer": 6,
-    "language": "id",
-    "control_index": 3,
-    "task": "question_type"
+      "control_index": 3,
+      "source": "glot500",
+      "file_path": "by_layer/layer_6/question_type/id/control3/all_results.json",
+      "layer": 6
   },
   "glot500_lm_probe_question_type_control2_id_layer6": {
     "train_time": 21.29357600212097,
@@ -476,7 +432,6 @@
     "layer": 6
   },
   "glot500_lm_probe_question_type_ru_layer6": {
-    "ru": {
       "train_time": 42.89034128189087,
       "train_metrics": {
         "loss": 0.11922249888380368,
@@ -498,14 +453,10 @@
       "task_type": "classification",
       "model_type": "lm_probe",
       "is_control": false,
-      "control_index": null
-    },
-    "source": "glot500",
-    "file_path": "by_layer/layer_6/question_type/ru/all_results.json",
-    "model_type": "lm_probe",
-    "layer": 6,
-    "language": "ru",
-    "task": "question_type"
+      "control_index": null,
+      "source": "glot500",
+      "file_path": "by_layer/layer_6/question_type/ru/all_results.json",
+      "layer": 6
   },
   "glot500_lm_probe_question_type_control1_ru_layer6": {
     "train_time": 25.664189338684082,
@@ -535,7 +486,6 @@
     "layer": 6
   },
   "glot500_lm_probe_question_type_control3_ru_layer6": {
-    "ru": {
       "train_time": 32.72343635559082,
       "train_metrics": {
         "loss": 0.6931794627507528,
@@ -557,15 +507,10 @@
       "task_type": "classification",
       "model_type": "lm_probe",
       "is_control": true,
-      "control_index": 3
-    },
-    "source": "glot500",
-    "file_path": "by_layer/layer_6/question_type/ru/control3/all_results.json",
-    "model_type": "lm_probe",
-    "layer": 6,
-    "language": "ru",
-    "control_index": 3,
-    "task": "question_type"
+      "control_index": 3,
+      "source": "glot500",
+      "file_path": "by_layer/layer_6/question_type/ru/control3/all_results.json",
+      "layer": 6
   },
   "glot500_lm_probe_question_type_control2_ru_layer6": {
     "train_time": 25.562806844711304,
@@ -595,7 +540,6 @@
     "layer": 6
   },
   "glot500_lm_probe_question_type_fi_layer6": {
-    "fi": {
       "train_time": 62.01428556442261,
       "train_metrics": {
         "loss": 0.015595194222405552,
@@ -617,14 +561,10 @@
       "task_type": "classification",
       "model_type": "lm_probe",
       "is_control": false,
-      "control_index": null
-    },
-    "source": "glot500",
-    "file_path": "by_layer/layer_6/question_type/fi/all_results.json",
-    "model_type": "lm_probe",
-    "layer": 6,
-    "language": "fi",
-    "task": "question_type"
+      "control_index": null,
+      "source": "glot500",
+      "file_path": "by_layer/layer_6/question_type/fi/all_results.json",
+      "layer": 6
   },
   "glot500_lm_probe_question_type_control1_fi_layer6": {
     "train_time": 25.634822607040405,
@@ -654,7 +594,6 @@
     "layer": 6
   },
   "glot500_lm_probe_question_type_control3_fi_layer6": {
-    "fi": {
       "train_time": 25.901711463928223,
       "train_metrics": {
         "loss": 0.6932363796234131,
@@ -676,15 +615,10 @@
       "task_type": "classification",
       "model_type": "lm_probe",
       "is_control": true,
-      "control_index": 3
-    },
-    "source": "glot500",
-    "file_path": "by_layer/layer_6/question_type/fi/control3/all_results.json",
-    "model_type": "lm_probe",
-    "layer": 6,
-    "language": "fi",
-    "control_index": 3,
-    "task": "question_type"
+      "control_index": 3,
+      "source": "glot500",
+      "file_path": "by_layer/layer_6/question_type/fi/control3/all_results.json",
+      "layer": 6
   },
   "glot500_lm_probe_question_type_control2_fi_layer6": {
     "train_time": 32.65176844596863,
@@ -714,7 +648,6 @@
     "layer": 6
   },
   "glot500_lm_probe_question_type_ko_layer6": {
-    "ko": {
       "train_time": 34.502798080444336,
       "train_metrics": {
         "loss": 0.08175080214092072,
@@ -736,14 +669,10 @@
       "task_type": "classification",
       "model_type": "lm_probe",
       "is_control": false,
-      "control_index": null
-    },
-    "source": "glot500",
-    "file_path": "by_layer/layer_6/question_type/ko/all_results.json",
-    "model_type": "lm_probe",
-    "layer": 6,
-    "language": "ko",
-    "task": "question_type"
+      "control_index": null,
+      "source": "glot500",
+      "file_path": "by_layer/layer_6/question_type/ko/all_results.json",
+      "layer": 6
   },
   "glot500_lm_probe_question_type_control1_ko_layer6": {
     "train_time": 17.871783018112183,
@@ -773,7 +702,6 @@
     "layer": 6
   },
   "glot500_lm_probe_question_type_control3_ko_layer6": {
-    "ko": {
       "train_time": 17.80454444885254,
       "train_metrics": {
         "loss": 0.691789559861447,
@@ -795,15 +723,10 @@
       "task_type": "classification",
       "model_type": "lm_probe",
       "is_control": true,
-      "control_index": 3
-    },
-    "source": "glot500",
-    "file_path": "by_layer/layer_6/question_type/ko/control3/all_results.json",
-    "model_type": "lm_probe",
-    "layer": 6,
-    "language": "ko",
-    "control_index": 3,
-    "task": "question_type"
+      "control_index": 3,
+      "source": "glot500",
+      "file_path": "by_layer/layer_6/question_type/ko/control3/all_results.json",
+      "layer": 6
   },
   "glot500_lm_probe_question_type_control2_ko_layer6": {
     "train_time": 18.18058180809021,
