@@ -620,7 +620,6 @@
     "layer": 11
   },
   "glot500_lm_probe_single_submetric_n_tokens_ko_layer11": {
-   "ko": {
     "train_time": 53.843674421310425,
     "train_metrics": {
       "loss": 0.0007750678304681911,
@@ -866,4 +865,3 @@
     "file_path": "by_layer/layer_11/n_tokens/ru/control2/results.json",
     "layer": 11
   }}
-}
