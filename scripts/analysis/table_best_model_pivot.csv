@@ -1,0 +1,8 @@
+Language,Avg. Dependency Length,Lexical Density,Max Tree Depth,Subordinate Chain Length,Token Count,Verb Edges
+Arabic,LM-L6,LM-L11,LM-L2,LM-L11,XGBoost,LM-L11
+English,Ridge,LM-L2,LM-L11,Ridge,XGBoost,LM-L11
+Finnish,Ridge,LM-L6,LM-L11,LM-L6,LM-L2,LM-L6
+Indonesian,LM-L6,LM-L6,Ridge,LM-L11,Ridge,LM-L12
+Japanese,LM-L12,LM-L2,LM-L11,LM-L2,LM-L11,LM-L11
+Korean,LM-L11,Ridge,LM-L12,LM-L11,XGBoost,XGBoost
+Russian,LM-L11,LM-L6,LM-L2,LM-L6,LM-L2,LM-L11
