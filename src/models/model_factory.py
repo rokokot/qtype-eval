@@ -11,7 +11,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class LMProbe(nn.Module):  # Neural probe for language model representations
+class LMProbe(nn.Module):  # custom probe for language model representations
     def __init__(
         self,
         model_name: str = "cis-lmu/glot500-base",
@@ -103,23 +103,14 @@ class LMProbe(nn.Module):  # Neural probe for language model representations
         return outputs
 
 def create_model(model_type, task_type, **kwargs):
-    """Create a model for the given task type with improved validation."""
     logger.info(f"Creating {model_type} model for {task_type} task")
     
-    # Normalize task type
     task_type = task_type.lower() if isinstance(task_type, str) else "classification"
-    
-    # Validate model type
     if model_type not in ["dummy", "logistic", "ridge", "xgboost", "lm_probe"]:
         logger.warning(f"Unknown model type: {model_type}. Using 'dummy' model.")
         model_type = "dummy"
-    
-    # For LM probe, ensure consistent parameters
     if model_type == "lm_probe":
-        # Default num_outputs based on task type
         num_outputs = kwargs.get("num_outputs", 1)
-        
-        # For classification tasks, set num_outputs appropriately
         if task_type == "classification":
             num_outputs = 1  # Binary classification
         
@@ -133,7 +124,6 @@ def create_model(model_type, task_type, **kwargs):
             layer_index=kwargs.get("layer_index", -1)
         )
     
-    # Handle task type validation for sklearn models
     if model_type == "logistic" and task_type != "classification":
         logger.warning("Logistic regression is for classification only. Switching to ridge regression.")
         model_type = "ridge"
@@ -142,7 +132,6 @@ def create_model(model_type, task_type, **kwargs):
         logger.warning("Ridge regression is for regression only. Switching to logistic regression.")
         model_type = "logistic"
     
-    # Create the appropriate model
     if model_type == "dummy":
         if task_type == "classification":
             return DummyClassifier(
