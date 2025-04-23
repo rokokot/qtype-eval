@@ -174,43 +174,36 @@ class LMTrainer:
                 
                 outputs = self.model(input_ids=batch["input_ids"], attention_mask=batch["attention_mask"])
                 
-                # Ensure consistent dimensions for loss calculation
                 if self.task_type == "classification":
-                    # Binary classification handling
-                    if outputs.size(-1) == 1:  # If model outputs a single value
+                    # Binary classification 
+                    if outputs.size(-1) == 1:  
                         batch["labels"] = batch["labels"].view(-1, 1).float()
                     
-                    # Note: BCE loss expects float labels
                     loss = self.criterion(outputs, batch["labels"])
                 else:
-                    # Regression handling
-                    # Ensure outputs and labels have same shape
+                    # Regression 
                     batch["labels"] = batch["labels"].view(outputs.size()).float()
                     loss = self.criterion(outputs, batch["labels"])
                 
                 total_loss += loss.item()
                 
-                # Store predictions and labels for metric calculation
                 all_preds.append(outputs.detach().cpu().numpy())
                 all_labels.append(batch["labels"].detach().cpu().numpy())
     
         avg_loss = total_loss / len(data_loader)
         
-        # Concatenate and ensure correct shapes
         all_preds = np.concatenate(all_preds, axis=0)
         all_labels = np.concatenate(all_labels, axis=0)
         
-        # Calculate metrics
         metrics = self._calculate_metrics(all_labels, all_preds)
         
         return avg_loss, metrics
 
     def _calculate_metrics(self, y_true, y_pred):
         if self.task_type == "classification":
-            # For binary classification
+            #  binary classification
             y_pred_binary = (y_pred > 0.5).astype(int)
             
-            # Reshape if needed
             if y_true.ndim > 1:
                 y_true = y_true.reshape(-1)
             if y_pred_binary.ndim > 1:
@@ -221,8 +214,8 @@ class LMTrainer:
                 "f1": float(f1_score(y_true, y_pred_binary, average="binary")),
             }
         else:
-            # For regression
-            # Ensure consistent shapes
+            #  regression
+            #  consistent shapes
             if y_true.ndim > 1:
                 y_true = y_true.reshape(-1)
             if y_pred.ndim > 1:
