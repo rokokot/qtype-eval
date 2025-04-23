@@ -172,7 +172,7 @@ data/qtc-raw/
 /home/robin/Research/qtype-eval/feature_analysis-UD
 /home/robin/Research/qtype-eval/feature_analysis-TyDi
 src/profiling-UD
-/home/robin/Research/qtype-eval/scripts/preprocessing
+scripts/preprocessing
 
 /home/robin/Research/qtype-eval/scripts/experiments/baselines/wand
 
