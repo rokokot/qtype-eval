@@ -21,13 +21,14 @@ We approach these by training diagnostic classifiers on top of frozen model repr
 
 The experiments rely on the custom Question Type and Complexity (QTC) dataset, available at [Hugging Face]([https://huggingface.co/datasets/rokokot/question-type-and-complexity). The dataset was developed by automatically annotating data from two sources:
 
-1. **Training set(silver data)**: Derived from TyDiQA-goldP (cite), automatically annotated using rule-based and regex methods for question types, and UDPipe (cite) with linguistic profiling toolkit (cite) for complexity metrics
+1. **Training set (silver data)**: Derived from TyDiQA-goldP (cite), automatically annotated using rule-based and regex methods for question types, and UDPipe (cite) with linguistic profiling toolkit (cite) for complexity metrics
 2. **Test set (gold data)**: Extracted from Universal Dependency treebanks with high-quality annotations
 3. **Development set**: A combination of both sources to provide a balanced validation set
 
 The dataset contains the following labels:
 
 - a. Question types: Binary classification of questions as polar (yes/no) or content (wh-)
+  
 - b. 6 different complexity sub-metrics: dependency links length, maximum tree depth, subordinate chain length, verb edges, lexical density, number of tokens
 - c. Combined complexity metric: One unweighted sum as an abstract complexity score
 - d. Control sets: Created by intra-language shuffling of labels to test model selectivity
@@ -41,8 +42,12 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ### References
 
 [Clark et al. (2020)](https://aclanthology.org/2020.tacl-1.30/) - TyDi QA dataset
+
 [Nivre et al. (2020)](https://aclanthology.org/2020.lrec-1.497/) - Universal Dependencies
+
 [Conneau et al. (2018)](https://arxiv.org/abs/1805.01070) - Probing task design
+
 [Sahin et al. (2020)](https://aclanthology.org/2020.cl-2.4/) - LINSPECTOR multilingual probing
+
 [Brunato et al. (2020)](https://aclanthology.org/2020.lrec-1.883/) - Profiling-UD linguistic complexity metric analysis
 
