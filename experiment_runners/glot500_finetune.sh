@@ -106,8 +106,7 @@ for LANG in "${LANGUAGES[@]}"; do
         python -m src.experiments.run_experiment \
             "hydra.job.chdir=False" \
             "hydra.run.dir=." \
-            "experiment=finetune" \
-            "experiment.tasks=single_submetric" \
+            "experiment=finetune_submetric" \
             "experiment.submetric=${SUBMETRIC}" \
             "model=lm_finetune" \
             "model.lm_name=cis-lmu/glot500-base" \
