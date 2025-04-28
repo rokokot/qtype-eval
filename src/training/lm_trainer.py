@@ -27,6 +27,7 @@ class LMTrainer:
         device: Optional[str] = None,
         output_dir: Optional[str] = None,
         wandb_run: Optional[Any] = None,
+        gradient_accumulation_steps: int = 1,
     ):
         self.model = model
         self.task_type = task_type
@@ -37,6 +38,7 @@ class LMTrainer:
         self.device = device if device else ("cuda" if torch.cuda.is_available() else "cpu")
         self.output_dir = output_dir
         self.wandb_run = wandb_run
+        self.gradient_accumulation_steps = gradient_accumulation_steps
 
         if output_dir:
             os.makedirs(output_dir, exist_ok=True)
@@ -47,7 +49,6 @@ class LMTrainer:
         self.model = self.model.to(self.device)
 
         optimizer = optim.AdamW(self.model.parameters(), lr=self.learning_rate, weight_decay=self.weight_decay)
-
         scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode="min", factor=0.5, patience=2, verbose=True)
 
         best_val_loss = float("inf")
@@ -58,6 +59,8 @@ class LMTrainer:
         for epoch in range(self.num_epochs):
             self.model.train()
             train_loss = 0.0
+
+            batch_idx = 0.0
 
             for batch in tqdm(train_loader, desc=f"Epoch {epoch+1}/{self.num_epochs}"):
                 batch = {k: v.to(self.device) for k, v in batch.items()}
@@ -76,17 +79,24 @@ class LMTrainer:
 
                 optimizer.zero_grad()
                 loss.backward()
-                optimizer.step()  # bwd pass
 
-                train_loss += loss.item()
+                if (batch_idx + 1) % self.gradient_accumulation_steps == 0:
+
+
+                    optimizer.step()  # bwd pass
+                    optimizer.zero_grad()
+                batch_idx += 1    
+                train_loss += loss.item() * self.gradient_accumulation_steps
+
+            if batch_idx % self.gradient_accumulation_steps != 0:
+                optimizer.step()
+                optimizer.zero_grad()
 
             avg_train_loss = train_loss / len(train_loader)
             logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Train Loss: {avg_train_loss:.4f}")
 
             if self.wandb_run:
-                self.wandb_run.log(
-                    {"epoch": epoch + 1, "train_loss": avg_train_loss, "learning_rate": optimizer.param_groups[0]["lr"]}
-                )
+                self.wandb_run.log({"epoch": epoch + 1, "train_loss": avg_train_loss, "learning_rate": optimizer.param_groups[0]["lr"]})
 
             if val_loader:
                 val_loss, val_metrics = self._evaluate(val_loader)
@@ -95,9 +105,7 @@ class LMTrainer:
                 scheduler.step(val_loss)
 
                 if self.wandb_run:
-                    self.wandb_run.log(
-                        {"epoch": epoch + 1, "val_loss": val_loss, **{f"val_{k}": v for k, v in val_metrics.items()}}
-                    )
+                    self.wandb_run.log({"epoch": epoch + 1, "val_loss": val_loss, **{f"val_{k}": v for k, v in val_metrics.items()}})
 
                 if val_loss < best_val_loss:
                     best_val_loss = val_loss
@@ -105,9 +113,7 @@ class LMTrainer:
                     patience_counter = 0
 
                     if self.wandb_run:
-                        self.wandb_run.log(
-                            {"best_val_loss": best_val_loss, **{f"best_val_{k}": v for k, v in val_metrics.items()}}
-                        )
+                        self.wandb_run.log({"best_val_loss": best_val_loss, **{f"best_val_{k}": v for k, v in val_metrics.items()}})
 
                 else:
                     patience_counter += 1
