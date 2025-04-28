@@ -284,12 +284,7 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
         logger.info(f"Processing language: {language}")
         
         try:
-            wandb_run = setup_wandb(
-                cfg=cfg,
-                experiment_type=cfg.experiment.type,
-                task=submetric or task,
-                model_type=cfg.model.model_type,
-                language=language,)
+            wandb_run = setup_wandb(cfg=cfg,experiment_type=cfg.experiment.type,task=submetric or task,model_type=cfg.model.model_type,language=language,)
         except Exception as e:
             logger.warning(f"Failed to initialize wandb for language {language}: {str(e)}")
             wandb_run = None
@@ -297,16 +292,8 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
         try:
             control_index = cfg.experiment.control_index if cfg.experiment.use_controls else None
             
-            train_loader, val_loader, test_loader = create_lm_dataloaders(
-                language=language,
-                task=task,
-                model_name=cfg.model.lm_name,
-                batch_size=cfg.training.batch_size,
-                control_index=control_index,
-                cache_dir=cfg.data.cache_dir,
-                num_workers=cfg.training.num_workers,
-                submetric=submetric
-            )
+            train_loader, val_loader, test_loader = create_lm_dataloaders(language=language,
+                task=task,model_name=cfg.model.lm_name,batch_size=cfg.training.batch_size,control_index=control_index,cache_dir=cfg.data.cache_dir,num_workers=cfg.training.num_workers,submetric=submetric)
             
             model_params = OmegaConf.to_container(cfg.model, resolve=True)
             model_params_copy = model_params.copy()
@@ -324,22 +311,10 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
                 grad_accum_steps = getattr(cfg.training, 'gradient_accumulation_steps', 1)
                 logger.info(f'finetuning with gradient accum steps: {grad_accum_steps}')
 
-            # Create language-specific output directory
             language_output_dir = os.path.join(cfg.output_dir, language)
             os.makedirs(language_output_dir, exist_ok=True)
             
-            # Train and evaluate
-            trainer = LMTrainer(
-                model=model,
-                task_type=task_type,  # Use the determined task type
-                learning_rate=cfg.training.lr,
-                weight_decay=cfg.training.weight_decay,
-                num_epochs=cfg.training.num_epochs,
-                patience=cfg.training.patience,
-                output_dir=language_output_dir,
-                wandb_run=wandb_run,
-                gradient_accumulation_steps=grad_accum_steps
-            )
+            trainer = LMTrainer(model=model,task_type=task_type,learning_rate=cfg.training.lr,weight_decay=cfg.training.weight_decay,num_epochs=cfg.training.num_epochs,patience=cfg.training.patience,output_dir=language_output_dir,wandb_run=wandb_run,gradient_accumulation_steps=grad_accum_steps)
             
             results = trainer.train(
                 train_loader=train_loader, 
@@ -355,10 +330,13 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
                 "model_type": cfg.model.model_type,
                 "is_control": cfg.experiment.use_controls,
                 "control_index": cfg.experiment.control_index,
+                "is_finetune": is_finetuning,
             })
             
             if submetric:
                 results["submetric"] = submetric
+
+            
             
             all_results[language] = results
             

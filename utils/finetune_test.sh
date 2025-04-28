@@ -64,6 +64,33 @@ else
     exit 1
 fi
 
+echo "Testing control question type fine-tuning on English..."
+python -m src.experiments.run_experiment \
+    "hydra.job.chdir=False" \
+    "hydra.run.dir=." \
+    "experiment=finetune" \
+    "experiment.tasks=question_type" \
+    "experiment.use_controls=true" \
+    "experiment.control_index=1" \
+    "model=glot500_finetune" \
+    "model.lm_name=cis-lmu/glot500-base" \
+    "data.languages=[en]" \
+    "data.cache_dir=$VSC_DATA/qtype-eval/data/cache" \
+    "training.task_type=classification" \
+    "training.num_epochs=1" \
+    "training.batch_size=4" \
+    "training.lr=2e-5" \
+    "experiment_name=test_finetune_qtype_control1_en" \
+    "output_dir=${TEST_DIR}/control1/en" \
+    "wandb.mode=offline"
+
+if [ $? -eq 0 ]; then
+    echo "Control fine-tuning test completed successfully!"
+else
+    echo "Control fine-tuning test failed!"
+    exit 1
+fi
+
 echo "Testing complexity fine-tuning on English..."
 python -m src.experiments.run_experiment \
     "hydra.job.chdir=False" \
@@ -89,11 +116,40 @@ else
     exit 1
 fi
 
-echo "Testing submetric (avg_links_len) fine-tuning on English..."
+echo "Testing control complexity fine-tuning on English..."
+python -m src.experiments.run_experiment \
+    "hydra.job.chdir=False" \
+    "hydra.run.dir=." \
+    "experiment=finetune" \
+    "experiment.tasks=complexity" \
+    "experiment.use_controls=true" \
+    "experiment.control_index=1" \
+    "model=glot500_finetune" \
+    "model.lm_name=cis-lmu/glot500-base" \
+    "data.languages=[en]" \
+    "data.cache_dir=$VSC_DATA/qtype-eval/data/cache" \
+    "training.task_type=regression" \
+    "training.num_epochs=1" \
+    "training.batch_size=4" \
+    "training.lr=2e-5" \
+    "experiment_name=test_finetune_complexity_en" \
+    "output_dir=${TEST_DIR}/control1/en" \
+    "wandb.mode=offline"
+
+if [ $? -eq 0 ]; then
+    echo "Complexity control 1 finetuning test completed successfully!"
+else
+    echo "Complexity control 1 finetuning test failed!"
+    exit 1
+fi
+
+echo "Testing control 1 submetric (avg_links_len) finetuning on English..."
 python -m src.experiments.run_experiment \
     "hydra.job.chdir=False" \
     "hydra.run.dir=." \
     "experiment=finetune_submetric" \
+    "experiment.use_controls=true" \
+    "experiment.control_index=1" \
     "experiment.submetric=avg_links_len" \
     "model=glot500_finetune" \
     "model.lm_name=cis-lmu/glot500-base" \
@@ -108,11 +164,11 @@ python -m src.experiments.run_experiment \
     "wandb.mode=offline"
 
 if [ $? -eq 0 ]; then
-    echo "Submetric fine-tuning test completed successfully!"
+    echo "Submetric control finetuning test completed successfully!"
 else
-    echo "Submetric fine-tuning test failed!"
+    echo "Submetric control 1 finetuning test failed!"
     exit 1
 fi
 
-echo "All fine-tuning tests completed successfully!"
+echo "All finetuning tests completed successfully!"
 echo "Results can be found in: $TEST_DIR"
