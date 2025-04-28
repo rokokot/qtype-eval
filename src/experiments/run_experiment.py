@@ -180,7 +180,7 @@ def main(cfg: DictConfig):
             if wandb_run:
                 wandb_run.finish()
         
-        elif cfg.experiment.type == "lm_probe":
+        elif cfg.experiment.type == "lm_probe" or cfg.experiment.type == 'lm_finetune':
             results = run_lm_experiment(cfg, task, task_type, submetric)
         
         elif cfg.experiment.type == "lm_probe_cross_lingual":
