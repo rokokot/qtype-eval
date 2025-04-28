@@ -1,6 +1,6 @@
 seed: 42
-output_dir: /scratch/leuven/371/vsc37132/finetune_test/question_type/en
-experiment_name: test_finetune_qtype_en
+output_dir: /scratch/leuven/371/vsc37132/finetune_test/complexity/en
+experiment_name: test_finetune_complexity_en
 wandb:
   project: multilingual-question-probing
   entity: rokii-ku-leuven
@@ -31,7 +31,7 @@ model:
   layer_index: -1
   num_outputs: 1
 training:
-  task_type: classification
+  task_type: regression
   batch_size: 4
   num_epochs: 1
   lr: 2.0e-05
@@ -43,7 +43,7 @@ training:
   num_workers: 4
 experiment:
   type: lm_finetune
-  tasks: question_type
+  tasks: complexity
   use_controls: false
   control_index: null
   num_controls: 3
