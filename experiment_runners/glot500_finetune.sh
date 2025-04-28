@@ -1,4 +1,3 @@
-# experiment_runners/finetune_experiments.sh
 #!/bin/bash
 #SBATCH --job-name=finetune_experiments
 #SBATCH --time=12:00:00
