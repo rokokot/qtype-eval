@@ -39,6 +39,7 @@ echo "PyTorch CUDA available: $(python -c 'import torch; print(torch.cuda.is_ava
 LANGUAGES=("ar" "en" "fi" "id" "ja" "ko" "ru")
 MAIN_TASKS=("question_type" "complexity")
 SUBMETRICS=("avg_links_len" "avg_max_depth" "avg_subordinate_chain_len" "avg_verb_edges" "lexical_density" "n_tokens")
+CONTORL_INDICES=(1 2 3)
 
 OUTPUT_BASE_DIR="$VSC_SCRATCH/finetune_output"
 mkdir -p $OUTPUT_BASE_DIR
@@ -52,13 +53,14 @@ for LANG in "${LANGUAGES[@]}"; do
         "hydra.run.dir=." \
         "experiment=finetune" \
         "experiment.tasks=question_type" \
+        "experiment.use_controls=false" \
         "model=lm_finetune" \
         "model.lm_name=cis-lmu/glot500-base" \
         "data.languages=[${LANG}]" \
         "data.cache_dir=$VSC_DATA/qtype-eval/data/cache" \
         "training.task_type=classification" \
-        "training.num_epochs=5" \
-        "training.batch_size=8" \
+        "training.num_epochs=10" \
+        "training.batch_size=16" \
         "experiment_name=finetune_question_type_${LANG}" \
         "output_dir=${OUTPUT_BASE_DIR}/question_type/${LANG}" \
         "wandb.mode=offline"
@@ -68,6 +70,33 @@ for LANG in "${LANGUAGES[@]}"; do
     else
         echo "Error in fine-tuning experiment for question_type ${LANG}"
     fi
+    for CONTROL in "${CONTROL_INDICES[@]}"; do
+        mkdir -p "${OUTPUT_BASE_DIR}/question_type/${LANG}/control${CONTROL}"
+        echo "Running control ${CONTROL} question type fine-tuning for ${LANG}"
+        python -m src.experiments.run_experiment \
+            "hydra.job.chdir=False" \
+            "hydra.run.dir=." \
+            "experiment=finetune" \
+            "experiment.tasks=question_type" \
+            "experiment.use_controls=true" \
+            "experiment.control_index=${CONTROL}" \
+            "model=lm_finetune" \
+            "model.lm_name=cis-lmu/glot500-base" \
+            "data.languages=[${LANG}]" \
+            "data.cache_dir=$VSC_DATA/qtype-eval/data/cache" \
+            "training.task_type=classification" \
+            "training.num_epochs=10" \
+            "training.batch_size=16" \
+            "experiment_name=finetune_question_type_control${CONTROL}_${LANG}" \
+            "output_dir=${OUTPUT_BASE_DIR}/question_type/${LANG}/control${CONTROL}" \
+            "wandb.mode=offline"
+            
+        if [ $? -eq 0 ]; then
+            echo "Control ${CONTROL} fine-tuning experiment for question_type ${LANG} completed successfully"
+        else
+            echo "Error in control ${CONTROL} fine-tuning experiment for question_type ${LANG}"
+        fi
+    done
 done
 
 # Complexity regression fine-tuning experiments
@@ -79,22 +108,50 @@ for LANG in "${LANGUAGES[@]}"; do
         "hydra.run.dir=." \
         "experiment=finetune" \
         "experiment.tasks=complexity" \
+        "experiment.use_controls=false"  \
         "model=lm_finetune" \
         "model.lm_name=cis-lmu/glot500-base" \
         "data.languages=[${LANG}]" \
         "data.cache_dir=$VSC_DATA/qtype-eval/data/cache" \
         "training.task_type=regression" \
-        "training.num_epochs=5" \
-        "training.batch_size=8" \
+        "training.num_epochs=10" \
+        "training.batch_size=16" \
         "experiment_name=finetune_complexity_${LANG}" \
         "output_dir=${OUTPUT_BASE_DIR}/complexity/${LANG}" \
         "wandb.mode=offline"
         
     if [ $? -eq 0 ]; then
-        echo "Fine-tuning experiment for complexity ${LANG} completed successfully"
+        echo "Finetuning experiment for complexity ${LANG} completed successfully"
     else
-        echo "Error in fine-tuning experiment for complexity ${LANG}"
+        echo "Error in finetuning experiment for complexity ${LANG}"
     fi
+    for CONTROL in "${CONTROL_INDICES[@]}"; do
+        mkdir -p "${OUTPUT_BASE_DIR}/complexity/${LANG}/control${CONTROL}"
+        echo "Running control ${CONTROL} complexity fine-tuning for ${LANG}"
+        python -m src.experiments.run_experiment \
+            "hydra.job.chdir=False" \
+            "hydra.run.dir=." \
+            "experiment=finetune" \
+            "experiment.tasks=complexity" \
+            "experiment.use_controls=true" \
+            "experiment.control_index=${CONTROL}" \
+            "model=lm_finetune" \
+            "model.lm_name=cis-lmu/glot500-base" \
+            "data.languages=[${LANG}]" \
+            "data.cache_dir=$VSC_DATA/qtype-eval/data/cache" \
+            "training.task_type=regression" \
+            "training.num_epochs=10" \
+            "training.batch_size=16" \
+            "experiment_name=finetune_complexity_control${CONTROL}_${LANG}" \
+            "output_dir=${OUTPUT_BASE_DIR}/complexity/${LANG}/control${CONTROL}" \
+            "wandb.mode=offline"
+            
+        if [ $? -eq 0 ]; then
+            echo "Control ${CONTROL} finetuning experiment for complexity ${LANG} completed successfully"
+        else
+            echo "Error in control ${CONTROL} finetuning experiment for complexity ${LANG}"
+        fi
+    done
 done
 
 # Submetric regression fine-tuning experiments
@@ -112,8 +169,8 @@ for LANG in "${LANGUAGES[@]}"; do
             "data.languages=[${LANG}]" \
             "data.cache_dir=$VSC_DATA/qtype-eval/data/cache" \
             "training.task_type=regression" \
-            "training.num_epochs=5" \
-            "training.batch_size=8" \
+            "training.num_epochs=10" \
+            "training.batch_size=16" \
             "experiment_name=finetune_${SUBMETRIC}_${LANG}" \
             "output_dir=${OUTPUT_BASE_DIR}/submetrics/${LANG}/${SUBMETRIC}" \
             "wandb.mode=offline"
@@ -123,6 +180,33 @@ for LANG in "${LANGUAGES[@]}"; do
         else
             echo "Error in fine-tuning experiment for ${SUBMETRIC} ${LANG}"
         fi
+        for CONTROL in "${CONTROL_INDICES[@]}"; do
+            mkdir -p "${OUTPUT_BASE_DIR}/submetrics/${LANG}/${SUBMETRIC}/control${CONTROL}"
+            echo "Running control ${CONTROL} submetric ${SUBMETRIC} fine-tuning for ${LANG}"
+            python -m src.experiments.run_experiment \
+                "hydra.job.chdir=False" \
+                "hydra.run.dir=." \
+                "experiment=finetune_submetric" \
+                "experiment.submetric=${SUBMETRIC}" \
+                "experiment.use_controls=true" \
+                "experiment.control_index=${CONTROL}" \
+                "model=lm_finetune" \
+                "model.lm_name=cis-lmu/glot500-base" \
+                "data.languages=[${LANG}]" \
+                "data.cache_dir=$VSC_DATA/qtype-eval/data/cache" \
+                "training.task_type=regression" \
+                "training.num_epochs=10" \
+                "training.batch_size=16" \
+                "experiment_name=finetune_${SUBMETRIC}_control${CONTROL}_${LANG}" \
+                "output_dir=${OUTPUT_BASE_DIR}/submetrics/${LANG}/${SUBMETRIC}/control${CONTROL}" \
+                "wandb.mode=offline"
+                
+            if [ $? -eq 0 ]; then
+                echo "Control ${CONTROL} fine-tuning experiment for ${SUBMETRIC} ${LANG} completed successfully"
+            else
+                echo "Error in control ${CONTROL} fine-tuning experiment for ${SUBMETRIC} ${LANG}"
+            fi
+        done
     done
 done
 
