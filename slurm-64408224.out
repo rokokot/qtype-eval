@@ -1,0 +1,249 @@
+SLURM_JOB_ID: 64408224
+SLURM_JOB_USER: vsc37132
+SLURM_JOB_ACCOUNT: intro_vsc37132
+SLURM_JOB_NAME: finetune_test
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: gpu_a100_debug
+SLURM_NNODES: 1
+SLURM_NODELIST: k28i22
+SLURM_JOB_CPUS_PER_NODE: 4
+SLURM_JOB_GPUS: 0
+Date: Mon Apr 28 12:33:03 CEST 2025
+Walltime: 00-00:30:00
+========================================================================
+Retrieving notices: - \ done
+Channels:
+ - pytorch
+ - nvidia
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+
+==> WARNING: A newer version of conda exists. <==
+    current version: 25.1.1
+    latest version: 25.3.1
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+# All requested packages already installed.
+
+Requirement already satisfied: hydra-core in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (1.3.2)
+Requirement already satisfied: hydra-submitit-launcher in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (1.2.0)
+Requirement already satisfied: omegaconf<2.4,>=2.2 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from hydra-core) (2.3.0)
+Requirement already satisfied: antlr4-python3-runtime==4.9.* in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from hydra-core) (4.9.3)
+Requirement already satisfied: packaging in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from hydra-core) (24.2)
+Requirement already satisfied: submitit>=1.3.3 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from hydra-submitit-launcher) (1.5.2)
+Requirement already satisfied: PyYAML>=5.1.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from omegaconf<2.4,>=2.2->hydra-core) (6.0.2)
+Requirement already satisfied: cloudpickle>=1.2.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from submitit>=1.3.3->hydra-submitit-launcher) (3.1.1)
+Requirement already satisfied: typing_extensions>=3.7.4.2 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from submitit>=1.3.3->hydra-submitit-launcher) (4.12.2)
+Requirement already satisfied: transformers<4.36.0,>=4.30.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (4.35.2)
+Requirement already satisfied: torch in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (2.5.1)
+Requirement already satisfied: datasets in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (3.5.0)
+Requirement already satisfied: wandb in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (0.19.9)
+Requirement already satisfied: filelock in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (3.18.0)
+Requirement already satisfied: huggingface-hub<1.0,>=0.16.4 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (0.30.1)
+Requirement already satisfied: numpy>=1.17 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (1.26.4)
+Requirement already satisfied: packaging>=20.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (24.2)
+Requirement already satisfied: pyyaml>=5.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (6.0.2)
+Requirement already satisfied: regex!=2019.12.17 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (2024.11.6)
+Requirement already satisfied: requests in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (2.32.3)
+Requirement already satisfied: tokenizers<0.19,>=0.14 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (0.15.2)
+Requirement already satisfied: safetensors>=0.3.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (0.5.3)
+Requirement already satisfied: tqdm>=4.27 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (4.67.1)
+Requirement already satisfied: typing-extensions>=4.8.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from torch) (4.12.2)
+Requirement already satisfied: networkx in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from torch) (3.2.1)
+Requirement already satisfied: jinja2 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from torch) (3.1.6)
+Requirement already satisfied: fsspec in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from torch) (2024.12.0)
+Requirement already satisfied: sympy==1.13.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from torch) (1.13.1)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from sympy==1.13.1->torch) (1.3.0)
+Requirement already satisfied: pyarrow>=15.0.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from datasets) (19.0.1)
+Requirement already satisfied: dill<0.3.9,>=0.3.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from datasets) (0.3.8)
+Requirement already satisfied: pandas in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from datasets) (2.2.3)
+Requirement already satisfied: xxhash in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from datasets) (3.5.0)
+Requirement already satisfied: multiprocess<0.70.17 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from datasets) (0.70.16)
+Requirement already satisfied: aiohttp in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from datasets) (3.11.16)
+Requirement already satisfied: click!=8.0.0,>=7.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (8.1.8)
+Requirement already satisfied: docker-pycreds>=0.4.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (0.4.0)
+Requirement already satisfied: eval-type-backport in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (0.2.2)
+Requirement already satisfied: gitpython!=3.1.29,>=1.0.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (3.1.44)
+Requirement already satisfied: platformdirs in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (4.3.7)
+Requirement already satisfied: protobuf!=4.21.0,!=5.28.0,<6,>=3.15.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (5.29.4)
+Requirement already satisfied: psutil>=5.0.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (7.0.0)
+Requirement already satisfied: pydantic<3 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (2.11.1)
+Requirement already satisfied: sentry-sdk>=2.0.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (2.25.0)
+Requirement already satisfied: setproctitle in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (1.3.5)
+Requirement already satisfied: setuptools in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (78.1.0)
+Requirement already satisfied: six>=1.4.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from docker-pycreds>=0.4.0->wandb) (1.17.0)
+Requirement already satisfied: aiohappyeyeballs>=2.3.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (2.6.1)
+Requirement already satisfied: aiosignal>=1.1.2 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (1.3.2)
+Requirement already satisfied: async-timeout<6.0,>=4.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (5.0.1)
+Requirement already satisfied: attrs>=17.3.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (25.3.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (1.5.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (6.3.1)
+Requirement already satisfied: propcache>=0.2.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (0.3.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (1.18.3)
+Requirement already satisfied: gitdb<5,>=4.0.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from gitpython!=3.1.29,>=1.0.0->wandb) (4.0.12)
+Requirement already satisfied: annotated-types>=0.6.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from pydantic<3->wandb) (0.7.0)
+Requirement already satisfied: pydantic-core==2.33.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from pydantic<3->wandb) (2.33.0)
+Requirement already satisfied: typing-inspection>=0.4.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from pydantic<3->wandb) (0.4.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from requests->transformers<4.36.0,>=4.30.0) (3.4.1)
+Requirement already satisfied: idna<4,>=2.5 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from requests->transformers<4.36.0,>=4.30.0) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from requests->transformers<4.36.0,>=4.30.0) (2.3.0)
+Requirement already satisfied: certifi>=2017.4.17 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from requests->transformers<4.36.0,>=4.30.0) (2025.1.31)
+Requirement already satisfied: MarkupSafe>=2.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from jinja2->torch) (3.0.2)
+Requirement already satisfied: python-dateutil>=2.8.2 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from pandas->datasets) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from pandas->datasets) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from pandas->datasets) (2025.2)
+Requirement already satisfied: smmap<6,>=3.0.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from gitdb<5,>=4.0.1->gitpython!=3.1.29,>=1.0.0->wandb) (5.0.2)
+Environment variables:
+PYTHONPATH=:/data/leuven/371/vsc37132/qtype-eval:/vsc-hard-mounts/leuven-user/371/vsc37132:/vsc-hard-mounts/leuven-user/371/vsc37132:/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval
+HF_HOME=/data/leuven/371/vsc37132/qtype-eval/data/cache
+GPU information:
+Mon Apr 28 12:34:25 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 560.35.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100 80GB PCIe          On  |   00000000:17:00.0 Off |                    0 |
+| N/A   34C    P0             45W /  300W |       1MiB /  81920MiB |      0%   E. Process |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Python executable: /data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/bin/python
+PyTorch CUDA available: True
+Testing question type fine-tuning on English...
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/launcher:
+Default list overrides requires 'override' keyword.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
+
+  deprecation_warning(msg)
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py:197: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  return _run_code(code, main_globals, None,
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py:94: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  _run_hydra(
+Using Dataset: rokokot/question-type-and-complexity
+Cache Directory: /data/leuven/371/vsc37132/qtype-eval/data/cache
+[2025-04-28 12:34:47,667][__main__][INFO] - Configuration:
+seed: 42
+output_dir: /scratch/leuven/371/vsc37132/finetune_test/question_type/en
+experiment_name: test_finetune_qtype_en
+wandb:
+  project: multilingual-question-probing
+  entity: rokii-ku-leuven
+  mode: offline
+slurm:
+  partition: gpu
+  time: '24:00:00'
+  gpus_per_node: 1
+  cpus_per_task: 4
+  mem_per_cpu: 8
+  job_name: ${experiment_name}
+  account: intro_vsc37132
+data:
+  dataset_name: rokokot/question-type-and-complexity
+  cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
+  vectors_dir: ./data/features
+  languages:
+  - en
+  train_language: null
+  eval_language: null
+model:
+  model_type: lm_probe
+  lm_name: cis-lmu/glot500-base
+  dropout: 0.1
+  freeze_model: false
+  finetune: true
+  layer_wise: false
+  layer_index: -1
+  num_outputs: 1
+training:
+  task_type: classification
+  batch_size: 4
+  num_epochs: 1
+  lr: 2.0e-05
+  weight_decay: 0.01
+  patience: 3
+  scheduler_factor: 0.5
+  scheduler_patience: 2
+  random_state: 42
+  num_workers: 4
+experiment:
+  type: lm_finetune
+  tasks: question_type
+  use_controls: false
+  control_index: null
+  num_controls: 3
+  eval_on_orig_test: true
+  cross_lingual: false
+  finetune: true
+  training:
+    patience: 5
+    scheduler_patience: 4
+    scheduler_factor: 0.8
+    dropout: 0.1
+    lr: 2.0e-05
+    batch_size: 8
+
+[2025-04-28 12:34:47,667][__main__][INFO] - Normalized task: question_type
+[2025-04-28 12:34:47,667][__main__][INFO] - Using explicit task_type from config: classification
+[2025-04-28 12:34:47,667][__main__][INFO] - Determined Task Type: classification
+[2025-04-28 12:34:47,672][__main__][ERROR] - Experiment failed: Unknown experiment type: lm_finetune
+[2025-04-28 12:34:47,672][__main__][ERROR] - Traceback: Traceback (most recent call last):
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 200, in main
+    raise ValueError(f"Unknown experiment type: {cfg.experiment.type}")
+ValueError: Unknown experiment type: lm_finetune
+
+Error executing job with overrides: ['experiment=finetune', 'experiment.tasks=question_type', 'model=glot500_finetune', 'model.lm_name=cis-lmu/glot500-base', 'data.languages=[en]', 'data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache', 'training.task_type=classification', 'training.num_epochs=1', 'training.batch_size=4', 'training.lr=2e-5', 'experiment_name=test_finetune_qtype_en', 'output_dir=/scratch/leuven/371/vsc37132/finetune_test/question_type/en', 'wandb.mode=offline']
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 510, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+    raise ex
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 132, in run
+    _ = ret.return_value
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 260, in return_value
+    raise self._return_value
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 200, in main
+    raise ValueError(f"Unknown experiment type: {cfg.experiment.type}")
+ValueError: Unknown experiment type: lm_finetune
+Question type fine-tuning test failed!

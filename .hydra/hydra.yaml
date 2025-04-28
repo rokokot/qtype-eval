@@ -143,25 +143,23 @@ hydra:
     - hydra.run.dir=.
     - hydra.mode=RUN
     task:
-    - experiment=cross_lingual
-    - experiment.tasks=complexity
-    - experiment.cross_lingual=true
-    - +experiment.use_controls=false
-    - model=lm_probe
+    - experiment=finetune
+    - experiment.tasks=question_type
+    - model=glot500_finetune
     - model.lm_name=cis-lmu/glot500-base
-    - data.train_language=en
-    - data.eval_language=ru
+    - data.languages=[en]
     - data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache
-    - training.task_type=regression
-    - training.num_epochs=10
-    - training.batch_size=16
-    - experiment_name=cross_lingual_complexity_en_to_ru
-    - output_dir=/scratch/leuven/371/vsc37132/cross_lingual_output/en_to_ru/complexity
+    - training.task_type=classification
+    - training.num_epochs=1
+    - training.batch_size=4
+    - training.lr=2e-5
+    - experiment_name=test_finetune_qtype_en
+    - output_dir=/scratch/leuven/371/vsc37132/finetune_test/question_type/en
     - wandb.mode=offline
   job:
     name: run_experiment
     chdir: false
-    override_dirname: +experiment.use_controls=false,data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache,data.eval_language=ru,data.train_language=en,experiment.cross_lingual=true,experiment.tasks=complexity,experiment=cross_lingual,experiment_name=cross_lingual_complexity_en_to_ru,model.lm_name=cis-lmu/glot500-base,model=lm_probe,output_dir=/scratch/leuven/371/vsc37132/cross_lingual_output/en_to_ru/complexity,training.batch_size=16,training.num_epochs=10,training.task_type=regression,wandb.mode=offline
+    override_dirname: data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache,data.languages=[en],experiment.tasks=question_type,experiment=finetune,experiment_name=test_finetune_qtype_en,model.lm_name=cis-lmu/glot500-base,model=glot500_finetune,output_dir=/scratch/leuven/371/vsc37132/finetune_test/question_type/en,training.batch_size=4,training.lr=2e-5,training.num_epochs=1,training.task_type=classification,wandb.mode=offline
     id: ???
     num: ???
     config_name: config
@@ -188,9 +186,9 @@ hydra:
       provider: schema
     output_dir: /vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval
     choices:
-      experiment: cross_lingual
+      experiment: finetune
       training: default
-      model: lm_probe
+      model: glot500_finetune
       data: default
       hydra/env: default
       hydra/callbacks: null
