@@ -1,6 +1,6 @@
 seed: 42
-output_dir: /scratch/leuven/371/vsc37132/cross_lingual_output/en_to_ru/complexity
-experiment_name: cross_lingual_complexity_en_to_ru
+output_dir: /scratch/leuven/371/vsc37132/finetune_test/question_type/en
+experiment_name: test_finetune_qtype_en
 wandb:
   project: multilingual-question-probing
   entity: rokii-ku-leuven
@@ -18,28 +18,23 @@ data:
   cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
   vectors_dir: ./data/features
   languages:
-  - ar
   - en
-  - fi
-  - id
-  - ja
-  - ko
-  - ru
-  train_language: en
-  eval_language: ru
+  train_language: null
+  eval_language: null
 model:
   model_type: lm_probe
   lm_name: cis-lmu/glot500-base
-  dropout: 0.3
+  dropout: 0.1
   freeze_model: false
+  finetune: true
   layer_wise: false
   layer_index: -1
   num_outputs: 1
 training:
-  task_type: regression
-  batch_size: 16
-  num_epochs: 10
-  lr: 1.0e-05
+  task_type: classification
+  batch_size: 4
+  num_epochs: 1
+  lr: 2.0e-05
   weight_decay: 0.01
   patience: 3
   scheduler_factor: 0.5
@@ -47,10 +42,18 @@ training:
   random_state: 42
   num_workers: 4
 experiment:
-  type: lm_probe_cross_lingual
-  tasks: complexity
-  cross_lingual: true
-  train_language: en
-  eval_language: fi
-  task_type: auto
+  type: lm_finetune
+  tasks: question_type
   use_controls: false
+  control_index: null
+  num_controls: 3
+  eval_on_orig_test: true
+  cross_lingual: false
+  finetune: true
+  training:
+    patience: 5
+    scheduler_patience: 4
+    scheduler_factor: 0.8
+    dropout: 0.1
+    lr: 2.0e-05
+    batch_size: 8
