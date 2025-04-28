@@ -88,16 +88,13 @@ def setup_wandb(
             job_type=experiment_type,
         )
         
-        # Create artifact only if wandb initialized successfully
         if run is not None:
             try:
                 config_artifact = wandb.Artifact(name=f"config_{cfg.experiment_name}", type="config")
                 config_path = os.path.join(cfg.output_dir, "config.yaml")
                 
-                # Ensure directory exists
                 os.makedirs(os.path.dirname(config_path), exist_ok=True)
                 
-                # Write config
                 with open(config_path, "w") as f:
                     f.write(OmegaConf.to_yaml(cfg))
                     
@@ -105,16 +102,13 @@ def setup_wandb(
                 run.log_artifact(config_artifact)
             except Exception as e:
                 logger.warning(f"Failed to log config artifact: {e}")
-        
         return run
         
     except Exception as e:
         logger.warning(f"Failed to initialize wandb: {e}")
         return None
 
-
 def normalize_task_name(task):
-    """Normalize task name to a standard format."""
     if task is None:
         return "question_type"
     
@@ -125,33 +119,21 @@ def normalize_task_name(task):
     
     task = str(task).strip().lower()
     
-    # Map various task names to standard ones
-    task_mapping = {
-        "question_type": "question_type",
-        "complexity": "complexity",
-        "complexity_score": "complexity",
-        "lang_norm_complexity_score": "complexity"
-    }
+    task_mapping = {"question_type": "question_type", "complexity": "complexity", "complexity_score": "complexity", "lang_norm_complexity_score": "complexity"}
     
     return task_mapping.get(task, task)
 
 def determine_task_type(task, cfg=None):
-    """Determine the task type based on the task name and configuration."""
-    # Check for explicit override in config
     if cfg and hasattr(cfg.training, 'task_type') and cfg.training.task_type not in ['auto', 'default']:
         logger.info(f"Using explicit task_type from config: {cfg.training.task_type}")
         return cfg.training.task_type
     
-    # Standard task type mapping
     if task == "question_type":
         return "classification"
     
-    if task in ["complexity", "single_submetric", "avg_links_len", "avg_max_depth", 
-               "avg_subordinate_chain_len", "avg_verb_edges", "lexical_density", 
-               "n_tokens"]:
+    if task in ["complexity", "single_submetric", "avg_links_len", "avg_max_depth", "avg_subordinate_chain_len", "avg_verb_edges", "lexical_density", "n_tokens"]:
         return "regression"
     
-    # Default fallback with warning
     logger.warning(f"Could not determine task type for '{task}'. Defaulting to classification.")
     return "classification"
 
@@ -159,8 +141,6 @@ def determine_task_type(task, cfg=None):
 
 @hydra.main(config_path="../../configs", config_name="config", version_base="1.1")
 def main(cfg: DictConfig):
-    """Main experiment runner with improved task handling."""
-    # Set random seeds
     np.random.seed(cfg.seed)
     torch.manual_seed(cfg.seed)
     if torch.cuda.is_available():
@@ -168,11 +148,9 @@ def main(cfg: DictConfig):
     
     logger.info(f"Configuration:\n{OmegaConf.to_yaml(cfg)}")
     
-    # Normalize and validate task
     task = normalize_task_name(cfg.experiment.tasks)
     logger.info(f"Normalized task: {task}")
     
-    # Get submetric if applicable
     submetric = None
     if task == "single_submetric":
         submetric = getattr(cfg.experiment, "submetric", None)
@@ -181,18 +159,14 @@ def main(cfg: DictConfig):
             submetric = "avg_links_len"
         logger.info(f"Using submetric: {submetric}")
     
-    # Determine task type
     task_type = determine_task_type(task, cfg)
     logger.info(f"Determined Task Type: {task_type}")
     
-    # Create output directory if needed
     if cfg.output_dir:
         os.makedirs(cfg.output_dir, exist_ok=True)
-        # Save configuration
         with open(os.path.join(cfg.output_dir, "config.yaml"), "w") as f:
             f.write(OmegaConf.to_yaml(cfg))
     
-    # Run appropriate experiment type
     try:
         if cfg.experiment.type == "sklearn_baseline":
             wandb_run = setup_wandb(
@@ -255,34 +229,25 @@ def main(cfg: DictConfig):
 
 
 def run_sklearn_experiment(cfg, task, task_type, submetric=None):
-    """Run scikit-learn baseline experiment."""
     logger.info(f"Running sklearn experiment with {cfg.model.model_type} for {task}")
     if submetric:
         logger.info(f"Submetric: {submetric}")
 
-    # Get control settings
     control_index = cfg.experiment.control_index if cfg.experiment.use_controls else None
 
-    # Load data
-    (X_train, y_train), (X_val, y_val), (X_test, y_test) = load_sklearn_data(
-        languages=cfg.data.languages,
+    (X_train, y_train), (X_val, y_val), (X_test, y_test) = load_sklearn_data(languages=cfg.data.languages,
         task=task,
         submetric=submetric,
         control_index=control_index,
-        vectors_dir=cfg.data.vectors_dir,
-    )
+        vectors_dir=cfg.data.vectors_dir,)
 
-    # Create model
     model_params = OmegaConf.to_container(cfg.model, resolve=True)
     model = create_model(cfg.model.model_type, task_type, **model_params)
 
-    # Create trainer
     trainer = SklearnTrainer(model=model, task_type=task_type, output_dir=cfg.output_dir, wandb_run=wandb.run)
 
-    # Train and evaluate
     results = trainer.train(train_data=(X_train, y_train), val_data=(X_val, y_val), test_data=(X_test, y_test))
 
-    # Add metadata
     metadata = {
         "task": task,
         "task_type": task_type,
@@ -297,7 +262,6 @@ def run_sklearn_experiment(cfg, task, task_type, submetric=None):
 
     results.update(metadata)
 
-    # Save results
     if cfg.output_dir:
         import json
 
@@ -308,12 +272,10 @@ def run_sklearn_experiment(cfg, task, task_type, submetric=None):
 
 
 def run_lm_experiment(cfg, task, task_type, submetric=None):
-    """Run language model probing experiment with improved handling of tasks and submetrics."""
     logger.info(f"Running LM probe experiment for task '{task}' (type: {task_type}) on languages: {cfg.data.languages}")
     if submetric:
         logger.info(f"Using submetric: {submetric}")
     
-    # Ensure output directory exists
     os.makedirs(cfg.output_dir, exist_ok=True)
     
     all_results = {}
@@ -321,24 +283,20 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
     for language in cfg.data.languages:
         logger.info(f"Processing language: {language}")
         
-        # Setup WandB
         try:
             wandb_run = setup_wandb(
                 cfg=cfg,
                 experiment_type=cfg.experiment.type,
                 task=submetric or task,
                 model_type=cfg.model.model_type,
-                language=language,
-            )
+                language=language,)
         except Exception as e:
             logger.warning(f"Failed to initialize wandb for language {language}: {str(e)}")
             wandb_run = None
         
         try:
-            # Get control settings
             control_index = cfg.experiment.control_index if cfg.experiment.use_controls else None
             
-            # Create dataloaders
             train_loader, val_loader, test_loader = create_lm_dataloaders(
                 language=language,
                 task=task,
@@ -350,18 +308,22 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
                 submetric=submetric
             )
             
-            # Create model with appropriate parameters
             model_params = OmegaConf.to_container(cfg.model, resolve=True)
             model_params_copy = model_params.copy()
             
-            # Remove model_type from parameters if present
             if 'model_type' in model_params_copy:
                 model_params_copy.pop('model_type')
             
-            # Create model with the determined task_type
             model = create_model("lm_probe", task_type, **model_params_copy)
             logger.info(f"Successfully created model for {language}")
+
+            is_finetuning = model_params_copy.get('finetune', False)
+            grad_accum_steps = 1
             
+            if is_finetuning:
+                grad_accum_steps = getattr(cfg.training, 'gradient_accumulation_steps', 1)
+                logger.info(f'finetuning with gradient accum steps: {grad_accum_steps}')
+
             # Create language-specific output directory
             language_output_dir = os.path.join(cfg.output_dir, language)
             os.makedirs(language_output_dir, exist_ok=True)
@@ -376,6 +338,7 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
                 patience=cfg.training.patience,
                 output_dir=language_output_dir,
                 wandb_run=wandb_run,
+                gradient_accumulation_steps=grad_accum_steps
             )
             
             results = trainer.train(
