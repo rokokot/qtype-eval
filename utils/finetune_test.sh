@@ -93,8 +93,7 @@ echo "Testing submetric (avg_links_len) fine-tuning on English..."
 python -m src.experiments.run_experiment \
     "hydra.job.chdir=False" \
     "hydra.run.dir=." \
-    "experiment=finetune" \
-    "experiment.tasks=single_submetric" \
+    "experiment=finetune_submetric" \
     "experiment.submetric=avg_links_len" \
     "model=glot500_finetune" \
     "model.lm_name=cis-lmu/glot500-base" \
