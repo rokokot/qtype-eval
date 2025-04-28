@@ -1,13 +1,13 @@
 - experiment=finetune
-- experiment.tasks=question_type
+- experiment.tasks=complexity
 - model=glot500_finetune
 - model.lm_name=cis-lmu/glot500-base
 - data.languages=[en]
 - data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache
-- training.task_type=classification
+- training.task_type=regression
 - training.num_epochs=1
 - training.batch_size=4
 - training.lr=2e-5
-- experiment_name=test_finetune_qtype_en
-- output_dir=/scratch/leuven/371/vsc37132/finetune_test/question_type/en
+- experiment_name=test_finetune_complexity_en
+- output_dir=/scratch/leuven/371/vsc37132/finetune_test/complexity/en
 - wandb.mode=offline
