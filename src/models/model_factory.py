@@ -21,6 +21,8 @@ class LMProbe(nn.Module):  # custom probe for language model representations
         freeze_model: bool = False,
         layer_wise: bool = False,
         layer_index: int = -1,
+        finetune: bool = False
+
     ):
         super().__init__()
 
@@ -46,10 +48,16 @@ class LMProbe(nn.Module):  # custom probe for language model representations
             raise
         
 
-        if freeze_model:
+        if freeze_model and not finetune:
+
             for param in self.model.parameters():
                 param.requires_grad = False
             logger.info("Language model parameters frozen")
+        elif finetune:
+            logger.info('finetuning the entire model')
+        else:
+            logger.info('training probe with unfrozen model')
+
 
         hidden_size = self.model.config.hidden_size
 
