@@ -114,9 +114,11 @@ def create_model(model_type, task_type, **kwargs):
     logger.info(f"Creating {model_type} model for {task_type} task")
     
     task_type = task_type.lower() if isinstance(task_type, str) else "classification"
+
     if model_type not in ["dummy", "logistic", "ridge", "xgboost", "lm_probe"]:
         logger.warning(f"Unknown model type: {model_type}. Using 'dummy' model.")
         model_type = "dummy"
+
     if model_type == "lm_probe":
         num_outputs = kwargs.get("num_outputs", 1)
         if task_type == "classification":
@@ -129,7 +131,8 @@ def create_model(model_type, task_type, **kwargs):
             dropout=kwargs.get("dropout", 0.1),
             freeze_model=kwargs.get("freeze_model", False),
             layer_wise=kwargs.get("layer_wise", False),
-            layer_index=kwargs.get("layer_index", -1)
+            layer_index=kwargs.get("layer_index", -1),
+            finetune=kwargs.get('finetune', False)
         )
     
     if model_type == "logistic" and task_type != "classification":
