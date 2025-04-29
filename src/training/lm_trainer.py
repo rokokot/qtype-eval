@@ -57,9 +57,17 @@ class LMTrainer:
             self.weight_decay = 0.1 
 
 
-    def train(self, train_loader, val_loader=None, test_loader=None) -> Dict[str, Any]:
+def train(self, train_loader, val_loader=None, test_loader=None) -> Dict[str, Any]:
+    # Add a cleanup function for GPU memory
+    def cleanup_gpu_memory():
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+            logger.info("GPU memory cleared")
+    
+    try:
         self.model = self.model.to(self.device)
-
+        
+        # Debug mode logging
         if self.debug_mode:
             trainable_params = sum(p.numel() for p in self.model.parameters() if p.requires_grad)
             total_params = sum(p.numel() for p in self.model.parameters())
@@ -74,17 +82,10 @@ class LMTrainer:
                 encoder_frozen = encoder_trainable == 0
                 logger.info(f"Encoder is {'frozen' if encoder_frozen else 'trainable'}")
 
+        # Probe-specific logging - FIXED: removed the early-stopping check that was in the wrong place
         if hasattr(self.model, 'task_type') and self.model.task_type == "probe":
-        # More detailed logging for probes
+            # More detailed logging for probes
             logger.info("Running probe experiment with specialized configuration")
-            
-        
-            
-            # More aggressive early stopping for probes
-            if val_loss > best_val_loss * 1.2:  # More strict improvement criterion
-                patience_counter += 1
-                logger.info(f"Probe performance not significantly improving. Patience: {patience_counter}")
-
 
         optimizer = optim.AdamW(self.model.parameters(), lr=self.learning_rate, weight_decay=self.weight_decay)
         scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode="min", factor=0.5, patience=2, verbose=True)
@@ -93,6 +94,7 @@ class LMTrainer:
         best_model_state = None
         patience_counter = 0
         start_time = time.time()
+        degenerate_predictions_count = 0  # Track degenerate predictions
 
         # Store prediction tracking for debugging
         if self.debug_mode:
@@ -193,6 +195,14 @@ class LMTrainer:
                         # Alert on degenerate predictions (predicting all one class)
                         if len(unique_preds) <= 1:
                             logger.warning(f"WARNING: Model is predicting only one class: {unique_preds[0]}")
+                            degenerate_predictions_count += 1
+                            
+                            # NEW: Early termination for degenerate models
+                            if degenerate_predictions_count >= 3:  # If 3 consecutive epochs have degenerate predictions
+                                logger.warning("Stopping training due to persistent degenerate predictions")
+                                break
+                        else:
+                            degenerate_predictions_count = 0  # Reset counter if predictions are not degenerate
                 except Exception as e:
                     logger.error(f"Error analyzing predictions: {e}")
 
@@ -236,6 +246,12 @@ class LMTrainer:
                 else:
                     patience_counter += 1
                     logger.info(f"Validation did not improve. Patience: {patience_counter}/{self.patience}")
+                
+                # NEW: Stricter early stopping for probe models
+                if hasattr(self.model, 'task_type') and self.model.task_type == "probe":
+                    if val_loss > best_val_loss * 1.2:  # More strict improvement criterion for probes
+                        logger.info(f"Probe performance significantly worse than best. Adding extra patience point.")
+                        patience_counter += 1  # Extra penalty for probe models
 
                 # Early stopping
                 if patience_counter >= self.patience:
@@ -301,6 +317,25 @@ class LMTrainer:
             logger.info(f"Model saved to {model_path}")
     
         return results
+    
+    except Exception as e:
+        logger.error(f"Error during training: {e}")
+        import traceback
+        error_traceback = traceback.format_exc()
+        logger.error(f"Traceback: {error_traceback}")
+        
+        # Return partial results with error information
+        return {
+            "error": str(e),
+            "traceback": error_traceback,
+            "train_metrics": None,
+            "val_metrics": None,
+            "test_metrics": None,
+        }
+    
+    finally:
+        # Always clean up GPU memory
+        cleanup_gpu_memory()
 
     def _evaluate(self, data_loader):
         """Evaluate model on a data loader"""
