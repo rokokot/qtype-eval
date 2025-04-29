@@ -143,27 +143,27 @@ hydra:
     - hydra.run.dir=.
     - hydra.mode=RUN
     task:
-    - experiment=finetune
-    - experiment.tasks=question_type
+    - experiment=complexity
+    - experiment.tasks=complexity
     - model=glot500_finetune
     - model.lm_name=cis-lmu/glot500-base
     - model.dropout=0.1
     - model.freeze_model=false
     - model.finetune=true
-    - data.languages=[en]
+    - data.languages=[ru]
     - data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache
-    - training.task_type=classification
-    - training.num_epochs=2
+    - training.task_type=regression
+    - training.num_epochs=10
     - training.batch_size=16
     - training.lr=2e-5
-    - +training.debug_mode=true
-    - experiment_name=test_finetune
-    - output_dir=/scratch/leuven/371/vsc37132/finetune_test_output
-    - wandb.mode=disabled
+    - +training.gradient_accumulation_steps=2
+    - experiment_name=finetune_complexity_ru
+    - output_dir=/scratch/leuven/371/vsc37132/finetune_output/complexity/ru
+    - wandb.mode=offline
   job:
     name: run_experiment
     chdir: false
-    override_dirname: +training.debug_mode=true,data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache,data.languages=[en],experiment.tasks=question_type,experiment=finetune,experiment_name=test_finetune,model.dropout=0.1,model.finetune=true,model.freeze_model=false,model.lm_name=cis-lmu/glot500-base,model=glot500_finetune,output_dir=/scratch/leuven/371/vsc37132/finetune_test_output,training.batch_size=16,training.lr=2e-5,training.num_epochs=2,training.task_type=classification,wandb.mode=disabled
+    override_dirname: +training.gradient_accumulation_steps=2,data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache,data.languages=[ru],experiment.tasks=complexity,experiment=complexity,experiment_name=finetune_complexity_ru,model.dropout=0.1,model.finetune=true,model.freeze_model=false,model.lm_name=cis-lmu/glot500-base,model=glot500_finetune,output_dir=/scratch/leuven/371/vsc37132/finetune_output/complexity/ru,training.batch_size=16,training.lr=2e-5,training.num_epochs=10,training.task_type=regression,wandb.mode=offline
     id: ???
     num: ???
     config_name: config
@@ -190,7 +190,7 @@ hydra:
       provider: schema
     output_dir: /vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval
     choices:
-      experiment: finetune
+      experiment: complexity
       training: default
       model: glot500_finetune
       data: default

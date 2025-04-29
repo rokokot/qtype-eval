@@ -1,13 +1,13 @@
 #!/bin/bash
 #SBATCH --job-name=finetune_experiments
-#SBATCH --time=00:30:00
+#SBATCH --time=36:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
 #SBATCH --gres=gpu:1
-#SBATCH --partition=gpu_a100_debug
-#SBATCH --clusters=wice
+#SBATCH --partition=gpu_p100
+#SBATCH --clusters=genius
 #SBATCH --account=intro_vsc37132
 
 export PATH="$VSC_DATA/miniconda3/bin:$PATH"
@@ -23,41 +23,10 @@ export HYDRA_FULL_ERROR=1
 export WANDB_DIR="$VSC_SCRATCH/wandb"
 mkdir -p "$VSC_SCRATCH/wandb"
 
-# Run a test experiment first
-OUTPUT_TEST_DIR="$VSC_SCRATCH/finetune_test_output"
-mkdir -p $OUTPUT_TEST_DIR
-
-python -m src.experiments.run_experiment \
-    "hydra.job.chdir=False" \
-    "hydra.run.dir=." \
-    "experiment=finetune" \
-    "experiment.tasks=question_type" \
-    "model=glot500_finetune" \
-    "model.lm_name=cis-lmu/glot500-base" \
-    "model.dropout=0.1" \
-    "model.freeze_model=false" \
-    "model.finetune=true" \
-    "data.languages=[en]" \
-    "data.cache_dir=$VSC_DATA/qtype-eval/data/cache" \
-    "training.task_type=classification" \
-    "training.num_epochs=2" \
-    "training.batch_size=16" \
-    "training.lr=2e-5" \
-    "+training.debug_mode=true" \
-    "experiment_name=test_finetune" \
-    "output_dir=${OUTPUT_TEST_DIR}" \
-    "wandb.mode=disabled"
-
-if [ $? -ne 0 ]; then
-    echo "Test experiment failed. Please check the logs for issues."
-    exit 1
-fi
-
-echo "Test experiment completed successfully. Proceeding with full experiments."
-
-LANGUAGES=("ar" "en" "fi")          # note
+LANGUAGES=("ar" "en" "fi" "id" "ja" "ko" "ru")          # note
 TASKS=("question_type" "complexity")    #note
-CONTROL_INDICES=(1 2)                   #note
+SUBMETRICS=("avg_links_len" "avg_max_depth" "avg_subordinate_chain_len" "avg_verb_edges" "lexical_density" "n_tokens")
+CONTROL_INDICES=(1 2 3)                   #note
 
 OUTPUT_BASE_DIR="$VSC_SCRATCH/finetune_output"
 mkdir -p $OUTPUT_BASE_DIR
@@ -129,7 +98,6 @@ EOF
 
 chmod +x ${OUTPUT_BASE_DIR}/extract_metrics.py
 
-# Function to run finetuning experiment
 run_finetune_experiment() {
     local TASK_TYPE=$1
     local LANG=$2
@@ -140,6 +108,25 @@ run_finetune_experiment() {
     
     local EXPERIMENT_NAME=""
     local COMMAND=""
+    local EXPERIMENT_TYPE="finetune"
+    
+    # Set experiment name based on parameters
+    if [ -n "$SUBMETRIC" ]; then
+        # This is a submetric experiment
+        TASK="single_submetric"
+        if [ -z "$CONTROL_IDX" ]; then
+            EXPERIMENT_NAME="finetune_${SUBMETRIC}_${LANG}"
+        else
+            EXPERIMENT_NAME="finetune_${SUBMETRIC}_control${CONTROL_IDX}_${LANG}"
+        fi
+    else
+        # Regular task experiment
+        if [ -z "$CONTROL_IDX" ]; then
+            EXPERIMENT_NAME="finetune_${TASK}_${LANG}"
+        else
+            EXPERIMENT_NAME="finetune_${TASK}_control${CONTROL_IDX}_${LANG}"
+        fi
+    fi
     
     # Add debug mode for first experiments
     local DEBUG_PARAM=""
@@ -147,57 +134,39 @@ run_finetune_experiment() {
         DEBUG_PARAM="+training.debug_mode=true"
     fi
     
-    # Set experiment name and command
-    if [ -z "$CONTROL_IDX" ]; then
-        # Regular experiment
-        EXPERIMENT_NAME="finetune_${TASK}_${LANG}"
-        COMMAND="python -m src.experiments.run_experiment \
-            \"hydra.job.chdir=False\" \
-            \"hydra.run.dir=.\" \
-            \"experiment=finetune\" \
-            \"experiment.tasks=${TASK}\" \
-            \"model=glot500_finetune\" \
-            \"model.lm_name=cis-lmu/glot500-base\" \
-            \"model.dropout=0.1\" \
-            \"model.freeze_model=false\" \
-            \"model.finetune=true\" \
-            \"data.languages=[${LANG}]\" \
-            \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
-            \"training.task_type=${TASK_TYPE}\" \
-            \"training.num_epochs=10\" \
-            \"training.batch_size=16\" \
-            \"training.lr=2e-5\" \
-            \"training.gradient_accumulation_steps=2\" \
-            ${DEBUG_PARAM} \
-            \"experiment_name=${EXPERIMENT_NAME}\" \
-            \"output_dir=${OUTPUT_SUBDIR}\" \
-            \"wandb.mode=offline\""
-    else
-        # Control experiment
-        EXPERIMENT_NAME="finetune_${TASK}_control${CONTROL_IDX}_${LANG}"
-        COMMAND="python -m src.experiments.run_experiment \
-            \"hydra.job.chdir=False\" \
-            \"hydra.run.dir=.\" \
-            \"experiment=finetune\" \
-            \"experiment.tasks=${TASK}\" \
+    # Build command
+    COMMAND="python -m src.experiments.run_experiment \
+        \"hydra.job.chdir=False\" \
+        \"hydra.run.dir=.\" \
+        \"experiment=${TASK}\" \
+        \"experiment.tasks=${TASK}\" \
+        \"model=glot500_finetune\" \
+        \"model.lm_name=cis-lmu/glot500-base\" \
+        \"model.dropout=0.1\" \
+        \"model.freeze_model=false\" \
+        \"model.finetune=true\" \
+        \"data.languages=[${LANG}]\" \
+        \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
+        \"training.task_type=${TASK_TYPE}\" \
+        \"training.num_epochs=10\" \
+        \"training.batch_size=16\" \
+        \"training.lr=2e-5\" \
+        \"+training.gradient_accumulation_steps=2\" \
+        ${DEBUG_PARAM} \
+        \"experiment_name=${EXPERIMENT_NAME}\" \
+        \"output_dir=${OUTPUT_SUBDIR}\" \
+        \"wandb.mode=offline\""
+    
+    # Add control parameters if needed
+    if [ -n "$CONTROL_IDX" ]; then
+        COMMAND="$COMMAND \
             \"experiment.use_controls=true\" \
-            \"experiment.control_index=${CONTROL_IDX}\" \
-            \"model=glot500_finetune\" \
-            \"model.lm_name=cis-lmu/glot500-base\" \
-            \"model.dropout=0.1\" \
-            \"model.freeze_model=false\" \
-            \"model.finetune=true\" \
-            \"data.languages=[${LANG}]\" \
-            \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
-            \"training.task_type=${TASK_TYPE}\" \
-            \"training.num_epochs=10\" \
-            \"training.batch_size=16\" \
-            \"training.lr=2e-5\" \
-            \"training.gradient_accumulation_steps=2\" \
-            ${DEBUG_PARAM} \
-            \"experiment_name=${EXPERIMENT_NAME}\" \
-            \"output_dir=${OUTPUT_SUBDIR}\" \
-            \"wandb.mode=offline\""
+            \"experiment.control_index=${CONTROL_IDX}\""
+    fi
+    
+    # Add submetric parameter if needed
+    if [ -n "$SUBMETRIC" ]; then
+        COMMAND="$COMMAND \"experiment.submetric=${SUBMETRIC}\""
     fi
     
     # Print the command for debugging
@@ -278,6 +247,36 @@ for LANG in "${LANGUAGES[@]}"; do
         done
     done
 done
+
+echo "Running submetric finetuning experiments..."
+
+for LANG in "${LANGUAGES[@]}"; do
+    for SUBMETRIC in "${SUBMETRICS[@]}"; do
+        # Create output directory
+        SUBMETRIC_DIR="${OUTPUT_BASE_DIR}/submetrics/${SUBMETRIC}/${LANG}"
+        mkdir -p "$SUBMETRIC_DIR"
+        
+        # Run standard (non-control) submetric experiment
+        run_finetune_experiment "regression" "$LANG" "single_submetric" "" "$SUBMETRIC" "$SUBMETRIC_DIR"
+    done
+done
+
+echo "Running control submetric finetuning experiments..."
+
+for LANG in "${LANGUAGES[@]}"; do
+    for SUBMETRIC in "${SUBMETRICS[@]}"; do
+        for CONTROL_IDX in "${CONTROL_INDICES[@]}"; do
+            # Create output directory
+            CONTROL_DIR="${OUTPUT_BASE_DIR}/submetrics/${SUBMETRIC}/${LANG}/control${CONTROL_IDX}"
+            mkdir -p "$CONTROL_DIR"
+            
+            # Run control submetric experiment
+            run_finetune_experiment "regression" "$LANG" "single_submetric" "$CONTROL_IDX" "$SUBMETRIC" "$CONTROL_DIR"
+        done
+    done
+done
+
+
 
 # Generate summary visualizations
 cat > ${OUTPUT_BASE_DIR}/generate_finetune_summaries.py << 'EOF'
@@ -452,11 +451,12 @@ python3 ${OUTPUT_BASE_DIR}/generate_finetune_summaries.py "$RESULTS_TRACKER" "$O
 cat > "${OUTPUT_BASE_DIR}/finetune_metadata.json" << EOF
 {
   "experiment_type": "fine-tuning",
-  "description": "Full fine-tuning of language model for classification and regression tasks",
+  "description": "Full fine-tuning of language model for classification, regression, and submetric prediction tasks",
   "model": "cis-lmu/glot500-base",
   "model_config": "glot500_finetune",
   "languages": $(python -c "import json; print(json.dumps(${LANGUAGES[@]}))"),
   "tasks": $(python -c "import json; print(json.dumps(${TASKS[@]}))"),
+  "submetrics": $(python -c "import json; print(json.dumps(${SUBMETRICS[@]}))"),
   "freeze_model": false,
   "finetune": true,
   "layer_wise": false,
