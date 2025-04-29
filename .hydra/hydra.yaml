@@ -143,23 +143,30 @@ hydra:
     - hydra.run.dir=.
     - hydra.mode=RUN
     task:
-    - experiment=finetune
+    - experiment=question_type
     - experiment.tasks=question_type
-    - model=glot500_finetune
+    - experiment.use_controls=true
+    - experiment.control_index=1
+    - model=lm_probe
     - model.lm_name=cis-lmu/glot500-base
+    - model.dropout=0.1
+    - model.layer_wise=true
+    - model.layer_index=2
+    - +model.probe_hidden_size=64
+    - model.freeze_model=false
     - data.languages=[ar]
     - data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache
     - training.task_type=classification
+    - training.lr=1e-5
+    - training.batch_size=8
     - training.num_epochs=10
-    - training.batch_size=16
-    - +training.gradient_accumulation_steps=4
-    - experiment_name=finetune_question_type_ar
-    - output_dir=/scratch/leuven/371/vsc37132/finetune_output/question_type/ar
+    - experiment_name=sweep_question_type_layer2_dropout0.1_lr1e-5_probe64_freezefalse_control1_bs8
+    - output_dir=/scratch/leuven/371/vsc37132/arabic_sweep/sweep_question_type_layer2_dropout0.1_lr1e-5_probe64_freezefalse_control1_bs8
     - wandb.mode=offline
   job:
     name: run_experiment
     chdir: false
-    override_dirname: +training.gradient_accumulation_steps=4,data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache,data.languages=[ar],experiment.tasks=question_type,experiment=finetune,experiment_name=finetune_question_type_ar,model.lm_name=cis-lmu/glot500-base,model=glot500_finetune,output_dir=/scratch/leuven/371/vsc37132/finetune_output/question_type/ar,training.batch_size=16,training.num_epochs=10,training.task_type=classification,wandb.mode=offline
+    override_dirname: +model.probe_hidden_size=64,data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache,data.languages=[ar],experiment.control_index=1,experiment.tasks=question_type,experiment.use_controls=true,experiment=question_type,experiment_name=sweep_question_type_layer2_dropout0.1_lr1e-5_probe64_freezefalse_control1_bs8,model.dropout=0.1,model.freeze_model=false,model.layer_index=2,model.layer_wise=true,model.lm_name=cis-lmu/glot500-base,model=lm_probe,output_dir=/scratch/leuven/371/vsc37132/arabic_sweep/sweep_question_type_layer2_dropout0.1_lr1e-5_probe64_freezefalse_control1_bs8,training.batch_size=8,training.lr=1e-5,training.num_epochs=10,training.task_type=classification,wandb.mode=offline
     id: ???
     num: ???
     config_name: config
@@ -186,9 +193,9 @@ hydra:
       provider: schema
     output_dir: /vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval
     choices:
-      experiment: finetune
+      experiment: question_type
       training: default
-      model: glot500_finetune
+      model: lm_probe
       data: default
       hydra/env: default
       hydra/callbacks: null
