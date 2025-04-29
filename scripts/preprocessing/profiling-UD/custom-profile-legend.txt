@@ -11,8 +11,6 @@
 
 Verbal Predicate Structure:
 
-[verbal_head_per_sent]: average distribution of verbal heads in the document, out ot the total of heads. 
-
 [avg_verb_edges]: verbal arity, calculated as the average number of instantiated dependency links (covering both arguments and modifiers) sharing the same verbal head, excluding punctuation and auxiliaries bearing the syntactic role of copula according to the UD scheme
 
 Global and Local Parsed Tree Structures:
@@ -22,8 +20,6 @@ Global and Local Parsed Tree Structures:
 [avg_links_len]: average number of words occurring linearly between each syntactic head and its dependent (excluding punctuation dependencies).
 
 Use of Subordination:
-
-[subordinate_proposition_dist]: distribution of subordinate clauses, as defined in the UD scheme: https://universaldependencies.org/u/overview/complex-syntax.html#subordination.
 
 [avg_subordinate_chain_len]: average length of subordinate chains, where a subordinate 'chain' is calculated as the number of subordinate clauses embedded on a first subordinate clause.
 
