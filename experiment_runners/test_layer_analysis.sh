@@ -207,7 +207,7 @@ def extract_metrics(result_file, tracker_file, exp_type, language, layer, task, 
                 if value is not None:
                     writer.writerow([
                         exp_type, language, layer, task, 
-                        submetric if submetric else '', 
+                        submetric if submetric else 'None', 
                         control_index if control_index != 'None' else 'None',
                         metric, value
                     ])

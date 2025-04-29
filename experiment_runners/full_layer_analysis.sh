@@ -1,22 +1,20 @@
 #!/bin/bash
-#SBATCH --job-name=layerwise_analysis
+#SBATCH --job-name=layerwise_probing
 #SBATCH --time=24:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
-#SBATCH --gres=gpu:1
-#SBATCH --partition=gpu_a100
-#SBATCH --clusters=wice
+#SBATCH --gpus-per-node=1
+#SBATCH --partition=gpu_p100
+#SBATCH --clusters=genius
 #SBATCH --account=intro_vsc37132
 
 export PATH="$VSC_DATA/miniconda3/bin:$PATH"
 source "$VSC_DATA/miniconda3/etc/profile.d/conda.sh"
 
-# Activate the environment
 conda activate qtype-eval
-
-# Set up environment variables
+#env variables
 export PYTHONPATH=$PYTHONPATH:$PWD
 export HF_HOME=$VSC_DATA/qtype-eval/data/cache
 export HF_DATASETS_OFFLINE=1
@@ -35,9 +33,9 @@ nvidia-smi
 echo "Python executable: $(which python)"
 echo "PyTorch CUDA available: $(python -c 'import torch; print(torch.cuda.is_available())')"
 
-# Define parameters
+# passing parameters
 LANGUAGES=("ar" "en" "fi" "id" "ja" "ko" "ru")
-LAYERS=(2 6 11)  # Early, middle, and second-to-last layer
+LAYERS=(1 2 3 4 5 6 7 8 9 10 11 12)  # all layers
 MAIN_TASKS=("question_type" "complexity")
 SUBMETRICS=("avg_links_len" "avg_max_depth" "avg_subordinate_chain_len" "avg_verb_edges" "lexical_density" "n_tokens")
 CONTROL_INDICES=(1 2 3)
@@ -73,7 +71,7 @@ def extract_metrics(result_file, tracker_file, exp_type, language, layer, task, 
                 if value is not None:
                     writer.writerow([
                         exp_type, language, layer, task, 
-                        submetric if submetric else '', 
+                        submetric if submetric else 'None', 
                         control_index if control_index != 'None' else 'None',
                         metric, value
                     ])
@@ -143,6 +141,7 @@ run_standard_experiment() {
         \"model.lm_name=cis-lmu/glot500-base\" \
         \"model.layer_wise=true\" \
         \"model.layer_index=${LAYER}\" \
+        \"model.freeze_model=true\" \
         \"data.languages=[${LANGUAGE}]\" \
         \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
         \"training.task_type=${TASK_TYPE}\" \
@@ -218,6 +217,7 @@ run_control_experiment() {
         \"model.lm_name=cis-lmu/glot500-base\" \
         \"model.layer_wise=true\" \
         \"model.layer_index=${LAYER}\" \
+        \"model.freeze_model=true\" \
         \"experiment.use_controls=true\" \
         \"experiment.control_index=${CONTROL_IDX}\" \
         \"data.languages=[${LANGUAGE}]\" \
@@ -409,6 +409,22 @@ chmod +x ${OUTPUT_BASE_DIR}/generate_summaries.py
 
 # Generate all summary files
 python3 ${OUTPUT_BASE_DIR}/generate_summaries.py "$RESULTS_TRACKER" "$OUTPUT_BASE_DIR"
+
+cat > "${OUTPUT_BASE_DIR}/probing_metadata.json" << EOF
+{
+  "experiment_type": "layerwise_probing",
+  "description": "Layer-wise probing analysis with frozen model representations",
+  "model": "cis-lmu/glot500-base",
+  "languages": ["ar", "en", "fi", "id", "ja", "ko", "ru"],
+  "layers": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  "tasks": ["question_type", "complexity"],
+  "submetrics": ["avg_links_len", "avg_max_depth", "avg_subordinate_chain_len", "avg_verb_edges", "lexical_density", "n_tokens"],
+  "control_indices": [1, 2, 3],
+  "freeze_model": true,
+  "layer_wise": true,
+  "date_completed": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+}
+EOF
 
 echo "Layer-wise analysis completed"
 echo "Results are available in ${OUTPUT_BASE_DIR}"
