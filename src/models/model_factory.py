@@ -22,7 +22,7 @@ class LMProbe(nn.Module):  # custom probe for language model representations
         layer_wise: bool = True,
         layer_index: int = -1,
         finetune: bool = False,
-        probe_hidden_size: int = None
+        probe_hidden_size: int = 96
 
     ):
         super().__init__()
@@ -58,31 +58,18 @@ class LMProbe(nn.Module):  # custom probe for language model representations
 
         hidden_size = self.model.config.hidden_size
         
-        if probe_hidden_size is None:
-            if task_type == "classification":
-                probe_hidden_size = hidden_size // 8  # Smaller for classification
-            else:  # Regression - larger hidden layer
-                probe_hidden_size = hidden_size // 4  # Larger for regression
-
-        # Head construction with explicit device and dtype
-        head_layers = [
-            nn.Linear(hidden_size, probe_hidden_size).to(device),
-            nn.ReLU(),
-            nn.Dropout(dropout),
-            nn.Linear(probe_hidden_size, num_outputs).to(device)
-        ]
+        if probe_hidden_size is None or probe_hidden_size <= 0:
+            probe_hidden_size = hidden_size // 8 if task_type == "classification" else hidden_size // 4
+            logger.info(f"Using calculated probe_hidden_size: {probe_hidden_size}")
+        else:
+            logger.info(f"Using provided probe_hidden_size: {probe_hidden_size}")
 
         self.head = nn.Sequential(
             nn.Linear(hidden_size, probe_hidden_size),
-            nn.BatchNorm1d(probe_hidden_size),
             nn.ReLU(),
             nn.Dropout(dropout),
-            nn.Linear(probe_hidden_size, probe_hidden_size // 2),
-            nn.BatchNorm1d(probe_hidden_size // 2),
-            nn.ReLU(),
-            nn.Dropout(dropout),
-            nn.Linear(probe_hidden_size // 2, num_outputs),
-            nn.Sigmoid() if num_outputs == 1 and task_type == 'classification' else nn.Identity()
+            nn.Linear(probe_hidden_size, num_outputs),
+            nn.Sigmoid() if num_outputs == 1 and task_type == "classification" else nn.Identity(),
         )
 
         self.task_type = task_type
@@ -143,6 +130,10 @@ def create_model(model_type, task_type, **kwargs):
         if task_type == "classification":
             num_outputs = 1  # Binary classification
         
+        probe_hidden_size = kwargs.get("probe_hidden_size", 96)
+        if probe_hidden_size is None:
+            probe_hidden_size = 96
+        
         return LMProbe(
             model_name=kwargs.get("lm_name", "cis-lmu/glot500-base"),
             task_type=task_type,
@@ -151,7 +142,8 @@ def create_model(model_type, task_type, **kwargs):
             freeze_model=kwargs.get("freeze_model", False),
             layer_wise=kwargs.get("layer_wise", False),
             layer_index=kwargs.get("layer_index", -1),
-            finetune=kwargs.get('finetune', False)
+            finetune=kwargs.get('finetune', False),
+            probe_hidden_size=probe_hidden_size
         )
     
     if model_type == "logistic" and task_type != "classification":
