@@ -1,6 +1,6 @@
 seed: 42
-output_dir: /scratch/leuven/371/vsc37132/layerwise_output/ja/layer_7/complexity
-experiment_name: layer_7_complexity_ja
+output_dir: /scratch/leuven/371/vsc37132/layerwise_output/en/layer_2/complexity
+experiment_name: layer_2_complexity_en
 wandb:
   project: multilingual-question-probing
   entity: rokii-ku-leuven
@@ -18,16 +18,16 @@ data:
   cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
   vectors_dir: ./data/features
   languages:
-  - ja
+  - en
   train_language: null
   eval_language: null
 model:
   model_type: lm_probe
   lm_name: cis-lmu/glot500-base
   dropout: 0.3
-  freeze_model: false
+  freeze_model: true
   layer_wise: true
-  layer_index: 7
+  layer_index: 2
   num_outputs: 1
 training:
   task_type: regression
