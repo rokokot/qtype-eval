@@ -143,25 +143,23 @@ hydra:
     - hydra.run.dir=.
     - hydra.mode=RUN
     task:
-    - experiment=complexity
-    - experiment.tasks=complexity
-    - model=lm_probe
+    - experiment=finetune
+    - experiment.tasks=question_type
+    - model=glot500_finetune
     - model.lm_name=cis-lmu/glot500-base
-    - model.layer_wise=true
-    - model.layer_index=9
-    - model.freeze_model=true
-    - data.languages=[id]
+    - data.languages=[ar]
     - data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache
-    - training.task_type=regression
+    - training.task_type=classification
     - training.num_epochs=10
     - training.batch_size=16
-    - experiment_name=layer_9_complexity_id
-    - output_dir=/scratch/leuven/371/vsc37132/layerwise_output/id/layer_9/complexity
+    - +training.gradient_accumulation_steps=4
+    - experiment_name=finetune_question_type_ar
+    - output_dir=/scratch/leuven/371/vsc37132/finetune_output/question_type/ar
     - wandb.mode=offline
   job:
     name: run_experiment
     chdir: false
-    override_dirname: data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache,data.languages=[id],experiment.tasks=complexity,experiment=complexity,experiment_name=layer_9_complexity_id,model.freeze_model=true,model.layer_index=9,model.layer_wise=true,model.lm_name=cis-lmu/glot500-base,model=lm_probe,output_dir=/scratch/leuven/371/vsc37132/layerwise_output/id/layer_9/complexity,training.batch_size=16,training.num_epochs=10,training.task_type=regression,wandb.mode=offline
+    override_dirname: +training.gradient_accumulation_steps=4,data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache,data.languages=[ar],experiment.tasks=question_type,experiment=finetune,experiment_name=finetune_question_type_ar,model.lm_name=cis-lmu/glot500-base,model=glot500_finetune,output_dir=/scratch/leuven/371/vsc37132/finetune_output/question_type/ar,training.batch_size=16,training.num_epochs=10,training.task_type=classification,wandb.mode=offline
     id: ???
     num: ???
     config_name: config
@@ -188,9 +186,9 @@ hydra:
       provider: schema
     output_dir: /vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval
     choices:
-      experiment: complexity
+      experiment: finetune
       training: default
-      model: lm_probe
+      model: glot500_finetune
       data: default
       hydra/env: default
       hydra/callbacks: null

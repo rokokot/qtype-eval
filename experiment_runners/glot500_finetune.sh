@@ -6,8 +6,8 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
 #SBATCH --gres=gpu:1
-#SBATCH --partition=gpu_a100_debug
-#SBATCH --clusters=wice
+#SBATCH --partition=gpu_p100
+#SBATCH --clusters=genius
 #SBATCH --account=intro_vsc37132
 
 export PATH="$VSC_DATA/miniconda3/bin:$PATH"
@@ -283,7 +283,7 @@ run_finetune_experiment() {
                 \"training.task_type=${TASK_TYPE}\" \
                 \"training.num_epochs=10\" \
                 \"training.batch_size=16\" \
-                \"training.gradient_accumulation_steps=4\" \
+                \"+training.gradient_accumulation_steps=4\" \
                 \"experiment_name=${EXPERIMENT_NAME}\" \
                 \"output_dir=${OUTPUT_SUBDIR}\" \
                 \"wandb.mode=offline\""
@@ -304,7 +304,7 @@ run_finetune_experiment() {
                 \"training.task_type=${TASK_TYPE}\" \
                 \"training.num_epochs=10\" \
                 \"training.batch_size=16\" \
-                \"training.gradient_accumulation_steps=4\" \
+                \"+training.gradient_accumulation_steps=4\" \
                 \"experiment_name=${EXPERIMENT_NAME}\" \
                 \"output_dir=${OUTPUT_SUBDIR}\" \
                 \"wandb.mode=offline\""
@@ -326,7 +326,7 @@ run_finetune_experiment() {
                 \"training.task_type=${TASK_TYPE}\" \
                 \"training.num_epochs=10\" \
                 \"training.batch_size=16\" \
-                \"training.gradient_accumulation_steps=4\" \
+                \"+training.gradient_accumulation_steps=4\" \
                 \"experiment_name=${EXPERIMENT_NAME}\" \
                 \"output_dir=${OUTPUT_SUBDIR}\" \
                 \"wandb.mode=offline\""
@@ -347,7 +347,7 @@ run_finetune_experiment() {
                 \"training.task_type=${TASK_TYPE}\" \
                 \"training.num_epochs=10\" \
                 \"training.batch_size=16\" \
-                \"training.gradient_accumulation_steps=4\" \
+                \"+training.gradient_accumulation_steps=4\" \
                 \"experiment_name=${EXPERIMENT_NAME}\" \
                 \"output_dir=${OUTPUT_SUBDIR}\" \
                 \"wandb.mode=offline\""
