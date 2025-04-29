@@ -1,0 +1,971 @@
+SLURM_JOB_ID: 64423545
+SLURM_JOB_USER: vsc37132
+SLURM_JOB_ACCOUNT: intro_vsc37132
+SLURM_JOB_NAME: finetune_experiments
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: gpu_a100_debug
+SLURM_NNODES: 1
+SLURM_NODELIST: k28i22
+SLURM_JOB_CPUS_PER_NODE: 4
+SLURM_JOB_GPUS: 0
+Date: Tue Apr 29 20:26:40 CEST 2025
+Walltime: 00-00:30:00
+========================================================================
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/launcher:
+Default list overrides requires 'override' keyword.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
+
+  deprecation_warning(msg)
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py:197: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  return _run_code(code, main_globals, None,
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py:94: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  _run_hydra(
+Using Dataset: rokokot/question-type-and-complexity
+Cache Directory: /data/leuven/371/vsc37132/qtype-eval/data/cache
+[2025-04-29 20:27:03,853][__main__][INFO] - Configuration:
+seed: 42
+output_dir: /scratch/leuven/371/vsc37132/finetune_test_output
+experiment_name: test_finetune
+wandb:
+  project: multilingual-question-probing
+  entity: rokii-ku-leuven
+  mode: disabled
+slurm:
+  partition: gpu
+  time: '24:00:00'
+  gpus_per_node: 1
+  cpus_per_task: 4
+  mem_per_cpu: 8
+  job_name: ${experiment_name}
+  account: intro_vsc37132
+data:
+  dataset_name: rokokot/question-type-and-complexity
+  cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
+  vectors_dir: ./data/features
+  languages:
+  - en
+  train_language: null
+  eval_language: null
+model:
+  model_type: lm_probe
+  lm_name: cis-lmu/glot500-base
+  dropout: 0.1
+  freeze_model: false
+  finetune: true
+  layer_wise: false
+  layer_index: -1
+  num_outputs: 1
+  probe_hidden_size: 96
+training:
+  task_type: classification
+  batch_size: 16
+  num_epochs: 2
+  lr: 2.0e-05
+  weight_decay: 0.01
+  patience: 3
+  scheduler_factor: 0.5
+  scheduler_patience: 2
+  random_state: 42
+  num_workers: 4
+  debug_mode: true
+experiment:
+  type: lm_finetune
+  tasks: question_type
+  use_controls: false
+  control_index: null
+  num_controls: 3
+  eval_on_orig_test: true
+  cross_lingual: false
+  finetune: true
+  training:
+    patience: 5
+    scheduler_patience: 4
+    scheduler_factor: 0.8
+    dropout: 0.1
+    lr: 2.0e-05
+    batch_size: 8
+
+[2025-04-29 20:27:03,853][__main__][INFO] - Normalized task: question_type
+[2025-04-29 20:27:03,853][__main__][INFO] - Using explicit task_type from config: classification
+[2025-04-29 20:27:03,853][__main__][INFO] - Determined Task Type: classification
+[2025-04-29 20:27:03,857][__main__][INFO] - Running LM probe experiment for task 'question_type' (type: classification) on languages: ['en']
+[2025-04-29 20:27:03,858][__main__][INFO] - Processing language: en
+[2025-04-29 20:27:03,858][src.data.datasets][INFO] - Creating dataloaders for language: 'en', task: 'question_type', submetric: 'None'
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+[2025-04-29 20:27:06,163][src.data.datasets][INFO] - Successfully loaded tokenizer for cis-lmu/glot500-base
+[2025-04-29 20:27:06,163][src.data.datasets][INFO] - Loading 'base' dataset for en language (train)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-04-29 20:27:06,413][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-29 20:27:06,498][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-29 20:27:06,678][src.data.datasets][INFO] - Filtered from 7460 to 1192 examples for language 'en'
+[2025-04-29 20:27:06,686][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-04-29 20:27:06,687][src.data.datasets][INFO] - Loaded 1192 examples for en (train)
+[2025-04-29 20:27:06,689][src.data.datasets][INFO] - Loading 'base' dataset for en language (validation)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-04-29 20:27:06,730][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-29 20:27:06,784][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-29 20:27:06,803][src.data.datasets][INFO] - Filtered from 441 to 72 examples for language 'en'
+[2025-04-29 20:27:06,804][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-04-29 20:27:06,804][src.data.datasets][INFO] - Loaded 72 examples for en (validation)
+[2025-04-29 20:27:06,806][src.data.datasets][INFO] - Loading 'base' dataset for en language (test)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-04-29 20:27:06,846][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-29 20:27:06,897][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-29 20:27:06,916][src.data.datasets][INFO] - Filtered from 719 to 110 examples for language 'en'
+[2025-04-29 20:27:06,917][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-04-29 20:27:06,917][src.data.datasets][INFO] - Loaded 110 examples for en (test)
+[2025-04-29 20:27:06,920][src.data.datasets][INFO] - Loaded datasets: train=1192, val=72, test=110 examples
+[2025-04-29 20:27:06,920][src.data.datasets][INFO] - Task 'question_type' is classification: True
+[2025-04-29 20:27:06,920][src.data.datasets][INFO] - Getting feature name for task: 'question_type', submetric: 'None'
+[2025-04-29 20:27:06,920][src.data.datasets][INFO] - Selected feature name: 'question_type' for task: 'question_type'
+[2025-04-29 20:27:06,920][src.data.datasets][INFO] - Label statistics for question_type (feature: question_type):
+[2025-04-29 20:27:06,920][src.data.datasets][INFO] -   Label 0: 596 examples (50.0%)
+[2025-04-29 20:27:06,920][src.data.datasets][INFO] -   Label 1: 596 examples (50.0%)
+[2025-04-29 20:27:06,920][src.data.datasets][INFO] - Sample text: Did Nvidia skip the 800 series for graphics cards?...
+[2025-04-29 20:27:06,920][src.data.datasets][INFO] - Sample label: 1
+[2025-04-29 20:27:06,921][src.data.datasets][INFO] - Task 'question_type' is classification: True
+[2025-04-29 20:27:06,921][src.data.datasets][INFO] - Getting feature name for task: 'question_type', submetric: 'None'
+[2025-04-29 20:27:06,921][src.data.datasets][INFO] - Selected feature name: 'question_type' for task: 'question_type'
+[2025-04-29 20:27:06,921][src.data.datasets][INFO] - Label statistics for question_type (feature: question_type):
+[2025-04-29 20:27:06,921][src.data.datasets][INFO] -   Label 0: 36 examples (50.0%)
+[2025-04-29 20:27:06,921][src.data.datasets][INFO] -   Label 1: 36 examples (50.0%)
+[2025-04-29 20:27:06,921][src.data.datasets][INFO] - Sample text: We just did a deal for the rest of the month for 1...
+[2025-04-29 20:27:06,921][src.data.datasets][INFO] - Sample label: 0
+[2025-04-29 20:27:06,921][src.data.datasets][INFO] - Task 'question_type' is classification: True
+[2025-04-29 20:27:06,921][src.data.datasets][INFO] - Getting feature name for task: 'question_type', submetric: 'None'
+[2025-04-29 20:27:06,921][src.data.datasets][INFO] - Selected feature name: 'question_type' for task: 'question_type'
+[2025-04-29 20:27:06,921][src.data.datasets][INFO] - Label statistics for question_type (feature: question_type):
+[2025-04-29 20:27:06,921][src.data.datasets][INFO] -   Label 0: 55 examples (50.0%)
+[2025-04-29 20:27:06,921][src.data.datasets][INFO] -   Label 1: 55 examples (50.0%)
+[2025-04-29 20:27:06,921][src.data.datasets][INFO] - Sample text: What is the problem?...
+[2025-04-29 20:27:06,921][src.data.datasets][INFO] - Sample label: 0
+[2025-04-29 20:27:06,921][src.data.datasets][INFO] - Created datasets: train=1192, val=72, test=110
+[2025-04-29 20:27:06,921][src.data.datasets][INFO] - Creating dataloaders with 4 workers
+[2025-04-29 20:27:06,921][src.data.datasets][INFO] - Successfully created all dataloaders
+[2025-04-29 20:27:06,922][src.models.model_factory][INFO] - Creating lm_probe model for classification task
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at cis-lmu/glot500-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[2025-04-29 20:27:13,037][src.models.model_factory][INFO] - Loaded model from local cache: cis-lmu/glot500-base
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,038][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,039][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,040][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,041][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,042][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,043][src.models.model_factory][INFO] - finetuning the entire model
+[2025-04-29 20:27:13,045][src.models.model_factory][INFO] - Created classification head with 1 outputs
+[2025-04-29 20:27:13,045][src.models.model_factory][INFO] - Model configuration: layer-wise=False, layer_index=-1, freeze_model=False, finetune=True
+[2025-04-29 20:27:13,046][src.models.model_factory][INFO] - Model has 394,195,393 trainable parameters out of 394,195,393 total parameters
+[2025-04-29 20:27:13,046][__main__][INFO] - Successfully created model for en
+[2025-04-29 20:27:13,046][__main__][INFO] - finetuning with gradient accum steps: 1
+Epoch 1/2: [Epoch 1/2: [                              ] 1/75 batches, loss: 0.7217Epoch 1/2: [                              ] 2/75 batches, loss: 0.7097Epoch 1/2: [=                             ] 3/75 batches, loss: 0.6945Epoch 1/2: [=                             ] 4/75 batches, loss: 0.6914Epoch 1/2: [==                            ] 5/75 batches, loss: 0.6888Epoch 1/2: [==                            ] 6/75 batches, loss: 0.6902Epoch 1/2: [==                            ] 7/75 batches, loss: 0.6881Epoch 1/2: [===                           ] 8/75 batches, loss: 0.6889Epoch 1/2: [===                           ] 9/75 batches, loss: 0.6907Epoch 1/2: [====                          ] 10/75 batches, loss: 0.6895Epoch 1/2: [====                          ] 11/75 batches, loss: 0.6863Epoch 1/2: [====                          ] 12/75 batches, loss: 0.6858Epoch 1/2: [=====                         ] 13/75 batches, loss: 0.6854Epoch 1/2: [=====                         ] 14/75 batches, loss: 0.6858Epoch 1/2: [======                        ] 15/75 batches, loss: 0.6863Epoch 1/2: [======                        ] 16/75 batches, loss: 0.6851Epoch 1/2: [======                        ] 17/75 batches, loss: 0.6847Epoch 1/2: [=======                       ] 18/75 batches, loss: 0.6842Epoch 1/2: [=======                       ] 19/75 batches, loss: 0.6849Epoch 1/2: [========                      ] 20/75 batches, loss: 0.6853Epoch 1/2: [========                      ] 21/75 batches, loss: 0.6850Epoch 1/2: [========                      ] 22/75 batches, loss: 0.6864Epoch 1/2: [=========                     ] 23/75 batches, loss: 0.6856Epoch 1/2: [=========                     ] 24/75 batches, loss: 0.6859Epoch 1/2: [==========                    ] 25/75 batches, loss: 0.6850Epoch 1/2: [==========                    ] 26/75 batches, loss: 0.6863Epoch 1/2: [==========                    ] 27/75 batches, loss: 0.6854Epoch 1/2: [===========                   ] 28/75 batches, loss: 0.6851Epoch 1/2: [===========                   ] 29/75 batches, loss: 0.6852Epoch 1/2: [============                  ] 30/75 batches, loss: 0.6849Epoch 1/2: [============                  ] 31/75 batches, loss: 0.6857Epoch 1/2: [============                  ] 32/75 batches, loss: 0.6843Epoch 1/2: [=============                 ] 33/75 batches, loss: 0.6842Epoch 1/2: [=============                 ] 34/75 batches, loss: 0.6844Epoch 1/2: [==============                ] 35/75 batches, loss: 0.6850Epoch 1/2: [==============                ] 36/75 batches, loss: 0.6853Epoch 1/2: [==============                ] 37/75 batches, loss: 0.6857Epoch 1/2: [===============               ] 38/75 batches, loss: 0.6856Epoch 1/2: [===============               ] 39/75 batches, loss: 0.6855Epoch 1/2: [================              ] 40/75 batches, loss: 0.6856Epoch 1/2: [================              ] 41/75 batches, loss: 0.6854Epoch 1/2: [================              ] 42/75 batches, loss: 0.6853Epoch 1/2: [=================             ] 43/75 batches, loss: 0.6857Epoch 1/2: [=================             ] 44/75 batches, loss: 0.6855Epoch 1/2: [==================            ] 45/75 batches, loss: 0.6857Epoch 1/2: [==================            ] 46/75 batches, loss: 0.6857Epoch 1/2: [==================            ] 47/75 batches, loss: 0.6855Epoch 1/2: [===================           ] 48/75 batches, loss: 0.6855Epoch 1/2: [===================           ] 49/75 batches, loss: 0.6852Epoch 1/2: [====================          ] 50/75 batches, loss: 0.6849Epoch 1/2: [====================          ] 51/75 batches, loss: 0.6840Epoch 1/2: [====================          ] 52/75 batches, loss: 0.6830Epoch 1/2: [=====================         ] 53/75 batches, loss: 0.6825Epoch 1/2: [=====================         ] 54/75 batches, loss: 0.6820Epoch 1/2: [======================        ] 55/75 batches, loss: 0.6807Epoch 1/2: [======================        ] 56/75 batches, loss: 0.6795Epoch 1/2: [======================        ] 57/75 batches, loss: 0.6787Epoch 1/2: [=======================       ] 58/75 batches, loss: 0.6779Epoch 1/2: [=======================       ] 59/75 batches, loss: 0.6776Epoch 1/2: [========================      ] 60/75 batches, loss: 0.6752Epoch 1/2: [========================      ] 61/75 batches, loss: 0.6737Epoch 1/2: [========================      ] 62/75 batches, loss: 0.6725Epoch 1/2: [=========================     ] 63/75 batches, loss: 0.6712Epoch 1/2: [=========================     ] 64/75 batches, loss: 0.6698Epoch 1/2: [==========================    ] 65/75 batches, loss: 0.6680Epoch 1/2: [==========================    ] 66/75 batches, loss: 0.6669Epoch 1/2: [==========================    ] 67/75 batches, loss: 0.6661Epoch 1/2: [===========================   ] 68/75 batches, loss: 0.6639Epoch 1/2: [===========================   ] 69/75 batches, loss: 0.6614Epoch 1/2: [============================  ] 70/75 batches, loss: 0.6597Epoch 1/2: [============================  ] 71/75 batches, loss: 0.6576Epoch 1/2: [============================  ] 72/75 batches, loss: 0.6566Epoch 1/2: [============================= ] 73/75 batches, loss: 0.6550Epoch 1/2: [============================= ] 74/75 batches, loss: 0.6538Epoch 1/2: [==============================] 75/75 batches, loss: 0.6524
+[2025-04-29 20:27:24,088][src.training.lm_trainer][INFO] - Epoch 1/2, Train Loss: 0.6524
+[2025-04-29 20:27:24,343][src.training.lm_trainer][INFO] - Epoch 1/2, Val Loss: 0.5793, Metrics: {'accuracy': 0.9305555555555556, 'f1': 0.935064935064935}
+Epoch 2/2: [Epoch 2/2: [                              ] 1/75 batches, loss: 0.5354Epoch 2/2: [                              ] 2/75 batches, loss: 0.5665Epoch 2/2: [=                             ] 3/75 batches, loss: 0.5361Epoch 2/2: [=                             ] 4/75 batches, loss: 0.5500Epoch 2/2: [==                            ] 5/75 batches, loss: 0.5708Epoch 2/2: [==                            ] 6/75 batches, loss: 0.5843Epoch 2/2: [==                            ] 7/75 batches, loss: 0.5909Epoch 2/2: [===                           ] 8/75 batches, loss: 0.5915Epoch 2/2: [===                           ] 9/75 batches, loss: 0.5944Epoch 2/2: [====                          ] 10/75 batches, loss: 0.5845Epoch 2/2: [====                          ] 11/75 batches, loss: 0.5795Epoch 2/2: [====                          ] 12/75 batches, loss: 0.5697Epoch 2/2: [=====                         ] 13/75 batches, loss: 0.5626Epoch 2/2: [=====                         ] 14/75 batches, loss: 0.5570Epoch 2/2: [======                        ] 15/75 batches, loss: 0.5523Epoch 2/2: [======                        ] 16/75 batches, loss: 0.5530Epoch 2/2: [======                        ] 17/75 batches, loss: 0.5492Epoch 2/2: [=======                       ] 18/75 batches, loss: 0.5439Epoch 2/2: [=======                       ] 19/75 batches, loss: 0.5450Epoch 2/2: [========                      ] 20/75 batches, loss: 0.5467Epoch 2/2: [========                      ] 21/75 batches, loss: 0.5459Epoch 2/2: [========                      ] 22/75 batches, loss: 0.5460Epoch 2/2: [=========                     ] 23/75 batches, loss: 0.5477Epoch 2/2: [=========                     ] 24/75 batches, loss: 0.5466Epoch 2/2: [==========                    ] 25/75 batches, loss: 0.5482Epoch 2/2: [==========                    ] 26/75 batches, loss: 0.5456Epoch 2/2: [==========                    ] 27/75 batches, loss: 0.5449Epoch 2/2: [===========                   ] 28/75 batches, loss: 0.5439Epoch 2/2: [===========                   ] 29/75 batches, loss: 0.5420Epoch 2/2: [============                  ] 30/75 batches, loss: 0.5371Epoch 2/2: [============                  ] 31/75 batches, loss: 0.5313Epoch 2/2: [============                  ] 32/75 batches, loss: 0.5260Epoch 2/2: [=============                 ] 33/75 batches, loss: 0.5209Epoch 2/2: [=============                 ] 34/75 batches, loss: 0.5139Epoch 2/2: [==============                ] 35/75 batches, loss: 0.5097Epoch 2/2: [==============                ] 36/75 batches, loss: 0.5041Epoch 2/2: [==============                ] 37/75 batches, loss: 0.5023Epoch 2/2: [===============               ] 38/75 batches, loss: 0.4958Epoch 2/2: [===============               ] 39/75 batches, loss: 0.4879Epoch 2/2: [================              ] 40/75 batches, loss: 0.4798Epoch 2/2: [================              ] 41/75 batches, loss: 0.4772Epoch 2/2: [================              ] 42/75 batches, loss: 0.4725Epoch 2/2: [=================             ] 43/75 batches, loss: 0.4677Epoch 2/2: [=================             ] 44/75 batches, loss: 0.4642Epoch 2/2: [==================            ] 45/75 batches, loss: 0.4598Epoch 2/2: [==================            ] 46/75 batches, loss: 0.4563Epoch 2/2: [==================            ] 47/75 batches, loss: 0.4517Epoch 2/2: [===================           ] 48/75 batches, loss: 0.4481Epoch 2/2: [===================           ] 49/75 batches, loss: 0.4443Epoch 2/2: [====================          ] 50/75 batches, loss: 0.4387Epoch 2/2: [====================          ] 51/75 batches, loss: 0.4329Epoch 2/2: [====================          ] 52/75 batches, loss: 0.4272Epoch 2/2: [=====================         ] 53/75 batches, loss: 0.4219Epoch 2/2: [=====================         ] 54/75 batches, loss: 0.4164Epoch 2/2: [======================        ] 55/75 batches, loss: 0.4109Epoch 2/2: [======================        ] 56/75 batches, loss: 0.4055Epoch 2/2: [======================        ] 57/75 batches, loss: 0.3999Epoch 2/2: [=======================       ] 58/75 batches, loss: 0.3956Epoch 2/2: [=======================       ] 59/75 batches, loss: 0.3911Epoch 2/2: [========================      ] 60/75 batches, loss: 0.3859Epoch 2/2: [========================      ] 61/75 batches, loss: 0.3809Epoch 2/2: [========================      ] 62/75 batches, loss: 0.3760Epoch 2/2: [=========================     ] 63/75 batches, loss: 0.3713Epoch 2/2: [=========================     ] 64/75 batches, loss: 0.3682Epoch 2/2: [==========================    ] 65/75 batches, loss: 0.3642Epoch 2/2: [==========================    ] 66/75 batches, loss: 0.3600Epoch 2/2: [==========================    ] 67/75 batches, loss: 0.3554Epoch 2/2: [===========================   ] 68/75 batches, loss: 0.3519Epoch 2/2: [===========================   ] 69/75 batches, loss: 0.3485Epoch 2/2: [============================  ] 70/75 batches, loss: 0.3442Epoch 2/2: [============================  ] 71/75 batches, loss: 0.3431Epoch 2/2: [============================  ] 72/75 batches, loss: 0.3403Epoch 2/2: [============================= ] 73/75 batches, loss: 0.3383Epoch 2/2: [============================= ] 74/75 batches, loss: 0.3368Epoch 2/2: [==============================] 75/75 batches, loss: 0.3347
+[2025-04-29 20:27:32,272][src.training.lm_trainer][INFO] - Epoch 2/2, Train Loss: 0.3347
+[2025-04-29 20:27:32,530][src.training.lm_trainer][INFO] - Epoch 2/2, Val Loss: 0.2120, Metrics: {'accuracy': 0.9444444444444444, 'f1': 0.9473684210526315}
+[2025-04-29 20:27:32,941][src.training.lm_trainer][INFO] - Training completed in 17.44 seconds
+[2025-04-29 20:27:32,941][src.training.lm_trainer][INFO] - Loading best model for final evaluation
+[2025-04-29 20:27:35,874][src.training.lm_trainer][INFO] - Final evaluation - Train metrics: {'accuracy': 0.9958053691275168, 'f1': 0.9958228905597326}
+[2025-04-29 20:27:35,875][src.training.lm_trainer][INFO] - Final evaluation - Validation metrics: {'accuracy': 0.9444444444444444, 'f1': 0.9473684210526315}
+[2025-04-29 20:27:35,875][src.training.lm_trainer][INFO] - Final evaluation - Test metrics: {'accuracy': 0.9636363636363636, 'f1': 0.9642857142857143}
+[2025-04-29 20:27:37,560][src.training.lm_trainer][INFO] - Model saved to /scratch/leuven/371/vsc37132/finetune_test_output/en/model.pt
+Test experiment completed successfully. Proceeding with full experiments.
+Running main finetuning experiments (non-control)...
+Running experiment: finetune_question_type_ar
+Command: python -m src.experiments.run_experiment             "hydra.job.chdir=False"             "hydra.run.dir=."             "experiment=finetune"             "experiment.tasks=question_type"             "model=glot500_finetune"             "model.lm_name=cis-lmu/glot500-base"             "model.dropout=0.1"             "model.freeze_model=false"             "model.finetune=true"             "data.languages=[ar]"             "data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache"             "training.task_type=classification"             "training.num_epochs=10"             "training.batch_size=16"             "training.lr=2e-5"             "training.gradient_accumulation_steps=2"                          "experiment_name=finetune_question_type_ar"             "output_dir=/scratch/leuven/371/vsc37132/finetune_output/question_type/ar"             "wandb.mode=offline"
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/launcher:
+Default list overrides requires 'override' keyword.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
+
+  deprecation_warning(msg)
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py:197: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  return _run_code(code, main_globals, None,
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py:94: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  _run_hydra(
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 390, in _apply_overrides_to_config
+    OmegaConf.update(cfg, key, value, merge=True)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/omegaconf.py", line 741, in update
+    root.__setattr__(last_key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 337, in __setattr__
+    raise e
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 334, in __setattr__
+    self.__set_impl(key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 318, in __set_impl
+    self._set_item_impl(key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/basecontainer.py", line 549, in _set_item_impl
+    self._validate_set(key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 180, in _validate_set
+    target = self._get_node(key) if key is not None else self
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 475, in _get_node
+    self._validate_get(key)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 164, in _validate_get
+    self._format_and_raise(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/base.py", line 231, in _format_and_raise
+    format_and_raise(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/_utils.py", line 899, in format_and_raise
+    _raise(ex, cause)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/_utils.py", line 797, in _raise
+    raise ex.with_traceback(sys.exc_info()[2])  # set env var OC_CAUSE=1 for full trace
+omegaconf.errors.ConfigAttributeError: Key 'gradient_accumulation_steps' is not in struct
+    full_key: training.gradient_accumulation_steps
+    object_type=dict
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+    raise ex
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 105, in run
+    cfg = self.compose_config(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 594, in compose_config
+    cfg = self.config_loader.load_configuration(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 142, in load_configuration
+    return self._load_configuration_impl(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 276, in _load_configuration_impl
+    ConfigLoaderImpl._apply_overrides_to_config(config_overrides, cfg)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 392, in _apply_overrides_to_config
+    raise ConfigCompositionException(
+hydra.errors.ConfigCompositionException: Could not override 'training.gradient_accumulation_steps'.
+To append to your config use +training.gradient_accumulation_steps=2
+Using Dataset: rokokot/question-type-and-complexity
+Cache Directory: /data/leuven/371/vsc37132/qtype-eval/data/cache
+Error in experiment finetune_question_type_ar
+Running experiment: finetune_complexity_ar
+Command: python -m src.experiments.run_experiment             "hydra.job.chdir=False"             "hydra.run.dir=."             "experiment=finetune"             "experiment.tasks=complexity"             "model=glot500_finetune"             "model.lm_name=cis-lmu/glot500-base"             "model.dropout=0.1"             "model.freeze_model=false"             "model.finetune=true"             "data.languages=[ar]"             "data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache"             "training.task_type=regression"             "training.num_epochs=10"             "training.batch_size=16"             "training.lr=2e-5"             "training.gradient_accumulation_steps=2"                          "experiment_name=finetune_complexity_ar"             "output_dir=/scratch/leuven/371/vsc37132/finetune_output/complexity/ar"             "wandb.mode=offline"
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/launcher:
+Default list overrides requires 'override' keyword.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
+
+  deprecation_warning(msg)
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py:197: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  return _run_code(code, main_globals, None,
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py:94: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  _run_hydra(
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 390, in _apply_overrides_to_config
+    OmegaConf.update(cfg, key, value, merge=True)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/omegaconf.py", line 741, in update
+    root.__setattr__(last_key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 337, in __setattr__
+    raise e
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 334, in __setattr__
+    self.__set_impl(key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 318, in __set_impl
+    self._set_item_impl(key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/basecontainer.py", line 549, in _set_item_impl
+    self._validate_set(key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 180, in _validate_set
+    target = self._get_node(key) if key is not None else self
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 475, in _get_node
+    self._validate_get(key)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 164, in _validate_get
+    self._format_and_raise(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/base.py", line 231, in _format_and_raise
+    format_and_raise(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/_utils.py", line 899, in format_and_raise
+    _raise(ex, cause)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/_utils.py", line 797, in _raise
+    raise ex.with_traceback(sys.exc_info()[2])  # set env var OC_CAUSE=1 for full trace
+omegaconf.errors.ConfigAttributeError: Key 'gradient_accumulation_steps' is not in struct
+    full_key: training.gradient_accumulation_steps
+    object_type=dict
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+    raise ex
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 105, in run
+    cfg = self.compose_config(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 594, in compose_config
+    cfg = self.config_loader.load_configuration(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 142, in load_configuration
+    return self._load_configuration_impl(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 276, in _load_configuration_impl
+    ConfigLoaderImpl._apply_overrides_to_config(config_overrides, cfg)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 392, in _apply_overrides_to_config
+    raise ConfigCompositionException(
+hydra.errors.ConfigCompositionException: Could not override 'training.gradient_accumulation_steps'.
+To append to your config use +training.gradient_accumulation_steps=2
+Using Dataset: rokokot/question-type-and-complexity
+Cache Directory: /data/leuven/371/vsc37132/qtype-eval/data/cache
+Error in experiment finetune_complexity_ar
+Running experiment: finetune_question_type_en
+Command: python -m src.experiments.run_experiment             "hydra.job.chdir=False"             "hydra.run.dir=."             "experiment=finetune"             "experiment.tasks=question_type"             "model=glot500_finetune"             "model.lm_name=cis-lmu/glot500-base"             "model.dropout=0.1"             "model.freeze_model=false"             "model.finetune=true"             "data.languages=[en]"             "data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache"             "training.task_type=classification"             "training.num_epochs=10"             "training.batch_size=16"             "training.lr=2e-5"             "training.gradient_accumulation_steps=2"             +training.debug_mode=true             "experiment_name=finetune_question_type_en"             "output_dir=/scratch/leuven/371/vsc37132/finetune_output/question_type/en"             "wandb.mode=offline"
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/launcher:
+Default list overrides requires 'override' keyword.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
+
+  deprecation_warning(msg)
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py:197: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  return _run_code(code, main_globals, None,
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py:94: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  _run_hydra(
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 390, in _apply_overrides_to_config
+    OmegaConf.update(cfg, key, value, merge=True)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/omegaconf.py", line 741, in update
+    root.__setattr__(last_key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 337, in __setattr__
+    raise e
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 334, in __setattr__
+    self.__set_impl(key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 318, in __set_impl
+    self._set_item_impl(key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/basecontainer.py", line 549, in _set_item_impl
+    self._validate_set(key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 180, in _validate_set
+    target = self._get_node(key) if key is not None else self
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 475, in _get_node
+    self._validate_get(key)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 164, in _validate_get
+    self._format_and_raise(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/base.py", line 231, in _format_and_raise
+    format_and_raise(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/_utils.py", line 899, in format_and_raise
+    _raise(ex, cause)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/_utils.py", line 797, in _raise
+    raise ex.with_traceback(sys.exc_info()[2])  # set env var OC_CAUSE=1 for full trace
+omegaconf.errors.ConfigAttributeError: Key 'gradient_accumulation_steps' is not in struct
+    full_key: training.gradient_accumulation_steps
+    object_type=dict
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+    raise ex
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 105, in run
+    cfg = self.compose_config(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 594, in compose_config
+    cfg = self.config_loader.load_configuration(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 142, in load_configuration
+    return self._load_configuration_impl(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 276, in _load_configuration_impl
+    ConfigLoaderImpl._apply_overrides_to_config(config_overrides, cfg)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 392, in _apply_overrides_to_config
+    raise ConfigCompositionException(
+hydra.errors.ConfigCompositionException: Could not override 'training.gradient_accumulation_steps'.
+To append to your config use +training.gradient_accumulation_steps=2
+Using Dataset: rokokot/question-type-and-complexity
+Cache Directory: /data/leuven/371/vsc37132/qtype-eval/data/cache
+Error in experiment finetune_question_type_en
+Running experiment: finetune_complexity_en
+Command: python -m src.experiments.run_experiment             "hydra.job.chdir=False"             "hydra.run.dir=."             "experiment=finetune"             "experiment.tasks=complexity"             "model=glot500_finetune"             "model.lm_name=cis-lmu/glot500-base"             "model.dropout=0.1"             "model.freeze_model=false"             "model.finetune=true"             "data.languages=[en]"             "data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache"             "training.task_type=regression"             "training.num_epochs=10"             "training.batch_size=16"             "training.lr=2e-5"             "training.gradient_accumulation_steps=2"             +training.debug_mode=true             "experiment_name=finetune_complexity_en"             "output_dir=/scratch/leuven/371/vsc37132/finetune_output/complexity/en"             "wandb.mode=offline"
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/launcher:
+Default list overrides requires 'override' keyword.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
+
+  deprecation_warning(msg)
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py:197: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  return _run_code(code, main_globals, None,
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py:94: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  _run_hydra(
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 390, in _apply_overrides_to_config
+    OmegaConf.update(cfg, key, value, merge=True)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/omegaconf.py", line 741, in update
+    root.__setattr__(last_key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 337, in __setattr__
+    raise e
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 334, in __setattr__
+    self.__set_impl(key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 318, in __set_impl
+    self._set_item_impl(key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/basecontainer.py", line 549, in _set_item_impl
+    self._validate_set(key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 180, in _validate_set
+    target = self._get_node(key) if key is not None else self
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 475, in _get_node
+    self._validate_get(key)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 164, in _validate_get
+    self._format_and_raise(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/base.py", line 231, in _format_and_raise
+    format_and_raise(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/_utils.py", line 899, in format_and_raise
+    _raise(ex, cause)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/_utils.py", line 797, in _raise
+    raise ex.with_traceback(sys.exc_info()[2])  # set env var OC_CAUSE=1 for full trace
+omegaconf.errors.ConfigAttributeError: Key 'gradient_accumulation_steps' is not in struct
+    full_key: training.gradient_accumulation_steps
+    object_type=dict
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+    raise ex
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 105, in run
+    cfg = self.compose_config(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 594, in compose_config
+    cfg = self.config_loader.load_configuration(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 142, in load_configuration
+    return self._load_configuration_impl(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 276, in _load_configuration_impl
+    ConfigLoaderImpl._apply_overrides_to_config(config_overrides, cfg)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 392, in _apply_overrides_to_config
+    raise ConfigCompositionException(
+hydra.errors.ConfigCompositionException: Could not override 'training.gradient_accumulation_steps'.
+To append to your config use +training.gradient_accumulation_steps=2
+Using Dataset: rokokot/question-type-and-complexity
+Cache Directory: /data/leuven/371/vsc37132/qtype-eval/data/cache
+Error in experiment finetune_complexity_en
+Running experiment: finetune_question_type_fi
+Command: python -m src.experiments.run_experiment             "hydra.job.chdir=False"             "hydra.run.dir=."             "experiment=finetune"             "experiment.tasks=question_type"             "model=glot500_finetune"             "model.lm_name=cis-lmu/glot500-base"             "model.dropout=0.1"             "model.freeze_model=false"             "model.finetune=true"             "data.languages=[fi]"             "data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache"             "training.task_type=classification"             "training.num_epochs=10"             "training.batch_size=16"             "training.lr=2e-5"             "training.gradient_accumulation_steps=2"                          "experiment_name=finetune_question_type_fi"             "output_dir=/scratch/leuven/371/vsc37132/finetune_output/question_type/fi"             "wandb.mode=offline"
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/launcher:
+Default list overrides requires 'override' keyword.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
+
+  deprecation_warning(msg)
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py:197: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  return _run_code(code, main_globals, None,
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py:94: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  _run_hydra(
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 390, in _apply_overrides_to_config
+    OmegaConf.update(cfg, key, value, merge=True)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/omegaconf.py", line 741, in update
+    root.__setattr__(last_key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 337, in __setattr__
+    raise e
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 334, in __setattr__
+    self.__set_impl(key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 318, in __set_impl
+    self._set_item_impl(key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/basecontainer.py", line 549, in _set_item_impl
+    self._validate_set(key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 180, in _validate_set
+    target = self._get_node(key) if key is not None else self
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 475, in _get_node
+    self._validate_get(key)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 164, in _validate_get
+    self._format_and_raise(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/base.py", line 231, in _format_and_raise
+    format_and_raise(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/_utils.py", line 899, in format_and_raise
+    _raise(ex, cause)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/_utils.py", line 797, in _raise
+    raise ex.with_traceback(sys.exc_info()[2])  # set env var OC_CAUSE=1 for full trace
+omegaconf.errors.ConfigAttributeError: Key 'gradient_accumulation_steps' is not in struct
+    full_key: training.gradient_accumulation_steps
+    object_type=dict
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+    raise ex
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 105, in run
+    cfg = self.compose_config(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 594, in compose_config
+    cfg = self.config_loader.load_configuration(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 142, in load_configuration
+    return self._load_configuration_impl(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 276, in _load_configuration_impl
+    ConfigLoaderImpl._apply_overrides_to_config(config_overrides, cfg)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 392, in _apply_overrides_to_config
+    raise ConfigCompositionException(
+hydra.errors.ConfigCompositionException: Could not override 'training.gradient_accumulation_steps'.
+To append to your config use +training.gradient_accumulation_steps=2
+Using Dataset: rokokot/question-type-and-complexity
+Cache Directory: /data/leuven/371/vsc37132/qtype-eval/data/cache
+Error in experiment finetune_question_type_fi
+Running experiment: finetune_complexity_fi
+Command: python -m src.experiments.run_experiment             "hydra.job.chdir=False"             "hydra.run.dir=."             "experiment=finetune"             "experiment.tasks=complexity"             "model=glot500_finetune"             "model.lm_name=cis-lmu/glot500-base"             "model.dropout=0.1"             "model.freeze_model=false"             "model.finetune=true"             "data.languages=[fi]"             "data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache"             "training.task_type=regression"             "training.num_epochs=10"             "training.batch_size=16"             "training.lr=2e-5"             "training.gradient_accumulation_steps=2"                          "experiment_name=finetune_complexity_fi"             "output_dir=/scratch/leuven/371/vsc37132/finetune_output/complexity/fi"             "wandb.mode=offline"
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/launcher:
+Default list overrides requires 'override' keyword.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
+
+  deprecation_warning(msg)
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py:197: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  return _run_code(code, main_globals, None,
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py:94: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  _run_hydra(
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 390, in _apply_overrides_to_config
+    OmegaConf.update(cfg, key, value, merge=True)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/omegaconf.py", line 741, in update
+    root.__setattr__(last_key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 337, in __setattr__
+    raise e
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 334, in __setattr__
+    self.__set_impl(key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 318, in __set_impl
+    self._set_item_impl(key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/basecontainer.py", line 549, in _set_item_impl
+    self._validate_set(key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 180, in _validate_set
+    target = self._get_node(key) if key is not None else self
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 475, in _get_node
+    self._validate_get(key)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 164, in _validate_get
+    self._format_and_raise(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/base.py", line 231, in _format_and_raise
+    format_and_raise(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/_utils.py", line 899, in format_and_raise
+    _raise(ex, cause)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/_utils.py", line 797, in _raise
+    raise ex.with_traceback(sys.exc_info()[2])  # set env var OC_CAUSE=1 for full trace
+omegaconf.errors.ConfigAttributeError: Key 'gradient_accumulation_steps' is not in struct
+    full_key: training.gradient_accumulation_steps
+    object_type=dict
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+    raise ex
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 105, in run
+    cfg = self.compose_config(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 594, in compose_config
+    cfg = self.config_loader.load_configuration(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 142, in load_configuration
+    return self._load_configuration_impl(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 276, in _load_configuration_impl
+    ConfigLoaderImpl._apply_overrides_to_config(config_overrides, cfg)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 392, in _apply_overrides_to_config
+    raise ConfigCompositionException(
+hydra.errors.ConfigCompositionException: Could not override 'training.gradient_accumulation_steps'.
+To append to your config use +training.gradient_accumulation_steps=2
+Using Dataset: rokokot/question-type-and-complexity
+Cache Directory: /data/leuven/371/vsc37132/qtype-eval/data/cache
+Error in experiment finetune_complexity_fi
+Running control finetuning experiments...
+Running experiment: finetune_question_type_control1_ar
+Command: python -m src.experiments.run_experiment             "hydra.job.chdir=False"             "hydra.run.dir=."             "experiment=finetune"             "experiment.tasks=question_type"             "experiment.use_controls=true"             "experiment.control_index=1"             "model=glot500_finetune"             "model.lm_name=cis-lmu/glot500-base"             "model.dropout=0.1"             "model.freeze_model=false"             "model.finetune=true"             "data.languages=[ar]"             "data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache"             "training.task_type=classification"             "training.num_epochs=10"             "training.batch_size=16"             "training.lr=2e-5"             "training.gradient_accumulation_steps=2"                          "experiment_name=finetune_question_type_control1_ar"             "output_dir=/scratch/leuven/371/vsc37132/finetune_output/question_type/ar/control1"             "wandb.mode=offline"
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/launcher:
+Default list overrides requires 'override' keyword.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
+
+  deprecation_warning(msg)
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py:197: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  return _run_code(code, main_globals, None,
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py:94: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  _run_hydra(
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 390, in _apply_overrides_to_config
+    OmegaConf.update(cfg, key, value, merge=True)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/omegaconf.py", line 741, in update
+    root.__setattr__(last_key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 337, in __setattr__
+    raise e
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 334, in __setattr__
+    self.__set_impl(key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 318, in __set_impl
+    self._set_item_impl(key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/basecontainer.py", line 549, in _set_item_impl
+    self._validate_set(key, value)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 180, in _validate_set
+    target = self._get_node(key) if key is not None else self
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 475, in _get_node
+    self._validate_get(key)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/dictconfig.py", line 164, in _validate_get
+    self._format_and_raise(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/base.py", line 231, in _format_and_raise
+    format_and_raise(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/_utils.py", line 899, in format_and_raise
+    _raise(ex, cause)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/omegaconf/_utils.py", line 797, in _raise
+    raise ex.with_traceback(sys.exc_info()[2])  # set env var OC_CAUSE=1 for full trace
+omegaconf.errors.ConfigAttributeError: Key 'gradient_accumulation_steps' is not in struct
+    full_key: training.gradient_accumulation_steps
+    object_type=dict
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+    raise ex
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 105, in run
+    cfg = self.compose_config(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 594, in compose_config
+    cfg = self.config_loader.load_configuration(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 142, in load_configuration
+    return self._load_configuration_impl(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 276, in _load_configuration_impl
+    ConfigLoaderImpl._apply_overrides_to_config(config_overrides, cfg)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 392, in _apply_overrides_to_config
+    raise ConfigCompositionException(
+hydra.errors.ConfigCompositionException: Could not override 'training.gradient_accumulation_steps'.
+To append to your config use +training.gradient_accumulation_steps=2
+Using Dataset: rokokot/question-type-and-complexity
+Cache Directory: /data/leuven/371/vsc37132/qtype-eval/data/cache
+slurmstepd: error: *** JOB 64423545 ON k28i22 CANCELLED AT 2025-04-29T20:29:04 ***
