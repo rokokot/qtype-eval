@@ -17,11 +17,12 @@ class LMProbe(nn.Module):  # custom probe for language model representations
         model_name: str = "cis-lmu/glot500-base",
         task_type: str = "classification",
         num_outputs: int = 1,
-        dropout: float = 0.1,
+        dropout: float = 0.3,
         freeze_model: bool = False,
         layer_wise: bool = False,
         layer_index: int = -1,
-        finetune: bool = False
+        finetune: bool = False,
+        probe_hidden_size: int = 96
 
     ):
         super().__init__()
@@ -60,23 +61,24 @@ class LMProbe(nn.Module):  # custom probe for language model representations
 
 
         hidden_size = self.model.config.hidden_size
+        probe_size = probe_hidden_size or (hidden_size // 8)
 
         if task_type == "classification":
             self.head = nn.Sequential(
-                nn.Linear(hidden_size, hidden_size // 2),
+                nn.Linear(hidden_size, probe_size),
                 nn.ReLU(),
                 nn.Dropout(dropout),
-                nn.Linear(hidden_size // 2, num_outputs),
+                nn.Linear(probe_size, num_outputs),
                 nn.Sigmoid() if num_outputs == 1 else nn.Identity(),
             )
 
             logger.info(f"Created classification head with {num_outputs} outputs")
         else:
             self.head = nn.Sequential(
-                nn.Linear(hidden_size, hidden_size // 2),
+                nn.Linear(hidden_size, probe_size),
                 nn.ReLU(),
                 nn.Dropout(dropout),
-                nn.Linear(hidden_size // 2, num_outputs),
+                nn.Linear(probe_size, num_outputs),
             )
             logger.info(f"Created regression head with {num_outputs} outputs")
 
