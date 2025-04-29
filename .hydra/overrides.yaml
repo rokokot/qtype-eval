@@ -3,13 +3,13 @@
 - model=lm_probe
 - model.lm_name=cis-lmu/glot500-base
 - model.layer_wise=true
-- model.layer_index=2
+- model.layer_index=9
 - model.freeze_model=true
-- data.languages=[en]
+- data.languages=[id]
 - data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache
 - training.task_type=regression
 - training.num_epochs=10
 - training.batch_size=16
-- experiment_name=layer_2_complexity_en
-- output_dir=/scratch/leuven/371/vsc37132/layerwise_output/en/layer_2/complexity
+- experiment_name=layer_9_complexity_id
+- output_dir=/scratch/leuven/371/vsc37132/layerwise_output/id/layer_9/complexity
 - wandb.mode=offline

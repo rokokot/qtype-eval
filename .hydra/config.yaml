@@ -1,6 +1,6 @@
 seed: 42
-output_dir: /scratch/leuven/371/vsc37132/layerwise_output/en/layer_2/complexity
-experiment_name: layer_2_complexity_en
+output_dir: /scratch/leuven/371/vsc37132/layerwise_output/id/layer_9/complexity
+experiment_name: layer_9_complexity_id
 wandb:
   project: multilingual-question-probing
   entity: rokii-ku-leuven
@@ -18,7 +18,7 @@ data:
   cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
   vectors_dir: ./data/features
   languages:
-  - en
+  - id
   train_language: null
   eval_language: null
 model:
@@ -27,7 +27,7 @@ model:
   dropout: 0.3
   freeze_model: true
   layer_wise: true
-  layer_index: 2
+  layer_index: 9
   num_outputs: 1
 training:
   task_type: regression

@@ -142,7 +142,7 @@ run_standard_experiment() {
         \"model.layer_wise=true\" \
         \"model.layer_index=${LAYER}\" \
         \"model.freeze_model=true\" \
-        \"model.probe_hidden_size=96\" \
+        \"+model.probe_hidden_size=96\" \
         \"data.languages=[${LANGUAGE}]\" \
         \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
         \"training.task_type=${TASK_TYPE}\" \
@@ -217,7 +217,7 @@ run_control_experiment() {
         \"model=lm_probe\" \
         \"model.lm_name=cis-lmu/glot500-base\" \
         \"model.layer_wise=true\" \
-        \"model.probe_hidden_size=96\" \
+        \"+model.probe_hidden_size=96\" \
         \"model.layer_index=${LAYER}\" \
         \"model.freeze_model=true\" \
         \"experiment.use_controls=true\" \
