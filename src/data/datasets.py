@@ -302,13 +302,12 @@ def load_combined_dataset(
         raise
     
 def load_hf_data(language, task, split, control_index=None, cache_dir=None, submetric=None):
-    """
-    Load dataset with improved configuration handling and error reporting.
-    """
-    # Determine the correct config_name based on task and control_index
+    
     config_name = "base"
+    using_control = False
+
     if control_index is not None:
-        # For single_submetric task, use the submetric name to find the control config
+        using_control = True
         if task == "single_submetric" and submetric is not None:
             config_name = f"control_{submetric}_seed{control_index}"
         # For standard tasks
@@ -317,8 +316,7 @@ def load_hf_data(language, task, split, control_index=None, cache_dir=None, subm
         elif task in ["complexity", "complexity_score", "lang_norm_complexity_score"]:
             config_name = f"control_complexity_seed{control_index}"
         # For direct submetric tasks
-        elif task in ["avg_links_len", "avg_max_depth", "avg_subordinate_chain_len", 
-                      "avg_verb_edges", "lexical_density", "n_tokens"]:
+        elif task in ["avg_links_len", "avg_max_depth", "avg_subordinate_chain_len", "avg_verb_edges", "lexical_density", "n_tokens"]:
             config_name = f"control_{task}_seed{control_index}"
         else:
             logger.warning(f"Unknown task '{task}' for control data. Using base config.")

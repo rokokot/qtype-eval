@@ -55,10 +55,13 @@ class LMProbe(nn.Module):  # custom probe for language model representations
                 param.requires_grad = False
             logger.info("Language model parameters frozen")
         elif finetune:
-            logger.info('finetuning the entire model')
+            for param in self.model.parameters():
+                param.requires_grad = True
+                logger.info('finetuning the entire model')
         else:
+            for param in self.model.parameters():
+                param.requires_grad = True
             logger.info('training probe with unfrozen model')
-
 
         hidden_size = self.model.config.hidden_size
         probe_size = probe_hidden_size or (hidden_size // 8)
@@ -86,7 +89,16 @@ class LMProbe(nn.Module):  # custom probe for language model representations
         self.num_outputs = num_outputs
         self.layer_wise = layer_wise
         self.layer_index = layer_index
-        logger.info(f"layer-wise probing: {layer_wise}, layer index: {layer_index}")
+        self.freeze_model = freeze_model
+        self.finetune = finetune
+        logger.info(f"Model configuration: layer-wise={layer_wise}, layer_index={layer_index}, freeze_model={freeze_model}, finetune={finetune}")
+
+        trainable_params = sum(p.numel() for p in self.parameters() if p.requires_grad)
+        total_params = sum(p.numel() for p in self.parameters())
+        logger.info(f"Model has {trainable_params:,} trainable parameters out of {total_params:,} total parameters")
+
+
+
 
     def forward(self, input_ids, attention_mask, token_type_ids=None, **kwargs):
         if hasattr(self, 'layer_wise') and self.layer_wise and hasattr(self, 'layer_index'):
@@ -99,7 +111,11 @@ class LMProbe(nn.Module):  # custom probe for language model representations
             )
             
             hidden_states = outputs.hidden_states
-            layer_output = hidden_states[self.layer_index]
+            if self.layer_index >= len(hidden_states) or self.layer_index < -len(hidden_states):
+                logger.warning(f"Layer index {self.layer_index} is out of bounds. Using last layer instead.")
+                layer_output = hidden_states[-1]
+            else:
+                layer_output = hidden_states[self.layer_index]
             sentence_repr = layer_output[:, 0, :]
         else:
             outputs = self.model(

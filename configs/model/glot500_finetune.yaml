@@ -1,4 +1,4 @@
-# configs/model/lm_finetune.yaml
+# configs/model/glot500_finetune.yaml
 model_type: "lm_probe"
 lm_name: "cis-lmu/glot500-base"
 dropout: 0.1
@@ -7,3 +7,4 @@ finetune: true
 layer_wise: false
 layer_index: -1
 num_outputs: 1
+probe_hidden_size: 96  
