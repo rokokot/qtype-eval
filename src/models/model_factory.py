@@ -18,31 +18,24 @@ class LMProbe(nn.Module):  # custom probe for language model representations
         task_type: str = "classification",
         num_outputs: int = 1,
         dropout: float = 0.3,
-        freeze_model: bool = False,
-        layer_wise: bool = False,
+        freeze_model: bool = True,
+        layer_wise: bool = True,
         layer_index: int = -1,
         finetune: bool = False,
-        probe_hidden_size: int = 96
+        probe_hidden_size: int = None
 
     ):
         super().__init__()
 
         try:
             local_only = os.environ.get("TRANSFORMERS_OFFLINE", "0") == "1"
-        
-            try:
-                if local_only:
-                    self.model = AutoModel.from_pretrained(
-                        model_name, 
-                        local_files_only=True,  # Force using cached version
-                        cache_dir=os.environ.get("HF_HOME", None)
-                    )
-                    logger.info(f"Loaded model from local cache: {model_name}")
-                else:
-                    self.model = AutoModel.from_pretrained(model_name)
-            except Exception as e:
-                logger.error(f"Error loading model {model_name}: {e}")
-                raise
+            
+            self.model = AutoModel.from_pretrained(
+                model_name, 
+                local_files_only=local_only,
+                cache_dir=os.environ.get("HF_HOME", None)
+            )
+            logger.info(f"Loaded model from {'local cache' if local_only else 'online'}: {model_name}")
 
         except Exception as e:
             logger.error(f"Error loading model {model_name}: {e}")
@@ -50,7 +43,6 @@ class LMProbe(nn.Module):  # custom probe for language model representations
         
 
         if freeze_model and not finetune:
-
             for param in self.model.parameters():
                 param.requires_grad = False
             logger.info("Language model parameters frozen")
@@ -64,24 +56,23 @@ class LMProbe(nn.Module):  # custom probe for language model representations
             logger.info('training probe with unfrozen model')
 
         hidden_size = self.model.config.hidden_size
-        probe_size = probe_hidden_size or (hidden_size // 8)
 
         if task_type == "classification":
             self.head = nn.Sequential(
-                nn.Linear(hidden_size, probe_size),
+                nn.Linear(hidden_size, probe_hidden_size),
                 nn.ReLU(),
                 nn.Dropout(dropout),
-                nn.Linear(probe_size, num_outputs),
+                nn.Linear(probe_hidden_size, num_outputs),
                 nn.Sigmoid() if num_outputs == 1 else nn.Identity(),
             )
-
             logger.info(f"Created classification head with {num_outputs} outputs")
-        else:
+        else: 
             self.head = nn.Sequential(
-                nn.Linear(hidden_size, probe_size),
+                nn.Linear(hidden_size, probe_hidden_size),
                 nn.ReLU(),
                 nn.Dropout(dropout),
-                nn.Linear(probe_size, num_outputs),
+                nn.Linear(probe_hidden_size, num_outputs),
+                nn.Sigmoid()  
             )
             logger.info(f"Created regression head with {num_outputs} outputs")
 
@@ -91,6 +82,7 @@ class LMProbe(nn.Module):  # custom probe for language model representations
         self.layer_index = layer_index
         self.freeze_model = freeze_model
         self.finetune = finetune
+
         logger.info(f"Model configuration: layer-wise={layer_wise}, layer_index={layer_index}, freeze_model={freeze_model}, finetune={finetune}")
 
         trainable_params = sum(p.numel() for p in self.parameters() if p.requires_grad)
@@ -101,8 +93,7 @@ class LMProbe(nn.Module):  # custom probe for language model representations
 
 
     def forward(self, input_ids, attention_mask, token_type_ids=None, **kwargs):
-        if hasattr(self, 'layer_wise') and self.layer_wise and hasattr(self, 'layer_index'):
-            
+        if self.layer_wise and hasattr(self, 'layer_index'):
             outputs = self.model(
                 input_ids=input_ids,
                 attention_mask=attention_mask,
@@ -111,22 +102,23 @@ class LMProbe(nn.Module):  # custom probe for language model representations
             )
             
             hidden_states = outputs.hidden_states
-            if self.layer_index >= len(hidden_states) or self.layer_index < -len(hidden_states):
-                logger.warning(f"Layer index {self.layer_index} is out of bounds. Using last layer instead.")
+            layer_index = self.layer_index if self.layer_index >= 0 else len(hidden_states) + self.layer_index
+            
+            if layer_index < 0 or layer_index >= len(hidden_states):
+                logger.warning(f"Layer index {self.layer_index} is out of bounds. Using last layer.")
                 layer_output = hidden_states[-1]
             else:
-                layer_output = hidden_states[self.layer_index]
+                layer_output = hidden_states[layer_index]
+            
             sentence_repr = layer_output[:, 0, :]
         else:
             outputs = self.model(
                 input_ids=input_ids,
                 attention_mask=attention_mask,
-                token_type_ids=token_type_ids if token_type_ids is not None else None,
-            )
+                token_type_ids=token_type_ids if token_type_ids is not None else None,)
             sentence_repr = outputs.last_hidden_state[:, 0, :]
-        outputs = self.head(sentence_repr)
         
-        return outputs
+        return self.head(sentence_repr)
 
 def create_model(model_type, task_type, **kwargs):
     logger.info(f"Creating {model_type} model for {task_type} task")
