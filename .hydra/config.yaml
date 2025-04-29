@@ -1,6 +1,6 @@
 seed: 42
-output_dir: /scratch/leuven/371/vsc37132/finetune_test/complexity/en
-experiment_name: test_finetune_complexity_en
+output_dir: /scratch/leuven/371/vsc37132/layerwise_output/ja/layer_7/complexity
+experiment_name: layer_7_complexity_ja
 wandb:
   project: multilingual-question-probing
   entity: rokii-ku-leuven
@@ -18,23 +18,22 @@ data:
   cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
   vectors_dir: ./data/features
   languages:
-  - en
+  - ja
   train_language: null
   eval_language: null
 model:
   model_type: lm_probe
   lm_name: cis-lmu/glot500-base
-  dropout: 0.1
+  dropout: 0.3
   freeze_model: false
-  finetune: true
-  layer_wise: false
-  layer_index: -1
+  layer_wise: true
+  layer_index: 7
   num_outputs: 1
 training:
   task_type: regression
-  batch_size: 4
-  num_epochs: 1
-  lr: 2.0e-05
+  batch_size: 16
+  num_epochs: 10
+  lr: 1.0e-05
   weight_decay: 0.01
   patience: 3
   scheduler_factor: 0.5
@@ -42,18 +41,17 @@ training:
   random_state: 42
   num_workers: 4
 experiment:
-  type: lm_finetune
+  type: lm_probe
   tasks: complexity
   use_controls: false
   control_index: null
   num_controls: 3
   eval_on_orig_test: true
   cross_lingual: false
-  finetune: true
+  task_type: regression
+  feature: lang_norm_complexity_score
   training:
     patience: 5
     scheduler_patience: 4
     scheduler_factor: 0.8
     dropout: 0.1
-    lr: 2.0e-05
-    batch_size: 8

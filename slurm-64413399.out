@@ -1,0 +1,742 @@
+SLURM_JOB_ID: 64413399
+SLURM_JOB_USER: vsc37132
+SLURM_JOB_ACCOUNT: intro_vsc37132
+SLURM_JOB_NAME: test_layerwise
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: gpu_a100_debug
+SLURM_NNODES: 1
+SLURM_NODELIST: k28i22
+SLURM_JOB_CPUS_PER_NODE: 4
+SLURM_JOB_GPUS: 0
+Date: Mon Apr 28 19:16:44 CEST 2025
+Walltime: 00-00:10:00
+========================================================================
+Channels:
+ - pytorch
+ - nvidia
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+
+==> WARNING: A newer version of conda exists. <==
+    current version: 25.1.1
+    latest version: 25.3.1
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+# All requested packages already installed.
+
+Requirement already satisfied: hydra-core in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (1.3.2)
+Requirement already satisfied: hydra-submitit-launcher in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (1.2.0)
+Requirement already satisfied: omegaconf<2.4,>=2.2 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from hydra-core) (2.3.0)
+Requirement already satisfied: antlr4-python3-runtime==4.9.* in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from hydra-core) (4.9.3)
+Requirement already satisfied: packaging in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from hydra-core) (24.2)
+Requirement already satisfied: submitit>=1.3.3 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from hydra-submitit-launcher) (1.5.2)
+Requirement already satisfied: PyYAML>=5.1.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from omegaconf<2.4,>=2.2->hydra-core) (6.0.2)
+Requirement already satisfied: cloudpickle>=1.2.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from submitit>=1.3.3->hydra-submitit-launcher) (3.1.1)
+Requirement already satisfied: typing_extensions>=3.7.4.2 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from submitit>=1.3.3->hydra-submitit-launcher) (4.12.2)
+Requirement already satisfied: transformers<4.36.0,>=4.30.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (4.35.2)
+Requirement already satisfied: torch in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (2.5.1)
+Requirement already satisfied: datasets in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (3.5.0)
+Requirement already satisfied: wandb in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (0.19.9)
+Requirement already satisfied: filelock in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (3.18.0)
+Requirement already satisfied: huggingface-hub<1.0,>=0.16.4 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (0.30.1)
+Requirement already satisfied: numpy>=1.17 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (1.26.4)
+Requirement already satisfied: packaging>=20.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (24.2)
+Requirement already satisfied: pyyaml>=5.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (6.0.2)
+Requirement already satisfied: regex!=2019.12.17 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (2024.11.6)
+Requirement already satisfied: requests in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (2.32.3)
+Requirement already satisfied: tokenizers<0.19,>=0.14 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (0.15.2)
+Requirement already satisfied: safetensors>=0.3.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (0.5.3)
+Requirement already satisfied: tqdm>=4.27 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (4.67.1)
+Requirement already satisfied: typing-extensions>=4.8.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from torch) (4.12.2)
+Requirement already satisfied: networkx in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from torch) (3.2.1)
+Requirement already satisfied: jinja2 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from torch) (3.1.6)
+Requirement already satisfied: fsspec in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from torch) (2024.12.0)
+Requirement already satisfied: sympy==1.13.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from torch) (1.13.1)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from sympy==1.13.1->torch) (1.3.0)
+Requirement already satisfied: pyarrow>=15.0.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from datasets) (19.0.1)
+Requirement already satisfied: dill<0.3.9,>=0.3.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from datasets) (0.3.8)
+Requirement already satisfied: pandas in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from datasets) (2.2.3)
+Requirement already satisfied: xxhash in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from datasets) (3.5.0)
+Requirement already satisfied: multiprocess<0.70.17 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from datasets) (0.70.16)
+Requirement already satisfied: aiohttp in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from datasets) (3.11.16)
+Requirement already satisfied: click!=8.0.0,>=7.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (8.1.8)
+Requirement already satisfied: docker-pycreds>=0.4.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (0.4.0)
+Requirement already satisfied: eval-type-backport in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (0.2.2)
+Requirement already satisfied: gitpython!=3.1.29,>=1.0.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (3.1.44)
+Requirement already satisfied: platformdirs in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (4.3.7)
+Requirement already satisfied: protobuf!=4.21.0,!=5.28.0,<6,>=3.15.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (5.29.4)
+Requirement already satisfied: psutil>=5.0.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (7.0.0)
+Requirement already satisfied: pydantic<3 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (2.11.1)
+Requirement already satisfied: sentry-sdk>=2.0.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (2.25.0)
+Requirement already satisfied: setproctitle in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (1.3.5)
+Requirement already satisfied: setuptools in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (78.1.0)
+Requirement already satisfied: six>=1.4.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from docker-pycreds>=0.4.0->wandb) (1.17.0)
+Requirement already satisfied: aiohappyeyeballs>=2.3.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (2.6.1)
+Requirement already satisfied: aiosignal>=1.1.2 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (1.3.2)
+Requirement already satisfied: async-timeout<6.0,>=4.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (5.0.1)
+Requirement already satisfied: attrs>=17.3.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (25.3.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (1.5.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (6.3.1)
+Requirement already satisfied: propcache>=0.2.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (0.3.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (1.18.3)
+Requirement already satisfied: gitdb<5,>=4.0.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from gitpython!=3.1.29,>=1.0.0->wandb) (4.0.12)
+Requirement already satisfied: annotated-types>=0.6.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from pydantic<3->wandb) (0.7.0)
+Requirement already satisfied: pydantic-core==2.33.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from pydantic<3->wandb) (2.33.0)
+Requirement already satisfied: typing-inspection>=0.4.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from pydantic<3->wandb) (0.4.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from requests->transformers<4.36.0,>=4.30.0) (3.4.1)
+Requirement already satisfied: idna<4,>=2.5 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from requests->transformers<4.36.0,>=4.30.0) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from requests->transformers<4.36.0,>=4.30.0) (2.3.0)
+Requirement already satisfied: certifi>=2017.4.17 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from requests->transformers<4.36.0,>=4.30.0) (2025.1.31)
+Requirement already satisfied: MarkupSafe>=2.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from jinja2->torch) (3.0.2)
+Requirement already satisfied: python-dateutil>=2.8.2 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from pandas->datasets) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from pandas->datasets) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from pandas->datasets) (2025.2)
+Requirement already satisfied: smmap<6,>=3.0.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from gitdb<5,>=4.0.1->gitpython!=3.1.29,>=1.0.0->wandb) (5.0.2)
+Environment variables:
+PYTHONPATH=:/data/leuven/371/vsc37132/qtype-eval:/vsc-hard-mounts/leuven-user/371/vsc37132:/vsc-hard-mounts/leuven-user/371/vsc37132:/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval
+HF_HOME=/data/leuven/371/vsc37132/qtype-eval/data/cache
+TRANSFORMERS_OFFLINE=1
+HF_DATASETS_OFFLINE=1
+HYDRA_JOB_CHDIR=False
+GPU information:
+Mon Apr 28 19:17:07 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 560.35.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100 80GB PCIe          On  |   00000000:17:00.0 Off |                    0 |
+| N/A   35C    P0             44W /  300W |       1MiB /  81920MiB |      0%   E. Process |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Python executable: /data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/bin/python
+PyTorch CUDA available: True
+===============================================
+Running layer 2 experiment for en
+===============================================
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/launcher:
+Default list overrides requires 'override' keyword.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
+
+  deprecation_warning(msg)
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py:197: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  return _run_code(code, main_globals, None,
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py:94: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  _run_hydra(
+Using Dataset: rokokot/question-type-and-complexity
+Cache Directory: /data/leuven/371/vsc37132/qtype-eval/data/cache
+[2025-04-28 19:17:36,563][__main__][INFO] - Configuration:
+seed: 42
+output_dir: /data/leuven/371/vsc37132/layerwise_test_output/en/layer_2
+experiment_name: layer_2_question_type_en
+wandb:
+  project: multilingual-question-probing
+  entity: rokii-ku-leuven
+  mode: offline
+slurm:
+  partition: gpu
+  time: '24:00:00'
+  gpus_per_node: 1
+  cpus_per_task: 4
+  mem_per_cpu: 8
+  job_name: ${experiment_name}
+  account: intro_vsc37132
+data:
+  dataset_name: rokokot/question-type-and-complexity
+  cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
+  vectors_dir: ./data/features
+  languages:
+  - en
+  train_language: null
+  eval_language: null
+model:
+  model_type: lm_probe
+  lm_name: cis-lmu/glot500-base
+  dropout: 0.3
+  freeze_model: false
+  layer_wise: true
+  layer_index: 2
+  num_outputs: 1
+training:
+  task_type: classification
+  batch_size: 16
+  num_epochs: 3
+  lr: 1.0e-05
+  weight_decay: 0.01
+  patience: 3
+  scheduler_factor: 0.5
+  scheduler_patience: 2
+  random_state: 42
+  num_workers: 4
+experiment:
+  type: lm_probe
+  tasks: question_type
+  use_controls: false
+  control_index: null
+  num_controls: 3
+  eval_on_orig_test: true
+  cross_lingual: false
+
+[2025-04-28 19:17:36,564][__main__][INFO] - Normalized task: question_type
+[2025-04-28 19:17:36,564][__main__][INFO] - Using explicit task_type from config: classification
+[2025-04-28 19:17:36,564][__main__][INFO] - Determined Task Type: classification
+[2025-04-28 19:17:36,573][__main__][INFO] - Running LM probe experiment for task 'question_type' (type: classification) on languages: ['en']
+[2025-04-28 19:17:36,575][__main__][INFO] - Processing language: en
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Tracking run with wandb version 0.19.9
+wandb: W&B syncing is set to `offline` in this directory.  
+wandb: Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+[2025-04-28 19:17:38,800][src.data.datasets][INFO] - Creating dataloaders for language: 'en', task: 'question_type', submetric: 'None'
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+[2025-04-28 19:17:40,982][src.data.datasets][INFO] - Successfully loaded tokenizer for cis-lmu/glot500-base
+[2025-04-28 19:17:40,982][src.data.datasets][INFO] - Loading 'base' dataset for en language (train)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-04-28 19:17:41,064][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-28 19:17:41,100][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-28 19:17:41,192][src.data.datasets][INFO] - Filtered from 7460 to 1192 examples for language 'en'
+[2025-04-28 19:17:41,200][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-04-28 19:17:41,200][src.data.datasets][INFO] - Loaded 1192 examples for en (train)
+[2025-04-28 19:17:41,201][src.data.datasets][INFO] - Loading 'base' dataset for en language (validation)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-04-28 19:17:41,217][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-28 19:17:41,246][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-28 19:17:41,258][src.data.datasets][INFO] - Filtered from 441 to 72 examples for language 'en'
+[2025-04-28 19:17:41,259][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-04-28 19:17:41,259][src.data.datasets][INFO] - Loaded 72 examples for en (validation)
+[2025-04-28 19:17:41,260][src.data.datasets][INFO] - Loading 'base' dataset for en language (test)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-04-28 19:17:41,278][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-28 19:17:41,306][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-28 19:17:41,317][src.data.datasets][INFO] - Filtered from 719 to 110 examples for language 'en'
+[2025-04-28 19:17:41,318][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-04-28 19:17:41,318][src.data.datasets][INFO] - Loaded 110 examples for en (test)
+[2025-04-28 19:17:41,319][src.data.datasets][INFO] - Loaded datasets: train=1192, val=72, test=110 examples
+[2025-04-28 19:17:41,320][src.data.datasets][INFO] - Task 'question_type' is classification: True
+[2025-04-28 19:17:41,320][src.data.datasets][INFO] - Getting feature name for task: 'question_type', submetric: 'None'
+[2025-04-28 19:17:41,320][src.data.datasets][INFO] - Selected feature name: 'question_type' for task: 'question_type'
+[2025-04-28 19:17:41,320][src.data.datasets][INFO] - Label statistics for question_type (feature: question_type):
+[2025-04-28 19:17:41,320][src.data.datasets][INFO] -   Label 0: 596 examples (50.0%)
+[2025-04-28 19:17:41,320][src.data.datasets][INFO] -   Label 1: 596 examples (50.0%)
+[2025-04-28 19:17:41,320][src.data.datasets][INFO] - Sample text: Did Nvidia skip the 800 series for graphics cards?...
+[2025-04-28 19:17:41,321][src.data.datasets][INFO] - Sample label: 1
+[2025-04-28 19:17:41,321][src.data.datasets][INFO] - Task 'question_type' is classification: True
+[2025-04-28 19:17:41,321][src.data.datasets][INFO] - Getting feature name for task: 'question_type', submetric: 'None'
+[2025-04-28 19:17:41,321][src.data.datasets][INFO] - Selected feature name: 'question_type' for task: 'question_type'
+[2025-04-28 19:17:41,321][src.data.datasets][INFO] - Label statistics for question_type (feature: question_type):
+[2025-04-28 19:17:41,321][src.data.datasets][INFO] -   Label 0: 36 examples (50.0%)
+[2025-04-28 19:17:41,321][src.data.datasets][INFO] -   Label 1: 36 examples (50.0%)
+[2025-04-28 19:17:41,321][src.data.datasets][INFO] - Sample text: We just did a deal for the rest of the month for 1...
+[2025-04-28 19:17:41,321][src.data.datasets][INFO] - Sample label: 0
+[2025-04-28 19:17:41,321][src.data.datasets][INFO] - Task 'question_type' is classification: True
+[2025-04-28 19:17:41,322][src.data.datasets][INFO] - Getting feature name for task: 'question_type', submetric: 'None'
+[2025-04-28 19:17:41,322][src.data.datasets][INFO] - Selected feature name: 'question_type' for task: 'question_type'
+[2025-04-28 19:17:41,322][src.data.datasets][INFO] - Label statistics for question_type (feature: question_type):
+[2025-04-28 19:17:41,322][src.data.datasets][INFO] -   Label 0: 55 examples (50.0%)
+[2025-04-28 19:17:41,322][src.data.datasets][INFO] -   Label 1: 55 examples (50.0%)
+[2025-04-28 19:17:41,322][src.data.datasets][INFO] - Sample text: What is the problem?...
+[2025-04-28 19:17:41,322][src.data.datasets][INFO] - Sample label: 0
+[2025-04-28 19:17:41,322][src.data.datasets][INFO] - Created datasets: train=1192, val=72, test=110
+[2025-04-28 19:17:41,322][src.data.datasets][INFO] - Creating dataloaders with 4 workers
+[2025-04-28 19:17:41,322][src.data.datasets][INFO] - Successfully created all dataloaders
+[2025-04-28 19:17:41,323][src.models.model_factory][INFO] - Creating lm_probe model for classification task
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at cis-lmu/glot500-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[2025-04-28 19:17:45,158][src.models.model_factory][INFO] - Loaded model from local cache: cis-lmu/glot500-base
+[2025-04-28 19:17:45,159][src.models.model_factory][INFO] - training probe with unfrozen model
+[2025-04-28 19:17:45,161][src.models.model_factory][INFO] - Created classification head with 1 outputs
+[2025-04-28 19:17:45,161][src.models.model_factory][INFO] - layer-wise probing: True, layer index: 2
+[2025-04-28 19:17:45,161][__main__][INFO] - Successfully created model for en
+Epoch 1/3:   0%|          | 0/75 [00:00<?, ?it/s]Epoch 1/3:   1%|▏         | 1/75 [00:00<01:12,  1.02it/s]Epoch 1/3:   4%|▍         | 3/75 [00:01<00:21,  3.41it/s]Epoch 1/3:   7%|▋         | 5/75 [00:01<00:11,  5.87it/s]Epoch 1/3:   9%|▉         | 7/75 [00:01<00:08,  8.25it/s]Epoch 1/3:  12%|█▏        | 9/75 [00:01<00:06, 10.43it/s]Epoch 1/3:  15%|█▍        | 11/75 [00:01<00:05, 12.32it/s]Epoch 1/3:  17%|█▋        | 13/75 [00:01<00:04, 13.89it/s]Epoch 1/3:  20%|██        | 15/75 [00:01<00:03, 15.05it/s]Epoch 1/3:  23%|██▎       | 17/75 [00:01<00:03, 16.00it/s]Epoch 1/3:  25%|██▌       | 19/75 [00:01<00:03, 16.71it/s]Epoch 1/3:  28%|██▊       | 21/75 [00:02<00:03, 17.27it/s]Epoch 1/3:  31%|███       | 23/75 [00:02<00:02, 17.64it/s]Epoch 1/3:  33%|███▎      | 25/75 [00:02<00:02, 17.89it/s]Epoch 1/3:  36%|███▌      | 27/75 [00:02<00:02, 18.07it/s]Epoch 1/3:  39%|███▊      | 29/75 [00:02<00:02, 18.21it/s]Epoch 1/3:  41%|████▏     | 31/75 [00:02<00:02, 18.32it/s]Epoch 1/3:  44%|████▍     | 33/75 [00:02<00:02, 18.36it/s]Epoch 1/3:  47%|████▋     | 35/75 [00:02<00:02, 18.43it/s]Epoch 1/3:  49%|████▉     | 37/75 [00:02<00:02, 18.47it/s]Epoch 1/3:  52%|█████▏    | 39/75 [00:03<00:01, 18.49it/s]Epoch 1/3:  55%|█████▍    | 41/75 [00:03<00:01, 18.53it/s]Epoch 1/3:  57%|█████▋    | 43/75 [00:03<00:01, 18.52it/s]Epoch 1/3:  60%|██████    | 45/75 [00:03<00:01, 18.52it/s]Epoch 1/3:  63%|██████▎   | 47/75 [00:03<00:01, 18.53it/s]Epoch 1/3:  65%|██████▌   | 49/75 [00:03<00:01, 18.52it/s]Epoch 1/3:  68%|██████▊   | 51/75 [00:03<00:01, 18.51it/s]Epoch 1/3:  71%|███████   | 53/75 [00:03<00:01, 18.52it/s]Epoch 1/3:  73%|███████▎  | 55/75 [00:03<00:01, 18.55it/s]Epoch 1/3:  76%|███████▌  | 57/75 [00:03<00:00, 18.52it/s]Epoch 1/3:  79%|███████▊  | 59/75 [00:04<00:00, 18.56it/s]Epoch 1/3:  81%|████████▏ | 61/75 [00:04<00:00, 18.57it/s]Epoch 1/3:  84%|████████▍ | 63/75 [00:04<00:00, 18.55it/s]Epoch 1/3:  87%|████████▋ | 65/75 [00:04<00:00, 18.56it/s]Epoch 1/3:  89%|████████▉ | 67/75 [00:04<00:00, 18.54it/s]Epoch 1/3:  92%|█████████▏| 69/75 [00:04<00:00, 18.55it/s]Epoch 1/3:  95%|█████████▍| 71/75 [00:04<00:00, 18.59it/s]Epoch 1/3:  97%|█████████▋| 73/75 [00:04<00:00, 18.59it/s]Epoch 1/3: 100%|██████████| 75/75 [00:04<00:00, 18.20it/s]Epoch 1/3: 100%|██████████| 75/75 [00:05<00:00, 14.99it/s]
+[2025-04-28 19:17:51,930][src.training.lm_trainer][INFO] - Epoch 1/3, Train Loss: 0.6967
+[2025-04-28 19:17:52,177][src.training.lm_trainer][INFO] - Epoch 1/3, Val Loss: 0.6927, Metrics: {'accuracy': 0.5, 'f1': 0.0}
+Epoch 2/3:   0%|          | 0/75 [00:00<?, ?it/s]Epoch 2/3:   1%|▏         | 1/75 [00:00<00:10,  7.13it/s]Epoch 2/3:   4%|▍         | 3/75 [00:00<00:05, 13.09it/s]Epoch 2/3:   7%|▋         | 5/75 [00:00<00:04, 15.41it/s]Epoch 2/3:   9%|▉         | 7/75 [00:00<00:04, 16.61it/s]Epoch 2/3:  12%|█▏        | 9/75 [00:00<00:03, 17.31it/s]Epoch 2/3:  15%|█▍        | 11/75 [00:00<00:03, 17.72it/s]Epoch 2/3:  17%|█▋        | 13/75 [00:00<00:03, 17.95it/s]Epoch 2/3:  20%|██        | 15/75 [00:00<00:03, 18.15it/s]Epoch 2/3:  23%|██▎       | 17/75 [00:01<00:03, 18.24it/s]Epoch 2/3:  25%|██▌       | 19/75 [00:01<00:03, 18.31it/s]Epoch 2/3:  28%|██▊       | 21/75 [00:01<00:02, 18.38it/s]Epoch 2/3:  31%|███       | 23/75 [00:01<00:02, 18.43it/s]Epoch 2/3:  33%|███▎      | 25/75 [00:01<00:02, 18.46it/s]Epoch 2/3:  36%|███▌      | 27/75 [00:01<00:02, 18.51it/s]Epoch 2/3:  39%|███▊      | 29/75 [00:01<00:02, 18.52it/s]Epoch 2/3:  41%|████▏     | 31/75 [00:01<00:02, 18.49it/s]Epoch 2/3:  44%|████▍     | 33/75 [00:01<00:02, 18.41it/s]Epoch 2/3:  47%|████▋     | 35/75 [00:01<00:02, 18.45it/s]Epoch 2/3:  49%|████▉     | 37/75 [00:02<00:02, 18.48it/s]Epoch 2/3:  52%|█████▏    | 39/75 [00:02<00:01, 18.50it/s]Epoch 2/3:  55%|█████▍    | 41/75 [00:02<00:01, 18.50it/s]Epoch 2/3:  57%|█████▋    | 43/75 [00:02<00:01, 18.51it/s]Epoch 2/3:  60%|██████    | 45/75 [00:02<00:01, 18.52it/s]Epoch 2/3:  63%|██████▎   | 47/75 [00:02<00:01, 18.53it/s]Epoch 2/3:  65%|██████▌   | 49/75 [00:02<00:01, 18.53it/s]Epoch 2/3:  68%|██████▊   | 51/75 [00:02<00:01, 18.53it/s]Epoch 2/3:  71%|███████   | 53/75 [00:02<00:01, 18.52it/s]Epoch 2/3:  73%|███████▎  | 55/75 [00:03<00:01, 18.53it/s]Epoch 2/3:  76%|███████▌  | 57/75 [00:03<00:00, 18.53it/s]Epoch 2/3:  79%|███████▊  | 59/75 [00:03<00:00, 18.52it/s]Epoch 2/3:  81%|████████▏ | 61/75 [00:03<00:00, 18.54it/s]Epoch 2/3:  84%|████████▍ | 63/75 [00:03<00:00, 18.55it/s]Epoch 2/3:  87%|████████▋ | 65/75 [00:03<00:00, 18.54it/s]Epoch 2/3:  89%|████████▉ | 67/75 [00:03<00:00, 18.54it/s]Epoch 2/3:  92%|█████████▏| 69/75 [00:03<00:00, 18.55it/s]Epoch 2/3:  95%|█████████▍| 71/75 [00:03<00:00, 18.55it/s]Epoch 2/3:  97%|█████████▋| 73/75 [00:04<00:00, 18.55it/s]Epoch 2/3: 100%|██████████| 75/75 [00:04<00:00, 18.05it/s]
+[2025-04-28 19:17:56,755][src.training.lm_trainer][INFO] - Epoch 2/3, Train Loss: 0.6293
+[2025-04-28 19:17:57,005][src.training.lm_trainer][INFO] - Epoch 2/3, Val Loss: 0.4700, Metrics: {'accuracy': 0.9027777777777778, 'f1': 0.8955223880597015}
+Epoch 3/3:   0%|          | 0/75 [00:00<?, ?it/s]Epoch 3/3:   1%|▏         | 1/75 [00:00<00:10,  6.84it/s]Epoch 3/3:   4%|▍         | 3/75 [00:00<00:05, 12.85it/s]Epoch 3/3:   7%|▋         | 5/75 [00:00<00:04, 15.26it/s]Epoch 3/3:   9%|▉         | 7/75 [00:00<00:04, 16.50it/s]Epoch 3/3:  12%|█▏        | 9/75 [00:00<00:03, 17.21it/s]Epoch 3/3:  15%|█▍        | 11/75 [00:00<00:03, 17.63it/s]Epoch 3/3:  17%|█▋        | 13/75 [00:00<00:03, 17.93it/s]Epoch 3/3:  20%|██        | 15/75 [00:00<00:03, 18.12it/s]Epoch 3/3:  23%|██▎       | 17/75 [00:01<00:03, 18.26it/s]Epoch 3/3:  25%|██▌       | 19/75 [00:01<00:03, 18.36it/s]Epoch 3/3:  28%|██▊       | 21/75 [00:01<00:02, 18.41it/s]Epoch 3/3:  31%|███       | 23/75 [00:01<00:02, 18.46it/s]Epoch 3/3:  33%|███▎      | 25/75 [00:01<00:02, 18.49it/s]Epoch 3/3:  36%|███▌      | 27/75 [00:01<00:02, 18.49it/s]Epoch 3/3:  39%|███▊      | 29/75 [00:01<00:02, 18.49it/s]Epoch 3/3:  41%|████▏     | 31/75 [00:01<00:02, 18.50it/s]Epoch 3/3:  44%|████▍     | 33/75 [00:01<00:02, 18.50it/s]Epoch 3/3:  47%|████▋     | 35/75 [00:01<00:02, 18.51it/s]Epoch 3/3:  49%|████▉     | 37/75 [00:02<00:02, 18.50it/s]Epoch 3/3:  52%|█████▏    | 39/75 [00:02<00:01, 18.51it/s]Epoch 3/3:  55%|█████▍    | 41/75 [00:02<00:01, 18.50it/s]Epoch 3/3:  57%|█████▋    | 43/75 [00:02<00:01, 18.50it/s]Epoch 3/3:  60%|██████    | 45/75 [00:02<00:01, 18.49it/s]Epoch 3/3:  63%|██████▎   | 47/75 [00:02<00:01, 18.48it/s]Epoch 3/3:  65%|██████▌   | 49/75 [00:02<00:01, 18.32it/s]Epoch 3/3:  68%|██████▊   | 51/75 [00:02<00:01, 18.39it/s]Epoch 3/3:  71%|███████   | 53/75 [00:02<00:01, 18.44it/s]Epoch 3/3:  73%|███████▎  | 55/75 [00:03<00:01, 18.47it/s]Epoch 3/3:  76%|███████▌  | 57/75 [00:03<00:00, 18.48it/s]Epoch 3/3:  79%|███████▊  | 59/75 [00:03<00:00, 18.53it/s]Epoch 3/3:  81%|████████▏ | 61/75 [00:03<00:00, 18.52it/s]Epoch 3/3:  84%|████████▍ | 63/75 [00:03<00:00, 18.52it/s]Epoch 3/3:  87%|████████▋ | 65/75 [00:03<00:00, 18.52it/s]Epoch 3/3:  89%|████████▉ | 67/75 [00:03<00:00, 18.52it/s]Epoch 3/3:  92%|█████████▏| 69/75 [00:03<00:00, 18.55it/s]Epoch 3/3:  95%|█████████▍| 71/75 [00:03<00:00, 18.56it/s]Epoch 3/3:  97%|█████████▋| 73/75 [00:04<00:00, 18.56it/s]Epoch 3/3: 100%|██████████| 75/75 [00:04<00:00, 17.92it/s]
+[2025-04-28 19:18:01,609][src.training.lm_trainer][INFO] - Epoch 3/3, Train Loss: 0.2928
+[2025-04-28 19:18:01,864][src.training.lm_trainer][INFO] - Epoch 3/3, Val Loss: 0.3102, Metrics: {'accuracy': 0.8888888888888888, 'f1': 0.8918918918918919}
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    best_val_accuracy ▁██
+wandb:          best_val_f1 ▁██
+wandb:        best_val_loss █▄▁
+wandb:                epoch ▁▁▅▅██
+wandb:  final_test_accuracy ▁
+wandb:        final_test_f1 ▁
+wandb: final_train_accuracy ▁
+wandb:       final_train_f1 ▁
+wandb:   final_val_accuracy ▁
+wandb:         final_val_f1 ▁
+wandb:        learning_rate ▁▁▁
+wandb:           train_loss █▇▁
+wandb:           train_time ▁
+wandb:         val_accuracy ▁██
+wandb:               val_f1 ▁██
+wandb:             val_loss █▄▁
+wandb: 
+wandb: Run summary:
+wandb:    best_val_accuracy 0.88889
+wandb:          best_val_f1 0.89189
+wandb:        best_val_loss 0.31023
+wandb:                epoch 3
+wandb:  final_test_accuracy 0.89091
+wandb:        final_test_f1 0.88679
+wandb: final_train_accuracy 0.99497
+wandb:       final_train_f1 0.99497
+wandb:   final_val_accuracy 0.88889
+wandb:         final_val_f1 0.89189
+wandb:        learning_rate 1e-05
+wandb:           train_loss 0.29281
+wandb:           train_time 15.28615
+wandb:         val_accuracy 0.88889
+wandb:               val_f1 0.89189
+wandb:             val_loss 0.31023
+wandb: 
+wandb: You can sync this run to the cloud by running:
+wandb: wandb sync /data/leuven/371/vsc37132/wandb/wandb/offline-run-20250428_191736-6z8isgs6
+wandb: Find logs at: /data/leuven/371/vsc37132/wandb/wandb/offline-run-20250428_191736-6z8isgs6/logs
+Layer 2 experiment for en completed successfully
+===============================================
+Running layer 6 experiment for en
+===============================================
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/launcher:
+Default list overrides requires 'override' keyword.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
+
+  deprecation_warning(msg)
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py:197: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  return _run_code(code, main_globals, None,
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py:94: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  _run_hydra(
+Using Dataset: rokokot/question-type-and-complexity
+Cache Directory: /data/leuven/371/vsc37132/qtype-eval/data/cache
+[2025-04-28 19:18:20,968][__main__][INFO] - Configuration:
+seed: 42
+output_dir: /data/leuven/371/vsc37132/layerwise_test_output/en/layer_6
+experiment_name: layer_6_question_type_en
+wandb:
+  project: multilingual-question-probing
+  entity: rokii-ku-leuven
+  mode: offline
+slurm:
+  partition: gpu
+  time: '24:00:00'
+  gpus_per_node: 1
+  cpus_per_task: 4
+  mem_per_cpu: 8
+  job_name: ${experiment_name}
+  account: intro_vsc37132
+data:
+  dataset_name: rokokot/question-type-and-complexity
+  cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
+  vectors_dir: ./data/features
+  languages:
+  - en
+  train_language: null
+  eval_language: null
+model:
+  model_type: lm_probe
+  lm_name: cis-lmu/glot500-base
+  dropout: 0.3
+  freeze_model: false
+  layer_wise: true
+  layer_index: 6
+  num_outputs: 1
+training:
+  task_type: classification
+  batch_size: 16
+  num_epochs: 3
+  lr: 1.0e-05
+  weight_decay: 0.01
+  patience: 3
+  scheduler_factor: 0.5
+  scheduler_patience: 2
+  random_state: 42
+  num_workers: 4
+experiment:
+  type: lm_probe
+  tasks: question_type
+  use_controls: false
+  control_index: null
+  num_controls: 3
+  eval_on_orig_test: true
+  cross_lingual: false
+
+[2025-04-28 19:18:20,968][__main__][INFO] - Normalized task: question_type
+[2025-04-28 19:18:20,968][__main__][INFO] - Using explicit task_type from config: classification
+[2025-04-28 19:18:20,968][__main__][INFO] - Determined Task Type: classification
+[2025-04-28 19:18:20,975][__main__][INFO] - Running LM probe experiment for task 'question_type' (type: classification) on languages: ['en']
+[2025-04-28 19:18:20,977][__main__][INFO] - Processing language: en
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Tracking run with wandb version 0.19.9
+wandb: W&B syncing is set to `offline` in this directory.  
+wandb: Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+[2025-04-28 19:18:22,098][src.data.datasets][INFO] - Creating dataloaders for language: 'en', task: 'question_type', submetric: 'None'
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+[2025-04-28 19:18:24,428][src.data.datasets][INFO] - Successfully loaded tokenizer for cis-lmu/glot500-base
+[2025-04-28 19:18:24,429][src.data.datasets][INFO] - Loading 'base' dataset for en language (train)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-04-28 19:18:24,459][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-28 19:18:24,486][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-28 19:18:24,555][src.data.datasets][INFO] - Filtered from 7460 to 1192 examples for language 'en'
+[2025-04-28 19:18:24,567][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-04-28 19:18:24,568][src.data.datasets][INFO] - Loaded 1192 examples for en (train)
+[2025-04-28 19:18:24,569][src.data.datasets][INFO] - Loading 'base' dataset for en language (validation)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-04-28 19:18:24,585][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-28 19:18:24,612][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-28 19:18:24,623][src.data.datasets][INFO] - Filtered from 441 to 72 examples for language 'en'
+[2025-04-28 19:18:24,625][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-04-28 19:18:24,625][src.data.datasets][INFO] - Loaded 72 examples for en (validation)
+[2025-04-28 19:18:24,626][src.data.datasets][INFO] - Loading 'base' dataset for en language (test)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-04-28 19:18:24,645][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-28 19:18:24,673][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-28 19:18:24,684][src.data.datasets][INFO] - Filtered from 719 to 110 examples for language 'en'
+[2025-04-28 19:18:24,686][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-04-28 19:18:24,686][src.data.datasets][INFO] - Loaded 110 examples for en (test)
+[2025-04-28 19:18:24,687][src.data.datasets][INFO] - Loaded datasets: train=1192, val=72, test=110 examples
+[2025-04-28 19:18:24,688][src.data.datasets][INFO] - Task 'question_type' is classification: True
+[2025-04-28 19:18:24,688][src.data.datasets][INFO] - Getting feature name for task: 'question_type', submetric: 'None'
+[2025-04-28 19:18:24,688][src.data.datasets][INFO] - Selected feature name: 'question_type' for task: 'question_type'
+[2025-04-28 19:18:24,688][src.data.datasets][INFO] - Label statistics for question_type (feature: question_type):
+[2025-04-28 19:18:24,688][src.data.datasets][INFO] -   Label 0: 596 examples (50.0%)
+[2025-04-28 19:18:24,689][src.data.datasets][INFO] -   Label 1: 596 examples (50.0%)
+[2025-04-28 19:18:24,689][src.data.datasets][INFO] - Sample text: Did Nvidia skip the 800 series for graphics cards?...
+[2025-04-28 19:18:24,689][src.data.datasets][INFO] - Sample label: 1
+[2025-04-28 19:18:24,689][src.data.datasets][INFO] - Task 'question_type' is classification: True
+[2025-04-28 19:18:24,689][src.data.datasets][INFO] - Getting feature name for task: 'question_type', submetric: 'None'
+[2025-04-28 19:18:24,689][src.data.datasets][INFO] - Selected feature name: 'question_type' for task: 'question_type'
+[2025-04-28 19:18:24,689][src.data.datasets][INFO] - Label statistics for question_type (feature: question_type):
+[2025-04-28 19:18:24,689][src.data.datasets][INFO] -   Label 0: 36 examples (50.0%)
+[2025-04-28 19:18:24,689][src.data.datasets][INFO] -   Label 1: 36 examples (50.0%)
+[2025-04-28 19:18:24,689][src.data.datasets][INFO] - Sample text: We just did a deal for the rest of the month for 1...
+[2025-04-28 19:18:24,689][src.data.datasets][INFO] - Sample label: 0
+[2025-04-28 19:18:24,690][src.data.datasets][INFO] - Task 'question_type' is classification: True
+[2025-04-28 19:18:24,690][src.data.datasets][INFO] - Getting feature name for task: 'question_type', submetric: 'None'
+[2025-04-28 19:18:24,690][src.data.datasets][INFO] - Selected feature name: 'question_type' for task: 'question_type'
+[2025-04-28 19:18:24,690][src.data.datasets][INFO] - Label statistics for question_type (feature: question_type):
+[2025-04-28 19:18:24,690][src.data.datasets][INFO] -   Label 0: 55 examples (50.0%)
+[2025-04-28 19:18:24,690][src.data.datasets][INFO] -   Label 1: 55 examples (50.0%)
+[2025-04-28 19:18:24,690][src.data.datasets][INFO] - Sample text: What is the problem?...
+[2025-04-28 19:18:24,690][src.data.datasets][INFO] - Sample label: 0
+[2025-04-28 19:18:24,690][src.data.datasets][INFO] - Created datasets: train=1192, val=72, test=110
+[2025-04-28 19:18:24,690][src.data.datasets][INFO] - Creating dataloaders with 4 workers
+[2025-04-28 19:18:24,691][src.data.datasets][INFO] - Successfully created all dataloaders
+[2025-04-28 19:18:24,691][src.models.model_factory][INFO] - Creating lm_probe model for classification task
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at cis-lmu/glot500-base and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[2025-04-28 19:18:28,304][src.models.model_factory][INFO] - Loaded model from local cache: cis-lmu/glot500-base
+[2025-04-28 19:18:28,305][src.models.model_factory][INFO] - training probe with unfrozen model
+[2025-04-28 19:18:28,306][src.models.model_factory][INFO] - Created classification head with 1 outputs
+[2025-04-28 19:18:28,307][src.models.model_factory][INFO] - layer-wise probing: True, layer index: 6
+[2025-04-28 19:18:28,307][__main__][INFO] - Successfully created model for en
+Epoch 1/3:   0%|          | 0/75 [00:00<?, ?it/s]Epoch 1/3:   1%|▏         | 1/75 [00:00<01:09,  1.07it/s]Epoch 1/3:   4%|▍         | 3/75 [00:01<00:21,  3.37it/s]Epoch 1/3:   7%|▋         | 5/75 [00:01<00:12,  5.53it/s]Epoch 1/3:   9%|▉         | 7/75 [00:01<00:09,  7.38it/s]Epoch 1/3:  12%|█▏        | 9/75 [00:01<00:07,  8.97it/s]Epoch 1/3:  15%|█▍        | 11/75 [00:01<00:06, 10.26it/s]Epoch 1/3:  17%|█▋        | 13/75 [00:01<00:05, 11.24it/s]Epoch 1/3:  20%|██        | 15/75 [00:01<00:05, 11.88it/s]Epoch 1/3:  23%|██▎       | 17/75 [00:02<00:04, 12.46it/s]Epoch 1/3:  25%|██▌       | 19/75 [00:02<00:04, 12.89it/s]Epoch 1/3:  28%|██▊       | 21/75 [00:02<00:04, 13.20it/s]Epoch 1/3:  31%|███       | 23/75 [00:02<00:03, 13.42it/s]Epoch 1/3:  33%|███▎      | 25/75 [00:02<00:03, 13.59it/s]Epoch 1/3:  36%|███▌      | 27/75 [00:02<00:03, 13.71it/s]Epoch 1/3:  39%|███▊      | 29/75 [00:02<00:03, 13.79it/s]Epoch 1/3:  41%|████▏     | 31/75 [00:03<00:03, 13.83it/s]Epoch 1/3:  44%|████▍     | 33/75 [00:03<00:03, 13.86it/s]Epoch 1/3:  47%|████▋     | 35/75 [00:03<00:02, 13.90it/s]Epoch 1/3:  49%|████▉     | 37/75 [00:03<00:02, 13.93it/s]Epoch 1/3:  52%|█████▏    | 39/75 [00:03<00:02, 13.90it/s]Epoch 1/3:  55%|█████▍    | 41/75 [00:03<00:02, 13.91it/s]Epoch 1/3:  57%|█████▋    | 43/75 [00:03<00:02, 13.89it/s]Epoch 1/3:  60%|██████    | 45/75 [00:04<00:02, 13.89it/s]Epoch 1/3:  63%|██████▎   | 47/75 [00:04<00:02, 13.90it/s]Epoch 1/3:  65%|██████▌   | 49/75 [00:04<00:01, 13.94it/s]Epoch 1/3:  68%|██████▊   | 51/75 [00:04<00:01, 13.95it/s]Epoch 1/3:  71%|███████   | 53/75 [00:04<00:01, 13.95it/s]Epoch 1/3:  73%|███████▎  | 55/75 [00:04<00:01, 13.93it/s]Epoch 1/3:  76%|███████▌  | 57/75 [00:04<00:01, 13.95it/s]Epoch 1/3:  79%|███████▊  | 59/75 [00:05<00:01, 13.95it/s]Epoch 1/3:  81%|████████▏ | 61/75 [00:05<00:01, 13.96it/s]Epoch 1/3:  84%|████████▍ | 63/75 [00:05<00:00, 13.96it/s]Epoch 1/3:  87%|████████▋ | 65/75 [00:05<00:00, 13.97it/s]Epoch 1/3:  89%|████████▉ | 67/75 [00:05<00:00, 13.89it/s]Epoch 1/3:  92%|█████████▏| 69/75 [00:05<00:00, 13.92it/s]Epoch 1/3:  95%|█████████▍| 71/75 [00:05<00:00, 13.95it/s]Epoch 1/3:  97%|█████████▋| 73/75 [00:06<00:00, 13.97it/s]Epoch 1/3: 100%|██████████| 75/75 [00:06<00:00, 14.59it/s]Epoch 1/3: 100%|██████████| 75/75 [00:06<00:00, 11.92it/s]
+[2025-04-28 19:18:36,037][src.training.lm_trainer][INFO] - Epoch 1/3, Train Loss: 0.6962
+[2025-04-28 19:18:36,278][src.training.lm_trainer][INFO] - Epoch 1/3, Val Loss: 0.6928, Metrics: {'accuracy': 0.5, 'f1': 0.0}
+Epoch 2/3:   0%|          | 0/75 [00:00<?, ?it/s]Epoch 2/3:   1%|▏         | 1/75 [00:00<00:12,  5.97it/s]Epoch 2/3:   4%|▍         | 3/75 [00:00<00:06, 10.36it/s]Epoch 2/3:   7%|▋         | 5/75 [00:00<00:05, 11.93it/s]Epoch 2/3:   9%|▉         | 7/75 [00:00<00:05, 12.68it/s]Epoch 2/3:  12%|█▏        | 9/75 [00:00<00:05, 13.13it/s]Epoch 2/3:  15%|█▍        | 11/75 [00:00<00:04, 13.42it/s]Epoch 2/3:  17%|█▋        | 13/75 [00:01<00:04, 13.61it/s]Epoch 2/3:  20%|██        | 15/75 [00:01<00:04, 13.62it/s]Epoch 2/3:  23%|██▎       | 17/75 [00:01<00:04, 13.70it/s]Epoch 2/3:  25%|██▌       | 19/75 [00:01<00:04, 13.81it/s]Epoch 2/3:  28%|██▊       | 21/75 [00:01<00:03, 13.86it/s]Epoch 2/3:  31%|███       | 23/75 [00:01<00:03, 13.87it/s]Epoch 2/3:  33%|███▎      | 25/75 [00:01<00:03, 13.86it/s]Epoch 2/3:  36%|███▌      | 27/75 [00:02<00:03, 13.86it/s]Epoch 2/3:  39%|███▊      | 29/75 [00:02<00:03, 13.85it/s]Epoch 2/3:  41%|████▏     | 31/75 [00:02<00:03, 13.86it/s]Epoch 2/3:  44%|████▍     | 33/75 [00:02<00:03, 13.81it/s]Epoch 2/3:  47%|████▋     | 35/75 [00:02<00:02, 13.85it/s]Epoch 2/3:  49%|████▉     | 37/75 [00:02<00:02, 13.88it/s]Epoch 2/3:  52%|█████▏    | 39/75 [00:02<00:02, 13.90it/s]Epoch 2/3:  55%|█████▍    | 41/75 [00:03<00:02, 13.93it/s]Epoch 2/3:  57%|█████▋    | 43/75 [00:03<00:02, 13.94it/s]Epoch 2/3:  60%|██████    | 45/75 [00:03<00:02, 13.95it/s]Epoch 2/3:  63%|██████▎   | 47/75 [00:03<00:02, 13.92it/s]Epoch 2/3:  65%|██████▌   | 49/75 [00:03<00:01, 13.94it/s]Epoch 2/3:  68%|██████▊   | 51/75 [00:03<00:01, 13.95it/s]Epoch 2/3:  71%|███████   | 53/75 [00:03<00:01, 13.96it/s]Epoch 2/3:  73%|███████▎  | 55/75 [00:04<00:01, 13.96it/s]Epoch 2/3:  76%|███████▌  | 57/75 [00:04<00:01, 13.96it/s]Epoch 2/3:  79%|███████▊  | 59/75 [00:04<00:01, 13.94it/s]Epoch 2/3:  81%|████████▏ | 61/75 [00:04<00:01, 13.96it/s]Epoch 2/3:  84%|████████▍ | 63/75 [00:04<00:00, 13.96it/s]Epoch 2/3:  87%|████████▋ | 65/75 [00:04<00:00, 13.92it/s]Epoch 2/3:  89%|████████▉ | 67/75 [00:04<00:00, 13.93it/s]Epoch 2/3:  92%|█████████▏| 69/75 [00:05<00:00, 13.94it/s]Epoch 2/3:  95%|█████████▍| 71/75 [00:05<00:00, 13.96it/s]Epoch 2/3:  97%|█████████▋| 73/75 [00:05<00:00, 13.95it/s]Epoch 2/3: 100%|██████████| 75/75 [00:05<00:00, 14.69it/s]Epoch 2/3: 100%|██████████| 75/75 [00:05<00:00, 13.62it/s]
+[2025-04-28 19:18:42,198][src.training.lm_trainer][INFO] - Epoch 2/3, Train Loss: 0.6809
+[2025-04-28 19:18:42,463][src.training.lm_trainer][INFO] - Epoch 2/3, Val Loss: 0.6352, Metrics: {'accuracy': 0.9305555555555556, 'f1': 0.935064935064935}
+Epoch 3/3:   0%|          | 0/75 [00:00<?, ?it/s]Epoch 3/3:   1%|▏         | 1/75 [00:00<00:13,  5.43it/s]Epoch 3/3:   4%|▍         | 3/75 [00:00<00:07,  9.84it/s]Epoch 3/3:   7%|▋         | 5/75 [00:00<00:06, 11.55it/s]Epoch 3/3:   9%|▉         | 7/75 [00:00<00:05, 12.45it/s]Epoch 3/3:  12%|█▏        | 9/75 [00:00<00:05, 13.00it/s]Epoch 3/3:  15%|█▍        | 11/75 [00:00<00:04, 13.32it/s]Epoch 3/3:  17%|█▋        | 13/75 [00:01<00:04, 13.52it/s]Epoch 3/3:  20%|██        | 15/75 [00:01<00:04, 13.66it/s]Epoch 3/3:  23%|██▎       | 17/75 [00:01<00:04, 13.75it/s]Epoch 3/3:  25%|██▌       | 19/75 [00:01<00:04, 13.82it/s]Epoch 3/3:  28%|██▊       | 21/75 [00:01<00:03, 13.86it/s]Epoch 3/3:  31%|███       | 23/75 [00:01<00:03, 13.90it/s]Epoch 3/3:  33%|███▎      | 25/75 [00:01<00:03, 13.92it/s]Epoch 3/3:  36%|███▌      | 27/75 [00:02<00:03, 13.90it/s]Epoch 3/3:  39%|███▊      | 29/75 [00:02<00:03, 13.93it/s]Epoch 3/3:  41%|████▏     | 31/75 [00:02<00:03, 13.94it/s]Epoch 3/3:  44%|████▍     | 33/75 [00:02<00:03, 13.95it/s]Epoch 3/3:  47%|████▋     | 35/75 [00:02<00:02, 13.93it/s]Epoch 3/3:  49%|████▉     | 37/75 [00:02<00:02, 13.94it/s]Epoch 3/3:  52%|█████▏    | 39/75 [00:02<00:02, 13.94it/s]Epoch 3/3:  55%|█████▍    | 41/75 [00:03<00:02, 13.94it/s]Epoch 3/3:  57%|█████▋    | 43/75 [00:03<00:02, 13.92it/s]Epoch 3/3:  60%|██████    | 45/75 [00:03<00:02, 13.92it/s]Epoch 3/3:  63%|██████▎   | 47/75 [00:03<00:02, 13.94it/s]Epoch 3/3:  65%|██████▌   | 49/75 [00:03<00:01, 13.89it/s]Epoch 3/3:  68%|██████▊   | 51/75 [00:03<00:01, 13.88it/s]Epoch 3/3:  71%|███████   | 53/75 [00:03<00:01, 13.91it/s]Epoch 3/3:  73%|███████▎  | 55/75 [00:04<00:01, 13.92it/s]Epoch 3/3:  76%|███████▌  | 57/75 [00:04<00:01, 13.91it/s]Epoch 3/3:  79%|███████▊  | 59/75 [00:04<00:01, 13.89it/s]Epoch 3/3:  81%|████████▏ | 61/75 [00:04<00:01, 13.90it/s]Epoch 3/3:  84%|████████▍ | 63/75 [00:04<00:00, 13.92it/s]Epoch 3/3:  87%|████████▋ | 65/75 [00:04<00:00, 13.90it/s]Epoch 3/3:  89%|████████▉ | 67/75 [00:04<00:00, 13.90it/s]Epoch 3/3:  92%|█████████▏| 69/75 [00:05<00:00, 13.93it/s]Epoch 3/3:  95%|█████████▍| 71/75 [00:05<00:00, 13.94it/s]Epoch 3/3:  97%|█████████▋| 73/75 [00:05<00:00, 13.94it/s]Epoch 3/3: 100%|██████████| 75/75 [00:05<00:00, 14.67it/s]Epoch 3/3: 100%|██████████| 75/75 [00:05<00:00, 13.58it/s]
+[2025-04-28 19:18:48,400][src.training.lm_trainer][INFO] - Epoch 3/3, Train Loss: 0.3617
+[2025-04-28 19:18:48,675][src.training.lm_trainer][INFO] - Epoch 3/3, Val Loss: 0.1813, Metrics: {'accuracy': 0.9166666666666666, 'f1': 0.9142857142857143}
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    best_val_accuracy ▁██
+wandb:          best_val_f1 ▁██
+wandb:        best_val_loss █▇▁
+wandb:                epoch ▁▁▅▅██
+wandb:  final_test_accuracy ▁
+wandb:        final_test_f1 ▁
+wandb: final_train_accuracy ▁
+wandb:       final_train_f1 ▁
+wandb:   final_val_accuracy ▁
+wandb:         final_val_f1 ▁
+wandb:        learning_rate ▁▁▁
+wandb:           train_loss ██▁
+wandb:           train_time ▁
+wandb:         val_accuracy ▁██
+wandb:               val_f1 ▁██
+wandb:             val_loss █▇▁
+wandb: 
+wandb: Run summary:
+wandb:    best_val_accuracy 0.91667
+wandb:          best_val_f1 0.91429
+wandb:        best_val_loss 0.18126
+wandb:                epoch 3
+wandb:  final_test_accuracy 0.95455
+wandb:        final_test_f1 0.95238
+wandb: final_train_accuracy 0.99329
+wandb:       final_train_f1 0.9933
+wandb:   final_val_accuracy 0.91667
+wandb:         final_val_f1 0.91429
+wandb:        learning_rate 1e-05
+wandb:           train_loss 0.36173
+wandb:           train_time 19.29336
+wandb:         val_accuracy 0.91667
+wandb:               val_f1 0.91429
+wandb:             val_loss 0.18126
+wandb: 
+wandb: You can sync this run to the cloud by running:
+wandb: wandb sync /data/leuven/371/vsc37132/wandb/wandb/offline-run-20250428_191821-1jzategg
+wandb: Find logs at: /data/leuven/371/vsc37132/wandb/wandb/offline-run-20250428_191821-1jzategg/logs
+Layer 6 experiment for en completed successfully
+===============================================
+Running layer 11 experiment for en
+===============================================
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/launcher:
+Default list overrides requires 'override' keyword.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
+
+  deprecation_warning(msg)
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py:197: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  return _run_code(code, main_globals, None,
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py:94: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  _run_hydra(
+Using Dataset: rokokot/question-type-and-complexity
+Cache Directory: /data/leuven/371/vsc37132/qtype-eval/data/cache
+[2025-04-28 19:19:17,725][__main__][INFO] - Configuration:
+seed: 42
+output_dir: /data/leuven/371/vsc37132/layerwise_test_output/en/layer_11
+experiment_name: layer_11_question_type_en
+wandb:
+  project: multilingual-question-probing
+  entity: rokii-ku-leuven
+  mode: offline
+slurm:
+  partition: gpu
+  time: '24:00:00'
+  gpus_per_node: 1
+  cpus_per_task: 4
+  mem_per_cpu: 8
+  job_name: ${experiment_name}
+  account: intro_vsc37132
+data:
+  dataset_name: rokokot/question-type-and-complexity
+  cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
+  vectors_dir: ./data/features
+  languages:
+  - en
+  train_language: null
+  eval_language: null
+model:
+  model_type: lm_probe
+  lm_name: cis-lmu/glot500-base
+  dropout: 0.3
+  freeze_model: false
+  layer_wise: true
+  layer_index: 11
+  num_outputs: 1
+training:
+  task_type: classification
+  batch_size: 16
+  num_epochs: 3
+  lr: 1.0e-05
+  weight_decay: 0.01
+  patience: 3
+  scheduler_factor: 0.5
+  scheduler_patience: 2
+  random_state: 42
+  num_workers: 4
+experiment:
+  type: lm_probe
+  tasks: question_type
+  use_controls: false
+  control_index: null
+  num_controls: 3
+  eval_on_orig_test: true
+  cross_lingual: false
+
+[2025-04-28 19:19:17,725][__main__][INFO] - Normalized task: question_type
+[2025-04-28 19:19:17,725][__main__][INFO] - Using explicit task_type from config: classification
+[2025-04-28 19:19:17,725][__main__][INFO] - Determined Task Type: classification
+[2025-04-28 19:19:17,733][__main__][INFO] - Running LM probe experiment for task 'question_type' (type: classification) on languages: ['en']
+[2025-04-28 19:19:17,734][__main__][INFO] - Processing language: en
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Tracking run with wandb version 0.19.9
+wandb: W&B syncing is set to `offline` in this directory.  
+wandb: Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+[2025-04-28 19:19:19,325][src.data.datasets][INFO] - Creating dataloaders for language: 'en', task: 'question_type', submetric: 'None'
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+[2025-04-28 19:19:21,639][src.data.datasets][INFO] - Successfully loaded tokenizer for cis-lmu/glot500-base
+[2025-04-28 19:19:21,639][src.data.datasets][INFO] - Loading 'base' dataset for en language (train)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-04-28 19:19:21,674][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-28 19:19:21,694][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-28 19:19:21,770][src.data.datasets][INFO] - Filtered from 7460 to 1192 examples for language 'en'
+[2025-04-28 19:19:21,779][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-04-28 19:19:21,779][src.data.datasets][INFO] - Loaded 1192 examples for en (train)
+[2025-04-28 19:19:21,780][src.data.datasets][INFO] - Loading 'base' dataset for en language (validation)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-04-28 19:19:21,803][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-28 19:19:21,834][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-28 19:19:21,842][src.data.datasets][INFO] - Filtered from 441 to 72 examples for language 'en'
+[2025-04-28 19:19:21,844][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-04-28 19:19:21,844][src.data.datasets][INFO] - Loaded 72 examples for en (validation)
+[2025-04-28 19:19:21,845][src.data.datasets][INFO] - Loading 'base' dataset for en language (test)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-04-28 19:19:21,860][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-28 19:19:21,892][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-28 19:19:21,905][src.data.datasets][INFO] - Filtered from 719 to 110 examples for language 'en'
+[2025-04-28 19:19:21,906][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-04-28 19:19:21,906][src.data.datasets][INFO] - Loaded 110 examples for en (test)
+[2025-04-28 19:19:21,907][src.data.datasets][INFO] - Loaded datasets: train=1192, val=72, test=110 examples
+[2025-04-28 19:19:21,907][src.data.datasets][INFO] - Task 'question_type' is classification: True
+[2025-04-28 19:19:21,907][src.data.datasets][INFO] - Getting feature name for task: 'question_type', submetric: 'None'
+[2025-04-28 19:19:21,907][src.data.datasets][INFO] - Selected feature name: 'question_type' for task: 'question_type'
+[2025-04-28 19:19:21,908][src.data.datasets][INFO] - Label statistics for question_type (feature: question_type):
+[2025-04-28 19:19:21,908][src.data.datasets][INFO] -   Label 0: 596 examples (50.0%)
+[2025-04-28 19:19:21,908][src.data.datasets][INFO] -   Label 1: 596 examples (50.0%)
+[2025-04-28 19:19:21,908][src.data.datasets][INFO] - Sample text: Did Nvidia skip the 800 series for graphics cards?...
+[2025-04-28 19:19:21,908][src.data.datasets][INFO] - Sample label: 1
+[2025-04-28 19:19:21,908][src.data.datasets][INFO] - Task 'question_type' is classification: True
+[2025-04-28 19:19:21,908][src.data.datasets][INFO] - Getting feature name for task: 'question_type', submetric: 'None'
+[2025-04-28 19:19:21,908][src.data.datasets][INFO] - Selected feature name: 'question_type' for task: 'question_type'
+[2025-04-28 19:19:21,908][src.data.datasets][INFO] - Label statistics for question_type (feature: question_type):
+[2025-04-28 19:19:21,909][src.data.datasets][INFO] -   Label 0: 36 examples (50.0%)
+[2025-04-28 19:19:21,909][src.data.datasets][INFO] -   Label 1: 36 examples (50.0%)
+[2025-04-28 19:19:21,909][src.data.datasets][INFO] - Sample text: We just did a deal for the rest of the month for 1...
+[2025-04-28 19:19:21,909][src.data.datasets][INFO] - Sample label: 0
+[2025-04-28 19:19:21,909][src.data.datasets][INFO] - Task 'question_type' is classification: True
+[2025-04-28 19:19:21,909][src.data.datasets][INFO] - Getting feature name for task: 'question_type', submetric: 'None'
+[2025-04-28 19:19:21,909][src.data.datasets][INFO] - Selected feature name: 'question_type' for task: 'question_type'
+[2025-04-28 19:19:21,909][src.data.datasets][INFO] - Label statistics for question_type (feature: question_type):
+[2025-04-28 19:19:21,909][src.data.datasets][INFO] -   Label 0: 55 examples (50.0%)
+[2025-04-28 19:19:21,909][src.data.datasets][INFO] -   Label 1: 55 examples (50.0%)
+[2025-04-28 19:19:21,909][src.data.datasets][INFO] - Sample text: What is the problem?...
+[2025-04-28 19:19:21,910][src.data.datasets][INFO] - Sample label: 0
+[2025-04-28 19:19:21,910][src.data.datasets][INFO] - Created datasets: train=1192, val=72, test=110
+[2025-04-28 19:19:21,910][src.data.datasets][INFO] - Creating dataloaders with 4 workers
+[2025-04-28 19:19:21,910][src.data.datasets][INFO] - Successfully created all dataloaders
+[2025-04-28 19:19:21,910][src.models.model_factory][INFO] - Creating lm_probe model for classification task
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at cis-lmu/glot500-base and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[2025-04-28 19:19:25,995][src.models.model_factory][INFO] - Loaded model from local cache: cis-lmu/glot500-base
+[2025-04-28 19:19:25,995][src.models.model_factory][INFO] - training probe with unfrozen model
+[2025-04-28 19:19:25,997][src.models.model_factory][INFO] - Created classification head with 1 outputs
+[2025-04-28 19:19:25,997][src.models.model_factory][INFO] - layer-wise probing: True, layer index: 11
+[2025-04-28 19:19:25,997][__main__][INFO] - Successfully created model for en
+Epoch 1/3:   0%|          | 0/75 [00:00<?, ?it/s]Epoch 1/3:   1%|▏         | 1/75 [00:00<01:13,  1.00it/s]Epoch 1/3:   4%|▍         | 3/75 [00:01<00:23,  3.05it/s]Epoch 1/3:   7%|▋         | 5/75 [00:01<00:14,  4.82it/s]Epoch 1/3:   9%|▉         | 7/75 [00:01<00:10,  6.28it/s]Epoch 1/3:  12%|█▏        | 9/75 [00:01<00:08,  7.44it/s]Epoch 1/3:  15%|█▍        | 11/75 [00:01<00:07,  8.32it/s]Epoch 1/3:  17%|█▋        | 13/75 [00:02<00:06,  8.98it/s]Epoch 1/3:  20%|██        | 15/75 [00:02<00:06,  9.47it/s]Epoch 1/3:  23%|██▎       | 17/75 [00:02<00:05,  9.81it/s]Epoch 1/3:  25%|██▌       | 19/75 [00:02<00:05, 10.08it/s]Epoch 1/3:  28%|██▊       | 21/75 [00:02<00:05, 10.24it/s]Epoch 1/3:  31%|███       | 23/75 [00:03<00:05, 10.37it/s]Epoch 1/3:  33%|███▎      | 25/75 [00:03<00:04, 10.47it/s]Epoch 1/3:  36%|███▌      | 27/75 [00:03<00:04, 10.52it/s]Epoch 1/3:  39%|███▊      | 29/75 [00:03<00:04, 10.57it/s]Epoch 1/3:  41%|████▏     | 31/75 [00:03<00:04, 10.61it/s]Epoch 1/3:  44%|████▍     | 33/75 [00:03<00:03, 10.63it/s]Epoch 1/3:  47%|████▋     | 35/75 [00:04<00:03, 10.65it/s]Epoch 1/3:  49%|████▉     | 37/75 [00:04<00:03, 10.67it/s]Epoch 1/3:  52%|█████▏    | 39/75 [00:04<00:03, 10.67it/s]Epoch 1/3:  55%|█████▍    | 41/75 [00:04<00:03, 10.69it/s]Epoch 1/3:  57%|█████▋    | 43/75 [00:04<00:02, 10.68it/s]Epoch 1/3:  60%|██████    | 45/75 [00:05<00:02, 10.69it/s]Epoch 1/3:  63%|██████▎   | 47/75 [00:05<00:02, 10.68it/s]Epoch 1/3:  65%|██████▌   | 49/75 [00:05<00:02, 10.64it/s]Epoch 1/3:  68%|██████▊   | 51/75 [00:05<00:02, 10.66it/s]Epoch 1/3:  71%|███████   | 53/75 [00:05<00:02, 10.67it/s]Epoch 1/3:  73%|███████▎  | 55/75 [00:06<00:01, 10.66it/s]Epoch 1/3:  76%|███████▌  | 57/75 [00:06<00:01, 10.66it/s]Epoch 1/3:  79%|███████▊  | 59/75 [00:06<00:01, 10.67it/s]Epoch 1/3:  81%|████████▏ | 61/75 [00:06<00:01, 10.68it/s]Epoch 1/3:  84%|████████▍ | 63/75 [00:06<00:01, 10.68it/s]Epoch 1/3:  87%|████████▋ | 65/75 [00:06<00:00, 10.69it/s]Epoch 1/3:  89%|████████▉ | 67/75 [00:07<00:00, 10.69it/s]Epoch 1/3:  92%|█████████▏| 69/75 [00:07<00:00, 10.70it/s]Epoch 1/3:  95%|█████████▍| 71/75 [00:07<00:00, 10.70it/s]Epoch 1/3:  97%|█████████▋| 73/75 [00:07<00:00, 10.70it/s]Epoch 1/3: 100%|██████████| 75/75 [00:07<00:00, 11.21it/s]Epoch 1/3: 100%|██████████| 75/75 [00:07<00:00,  9.44it/s]
+[2025-04-28 19:19:35,581][src.training.lm_trainer][INFO] - Epoch 1/3, Train Loss: 0.6841
+[2025-04-28 19:19:35,836][src.training.lm_trainer][INFO] - Epoch 1/3, Val Loss: 0.5710, Metrics: {'accuracy': 0.6666666666666666, 'f1': 0.75}
+Epoch 2/3:   0%|          | 0/75 [00:00<?, ?it/s]Epoch 2/3:   1%|▏         | 1/75 [00:00<00:13,  5.40it/s]Epoch 2/3:   4%|▍         | 3/75 [00:00<00:08,  8.52it/s]Epoch 2/3:   7%|▋         | 5/75 [00:00<00:07,  9.44it/s]Epoch 2/3:   9%|▉         | 7/75 [00:00<00:06,  9.93it/s]Epoch 2/3:  12%|█▏        | 9/75 [00:00<00:06, 10.21it/s]Epoch 2/3:  15%|█▍        | 11/75 [00:01<00:06, 10.36it/s]Epoch 2/3:  17%|█▋        | 13/75 [00:01<00:05, 10.45it/s]Epoch 2/3:  20%|██        | 15/75 [00:01<00:05, 10.52it/s]Epoch 2/3:  23%|██▎       | 17/75 [00:01<00:05, 10.57it/s]Epoch 2/3:  25%|██▌       | 19/75 [00:01<00:05, 10.60it/s]Epoch 2/3:  28%|██▊       | 21/75 [00:02<00:05, 10.56it/s]Epoch 2/3:  31%|███       | 23/75 [00:02<00:04, 10.55it/s]Epoch 2/3:  33%|███▎      | 25/75 [00:02<00:04, 10.59it/s]Epoch 2/3:  36%|███▌      | 27/75 [00:02<00:04, 10.62it/s]Epoch 2/3:  39%|███▊      | 29/75 [00:02<00:04, 10.65it/s]Epoch 2/3:  41%|████▏     | 31/75 [00:03<00:04, 10.64it/s]Epoch 2/3:  44%|████▍     | 33/75 [00:03<00:03, 10.65it/s]Epoch 2/3:  47%|████▋     | 35/75 [00:03<00:03, 10.65it/s]Epoch 2/3:  49%|████▉     | 37/75 [00:03<00:03, 10.66it/s]Epoch 2/3:  52%|█████▏    | 39/75 [00:03<00:03, 10.64it/s]Epoch 2/3:  55%|█████▍    | 41/75 [00:03<00:03, 10.65it/s]Epoch 2/3:  57%|█████▋    | 43/75 [00:04<00:03, 10.61it/s]Epoch 2/3:  60%|██████    | 45/75 [00:04<00:02, 10.62it/s]Epoch 2/3:  63%|██████▎   | 47/75 [00:04<00:02, 10.65it/s]Epoch 2/3:  65%|██████▌   | 49/75 [00:04<00:02, 10.65it/s]Epoch 2/3:  68%|██████▊   | 51/75 [00:04<00:02, 10.63it/s]Epoch 2/3:  71%|███████   | 53/75 [00:05<00:02, 10.60it/s]Epoch 2/3:  73%|███████▎  | 55/75 [00:05<00:01, 10.61it/s]Epoch 2/3:  76%|███████▌  | 57/75 [00:05<00:01, 10.63it/s]Epoch 2/3:  79%|███████▊  | 59/75 [00:05<00:01, 10.65it/s]Epoch 2/3:  81%|████████▏ | 61/75 [00:05<00:01, 10.67it/s]Epoch 2/3:  84%|████████▍ | 63/75 [00:06<00:01, 10.64it/s]Epoch 2/3:  87%|████████▋ | 65/75 [00:06<00:00, 10.61it/s]Epoch 2/3:  89%|████████▉ | 67/75 [00:06<00:00, 10.59it/s]Epoch 2/3:  92%|█████████▏| 69/75 [00:06<00:00, 10.62it/s]Epoch 2/3:  95%|█████████▍| 71/75 [00:06<00:00, 10.65it/s]Epoch 2/3:  97%|█████████▋| 73/75 [00:06<00:00, 10.67it/s]Epoch 2/3: 100%|██████████| 75/75 [00:07<00:00, 11.27it/s]Epoch 2/3: 100%|██████████| 75/75 [00:07<00:00, 10.48it/s]
+[2025-04-28 19:19:43,401][src.training.lm_trainer][INFO] - Epoch 2/3, Train Loss: 0.3458
+[2025-04-28 19:19:43,659][src.training.lm_trainer][INFO] - Epoch 2/3, Val Loss: 0.2185, Metrics: {'accuracy': 0.9305555555555556, 'f1': 0.935064935064935}
+Epoch 3/3:   0%|          | 0/75 [00:00<?, ?it/s]Epoch 3/3:   1%|▏         | 1/75 [00:00<00:15,  4.89it/s]Epoch 3/3:   4%|▍         | 3/75 [00:00<00:08,  8.17it/s]Epoch 3/3:   7%|▋         | 5/75 [00:00<00:07,  9.27it/s]Epoch 3/3:   9%|▉         | 7/75 [00:00<00:07,  9.68it/s]Epoch 3/3:  12%|█▏        | 9/75 [00:00<00:06, 10.03it/s]Epoch 3/3:  15%|█▍        | 11/75 [00:01<00:06, 10.25it/s]Epoch 3/3:  17%|█▋        | 13/75 [00:01<00:05, 10.38it/s]Epoch 3/3:  20%|██        | 15/75 [00:01<00:05, 10.47it/s]Epoch 3/3:  23%|██▎       | 17/75 [00:01<00:05, 10.55it/s]Epoch 3/3:  25%|██▌       | 19/75 [00:01<00:05, 10.58it/s]Epoch 3/3:  28%|██▊       | 21/75 [00:02<00:05, 10.60it/s]Epoch 3/3:  31%|███       | 23/75 [00:02<00:04, 10.62it/s]Epoch 3/3:  33%|███▎      | 25/75 [00:02<00:04, 10.62it/s]Epoch 3/3:  36%|███▌      | 27/75 [00:02<00:04, 10.64it/s]Epoch 3/3:  39%|███▊      | 29/75 [00:02<00:04, 10.65it/s]Epoch 3/3:  41%|████▏     | 31/75 [00:03<00:04, 10.66it/s]Epoch 3/3:  44%|████▍     | 33/75 [00:03<00:03, 10.61it/s]Epoch 3/3:  47%|████▋     | 35/75 [00:03<00:03, 10.58it/s]Epoch 3/3:  49%|████▉     | 37/75 [00:03<00:03, 10.61it/s]Epoch 3/3:  52%|█████▏    | 39/75 [00:03<00:03, 10.59it/s]Epoch 3/3:  55%|█████▍    | 41/75 [00:03<00:03, 10.56it/s]Epoch 3/3:  57%|█████▋    | 43/75 [00:04<00:03, 10.56it/s]Epoch 3/3:  60%|██████    | 45/75 [00:04<00:02, 10.59it/s]Epoch 3/3:  63%|██████▎   | 47/75 [00:04<00:02, 10.60it/s]Epoch 3/3:  65%|██████▌   | 49/75 [00:04<00:02, 10.62it/s]Epoch 3/3:  68%|██████▊   | 51/75 [00:04<00:02, 10.62it/s]Epoch 3/3:  71%|███████   | 53/75 [00:05<00:02, 10.64it/s]Epoch 3/3:  73%|███████▎  | 55/75 [00:05<00:01, 10.64it/s]Epoch 3/3:  76%|███████▌  | 57/75 [00:05<00:01, 10.64it/s]Epoch 3/3:  79%|███████▊  | 59/75 [00:05<00:01, 10.65it/s]Epoch 3/3:  81%|████████▏ | 61/75 [00:05<00:01, 10.66it/s]Epoch 3/3:  84%|████████▍ | 63/75 [00:06<00:01, 10.61it/s]Epoch 3/3:  87%|████████▋ | 65/75 [00:06<00:00, 10.63it/s]Epoch 3/3:  89%|████████▉ | 67/75 [00:06<00:00, 10.65it/s]Epoch 3/3:  92%|█████████▏| 69/75 [00:06<00:00, 10.66it/s]Epoch 3/3:  95%|█████████▍| 71/75 [00:06<00:00, 10.66it/s]Epoch 3/3:  97%|█████████▋| 73/75 [00:06<00:00, 10.67it/s]Epoch 3/3: 100%|██████████| 75/75 [00:07<00:00, 11.26it/s]Epoch 3/3: 100%|██████████| 75/75 [00:07<00:00, 10.43it/s]
+[2025-04-28 19:19:51,266][src.training.lm_trainer][INFO] - Epoch 3/3, Train Loss: 0.0482
+[2025-04-28 19:19:51,546][src.training.lm_trainer][INFO] - Epoch 3/3, Val Loss: 0.1664, Metrics: {'accuracy': 0.9444444444444444, 'f1': 0.9473684210526315}
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    best_val_accuracy ▁██
+wandb:          best_val_f1 ▁██
+wandb:        best_val_loss █▂▁
+wandb:                epoch ▁▁▅▅██
+wandb:  final_test_accuracy ▁
+wandb:        final_test_f1 ▁
+wandb: final_train_accuracy ▁
+wandb:       final_train_f1 ▁
+wandb:   final_val_accuracy ▁
+wandb:         final_val_f1 ▁
+wandb:        learning_rate ▁▁▁
+wandb:           train_loss █▄▁
+wandb:           train_time ▁
+wandb:         val_accuracy ▁██
+wandb:               val_f1 ▁██
+wandb:             val_loss █▂▁
+wandb: 
+wandb: Run summary:
+wandb:    best_val_accuracy 0.94444
+wandb:          best_val_f1 0.94737
+wandb:        best_val_loss 0.16636
+wandb:                epoch 3
+wandb:  final_test_accuracy 0.91818
+wandb:        final_test_f1 0.92174
+wandb: final_train_accuracy 0.99748
+wandb:       final_train_f1 0.99749
+wandb:   final_val_accuracy 0.94444
+wandb:         final_val_f1 0.94737
+wandb:        learning_rate 1e-05
+wandb:           train_loss 0.04824
+wandb:           train_time 24.2809
+wandb:         val_accuracy 0.94444
+wandb:               val_f1 0.94737
+wandb:             val_loss 0.16636
+wandb: 
+wandb: You can sync this run to the cloud by running:
+wandb: wandb sync /data/leuven/371/vsc37132/wandb/wandb/offline-run-20250428_191917-6cb90xcd
+wandb: Find logs at: /data/leuven/371/vsc37132/wandb/wandb/offline-run-20250428_191917-6cb90xcd/logs
+Layer 11 experiment for en completed successfully
+Results summary:
+No results file found for layer 2
+No results file found for layer 6
+No results file found for layer 11
+Test script completed
