@@ -142,10 +142,11 @@ run_standard_experiment() {
         \"model.layer_wise=true\" \
         \"model.layer_index=${LAYER}\" \
         \"model.freeze_model=true\" \
+        \"model.probe_hidden_size=96\" \
         \"data.languages=[${LANGUAGE}]\" \
         \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
         \"training.task_type=${TASK_TYPE}\" \
-        \"training.num_epochs=10\" \
+        \"training.num_epochs=15\" \
         \"training.batch_size=16\" \
         \"experiment_name=${EXPERIMENT_NAME}\" \
         \"output_dir=${OUTPUT_SUBDIR}\" \
@@ -216,6 +217,7 @@ run_control_experiment() {
         \"model=lm_probe\" \
         \"model.lm_name=cis-lmu/glot500-base\" \
         \"model.layer_wise=true\" \
+        \"model.probe_hidden_size=96\" \
         \"model.layer_index=${LAYER}\" \
         \"model.freeze_model=true\" \
         \"experiment.use_controls=true\" \
@@ -223,7 +225,7 @@ run_control_experiment() {
         \"data.languages=[${LANGUAGE}]\" \
         \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
         \"training.task_type=${TASK_TYPE}\" \
-        \"training.num_epochs=10\" \
+        \"training.num_epochs=15\" \
         \"training.batch_size=16\" \
         \"experiment_name=${EXPERIMENT_NAME}\" \
         \"output_dir=${OUTPUT_SUBDIR}\" \
