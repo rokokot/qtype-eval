@@ -1,6 +1,6 @@
 seed: 42
-output_dir: /scratch/leuven/371/vsc37132/finetune_output/question_type/ar
-experiment_name: finetune_question_type_ar
+output_dir: /scratch/leuven/371/vsc37132/arabic_sweep/sweep_question_type_layer2_dropout0.1_lr1e-5_probe64_freezefalse_control1_bs8
+experiment_name: sweep_question_type_layer2_dropout0.1_lr1e-5_probe64_freezefalse_control1_bs8
 wandb:
   project: multilingual-question-probing
   entity: rokii-ku-leuven
@@ -26,13 +26,13 @@ model:
   lm_name: cis-lmu/glot500-base
   dropout: 0.1
   freeze_model: false
-  finetune: true
-  layer_wise: false
-  layer_index: -1
+  layer_wise: true
+  layer_index: 2
   num_outputs: 1
+  probe_hidden_size: 64
 training:
   task_type: classification
-  batch_size: 16
+  batch_size: 8
   num_epochs: 10
   lr: 1.0e-05
   weight_decay: 0.01
@@ -41,20 +41,11 @@ training:
   scheduler_patience: 2
   random_state: 42
   num_workers: 4
-  gradient_accumulation_steps: 4
 experiment:
-  type: lm_finetune
+  type: lm_probe
   tasks: question_type
-  use_controls: false
-  control_index: null
+  use_controls: true
+  control_index: 1
   num_controls: 3
   eval_on_orig_test: true
   cross_lingual: false
-  finetune: true
-  training:
-    patience: 5
-    scheduler_patience: 4
-    scheduler_factor: 0.8
-    dropout: 0.1
-    lr: 2.0e-05
-    batch_size: 8

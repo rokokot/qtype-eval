@@ -1,16 +1,24 @@
 #!/bin/bash
 #SBATCH --job-name=arabic_sweep
-#SBATCH --time=06:00:00  # Extended time for more comprehensive sweep
+#SBATCH --time=06:00:00 
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=64G  # Increased memory
+#SBATCH --cpus-per-task=3
+#SBATCH --mem=36G  
 #SBATCH --gres=gpu:1
 #SBATCH --partition=gpu_p100
 #SBATCH --clusters=genius
 #SBATCH --account=intro_vsc37132
 
 # Set up environment
+export PATH="$VSC_DATA/miniconda3/bin:$PATH"
+source "$VSC_DATA/miniconda3/etc/profile.d/conda.sh"
+
+conda activate qtype-eval
+conda install -y pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+pip install hydra-core hydra-submitit-launcher
+pip install "transformers>=4.30.0,<4.36.0" torch datasets wandb
+
 export PYTHONPATH=$PYTHONPATH:$PWD
 export HF_HOME=$VSC_DATA/qtype-eval/data/cache
 export HF_DATASETS_OFFLINE=1
@@ -34,112 +42,195 @@ CONTROL_INDICES=(1 2 3)
 OUTPUT_BASE_DIR="$VSC_SCRATCH/arabic_sweep"
 mkdir -p "$OUTPUT_BASE_DIR"
 
-RESULTS_FILE="$OUTPUT_BASE_DIR/sweep_results.csv"
-echo "task,submetric,layer,dropout,learning_rate,probe_hidden_size,freeze_model,control_index,batch_size,accuracy,f1,mse,rmse,r2" > "$RESULTS_FILE"
+RESULTS_TRACKER="${OUTPUT_BASE_DIR}/sweep_results.csv"
+echo "experiment_type,language,task,submetric,layer,dropout,learning_rate,probe_hidden_size,freeze_model,control_index,batch_size,metric,value" > "$RESULTS_TRACKER"
 
+# Function to run an experiment with tracking
 run_experiment() {
-    local task="$1"
-    local layer="$2"
-    local dropout="$3"
-    local lr="$4"
-    local probe_hidden_size="$5"
-    local freeze_model="$6"
-    local control_index="$7"
-    local BS="$8"
-    local submetric="${9:-none}"
-
-    local experiment_dir="$OUTPUT_BASE_DIR/${task}_layer${layer}_dropout${dropout}_lr${lr}_probe${probe_hidden_size}_freeze${freeze_model}_control${control_index}_bs${BS}"
-    mkdir -p "$experiment_dir"
-
-    local task_type="classification"
-    if [[ "$task" == "complexity" ]] || [[ "$submetric" != "none" ]]; then
-        task_type="regression"
+    local TASK_TYPE=$1
+    local TASK=$2
+    local LAYER=$3
+    local DROPOUT=$4
+    local LR=$5
+    local PROBE_HIDDEN_SIZE=$6
+    local FREEZE_MODEL=$7
+    local CONTROL_IDX=$8
+    local BS=$9
+    local SUBMETRIC="${10:-none}"
+    
+    local EXPERIMENT_NAME=""
+    local COMMAND=""
+    
+    # Construct experiment name and command
+    if [ "$TASK" == "single_submetric" ]; then
+        if [ -z "$CONTROL_IDX" ]; then
+            EXPERIMENT_NAME="sweep_${SUBMETRIC}_layer${LAYER}_dropout${DROPOUT}_lr${LR}_probe${PROBE_HIDDEN_SIZE}_freeze${FREEZE_MODEL}_bs${BS}"
+            COMMAND="python -m src.experiments.run_experiment \
+                \"hydra.job.chdir=False\" \
+                \"hydra.run.dir=.\" \
+                \"experiment=submetrics\" \
+                \"experiment.submetric=${SUBMETRIC}\" \
+                \"model=lm_probe\" \
+                \"model.lm_name=cis-lmu/glot500-base\" \
+                \"model.dropout=${DROPOUT}\" \
+                \"model.layer_wise=true\" \
+                \"model.layer_index=${LAYER}\" \
+                \"+model.probe_hidden_size=${PROBE_HIDDEN_SIZE}\" \
+                \"model.freeze_model=${FREEZE_MODEL}\" \
+                \"data.languages=[ar]\" \
+                \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
+                \"training.task_type=${TASK_TYPE}\" \
+                \"training.lr=${LR}\" \
+                \"training.batch_size=${BS}\" \
+                \"training.num_epochs=10\" \
+                \"experiment_name=${EXPERIMENT_NAME}\" \
+                \"output_dir=${OUTPUT_BASE_DIR}/${EXPERIMENT_NAME}\" \
+                \"wandb.mode=offline\""
+        else
+            EXPERIMENT_NAME="sweep_${SUBMETRIC}_layer${LAYER}_dropout${DROPOUT}_lr${LR}_probe${PROBE_HIDDEN_SIZE}_freeze${FREEZE_MODEL}_control${CONTROL_IDX}_bs${BS}"
+            COMMAND="python -m src.experiments.run_experiment \
+                \"hydra.job.chdir=False\" \
+                \"hydra.run.dir=.\" \
+                \"experiment=submetrics\" \
+                \"experiment.submetric=${SUBMETRIC}\" \
+                \"experiment.use_controls=true\" \
+                \"experiment.control_index=${CONTROL_IDX}\" \
+                \"model=lm_probe\" \
+                \"model.lm_name=cis-lmu/glot500-base\" \
+                \"model.dropout=${DROPOUT}\" \
+                \"model.layer_wise=true\" \
+                \"model.layer_index=${LAYER}\" \
+                \"+model.probe_hidden_size=${PROBE_HIDDEN_SIZE}\" \
+                \"model.freeze_model=${FREEZE_MODEL}\" \
+                \"data.languages=[ar]\" \
+                \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
+                \"training.task_type=${TASK_TYPE}\" \
+                \"training.lr=${LR}\" \
+                \"training.batch_size=${BS}\" \
+                \"training.num_epochs=10\" \
+                \"experiment_name=${EXPERIMENT_NAME}\" \
+                \"output_dir=${OUTPUT_BASE_DIR}/${EXPERIMENT_NAME}\" \
+                \"wandb.mode=offline\""
+        fi
+    else
+        if [ -z "$CONTROL_IDX" ]; then
+            EXPERIMENT_NAME="sweep_${TASK}_layer${LAYER}_dropout${DROPOUT}_lr${LR}_probe${PROBE_HIDDEN_SIZE}_freeze${FREEZE_MODEL}_bs${BS}"
+            COMMAND="python -m src.experiments.run_experiment \
+                \"hydra.job.chdir=False\" \
+                \"hydra.run.dir=.\" \
+                \"experiment=${TASK}\" \
+                \"experiment.tasks=${TASK}\" \
+                \"model=lm_probe\" \
+                \"model.lm_name=cis-lmu/glot500-base\" \
+                \"model.dropout=${DROPOUT}\" \
+                \"model.layer_wise=true\" \
+                \"model.layer_index=${LAYER}\" \
+                \"+model.probe_hidden_size=${PROBE_HIDDEN_SIZE}\" \
+                \"model.freeze_model=${FREEZE_MODEL}\" \
+                \"data.languages=[ar]\" \
+                \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
+                \"training.task_type=${TASK_TYPE}\" \
+                \"training.lr=${LR}\" \
+                \"training.batch_size=${BS}\" \
+                \"training.num_epochs=10\" \
+                \"experiment_name=${EXPERIMENT_NAME}\" \
+                \"output_dir=${OUTPUT_BASE_DIR}/${EXPERIMENT_NAME}\" \
+                \"wandb.mode=offline\""
+        else
+            EXPERIMENT_NAME="sweep_${TASK}_layer${LAYER}_dropout${DROPOUT}_lr${LR}_probe${PROBE_HIDDEN_SIZE}_freeze${FREEZE_MODEL}_control${CONTROL_IDX}_bs${BS}"
+            COMMAND="python -m src.experiments.run_experiment \
+                \"hydra.job.chdir=False\" \
+                \"hydra.run.dir=.\" \
+                \"experiment=${TASK}\" \
+                \"experiment.tasks=${TASK}\" \
+                \"experiment.use_controls=true\" \
+                \"experiment.control_index=${CONTROL_IDX}\" \
+                \"model=lm_probe\" \
+                \"model.lm_name=cis-lmu/glot500-base\" \
+                \"model.dropout=${DROPOUT}\" \
+                \"model.layer_wise=true\" \
+                \"model.layer_index=${LAYER}\" \
+                \"+model.probe_hidden_size=${PROBE_HIDDEN_SIZE}\" \
+                \"model.freeze_model=${FREEZE_MODEL}\" \
+                \"data.languages=[ar]\" \
+                \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
+                \"training.task_type=${TASK_TYPE}\" \
+                \"training.lr=${LR}\" \
+                \"training.batch_size=${BS}\" \
+                \"training.num_epochs=10\" \
+                \"experiment_name=${EXPERIMENT_NAME}\" \
+                \"output_dir=${OUTPUT_BASE_DIR}/${EXPERIMENT_NAME}\" \
+                \"wandb.mode=offline\""
+        fi
     fi
-
-    local experiment_command=(
-        python -m src.experiments.run_experiment
-        "hydra.job.chdir=False"
-        "hydra.run.dir=."
-        "experiment=${task}"
-        "experiment.tasks=${task}"
-        "model=lm_probe"
-        "model.lm_name=cis-lmu/glot500-base"
-        "model.dropout=${dropout}"
-        "model.layer_wise=true"
-        "model.layer_index=${layer}"
-        "+model.probe_hidden_size=${probe_hidden_size}"
-        "model.freeze_model=${freeze_model}"
-        "data.languages=[ar]"
-        "data.cache_dir=$VSC_DATA/qtype-eval/data/cache"
-        "training.task_type=${task_type}"
-        "training.lr=${lr}"
-        "training.batch_size=${BS}"
-        "training.num_epochs=10"
-        "experiment_name=arabic_sweep_${task}_layer${layer}"
-        "output_dir=${experiment_dir}"
-        "wandb.mode=offline"
-    )
-
-    if [[ "$submetric" != "none" ]]; then
-        experiment_command+=("experiment.submetric=${submetric}")
-    fi
-
-    if [[ "$control_index" -gt 0 ]]; then
-        experiment_command+=(
-            "experiment.use_controls=true"
-            "experiment.control_index=${control_index}"
-        )
-    fi
-
-    "${experiment_command[@]}"
-
-    if [[ -f "${experiment_dir}/results.json" ]]; then
-        python3 - << EOF
-import json
-import csv
-
-with open("${experiment_dir}/results.json", 'r') as f:
-    results = json.load(f)
-
-task = "${task}"
-submetric = "${submetric}" if "${submetric}" != "none" else ""
-layer = ${layer}
-dropout = ${dropout}
-lr = "${lr}"
-probe_hidden_size = ${probe_hidden_size}
-freeze_model = ${freeze_model}
-control_index = ${control_index}
-batch_size = ${BS}
-
-# Determine which metrics to extract based on task type
-metrics = results.get('test_metrics', {})
-
-accuracy = metrics.get('accuracy', 'N/A')
-f1 = metrics.get('f1', 'N/A')
-mse = metrics.get('mse', 'N/A')
-rmse = metrics.get('rmse', 'N/A')
-r2 = metrics.get('r2', 'N/A')
-
-with open("$RESULTS_FILE", 'a', newline='') as csvfile:
-    writer = csv.writer(csvfile)
-    writer.writerow([
-        task, submetric, layer, dropout, lr, 
-        probe_hidden_size, freeze_model, control_index, batch_size,
-        accuracy, f1, mse, rmse, r2
-    ])
-EOF
+    
+    # Execute the experiment
+    echo "Running experiment: ${EXPERIMENT_NAME}"
+    eval $COMMAND
+    
+    if [ $? -eq 0 ]; then
+        echo "Experiment ${EXPERIMENT_NAME} completed successfully"
+        return 0
+    else
+        echo "Error in experiment ${EXPERIMENT_NAME}"
+        return 1
     fi
 }
 
-for task in "${TASKS[@]}"; do
-    for layer in "${LAYERS[@]}"; do
-        for dropout in "${DROPOUT_RATES[@]}"; do
-            for lr in "${LEARNING_RATES[@]}"; do
-                for probe_hidden_size in "${PROBE_HIDDEN_SIZES[@]}"; do
-                    for freeze_model in "${FREEZE_OPTIONS[@]}"; do
-                        for control_index in "${CONTROL_INDICES[@]}"; do
+# Extract metrics function
+function extract_metrics() {
+    local result_file="$1"
+    local experiment_name="$2"
+    local task="$3"
+    local submetric="${4:-none}"
+    local layer="$5"
+    local dropout="$6"
+    local lr="$7"
+    local probe_hidden_size="$8"
+    local freeze_model="$9"
+    local control_index="${10}"
+    local batch_size="${11}"
+
+    python3 - << EOF
+import json
+import csv
+
+def process_metrics(data):
+    test_metrics = data.get('test_metrics', {})
+    if test_metrics:
+        with open("$RESULTS_TRACKER", 'a', newline='') as csvfile:
+            writer = csv.writer(csvfile)
+            for metric, value in test_metrics.items():
+                writer.writerow([
+                    "probe", "ar", "$task", "$submetric", $layer, $dropout, "$lr", 
+                    $probe_hidden_size, $freeze_model, "${control_index:-0}", $batch_size, 
+                    metric, value
+                ])
+
+try:
+    with open("$result_file", 'r') as f:
+        data = json.load(f)
+    process_metrics(data)
+except Exception as e:
+    print(f"Error processing {result_file}: {e}")
+EOF
+}
+
+# Nested loops for the complete parameter sweep
+for TASK in "${TASKS[@]}"; do
+    TASK_TYPE="classification"
+    if [ "$TASK" == "complexity" ]; then
+        TASK_TYPE="regression"
+    fi
+
+    for LAYER in "${LAYERS[@]}"; do
+        for DROPOUT in "${DROPOUT_RATES[@]}"; do
+            for LR in "${LEARNING_RATES[@]}"; do
+                for PROBE_HIDDEN_SIZE in "${PROBE_HIDDEN_SIZES[@]}"; do
+                    for FREEZE_MODEL in "${FREEZE_OPTIONS[@]}"; do
+                        for CONTROL_IDX in "${CONTROL_INDICES[@]}"; do
                             for BS in "${BATCH_SIZES[@]}"; do
-                                run_experiment "$task" "$layer" "$dropout" "$lr" "$probe_hidden_size" "$freeze_model" "$control_index" "$BS"
+                                run_experiment "$TASK_TYPE" "$TASK" "$LAYER" "$DROPOUT" "$LR" "$PROBE_HIDDEN_SIZE" "$FREEZE_MODEL" "$CONTROL_IDX" "$BS"
                             done
                         done
                     done
@@ -149,15 +240,16 @@ for task in "${TASKS[@]}"; do
     done
 done
 
-for submetric in "${SUBMETRICS[@]}"; do
-    for layer in "${LAYERS[@]}"; do
-        for dropout in "${DROPOUT_RATES[@]}"; do
-            for lr in "${LEARNING_RATES[@]}"; do
-                for probe_hidden_size in "${PROBE_HIDDEN_SIZES[@]}"; do
-                    for freeze_model in "${FREEZE_OPTIONS[@]}"; do
-                        for control_index in "${CONTROL_INDICES[@]}"; do
+# Submetric experiments
+for SUBMETRIC in "${SUBMETRICS[@]}"; do
+    for LAYER in "${LAYERS[@]}"; do
+        for DROPOUT in "${DROPOUT_RATES[@]}"; do
+            for LR in "${LEARNING_RATES[@]}"; do
+                for PROBE_HIDDEN_SIZE in "${PROBE_HIDDEN_SIZES[@]}"; do
+                    for FREEZE_MODEL in "${FREEZE_OPTIONS[@]}"; do
+                        for CONTROL_IDX in "${CONTROL_INDICES[@]}"; do
                             for BS in "${BATCH_SIZES[@]}"; do
-                                run_experiment "submetrics" "$layer" "$dropout" "$lr" "$probe_hidden_size" "$freeze_model" "$control_index" "$BS" "$submetric"
+                                run_experiment "regression" "single_submetric" "$LAYER" "$DROPOUT" "$LR" "$PROBE_HIDDEN_SIZE" "$FREEZE_MODEL" "$CONTROL_IDX" "$BS" "$SUBMETRIC"
                             done
                         done
                     done
@@ -167,4 +259,4 @@ for submetric in "${SUBMETRICS[@]}"; do
     done
 done
 
-echo "Sweep completed. Results saved to $RESULTS_FILE"
+echo "Sweep completed. Results saved to $RESULTS_TRACKER"
