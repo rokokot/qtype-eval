@@ -1,5 +1,5 @@
 # creating instances of models used in our experiments
-
+import torch
 import torch.nn as nn
 import os
 from sklearn.dummy import DummyClassifier, DummyRegressor
@@ -40,7 +40,8 @@ class LMProbe(nn.Module):  # custom probe for language model representations
         except Exception as e:
             logger.error(f"Error loading model {model_name}: {e}")
             raise
-        
+
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")        
 
         if freeze_model and not finetune:
             for param in self.model.parameters():
@@ -56,25 +57,33 @@ class LMProbe(nn.Module):  # custom probe for language model representations
             logger.info('training probe with unfrozen model')
 
         hidden_size = self.model.config.hidden_size
+        
+        if probe_hidden_size is None:
+            if task_type == "classification":
+                probe_hidden_size = hidden_size // 8  # Smaller for classification
+            else:  # Regression - larger hidden layer
+                probe_hidden_size = hidden_size // 4  # Larger for regression
 
-        if task_type == "classification":
-            self.head = nn.Sequential(
-                nn.Linear(hidden_size, probe_hidden_size),
-                nn.ReLU(),
-                nn.Dropout(dropout),
-                nn.Linear(probe_hidden_size, num_outputs),
-                nn.Sigmoid() if num_outputs == 1 else nn.Identity(),
-            )
-            logger.info(f"Created classification head with {num_outputs} outputs")
-        else: 
-            self.head = nn.Sequential(
-                nn.Linear(hidden_size, probe_hidden_size),
-                nn.ReLU(),
-                nn.Dropout(dropout),
-                nn.Linear(probe_hidden_size, num_outputs),
-                nn.Sigmoid()  
-            )
-            logger.info(f"Created regression head with {num_outputs} outputs")
+        # Head construction with explicit device and dtype
+        head_layers = [
+            nn.Linear(hidden_size, probe_hidden_size).to(device),
+            nn.ReLU(),
+            nn.Dropout(dropout),
+            nn.Linear(probe_hidden_size, num_outputs).to(device)
+        ]
+
+        self.head = nn.Sequential(
+            nn.Linear(hidden_size, probe_hidden_size),
+            nn.BatchNorm1d(probe_hidden_size),
+            nn.ReLU(),
+            nn.Dropout(dropout),
+            nn.Linear(probe_hidden_size, probe_hidden_size // 2),
+            nn.BatchNorm1d(probe_hidden_size // 2),
+            nn.ReLU(),
+            nn.Dropout(dropout),
+            nn.Linear(probe_hidden_size // 2, num_outputs),
+            nn.Sigmoid() if num_outputs == 1 and task_type == 'classification' else nn.Identity()
+        )
 
         self.task_type = task_type
         self.num_outputs = num_outputs
