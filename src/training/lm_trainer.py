@@ -49,10 +49,17 @@ class LMTrainer:
         self.criterion = nn.BCELoss() if task_type == "classification" else nn.MSELoss()
         self.metrics_history = defaultdict(list)
 
+        if hasattr(model, 'task_type') and model.task_type == "probe":
+            self.learning_rate = 1e-4 
+            
+            self.patience = max(5, self.patience)
+            
+            self.weight_decay = 0.1 
+
+
     def train(self, train_loader, val_loader=None, test_loader=None) -> Dict[str, Any]:
         self.model = self.model.to(self.device)
 
-        # Print model parameters info in debug mode
         if self.debug_mode:
             trainable_params = sum(p.numel() for p in self.model.parameters() if p.requires_grad)
             total_params = sum(p.numel() for p in self.model.parameters())
@@ -66,6 +73,18 @@ class LMTrainer:
                 # Check if model is correctly frozen/unfrozen
                 encoder_frozen = encoder_trainable == 0
                 logger.info(f"Encoder is {'frozen' if encoder_frozen else 'trainable'}")
+
+        if hasattr(self.model, 'task_type') and self.model.task_type == "probe":
+        # More detailed logging for probes
+            logger.info("Running probe experiment with specialized configuration")
+            
+        
+            
+            # More aggressive early stopping for probes
+            if val_loss > best_val_loss * 1.2:  # More strict improvement criterion
+                patience_counter += 1
+                logger.info(f"Probe performance not significantly improving. Patience: {patience_counter}")
+
 
         optimizer = optim.AdamW(self.model.parameters(), lr=self.learning_rate, weight_decay=self.weight_decay)
         scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode="min", factor=0.5, patience=2, verbose=True)
