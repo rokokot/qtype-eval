@@ -1,13 +1,13 @@
 #!/bin/bash
 #SBATCH --job-name=layerwise_probing
-#SBATCH --time=02:00:00
+#SBATCH --time=00:30:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
 #SBATCH --gpus-per-node=1
-#SBATCH --partition=gpu_p100
-#SBATCH --clusters=genius
+#SBATCH --partition=gpu_a100_debug
+#SBATCH --clusters=wice
 #SBATCH --account=intro_vsc37132
 
 export PATH="$VSC_DATA/miniconda3/bin:$PATH"
@@ -33,41 +33,8 @@ nvidia-smi
 echo "Python executable: $(which python)"
 echo "PyTorch CUDA available: $(python -c 'import torch; print(torch.cuda.is_available())')"
 
-# Run a test experiment first to check for any issues
-echo "Running test experiment to check for issues..."
-OUTPUT_TEST_DIR="$VSC_SCRATCH/test_output"
-mkdir -p $OUTPUT_TEST_DIR
-
-python -m src.experiments.run_experiment \
-    "hydra.job.chdir=False" \
-    "hydra.run.dir=." \
-    "experiment=question_type" \
-    "experiment.tasks=question_type" \
-    "model=lm_probe" \
-    "model.lm_name=cis-lmu/glot500-base" \
-    "model.layer_wise=true" \
-    "model.layer_index=6" \
-    "model.freeze_model=true" \
-    "+model.probe_hidden_size=96" \
-    "data.languages=[en]" \
-    "data.cache_dir=$VSC_DATA/qtype-eval/data/cache" \
-    "training.task_type=classification" \
-    "training.num_epochs=2" \
-    "training.batch_size=16" \
-    "+training.debug_mode=true" \
-    "experiment_name=test_layerwise_probing" \
-    "output_dir=${OUTPUT_TEST_DIR}" \
-    "wandb.mode=disabled"
-
-if [ $? -ne 0 ]; then
-    echo "Test experiment failed. Please check the logs for issues."
-    exit 1
-fi
-
-echo "Test experiment completed successfully. Proceeding with full analysis."
-
-LANGUAGES=("ar")  # Start with fewer languages
-LAYERS=(1 2 6 11 12)  # Early, middle, and late layers
+LANGUAGES=("ar")  
+LAYERS=(1 2 6 11 12)  
 MAIN_TASKS=("question_type" "complexity")
 SUBMETRICS=("avg_links_len" "n_tokens")  # Just 2 key submetrics
 CONTROL_INDICES=(1)  # Only  control runs
