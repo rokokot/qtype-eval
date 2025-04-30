@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=layerwise_probing
-#SBATCH --time=00:30:00  # Debug run time allocation
+#SBATCH --time=00:30:00 
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
@@ -95,8 +95,6 @@ cat > "${OUTPUT_BASE_DIR}/generate_summaries.py" << 'EOF'
 #!/usr/bin/env python3
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 import sys
 import os
 
@@ -172,48 +170,7 @@ def generate_summaries(tracker_file, output_dir):
         )
         task_summary.to_csv(os.path.join(output_dir, f'{task}_summary.csv'))
     
-    # Generate visualizations - Layer performance across languages
-    fig_dir = os.path.join(output_dir, 'figures')
-    os.makedirs(fig_dir, exist_ok=True)
-    
-    # Layer performance by task
-    for task in df['task'].dropna().unique():
-        try:
-            task_df = df[(df['task'] == task) & (df['control_index'].isna())]
-            if task_df.empty:
-                continue
-                
-            # For classification task
-            if task == 'question_type' and 'accuracy' in df.columns:
-                plt.figure(figsize=(12, 6))
-                for language in task_df['language'].unique():
-                    lang_data = task_df[task_df['language'] == language]
-                    plt.plot(lang_data['layer'], lang_data['value'], marker='o', label=language)
-                plt.xlabel('Layer')
-                plt.ylabel('Accuracy')
-                plt.title(f'Layer-wise Accuracy for Question Type Task')
-                plt.legend()
-                plt.grid(True, linestyle='--', alpha=0.7)
-                plt.savefig(os.path.join(fig_dir, 'layer_accuracy_by_language.png'))
-                plt.close()
-                
-            # For regression task
-            elif task in ['complexity', 'single_submetric'] and 'r2' in df.columns:
-                plt.figure(figsize=(12, 6))
-                for language in task_df['language'].unique():
-                    lang_data = task_df[task_df['language'] == language]
-                    plt.plot(lang_data['layer'], lang_data['value'], marker='o', label=language)
-                plt.xlabel('Layer')
-                plt.ylabel('R²')
-                plt.title(f'Layer-wise R² for {task.title()} Task')
-                plt.legend()
-                plt.grid(True, linestyle='--', alpha=0.7)
-                plt.savefig(os.path.join(fig_dir, f'layer_r2_{task}_by_language.png'))
-                plt.close()
-        except Exception as e:
-            print(f"Error generating figure for task {task}: {e}")
-    
-    print("All summary files and figures generated successfully!")
+    print("All summary files generated successfully!")
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
@@ -230,12 +187,12 @@ chmod +x "${OUTPUT_BASE_DIR}/extract_metrics.py"
 chmod +x "${OUTPUT_BASE_DIR}/generate_summaries.py"
 
 # === Configuration ===
-LANGUAGES=("ar")
+LANGUAGES=("ru")
 # For full run uncommment this: 
 # LANGUAGES=("en" "ar" "fi" "id" "ja" "ko" "ru")
 
 # Use a small set of layers for testing
-LAYERS=(2 11)
+LAYERS=(7)
 # For full run uncommment this:
 # LAYERS=(1 2 3 4 5 6 7 8 9 10 11 12)
 
@@ -248,9 +205,7 @@ CONTROL_INDICES=(1)
 # For full run uncommment this:
 # CONTROL_INDICES=(1 2 3)
 
-# Define priority languages for skipping
-PRIORITY_LANGUAGES=()
-PRIORITY_LAYERS=()
+
 
 # === Experiment functions ===
 run_standard_experiment() {
@@ -320,12 +275,12 @@ run_standard_experiment() {
             \"model.layer_wise=true\" \
             \"model.layer_index=${LAYER}\" \
             \"model.freeze_model=true\" \
-            \"model.probe_hidden_size=96\" \
+            \"model.probe_hidden_size=192\" \
             \"data.languages=[${LANGUAGE}]\" \
             \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
             \"training.task_type=${TASK_TYPE}\" \
             \"training.num_epochs=15\" \
-            \"training.lr=1e-4\" \
+            \"training.lr=3e-5\" \
             \"training.batch_size=16\" \
             \"+training.gradient_accumulation_steps=2\" \
             \"experiment_name=${EXPERIMENT_NAME}\" \
@@ -344,12 +299,12 @@ run_standard_experiment() {
             \"model.layer_wise=true\" \
             \"model.layer_index=${LAYER}\" \
             \"model.freeze_model=true\" \
-            \"model.probe_hidden_size=96\" \
+            \"model.probe_hidden_size=192\" \
             \"data.languages=[${LANGUAGE}]\" \
             \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
             \"training.task_type=${TASK_TYPE}\" \
             \"training.num_epochs=15\" \
-            \"training.lr=1e-4\" \
+            \"training.lr=3e-5\" \
             \"training.batch_size=16\" \
             \"+training.gradient_accumulation_steps=2\" \
             \"experiment_name=${EXPERIMENT_NAME}\" \
@@ -369,7 +324,7 @@ run_standard_experiment() {
         echo "==============================================================="
         
         # Extract metrics
-        RESULTS_FILE="${OUTPUT_SUBDIR}/results.json"
+        RESULTS_FILE="${OUTPUT_SUBDIR}/${LANGUAGE}/results.json"
         if [ -f "$RESULTS_FILE" ]; then
             python3 ${OUTPUT_BASE_DIR}/extract_metrics.py \
                 "$RESULTS_FILE" "$RESULTS_TRACKER" \
@@ -405,18 +360,18 @@ run_control_experiment() {
     local EXPERIMENT_TYPE="control"
     local TASK_SPEC="question_type"
     local EXPERIMENT_NAME="layer_${LAYER}_question_type_control${CONTROL_IDX}_${LANGUAGE}"
-    local OUTPUT_SUBDIR="${OUTPUT_BASE_DIR}/${LANGUAGE}/layer_${LAYER}/question_type/control${CONTROL_IDX}"
+    local OUTPUT_SUBDIR="${OUTPUT_BASE_DIR}/${LANGUAGE}/layer_${LAYER}/question_type/control${CONTROL_IDX}/${LANGUAGE}"
     
     if [ "$TASK" == "complexity" ]; then
         TASK_SPEC="complexity"
         EXPERIMENT_NAME="layer_${LAYER}_complexity_control${CONTROL_IDX}_${LANGUAGE}"
-        OUTPUT_SUBDIR="${OUTPUT_BASE_DIR}/${LANGUAGE}/layer_${LAYER}/complexity/control${CONTROL_IDX}"
+        OUTPUT_SUBDIR="${OUTPUT_BASE_DIR}/${LANGUAGE}/layer_${LAYER}/complexity/control${CONTROL_IDX}/${LANGUAGE}"
     
     elif [ -n "$SUBMETRIC" ]; then
         EXPERIMENT_TYPE="submetrics_control"
         TASK_SPEC="single_submetric"
         EXPERIMENT_NAME="layer_${LAYER}_${SUBMETRIC}_control${CONTROL_IDX}_${LANGUAGE}"
-        OUTPUT_SUBDIR="${OUTPUT_BASE_DIR}/${LANGUAGE}/layer_${LAYER}/${SUBMETRIC}/control${CONTROL_IDX}"
+        OUTPUT_SUBDIR="${OUTPUT_BASE_DIR}/${LANGUAGE}/layer_${LAYER}/${SUBMETRIC}/control${CONTROL_IDX}/${LANGUAGE}"
     fi
     
     mkdir -p "$OUTPUT_SUBDIR"
@@ -464,12 +419,12 @@ run_control_experiment() {
             \"model.layer_wise=true\" \
             \"model.layer_index=${LAYER}\" \
             \"model.freeze_model=true\" \
-            \"model.probe_hidden_size=96\" \
+            \"model.probe_hidden_size=192\" \
             \"data.languages=[${LANGUAGE}]\" \
             \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
             \"training.task_type=${TASK_TYPE}\" \
             \"training.num_epochs=15\" \
-            \"training.lr=1e-4\" \
+            \"training.lr=3e-5\" \
             \"training.batch_size=16\" \
             \"+training.gradient_accumulation_steps=2\" \
             \"experiment_name=${EXPERIMENT_NAME}\" \
@@ -490,12 +445,12 @@ run_control_experiment() {
             \"model.layer_wise=true\" \
             \"model.layer_index=${LAYER}\" \
             \"model.freeze_model=true\" \
-            \"model.probe_hidden_size=96\" \
+            \"model.probe_hidden_size=192\" \
             \"data.languages=[${LANGUAGE}]\" \
             \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
             \"training.task_type=${TASK_TYPE}\" \
             \"training.num_epochs=15\" \
-            \"training.lr=1e-4\" \
+            \"training.lr=3e-5\" \
             \"training.batch_size=16\" \
             \"+training.gradient_accumulation_steps=2\" \
             \"experiment_name=${EXPERIMENT_NAME}\" \
@@ -514,7 +469,7 @@ run_control_experiment() {
         echo "==============================================================="
         
         # Extract metrics
-        RESULTS_FILE="${OUTPUT_SUBDIR}/results.json"
+        RESULTS_FILE="${OUTPUT_SUBDIR}/${LANGUAGE}/results.json"
         if [ -f "$RESULTS_FILE" ]; then
             python3 ${OUTPUT_BASE_DIR}/extract_metrics.py \
                 "$RESULTS_FILE" "$RESULTS_TRACKER" \
