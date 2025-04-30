@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=layerwise_probing
-#SBATCH --time=00:30:00  # Increased time allocation for full suite
+#SBATCH --time=00:30:00  
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
@@ -10,7 +10,6 @@
 #SBATCH --clusters=wice
 #SBATCH --account=intro_vsc37132
 
-# === Environment setup ===
 export PATH="$VSC_DATA/miniconda3/bin:$PATH"
 source "$VSC_DATA/miniconda3/etc/profile.d/conda.sh"
 
@@ -24,21 +23,17 @@ export HYDRA_FULL_ERROR=1
 export WANDB_DIR="$VSC_SCRATCH/wandb"
 mkdir -p "$VSC_SCRATCH/wandb"
 
-# === Directory setup ===
 OUTPUT_BASE_DIR="$VSC_SCRATCH/probing_output"
 mkdir -p $OUTPUT_BASE_DIR
 RESULTS_TRACKER="${OUTPUT_BASE_DIR}/results_tracker.csv"
 LOG_DIR="${OUTPUT_BASE_DIR}/logs"
 mkdir -p $LOG_DIR
 
-# Initialize results tracker
 echo "experiment_type,language,layer,task,submetric,control_index,metric,value" > $RESULTS_TRACKER
 
-# Also track failed experiments
 FAILED_LOG="${OUTPUT_BASE_DIR}/failed_experiments.log"
 touch $FAILED_LOG
 
-# Create metrics extraction script
 cat > "${OUTPUT_BASE_DIR}/extract_metrics.py" << 'EOF'
 #!/usr/bin/env python3
 import json
@@ -230,18 +225,22 @@ chmod +x "${OUTPUT_BASE_DIR}/extract_metrics.py"
 chmod +x "${OUTPUT_BASE_DIR}/generate_summaries.py"
 
 # === Configuration ===
-LANGUAGES=("ar" "ja")
+
+LANGUAGES=("ar")
 # LANGUAGES=("en" "ar" "fi" "id" "ja" "ko" "ru")
-# Use a full range of layers from early to late in the model
-LAYERS=(2 6 11)
+
+# Use a small set of layers for testing
+LAYERS=(2 11)
 # LAYERS=(1 2 3 4 5 6 7 8 9 10 11 12)
+
 MAIN_TASKS=("question_type" "complexity")
 SUBMETRICS=("avg_verb_edges" "lexical_density")
 # SUBMETRICS=("avg_links_len" "avg_max_depth" "avg_subordinate_chain_len" "avg_verb_edges" "lexical_density" "n_tokens")
 
 CONTROL_INDICES=(1)
+# CONTROL_INDICES=(1 2 3)
 
-# === Experiment functions ===
+
 run_standard_experiment() {
     local LANGUAGE=$1
     local LAYER=$2
@@ -269,11 +268,6 @@ run_standard_experiment() {
     
     mkdir -p "$OUTPUT_SUBDIR"
     
-    # Create log files
-    LOG_FILE="${LOG_DIR}/${EXPERIMENT_NAME}.log"
-    ERROR_FILE="${LOG_DIR}/${EXPERIMENT_NAME}.err"
-    
-    # Skip if already successful
     if [ -f "${OUTPUT_SUBDIR}/results.json" ]; then
         echo "Experiment ${EXPERIMENT_NAME} already completed successfully. Extracting metrics..."
         python3 ${OUTPUT_BASE_DIR}/extract_metrics.py \
@@ -283,53 +277,80 @@ run_standard_experiment() {
         return 0
     fi
     
-    # Skip if already failed too many times
     local FAIL_COUNT=$(grep -c "^${EXPERIMENT_NAME}$" $FAILED_LOG)
     if [ $FAIL_COUNT -ge $MAX_RETRIES ]; then
         echo "Experiment ${EXPERIMENT_NAME} has failed $FAIL_COUNT times already. Skipping."
         return 1
     fi
-    
+
+    echo "==============================================================="
     echo "Running $TASK_SPEC experiment for language $LANGUAGE, layer $LAYER"
+    if [ -n "$SUBMETRIC" ]; then
+        echo "Submetric: $SUBMETRIC"
+    fi
+    echo "==============================================================="
     
-    # Build command with all necessary parameters
-    local COMMAND="python -m src.experiments.run_experiment \
-        \"hydra.job.chdir=False\" \
-        \"hydra.run.dir=.\" \
-        \"experiment=${TASK}\" \
-        \"experiment.tasks=${TASK_SPEC}\" \
-        \"model=lm_probe\" \
-        \"model.lm_name=cis-lmu/glot500-base\" \
-        \"model.layer_wise=true\" \
-        \"model.layer_index=${LAYER}\" \
-        \"model.freeze_model=true\" \
-        \"model.probe_hidden_size=96\" \
-        \"data.languages=[${LANGUAGE}]\" \
-        \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
-        \"training.task_type=${TASK_TYPE}\" \
-        \"training.num_epochs=15\" \
-        \"training.lr=1e-4\" \
-        \"training.batch_size=16\" \
-        \"+training.gradient_accumulation_steps=2\" \
-        \"experiment_name=${EXPERIMENT_NAME}\" \
-        \"output_dir=${OUTPUT_SUBDIR}\" \
-        \"wandb.mode=offline\""
+    local COMMAND=""
     
     if [ -n "$SUBMETRIC" ]; then
-        COMMAND+=" \"experiment.submetric=${SUBMETRIC}\""
+        # For submetric tasks, use the submetrics experiment config
+        COMMAND="python -m src.experiments.run_experiment \
+            \"hydra.job.chdir=False\" \
+            \"hydra.run.dir=.\" \
+            \"experiment=single_submetric\" \
+            \"experiment.tasks=single_submetric\" \
+            \"experiment.submetric=${SUBMETRIC}\" \
+            \"model=lm_probe\" \
+            \"model.lm_name=cis-lmu/glot500-base\" \
+            \"model.layer_wise=true\" \
+            \"model.layer_index=${LAYER}\" \
+            \"model.freeze_model=true\" \
+            \"model.probe_hidden_size=96\" \
+            \"data.languages=[${LANGUAGE}]\" \
+            \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
+            \"training.task_type=${TASK_TYPE}\" \
+            \"training.num_epochs=15\" \
+            \"training.lr=1e-4\" \
+            \"training.batch_size=16\" \
+            \"+training.gradient_accumulation_steps=2\" \
+            \"experiment_name=${EXPERIMENT_NAME}\" \
+            \"output_dir=${OUTPUT_SUBDIR}\" \
+            \"wandb.mode=offline\""
+    else
+        # For main tasks, use the task-specific experiment config
+        COMMAND="python -m src.experiments.run_experiment \
+            \"hydra.job.chdir=False\" \
+            \"hydra.run.dir=.\" \
+            \"experiment=${TASK}\" \
+            \"experiment.tasks=${TASK}\" \
+            \"model=lm_probe\" \
+            \"model.lm_name=cis-lmu/glot500-base\" \
+            \"model.layer_wise=true\" \
+            \"model.layer_index=${LAYER}\" \
+            \"model.freeze_model=true\" \
+            \"model.probe_hidden_size=96\" \
+            \"data.languages=[${LANGUAGE}]\" \
+            \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
+            \"training.task_type=${TASK_TYPE}\" \
+            \"training.num_epochs=15\" \
+            \"training.lr=1e-4\" \
+            \"training.batch_size=16\" \
+            \"+training.gradient_accumulation_steps=2\" \
+            \"experiment_name=${EXPERIMENT_NAME}\" \
+            \"output_dir=${OUTPUT_SUBDIR}\" \
+            \"wandb.mode=offline\""
     fi
     
-    # Log the command
-    echo "Command: $COMMAND" | tee -a $LOG_FILE
-    
-    # Execute the experiment with error handling
-    eval $COMMAND >> $LOG_FILE 2> $ERROR_FILE
+    echo "Command: $COMMAND"
+    eval $COMMAND 
+
     local RESULT=$?
     
     if [ $RESULT -eq 0 ]; then
+        echo "==============================================================="
         echo "Standard experiment completed successfully: $EXPERIMENT_NAME"
+        echo "==============================================================="
         
-        # Extract metrics
         RESULTS_FILE="${OUTPUT_SUBDIR}/results.json"
         if [ -f "$RESULTS_FILE" ]; then
             python3 ${OUTPUT_BASE_DIR}/extract_metrics.py \
@@ -339,15 +360,14 @@ run_standard_experiment() {
             
             return 0
         else
-            echo "Warning: Results file not found: $RESULTS_FILE" >> $ERROR_FILE
+            echo "WARNING: Results file not found: $RESULTS_FILE" 
             echo "${EXPERIMENT_NAME}" >> $FAILED_LOG
             return 1
         fi
     else
-        echo "Error in standard experiment: $EXPERIMENT_NAME" | tee -a $ERROR_FILE
+        echo "ERROR in standard experiment: $EXPERIMENT_NAME" 
         echo "${EXPERIMENT_NAME}" >> $FAILED_LOG
         
-        # Clean GPU memory explicitly
         python -c "import torch; torch.cuda.empty_cache()" 2>/dev/null || true
         
         return 1
@@ -382,11 +402,6 @@ run_control_experiment() {
     
     mkdir -p "$OUTPUT_SUBDIR"
     
-    # Create log files
-    LOG_FILE="${LOG_DIR}/${EXPERIMENT_NAME}.log"
-    ERROR_FILE="${LOG_DIR}/${EXPERIMENT_NAME}.err"
-    
-    # Skip if already successful
     if [ -f "${OUTPUT_SUBDIR}/results.json" ]; then
         echo "Control experiment ${EXPERIMENT_NAME} already completed successfully. Extracting metrics..."
         python3 ${OUTPUT_BASE_DIR}/extract_metrics.py \
@@ -396,55 +411,82 @@ run_control_experiment() {
         return 0
     fi
     
-    # Skip if already failed too many times
     local FAIL_COUNT=$(grep -c "^${EXPERIMENT_NAME}$" $FAILED_LOG)
     if [ $FAIL_COUNT -ge $MAX_RETRIES ]; then
         echo "Control experiment ${EXPERIMENT_NAME} has failed $FAIL_COUNT times already. Skipping."
         return 1
     fi
     
+    echo "==============================================================="
     echo "Running $TASK_SPEC control experiment for language $LANGUAGE, layer $LAYER, control $CONTROL_IDX"
+    if [ -n "$SUBMETRIC" ]; then
+        echo "Submetric: $SUBMETRIC"
+    fi
+    echo "==============================================================="
     
-    # Build command
-    local COMMAND="python -m src.experiments.run_experiment \
-        \"hydra.job.chdir=False\" \
-        \"hydra.run.dir=.\" \
-        \"experiment=${TASK}\" \
-        \"experiment.tasks=${TASK_SPEC}\" \
-        \"model=lm_probe\" \
-        \"model.lm_name=cis-lmu/glot500-base\" \
-        \"model.layer_wise=true\" \
-        \"model.layer_index=${LAYER}\" \
-        \"model.freeze_model=true\" \
-        \"model.probe_hidden_size=96\" \
-        \"experiment.use_controls=true\" \
-        \"experiment.control_index=${CONTROL_IDX}\" \
-        \"data.languages=[${LANGUAGE}]\" \
-        \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
-        \"training.task_type=${TASK_TYPE}\" \
-        \"training.num_epochs=15\" \
-        \"training.lr=1e-4\" \
-        \"training.batch_size=16\" \
-        \"+training.gradient_accumulation_steps=2\" \
-        \"experiment_name=${EXPERIMENT_NAME}\" \
-        \"output_dir=${OUTPUT_SUBDIR}\" \
-        \"wandb.mode=offline\""
+    local COMMAND=""
     
     if [ -n "$SUBMETRIC" ]; then
-        COMMAND+=" \"experiment.submetric=${SUBMETRIC}\""
+        COMMAND="python -m src.experiments.run_experiment \
+            \"hydra.job.chdir=False\" \
+            \"hydra.run.dir=.\" \
+            \"experiment=single_submetric\" \
+            \"experiment.tasks=single_submetric\" \
+            \"experiment.submetric=${SUBMETRIC}\" \
+            \"experiment.use_controls=true\" \
+            \"experiment.control_index=${CONTROL_IDX}\" \
+            \"model=lm_probe\" \
+            \"model.lm_name=cis-lmu/glot500-base\" \
+            \"model.layer_wise=true\" \
+            \"model.layer_index=${LAYER}\" \
+            \"model.freeze_model=true\" \
+            \"model.probe_hidden_size=96\" \
+            \"data.languages=[${LANGUAGE}]\" \
+            \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
+            \"training.task_type=${TASK_TYPE}\" \
+            \"training.num_epochs=15\" \
+            \"training.lr=1e-4\" \
+            \"training.batch_size=16\" \
+            \"+training.gradient_accumulation_steps=2\" \
+            \"experiment_name=${EXPERIMENT_NAME}\" \
+            \"output_dir=${OUTPUT_SUBDIR}\" \
+            \"wandb.mode=offline\""
+    else
+        COMMAND="python -m src.experiments.run_experiment \
+            \"hydra.job.chdir=False\" \
+            \"hydra.run.dir=.\" \
+            \"experiment=${TASK}\" \
+            \"experiment.tasks=${TASK}\" \
+            \"experiment.use_controls=true\" \
+            \"experiment.control_index=${CONTROL_IDX}\" \
+            \"model=lm_probe\" \
+            \"model.lm_name=cis-lmu/glot500-base\" \
+            \"model.layer_wise=true\" \
+            \"model.layer_index=${LAYER}\" \
+            \"model.freeze_model=true\" \
+            \"model.probe_hidden_size=96\" \
+            \"data.languages=[${LANGUAGE}]\" \
+            \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
+            \"training.task_type=${TASK_TYPE}\" \
+            \"training.num_epochs=15\" \
+            \"training.lr=1e-4\" \
+            \"training.batch_size=16\" \
+            \"+training.gradient_accumulation_steps=2\" \
+            \"experiment_name=${EXPERIMENT_NAME}\" \
+            \"output_dir=${OUTPUT_SUBDIR}\" \
+            \"wandb.mode=offline\""
     fi
     
-    # Log the command
-    echo "Command: $COMMAND" | tee -a $LOG_FILE
+    echo "Command: $COMMAND"
     
-    # Execute the command
-    eval $COMMAND >> $LOG_FILE 2> $ERROR_FILE
+    eval $COMMAND 
     local RESULT=$?
     
     if [ $RESULT -eq 0 ]; then
+        echo "==============================================================="
         echo "Control experiment completed successfully: $EXPERIMENT_NAME"
+        echo "==============================================================="
         
-        # Extract metrics
         RESULTS_FILE="${OUTPUT_SUBDIR}/results.json"
         if [ -f "$RESULTS_FILE" ]; then
             python3 ${OUTPUT_BASE_DIR}/extract_metrics.py \
@@ -454,24 +496,20 @@ run_control_experiment() {
             
             return 0
         else
-            echo "Warning: Results file not found: $RESULTS_FILE" >> $ERROR_FILE
+            echo "WARNING: Results file not found: $RESULTS_FILE" 
             echo "${EXPERIMENT_NAME}" >> $FAILED_LOG
             return 1
         fi
     else
-        echo "Error in control experiment: $EXPERIMENT_NAME" | tee -a $ERROR_FILE
+        echo "ERROR in control experiment: $EXPERIMENT_NAME" 
         echo "${EXPERIMENT_NAME}" >> $FAILED_LOG
         
-        # Clean GPU memory explicitly
         python -c "import torch; torch.cuda.empty_cache()" 2>/dev/null || true
         
         return 1
     fi
 }
 
-
-
-# 1. Main tasks (question_type and complexity) for all languages and layers
 echo "========= Running main tasks experiments =========="
 for LANGUAGE in "${LANGUAGES[@]}"; do
     echo "Processing language: ${LANGUAGE}"
@@ -486,20 +524,16 @@ for LANGUAGE in "${LANGUAGES[@]}"; do
                 TASK_TYPE="regression"
             fi
             
-            # Run standard experiment for this task
             run_standard_experiment "$LANGUAGE" "$LAYER" "$TASK" "$TASK_TYPE" ""
             
-            # Wait a bit between experiments
             sleep 5
         done
     done
     
-    # Clear GPU memory after each language
     python -c "import torch; torch.cuda.empty_cache()" 2>/dev/null || true
     sleep 15
 done
 
-# 2. Submetric tasks for all languages and layers
 echo "========= Running submetric tasks experiments =========="
 for LANGUAGE in "${LANGUAGES[@]}"; do
     echo "Processing language: ${LANGUAGE}"
@@ -517,12 +551,10 @@ for LANGUAGE in "${LANGUAGES[@]}"; do
         done
     done
     
-    # Clear GPU memory after each language
     python -c "import torch; torch.cuda.empty_cache()" 2>/dev/null || true
     sleep 15
 done
 
-# 3. Control experiments for main tasks
 echo "========= Running control experiments for main tasks =========="
 for LANGUAGE in "${LANGUAGES[@]}"; do
     echo "Processing language: ${LANGUAGE}"
@@ -538,7 +570,6 @@ for LANGUAGE in "${LANGUAGES[@]}"; do
             
             for CONTROL_IDX in "${CONTROL_INDICES[@]}"; do
                 
-                
                 # Run control experiment
                 run_control_experiment "$LANGUAGE" "$LAYER" "$TASK" "$TASK_TYPE" "$CONTROL_IDX" ""
                 
@@ -548,12 +579,10 @@ for LANGUAGE in "${LANGUAGES[@]}"; do
         done
     done
     
-    # Clear GPU memory after each language
     python -c "import torch; torch.cuda.empty_cache()" 2>/dev/null || true
     sleep 15
 done
 
-# 4. Control experiments for submetrics
 echo "========= Running control experiments for submetrics =========="
 for LANGUAGE in "${LANGUAGES[@]}"; do
     echo "Processing language: ${LANGUAGE}"
@@ -563,15 +592,6 @@ for LANGUAGE in "${LANGUAGES[@]}"; do
         
         for SUBMETRIC in "${SUBMETRICS[@]}"; do
             for CONTROL_IDX in "${CONTROL_INDICES[@]}"; do
-                # Skip already run priority experiments
-                if [[ " ${PRIORITY_LANGUAGES[@]} " =~ " ${LANGUAGE} " ]] && 
-                   [[ " ${PRIORITY_LAYERS[@]} " =~ " ${LAYER} " ]] && 
-                   [[ "$SUBMETRIC" == "avg_links_len" ]] && 
-                   [[ "$CONTROL_IDX" == "1" ]]; then
-                    echo "Skipping already run priority control submetric experiment"
-                    continue
-                fi
-                
                 # Run control experiment for this submetric
                 run_control_experiment "$LANGUAGE" "$LAYER" "" "regression" "$CONTROL_IDX" "$SUBMETRIC"
                 
@@ -581,20 +601,20 @@ for LANGUAGE in "${LANGUAGES[@]}"; do
         done
     done
     
-    # Clear GPU memory after each language
+
     python -c "import torch; torch.cuda.empty_cache()" 2>/dev/null || true
     sleep 15
 done
 
-# === Generate summary reports ===
-echo "============= Generating summary reports ==============="
+
+
+
 python3 ${OUTPUT_BASE_DIR}/generate_summaries.py "${RESULTS_TRACKER}" "${OUTPUT_BASE_DIR}"
 
 echo "Layer-wise probing experiments completed. Results are saved in ${OUTPUT_BASE_DIR}"
 echo "Summary files are available in ${OUTPUT_BASE_DIR}"
 echo "Check ${OUTPUT_BASE_DIR}/figures for visualizations"
 
-# Print some statistics
 TOTAL_EXPERIMENTS=$(wc -l < "${RESULTS_TRACKER}")
 FAILED_EXPERIMENTS=$(wc -l < "${FAILED_LOG}")
 echo "Total experiments recorded: $((TOTAL_EXPERIMENTS-1)) (excluding header)"
