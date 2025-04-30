@@ -143,27 +143,30 @@ hydra:
     - hydra.run.dir=.
     - hydra.mode=RUN
     task:
-    - experiment=question_type
-    - experiment.tasks=question_type
-    - model=lm_finetune
+    - experiment=complexity
+    - experiment.tasks=complexity
+    - model=lm_probe
     - model.lm_name=cis-lmu/glot500-base
-    - model.dropout=0.1
-    - model.head_hidden_size=768
-    - model.head_layers=2
-    - data.languages=[fi]
+    - model.layer_wise=true
+    - model.layer_index=6
+    - model.freeze_model=true
+    - model.probe_hidden_size=96
+    - experiment.use_controls=true
+    - experiment.control_index=1
+    - data.languages=[ar]
     - data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache
-    - training.task_type=classification
-    - training.num_epochs=10
+    - training.task_type=regression
+    - training.num_epochs=15
+    - training.lr=1e-4
     - training.batch_size=16
-    - training.lr=2e-5
     - +training.gradient_accumulation_steps=2
-    - experiment_name=finetune_question_type_fi
-    - output_dir=/scratch/leuven/371/vsc37132/finetune_output/question_type/fi
+    - experiment_name=layer_6_complexity_control1_ar
+    - output_dir=/scratch/leuven/371/vsc37132/probing_output/ar/layer_6/complexity/control1
     - wandb.mode=offline
   job:
     name: run_experiment
     chdir: false
-    override_dirname: +training.gradient_accumulation_steps=2,data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache,data.languages=[fi],experiment.tasks=question_type,experiment=question_type,experiment_name=finetune_question_type_fi,model.dropout=0.1,model.head_hidden_size=768,model.head_layers=2,model.lm_name=cis-lmu/glot500-base,model=lm_finetune,output_dir=/scratch/leuven/371/vsc37132/finetune_output/question_type/fi,training.batch_size=16,training.lr=2e-5,training.num_epochs=10,training.task_type=classification,wandb.mode=offline
+    override_dirname: +training.gradient_accumulation_steps=2,data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache,data.languages=[ar],experiment.control_index=1,experiment.tasks=complexity,experiment.use_controls=true,experiment=complexity,experiment_name=layer_6_complexity_control1_ar,model.freeze_model=true,model.layer_index=6,model.layer_wise=true,model.lm_name=cis-lmu/glot500-base,model.probe_hidden_size=96,model=lm_probe,output_dir=/scratch/leuven/371/vsc37132/probing_output/ar/layer_6/complexity/control1,training.batch_size=16,training.lr=1e-4,training.num_epochs=15,training.task_type=regression,wandb.mode=offline
     id: ???
     num: ???
     config_name: config
@@ -190,9 +193,9 @@ hydra:
       provider: schema
     output_dir: /vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval
     choices:
-      experiment: question_type
+      experiment: complexity
       training: default
-      model: lm_finetune
+      model: lm_probe
       data: default
       hydra/env: default
       hydra/callbacks: null
