@@ -295,24 +295,41 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
             train_loader, val_loader, test_loader = create_lm_dataloaders(language=language,
                 task=task,model_name=cfg.model.lm_name,batch_size=cfg.training.batch_size,control_index=control_index,cache_dir=cfg.data.cache_dir,num_workers=cfg.training.num_workers,submetric=submetric)
             
+            
+            model_type = "lm_finetune" if cfg.experiment.type == "lm_finetune" else "lm_probe"
+            
+            logger.info(f"Using model type: {model_type}")
+
             model_params = OmegaConf.to_container(cfg.model, resolve=True)
             model_params_copy = model_params.copy()
-            
-            if 'model_type' in model_params_copy:
-                model_params_copy.pop('model_type')
-            
-            model = create_model("lm_probe", task_type, **model_params_copy)
-            logger.info(f"Successfully created model for {language}")
 
-            is_finetuning = model_params_copy.get('finetune', False)
-            grad_accum_steps = 1
             
-            if is_finetuning:
-                grad_accum_steps = getattr(cfg.training, 'gradient_accumulation_steps', 1)
-                logger.info(f'finetuning with gradient accum steps: {grad_accum_steps}')
+            if model_type == "lm_finetune":
+                # Ensure the model is not frozen during fine-tuning
+                model_params_copy['freeze_model'] = False
+                # Use more layers for the head during fine-tuning
+                model_params_copy['head_layers'] = model_params_copy.get('head_layers', 2)
+                # Larger head size for more expressive fine-tuning
+                model_params_copy['head_hidden_size'] = model_params_copy.get('head_hidden_size', 768)
+            
+            
+            model = create_model(model_type, task_type, **model_params_copy)
+            logger.info(f"Successfully created {model_type} model for {language}")
 
+            # Log model parameter details
+            total_params = sum(p.numel() for p in model.parameters())
+            trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+            logger.info(f"Total parameters: {total_params:,}")
+            logger.info(f"Trainable parameters: {trainable_params:,} ({trainable_params/total_params*100:.2f}%)")
+
+
+            is_finetuning = model_type == "lm_finetune"
+            grad_accum_steps = getattr(cfg.training, 'gradient_accumulation_steps', 1) if is_finetuning else 1
+            
+            # Create output directory for this language
             language_output_dir = os.path.join(cfg.output_dir, language)
             os.makedirs(language_output_dir, exist_ok=True)
+            
             
             trainer = LMTrainer(model=model,task_type=task_type,learning_rate=cfg.training.lr,weight_decay=cfg.training.weight_decay,num_epochs=cfg.training.num_epochs,patience=cfg.training.patience,output_dir=language_output_dir,wandb_run=wandb_run,gradient_accumulation_steps=grad_accum_steps)
             
@@ -322,21 +339,22 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
                 test_loader=test_loader
             )
             
-            # Add metadata
             results.update({
                 "language": language,
                 "task": task,
                 "task_type": task_type,
-                "model_type": cfg.model.model_type,
+                "model_type": model_type,
                 "is_control": cfg.experiment.use_controls,
                 "control_index": cfg.experiment.control_index,
                 "is_finetune": is_finetuning,
+                "total_params": total_params,
+                "trainable_params": trainable_params,
+                "trainable_percent": trainable_params/total_params*100
             })
             
             if submetric:
                 results["submetric"] = submetric
 
-            
             
             all_results[language] = results
             

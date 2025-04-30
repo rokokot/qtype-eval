@@ -6,7 +6,7 @@ import torch.nn as nn
 import torch.optim as optim
 import numpy as np
 from typing import Dict, Any, Optional
-from sklearn.metrics import accuracy_score, f1_score, mean_squared_error, r2_score
+from sklearn.metrics import accuracy_score, f1_score, mean_squared_error, r2_score, precision_score, recall_score, mean_absolute_error
 import logging
 from collections import defaultdict
 import json
@@ -21,7 +21,7 @@ class LMTrainer:
         self,
         model: nn.Module,
         task_type: str = "classification",
-        learning_rate: float = 1e-5,
+        learning_rate: float = 2e-5,
         weight_decay: float = 0.01,
         num_epochs: int = 10,
         patience: int = 3,
@@ -46,7 +46,10 @@ class LMTrainer:
         if output_dir:
             os.makedirs(output_dir, exist_ok=True)
 
-        self.criterion = nn.BCELoss() if task_type == "classification" else nn.MSELoss()
+        if task_type == "classification":
+            self.criterion = nn.BCEWithLogitsLoss() if model.num_outputs == 1 else nn.CrossEntropyLoss()
+        else:
+            self.criterion = nn.MSELoss()
         self.metrics_history = defaultdict(list)
 
         if hasattr(model, 'task_type') and model.task_type == "probe":
@@ -87,14 +90,35 @@ class LMTrainer:
                 # More detailed logging for probes
                 logger.info("Running probe experiment with specialized configuration")
 
-            optimizer = optim.AdamW(self.model.parameters(), lr=self.learning_rate, weight_decay=self.weight_decay)
-            scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode="min", factor=0.5, patience=2, verbose=True)
+            optimizer = optim.AdamW(
+                [
+                    {"params": [p for p in self.model.parameters() if p.requires_grad], 
+                    "lr": self.learning_rate}
+                ], 
+                weight_decay=self.weight_decay
+            )
+            
+            scheduler = optim.lr_scheduler.CosineAnnealingLR(
+                optimizer, 
+                T_max=self.num_epochs, 
+                eta_min=self.learning_rate * 0.1
+            )
 
             best_val_loss = float("inf")
             best_model_state = None
             patience_counter = 0
             start_time = time.time()
             degenerate_predictions_count = 0  # Track degenerate predictions
+
+            if self.debug_mode:
+                total_params = sum(p.numel() for p in self.model.parameters())
+                trainable_params = sum(p.numel() for p in self.model.parameters() if p.requires_grad)
+                logger.info(f"Model Parameters: Total={total_params:,}, Trainable={trainable_params:,} ({trainable_params/total_params*100:.2f}%)")
+                
+                # Log layer-wise trainable parameters
+                for name, module in self.model.named_children():
+                    module_params = sum(p.numel() for p in module.parameters() if p.requires_grad)
+                    logger.info(f"Module {name}: {module_params:,} trainable parameters")
 
             # Store prediction tracking for debugging
             if self.debug_mode:
@@ -253,10 +277,17 @@ class LMTrainer:
                             logger.info(f"Probe performance significantly worse than best. Adding extra patience point.")
                             patience_counter += 1  # Extra penalty for probe models
 
-                    # Early stopping
                     if patience_counter >= self.patience:
-                        logger.info(f"Early stopping at epoch {epoch+1}")
+                        logger.info(f"Early stopping triggered at epoch {epoch+1}")
+                        if self.wandb_run:
+                            self.wandb_run.log({"early_stop_epoch": epoch+1})
                         break
+
+                    # Add a more aggressive early stopping for probe models
+                    if hasattr(self.model, 'task_type') and self.model.task_type == "probe":
+                        if val_loss > best_val_loss * 1.5:  # More strict stopping for probes
+                            logger.warning("Probe performance degrading significantly. Stopping early.")
+                            break
 
             train_time = time.time() - start_time
             logger.info(f"Training completed in {train_time:.2f} seconds")
@@ -375,6 +406,9 @@ class LMTrainer:
 
     def _calculate_metrics(self, y_true, y_pred):
         """Calculate metrics based on task type"""
+        y_true = np.squeeze(y_true)
+        y_pred = np.squeeze(y_pred)
+
         if self.task_type == "classification":
             y_pred_binary = (y_pred > 0.5).astype(int)
             
@@ -386,6 +420,9 @@ class LMTrainer:
             return {
                 "accuracy": float(accuracy_score(y_true, y_pred_binary)),
                 "f1": float(f1_score(y_true, y_pred_binary, average="binary")),
+                "precision": float(precision_score(y_true, y_pred_binary, zero_division=0)),
+                "recall": float(recall_score(y_true, y_pred_binary, zero_division=0))
+        
             }
         else:
             if y_true.ndim > 1:

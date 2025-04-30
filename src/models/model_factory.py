@@ -1,10 +1,12 @@
 # creating instances of models used in our experiments
 import torch
 import torch.nn as nn
+import torch.optim as optim
 import os
 from sklearn.dummy import DummyClassifier, DummyRegressor
 from sklearn.linear_model import LogisticRegression, Ridge
 import xgboost as xgb
+from sklearn.metrics import accuracy_score, f1_score, mean_squared_error, r2_score
 from transformers import AutoModel
 import logging
 
@@ -239,45 +241,36 @@ def create_model(model_type, task_type, **kwargs):
 
     if model_type not in ["dummy", "logistic", "ridge", "xgboost", "lm_probe", "lm_finetune"]:
         logger.warning(f"Unknown model type: {model_type}. Using 'dummy' model.")
-        model_type = "dummy"
+        model_type = "lm_probe"
+
+    num_outputs = kwargs.get("num_outputs", 1)
+    if task_type == "classification":
+        num_outputs = 1  # Binary classification
+
+    common_params = {
+        "model_name": kwargs.get("lm_name", "cis-lmu/glot500-base"),
+        "task_type": task_type,
+        "num_outputs": num_outputs,
+        "dropout": kwargs.get("dropout", 0.1),
+        "layer_wise": kwargs.get("layer_wise", False),
+        "layer_index": kwargs.get("layer_index", -1)
+    }
 
     if model_type == "lm_probe":
-        num_outputs = kwargs.get("num_outputs", 1)
-        if task_type == "classification":
-            num_outputs = 1  # Binary classification
-        
-        probe_hidden_size = kwargs.get("probe_hidden_size", 96)
-        if probe_hidden_size is None:
-            probe_hidden_size = 96
-        
+        # Probe-specific parameters
         return LMProbe(
-            model_name=kwargs.get("lm_name", "cis-lmu/glot500-base"),
-            task_type=task_type,
-            num_outputs=num_outputs,
-            dropout=kwargs.get("dropout", 0.3),
+            **common_params,
             freeze_model=kwargs.get("freeze_model", True),
-            layer_wise=kwargs.get("layer_wise", True),
-            layer_index=kwargs.get("layer_index", -1),
-            probe_hidden_size=probe_hidden_size
+            probe_hidden_size=kwargs.get("probe_hidden_size", 96)
         )
     
     elif model_type == "lm_finetune":
-        num_outputs = kwargs.get("num_outputs", 1)
-        if task_type == "classification":
-            num_outputs = 1  # Binary classification
-        
-        # Use larger head by default for fine-tuning
-        head_hidden_size = kwargs.get("head_hidden_size", 768)
-        
+        # Fine-tuning specific parameters
         return LMFineTuner(
-            model_name=kwargs.get("lm_name", "cis-lmu/glot500-base"),
-            task_type=task_type,
-            num_outputs=num_outputs,
-            dropout=kwargs.get("dropout", 0.1),
-            head_hidden_size=head_hidden_size,
-            head_layers=kwargs.get("head_layers", 2),
-            layer_wise=kwargs.get("layer_wise", False),
-            layer_index=kwargs.get("layer_index", -1),
+            **common_params,
+            freeze_model=kwargs.get("freeze_model", False),  # Default to unfreeze for fine-tuning
+            head_hidden_size=kwargs.get("head_hidden_size", 768),
+            head_layers=kwargs.get("head_layers", 2)
         )
     
     if model_type == "logistic" and task_type != "classification":
