@@ -1,6 +1,6 @@
 seed: 42
-output_dir: /scratch/leuven/371/vsc37132/finetune_output/question_type/en
-experiment_name: finetune_question_type_en
+output_dir: /scratch/leuven/371/vsc37132/finetune_output/question_type/en/control1
+experiment_name: finetune_question_type_control1_en
 wandb:
   project: multilingual-question-probing
   entity: rokii-ku-leuven
@@ -26,6 +26,7 @@ model:
   lm_name: cis-lmu/glot500-base
   dropout: 0.1
   layer_wise: false
+  freeze_model: false
   layer_index: -1
   num_outputs: 1
   head_hidden_size: 768
@@ -45,8 +46,8 @@ training:
 experiment:
   type: lm_probe
   tasks: question_type
-  use_controls: false
-  control_index: null
+  use_controls: true
+  control_index: 1
   num_controls: 3
   eval_on_orig_test: true
   cross_lingual: false

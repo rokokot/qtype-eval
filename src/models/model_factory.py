@@ -170,8 +170,9 @@ class LMFineTuner(BaseLMModel):
         dropout: float = 0.1,
         head_hidden_size: int = 768,
         head_layers: int = 2,
-        layer_wise: bool = False,  # Usually False for fine-tuning
+        layer_wise: bool = False,  
         layer_index: int = -1,
+        freeze_model: bool = False,
     ):
         super().__init__(
             model_name=model_name,
@@ -237,20 +238,21 @@ def create_model(model_type, task_type, **kwargs):
     """Factory function to create the appropriate model type."""
     logger.info(f"Creating {model_type} model for {task_type} task")
     
-    task_type = task_type.lower() if isinstance(task_type, str) else "classification"
+    model_type = str(model_type).lower()
+    
+    task_type = str(task_type).lower() if isinstance(task_type, str) else "classification"
 
-    if model_type not in ["dummy", "logistic", "ridge", "xgboost", "lm_probe", "lm_finetune"]:
-        logger.warning(f"Unknown model type: {model_type}. Using 'dummy' model.")
+    valid_model_types = ["dummy", "logistic", "ridge", "xgboost", "lm_probe", "lm_finetune"]
+    
+    if model_type not in valid_model_types:
+        logger.warning(f"Unknown model type: {model_type}. Defaulting to 'lm_probe'.")
         model_type = "lm_probe"
 
-    num_outputs = kwargs.get("num_outputs", 1)
-    if task_type == "classification":
-        num_outputs = 1  # Binary classification
 
     common_params = {
         "model_name": kwargs.get("lm_name", "cis-lmu/glot500-base"),
         "task_type": task_type,
-        "num_outputs": num_outputs,
+        "num_outputs": kwargs.get("num_outputs", 1),
         "dropout": kwargs.get("dropout", 0.1),
         "layer_wise": kwargs.get("layer_wise", False),
         "layer_index": kwargs.get("layer_index", -1)
