@@ -5,4 +5,4 @@ freeze_model: true
 layer_wise: true
 layer_index: -1
 num_outputs: 1
-probe_hidden_size: 96
+probe_hidden_size: 768
