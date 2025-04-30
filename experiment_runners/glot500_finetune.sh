@@ -1,13 +1,13 @@
 #!/bin/bash
-#SBATCH --job-name=finetuning_glot500
-#SBATCH --time=00:30:00  
+#SBATCH --job-name=finetune_experiments
+#SBATCH --time=01:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
 #SBATCH --gres=gpu:1
-#SBATCH --partition=gpu_a100_debug
-#SBATCH --clusters=wice
+#SBATCH --partition=gpu_p100
+#SBATCH --clusters=genius
 #SBATCH --account=intro_vsc37132
 
 export PATH="$VSC_DATA/miniconda3/bin:$PATH"
@@ -43,14 +43,14 @@ echo "Python executable: $(which python)"
 echo "PyTorch CUDA available: $(python -c 'import torch; print(torch.cuda.is_available())')"
 
 # Define configuration
-LANGUAGES=("ar")
+LANGUAGES=("en" "ar" "fi" "id" "ja" "ko" "ru")
 TASKS=("question_type" "complexity")
-SUBMETRICS=("avg_links_len" "n_tokens")
-CONTROL_INDICES=(1)
+SUBMETRICS=("avg_links_len" "avg_max_depth" "avg_subordinate_chain_len" "avg_verb_edges" "lexical_density" "n_tokens")
+CONTROL_INDICES=(1 2 3)
 
-# Use smaller head for classification, larger for regression
-CLASS_HEAD_SIZE=256
-REGR_HEAD_SIZE=512
+# Use maximum head sizes for all tasks
+# For fine-tuning, use the same large head size for all task types
+HEAD_SIZE=768  # Full model dimension for maximum expressivity
 
 # Base output directory
 OUTPUT_BASE_DIR="$VSC_SCRATCH/finetune_output"
@@ -70,6 +70,29 @@ fi
 FAILED_LOG="${OUTPUT_BASE_DIR}/failed_experiments.log"
 touch $FAILED_LOG
 
+# Define priority experiments to run first (validation set)
+PRIORITY_LANGUAGES=("en")
+PRIORITY_TASKS=("question_type")
+
+# Verify lm_finetune config exists
+LM_FINETUNE_CONFIG="configs/model/lm_finetune.yaml"
+if [ ! -f "$LM_FINETUNE_CONFIG" ]; then
+    echo "Creating missing lm_finetune.yaml config file..."
+    mkdir -p $(dirname "$LM_FINETUNE_CONFIG")
+    cat > "$LM_FINETUNE_CONFIG" << 'EOF'
+# configs/model/lm_finetune.yaml
+model_type: "lm_finetune"
+lm_name: "cis-lmu/glot500-base"
+dropout: 0.1
+layer_wise: false
+layer_index: -1
+num_outputs: 1
+head_hidden_size: 768
+head_layers: 2
+EOF
+    echo "Created $LM_FINETUNE_CONFIG"
+fi
+
 # Function to run a finetuning experiment
 run_finetune_experiment() {
     local TASK_TYPE=$1
@@ -84,12 +107,6 @@ run_finetune_experiment() {
     local EXPERIMENT_NAME=""
     local OUTPUT_SUBDIR=""
     
-    # Set appropriate head size based on task type
-    local HEAD_SIZE=$CLASS_HEAD_SIZE
-    if [ "$TASK_TYPE" == "regression" ]; then
-        HEAD_SIZE=$REGR_HEAD_SIZE
-    fi
-    
     # Set experiment name and output directory based on parameters
     if [ -n "$SUBMETRIC" ]; then
         # This is a submetric experiment
@@ -101,7 +118,7 @@ run_finetune_experiment() {
             EXPERIMENT_NAME="finetune_${SUBMETRIC}_control${CONTROL_IDX}_${LANG}"
             OUTPUT_SUBDIR="${OUTPUT_BASE_DIR}/single_submetric/${LANG}/${SUBMETRIC}/control${CONTROL_IDX}"
         fi
-    else
+    else:
         # Regular task experiment
         if [ -z "$CONTROL_IDX" ]; then
             EXPERIMENT_NAME="finetune_${TASK}_${LANG}"
@@ -137,7 +154,8 @@ run_finetune_experiment() {
     # Record start time
     local START_TIME=$(date +%s)
     
-    # Build command - now using lm_finetune model type with appropriate head size
+    # Build command - using lm_finetune model type with maximum head size
+    # IMPORTANT: Output goes directly to SLURM, not to separate log files
     local COMMAND="python -m src.experiments.run_experiment \
         \"hydra.job.chdir=False\" \
         \"hydra.run.dir=.\" \
@@ -172,10 +190,10 @@ run_finetune_experiment() {
     fi
     
     # Log the command
-    echo "Command: $COMMAND" | tee -a $LOG_FILE
+    echo "Command: $COMMAND"
     
-    # Execute the experiment with error handling
-    eval $COMMAND >> $LOG_FILE 2> $ERROR_FILE
+    # Execute the experiment with error handling - OUTPUT DIRECTLY TO SLURM
+    eval $COMMAND
     local RESULT=$?
     
     # Calculate runtime
@@ -192,6 +210,10 @@ run_finetune_experiment() {
     if [ $RESULT -eq 0 ]; then
         echo "Experiment ${EXPERIMENT_NAME} completed successfully in ${RUNTIME} seconds"
         
+        # Still save command/outputs to log files for reference
+        echo "Command: $COMMAND" > $LOG_FILE
+        echo "Status: Success, Runtime: ${RUNTIME}s, Completed: $(date)" >> $LOG_FILE
+        
         # Record success in tracker
         echo "${LANG},${TASK},${CONTROL_IDX:-None},${SUBMETRIC:-None},success,${RUNTIME},${GPU_MEM},$(date +"%Y-%m-%d %H:%M:%S")" >> $RESULTS_TRACKER
         
@@ -200,8 +222,12 @@ run_finetune_experiment() {
         
         return 0
     else
-        echo "Error in experiment ${EXPERIMENT_NAME}" | tee -a $ERROR_FILE
+        echo "Error in experiment ${EXPERIMENT_NAME}"
         echo "${EXPERIMENT_NAME}" >> $FAILED_LOG
+        
+        # Still save error info to log files for reference
+        echo "Command: $COMMAND" > $ERROR_FILE
+        echo "Status: Failed, Runtime: ${RUNTIME}s, Completed: $(date)" >> $ERROR_FILE
         
         # Record failure in tracker
         echo "${LANG},${TASK},${CONTROL_IDX:-None},${SUBMETRIC:-None},failed,${RUNTIME},${GPU_MEM},$(date +"%Y-%m-%d %H:%M:%S")" >> $RESULTS_TRACKER
@@ -212,6 +238,91 @@ run_finetune_experiment() {
         return 1
     fi
 }
+
+# Verify that finetuning is set up correctly
+echo "Verifying finetuning model configuration..."
+python -c "
+import sys
+import os
+sys.path.append(os.getcwd())
+try:
+    from src.models.model_factory import create_model
+    
+    # Create a fine-tuning model
+    model = create_model('lm_finetune', 'classification', 
+                         lm_name='cis-lmu/glot500-base',
+                         head_hidden_size=768)
+    
+    # Check if model is actually unfrozen
+    trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    total_params = sum(p.numel() for p in model.parameters())
+    
+    # Print status
+    print(f'Fine-tuning model check:')
+    print(f'- Trainable parameters: {trainable_params:,}')
+    print(f'- Total parameters: {total_params:,}')
+    print(f'- Percentage trainable: {trainable_params/total_params*100:.2f}%')
+    
+    # Check if encoder is trainable (should be for fine-tuning)
+    encoder_trainable = sum(p.numel() for p in model.model.parameters() if p.requires_grad)
+    encoder_total = sum(p.numel() for p in model.model.parameters())
+    
+    print(f'- Encoder trainable: {encoder_trainable:,} / {encoder_total:,} ({encoder_trainable/encoder_total*100:.2f}%)')
+    
+    # Check head size
+    if hasattr(model, 'head') and isinstance(model.head, torch.nn.Sequential):
+        for module in model.head:
+            if isinstance(module, torch.nn.Linear):
+                in_features = module.in_features
+                out_features = module.out_features
+                print(f'- Head layer: {in_features} → {out_features} features')
+    
+    if encoder_trainable == 0:
+        print('WARNING: Encoder is completely frozen! This is not fine-tuning!')
+        sys.exit(1)
+    else:
+        print('SUCCESS: Model is properly set up for fine-tuning with maximum head size.')
+except Exception as e:
+    print(f'Error checking model: {e}')
+    import traceback
+    traceback.print_exc()
+    sys.exit(1)
+"
+
+# If model check failed, exit
+if [ $? -ne 0 ]; then
+    echo "ERROR: Fine-tuning model configuration is incorrect. Fix the model implementation before continuing."
+    exit 1
+fi
+
+# Run priority experiments first
+echo "===== Running priority experiments ====="
+for LANG in "${PRIORITY_LANGUAGES[@]}"; do
+    for TASK in "${PRIORITY_TASKS[@]}"; do
+        TASK_TYPE="classification"
+        if [ "$TASK" == "complexity" ]; then
+            TASK_TYPE="regression"
+        fi
+        
+        echo "Running priority experiment: $LANG, $TASK"
+        run_finetune_experiment "$TASK_TYPE" "$LANG" "$TASK" "" ""
+        
+        # Wait a bit to let GPU memory clear
+        sleep 10
+        
+        # Test one control experiment as a validation
+        run_finetune_experiment "$TASK_TYPE" "$LANG" "$TASK" "1" ""
+        
+        # Wait a bit to let GPU memory clear
+        sleep 10
+        
+        # Test one submetric experiment as a validation
+        run_finetune_experiment "regression" "$LANG" "single_submetric" "" "avg_links_len"
+        
+        # Wait a bit to let GPU memory clear
+        sleep 10
+    done
+done
 
 # Standard experiments (non-control)
 echo "===== Running main finetuning experiments ====="
@@ -306,227 +417,5 @@ done
 # Generate summary of experiments
 echo "===== Generating experiment summary ====="
 
-# Create a Python script to analyze the results
-cat > ${OUTPUT_BASE_DIR}/analyze_results.py << 'EOF'
-#!/usr/bin/env python3
-import pandas as pd
-import os
-import json
-import glob
-import sys
-from collections import defaultdict
-
-def analyze_results(base_dir, results_csv):
-    # Load the experiment tracker
-    df = pd.read_csv(results_csv)
-    print(f"Total experiments tracked: {len(df)}")
-    print(f"Successful experiments: {len(df[df['status'] == 'success'])}")
-    print(f"Failed experiments: {len(df[df['status'] == 'failed'])}")
-    
-    # Analyze runtime
-    print("\nRuntime Statistics (successful experiments):")
-    runtime_stats = df[df['status'] == 'success']['runtime_seconds'].describe()
-    print(f"Mean runtime: {runtime_stats['mean']:.1f} seconds ({runtime_stats['mean']/60:.1f} minutes)")
-    print(f"Median runtime: {runtime_stats['50%']:.1f} seconds ({runtime_stats['50%']/60:.1f} minutes)")
-    print(f"Max runtime: {runtime_stats['max']:.1f} seconds ({runtime_stats['max']/60:.1f} minutes)")
-    
-    # Collect performance metrics from result files
-    results = defaultdict(list)
-    
-    # Process regular tasks
-    for task in ['question_type', 'complexity']:
-        task_dir = os.path.join(base_dir, task)
-        if not os.path.exists(task_dir):
-            continue
-            
-        for lang_dir in os.listdir(task_dir):
-            lang_path = os.path.join(task_dir, lang_dir)
-            if not os.path.isdir(lang_path):
-                continue
-                
-            # Check standard experiment
-            result_file = os.path.join(lang_path, 'results.json')
-            if os.path.exists(result_file):
-                try:
-                    with open(result_file, 'r') as f:
-                        data = json.load(f)
-                    
-                    # Extract metrics based on task
-                    if task == 'question_type':
-                        metric_name = 'accuracy'
-                        metric_value = data.get('test_metrics', {}).get('accuracy')
-                    else:  # complexity
-                        metric_name = 'r2'
-                        metric_value = data.get('test_metrics', {}).get('r2')
-                    
-                    if metric_value is not None:
-                        results[f"{task}_{metric_name}"].append({
-                            'language': lang_dir,
-                            'control': 'None',
-                            'value': metric_value
-                        })
-                except Exception as e:
-                    print(f"Error processing {result_file}: {e}")
-            
-            # Check control experiments
-            for control_dir in glob.glob(os.path.join(lang_path, 'control*')):
-                if not os.path.isdir(control_dir):
-                    continue
-                    
-                control_name = os.path.basename(control_dir)
-                control_result = os.path.join(control_dir, 'results.json')
-                
-                if os.path.exists(control_result):
-                    try:
-                        with open(control_result, 'r') as f:
-                            data = json.load(f)
-                        
-                        # Extract metrics based on task
-                        if task == 'question_type':
-                            metric_name = 'accuracy'
-                            metric_value = data.get('test_metrics', {}).get('accuracy')
-                        else:  # complexity
-                            metric_name = 'r2'
-                            metric_value = data.get('test_metrics', {}).get('r2')
-                        
-                        if metric_value is not None:
-                            results[f"{task}_{metric_name}"].append({
-                                'language': lang_dir,
-                                'control': control_name,
-                                'value': metric_value
-                            })
-                    except Exception as e:
-                        print(f"Error processing {control_result}: {e}")
-    
-    # Process submetrics
-    submetric_dir = os.path.join(base_dir, 'single_submetric')
-    if os.path.exists(submetric_dir):
-        for lang_dir in os.listdir(submetric_dir):
-            lang_path = os.path.join(submetric_dir, lang_dir)
-            if not os.path.isdir(lang_path):
-                continue
-                
-            for submetric_dir in os.listdir(lang_path):
-                submetric_path = os.path.join(lang_path, submetric_dir)
-                if not os.path.isdir(submetric_path):
-                    continue
-                    
-                # Check standard experiment
-                result_file = os.path.join(submetric_path, 'results.json')
-                if os.path.exists(result_file):
-                    try:
-                        with open(result_file, 'r') as f:
-                            data = json.load(f)
-                        
-                        # Extract metrics
-                        metric_name = 'r2'
-                        metric_value = data.get('test_metrics', {}).get('r2')
-                        
-                        if metric_value is not None:
-                            results[f"{submetric_dir}_{metric_name}"].append({
-                                'language': lang_dir,
-                                'control': 'None',
-                                'value': metric_value
-                            })
-                    except Exception as e:
-                        print(f"Error processing {result_file}: {e}")
-                
-                # Check control experiments
-                for control_dir in glob.glob(os.path.join(submetric_path, 'control*')):
-                    if not os.path.isdir(control_dir):
-                        continue
-                        
-                    control_name = os.path.basename(control_dir)
-                    control_result = os.path.join(control_dir, 'results.json')
-                    
-                    if os.path.exists(control_result):
-                        try:
-                            with open(control_result, 'r') as f:
-                                data = json.load(f)
-                            
-                            # Extract metrics
-                            metric_name = 'r2'
-                            metric_value = data.get('test_metrics', {}).get('r2')
-                            
-                            if metric_value is not None:
-                                results[f"{submetric_dir}_{metric_name}"].append({
-                                    'language': lang_dir,
-                                    'control': control_name,
-                                    'value': metric_value
-                                })
-                        except Exception as e:
-                            print(f"Error processing {control_result}: {e}")
-    
-    # Calculate statistics and generate summary
-    print("\nPerformance Metrics Summary:")
-    summary_rows = []
-    
-    for metric_key, values in results.items():
-        if not values:
-            continue
-            
-        # Convert to DataFrame for easier analysis
-        metric_df = pd.DataFrame(values)
-        
-        # Calculate statistics for non-control experiments
-        std_df = metric_df[metric_df['control'] == 'None']
-        if not std_df.empty:
-            avg_value = std_df['value'].mean()
-            std_dev = std_df['value'].std()
-            
-            task_name = metric_key.split('_')[0]
-            metric_name = '_'.join(metric_key.split('_')[1:])
-            
-            # Get control statistics
-            control_values = {}
-            for control in ['control1', 'control2', 'control3']:
-                control_df = metric_df[metric_df['control'] == control]
-                if not control_df.empty:
-                    control_values[control] = control_df['value'].mean()
-            
-            # Print statistics
-            print(f"\n{task_name} - {metric_name}:")
-            print(f"  Standard: {avg_value:.4f} ± {std_dev:.4f}")
-            
-            for control, value in control_values.items():
-                print(f"  {control}: {value:.4f}")
-            
-            # Store for summary CSV
-            summary_rows.append({
-                'task': task_name,
-                'metric': metric_name,
-                'standard_avg': avg_value,
-                'standard_std': std_dev,
-                'control1_avg': control_values.get('control1'),
-                'control2_avg': control_values.get('control2'),
-                'control3_avg': control_values.get('control3'),
-                'num_languages': len(std_df['language'].unique()),
-                'num_samples': len(std_df)
-            })
-    
-    # Create summary CSV
-    if summary_rows:
-        summary_df = pd.DataFrame(summary_rows)
-        summary_file = os.path.join(base_dir, 'performance_summary.csv')
-        summary_df.to_csv(summary_file, index=False)
-        print(f"\nSummary saved to: {summary_file}")
-
-if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        print("Usage: python analyze_results.py <base_dir> <results_csv>")
-        sys.exit(1)
-    
-    base_dir = sys.argv[1]
-    results_csv = sys.argv[2]
-    
-    analyze_results(base_dir, results_csv)
-EOF
-
-chmod +x ${OUTPUT_BASE_DIR}/analyze_results.py
-
-# Run analysis
-python ${OUTPUT_BASE_DIR}/analyze_results.py ${OUTPUT_BASE_DIR} ${RESULTS_TRACKER}
-
 echo "All finetuning experiments completed"
 echo "Results can be found in ${OUTPUT_BASE_DIR}"
-echo "Summary reports are in ${OUTPUT_BASE_DIR}/performance_summary.csv"
