@@ -145,12 +145,11 @@ hydra:
     task:
     - experiment=question_type
     - experiment.tasks=question_type
-    - model=glot500_finetune
+    - model=lm_finetune
     - model.lm_name=cis-lmu/glot500-base
     - model.dropout=0.1
-    - model.freeze_model=false
-    - model.finetune=true
-    - model.probe_hidden_size=96
+    - model.head_hidden_size=768
+    - model.head_layers=2
     - data.languages=[en]
     - data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache
     - training.task_type=classification
@@ -164,7 +163,7 @@ hydra:
   job:
     name: run_experiment
     chdir: false
-    override_dirname: +training.gradient_accumulation_steps=2,data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache,data.languages=[en],experiment.tasks=question_type,experiment=question_type,experiment_name=finetune_question_type_en,model.dropout=0.1,model.finetune=true,model.freeze_model=false,model.lm_name=cis-lmu/glot500-base,model.probe_hidden_size=96,model=glot500_finetune,output_dir=/scratch/leuven/371/vsc37132/finetune_output/question_type/en,training.batch_size=16,training.lr=2e-5,training.num_epochs=10,training.task_type=classification,wandb.mode=offline
+    override_dirname: +training.gradient_accumulation_steps=2,data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache,data.languages=[en],experiment.tasks=question_type,experiment=question_type,experiment_name=finetune_question_type_en,model.dropout=0.1,model.head_hidden_size=768,model.head_layers=2,model.lm_name=cis-lmu/glot500-base,model=lm_finetune,output_dir=/scratch/leuven/371/vsc37132/finetune_output/question_type/en,training.batch_size=16,training.lr=2e-5,training.num_epochs=10,training.task_type=classification,wandb.mode=offline
     id: ???
     num: ???
     config_name: config
@@ -193,7 +192,7 @@ hydra:
     choices:
       experiment: question_type
       training: default
-      model: glot500_finetune
+      model: lm_finetune
       data: default
       hydra/env: default
       hydra/callbacks: null
