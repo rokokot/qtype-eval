@@ -1,6 +1,6 @@
 seed: 42
-output_dir: /scratch/leuven/371/vsc37132/finetune_output/question_type/en/control1
-experiment_name: finetune_question_type_control1_en
+output_dir: /scratch/leuven/371/vsc37132/finetune_output/single_submetric/ar/n_tokens/control1
+experiment_name: finetune_n_tokens_control1_ar
 wandb:
   project: multilingual-question-probing
   entity: rokii-ku-leuven
@@ -18,7 +18,7 @@ data:
   cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
   vectors_dir: ./data/features
   languages:
-  - en
+  - ar
   train_language: null
   eval_language: null
 model:
@@ -32,7 +32,7 @@ model:
   head_hidden_size: 768
   head_layers: 2
 training:
-  task_type: classification
+  task_type: regression
   batch_size: 16
   num_epochs: 10
   lr: 2.0e-05
@@ -45,9 +45,18 @@ training:
   gradient_accumulation_steps: 2
 experiment:
   type: lm_probe
-  tasks: question_type
+  tasks: single_submetric
+  submetric: n_tokens
+  available_submetrics:
+  - avg_links_len
+  - avg_max_depth
+  - avg_subordinate_chain_len
+  - avg_verb_edges
+  - lexical_density
+  - n_tokens
   use_controls: true
   control_index: 1
   num_controls: 3
   eval_on_orig_test: true
   cross_lingual: false
+  task_type: regression
