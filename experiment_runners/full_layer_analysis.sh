@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=layerwise_probing
-#SBATCH --time=00:30:00 
+#SBATCH --time=00:30:00  # Debug run time allocation
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
@@ -320,7 +320,6 @@ run_standard_experiment() {
             \"model.layer_wise=true\" \
             \"model.layer_index=${LAYER}\" \
             \"model.freeze_model=true\" \
-            \"+model.freeze_model=true\" \
             \"model.probe_hidden_size=96\" \
             \"data.languages=[${LANGUAGE}]\" \
             \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
@@ -345,7 +344,6 @@ run_standard_experiment() {
             \"model.layer_wise=true\" \
             \"model.layer_index=${LAYER}\" \
             \"model.freeze_model=true\" \
-            \"+model.freeze_model=true\" \
             \"model.probe_hidden_size=96\" \
             \"data.languages=[${LANGUAGE}]\" \
             \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
@@ -466,7 +464,6 @@ run_control_experiment() {
             \"model.layer_wise=true\" \
             \"model.layer_index=${LAYER}\" \
             \"model.freeze_model=true\" \
-            \"+model.freeze_model=true\" \
             \"model.probe_hidden_size=96\" \
             \"data.languages=[${LANGUAGE}]\" \
             \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
@@ -493,7 +490,6 @@ run_control_experiment() {
             \"model.layer_wise=true\" \
             \"model.layer_index=${LAYER}\" \
             \"model.freeze_model=true\" \
-            \"+model.freeze_model=true\" \
             \"model.probe_hidden_size=96\" \
             \"data.languages=[${LANGUAGE}]\" \
             \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \

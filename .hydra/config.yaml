@@ -1,6 +1,6 @@
 seed: 42
-output_dir: /scratch/leuven/371/vsc37132/finetune_output/question_type/en
-experiment_name: finetune_question_type_en
+output_dir: /scratch/leuven/371/vsc37132/probing_output/ar/layer_2/question_type
+experiment_name: layer_2_question_type_ar
 wandb:
   project: multilingual-question-probing
   entity: rokii-ku-leuven
@@ -18,24 +18,23 @@ data:
   cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
   vectors_dir: ./data/features
   languages:
-  - en
+  - ar
   train_language: null
   eval_language: null
 model:
-  model_type: lm_finetune
+  model_type: lm_probe
   lm_name: cis-lmu/glot500-base
-  dropout: 0.1
-  layer_wise: false
-  freeze_model: false
-  layer_index: -1
+  dropout: 0.3
+  freeze_model: true
+  layer_wise: true
+  layer_index: 2
   num_outputs: 1
-  head_hidden_size: 768
-  head_layers: 2
+  probe_hidden_size: 96
 training:
   task_type: classification
   batch_size: 16
-  num_epochs: 10
-  lr: 2.0e-05
+  num_epochs: 15
+  lr: 0.0001
   weight_decay: 0.01
   patience: 3
   scheduler_factor: 0.5
