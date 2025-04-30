@@ -11,22 +11,20 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class LMProbe(nn.Module):  # custom probe for language model representations
+class BaseLMModel(nn.Module):
+    """Base class for language model based models with common functionality."""
+    
     def __init__(
         self,
         model_name: str = "cis-lmu/glot500-base",
         task_type: str = "classification",
         num_outputs: int = 1,
-        dropout: float = 0.3,
         freeze_model: bool = True,
         layer_wise: bool = True,
         layer_index: int = -1,
-        finetune: bool = False,
-        probe_hidden_size: int = 96
-
     ):
         super().__init__()
-
+        
         try:
             local_only = os.environ.get("TRANSFORMERS_OFFLINE", "0") == "1"
             
@@ -41,55 +39,29 @@ class LMProbe(nn.Module):  # custom probe for language model representations
             logger.error(f"Error loading model {model_name}: {e}")
             raise
 
-        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")        
-
-        if freeze_model and not finetune:
-            for param in self.model.parameters():
-                param.requires_grad = False
-            logger.info("Language model parameters frozen")
-        elif finetune:
-            for param in self.model.parameters():
-                param.requires_grad = True
-                logger.info('finetuning the entire model')
-        else:
-            for param in self.model.parameters():
-                param.requires_grad = True
-            logger.info('training probe with unfrozen model')
-
-        hidden_size = self.model.config.hidden_size
-        
-        if probe_hidden_size is None or probe_hidden_size <= 0:
-            probe_hidden_size = hidden_size // 8 if task_type == "classification" else hidden_size // 4
-            logger.info(f"Using calculated probe_hidden_size: {probe_hidden_size}")
-        else:
-            logger.info(f"Using provided probe_hidden_size: {probe_hidden_size}")
-
-        self.head = nn.Sequential(
-            nn.Linear(hidden_size, probe_hidden_size),
-            nn.ReLU(),
-            nn.Dropout(dropout),
-            nn.Linear(probe_hidden_size, num_outputs),
-            nn.Sigmoid() if num_outputs == 1 and task_type == "classification" else nn.Identity(),
-        )
-
+        # Store configuration
         self.task_type = task_type
         self.num_outputs = num_outputs
         self.layer_wise = layer_wise
         self.layer_index = layer_index
         self.freeze_model = freeze_model
-        self.finetune = finetune
-
-        logger.info(f"Model configuration: layer-wise={layer_wise}, layer_index={layer_index}, freeze_model={freeze_model}, finetune={finetune}")
-
-        trainable_params = sum(p.numel() for p in self.parameters() if p.requires_grad)
-        total_params = sum(p.numel() for p in self.parameters())
-        logger.info(f"Model has {trainable_params:,} trainable parameters out of {total_params:,} total parameters")
-
-
-
-
-    def forward(self, input_ids, attention_mask, token_type_ids=None, **kwargs):
-        if self.layer_wise and hasattr(self, 'layer_index'):
+        
+        # Set up model freezing
+        if freeze_model:
+            for param in self.model.parameters():
+                param.requires_grad = False
+            logger.info("Language model parameters frozen")
+        else:
+            for param in self.model.parameters():
+                param.requires_grad = True
+            logger.info("Language model parameters trainable")
+            
+        # Log model configuration
+        logger.info(f"Base model configuration: layer-wise={layer_wise}, layer_index={layer_index}, freeze_model={freeze_model}")
+            
+    def get_representation(self, input_ids, attention_mask, token_type_ids=None):
+        """Extract representation from the language model."""
+        if self.layer_wise:
             outputs = self.model(
                 input_ids=input_ids,
                 attention_mask=attention_mask,
@@ -106,22 +78,166 @@ class LMProbe(nn.Module):  # custom probe for language model representations
             else:
                 layer_output = hidden_states[layer_index]
             
+            # Use CLS token representation
             sentence_repr = layer_output[:, 0, :]
         else:
             outputs = self.model(
                 input_ids=input_ids,
                 attention_mask=attention_mask,
-                token_type_ids=token_type_ids if token_type_ids is not None else None,)
+                token_type_ids=token_type_ids if token_type_ids is not None else None,
+            )
+            # Use CLS token representation from last layer
             sentence_repr = outputs.last_hidden_state[:, 0, :]
         
+        return sentence_repr
+    
+    def log_parameter_stats(self):
+        """Log model parameter statistics."""
+        trainable_params = sum(p.numel() for p in self.parameters() if p.requires_grad)
+        total_params = sum(p.numel() for p in self.parameters())
+        logger.info(f"Model has {trainable_params:,} trainable parameters out of {total_params:,} total parameters")
+        
+        # More detailed breakdown
+        encoder_trainable = sum(p.numel() for p in self.model.parameters() if p.requires_grad)
+        head_trainable = trainable_params - encoder_trainable
+        logger.info(f"Encoder: {encoder_trainable:,} trainable parameters, Head: {head_trainable:,} trainable parameters")
+
+
+class LMProbe(BaseLMModel):
+    """Lightweight probe for language model representations."""
+    
+    def __init__(
+        self,
+        model_name: str = "cis-lmu/glot500-base",
+        task_type: str = "classification",
+        num_outputs: int = 1,
+        dropout: float = 0.3,
+        freeze_model: bool = True,
+        layer_wise: bool = True,
+        layer_index: int = -1,
+        probe_hidden_size: int = 96
+    ):
+        super().__init__(
+            model_name=model_name,
+            task_type=task_type,
+            num_outputs=num_outputs,
+            freeze_model=freeze_model,
+            layer_wise=layer_wise,
+            layer_index=layer_index,
+        )
+        
+        # Set up probe head
+        hidden_size = self.model.config.hidden_size
+        
+        if probe_hidden_size is None or probe_hidden_size <= 0:
+            probe_hidden_size = hidden_size // 8 if task_type == "classification" else hidden_size // 4
+            logger.info(f"Using calculated probe_hidden_size: {probe_hidden_size}")
+        else:
+            logger.info(f"Using provided probe_hidden_size: {probe_hidden_size}")
+        
+        # Create a simple MLP probe
+        self.head = nn.Sequential(
+            nn.Linear(hidden_size, probe_hidden_size),
+            nn.ReLU(),
+            nn.Dropout(dropout),
+            nn.Linear(probe_hidden_size, num_outputs),
+            nn.Sigmoid() if num_outputs == 1 and task_type == "classification" else nn.Identity(),
+        )
+        
+        # Log parameter statistics
+        self.log_parameter_stats()
+        logger.info(f"Probe configuration: hidden_size={probe_hidden_size}, dropout={dropout}")
+
+    def forward(self, input_ids, attention_mask, token_type_ids=None, **kwargs):
+        sentence_repr = self.get_representation(
+            input_ids=input_ids,
+            attention_mask=attention_mask, 
+            token_type_ids=token_type_ids
+        )
         return self.head(sentence_repr)
 
+
+class LMFineTuner(BaseLMModel):
+    """Full model fine-tuner with more expressive classification/regression head."""
+    
+    def __init__(
+        self,
+        model_name: str = "cis-lmu/glot500-base",
+        task_type: str = "classification",
+        num_outputs: int = 1,
+        dropout: float = 0.1,
+        head_hidden_size: int = 768,
+        head_layers: int = 2,
+        layer_wise: bool = False,  # Usually False for fine-tuning
+        layer_index: int = -1,
+    ):
+        super().__init__(
+            model_name=model_name,
+            task_type=task_type,
+            num_outputs=num_outputs,
+            freeze_model=False,  # Always False for fine-tuning
+            layer_wise=layer_wise,
+            layer_index=layer_index,
+        )
+        
+        # Set up a more expressive head for fine-tuning
+        hidden_size = self.model.config.hidden_size
+        
+        logger.info(f"Using head_hidden_size: {head_hidden_size} for fine-tuning")
+        
+        # Create a multi-layer head based on the number of specified layers
+        if head_layers == 1:
+            self.head = nn.Sequential(
+                nn.Linear(hidden_size, num_outputs),
+                nn.Sigmoid() if num_outputs == 1 and task_type == "classification" else nn.Identity(),
+            )
+        elif head_layers == 2:
+            self.head = nn.Sequential(
+                nn.Linear(hidden_size, head_hidden_size),
+                nn.GELU(),  # GELU often works better in transformers
+                nn.Dropout(dropout),
+                nn.Linear(head_hidden_size, num_outputs),
+                nn.Sigmoid() if num_outputs == 1 and task_type == "classification" else nn.Identity(),
+            )
+        else:  # 3+ layers
+            layers = [nn.Linear(hidden_size, head_hidden_size), nn.GELU(), nn.Dropout(dropout)]
+            
+            # Add intermediate layers
+            for _ in range(head_layers - 2):
+                layers.extend([
+                    nn.Linear(head_hidden_size, head_hidden_size),
+                    nn.GELU(),
+                    nn.Dropout(dropout)
+                ])
+                
+            # Add output layer
+            layers.extend([
+                nn.Linear(head_hidden_size, num_outputs),
+                nn.Sigmoid() if num_outputs == 1 and task_type == "classification" else nn.Identity()
+            ])
+            
+            self.head = nn.Sequential(*layers)
+        
+        # Log parameter statistics
+        self.log_parameter_stats()
+        logger.info(f"Fine-tuning head configuration: hidden_size={head_hidden_size}, layers={head_layers}, dropout={dropout}")
+
+    def forward(self, input_ids, attention_mask, token_type_ids=None, **kwargs):
+        sentence_repr = self.get_representation(
+            input_ids=input_ids, 
+            attention_mask=attention_mask, 
+            token_type_ids=token_type_ids
+        )
+        return self.head(sentence_repr)
+
+
 def create_model(model_type, task_type, **kwargs):
+    """Factory function to create the appropriate model type."""
     logger.info(f"Creating {model_type} model for {task_type} task")
     
     task_type = task_type.lower() if isinstance(task_type, str) else "classification"
 
-    if model_type not in ["dummy", "logistic", "ridge", "xgboost", "lm_probe"]:
+    if model_type not in ["dummy", "logistic", "ridge", "xgboost", "lm_probe", "lm_finetune"]:
         logger.warning(f"Unknown model type: {model_type}. Using 'dummy' model.")
         model_type = "dummy"
 
@@ -138,12 +254,30 @@ def create_model(model_type, task_type, **kwargs):
             model_name=kwargs.get("lm_name", "cis-lmu/glot500-base"),
             task_type=task_type,
             num_outputs=num_outputs,
+            dropout=kwargs.get("dropout", 0.3),
+            freeze_model=kwargs.get("freeze_model", True),
+            layer_wise=kwargs.get("layer_wise", True),
+            layer_index=kwargs.get("layer_index", -1),
+            probe_hidden_size=probe_hidden_size
+        )
+    
+    elif model_type == "lm_finetune":
+        num_outputs = kwargs.get("num_outputs", 1)
+        if task_type == "classification":
+            num_outputs = 1  # Binary classification
+        
+        # Use larger head by default for fine-tuning
+        head_hidden_size = kwargs.get("head_hidden_size", 768)
+        
+        return LMFineTuner(
+            model_name=kwargs.get("lm_name", "cis-lmu/glot500-base"),
+            task_type=task_type,
+            num_outputs=num_outputs,
             dropout=kwargs.get("dropout", 0.1),
-            freeze_model=kwargs.get("freeze_model", False),
+            head_hidden_size=head_hidden_size,
+            head_layers=kwargs.get("head_layers", 2),
             layer_wise=kwargs.get("layer_wise", False),
             layer_index=kwargs.get("layer_index", -1),
-            finetune=kwargs.get('finetune', False),
-            probe_hidden_size=probe_hidden_size
         )
     
     if model_type == "logistic" and task_type != "classification":
