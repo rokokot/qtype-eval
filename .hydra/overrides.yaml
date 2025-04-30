@@ -12,6 +12,8 @@
 - training.batch_size=16
 - training.lr=2e-5
 - +training.gradient_accumulation_steps=2
-- experiment_name=finetune_question_type_en
-- output_dir=/scratch/leuven/371/vsc37132/finetune_output/question_type/en
+- experiment_name=finetune_question_type_control1_en
+- output_dir=/scratch/leuven/371/vsc37132/finetune_output/question_type/en/control1
 - wandb.mode=offline
+- experiment.use_controls=true
+- experiment.control_index=1

@@ -304,17 +304,13 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
             model_params_copy = model_params.copy()
 
             
-            if model_type == "lm_finetune":
-                # Ensure the model is not frozen during fine-tuning
-                model_params_copy['freeze_model'] = False
-                # Use more layers for the head during fine-tuning
-                model_params_copy['head_layers'] = model_params_copy.get('head_layers', 2)
-                # Larger head size for more expressive fine-tuning
-                model_params_copy['head_hidden_size'] = model_params_copy.get('head_hidden_size', 768)
+            if 'model_type' in model_params_copy:
+                del model_params_copy['model_type']
             
-            
+            # Create model without passing model_type as a separate argument
             model = create_model(model_type, task_type, **model_params_copy)
             logger.info(f"Successfully created {model_type} model for {language}")
+
 
             # Log model parameter details
             total_params = sum(p.numel() for p in model.parameters())
