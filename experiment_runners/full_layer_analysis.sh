@@ -1,12 +1,12 @@
 #!/bin/bash
 #SBATCH --job-name=layerwise_probing
-#SBATCH --time=24:00:00  # Increase time allocation
+#SBATCH --time=00:30:00  # Increased time allocation for full suite
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
 #SBATCH --gres=gpu:1
-#SBATCH --partition=gpu_a100  # A100 is better for this task
+#SBATCH --partition=gpu_a100_debug
 #SBATCH --clusters=wice
 #SBATCH --account=intro_vsc37132
 
@@ -25,7 +25,7 @@ export WANDB_DIR="$VSC_SCRATCH/wandb"
 mkdir -p "$VSC_SCRATCH/wandb"
 
 # === Directory setup ===
-OUTPUT_BASE_DIR="$VSC_SCRATCH/layerwise_output"
+OUTPUT_BASE_DIR="$VSC_SCRATCH/probing_output"
 mkdir -p $OUTPUT_BASE_DIR
 RESULTS_TRACKER="${OUTPUT_BASE_DIR}/results_tracker.csv"
 LOG_DIR="${OUTPUT_BASE_DIR}/logs"
@@ -38,17 +38,210 @@ echo "experiment_type,language,layer,task,submetric,control_index,metric,value" 
 FAILED_LOG="${OUTPUT_BASE_DIR}/failed_experiments.log"
 touch $FAILED_LOG
 
+# Create metrics extraction script
+cat > "${OUTPUT_BASE_DIR}/extract_metrics.py" << 'EOF'
+#!/usr/bin/env python3
+import json
+import csv
+import sys
+import os
+
+def extract_metrics(result_file, tracker_file, exp_type, language, layer, task, submetric, control_index):
+    try:
+        with open(result_file, 'r') as f:
+            data = json.load(f)
+        
+        # Extract test metrics
+        test_metrics = data.get('test_metrics', {})
+        
+        # Append to tracker file
+        with open(tracker_file, 'a') as f:
+            writer = csv.writer(f)
+            for metric, value in test_metrics.items():
+                if value is not None:
+                    writer.writerow([
+                        exp_type, language, layer, task, 
+                        submetric if submetric != "None" else "None", 
+                        control_index if control_index != "None" else "None",
+                        metric, value
+                    ])
+        return True
+    except Exception as e:
+        print(f"Error extracting metrics: {e}")
+        return False
+
+if __name__ == "__main__":
+    if len(sys.argv) != 9:
+        print("Usage: extract_metrics.py <result_file> <tracker_file> <exp_type> <language> <layer> <task> <submetric> <control_index>")
+        sys.exit(1)
+    
+    result_file = sys.argv[1]
+    tracker_file = sys.argv[2]
+    exp_type = sys.argv[3]
+    language = sys.argv[4]
+    layer = sys.argv[5]
+    task = sys.argv[6]
+    submetric = sys.argv[7]
+    control_index = sys.argv[8]
+    
+    if extract_metrics(result_file, tracker_file, exp_type, language, layer, task, submetric, control_index):
+        print(f"Successfully extracted metrics from {result_file}")
+    else:
+        print(f"Failed to extract metrics from {result_file}")
+EOF
+
+# Create results analysis script
+cat > "${OUTPUT_BASE_DIR}/generate_summaries.py" << 'EOF'
+#!/usr/bin/env python3
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import sys
+import os
+
+def generate_summaries(tracker_file, output_dir):
+    print(f"Reading tracker file: {tracker_file}")
+    df = pd.read_csv(tracker_file)
+    
+    # Replace empty strings with NaN for proper handling
+    df = df.replace('', np.nan)
+    df = df.replace('None', np.nan)
+    
+    # Make layer values numeric for proper sorting
+    if 'layer' in df.columns:
+        df['layer'] = pd.to_numeric(df['layer'], errors='coerce')
+    
+    print(f"Generating summaries in: {output_dir}")
+    
+    # 1. Layer Summary - average metrics by layer and task
+    layer_summary = df.pivot_table(
+        index=['layer', 'task'], 
+        columns='metric', 
+        values='value',
+        aggfunc='mean'
+    )
+    layer_summary.to_csv(os.path.join(output_dir, 'layer_summary.csv'))
+    
+    # 2. Language Summary - average metrics by language and task
+    language_summary = df.pivot_table(
+        index=['language', 'task'], 
+        columns='metric', 
+        values='value',
+        aggfunc='mean'
+    )
+    language_summary.to_csv(os.path.join(output_dir, 'language_summary.csv'))
+    
+    # 3. Submetric Summary - only for submetric tasks
+    submetric_df = df[df['submetric'].notna()]
+    if not submetric_df.empty:
+        submetric_summary = submetric_df.pivot_table(
+            index=['submetric', 'layer'], 
+            columns='metric', 
+            values='value',
+            aggfunc='mean'
+        )
+        submetric_summary.to_csv(os.path.join(output_dir, 'submetric_summary.csv'))
+    
+    # 4. Control Summary - compare control vs. non-control
+    control_summary = df.pivot_table(
+        index=['task', 'control_index'], 
+        columns='metric', 
+        values='value',
+        aggfunc='mean'
+    )
+    control_summary.to_csv(os.path.join(output_dir, 'control_summary.csv'))
+    
+    # 5. Complete matrix for all experiments
+    # Reshape the data to have one row per unique experiment
+    experiment_matrix = df.pivot_table(
+        index=['experiment_type', 'language', 'layer', 'task', 'submetric', 'control_index'],
+        columns='metric',
+        values='value'
+    )
+    experiment_matrix.to_csv(os.path.join(output_dir, 'experiment_matrix.csv'))
+    
+    # 6. Task-specific summaries
+    for task in df['task'].dropna().unique():
+        task_df = df[df['task'] == task]
+        task_summary = task_df.pivot_table(
+            index=['language', 'layer'], 
+            columns='metric', 
+            values='value',
+            aggfunc='mean'
+        )
+        task_summary.to_csv(os.path.join(output_dir, f'{task}_summary.csv'))
+    
+    # Generate visualizations - Layer performance across languages
+    fig_dir = os.path.join(output_dir, 'figures')
+    os.makedirs(fig_dir, exist_ok=True)
+    
+    # Layer performance by task
+    for task in df['task'].dropna().unique():
+        try:
+            task_df = df[(df['task'] == task) & (df['control_index'].isna())]
+            if task_df.empty:
+                continue
+                
+            # For classification task
+            if task == 'question_type' and 'accuracy' in df.columns:
+                plt.figure(figsize=(12, 6))
+                for language in task_df['language'].unique():
+                    lang_data = task_df[task_df['language'] == language]
+                    plt.plot(lang_data['layer'], lang_data['value'], marker='o', label=language)
+                plt.xlabel('Layer')
+                plt.ylabel('Accuracy')
+                plt.title(f'Layer-wise Accuracy for Question Type Task')
+                plt.legend()
+                plt.grid(True, linestyle='--', alpha=0.7)
+                plt.savefig(os.path.join(fig_dir, 'layer_accuracy_by_language.png'))
+                plt.close()
+                
+            # For regression task
+            elif task in ['complexity', 'single_submetric'] and 'r2' in df.columns:
+                plt.figure(figsize=(12, 6))
+                for language in task_df['language'].unique():
+                    lang_data = task_df[task_df['language'] == language]
+                    plt.plot(lang_data['layer'], lang_data['value'], marker='o', label=language)
+                plt.xlabel('Layer')
+                plt.ylabel('R²')
+                plt.title(f'Layer-wise R² for {task.title()} Task')
+                plt.legend()
+                plt.grid(True, linestyle='--', alpha=0.7)
+                plt.savefig(os.path.join(fig_dir, f'layer_r2_{task}_by_language.png'))
+                plt.close()
+        except Exception as e:
+            print(f"Error generating figure for task {task}: {e}")
+    
+    print("All summary files and figures generated successfully!")
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: generate_summaries.py <tracker_file> <output_dir>")
+        sys.exit(1)
+    
+    tracker_file = sys.argv[1]
+    output_dir = sys.argv[2]
+    
+    generate_summaries(tracker_file, output_dir)
+EOF
+
+chmod +x "${OUTPUT_BASE_DIR}/extract_metrics.py"
+chmod +x "${OUTPUT_BASE_DIR}/generate_summaries.py"
+
 # === Configuration ===
-LANGUAGES=("en" "ar" "fi" "id" "ja" "ko" "ru")
-LAYERS=(2 6 11 12)
+LANGUAGES=("ar" "ja")
+# LANGUAGES=("en" "ar" "fi" "id" "ja" "ko" "ru")
+# Use a full range of layers from early to late in the model
+LAYERS=(2 6 11)
+# LAYERS=(1 2 3 4 5 6 7 8 9 10 11 12)
 MAIN_TASKS=("question_type" "complexity")
-SUBMETRICS=("avg_links_len" "avg_max_depth" "avg_subordinate_chain_len" "avg_verb_edges" "lexical_density" "n_tokens")
-CONTROL_INDICES=(1 2 3)
+SUBMETRICS=("avg_verb_edges" "lexical_density")
+# SUBMETRICS=("avg_links_len" "avg_max_depth" "avg_subordinate_chain_len" "avg_verb_edges" "lexical_density" "n_tokens")
 
-# === Create metrics extractor script ===
-# (Keep existing extract_metrics.py script)
+CONTROL_INDICES=(1)
 
-# === Improved experiment functions ===
+# === Experiment functions ===
 run_standard_experiment() {
     local LANGUAGE=$1
     local LAYER=$2
@@ -57,13 +250,12 @@ run_standard_experiment() {
     local SUBMETRIC=$5
     local MAX_RETRIES=2
     
-    local EXPERIMENT_TYPE="question_type"
+    local EXPERIMENT_TYPE="standard"
     local TASK_SPEC="question_type"
     local EXPERIMENT_NAME="layer_${LAYER}_question_type_${LANGUAGE}"
     local OUTPUT_SUBDIR="${OUTPUT_BASE_DIR}/${LANGUAGE}/layer_${LAYER}/question_type"
     
     if [ "$TASK" == "complexity" ]; then
-        EXPERIMENT_TYPE="complexity"
         TASK_SPEC="complexity"
         EXPERIMENT_NAME="layer_${LAYER}_complexity_${LANGUAGE}"
         OUTPUT_SUBDIR="${OUTPUT_BASE_DIR}/${LANGUAGE}/layer_${LAYER}/complexity"
@@ -83,7 +275,11 @@ run_standard_experiment() {
     
     # Skip if already successful
     if [ -f "${OUTPUT_SUBDIR}/results.json" ]; then
-        echo "Experiment ${EXPERIMENT_NAME} already completed successfully. Skipping."
+        echo "Experiment ${EXPERIMENT_NAME} already completed successfully. Extracting metrics..."
+        python3 ${OUTPUT_BASE_DIR}/extract_metrics.py \
+            "${OUTPUT_SUBDIR}/results.json" "$RESULTS_TRACKER" \
+            "$EXPERIMENT_TYPE" "$LANGUAGE" "$LAYER" \
+            "$TASK_SPEC" "${SUBMETRIC:-None}" "None"
         return 0
     fi
     
@@ -97,11 +293,10 @@ run_standard_experiment() {
     echo "Running $TASK_SPEC experiment for language $LANGUAGE, layer $LAYER"
     
     # Build command with all necessary parameters
-    # Note the explicit probe_hidden_size parameter
     local COMMAND="python -m src.experiments.run_experiment \
         \"hydra.job.chdir=False\" \
         \"hydra.run.dir=.\" \
-        \"experiment=${EXPERIMENT_TYPE}\" \
+        \"experiment=${TASK}\" \
         \"experiment.tasks=${TASK_SPEC}\" \
         \"model=lm_probe\" \
         \"model.lm_name=cis-lmu/glot500-base\" \
@@ -138,7 +333,8 @@ run_standard_experiment() {
         RESULTS_FILE="${OUTPUT_SUBDIR}/results.json"
         if [ -f "$RESULTS_FILE" ]; then
             python3 ${OUTPUT_BASE_DIR}/extract_metrics.py \
-                "$RESULTS_FILE" "$RESULTS_TRACKER" "standard" "$LANGUAGE" "$LAYER" \
+                "$RESULTS_FILE" "$RESULTS_TRACKER" \
+                "$EXPERIMENT_TYPE" "$LANGUAGE" "$LAYER" \
                 "$TASK_SPEC" "${SUBMETRIC:-None}" "None"
             
             return 0
@@ -159,38 +355,248 @@ run_standard_experiment() {
 }
 
 run_control_experiment() {
-    # ... (similar to run_standard_experiment with control parameters)
-    # Be sure to add explicit probe_hidden_size parameter
+    local LANGUAGE=$1
+    local LAYER=$2
+    local TASK=$3
+    local TASK_TYPE=$4
+    local CONTROL_IDX=$5
+    local SUBMETRIC=$6
+    local MAX_RETRIES=2
+    
+    local EXPERIMENT_TYPE="control"
+    local TASK_SPEC="question_type"
+    local EXPERIMENT_NAME="layer_${LAYER}_question_type_control${CONTROL_IDX}_${LANGUAGE}"
+    local OUTPUT_SUBDIR="${OUTPUT_BASE_DIR}/${LANGUAGE}/layer_${LAYER}/question_type/control${CONTROL_IDX}"
+    
+    if [ "$TASK" == "complexity" ]; then
+        TASK_SPEC="complexity"
+        EXPERIMENT_NAME="layer_${LAYER}_complexity_control${CONTROL_IDX}_${LANGUAGE}"
+        OUTPUT_SUBDIR="${OUTPUT_BASE_DIR}/${LANGUAGE}/layer_${LAYER}/complexity/control${CONTROL_IDX}"
+    
+    elif [ -n "$SUBMETRIC" ]; then
+        EXPERIMENT_TYPE="submetrics_control"
+        TASK_SPEC="single_submetric"
+        EXPERIMENT_NAME="layer_${LAYER}_${SUBMETRIC}_control${CONTROL_IDX}_${LANGUAGE}"
+        OUTPUT_SUBDIR="${OUTPUT_BASE_DIR}/${LANGUAGE}/layer_${LAYER}/${SUBMETRIC}/control${CONTROL_IDX}"
+    fi
+    
+    mkdir -p "$OUTPUT_SUBDIR"
+    
+    # Create log files
+    LOG_FILE="${LOG_DIR}/${EXPERIMENT_NAME}.log"
+    ERROR_FILE="${LOG_DIR}/${EXPERIMENT_NAME}.err"
+    
+    # Skip if already successful
+    if [ -f "${OUTPUT_SUBDIR}/results.json" ]; then
+        echo "Control experiment ${EXPERIMENT_NAME} already completed successfully. Extracting metrics..."
+        python3 ${OUTPUT_BASE_DIR}/extract_metrics.py \
+            "${OUTPUT_SUBDIR}/results.json" "$RESULTS_TRACKER" \
+            "$EXPERIMENT_TYPE" "$LANGUAGE" "$LAYER" \
+            "$TASK_SPEC" "${SUBMETRIC:-None}" "$CONTROL_IDX"
+        return 0
+    fi
+    
+    # Skip if already failed too many times
+    local FAIL_COUNT=$(grep -c "^${EXPERIMENT_NAME}$" $FAILED_LOG)
+    if [ $FAIL_COUNT -ge $MAX_RETRIES ]; then
+        echo "Control experiment ${EXPERIMENT_NAME} has failed $FAIL_COUNT times already. Skipping."
+        return 1
+    fi
+    
+    echo "Running $TASK_SPEC control experiment for language $LANGUAGE, layer $LAYER, control $CONTROL_IDX"
+    
+    # Build command
+    local COMMAND="python -m src.experiments.run_experiment \
+        \"hydra.job.chdir=False\" \
+        \"hydra.run.dir=.\" \
+        \"experiment=${TASK}\" \
+        \"experiment.tasks=${TASK_SPEC}\" \
+        \"model=lm_probe\" \
+        \"model.lm_name=cis-lmu/glot500-base\" \
+        \"model.layer_wise=true\" \
+        \"model.layer_index=${LAYER}\" \
+        \"model.freeze_model=true\" \
+        \"model.probe_hidden_size=96\" \
+        \"experiment.use_controls=true\" \
+        \"experiment.control_index=${CONTROL_IDX}\" \
+        \"data.languages=[${LANGUAGE}]\" \
+        \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
+        \"training.task_type=${TASK_TYPE}\" \
+        \"training.num_epochs=15\" \
+        \"training.lr=1e-4\" \
+        \"training.batch_size=16\" \
+        \"+training.gradient_accumulation_steps=2\" \
+        \"experiment_name=${EXPERIMENT_NAME}\" \
+        \"output_dir=${OUTPUT_SUBDIR}\" \
+        \"wandb.mode=offline\""
+    
+    if [ -n "$SUBMETRIC" ]; then
+        COMMAND+=" \"experiment.submetric=${SUBMETRIC}\""
+    fi
+    
+    # Log the command
+    echo "Command: $COMMAND" | tee -a $LOG_FILE
+    
+    # Execute the command
+    eval $COMMAND >> $LOG_FILE 2> $ERROR_FILE
+    local RESULT=$?
+    
+    if [ $RESULT -eq 0 ]; then
+        echo "Control experiment completed successfully: $EXPERIMENT_NAME"
+        
+        # Extract metrics
+        RESULTS_FILE="${OUTPUT_SUBDIR}/results.json"
+        if [ -f "$RESULTS_FILE" ]; then
+            python3 ${OUTPUT_BASE_DIR}/extract_metrics.py \
+                "$RESULTS_FILE" "$RESULTS_TRACKER" \
+                "$EXPERIMENT_TYPE" "$LANGUAGE" "$LAYER" \
+                "$TASK_SPEC" "${SUBMETRIC:-None}" "$CONTROL_IDX"
+            
+            return 0
+        else
+            echo "Warning: Results file not found: $RESULTS_FILE" >> $ERROR_FILE
+            echo "${EXPERIMENT_NAME}" >> $FAILED_LOG
+            return 1
+        fi
+    else
+        echo "Error in control experiment: $EXPERIMENT_NAME" | tee -a $ERROR_FILE
+        echo "${EXPERIMENT_NAME}" >> $FAILED_LOG
+        
+        # Clean GPU memory explicitly
+        python -c "import torch; torch.cuda.empty_cache()" 2>/dev/null || true
+        
+        return 1
+    fi
 }
 
-# === Prioritize experiments ===
-# Run a smaller subset first to ensure everything works
-echo "Running priority experiments..."
-PRIORITY_LANGUAGES=("en")
-PRIORITY_LAYERS=(12)  # Start with the last layer
 
-for LANGUAGE in "${PRIORITY_LANGUAGES[@]}"; do
-    for LAYER in "${PRIORITY_LAYERS[@]}"; do
+
+# 1. Main tasks (question_type and complexity) for all languages and layers
+echo "========= Running main tasks experiments =========="
+for LANGUAGE in "${LANGUAGES[@]}"; do
+    echo "Processing language: ${LANGUAGE}"
+    
+    for LAYER in "${LAYERS[@]}"; do
+        
+        echo "Processing layer: ${LAYER}"
+        
         for TASK in "${MAIN_TASKS[@]}"; do
             TASK_TYPE="classification"
             if [ "$TASK" == "complexity" ]; then
                 TASK_TYPE="regression"
             fi
-
-            # Standard experiments
+            
+            # Run standard experiment for this task
             run_standard_experiment "$LANGUAGE" "$LAYER" "$TASK" "$TASK_TYPE" ""
             
-            # Wait a bit to let GPU memory clear
-            sleep 10
-            
-            # Run one control experiment as a test
-            run_control_experiment "$LANGUAGE" "$LAYER" "$TASK" "$TASK_TYPE" "1" ""
-            
-            # Wait a bit to let GPU memory clear
-            sleep 10
+            # Wait a bit between experiments
+            sleep 5
         done
     done
+    
+    # Clear GPU memory after each language
+    python -c "import torch; torch.cuda.empty_cache()" 2>/dev/null || true
+    sleep 15
 done
 
-# === Run main experiments ===
-# ... (continue with main experiment loops, adding sleep commands between runs)
+# 2. Submetric tasks for all languages and layers
+echo "========= Running submetric tasks experiments =========="
+for LANGUAGE in "${LANGUAGES[@]}"; do
+    echo "Processing language: ${LANGUAGE}"
+    
+    for LAYER in "${LAYERS[@]}"; do
+        echo "Processing layer: ${LAYER}"
+        
+        for SUBMETRIC in "${SUBMETRICS[@]}"; do
+            
+            # Run standard experiment for this submetric
+            run_standard_experiment "$LANGUAGE" "$LAYER" "" "regression" "$SUBMETRIC"
+            
+            # Wait a bit between experiments
+            sleep 5
+        done
+    done
+    
+    # Clear GPU memory after each language
+    python -c "import torch; torch.cuda.empty_cache()" 2>/dev/null || true
+    sleep 15
+done
+
+# 3. Control experiments for main tasks
+echo "========= Running control experiments for main tasks =========="
+for LANGUAGE in "${LANGUAGES[@]}"; do
+    echo "Processing language: ${LANGUAGE}"
+    
+    for LAYER in "${LAYERS[@]}"; do
+        echo "Processing layer: ${LAYER}"
+        
+        for TASK in "${MAIN_TASKS[@]}"; do
+            TASK_TYPE="classification"
+            if [ "$TASK" == "complexity" ]; then
+                TASK_TYPE="regression"
+            fi
+            
+            for CONTROL_IDX in "${CONTROL_INDICES[@]}"; do
+                
+                
+                # Run control experiment
+                run_control_experiment "$LANGUAGE" "$LAYER" "$TASK" "$TASK_TYPE" "$CONTROL_IDX" ""
+                
+                # Wait a bit between experiments
+                sleep 5
+            done
+        done
+    done
+    
+    # Clear GPU memory after each language
+    python -c "import torch; torch.cuda.empty_cache()" 2>/dev/null || true
+    sleep 15
+done
+
+# 4. Control experiments for submetrics
+echo "========= Running control experiments for submetrics =========="
+for LANGUAGE in "${LANGUAGES[@]}"; do
+    echo "Processing language: ${LANGUAGE}"
+    
+    for LAYER in "${LAYERS[@]}"; do
+        echo "Processing layer: ${LAYER}"
+        
+        for SUBMETRIC in "${SUBMETRICS[@]}"; do
+            for CONTROL_IDX in "${CONTROL_INDICES[@]}"; do
+                # Skip already run priority experiments
+                if [[ " ${PRIORITY_LANGUAGES[@]} " =~ " ${LANGUAGE} " ]] && 
+                   [[ " ${PRIORITY_LAYERS[@]} " =~ " ${LAYER} " ]] && 
+                   [[ "$SUBMETRIC" == "avg_links_len" ]] && 
+                   [[ "$CONTROL_IDX" == "1" ]]; then
+                    echo "Skipping already run priority control submetric experiment"
+                    continue
+                fi
+                
+                # Run control experiment for this submetric
+                run_control_experiment "$LANGUAGE" "$LAYER" "" "regression" "$CONTROL_IDX" "$SUBMETRIC"
+                
+                # Wait a bit between experiments
+                sleep 5
+            done
+        done
+    done
+    
+    # Clear GPU memory after each language
+    python -c "import torch; torch.cuda.empty_cache()" 2>/dev/null || true
+    sleep 15
+done
+
+# === Generate summary reports ===
+echo "============= Generating summary reports ==============="
+python3 ${OUTPUT_BASE_DIR}/generate_summaries.py "${RESULTS_TRACKER}" "${OUTPUT_BASE_DIR}"
+
+echo "Layer-wise probing experiments completed. Results are saved in ${OUTPUT_BASE_DIR}"
+echo "Summary files are available in ${OUTPUT_BASE_DIR}"
+echo "Check ${OUTPUT_BASE_DIR}/figures for visualizations"
+
+# Print some statistics
+TOTAL_EXPERIMENTS=$(wc -l < "${RESULTS_TRACKER}")
+FAILED_EXPERIMENTS=$(wc -l < "${FAILED_LOG}")
+echo "Total experiments recorded: $((TOTAL_EXPERIMENTS-1)) (excluding header)"
+echo "Failed experiments: ${FAILED_EXPERIMENTS}"
+echo "Success rate: $(( (TOTAL_EXPERIMENTS-1-FAILED_EXPERIMENTS)*100/(TOTAL_EXPERIMENTS-1) ))%"
