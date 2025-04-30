@@ -178,7 +178,7 @@ class LMFineTuner(BaseLMModel):
             model_name=model_name,
             task_type=task_type,
             num_outputs=num_outputs,
-            freeze_model=freeze_model,  # Allow freezing option instead of forcing to False
+            freeze_model=False,  # Always False for fine-tuning
             layer_wise=layer_wise,
             layer_index=layer_index,
         )
@@ -245,7 +245,8 @@ def create_model(model_type, task_type, **kwargs):
     
     task_type = str(task_type).lower() if isinstance(task_type, str) else "classification"
 
-    
+    if model_type in ['lm_probe', 'lm_finetune']:
+        model_type = 'lm_finetune'
 
     lm_name = kwargs.get("lm_name", "cis-lmu/glot500-base")
     
@@ -271,7 +272,7 @@ def create_model(model_type, task_type, **kwargs):
     if model_type == "lm_finetune":
         return LMFineTuner(
             **common_params,
-            freeze_model=kwargs.get("freeze_model", False),  # Allow freezing option instead of forcing to False
+            freeze_model=False,  # Always unfreeze for fine-tuning
             head_hidden_size=kwargs.get("head_hidden_size", default_hidden_size),
             head_layers=kwargs.get("head_layers", 2)
         )
