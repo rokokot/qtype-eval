@@ -22,15 +22,14 @@ data:
   train_language: null
   eval_language: null
 model:
-  model_type: lm_probe
+  model_type: lm_finetune
   lm_name: cis-lmu/glot500-base
   dropout: 0.1
-  freeze_model: false
-  finetune: true
   layer_wise: false
   layer_index: -1
   num_outputs: 1
-  probe_hidden_size: 96
+  head_hidden_size: 768
+  head_layers: 2
 training:
   task_type: classification
   batch_size: 16

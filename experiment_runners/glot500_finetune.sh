@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=finetune_experiments
-#SBATCH --time=01:00:00
+#SBATCH --time=12:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
@@ -40,13 +40,13 @@ echo "GPU information:"
 nvidia-smi
 
 echo "Python executable: $(which python)"
-echo "PyTorch CUDA available: $(python -c 'import torch; print(torch.cuda.is_available())')"
+echo "PyTorch CUDA available: $(python -c "import torch; print(torch.cuda.is_available())")"
 
 # Define configuration
-LANGUAGES=("en" "ar" "fi" "id" "ja" "ko" "ru")
+LANGUAGES=("ar")
 TASKS=("question_type" "complexity")
-SUBMETRICS=("avg_links_len" "avg_max_depth" "avg_subordinate_chain_len" "avg_verb_edges" "lexical_density" "n_tokens")
-CONTROL_INDICES=(1 2 3)
+SUBMETRICS=("avg_links_len" "n_tokens")
+CONTROL_INDICES=(1)
 
 # Use maximum head sizes for all tasks
 # For fine-tuning, use the same large head size for all task types
@@ -93,6 +93,63 @@ EOF
     echo "Created $LM_FINETUNE_CONFIG"
 fi
 
+# Verify that finetuning is set up correctly
+echo "Verifying finetuning model configuration..."
+python -c "
+import sys
+import os
+import torch  # Add missing torch import
+sys.path.append(os.getcwd())
+try:
+    from src.models.model_factory import create_model
+    
+    # Create a fine-tuning model
+    model = create_model('lm_finetune', 'classification', 
+                         lm_name='cis-lmu/glot500-base',
+                         head_hidden_size=768)
+    
+    # Check if model is actually unfrozen
+    trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    total_params = sum(p.numel() for p in model.parameters())
+    
+    # Print status
+    print(f'Fine-tuning model check:')
+    print(f'- Trainable parameters: {trainable_params:,}')
+    print(f'- Total parameters: {total_params:,}')
+    print(f'- Percentage trainable: {trainable_params/total_params*100:.2f}%')
+    
+    # Check if encoder is trainable (should be for fine-tuning)
+    encoder_trainable = sum(p.numel() for p in model.model.parameters() if p.requires_grad)
+    encoder_total = sum(p.numel() for p in model.model.parameters())
+    
+    print(f'- Encoder trainable: {encoder_trainable:,} / {encoder_total:,} ({encoder_trainable/encoder_total*100:.2f}%)')
+    
+    # Check head size
+    if hasattr(model, 'head') and isinstance(model.head, torch.nn.Sequential):
+        for module in model.head:
+            if isinstance(module, torch.nn.Linear):
+                in_features = module.in_features
+                out_features = module.out_features
+                print(f'- Head layer: {in_features} → {out_features} features')
+    
+    if encoder_trainable == 0:
+        print('WARNING: Encoder is completely frozen! This is not fine-tuning!')
+        sys.exit(1)
+    else:
+        print('SUCCESS: Model is properly set up for fine-tuning with maximum head size.')
+except Exception as e:
+    print(f'Error checking model: {e}')
+    import traceback
+    traceback.print_exc()
+    sys.exit(1)
+"
+
+# If model check failed, exit
+if [ $? -ne 0 ]; then
+    echo "ERROR: Fine-tuning model configuration is incorrect. Fix the model implementation before continuing."
+    exit 1
+fi
+
 # Function to run a finetuning experiment
 run_finetune_experiment() {
     local TASK_TYPE=$1
@@ -118,7 +175,7 @@ run_finetune_experiment() {
             EXPERIMENT_NAME="finetune_${SUBMETRIC}_control${CONTROL_IDX}_${LANG}"
             OUTPUT_SUBDIR="${OUTPUT_BASE_DIR}/single_submetric/${LANG}/${SUBMETRIC}/control${CONTROL_IDX}"
         fi
-    else:
+    else
         # Regular task experiment
         if [ -z "$CONTROL_IDX" ]; then
             EXPERIMENT_NAME="finetune_${TASK}_${LANG}"
@@ -238,62 +295,6 @@ run_finetune_experiment() {
         return 1
     fi
 }
-
-# Verify that finetuning is set up correctly
-echo "Verifying finetuning model configuration..."
-python -c "
-import sys
-import os
-sys.path.append(os.getcwd())
-try:
-    from src.models.model_factory import create_model
-    
-    # Create a fine-tuning model
-    model = create_model('lm_finetune', 'classification', 
-                         lm_name='cis-lmu/glot500-base',
-                         head_hidden_size=768)
-    
-    # Check if model is actually unfrozen
-    trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
-    total_params = sum(p.numel() for p in model.parameters())
-    
-    # Print status
-    print(f'Fine-tuning model check:')
-    print(f'- Trainable parameters: {trainable_params:,}')
-    print(f'- Total parameters: {total_params:,}')
-    print(f'- Percentage trainable: {trainable_params/total_params*100:.2f}%')
-    
-    # Check if encoder is trainable (should be for fine-tuning)
-    encoder_trainable = sum(p.numel() for p in model.model.parameters() if p.requires_grad)
-    encoder_total = sum(p.numel() for p in model.model.parameters())
-    
-    print(f'- Encoder trainable: {encoder_trainable:,} / {encoder_total:,} ({encoder_trainable/encoder_total*100:.2f}%)')
-    
-    # Check head size
-    if hasattr(model, 'head') and isinstance(model.head, torch.nn.Sequential):
-        for module in model.head:
-            if isinstance(module, torch.nn.Linear):
-                in_features = module.in_features
-                out_features = module.out_features
-                print(f'- Head layer: {in_features} → {out_features} features')
-    
-    if encoder_trainable == 0:
-        print('WARNING: Encoder is completely frozen! This is not fine-tuning!')
-        sys.exit(1)
-    else:
-        print('SUCCESS: Model is properly set up for fine-tuning with maximum head size.')
-except Exception as e:
-    print(f'Error checking model: {e}')
-    import traceback
-    traceback.print_exc()
-    sys.exit(1)
-"
-
-# If model check failed, exit
-if [ $? -ne 0 ]; then
-    echo "ERROR: Fine-tuning model configuration is incorrect. Fix the model implementation before continuing."
-    exit 1
-fi
 
 # Run priority experiments first
 echo "===== Running priority experiments ====="

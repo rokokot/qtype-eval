@@ -1,0 +1,1363 @@
+SLURM_JOB_ID: 58115321
+SLURM_JOB_USER: vsc37132
+SLURM_JOB_ACCOUNT: intro_vsc37132
+SLURM_JOB_NAME: finetune_experiments
+SLURM_CLUSTER_NAME: genius
+SLURM_JOB_PARTITION: gpu_p100
+SLURM_NNODES: 1
+SLURM_NODELIST: r22g39
+SLURM_JOB_CPUS_PER_NODE: 4
+SLURM_JOB_GPUS: 3
+Date: Wed Apr 30 11:16:05 CEST 2025
+Walltime: 00-12:00:00
+========================================================================
+Activating conda environment...
+Channels:
+ - pytorch
+ - nvidia
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+
+==> WARNING: A newer version of conda exists. <==
+    current version: 25.1.1
+    latest version: 25.3.1
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+# All requested packages already installed.
+
+Requirement already satisfied: hydra-core in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (1.3.2)
+Requirement already satisfied: hydra-submitit-launcher in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (1.2.0)
+Requirement already satisfied: omegaconf<2.4,>=2.2 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from hydra-core) (2.3.0)
+Requirement already satisfied: antlr4-python3-runtime==4.9.* in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from hydra-core) (4.9.3)
+Requirement already satisfied: packaging in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from hydra-core) (24.2)
+Requirement already satisfied: submitit>=1.3.3 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from hydra-submitit-launcher) (1.5.2)
+Requirement already satisfied: PyYAML>=5.1.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from omegaconf<2.4,>=2.2->hydra-core) (6.0.2)
+Requirement already satisfied: cloudpickle>=1.2.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from submitit>=1.3.3->hydra-submitit-launcher) (3.1.1)
+Requirement already satisfied: typing_extensions>=3.7.4.2 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from submitit>=1.3.3->hydra-submitit-launcher) (4.12.2)
+Requirement already satisfied: transformers<4.36.0,>=4.30.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (4.35.2)
+Requirement already satisfied: torch in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (2.5.1)
+Requirement already satisfied: datasets in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (3.5.0)
+Requirement already satisfied: wandb in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (0.19.9)
+Requirement already satisfied: filelock in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (3.18.0)
+Requirement already satisfied: huggingface-hub<1.0,>=0.16.4 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (0.30.1)
+Requirement already satisfied: numpy>=1.17 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (1.26.4)
+Requirement already satisfied: packaging>=20.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (24.2)
+Requirement already satisfied: pyyaml>=5.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (6.0.2)
+Requirement already satisfied: regex!=2019.12.17 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (2024.11.6)
+Requirement already satisfied: requests in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (2.32.3)
+Requirement already satisfied: tokenizers<0.19,>=0.14 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (0.15.2)
+Requirement already satisfied: safetensors>=0.3.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (0.5.3)
+Requirement already satisfied: tqdm>=4.27 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from transformers<4.36.0,>=4.30.0) (4.67.1)
+Requirement already satisfied: typing-extensions>=4.8.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from torch) (4.12.2)
+Requirement already satisfied: networkx in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from torch) (3.2.1)
+Requirement already satisfied: jinja2 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from torch) (3.1.6)
+Requirement already satisfied: fsspec in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from torch) (2024.12.0)
+Requirement already satisfied: sympy==1.13.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from torch) (1.13.1)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from sympy==1.13.1->torch) (1.3.0)
+Requirement already satisfied: pyarrow>=15.0.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from datasets) (19.0.1)
+Requirement already satisfied: dill<0.3.9,>=0.3.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from datasets) (0.3.8)
+Requirement already satisfied: pandas in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from datasets) (2.2.3)
+Requirement already satisfied: xxhash in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from datasets) (3.5.0)
+Requirement already satisfied: multiprocess<0.70.17 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from datasets) (0.70.16)
+Requirement already satisfied: aiohttp in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from datasets) (3.11.16)
+Requirement already satisfied: click!=8.0.0,>=7.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (8.1.8)
+Requirement already satisfied: docker-pycreds>=0.4.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (0.4.0)
+Requirement already satisfied: eval-type-backport in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (0.2.2)
+Requirement already satisfied: gitpython!=3.1.29,>=1.0.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (3.1.44)
+Requirement already satisfied: platformdirs in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (4.3.7)
+Requirement already satisfied: protobuf!=4.21.0,!=5.28.0,<6,>=3.15.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (5.29.4)
+Requirement already satisfied: psutil>=5.0.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (7.0.0)
+Requirement already satisfied: pydantic<3 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (2.11.1)
+Requirement already satisfied: sentry-sdk>=2.0.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (2.25.0)
+Requirement already satisfied: setproctitle in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (1.3.5)
+Requirement already satisfied: setuptools in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from wandb) (78.1.0)
+Requirement already satisfied: six>=1.4.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from docker-pycreds>=0.4.0->wandb) (1.17.0)
+Requirement already satisfied: aiohappyeyeballs>=2.3.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (2.6.1)
+Requirement already satisfied: aiosignal>=1.1.2 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (1.3.2)
+Requirement already satisfied: async-timeout<6.0,>=4.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (5.0.1)
+Requirement already satisfied: attrs>=17.3.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (25.3.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (1.5.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (6.3.1)
+Requirement already satisfied: propcache>=0.2.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (0.3.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from aiohttp->datasets) (1.18.3)
+Requirement already satisfied: gitdb<5,>=4.0.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from gitpython!=3.1.29,>=1.0.0->wandb) (4.0.12)
+Requirement already satisfied: annotated-types>=0.6.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from pydantic<3->wandb) (0.7.0)
+Requirement already satisfied: pydantic-core==2.33.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from pydantic<3->wandb) (2.33.0)
+Requirement already satisfied: typing-inspection>=0.4.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from pydantic<3->wandb) (0.4.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from requests->transformers<4.36.0,>=4.30.0) (3.4.1)
+Requirement already satisfied: idna<4,>=2.5 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from requests->transformers<4.36.0,>=4.30.0) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from requests->transformers<4.36.0,>=4.30.0) (2.3.0)
+Requirement already satisfied: certifi>=2017.4.17 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from requests->transformers<4.36.0,>=4.30.0) (2025.4.26)
+Requirement already satisfied: MarkupSafe>=2.0 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from jinja2->torch) (3.0.2)
+Requirement already satisfied: python-dateutil>=2.8.2 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from pandas->datasets) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from pandas->datasets) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from pandas->datasets) (2025.2)
+Requirement already satisfied: smmap<6,>=3.0.1 in /vsc-hard-mounts/leuven-data/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages (from gitdb<5,>=4.0.1->gitpython!=3.1.29,>=1.0.0->wandb) (5.0.2)
+Environment variables:
+PYTHONPATH=:/data/leuven/371/vsc37132/qtype-eval:/vsc-hard-mounts/leuven-user/371/vsc37132:/vsc-hard-mounts/leuven-user/371/vsc37132:/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval
+HF_HOME=/data/leuven/371/vsc37132/qtype-eval/data/cache
+GPU information:
+Wed Apr 30 11:16:30 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 560.35.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla P100-SXM2-16GB           Off |   00000000:8A:00.0 Off |                    0 |
+| N/A   40C    P0             31W /  300W |       0MiB /  16384MiB |      0%   E. Process |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Python executable: /data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/bin/python
+PyTorch CUDA available: True
+Verifying finetuning model configuration...
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at cis-lmu/glot500-base and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Fine-tuning model check:
+- Trainable parameters: 394,712,833
+- Total parameters: 394,712,833
+- Percentage trainable: 100.00%
+- Encoder trainable: 394,121,472 / 394,121,472 (100.00%)
+- Head layer: 768 → 768 features
+- Head layer: 768 → 1 features
+SUCCESS: Model is properly set up for fine-tuning with maximum head size.
+===== Running priority experiments =====
+Running priority experiment: en, question_type
+Running experiment: finetune_question_type_en
+Output directory: /scratch/leuven/371/vsc37132/finetune_output/question_type/en
+Command: python -m src.experiments.run_experiment         "hydra.job.chdir=False"         "hydra.run.dir=."         "experiment=question_type"         "experiment.tasks=question_type"         "model=lm_finetune"         "model.lm_name=cis-lmu/glot500-base"         "model.dropout=0.1"         "model.head_hidden_size=768"         "model.head_layers=2"         "data.languages=[en]"         "data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache"         "training.task_type=classification"         "training.num_epochs=10"         "training.batch_size=16"         "training.lr=2e-5"         "+training.gradient_accumulation_steps=2"         "experiment_name=finetune_question_type_en"         "output_dir=/scratch/leuven/371/vsc37132/finetune_output/question_type/en"         "wandb.mode=offline"
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/launcher:
+Default list overrides requires 'override' keyword.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
+
+  deprecation_warning(msg)
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py:197: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  return _run_code(code, main_globals, None,
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py:94: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  _run_hydra(
+Using Dataset: rokokot/question-type-and-complexity
+Cache Directory: /data/leuven/371/vsc37132/qtype-eval/data/cache
+[2025-04-30 11:16:49,796][__main__][INFO] - Configuration:
+seed: 42
+output_dir: /scratch/leuven/371/vsc37132/finetune_output/question_type/en
+experiment_name: finetune_question_type_en
+wandb:
+  project: multilingual-question-probing
+  entity: rokii-ku-leuven
+  mode: offline
+slurm:
+  partition: gpu
+  time: '24:00:00'
+  gpus_per_node: 1
+  cpus_per_task: 4
+  mem_per_cpu: 8
+  job_name: ${experiment_name}
+  account: intro_vsc37132
+data:
+  dataset_name: rokokot/question-type-and-complexity
+  cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
+  vectors_dir: ./data/features
+  languages:
+  - en
+  train_language: null
+  eval_language: null
+model:
+  model_type: lm_finetune
+  lm_name: cis-lmu/glot500-base
+  dropout: 0.1
+  layer_wise: false
+  layer_index: -1
+  num_outputs: 1
+  head_hidden_size: 768
+  head_layers: 2
+training:
+  task_type: classification
+  batch_size: 16
+  num_epochs: 10
+  lr: 2.0e-05
+  weight_decay: 0.01
+  patience: 3
+  scheduler_factor: 0.5
+  scheduler_patience: 2
+  random_state: 42
+  num_workers: 4
+  gradient_accumulation_steps: 2
+experiment:
+  type: lm_probe
+  tasks: question_type
+  use_controls: false
+  control_index: null
+  num_controls: 3
+  eval_on_orig_test: true
+  cross_lingual: false
+
+[2025-04-30 11:16:49,796][__main__][INFO] - Normalized task: question_type
+[2025-04-30 11:16:49,797][__main__][INFO] - Using explicit task_type from config: classification
+[2025-04-30 11:16:49,797][__main__][INFO] - Determined Task Type: classification
+[2025-04-30 11:16:49,801][__main__][INFO] - Running LM probe experiment for task 'question_type' (type: classification) on languages: ['en']
+[2025-04-30 11:16:49,801][__main__][INFO] - Processing language: en
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Tracking run with wandb version 0.19.9
+wandb: W&B syncing is set to `offline` in this directory.  
+wandb: Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+[2025-04-30 11:16:51,452][src.data.datasets][INFO] - Creating dataloaders for language: 'en', task: 'question_type', submetric: 'None'
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+[2025-04-30 11:16:54,073][src.data.datasets][INFO] - Successfully loaded tokenizer for cis-lmu/glot500-base
+[2025-04-30 11:16:54,074][src.data.datasets][INFO] - Loading 'base' dataset for en language (train)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-04-30 11:16:54,163][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-30 11:16:54,190][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-30 11:16:54,262][src.data.datasets][INFO] - Filtered from 7460 to 1192 examples for language 'en'
+[2025-04-30 11:16:54,273][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-04-30 11:16:54,273][src.data.datasets][INFO] - Loaded 1192 examples for en (train)
+[2025-04-30 11:16:54,274][src.data.datasets][INFO] - Loading 'base' dataset for en language (validation)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-04-30 11:16:54,288][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-30 11:16:54,309][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-30 11:16:54,319][src.data.datasets][INFO] - Filtered from 441 to 72 examples for language 'en'
+[2025-04-30 11:16:54,321][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-04-30 11:16:54,321][src.data.datasets][INFO] - Loaded 72 examples for en (validation)
+[2025-04-30 11:16:54,322][src.data.datasets][INFO] - Loading 'base' dataset for en language (test)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-04-30 11:16:54,335][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-30 11:16:54,357][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-04-30 11:16:54,368][src.data.datasets][INFO] - Filtered from 719 to 110 examples for language 'en'
+[2025-04-30 11:16:54,370][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-04-30 11:16:54,370][src.data.datasets][INFO] - Loaded 110 examples for en (test)
+[2025-04-30 11:16:54,371][src.data.datasets][INFO] - Loaded datasets: train=1192, val=72, test=110 examples
+[2025-04-30 11:16:54,371][src.data.datasets][INFO] - Task 'question_type' is classification: True
+[2025-04-30 11:16:54,371][src.data.datasets][INFO] - Getting feature name for task: 'question_type', submetric: 'None'
+[2025-04-30 11:16:54,371][src.data.datasets][INFO] - Selected feature name: 'question_type' for task: 'question_type'
+[2025-04-30 11:16:54,372][src.data.datasets][INFO] - Label statistics for question_type (feature: question_type):
+[2025-04-30 11:16:54,372][src.data.datasets][INFO] -   Label 0: 596 examples (50.0%)
+[2025-04-30 11:16:54,372][src.data.datasets][INFO] -   Label 1: 596 examples (50.0%)
+[2025-04-30 11:16:54,372][src.data.datasets][INFO] - Sample text: Did Nvidia skip the 800 series for graphics cards?...
+[2025-04-30 11:16:54,372][src.data.datasets][INFO] - Sample label: 1
+[2025-04-30 11:16:54,372][src.data.datasets][INFO] - Task 'question_type' is classification: True
+[2025-04-30 11:16:54,372][src.data.datasets][INFO] - Getting feature name for task: 'question_type', submetric: 'None'
+[2025-04-30 11:16:54,372][src.data.datasets][INFO] - Selected feature name: 'question_type' for task: 'question_type'
+[2025-04-30 11:16:54,373][src.data.datasets][INFO] - Label statistics for question_type (feature: question_type):
+[2025-04-30 11:16:54,373][src.data.datasets][INFO] -   Label 0: 36 examples (50.0%)
+[2025-04-30 11:16:54,373][src.data.datasets][INFO] -   Label 1: 36 examples (50.0%)
+[2025-04-30 11:16:54,373][src.data.datasets][INFO] - Sample text: We just did a deal for the rest of the month for 1...
+[2025-04-30 11:16:54,373][src.data.datasets][INFO] - Sample label: 0
+[2025-04-30 11:16:54,373][src.data.datasets][INFO] - Task 'question_type' is classification: True
+[2025-04-30 11:16:54,373][src.data.datasets][INFO] - Getting feature name for task: 'question_type', submetric: 'None'
+[2025-04-30 11:16:54,373][src.data.datasets][INFO] - Selected feature name: 'question_type' for task: 'question_type'
+[2025-04-30 11:16:54,373][src.data.datasets][INFO] - Label statistics for question_type (feature: question_type):
+[2025-04-30 11:16:54,374][src.data.datasets][INFO] -   Label 0: 55 examples (50.0%)
+[2025-04-30 11:16:54,374][src.data.datasets][INFO] -   Label 1: 55 examples (50.0%)
+[2025-04-30 11:16:54,374][src.data.datasets][INFO] - Sample text: What is the problem?...
+[2025-04-30 11:16:54,374][src.data.datasets][INFO] - Sample label: 0
+[2025-04-30 11:16:54,374][src.data.datasets][INFO] - Created datasets: train=1192, val=72, test=110
+[2025-04-30 11:16:54,374][src.data.datasets][INFO] - Creating dataloaders with 4 workers
+[2025-04-30 11:16:54,374][src.data.datasets][INFO] - Successfully created all dataloaders
+[2025-04-30 11:16:54,375][src.models.model_factory][INFO] - Creating lm_probe model for classification task
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at cis-lmu/glot500-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[2025-04-30 11:16:57,896][src.models.model_factory][INFO] - Loaded model from local cache: cis-lmu/glot500-base
+[2025-04-30 11:16:57,897][src.models.model_factory][INFO] - Language model parameters frozen
+[2025-04-30 11:16:57,897][src.models.model_factory][INFO] - Base model configuration: layer-wise=False, layer_index=-1, freeze_model=True
+[2025-04-30 11:16:57,897][src.models.model_factory][INFO] - Using provided probe_hidden_size: 96
+[2025-04-30 11:16:57,899][src.models.model_factory][INFO] - Model has 73,921 trainable parameters out of 394,195,393 total parameters
+[2025-04-30 11:16:57,900][src.models.model_factory][INFO] - Encoder: 0 trainable parameters, Head: 73,921 trainable parameters
+[2025-04-30 11:16:57,900][src.models.model_factory][INFO] - Probe configuration: hidden_size=96, dropout=0.1
+[2025-04-30 11:16:57,900][__main__][INFO] - Successfully created model for en
+Epoch 1/10: [Epoch 1/10: [                              ] 1/75 batches, loss: 0.7234Epoch 1/10: [                              ] 2/75 batches, loss: 0.7108Epoch 1/10: [=                             ] 3/75 batches, loss: 0.7019Epoch 1/10: [=                             ] 4/75 batches, loss: 0.6993Epoch 1/10: [==                            ] 5/75 batches, loss: 0.6995Epoch 1/10: [==                            ] 6/75 batches, loss: 0.6981Epoch 1/10: [==                            ] 7/75 batches, loss: 0.6959Epoch 1/10: [===                           ] 8/75 batches, loss: 0.6962Epoch 1/10: [===                           ] 9/75 batches, loss: 0.6945Epoch 1/10: [====                          ] 10/75 batches, loss: 0.6944Epoch 1/10: [====                          ] 11/75 batches, loss: 0.6919Epoch 1/10: [====                          ] 12/75 batches, loss: 0.6936Epoch 1/10: [=====                         ] 13/75 batches, loss: 0.6906Epoch 1/10: [=====                         ] 14/75 batches, loss: 0.6909Epoch 1/10: [======                        ] 15/75 batches, loss: 0.6910Epoch 1/10: [======                        ] 16/75 batches, loss: 0.6915Epoch 1/10: [======                        ] 17/75 batches, loss: 0.6917Epoch 1/10: [=======                       ] 18/75 batches, loss: 0.6911Epoch 1/10: [=======                       ] 19/75 batches, loss: 0.6916Epoch 1/10: [========                      ] 20/75 batches, loss: 0.6916Epoch 1/10: [========                      ] 21/75 batches, loss: 0.6914Epoch 1/10: [========                      ] 22/75 batches, loss: 0.6923Epoch 1/10: [=========                     ] 23/75 batches, loss: 0.6926Epoch 1/10: [=========                     ] 24/75 batches, loss: 0.6936Epoch 1/10: [==========                    ] 25/75 batches, loss: 0.6931Epoch 1/10: [==========                    ] 26/75 batches, loss: 0.6928Epoch 1/10: [==========                    ] 27/75 batches, loss: 0.6921Epoch 1/10: [===========                   ] 28/75 batches, loss: 0.6925Epoch 1/10: [===========                   ] 29/75 batches, loss: 0.6923Epoch 1/10: [============                  ] 30/75 batches, loss: 0.6924Epoch 1/10: [============                  ] 31/75 batches, loss: 0.6929Epoch 1/10: [============                  ] 32/75 batches, loss: 0.6925Epoch 1/10: [=============                 ] 33/75 batches, loss: 0.6926Epoch 1/10: [=============                 ] 34/75 batches, loss: 0.6929Epoch 1/10: [==============                ] 35/75 batches, loss: 0.6934Epoch 1/10: [==============                ] 36/75 batches, loss: 0.6939Epoch 1/10: [==============                ] 37/75 batches, loss: 0.6943Epoch 1/10: [===============               ] 38/75 batches, loss: 0.6946Epoch 1/10: [===============               ] 39/75 batches, loss: 0.6948Epoch 1/10: [================              ] 40/75 batches, loss: 0.6948Epoch 1/10: [================              ] 41/75 batches, loss: 0.6945Epoch 1/10: [================              ] 42/75 batches, loss: 0.6943Epoch 1/10: [=================             ] 43/75 batches, loss: 0.6945Epoch 1/10: [=================             ] 44/75 batches, loss: 0.6944Epoch 1/10: [==================            ] 45/75 batches, loss: 0.6946Epoch 1/10: [==================            ] 46/75 batches, loss: 0.6949Epoch 1/10: [==================            ] 47/75 batches, loss: 0.6947Epoch 1/10: [===================           ] 48/75 batches, loss: 0.6951Epoch 1/10: [===================           ] 49/75 batches, loss: 0.6954Epoch 1/10: [====================          ] 50/75 batches, loss: 0.6955Epoch 1/10: [====================          ] 51/75 batches, loss: 0.6954Epoch 1/10: [====================          ] 52/75 batches, loss: 0.6953Epoch 1/10: [=====================         ] 53/75 batches, loss: 0.6954Epoch 1/10: [=====================         ] 54/75 batches, loss: 0.6953Epoch 1/10: [======================        ] 55/75 batches, loss: 0.6952Epoch 1/10: [======================        ] 56/75 batches, loss: 0.6950Epoch 1/10: [======================        ] 57/75 batches, loss: 0.6948Epoch 1/10: [=======================       ] 58/75 batches, loss: 0.6947Epoch 1/10: [=======================       ] 59/75 batches, loss: 0.6948Epoch 1/10: [========================      ] 60/75 batches, loss: 0.6947Epoch 1/10: [========================      ] 61/75 batches, loss: 0.6947Epoch 1/10: [========================      ] 62/75 batches, loss: 0.6949Epoch 1/10: [=========================     ] 63/75 batches, loss: 0.6952Epoch 1/10: [=========================     ] 64/75 batches, loss: 0.6953Epoch 1/10: [==========================    ] 65/75 batches, loss: 0.6954Epoch 1/10: [==========================    ] 66/75 batches, loss: 0.6954Epoch 1/10: [==========================    ] 67/75 batches, loss: 0.6953Epoch 1/10: [===========================   ] 68/75 batches, loss: 0.6953Epoch 1/10: [===========================   ] 69/75 batches, loss: 0.6951Epoch 1/10: [============================  ] 70/75 batches, loss: 0.6950Epoch 1/10: [============================  ] 71/75 batches, loss: 0.6953Epoch 1/10: [============================  ] 72/75 batches, loss: 0.6955Epoch 1/10: [============================= ] 73/75 batches, loss: 0.6955Epoch 1/10: [============================= ] 74/75 batches, loss: 0.6956Epoch 1/10: [==============================] 75/75 batches, loss: 0.6950
+[2025-04-30 11:17:04,392][src.training.lm_trainer][INFO] - Epoch 1/10, Train Loss: 0.6950
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 176, in train
+    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Train Loss: {avg_train_loss:.4f}")
+Message: 'Epoch 1/10, Train Loss: 0.6950'
+Arguments: ()
+[2025-04-30 11:17:04,807][src.training.lm_trainer][INFO] - Epoch 1/10, Val Loss: 0.6943, Metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 224, in train
+    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Val Loss: {val_loss:.4f}, Metrics: {val_metrics}")
+Message: "Epoch 1/10, Val Loss: 0.6943, Metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}"
+Arguments: ()
+Epoch 2/10: [Epoch 2/10: [                              ] 1/75 batches, loss: 0.6995Epoch 2/10: [                              ] 2/75 batches, loss: 0.6970Epoch 2/10: [=                             ] 3/75 batches, loss: 0.6974Epoch 2/10: [=                             ] 4/75 batches, loss: 0.6885Epoch 2/10: [==                            ] 5/75 batches, loss: 0.6880Epoch 2/10: [==                            ] 6/75 batches, loss: 0.6906Epoch 2/10: [==                            ] 7/75 batches, loss: 0.6921Epoch 2/10: [===                           ] 8/75 batches, loss: 0.6944Epoch 2/10: [===                           ] 9/75 batches, loss: 0.6965Epoch 2/10: [====                          ] 10/75 batches, loss: 0.6961Epoch 2/10: [====                          ] 11/75 batches, loss: 0.6949Epoch 2/10: [====                          ] 12/75 batches, loss: 0.6958Epoch 2/10: [=====                         ] 13/75 batches, loss: 0.6944Epoch 2/10: [=====                         ] 14/75 batches, loss: 0.6936Epoch 2/10: [======                        ] 15/75 batches, loss: 0.6924Epoch 2/10: [======                        ] 16/75 batches, loss: 0.6930Epoch 2/10: [======                        ] 17/75 batches, loss: 0.6914Epoch 2/10: [=======                       ] 18/75 batches, loss: 0.6897Epoch 2/10: [=======                       ] 19/75 batches, loss: 0.6902Epoch 2/10: [========                      ] 20/75 batches, loss: 0.6903Epoch 2/10: [========                      ] 21/75 batches, loss: 0.6888Epoch 2/10: [========                      ] 22/75 batches, loss: 0.6904Epoch 2/10: [=========                     ] 23/75 batches, loss: 0.6910Epoch 2/10: [=========                     ] 24/75 batches, loss: 0.6916Epoch 2/10: [==========                    ] 25/75 batches, loss: 0.6923Epoch 2/10: [==========                    ] 26/75 batches, loss: 0.6921Epoch 2/10: [==========                    ] 27/75 batches, loss: 0.6921Epoch 2/10: [===========                   ] 28/75 batches, loss: 0.6916Epoch 2/10: [===========                   ] 29/75 batches, loss: 0.6910Epoch 2/10: [============                  ] 30/75 batches, loss: 0.6907Epoch 2/10: [============                  ] 31/75 batches, loss: 0.6914Epoch 2/10: [============                  ] 32/75 batches, loss: 0.6914Epoch 2/10: [=============                 ] 33/75 batches, loss: 0.6913Epoch 2/10: [=============                 ] 34/75 batches, loss: 0.6919Epoch 2/10: [==============                ] 35/75 batches, loss: 0.6916Epoch 2/10: [==============                ] 36/75 batches, loss: 0.6912Epoch 2/10: [==============                ] 37/75 batches, loss: 0.6913Epoch 2/10: [===============               ] 38/75 batches, loss: 0.6915Epoch 2/10: [===============               ] 39/75 batches, loss: 0.6916Epoch 2/10: [================              ] 40/75 batches, loss: 0.6922Epoch 2/10: [================              ] 41/75 batches, loss: 0.6916Epoch 2/10: [================              ] 42/75 batches, loss: 0.6919Epoch 2/10: [=================             ] 43/75 batches, loss: 0.6920Epoch 2/10: [=================             ] 44/75 batches, loss: 0.6921Epoch 2/10: [==================            ] 45/75 batches, loss: 0.6920Epoch 2/10: [==================            ] 46/75 batches, loss: 0.6921Epoch 2/10: [==================            ] 47/75 batches, loss: 0.6920Epoch 2/10: [===================           ] 48/75 batches, loss: 0.6923Epoch 2/10: [===================           ] 49/75 batches, loss: 0.6921Epoch 2/10: [====================          ] 50/75 batches, loss: 0.6921Epoch 2/10: [====================          ] 51/75 batches, loss: 0.6924Epoch 2/10: [====================          ] 52/75 batches, loss: 0.6922Epoch 2/10: [=====================         ] 53/75 batches, loss: 0.6920Epoch 2/10: [=====================         ] 54/75 batches, loss: 0.6927Epoch 2/10: [======================        ] 55/75 batches, loss: 0.6922Epoch 2/10: [======================        ] 56/75 batches, loss: 0.6922Epoch 2/10: [======================        ] 57/75 batches, loss: 0.6922Epoch 2/10: [=======================       ] 58/75 batches, loss: 0.6921Epoch 2/10: [=======================       ] 59/75 batches, loss: 0.6916Epoch 2/10: [========================      ] 60/75 batches, loss: 0.6913Epoch 2/10: [========================      ] 61/75 batches, loss: 0.6915Epoch 2/10: [========================      ] 62/75 batches, loss: 0.6915Epoch 2/10: [=========================     ] 63/75 batches, loss: 0.6913Epoch 2/10: [=========================     ] 64/75 batches, loss: 0.6912Epoch 2/10: [==========================    ] 65/75 batches, loss: 0.6911Epoch 2/10: [==========================    ] 66/75 batches, loss: 0.6909Epoch 2/10: [==========================    ] 67/75 batches, loss: 0.6912Epoch 2/10: [===========================   ] 68/75 batches, loss: 0.6910Epoch 2/10: [===========================   ] 69/75 batches, loss: 0.6909Epoch 2/10: [============================  ] 70/75 batches, loss: 0.6907Epoch 2/10: [============================  ] 71/75 batches, loss: 0.6909Epoch 2/10: [============================  ] 72/75 batches, loss: 0.6910Epoch 2/10: [============================= ] 73/75 batches, loss: 0.6910Epoch 2/10: [============================= ] 74/75 batches, loss: 0.6909Epoch 2/10: [==============================] 75/75 batches, loss: 0.6909
+[2025-04-30 11:17:09,677][src.training.lm_trainer][INFO] - Epoch 2/10, Train Loss: 0.6909
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 176, in train
+    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Train Loss: {avg_train_loss:.4f}")
+Message: 'Epoch 2/10, Train Loss: 0.6909'
+Arguments: ()
+[2025-04-30 11:17:10,065][src.training.lm_trainer][INFO] - Epoch 2/10, Val Loss: 0.6933, Metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 224, in train
+    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Val Loss: {val_loss:.4f}, Metrics: {val_metrics}")
+Message: "Epoch 2/10, Val Loss: 0.6933, Metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}"
+Arguments: ()
+Epoch 3/10: [Epoch 3/10: [                              ] 1/75 batches, loss: 0.7185Epoch 3/10: [                              ] 2/75 batches, loss: 0.6999Epoch 3/10: [=                             ] 3/75 batches, loss: 0.6992Epoch 3/10: [=                             ] 4/75 batches, loss: 0.6978Epoch 3/10: [==                            ] 5/75 batches, loss: 0.6912Epoch 3/10: [==                            ] 6/75 batches, loss: 0.6910Epoch 3/10: [==                            ] 7/75 batches, loss: 0.6891Epoch 3/10: [===                           ] 8/75 batches, loss: 0.6912Epoch 3/10: [===                           ] 9/75 batches, loss: 0.6932Epoch 3/10: [====                          ] 10/75 batches, loss: 0.6909Epoch 3/10: [====                          ] 11/75 batches, loss: 0.6930Epoch 3/10: [====                          ] 12/75 batches, loss: 0.6934Epoch 3/10: [=====                         ] 13/75 batches, loss: 0.6929Epoch 3/10: [=====                         ] 14/75 batches, loss: 0.6922Epoch 3/10: [======                        ] 15/75 batches, loss: 0.6921Epoch 3/10: [======                        ] 16/75 batches, loss: 0.6907Epoch 3/10: [======                        ] 17/75 batches, loss: 0.6908Epoch 3/10: [=======                       ] 18/75 batches, loss: 0.6909Epoch 3/10: [=======                       ] 19/75 batches, loss: 0.6898Epoch 3/10: [========                      ] 20/75 batches, loss: 0.6888Epoch 3/10: [========                      ] 21/75 batches, loss: 0.6884Epoch 3/10: [========                      ] 22/75 batches, loss: 0.6879Epoch 3/10: [=========                     ] 23/75 batches, loss: 0.6886Epoch 3/10: [=========                     ] 24/75 batches, loss: 0.6882Epoch 3/10: [==========                    ] 25/75 batches, loss: 0.6878Epoch 3/10: [==========                    ] 26/75 batches, loss: 0.6877Epoch 3/10: [==========                    ] 27/75 batches, loss: 0.6881Epoch 3/10: [===========                   ] 28/75 batches, loss: 0.6889Epoch 3/10: [===========                   ] 29/75 batches, loss: 0.6883Epoch 3/10: [============                  ] 30/75 batches, loss: 0.6881Epoch 3/10: [============                  ] 31/75 batches, loss: 0.6884Epoch 3/10: [============                  ] 32/75 batches, loss: 0.6885Epoch 3/10: [=============                 ] 33/75 batches, loss: 0.6883Epoch 3/10: [=============                 ] 34/75 batches, loss: 0.6886Epoch 3/10: [==============                ] 35/75 batches, loss: 0.6887Epoch 3/10: [==============                ] 36/75 batches, loss: 0.6886Epoch 3/10: [==============                ] 37/75 batches, loss: 0.6889Epoch 3/10: [===============               ] 38/75 batches, loss: 0.6885Epoch 3/10: [===============               ] 39/75 batches, loss: 0.6883Epoch 3/10: [================              ] 40/75 batches, loss: 0.6879Epoch 3/10: [================              ] 41/75 batches, loss: 0.6882Epoch 3/10: [================              ] 42/75 batches, loss: 0.6883Epoch 3/10: [=================             ] 43/75 batches, loss: 0.6885Epoch 3/10: [=================             ] 44/75 batches, loss: 0.6888Epoch 3/10: [==================            ] 45/75 batches, loss: 0.6885Epoch 3/10: [==================            ] 46/75 batches, loss: 0.6884Epoch 3/10: [==================            ] 47/75 batches, loss: 0.6879Epoch 3/10: [===================           ] 48/75 batches, loss: 0.6877Epoch 3/10: [===================           ] 49/75 batches, loss: 0.6878Epoch 3/10: [====================          ] 50/75 batches, loss: 0.6878Epoch 3/10: [====================          ] 51/75 batches, loss: 0.6879Epoch 3/10: [====================          ] 52/75 batches, loss: 0.6883Epoch 3/10: [=====================         ] 53/75 batches, loss: 0.6880Epoch 3/10: [=====================         ] 54/75 batches, loss: 0.6876Epoch 3/10: [======================        ] 55/75 batches, loss: 0.6875Epoch 3/10: [======================        ] 56/75 batches, loss: 0.6876Epoch 3/10: [======================        ] 57/75 batches, loss: 0.6877Epoch 3/10: [=======================       ] 58/75 batches, loss: 0.6879Epoch 3/10: [=======================       ] 59/75 batches, loss: 0.6885Epoch 3/10: [========================      ] 60/75 batches, loss: 0.6886Epoch 3/10: [========================      ] 61/75 batches, loss: 0.6888Epoch 3/10: [========================      ] 62/75 batches, loss: 0.6886Epoch 3/10: [=========================     ] 63/75 batches, loss: 0.6882Epoch 3/10: [=========================     ] 64/75 batches, loss: 0.6883Epoch 3/10: [==========================    ] 65/75 batches, loss: 0.6886Epoch 3/10: [==========================    ] 66/75 batches, loss: 0.6886Epoch 3/10: [==========================    ] 67/75 batches, loss: 0.6886Epoch 3/10: [===========================   ] 68/75 batches, loss: 0.6884Epoch 3/10: [===========================   ] 69/75 batches, loss: 0.6883Epoch 3/10: [============================  ] 70/75 batches, loss: 0.6882Epoch 3/10: [============================  ] 71/75 batches, loss: 0.6884Epoch 3/10: [============================  ] 72/75 batches, loss: 0.6880Epoch 3/10: [============================= ] 73/75 batches, loss: 0.6882Epoch 3/10: [============================= ] 74/75 batches, loss: 0.6880Epoch 3/10: [==============================] 75/75 batches, loss: 0.6880
+[2025-04-30 11:17:14,976][src.training.lm_trainer][INFO] - Epoch 3/10, Train Loss: 0.6880
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 176, in train
+    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Train Loss: {avg_train_loss:.4f}")
+Message: 'Epoch 3/10, Train Loss: 0.6880'
+Arguments: ()
+[2025-04-30 11:17:15,365][src.training.lm_trainer][INFO] - Epoch 3/10, Val Loss: 0.6922, Metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 224, in train
+    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Val Loss: {val_loss:.4f}, Metrics: {val_metrics}")
+Message: "Epoch 3/10, Val Loss: 0.6922, Metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}"
+Arguments: ()
+Epoch 4/10: [Epoch 4/10: [                              ] 1/75 batches, loss: 0.6872Epoch 4/10: [                              ] 2/75 batches, loss: 0.6867Epoch 4/10: [=                             ] 3/75 batches, loss: 0.6884Epoch 4/10: [=                             ] 4/75 batches, loss: 0.6889Epoch 4/10: [==                            ] 5/75 batches, loss: 0.6863Epoch 4/10: [==                            ] 6/75 batches, loss: 0.6873Epoch 4/10: [==                            ] 7/75 batches, loss: 0.6836Epoch 4/10: [===                           ] 8/75 batches, loss: 0.6861Epoch 4/10: [===                           ] 9/75 batches, loss: 0.6870Epoch 4/10: [====                          ] 10/75 batches, loss: 0.6876Epoch 4/10: [====                          ] 11/75 batches, loss: 0.6880Epoch 4/10: [====                          ] 12/75 batches, loss: 0.6877Epoch 4/10: [=====                         ] 13/75 batches, loss: 0.6861Epoch 4/10: [=====                         ] 14/75 batches, loss: 0.6864Epoch 4/10: [======                        ] 15/75 batches, loss: 0.6870Epoch 4/10: [======                        ] 16/75 batches, loss: 0.6868Epoch 4/10: [======                        ] 17/75 batches, loss: 0.6877Epoch 4/10: [=======                       ] 18/75 batches, loss: 0.6881Epoch 4/10: [=======                       ] 19/75 batches, loss: 0.6877Epoch 4/10: [========                      ] 20/75 batches, loss: 0.6881Epoch 4/10: [========                      ] 21/75 batches, loss: 0.6878Epoch 4/10: [========                      ] 22/75 batches, loss: 0.6878Epoch 4/10: [=========                     ] 23/75 batches, loss: 0.6874Epoch 4/10: [=========                     ] 24/75 batches, loss: 0.6871Epoch 4/10: [==========                    ] 25/75 batches, loss: 0.6862Epoch 4/10: [==========                    ] 26/75 batches, loss: 0.6861Epoch 4/10: [==========                    ] 27/75 batches, loss: 0.6859Epoch 4/10: [===========                   ] 28/75 batches, loss: 0.6864Epoch 4/10: [===========                   ] 29/75 batches, loss: 0.6863Epoch 4/10: [============                  ] 30/75 batches, loss: 0.6864Epoch 4/10: [============                  ] 31/75 batches, loss: 0.6848Epoch 4/10: [============                  ] 32/75 batches, loss: 0.6848Epoch 4/10: [=============                 ] 33/75 batches, loss: 0.6844Epoch 4/10: [=============                 ] 34/75 batches, loss: 0.6843Epoch 4/10: [==============                ] 35/75 batches, loss: 0.6844Epoch 4/10: [==============                ] 36/75 batches, loss: 0.6847Epoch 4/10: [==============                ] 37/75 batches, loss: 0.6847Epoch 4/10: [===============               ] 38/75 batches, loss: 0.6846Epoch 4/10: [===============               ] 39/75 batches, loss: 0.6844Epoch 4/10: [================              ] 40/75 batches, loss: 0.6848Epoch 4/10: [================              ] 41/75 batches, loss: 0.6857Epoch 4/10: [================              ] 42/75 batches, loss: 0.6852Epoch 4/10: [=================             ] 43/75 batches, loss: 0.6855Epoch 4/10: [=================             ] 44/75 batches, loss: 0.6853Epoch 4/10: [==================            ] 45/75 batches, loss: 0.6853Epoch 4/10: [==================            ] 46/75 batches, loss: 0.6859Epoch 4/10: [==================            ] 47/75 batches, loss: 0.6855Epoch 4/10: [===================           ] 48/75 batches, loss: 0.6844Epoch 4/10: [===================           ] 49/75 batches, loss: 0.6845Epoch 4/10: [====================          ] 50/75 batches, loss: 0.6841Epoch 4/10: [====================          ] 51/75 batches, loss: 0.6841Epoch 4/10: [====================          ] 52/75 batches, loss: 0.6843Epoch 4/10: [=====================         ] 53/75 batches, loss: 0.6844Epoch 4/10: [=====================         ] 54/75 batches, loss: 0.6850Epoch 4/10: [======================        ] 55/75 batches, loss: 0.6848Epoch 4/10: [======================        ] 56/75 batches, loss: 0.6849Epoch 4/10: [======================        ] 57/75 batches, loss: 0.6846Epoch 4/10: [=======================       ] 58/75 batches, loss: 0.6846Epoch 4/10: [=======================       ] 59/75 batches, loss: 0.6848Epoch 4/10: [========================      ] 60/75 batches, loss: 0.6847Epoch 4/10: [========================      ] 61/75 batches, loss: 0.6849Epoch 4/10: [========================      ] 62/75 batches, loss: 0.6847Epoch 4/10: [=========================     ] 63/75 batches, loss: 0.6846Epoch 4/10: [=========================     ] 64/75 batches, loss: 0.6848Epoch 4/10: [==========================    ] 65/75 batches, loss: 0.6849Epoch 4/10: [==========================    ] 66/75 batches, loss: 0.6845Epoch 4/10: [==========================    ] 67/75 batches, loss: 0.6848Epoch 4/10: [===========================   ] 68/75 batches, loss: 0.6850Epoch 4/10: [===========================   ] 69/75 batches, loss: 0.6849Epoch 4/10: [============================  ] 70/75 batches, loss: 0.6850Epoch 4/10: [============================  ] 71/75 batches, loss: 0.6852Epoch 4/10: [============================  ] 72/75 batches, loss: 0.6849Epoch 4/10: [============================= ] 73/75 batches, loss: 0.6848Epoch 4/10: [============================= ] 74/75 batches, loss: 0.6847Epoch 4/10: [==============================] 75/75 batches, loss: 0.6851
+[2025-04-30 11:17:20,278][src.training.lm_trainer][INFO] - Epoch 4/10, Train Loss: 0.6851
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 176, in train
+    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Train Loss: {avg_train_loss:.4f}")
+Message: 'Epoch 4/10, Train Loss: 0.6851'
+Arguments: ()
+[2025-04-30 11:17:20,651][src.training.lm_trainer][INFO] - Epoch 4/10, Val Loss: 0.6910, Metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 224, in train
+    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Val Loss: {val_loss:.4f}, Metrics: {val_metrics}")
+Message: "Epoch 4/10, Val Loss: 0.6910, Metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}"
+Arguments: ()
+Epoch 5/10: [Epoch 5/10: [                              ] 1/75 batches, loss: 0.6752Epoch 5/10: [                              ] 2/75 batches, loss: 0.6714Epoch 5/10: [=                             ] 3/75 batches, loss: 0.6723Epoch 5/10: [=                             ] 4/75 batches, loss: 0.6799Epoch 5/10: [==                            ] 5/75 batches, loss: 0.6814Epoch 5/10: [==                            ] 6/75 batches, loss: 0.6826Epoch 5/10: [==                            ] 7/75 batches, loss: 0.6835Epoch 5/10: [===                           ] 8/75 batches, loss: 0.6842Epoch 5/10: [===                           ] 9/75 batches, loss: 0.6823Epoch 5/10: [====                          ] 10/75 batches, loss: 0.6819Epoch 5/10: [====                          ] 11/75 batches, loss: 0.6841Epoch 5/10: [====                          ] 12/75 batches, loss: 0.6855Epoch 5/10: [=====                         ] 13/75 batches, loss: 0.6864Epoch 5/10: [=====                         ] 14/75 batches, loss: 0.6866Epoch 5/10: [======                        ] 15/75 batches, loss: 0.6868Epoch 5/10: [======                        ] 16/75 batches, loss: 0.6846Epoch 5/10: [======                        ] 17/75 batches, loss: 0.6851Epoch 5/10: [=======                       ] 18/75 batches, loss: 0.6846Epoch 5/10: [=======                       ] 19/75 batches, loss: 0.6833Epoch 5/10: [========                      ] 20/75 batches, loss: 0.6838Epoch 5/10: [========                      ] 21/75 batches, loss: 0.6850Epoch 5/10: [========                      ] 22/75 batches, loss: 0.6851Epoch 5/10: [=========                     ] 23/75 batches, loss: 0.6853Epoch 5/10: [=========                     ] 24/75 batches, loss: 0.6854Epoch 5/10: [==========                    ] 25/75 batches, loss: 0.6849Epoch 5/10: [==========                    ] 26/75 batches, loss: 0.6848Epoch 5/10: [==========                    ] 27/75 batches, loss: 0.6856Epoch 5/10: [===========                   ] 28/75 batches, loss: 0.6848Epoch 5/10: [===========                   ] 29/75 batches, loss: 0.6854Epoch 5/10: [============                  ] 30/75 batches, loss: 0.6852Epoch 5/10: [============                  ] 31/75 batches, loss: 0.6846Epoch 5/10: [============                  ] 32/75 batches, loss: 0.6850Epoch 5/10: [=============                 ] 33/75 batches, loss: 0.6855Epoch 5/10: [=============                 ] 34/75 batches, loss: 0.6849Epoch 5/10: [==============                ] 35/75 batches, loss: 0.6855Epoch 5/10: [==============                ] 36/75 batches, loss: 0.6852Epoch 5/10: [==============                ] 37/75 batches, loss: 0.6854Epoch 5/10: [===============               ] 38/75 batches, loss: 0.6859Epoch 5/10: [===============               ] 39/75 batches, loss: 0.6852Epoch 5/10: [================              ] 40/75 batches, loss: 0.6852Epoch 5/10: [================              ] 41/75 batches, loss: 0.6851Epoch 5/10: [================              ] 42/75 batches, loss: 0.6853Epoch 5/10: [=================             ] 43/75 batches, loss: 0.6849Epoch 5/10: [=================             ] 44/75 batches, loss: 0.6848Epoch 5/10: [==================            ] 45/75 batches, loss: 0.6847Epoch 5/10: [==================            ] 46/75 batches, loss: 0.6848Epoch 5/10: [==================            ] 47/75 batches, loss: 0.6849Epoch 5/10: [===================           ] 48/75 batches, loss: 0.6850Epoch 5/10: [===================           ] 49/75 batches, loss: 0.6849Epoch 5/10: [====================          ] 50/75 batches, loss: 0.6849Epoch 5/10: [====================          ] 51/75 batches, loss: 0.6850Epoch 5/10: [====================          ] 52/75 batches, loss: 0.6847Epoch 5/10: [=====================         ] 53/75 batches, loss: 0.6849Epoch 5/10: [=====================         ] 54/75 batches, loss: 0.6847Epoch 5/10: [======================        ] 55/75 batches, loss: 0.6848Epoch 5/10: [======================        ] 56/75 batches, loss: 0.6842Epoch 5/10: [======================        ] 57/75 batches, loss: 0.6844Epoch 5/10: [=======================       ] 58/75 batches, loss: 0.6843Epoch 5/10: [=======================       ] 59/75 batches, loss: 0.6843Epoch 5/10: [========================      ] 60/75 batches, loss: 0.6844Epoch 5/10: [========================      ] 61/75 batches, loss: 0.6844Epoch 5/10: [========================      ] 62/75 batches, loss: 0.6848Epoch 5/10: [=========================     ] 63/75 batches, loss: 0.6848Epoch 5/10: [=========================     ] 64/75 batches, loss: 0.6850Epoch 5/10: [==========================    ] 65/75 batches, loss: 0.6846Epoch 5/10: [==========================    ] 66/75 batches, loss: 0.6845Epoch 5/10: [==========================    ] 67/75 batches, loss: 0.6848Epoch 5/10: [===========================   ] 68/75 batches, loss: 0.6849Epoch 5/10: [===========================   ] 69/75 batches, loss: 0.6851Epoch 5/10: [============================  ] 70/75 batches, loss: 0.6851Epoch 5/10: [============================  ] 71/75 batches, loss: 0.6850Epoch 5/10: [============================  ] 72/75 batches, loss: 0.6847Epoch 5/10: [============================= ] 73/75 batches, loss: 0.6846Epoch 5/10: [============================= ] 74/75 batches, loss: 0.6849Epoch 5/10: [==============================] 75/75 batches, loss: 0.6856
+[2025-04-30 11:17:25,598][src.training.lm_trainer][INFO] - Epoch 5/10, Train Loss: 0.6856
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 176, in train
+    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Train Loss: {avg_train_loss:.4f}")
+Message: 'Epoch 5/10, Train Loss: 0.6856'
+Arguments: ()
+[2025-04-30 11:17:25,988][src.training.lm_trainer][INFO] - Epoch 5/10, Val Loss: 0.6899, Metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 224, in train
+    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Val Loss: {val_loss:.4f}, Metrics: {val_metrics}")
+Message: "Epoch 5/10, Val Loss: 0.6899, Metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}"
+Arguments: ()
+Epoch 6/10: [Epoch 6/10: [                              ] 1/75 batches, loss: 0.6921Epoch 6/10: [                              ] 2/75 batches, loss: 0.6837Epoch 6/10: [=                             ] 3/75 batches, loss: 0.6825Epoch 6/10: [=                             ] 4/75 batches, loss: 0.6860Epoch 6/10: [==                            ] 5/75 batches, loss: 0.6805Epoch 6/10: [==                            ] 6/75 batches, loss: 0.6840Epoch 6/10: [==                            ] 7/75 batches, loss: 0.6835Epoch 6/10: [===                           ] 8/75 batches, loss: 0.6839Epoch 6/10: [===                           ] 9/75 batches, loss: 0.6828Epoch 6/10: [====                          ] 10/75 batches, loss: 0.6840Epoch 6/10: [====                          ] 11/75 batches, loss: 0.6841Epoch 6/10: [====                          ] 12/75 batches, loss: 0.6837Epoch 6/10: [=====                         ] 13/75 batches, loss: 0.6844Epoch 6/10: [=====                         ] 14/75 batches, loss: 0.6862Epoch 6/10: [======                        ] 15/75 batches, loss: 0.6862Epoch 6/10: [======                        ] 16/75 batches, loss: 0.6860Epoch 6/10: [======                        ] 17/75 batches, loss: 0.6855Epoch 6/10: [=======                       ] 18/75 batches, loss: 0.6851Epoch 6/10: [=======                       ] 19/75 batches, loss: 0.6842Epoch 6/10: [========                      ] 20/75 batches, loss: 0.6840Epoch 6/10: [========                      ] 21/75 batches, loss: 0.6844Epoch 6/10: [========                      ] 22/75 batches, loss: 0.6842Epoch 6/10: [=========                     ] 23/75 batches, loss: 0.6834Epoch 6/10: [=========                     ] 24/75 batches, loss: 0.6826Epoch 6/10: [==========                    ] 25/75 batches, loss: 0.6828Epoch 6/10: [==========                    ] 26/75 batches, loss: 0.6823Epoch 6/10: [==========                    ] 27/75 batches, loss: 0.6818Epoch 6/10: [===========                   ] 28/75 batches, loss: 0.6823Epoch 6/10: [===========                   ] 29/75 batches, loss: 0.6819Epoch 6/10: [============                  ] 30/75 batches, loss: 0.6821Epoch 6/10: [============                  ] 31/75 batches, loss: 0.6819Epoch 6/10: [============                  ] 32/75 batches, loss: 0.6816Epoch 6/10: [=============                 ] 33/75 batches, loss: 0.6820Epoch 6/10: [=============                 ] 34/75 batches, loss: 0.6823Epoch 6/10: [==============                ] 35/75 batches, loss: 0.6816Epoch 6/10: [==============                ] 36/75 batches, loss: 0.6812Epoch 6/10: [==============                ] 37/75 batches, loss: 0.6810Epoch 6/10: [===============               ] 38/75 batches, loss: 0.6809Epoch 6/10: [===============               ] 39/75 batches, loss: 0.6816Epoch 6/10: [================              ] 40/75 batches, loss: 0.6814Epoch 6/10: [================              ] 41/75 batches, loss: 0.6811Epoch 6/10: [================              ] 42/75 batches, loss: 0.6811Epoch 6/10: [=================             ] 43/75 batches, loss: 0.6814Epoch 6/10: [=================             ] 44/75 batches, loss: 0.6806Epoch 6/10: [==================            ] 45/75 batches, loss: 0.6803Epoch 6/10: [==================            ] 46/75 batches, loss: 0.6804Epoch 6/10: [==================            ] 47/75 batches, loss: 0.6798Epoch 6/10: [===================           ] 48/75 batches, loss: 0.6795Epoch 6/10: [===================           ] 49/75 batches, loss: 0.6788Epoch 6/10: [====================          ] 50/75 batches, loss: 0.6783Epoch 6/10: [====================          ] 51/75 batches, loss: 0.6781Epoch 6/10: [====================          ] 52/75 batches, loss: 0.6786Epoch 6/10: [=====================         ] 53/75 batches, loss: 0.6780Epoch 6/10: [=====================         ] 54/75 batches, loss: 0.6777Epoch 6/10: [======================        ] 55/75 batches, loss: 0.6782Epoch 6/10: [======================        ] 56/75 batches, loss: 0.6781Epoch 6/10: [======================        ] 57/75 batches, loss: 0.6784Epoch 6/10: [=======================       ] 58/75 batches, loss: 0.6786Epoch 6/10: [=======================       ] 59/75 batches, loss: 0.6789Epoch 6/10: [========================      ] 60/75 batches, loss: 0.6792Epoch 6/10: [========================      ] 61/75 batches, loss: 0.6794Epoch 6/10: [========================      ] 62/75 batches, loss: 0.6796Epoch 6/10: [=========================     ] 63/75 batches, loss: 0.6797Epoch 6/10: [=========================     ] 64/75 batches, loss: 0.6797Epoch 6/10: [==========================    ] 65/75 batches, loss: 0.6796Epoch 6/10: [==========================    ] 66/75 batches, loss: 0.6797Epoch 6/10: [==========================    ] 67/75 batches, loss: 0.6796Epoch 6/10: [===========================   ] 68/75 batches, loss: 0.6799Epoch 6/10: [===========================   ] 69/75 batches, loss: 0.6799Epoch 6/10: [============================  ] 70/75 batches, loss: 0.6796Epoch 6/10: [============================  ] 71/75 batches, loss: 0.6799Epoch 6/10: [============================  ] 72/75 batches, loss: 0.6798Epoch 6/10: [============================= ] 73/75 batches, loss: 0.6797Epoch 6/10: [============================= ] 74/75 batches, loss: 0.6796Epoch 6/10: [==============================] 75/75 batches, loss: 0.6796
+[2025-04-30 11:17:30,902][src.training.lm_trainer][INFO] - Epoch 6/10, Train Loss: 0.6796
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 176, in train
+    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Train Loss: {avg_train_loss:.4f}")
+Message: 'Epoch 6/10, Train Loss: 0.6796'
+Arguments: ()
+[2025-04-30 11:17:31,291][src.training.lm_trainer][INFO] - Epoch 6/10, Val Loss: 0.6886, Metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 224, in train
+    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Val Loss: {val_loss:.4f}, Metrics: {val_metrics}")
+Message: "Epoch 6/10, Val Loss: 0.6886, Metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}"
+Arguments: ()
+Epoch 7/10: [Epoch 7/10: [                              ] 1/75 batches, loss: 0.6785Epoch 7/10: [                              ] 2/75 batches, loss: 0.6655Epoch 7/10: [=                             ] 3/75 batches, loss: 0.6778Epoch 7/10: [=                             ] 4/75 batches, loss: 0.6791Epoch 7/10: [==                            ] 5/75 batches, loss: 0.6739Epoch 7/10: [==                            ] 6/75 batches, loss: 0.6728Epoch 7/10: [==                            ] 7/75 batches, loss: 0.6686Epoch 7/10: [===                           ] 8/75 batches, loss: 0.6676Epoch 7/10: [===                           ] 9/75 batches, loss: 0.6682Epoch 7/10: [====                          ] 10/75 batches, loss: 0.6668Epoch 7/10: [====                          ] 11/75 batches, loss: 0.6669Epoch 7/10: [====                          ] 12/75 batches, loss: 0.6668Epoch 7/10: [=====                         ] 13/75 batches, loss: 0.6666Epoch 7/10: [=====                         ] 14/75 batches, loss: 0.6671Epoch 7/10: [======                        ] 15/75 batches, loss: 0.6673Epoch 7/10: [======                        ] 16/75 batches, loss: 0.6683Epoch 7/10: [======                        ] 17/75 batches, loss: 0.6683Epoch 7/10: [=======                       ] 18/75 batches, loss: 0.6684Epoch 7/10: [=======                       ] 19/75 batches, loss: 0.6689Epoch 7/10: [========                      ] 20/75 batches, loss: 0.6698Epoch 7/10: [========                      ] 21/75 batches, loss: 0.6686Epoch 7/10: [========                      ] 22/75 batches, loss: 0.6691Epoch 7/10: [=========                     ] 23/75 batches, loss: 0.6696Epoch 7/10: [=========                     ] 24/75 batches, loss: 0.6700Epoch 7/10: [==========                    ] 25/75 batches, loss: 0.6714Epoch 7/10: [==========                    ] 26/75 batches, loss: 0.6719Epoch 7/10: [==========                    ] 27/75 batches, loss: 0.6732Epoch 7/10: [===========                   ] 28/75 batches, loss: 0.6723Epoch 7/10: [===========                   ] 29/75 batches, loss: 0.6723Epoch 7/10: [============                  ] 30/75 batches, loss: 0.6718Epoch 7/10: [============                  ] 31/75 batches, loss: 0.6725Epoch 7/10: [============                  ] 32/75 batches, loss: 0.6729Epoch 7/10: [=============                 ] 33/75 batches, loss: 0.6727Epoch 7/10: [=============                 ] 34/75 batches, loss: 0.6727Epoch 7/10: [==============                ] 35/75 batches, loss: 0.6727Epoch 7/10: [==============                ] 36/75 batches, loss: 0.6731Epoch 7/10: [==============                ] 37/75 batches, loss: 0.6732Epoch 7/10: [===============               ] 38/75 batches, loss: 0.6733Epoch 7/10: [===============               ] 39/75 batches, loss: 0.6735Epoch 7/10: [================              ] 40/75 batches, loss: 0.6742Epoch 7/10: [================              ] 41/75 batches, loss: 0.6742Epoch 7/10: [================              ] 42/75 batches, loss: 0.6746Epoch 7/10: [=================             ] 43/75 batches, loss: 0.6748Epoch 7/10: [=================             ] 44/75 batches, loss: 0.6750Epoch 7/10: [==================            ] 45/75 batches, loss: 0.6749Epoch 7/10: [==================            ] 46/75 batches, loss: 0.6750Epoch 7/10: [==================            ] 47/75 batches, loss: 0.6750Epoch 7/10: [===================           ] 48/75 batches, loss: 0.6742Epoch 7/10: [===================           ] 49/75 batches, loss: 0.6739Epoch 7/10: [====================          ] 50/75 batches, loss: 0.6745Epoch 7/10: [====================          ] 51/75 batches, loss: 0.6749Epoch 7/10: [====================          ] 52/75 batches, loss: 0.6753Epoch 7/10: [=====================         ] 53/75 batches, loss: 0.6752Epoch 7/10: [=====================         ] 54/75 batches, loss: 0.6757Epoch 7/10: [======================        ] 55/75 batches, loss: 0.6756Epoch 7/10: [======================        ] 56/75 batches, loss: 0.6754Epoch 7/10: [======================        ] 57/75 batches, loss: 0.6754Epoch 7/10: [=======================       ] 58/75 batches, loss: 0.6758Epoch 7/10: [=======================       ] 59/75 batches, loss: 0.6760Epoch 7/10: [========================      ] 60/75 batches, loss: 0.6758Epoch 7/10: [========================      ] 61/75 batches, loss: 0.6755Epoch 7/10: [========================      ] 62/75 batches, loss: 0.6747Epoch 7/10: [=========================     ] 63/75 batches, loss: 0.6749Epoch 7/10: [=========================     ] 64/75 batches, loss: 0.6751Epoch 7/10: [==========================    ] 65/75 batches, loss: 0.6748Epoch 7/10: [==========================    ] 66/75 batches, loss: 0.6751Epoch 7/10: [==========================    ] 67/75 batches, loss: 0.6753Epoch 7/10: [===========================   ] 68/75 batches, loss: 0.6753Epoch 7/10: [===========================   ] 69/75 batches, loss: 0.6753Epoch 7/10: [============================  ] 70/75 batches, loss: 0.6753Epoch 7/10: [============================  ] 71/75 batches, loss: 0.6751Epoch 7/10: [============================  ] 72/75 batches, loss: 0.6747Epoch 7/10: [============================= ] 73/75 batches, loss: 0.6748Epoch 7/10: [============================= ] 74/75 batches, loss: 0.6749Epoch 7/10: [==============================] 75/75 batches, loss: 0.6749
+[2025-04-30 11:17:36,211][src.training.lm_trainer][INFO] - Epoch 7/10, Train Loss: 0.6749
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 176, in train
+    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Train Loss: {avg_train_loss:.4f}")
+Message: 'Epoch 7/10, Train Loss: 0.6749'
+Arguments: ()
+[2025-04-30 11:17:36,609][src.training.lm_trainer][INFO] - Epoch 7/10, Val Loss: 0.6872, Metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 224, in train
+    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Val Loss: {val_loss:.4f}, Metrics: {val_metrics}")
+Message: "Epoch 7/10, Val Loss: 0.6872, Metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}"
+Arguments: ()
+Epoch 8/10: [Epoch 8/10: [                              ] 1/75 batches, loss: 0.6842Epoch 8/10: [                              ] 2/75 batches, loss: 0.6747Epoch 8/10: [=                             ] 3/75 batches, loss: 0.6739Epoch 8/10: [=                             ] 4/75 batches, loss: 0.6710Epoch 8/10: [==                            ] 5/75 batches, loss: 0.6736Epoch 8/10: [==                            ] 6/75 batches, loss: 0.6770Epoch 8/10: [==                            ] 7/75 batches, loss: 0.6701Epoch 8/10: [===                           ] 8/75 batches, loss: 0.6677Epoch 8/10: [===                           ] 9/75 batches, loss: 0.6686Epoch 8/10: [====                          ] 10/75 batches, loss: 0.6693Epoch 8/10: [====                          ] 11/75 batches, loss: 0.6679Epoch 8/10: [====                          ] 12/75 batches, loss: 0.6721Epoch 8/10: [=====                         ] 13/75 batches, loss: 0.6709Epoch 8/10: [=====                         ] 14/75 batches, loss: 0.6714Epoch 8/10: [======                        ] 15/75 batches, loss: 0.6701Epoch 8/10: [======                        ] 16/75 batches, loss: 0.6717Epoch 8/10: [======                        ] 17/75 batches, loss: 0.6705Epoch 8/10: [=======                       ] 18/75 batches, loss: 0.6701Epoch 8/10: [=======                       ] 19/75 batches, loss: 0.6708Epoch 8/10: [========                      ] 20/75 batches, loss: 0.6710Epoch 8/10: [========                      ] 21/75 batches, loss: 0.6712Epoch 8/10: [========                      ] 22/75 batches, loss: 0.6723Epoch 8/10: [=========                     ] 23/75 batches, loss: 0.6724Epoch 8/10: [=========                     ] 24/75 batches, loss: 0.6729Epoch 8/10: [==========                    ] 25/75 batches, loss: 0.6733Epoch 8/10: [==========                    ] 26/75 batches, loss: 0.6731Epoch 8/10: [==========                    ] 27/75 batches, loss: 0.6733Epoch 8/10: [===========                   ] 28/75 batches, loss: 0.6743Epoch 8/10: [===========                   ] 29/75 batches, loss: 0.6744Epoch 8/10: [============                  ] 30/75 batches, loss: 0.6745Epoch 8/10: [============                  ] 31/75 batches, loss: 0.6745Epoch 8/10: [============                  ] 32/75 batches, loss: 0.6743Epoch 8/10: [=============                 ] 33/75 batches, loss: 0.6745Epoch 8/10: [=============                 ] 34/75 batches, loss: 0.6742Epoch 8/10: [==============                ] 35/75 batches, loss: 0.6740Epoch 8/10: [==============                ] 36/75 batches, loss: 0.6740Epoch 8/10: [==============                ] 37/75 batches, loss: 0.6745Epoch 8/10: [===============               ] 38/75 batches, loss: 0.6745Epoch 8/10: [===============               ] 39/75 batches, loss: 0.6745Epoch 8/10: [================              ] 40/75 batches, loss: 0.6756Epoch 8/10: [================              ] 41/75 batches, loss: 0.6758Epoch 8/10: [================              ] 42/75 batches, loss: 0.6761Epoch 8/10: [=================             ] 43/75 batches, loss: 0.6755Epoch 8/10: [=================             ] 44/75 batches, loss: 0.6754Epoch 8/10: [==================            ] 45/75 batches, loss: 0.6749Epoch 8/10: [==================            ] 46/75 batches, loss: 0.6750Epoch 8/10: [==================            ] 47/75 batches, loss: 0.6749Epoch 8/10: [===================           ] 48/75 batches, loss: 0.6746Epoch 8/10: [===================           ] 49/75 batches, loss: 0.6751Epoch 8/10: [====================          ] 50/75 batches, loss: 0.6749Epoch 8/10: [====================          ] 51/75 batches, loss: 0.6746Epoch 8/10: [====================          ] 52/75 batches, loss: 0.6743Epoch 8/10: [=====================         ] 53/75 batches, loss: 0.6739Epoch 8/10: [=====================         ] 54/75 batches, loss: 0.6741Epoch 8/10: [======================        ] 55/75 batches, loss: 0.6744Epoch 8/10: [======================        ] 56/75 batches, loss: 0.6738Epoch 8/10: [======================        ] 57/75 batches, loss: 0.6729Epoch 8/10: [=======================       ] 58/75 batches, loss: 0.6733Epoch 8/10: [=======================       ] 59/75 batches, loss: 0.6732Epoch 8/10: [========================      ] 60/75 batches, loss: 0.6733Epoch 8/10: [========================      ] 61/75 batches, loss: 0.6731Epoch 8/10: [========================      ] 62/75 batches, loss: 0.6732Epoch 8/10: [=========================     ] 63/75 batches, loss: 0.6734Epoch 8/10: [=========================     ] 64/75 batches, loss: 0.6734Epoch 8/10: [==========================    ] 65/75 batches, loss: 0.6736Epoch 8/10: [==========================    ] 66/75 batches, loss: 0.6738Epoch 8/10: [==========================    ] 67/75 batches, loss: 0.6736Epoch 8/10: [===========================   ] 68/75 batches, loss: 0.6735Epoch 8/10: [===========================   ] 69/75 batches, loss: 0.6724Epoch 8/10: [============================  ] 70/75 batches, loss: 0.6725Epoch 8/10: [============================  ] 71/75 batches, loss: 0.6728Epoch 8/10: [============================  ] 72/75 batches, loss: 0.6726Epoch 8/10: [============================= ] 73/75 batches, loss: 0.6728Epoch 8/10: [============================= ] 74/75 batches, loss: 0.6731Epoch 8/10: [==============================] 75/75 batches, loss: 0.6733
+[2025-04-30 11:17:41,547][src.training.lm_trainer][INFO] - Epoch 8/10, Train Loss: 0.6733
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 176, in train
+    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Train Loss: {avg_train_loss:.4f}")
+Message: 'Epoch 8/10, Train Loss: 0.6733'
+Arguments: ()
+[2025-04-30 11:17:41,947][src.training.lm_trainer][INFO] - Epoch 8/10, Val Loss: 0.6858, Metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 224, in train
+    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Val Loss: {val_loss:.4f}, Metrics: {val_metrics}")
+Message: "Epoch 8/10, Val Loss: 0.6858, Metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}"
+Arguments: ()
+Epoch 9/10: [Epoch 9/10: [                              ] 1/75 batches, loss: 0.6632Epoch 9/10: [                              ] 2/75 batches, loss: 0.6700Epoch 9/10: [=                             ] 3/75 batches, loss: 0.6661Epoch 9/10: [=                             ] 4/75 batches, loss: 0.6683Epoch 9/10: [==                            ] 5/75 batches, loss: 0.6681Epoch 9/10: [==                            ] 6/75 batches, loss: 0.6684Epoch 9/10: [==                            ] 7/75 batches, loss: 0.6713Epoch 9/10: [===                           ] 8/75 batches, loss: 0.6682Epoch 9/10: [===                           ] 9/75 batches, loss: 0.6671Epoch 9/10: [====                          ] 10/75 batches, loss: 0.6687Epoch 9/10: [====                          ] 11/75 batches, loss: 0.6697Epoch 9/10: [====                          ] 12/75 batches, loss: 0.6703Epoch 9/10: [=====                         ] 13/75 batches, loss: 0.6712Epoch 9/10: [=====                         ] 14/75 batches, loss: 0.6707Epoch 9/10: [======                        ] 15/75 batches, loss: 0.6704Epoch 9/10: [======                        ] 16/75 batches, loss: 0.6711Epoch 9/10: [======                        ] 17/75 batches, loss: 0.6721Epoch 9/10: [=======                       ] 18/75 batches, loss: 0.6724Epoch 9/10: [=======                       ] 19/75 batches, loss: 0.6715Epoch 9/10: [========                      ] 20/75 batches, loss: 0.6707Epoch 9/10: [========                      ] 21/75 batches, loss: 0.6717Epoch 9/10: [========                      ] 22/75 batches, loss: 0.6716Epoch 9/10: [=========                     ] 23/75 batches, loss: 0.6715Epoch 9/10: [=========                     ] 24/75 batches, loss: 0.6711Epoch 9/10: [==========                    ] 25/75 batches, loss: 0.6710Epoch 9/10: [==========                    ] 26/75 batches, loss: 0.6710Epoch 9/10: [==========                    ] 27/75 batches, loss: 0.6713Epoch 9/10: [===========                   ] 28/75 batches, loss: 0.6710Epoch 9/10: [===========                   ] 29/75 batches, loss: 0.6707Epoch 9/10: [============                  ] 30/75 batches, loss: 0.6714Epoch 9/10: [============                  ] 31/75 batches, loss: 0.6722Epoch 9/10: [============                  ] 32/75 batches, loss: 0.6728Epoch 9/10: [=============                 ] 33/75 batches, loss: 0.6735Epoch 9/10: [=============                 ] 34/75 batches, loss: 0.6739Epoch 9/10: [==============                ] 35/75 batches, loss: 0.6742Epoch 9/10: [==============                ] 36/75 batches, loss: 0.6738Epoch 9/10: [==============                ] 37/75 batches, loss: 0.6739Epoch 9/10: [===============               ] 38/75 batches, loss: 0.6737Epoch 9/10: [===============               ] 39/75 batches, loss: 0.6738Epoch 9/10: [================              ] 40/75 batches, loss: 0.6740Epoch 9/10: [================              ] 41/75 batches, loss: 0.6732Epoch 9/10: [================              ] 42/75 batches, loss: 0.6730Epoch 9/10: [=================             ] 43/75 batches, loss: 0.6726Epoch 9/10: [=================             ] 44/75 batches, loss: 0.6727Epoch 9/10: [==================            ] 45/75 batches, loss: 0.6720Epoch 9/10: [==================            ] 46/75 batches, loss: 0.6723Epoch 9/10: [==================            ] 47/75 batches, loss: 0.6722Epoch 9/10: [===================           ] 48/75 batches, loss: 0.6718Epoch 9/10: [===================           ] 49/75 batches, loss: 0.6716Epoch 9/10: [====================          ] 50/75 batches, loss: 0.6710Epoch 9/10: [====================          ] 51/75 batches, loss: 0.6708Epoch 9/10: [====================          ] 52/75 batches, loss: 0.6709Epoch 9/10: [=====================         ] 53/75 batches, loss: 0.6715Epoch 9/10: [=====================         ] 54/75 batches, loss: 0.6711Epoch 9/10: [======================        ] 55/75 batches, loss: 0.6712Epoch 9/10: [======================        ] 56/75 batches, loss: 0.6709Epoch 9/10: [======================        ] 57/75 batches, loss: 0.6706Epoch 9/10: [=======================       ] 58/75 batches, loss: 0.6709Epoch 9/10: [=======================       ] 59/75 batches, loss: 0.6711Epoch 9/10: [========================      ] 60/75 batches, loss: 0.6713Epoch 9/10: [========================      ] 61/75 batches, loss: 0.6709Epoch 9/10: [========================      ] 62/75 batches, loss: 0.6711Epoch 9/10: [=========================     ] 63/75 batches, loss: 0.6709Epoch 9/10: [=========================     ] 64/75 batches, loss: 0.6712Epoch 9/10: [==========================    ] 65/75 batches, loss: 0.6709Epoch 9/10: [==========================    ] 66/75 batches, loss: 0.6711Epoch 9/10: [==========================    ] 67/75 batches, loss: 0.6713Epoch 9/10: [===========================   ] 68/75 batches, loss: 0.6718Epoch 9/10: [===========================   ] 69/75 batches, loss: 0.6717Epoch 9/10: [============================  ] 70/75 batches, loss: 0.6714Epoch 9/10: [============================  ] 71/75 batches, loss: 0.6715Epoch 9/10: [============================  ] 72/75 batches, loss: 0.6716Epoch 9/10: [============================= ] 73/75 batches, loss: 0.6715Epoch 9/10: [============================= ] 74/75 batches, loss: 0.6714Epoch 9/10: [==============================] 75/75 batches, loss: 0.6714
+[2025-04-30 11:17:46,963][src.training.lm_trainer][INFO] - Epoch 9/10, Train Loss: 0.6714
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 176, in train
+    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Train Loss: {avg_train_loss:.4f}")
+Message: 'Epoch 9/10, Train Loss: 0.6714'
+Arguments: ()
+[2025-04-30 11:17:47,357][src.training.lm_trainer][INFO] - Epoch 9/10, Val Loss: 0.6844, Metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 224, in train
+    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Val Loss: {val_loss:.4f}, Metrics: {val_metrics}")
+Message: "Epoch 9/10, Val Loss: 0.6844, Metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}"
+Arguments: ()
+Epoch 10/10: [Epoch 10/10: [                              ] 1/75 batches, loss: 0.6727Epoch 10/10: [                              ] 2/75 batches, loss: 0.6743Epoch 10/10: [=                             ] 3/75 batches, loss: 0.6819Epoch 10/10: [=                             ] 4/75 batches, loss: 0.6842Epoch 10/10: [==                            ] 5/75 batches, loss: 0.6858Epoch 10/10: [==                            ] 6/75 batches, loss: 0.6822Epoch 10/10: [==                            ] 7/75 batches, loss: 0.6862Epoch 10/10: [===                           ] 8/75 batches, loss: 0.6867Epoch 10/10: [===                           ] 9/75 batches, loss: 0.6872Epoch 10/10: [====                          ] 10/75 batches, loss: 0.6864Epoch 10/10: [====                          ] 11/75 batches, loss: 0.6850Epoch 10/10: [====                          ] 12/75 batches, loss: 0.6857Epoch 10/10: [=====                         ] 13/75 batches, loss: 0.6847Epoch 10/10: [=====                         ] 14/75 batches, loss: 0.6851Epoch 10/10: [======                        ] 15/75 batches, loss: 0.6827Epoch 10/10: [======                        ] 16/75 batches, loss: 0.6811Epoch 10/10: [======                        ] 17/75 batches, loss: 0.6799Epoch 10/10: [=======                       ] 18/75 batches, loss: 0.6778Epoch 10/10: [=======                       ] 19/75 batches, loss: 0.6784Epoch 10/10: [========                      ] 20/75 batches, loss: 0.6768Epoch 10/10: [========                      ] 21/75 batches, loss: 0.6752Epoch 10/10: [========                      ] 22/75 batches, loss: 0.6756Epoch 10/10: [=========                     ] 23/75 batches, loss: 0.6764Epoch 10/10: [=========                     ] 24/75 batches, loss: 0.6768Epoch 10/10: [==========                    ] 25/75 batches, loss: 0.6760Epoch 10/10: [==========                    ] 26/75 batches, loss: 0.6761Epoch 10/10: [==========                    ] 27/75 batches, loss: 0.6755Epoch 10/10: [===========                   ] 28/75 batches, loss: 0.6761Epoch 10/10: [===========                   ] 29/75 batches, loss: 0.6767Epoch 10/10: [============                  ] 30/75 batches, loss: 0.6763Epoch 10/10: [============                  ] 31/75 batches, loss: 0.6751Epoch 10/10: [============                  ] 32/75 batches, loss: 0.6746Epoch 10/10: [=============                 ] 33/75 batches, loss: 0.6746Epoch 10/10: [=============                 ] 34/75 batches, loss: 0.6745Epoch 10/10: [==============                ] 35/75 batches, loss: 0.6741Epoch 10/10: [==============                ] 36/75 batches, loss: 0.6737Epoch 10/10: [==============                ] 37/75 batches, loss: 0.6741Epoch 10/10: [===============               ] 38/75 batches, loss: 0.6741Epoch 10/10: [===============               ] 39/75 batches, loss: 0.6744Epoch 10/10: [================              ] 40/75 batches, loss: 0.6746Epoch 10/10: [================              ] 41/75 batches, loss: 0.6743Epoch 10/10: [================              ] 42/75 batches, loss: 0.6739Epoch 10/10: [=================             ] 43/75 batches, loss: 0.6731Epoch 10/10: [=================             ] 44/75 batches, loss: 0.6724Epoch 10/10: [==================            ] 45/75 batches, loss: 0.6724Epoch 10/10: [==================            ] 46/75 batches, loss: 0.6726Epoch 10/10: [==================            ] 47/75 batches, loss: 0.6724Epoch 10/10: [===================           ] 48/75 batches, loss: 0.6722Epoch 10/10: [===================           ] 49/75 batches, loss: 0.6724Epoch 10/10: [====================          ] 50/75 batches, loss: 0.6724Epoch 10/10: [====================          ] 51/75 batches, loss: 0.6726Epoch 10/10: [====================          ] 52/75 batches, loss: 0.6727Epoch 10/10: [=====================         ] 53/75 batches, loss: 0.6729Epoch 10/10: [=====================         ] 54/75 batches, loss: 0.6729Epoch 10/10: [======================        ] 55/75 batches, loss: 0.6731Epoch 10/10: [======================        ] 56/75 batches, loss: 0.6733Epoch 10/10: [======================        ] 57/75 batches, loss: 0.6731Epoch 10/10: [=======================       ] 58/75 batches, loss: 0.6730Epoch 10/10: [=======================       ] 59/75 batches, loss: 0.6732Epoch 10/10: [========================      ] 60/75 batches, loss: 0.6730Epoch 10/10: [========================      ] 61/75 batches, loss: 0.6732Epoch 10/10: [========================      ] 62/75 batches, loss: 0.6737Epoch 10/10: [=========================     ] 63/75 batches, loss: 0.6738Epoch 10/10: [=========================     ] 64/75 batches, loss: 0.6742Epoch 10/10: [==========================    ] 65/75 batches, loss: 0.6743Epoch 10/10: [==========================    ] 66/75 batches, loss: 0.6739Epoch 10/10: [==========================    ] 67/75 batches, loss: 0.6740Epoch 10/10: [===========================   ] 68/75 batches, loss: 0.6740Epoch 10/10: [===========================   ] 69/75 batches, loss: 0.6741Epoch 10/10: [============================  ] 70/75 batches, loss: 0.6738Epoch 10/10: [============================  ] 71/75 batches, loss: 0.6735Epoch 10/10: [============================  ] 72/75 batches, loss: 0.6732Epoch 10/10: [============================= ] 73/75 batches, loss: 0.6730Epoch 10/10: [============================= ] 74/75 batches, loss: 0.6730Epoch 10/10: [==============================] 75/75 batches, loss: 0.6727
+[2025-04-30 11:17:52,311][src.training.lm_trainer][INFO] - Epoch 10/10, Train Loss: 0.6727
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 176, in train
+    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Train Loss: {avg_train_loss:.4f}")
+Message: 'Epoch 10/10, Train Loss: 0.6727'
+Arguments: ()
+[2025-04-30 11:17:52,701][src.training.lm_trainer][INFO] - Epoch 10/10, Val Loss: 0.6832, Metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 224, in train
+    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Val Loss: {val_loss:.4f}, Metrics: {val_metrics}")
+Message: "Epoch 10/10, Val Loss: 0.6832, Metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}"
+Arguments: ()
+[2025-04-30 11:17:53,278][src.training.lm_trainer][INFO] - Training completed in 53.77 seconds
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 262, in train
+    logger.info(f"Training completed in {train_time:.2f} seconds")
+Message: 'Training completed in 53.77 seconds'
+Arguments: ()
+[2025-04-30 11:17:53,280][src.training.lm_trainer][INFO] - Loading best model for final evaluation
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 266, in train
+    logger.info("Loading best model for final evaluation")
+Message: 'Loading best model for final evaluation'
+Arguments: ()
+[2025-04-30 11:17:58,770][src.training.lm_trainer][INFO] - Final evaluation - Train metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 277, in train
+    logger.info(f"Final evaluation - Train metrics: {train_metrics}")
+Message: "Final evaluation - Train metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}"
+Arguments: ()
+[2025-04-30 11:17:58,774][src.training.lm_trainer][INFO] - Final evaluation - Validation metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 279, in train
+    logger.info(f"Final evaluation - Validation metrics: {val_metrics}")
+Message: "Final evaluation - Validation metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}"
+Arguments: ()
+[2025-04-30 11:17:58,775][src.training.lm_trainer][INFO] - Final evaluation - Test metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 281, in train
+    logger.info(f"Final evaluation - Test metrics: {test_metrics}")
+Message: "Final evaluation - Test metrics: {'accuracy': 0.5, 'f1': 0.6666666666666666}"
+Arguments: ()
+[2025-04-30 11:18:01,030][src.training.lm_trainer][INFO] - Model saved to /scratch/leuven/371/vsc37132/finetune_output/question_type/en/en/model.pt
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 317, in train
+    logger.info(f"Model saved to {model_path}")
+Message: 'Model saved to /scratch/leuven/371/vsc37132/finetune_output/question_type/en/en/model.pt'
+Arguments: ()
+[2025-04-30 11:18:01,033][src.training.lm_trainer][INFO] - GPU memory cleared
+--- Logging error ---
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1087, in emit
+    self.flush()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/logging/__init__.py", line 1067, in flush
+    self.stream.flush()
+OSError: [Errno 116] Stale file handle
+Call stack:
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 488, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 184, in main
+    results = run_lm_experiment(cfg, task, task_type, submetric)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 319, in run_lm_experiment
+    results = trainer.train(
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 338, in train
+    cleanup_gpu_memory()
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 65, in cleanup_gpu_memory
+    logger.info("GPU memory cleared")
+Message: 'GPU memory cleared'
+Arguments: ()
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:    best_val_accuracy ▁▁▁▁▁▁▁▁▁▁
+wandb:          best_val_f1 ▁▁▁▁▁▁▁▁▁▁
+wandb:        best_val_loss █▇▇▆▅▄▃▃▂▁
+wandb:                epoch ▁▁▂▂▃▃▃▃▄▄▅▅▆▆▆▆▇▇██
+wandb:  final_test_accuracy ▁
+wandb:        final_test_f1 ▁
+wandb: final_train_accuracy ▁
+wandb:       final_train_f1 ▁
+wandb:   final_val_accuracy ▁
+wandb:         final_val_f1 ▁
+wandb:        learning_rate ▁▁▁▁▁▁▁▁▁▁
+wandb:           train_loss █▇▆▅▅▃▂▂▁▁
+wandb:           train_time ▁
+wandb:         val_accuracy ▁▁▁▁▁▁▁▁▁▁
+wandb:               val_f1 ▁▁▁▁▁▁▁▁▁▁
+wandb:             val_loss █▇▇▆▅▄▃▃▂▁
+wandb: 
+wandb: Run summary:
+wandb:    best_val_accuracy 0.5
+wandb:          best_val_f1 0.66667
+wandb:        best_val_loss 0.68325
+wandb:                epoch 10
+wandb:  final_test_accuracy 0.5
+wandb:        final_test_f1 0.66667
+wandb: final_train_accuracy 0.5
+wandb:       final_train_f1 0.66667
+wandb:   final_val_accuracy 0.5
+wandb:         final_val_f1 0.66667
+wandb:        learning_rate 2e-05
+wandb:           train_loss 0.6727
+wandb:           train_time 53.76798
+wandb:         val_accuracy 0.5
+wandb:               val_f1 0.66667
+wandb:             val_loss 0.68325
+wandb: 
+wandb: You can sync this run to the cloud by running:
+wandb: wandb sync /scratch/leuven/371/vsc37132/wandb/wandb/offline-run-20250430_111649-oyd67la8
+wandb: Find logs at: /scratch/leuven/371/vsc37132/wandb/wandb/offline-run-20250430_111649-oyd67la8/logs
+Experiment finetune_question_type_en completed successfully in 81 seconds
+Running experiment: finetune_question_type_control1_en
+Output directory: /scratch/leuven/371/vsc37132/finetune_output/question_type/en/control1
+Command: python -m src.experiments.run_experiment         "hydra.job.chdir=False"         "hydra.run.dir=."         "experiment=question_type"         "experiment.tasks=question_type"         "model=lm_finetune"         "model.lm_name=cis-lmu/glot500-base"         "model.dropout=0.1"         "model.head_hidden_size=768"         "model.head_layers=2"         "data.languages=[en]"         "data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache"         "training.task_type=classification"         "training.num_epochs=10"         "training.batch_size=16"         "training.lr=2e-5"         "+training.gradient_accumulation_steps=2"         "experiment_name=finetune_question_type_control1_en"         "output_dir=/scratch/leuven/371/vsc37132/finetune_output/question_type/en/control1"         "wandb.mode=offline"             "experiment.use_controls=true"             "experiment.control_index=1"
+slurmstepd: error: *** JOB 58115321 ON r22g39 CANCELLED AT 2025-04-30T11:18:16 ***
