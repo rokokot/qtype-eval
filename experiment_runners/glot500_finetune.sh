@@ -42,22 +42,19 @@ nvidia-smi
 echo "Python executable: $(which python)"
 echo "PyTorch CUDA available: $(python -c "import torch; print(torch.cuda.is_available())")"
 
-# Define configuration
-LANGUAGES=("ar")
+LANGUAGES=("en" "ar" "fi" "id" "ja" "ko" "ru")
 TASKS=("question_type" "complexity")
-SUBMETRICS=("avg_links_len" "n_tokens")
-CONTROL_INDICES=(1)
+SUBMETRICS=("avg_links_len" "avg_max_depth" "avg_subordinate_chain_len" "avg_verb_edges" "lexical_density" "n_tokens")
+CONTROL_INDICES=(1 2 3)
 
-# Use maximum head sizes for all tasks
-# For fine-tuning, use the same large head size for all task types
-HEAD_SIZE=768  # Full model dimension for maximum expressivity
+HEAD_SIZE=768  
 
 # Base output directory
 OUTPUT_BASE_DIR="$VSC_SCRATCH/finetune_output"
 mkdir -p $OUTPUT_BASE_DIR
 
 # Set up experiment tracking and logging
-RESULTS_TRACKER="${OUTPUT_BASE_DIR}/experiment_results.csv"
+RESULTS_TRACKER="${OUTPUT_BASE_DIR}/experiment_overview.csv"
 LOG_DIR="${OUTPUT_BASE_DIR}/logs"
 mkdir -p $LOG_DIR
 
@@ -70,85 +67,6 @@ fi
 FAILED_LOG="${OUTPUT_BASE_DIR}/failed_experiments.log"
 touch $FAILED_LOG
 
-# Define priority experiments to run first (validation set)
-PRIORITY_LANGUAGES=("ar")
-PRIORITY_TASKS=("question_type")
-
-# Verify lm_finetune config exists
-LM_FINETUNE_CONFIG="configs/model/lm_finetune.yaml"
-if [ ! -f "$LM_FINETUNE_CONFIG" ]; then
-    echo "Creating missing lm_finetune.yaml config file..."
-    mkdir -p $(dirname "$LM_FINETUNE_CONFIG")
-    cat > "$LM_FINETUNE_CONFIG" << 'EOF'
-# configs/model/lm_finetune.yaml
-model_type: "lm_finetune"
-lm_name: "cis-lmu/glot500-base"
-dropout: 0.1
-layer_wise: false
-layer_index: -1
-num_outputs: 1
-head_hidden_size: 768
-head_layers: 2
-EOF
-    echo "Created $LM_FINETUNE_CONFIG"
-fi
-
-# Verify that finetuning is set up correctly
-echo "Verifying finetuning model configuration..."
-python -c "
-import sys
-import os
-import torch
-sys.path.append(os.getcwd())
-try:
-    from src.models.model_factory import create_model
-    
-    # Create a fine-tuning model
-    model = create_model('lm_finetune', 'classification', 
-                         lm_name='cis-lmu/glot500-base',
-                         head_hidden_size=768,
-                         head_layers=2,
-                         dropout=0.1,
-                         freeze_model=False)
-    
-    # Check if model is actually unfrozen
-    trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
-    total_params = sum(p.numel() for p in model.parameters())
-    
-    # Print status
-    print(f'Fine-tuning model check:')
-    print(f'- Trainable parameters: {trainable_params:,}')
-    print(f'- Total parameters: {total_params:,}')
-    print(f'- Percentage trainable: {trainable_params/total_params*100:.2f}%')
-    
-    # Check if encoder is trainable
-    encoder_trainable = sum(p.numel() for p in model.model.parameters() if p.requires_grad)
-    encoder_total = sum(p.numel() for p in model.model.parameters())
-    
-    print(f'- Encoder trainable: {encoder_trainable:,} / {encoder_total:,} ({encoder_trainable/encoder_total*100:.2f}%)')
-    
-    # Check head structure
-    if hasattr(model, 'head') and isinstance(model.head, torch.nn.Sequential):
-        for module in model.head:
-            if isinstance(module, torch.nn.Linear):
-                in_features = module.in_features
-                out_features = module.out_features
-                print(f'- Head layer: {in_features} → {out_features} features')
-    
-    print('SUCCESS: Model is properly set up for fine-tuning.')
-    sys.exit(0)
-except Exception as e:
-    print(f'Error checking model: {e}')
-    import traceback
-    traceback.print_exc()
-    sys.exit(1)
-"
-
-# If model check failed, exit
-if [ $? -ne 0 ]; then
-    echo "ERROR: Fine-tuning model configuration is incorrect. Fix the model implementation before continuing."
-    exit 1
-fi
 
 # Function to run a finetuning experiment
 run_finetune_experiment() {
@@ -296,37 +214,10 @@ run_finetune_experiment() {
     fi
 }
 
-# Run priority experiments first
-echo "===== Running priority experiments ====="
-for LANG in "${PRIORITY_LANGUAGES[@]}"; do
-    for TASK in "${PRIORITY_TASKS[@]}"; do
-        TASK_TYPE="classification"
-        if [ "$TASK" == "complexity" ]; then
-            TASK_TYPE="regression"
-        fi
-        
-        echo "Running priority experiment: $LANG, $TASK"
-        run_finetune_experiment "$TASK_TYPE" "$LANG" "$TASK" "" ""
-        
-        # Wait a bit to let GPU memory clear
-        sleep 10
-        
-        # Test one control experiment as a validation
-        run_finetune_experiment "$TASK_TYPE" "$LANG" "$TASK" "1" ""
-        
-        # Wait a bit to let GPU memory clear
-        sleep 10
-        
-        # Test one submetric experiment as a validation
-        run_finetune_experiment "regression" "$LANG" "single_submetric" "" "avg_links_len"
-        
-        # Wait a bit to let GPU memory clear
-        sleep 10
-    done
-done
 
 # Standard experiments (non-control)
-echo "===== Running main finetuning experiments ====="
+echo "===== ===== ===== ===== Running main finetuning experiments"
+
 for LANG in "${LANGUAGES[@]}"; do
     for TASK in "${TASKS[@]}"; do
         # Skip priority experiments that have already been run
@@ -354,7 +245,7 @@ for LANG in "${LANGUAGES[@]}"; do
 done
 
 # Control experiments
-echo "===== Running control experiments ====="
+echo "=====  ===== ===== ===== Running control experiments "
 for LANG in "${LANGUAGES[@]}"; do
     for TASK in "${TASKS[@]}"; do
         TASK_TYPE="classification"
@@ -384,7 +275,7 @@ for LANG in "${LANGUAGES[@]}"; do
 done
 
 # Submetric experiments
-echo "===== Running submetric experiments ====="
+echo "===== ===== ===== ===== Running submetric experiments "
 for LANG in "${LANGUAGES[@]}"; do
     for SUBMETRIC in "${SUBMETRICS[@]}"; do
         # Skip priority submetric that was already run
@@ -414,9 +305,6 @@ for LANG in "${LANGUAGES[@]}"; do
     python -c "import torch; torch.cuda.empty_cache()" 2>/dev/null || true
     sleep 30  # Longer pause between languages
 done
-
-# Generate summary of experiments
-echo "===== Generating experiment summary ====="
 
 echo "All finetuning experiments completed"
 echo "Results can be found in ${OUTPUT_BASE_DIR}"
