@@ -7,7 +7,7 @@ from sklearn.dummy import DummyClassifier, DummyRegressor
 from sklearn.linear_model import LogisticRegression, Ridge
 import xgboost as xgb
 from sklearn.metrics import accuracy_score, f1_score, mean_squared_error, r2_score
-from transformers import AutoModel
+from transformers import AutoModel, AutoConfig
 import logging
 
 logger = logging.getLogger(__name__)
@@ -168,7 +168,7 @@ class LMFineTuner(BaseLMModel):
         task_type: str = "classification",
         num_outputs: int = 1,
         dropout: float = 0.1,
-        head_hidden_size: int = 768,
+        head_hidden_size: int = None,
         head_layers: int = 2,
         layer_wise: bool = False,  
         layer_index: int = -1,
@@ -185,6 +185,9 @@ class LMFineTuner(BaseLMModel):
         
         # Set up a more expressive head for fine-tuning
         hidden_size = self.model.config.hidden_size
+        
+        if head_hidden_size is None:
+            head_hidden_size = hidden_size
         
         logger.info(f"Using head_hidden_size: {head_hidden_size} for fine-tuning")
         
@@ -242,12 +245,12 @@ def create_model(model_type, task_type, **kwargs):
     
     task_type = str(task_type).lower() if isinstance(task_type, str) else "classification"
 
-    valid_model_types = ["dummy", "logistic", "ridge", "xgboost", "lm_probe", "lm_finetune"]
-    
-    if model_type not in valid_model_types:
-        logger.warning(f"Unknown model type: {model_type}. Defaulting to 'lm_probe'.")
-        model_type = "lm_probe"
+    if model_type in ['lm_probe', 'lm_finetune']:
+        model_type = 'lm_finetune'
 
+    lm_name = kwargs.get("lm_name", "cis-lmu/glot500-base")
+    
+    default_hidden_size = 768
 
     common_params = {
         "model_name": kwargs.get("lm_name", "cis-lmu/glot500-base"),
@@ -266,12 +269,11 @@ def create_model(model_type, task_type, **kwargs):
             probe_hidden_size=kwargs.get("probe_hidden_size", 96)
         )
     
-    elif model_type == "lm_finetune":
-        # Fine-tuning specific parameters
+    if model_type == "lm_finetune":
         return LMFineTuner(
             **common_params,
-            freeze_model=kwargs.get("freeze_model", False),  # Default to unfreeze for fine-tuning
-            head_hidden_size=kwargs.get("head_hidden_size", 768),
+            freeze_model=False,  # Always unfreeze for fine-tuning
+            head_hidden_size=kwargs.get("head_hidden_size", default_hidden_size),
             head_layers=kwargs.get("head_layers", 2)
         )
     

@@ -296,7 +296,10 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
                 task=task,model_name=cfg.model.lm_name,batch_size=cfg.training.batch_size,control_index=control_index,cache_dir=cfg.data.cache_dir,num_workers=cfg.training.num_workers,submetric=submetric)
             
             
-            model_type = "lm_finetune" if cfg.experiment.type == "lm_finetune" else "lm_probe"
+            model_type = cfg.experiment.type
+            
+            if submetric:
+                model_type = 'lm_finetune'
             
             logger.info(f"Using model type: {model_type}")
 
@@ -306,6 +309,10 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
             
             if 'model_type' in model_params_copy:
                 del model_params_copy['model_type']
+                
+            model_params_copy['head_hidden_size'] = model_params_copy.get('head_hidden_size', 768)
+            model_params_copy['head_layers'] = model_params_copy.get('head_layers', 2)
+            model_params_copy['dropout'] = model_params_copy.get('dropout', 0.1)
             
             # Create model without passing model_type as a separate argument
             model = create_model(model_type, task_type, **model_params_copy)
