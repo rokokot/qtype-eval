@@ -270,9 +270,9 @@ def run_sklearn_experiment(cfg, task, task_type, submetric=None):
 
     return results
 
+
 def run_lm_experiment(cfg, task, task_type, submetric=None):
-    """Run language model experiments with proper handling of probe vs finetune settings."""
-    logger.info(f"Running LM experiment for task '{task}' (type: {task_type}) on languages: {cfg.data.languages}")
+    logger.info(f"Running LM probe experiment for task '{task}' (type: {task_type}) on languages: {cfg.data.languages}")
     if submetric:
         logger.info(f"Using submetric: {submetric}")
     
@@ -284,13 +284,7 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
         logger.info(f"Processing language: {language}")
         
         try:
-            wandb_run = setup_wandb(
-                cfg=cfg,
-                experiment_type=cfg.experiment.type,
-                task=submetric or task,
-                model_type=cfg.model.model_type,
-                language=language,
-            )
+            wandb_run = setup_wandb(cfg=cfg,experiment_type=cfg.experiment.type,task=submetric or task,model_type=cfg.model.model_type,language=language,)
         except Exception as e:
             logger.warning(f"Failed to initialize wandb for language {language}: {str(e)}")
             wandb_run = None
@@ -298,51 +292,39 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
         try:
             control_index = cfg.experiment.control_index if cfg.experiment.use_controls else None
             
-            train_loader, val_loader, test_loader = create_lm_dataloaders(
-                language=language,
-                task=task,
-                model_name=cfg.model.lm_name,
-                batch_size=cfg.training.batch_size,
-                control_index=control_index,
-                cache_dir=cfg.data.cache_dir,
-                num_workers=cfg.training.num_workers,
-                submetric=submetric
-            )
+            train_loader, val_loader, test_loader = create_lm_dataloaders(language=language,
+                task=task,model_name=cfg.model.lm_name,batch_size=cfg.training.batch_size,control_index=control_index,cache_dir=cfg.data.cache_dir,num_workers=cfg.training.num_workers,submetric=submetric)
             
-            # Get the correct model type from the experiment config
-            # FIXED: Don't override the model_type for submetrics or any other tasks
-            # Use explicitly configured model type (lm_probe or lm_finetune)
+            
             model_type = cfg.experiment.type
-            logger.info(f"Using model type: {model_type} for {'submetric ' + submetric if submetric else task}")
+            
+            if submetric:
+                model_type = 'lm_finetune'
+            
+            logger.info(f"Using model type: {model_type}")
 
             model_params = OmegaConf.to_container(cfg.model, resolve=True)
             model_params_copy = model_params.copy()
 
-            # Remove model_type from parameters if present
+            
             if 'model_type' in model_params_copy:
                 del model_params_copy['model_type']
                 
-            # Set appropriate parameters based on model type
-            if model_type == "lm_finetune":
-                model_params_copy['head_hidden_size'] = model_params_copy.get('head_hidden_size', 768)
-                model_params_copy['head_layers'] = model_params_copy.get('head_layers', 2)
-            elif model_type == "lm_probe":
-                # Make sure probe parameters are explicitly passed
-                if 'probe_hidden_size' not in model_params_copy:
-                    model_params_copy['probe_hidden_size'] = 96
-            
-            # Set all common parameters
+            model_params_copy['head_hidden_size'] = model_params_copy.get('head_hidden_size', 768)
+            model_params_copy['head_layers'] = model_params_copy.get('head_layers', 2)
             model_params_copy['dropout'] = model_params_copy.get('dropout', 0.1)
             
-            # Create model with the determined task_type
+            # Create model without passing model_type as a separate argument
             model = create_model(model_type, task_type, **model_params_copy)
             logger.info(f"Successfully created {model_type} model for {language}")
+
 
             # Log model parameter details
             total_params = sum(p.numel() for p in model.parameters())
             trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
             logger.info(f"Total parameters: {total_params:,}")
             logger.info(f"Trainable parameters: {trainable_params:,} ({trainable_params/total_params*100:.2f}%)")
+
 
             is_finetuning = model_type == "lm_finetune"
             grad_accum_steps = getattr(cfg.training, 'gradient_accumulation_steps', 1) if is_finetuning else 1
@@ -351,23 +333,8 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
             language_output_dir = os.path.join(cfg.output_dir, language)
             os.makedirs(language_output_dir, exist_ok=True)
             
-            # Set learning rate based on model type
-            lr = cfg.training.lr
-            if model_type == "lm_probe" and lr > 5e-4:
-                logger.info(f"Adjusting learning rate for probe from {lr} to 1e-4")
-                lr = 1e-4
             
-            trainer = LMTrainer(
-                model=model,
-                task_type=task_type,
-                learning_rate=lr,
-                weight_decay=cfg.training.weight_decay,
-                num_epochs=cfg.training.num_epochs,
-                patience=cfg.training.patience,
-                output_dir=language_output_dir,
-                wandb_run=wandb_run,
-                gradient_accumulation_steps=grad_accum_steps
-            )
+            trainer = LMTrainer(model=model,task_type=task_type,learning_rate=cfg.training.lr,weight_decay=cfg.training.weight_decay,num_epochs=cfg.training.num_epochs,patience=cfg.training.patience,output_dir=language_output_dir,wandb_run=wandb_run,gradient_accumulation_steps=grad_accum_steps)
             
             results = trainer.train(
                 train_loader=train_loader, 
@@ -391,6 +358,7 @@ def run_lm_experiment(cfg, task, task_type, submetric=None):
             if submetric:
                 results["submetric"] = submetric
 
+            
             all_results[language] = results
             
             # Save language-specific results
