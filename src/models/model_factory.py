@@ -326,13 +326,13 @@ class ClassificationProbe(MLPProbe):
             task_type="classification",
             num_outputs=num_outputs,
             probe_hidden_size=probe_hidden_size,
+            probe_depth=probe_depth,
             dropout=dropout,
             freeze_model=freeze_model,
             layer_wise=layer_wise,
             layer_index=layer_index,
             activation=activation,
             normalization=normalization,
-            probe_depth=probe_depth,
             weight_init=weight_init
         )
         

@@ -1,14 +1,14 @@
 #!/bin/bash
-#SBATCH --job-name=finetune_experiments
-#SBATCH --clusters=wice
-#SBATCH --account=intro_vsc37132
-#SBATCH --partition=gpu_h100
+#SBATCH --job-name=qtype_experiments
+#SBATCH --time=00:30:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=16     
-#SBATCH --gpus-per-node=1     
-#SBATCH --mem-per-cpu=11700M  
-#SBATCH --time=00:10:00
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=32G
+#SBATCH --gres=gpu:1
+#SBATCH --partition=gpu_a100_debug
+#SBATCH --clusters=wice
+#SBATCH --account=intro_vsc37132
 
 export PATH="$VSC_DATA/miniconda3/bin:$PATH"
 source "$VSC_DATA/miniconda3/etc/profile.d/conda.sh"
@@ -23,15 +23,17 @@ export HYDRA_FULL_ERROR=1
 export WANDB_DIR="$VSC_SCRATCH/wandb"
 mkdir -p "$VSC_SCRATCH/wandb"
 
-LANGUAGES=("ar" "en" "fi" "id" "ja" "ko" "ru")
+LANGUAGES=("ar" "id" "ja" "ru")
+# LANGUAGES=("ar" "en" "fi" "id" "ja" "ko" "ru")
 TASKS=("question_type" "complexity")
 SUBMETRICS=("avg_links_len" "avg_max_depth" "avg_subordinate_chain_len" "avg_verb_edges" "lexical_density" "n_tokens")
-CONTROL_INDICES=(1 2 3)
+SUBMETRICS=("avg_links_len" "avg_verb_edges" "n_tokens")
+CONTROL_INDICES=(1)
 
-OUTPUT_BASE_DIR="$VSC_SCRATCH/finetune_output"
+OUTPUT_BASE_DIR="$VSC_SCRATCH/probe_output"
 mkdir -p $OUTPUT_BASE_DIR
 
-RESULTS_TRACKER="${OUTPUT_BASE_DIR}/finetune_results.csv"
+RESULTS_TRACKER="${OUTPUT_BASE_DIR}/probe_results.csv"
 echo "experiment_type,language,task,submetric,control_index,metric,value" > $RESULTS_TRACKER
 
 # Failed experiments tracker
@@ -102,7 +104,7 @@ EOF
 
 chmod +x ${OUTPUT_BASE_DIR}/extract_metrics.py
 
-run_finetune_experiment() {
+run_probe_experiment() {
     local TASK_TYPE=$1
     local LANG=$2
     local TASK=$3
@@ -113,23 +115,23 @@ run_finetune_experiment() {
     
     local EXPERIMENT_NAME=""
     local COMMAND=""
-    local EXPERIMENT_TYPE="finetune"
+    local EXPERIMENT_TYPE="probe"
     
     # Set experiment name based on parameters
     if [ -n "$SUBMETRIC" ]; then
         # This is a submetric experiment
         TASK="single_submetric"
         if [ -z "$CONTROL_IDX" ]; then
-            EXPERIMENT_NAME="finetune_${SUBMETRIC}_${LANG}"
+            EXPERIMENT_NAME="probe_${SUBMETRIC}_${LANG}"
         else
-            EXPERIMENT_NAME="finetune_${SUBMETRIC}_control${CONTROL_IDX}_${LANG}"
+            EXPERIMENT_NAME="probe_${SUBMETRIC}_control${CONTROL_IDX}_${LANG}"
         fi
-    else
+    else:
         # Regular task experiment
         if [ -z "$CONTROL_IDX" ]; then
-            EXPERIMENT_NAME="finetune_${TASK}_${LANG}"
+            EXPERIMENT_NAME="probe_${TASK}_${LANG}"
         else
-            EXPERIMENT_NAME="finetune_${TASK}_control${CONTROL_IDX}_${LANG}"
+            EXPERIMENT_NAME="probe_${TASK}_control${CONTROL_IDX}_${LANG}"
         fi
     fi
     
@@ -138,7 +140,7 @@ run_finetune_experiment() {
         echo "Experiment ${EXPERIMENT_NAME} already completed successfully. Extracting metrics..."
         CONTROL_PARAM=${CONTROL_IDX:-None}
         python3 ${OUTPUT_BASE_DIR}/extract_metrics.py \
-            "${OUTPUT_SUBDIR}/${LANG}/results.json" "$RESULTS_TRACKER" "finetune" "$LANG" "$TASK" \
+            "${OUTPUT_SUBDIR}/${LANG}/results.json" "$RESULTS_TRACKER" "probe" "$LANG" "$TASK" \
             "${SUBMETRIC:-}" "$CONTROL_PARAM"
         return 0
     fi
@@ -157,34 +159,18 @@ run_finetune_experiment() {
     fi
     
     # Set task-specific configuration
-    local FINETUNE_CONFIG=""
+    local PROBE_CONFIG=""
     
     if [ "$TASK_TYPE" == "classification" ]; then
-        # Classification fine-tuning configuration
-        FINETUNE_CONFIG="\
-            \"model.head_hidden_size=768\" \
-            \"model.head_layers=2\" \
-            \"model.dropout=0.2\""
+        # Classification probe configuration
+        PROBE_CONFIG="\"model.probe_hidden_size=384\" \"model.probe_depth=2\" \"model.dropout=0.2\" \"model.activation=gelu\" \"model.normalization=layer\""
             
-        TRAINING_CONFIG="\
-            \"training.lr=2e-5\" \
-            \"training.patience=3\" \
-            \"training.scheduler_factor=0.5\" \
-            \"training.scheduler_patience=2\" \
-            \"+training.gradient_accumulation_steps=4\""
+        TRAINING_CONFIG="\"training.lr=1e-4\" \"training.patience=3\" \"training.scheduler_factor=0.5\" \"training.scheduler_patience=2\" \"+training.gradient_accumulation_steps=2\""
     else
-        # Regression fine-tuning configuration
-        FINETUNE_CONFIG="\
-            \"model.head_hidden_size=512\" \
-            \"model.head_layers=3\" \
-            \"model.dropout=0.1\""
+        # Regression probe configuration
+        PROBE_CONFIG="\"model.probe_hidden_size=256\" \"model.probe_depth=2\" \"model.dropout=0.1\" \"model.activation=silu\" \"model.normalization=layer\" \"model.output_standardization=true\""
             
-        TRAINING_CONFIG="\
-            \"training.lr=1e-5\" \
-            \"training.patience=4\" \
-            \"training.scheduler_factor=0.5\" \
-            \"training.scheduler_patience=3\" \
-            \"+training.gradient_accumulation_steps=4\""
+        TRAINING_CONFIG="\"training.lr=2e-5\" \"training.patience=4\" \"training.scheduler_factor=0.5\" \"training.scheduler_patience=2\" \"+training.gradient_accumulation_steps=2\""
     fi
     
     # Build command
@@ -193,16 +179,18 @@ run_finetune_experiment() {
         \"hydra.run.dir=.\" \
         \"experiment=${TASK}\" \
         \"experiment.tasks=${TASK}\" \
-        \"experiment.type=lm_finetune\" \
-        \"model=glot500_finetune\" \
+        \"experiment.type=lm_probe\" \
+        \"model=lm_probe\" \
+        \"model.model_type=lm_probe\" \
         \"model.lm_name=cis-lmu/glot500-base\" \
-        \"model.freeze_model=false\" \
-        \"model.finetune=true\" \
-        ${FINETUNE_CONFIG} \
+        \"model.freeze_model=true\" \
+        \"model.layer_wise=true\" \
+        \"model.layer_index=-1\" \
+        ${PROBE_CONFIG} \
         \"data.languages=[${LANG}]\" \
         \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
         \"training.task_type=${TASK_TYPE}\" \
-        \"training.num_epochs=10\" \
+        \"training.num_epochs=15\" \
         \"training.batch_size=16\" \
         ${TRAINING_CONFIG} \
         ${DEBUG_PARAM} \
@@ -238,7 +226,7 @@ run_finetune_experiment() {
         if [ -f "$RESULTS_FILE" ]; then
             CONTROL_PARAM=${CONTROL_IDX:-None}
             python3 ${OUTPUT_BASE_DIR}/extract_metrics.py \
-                "$RESULTS_FILE" "$RESULTS_TRACKER" "finetune" "$LANG" "$TASK" \
+                "$RESULTS_FILE" "$RESULTS_TRACKER" "probe" "$LANG" "$TASK" \
                 "${SUBMETRIC:-}" "$CONTROL_PARAM"
                 
             # Create a summary
@@ -268,7 +256,7 @@ run_finetune_experiment() {
 
 # Run Main Experiments First
 
-echo "Running main finetuning experiments (non-control)..."
+echo "Running main probing experiments (non-control)..."
 
 for LANG in "${LANGUAGES[@]}"; do
     for TASK in "${TASKS[@]}"; do
@@ -282,11 +270,11 @@ for LANG in "${LANGUAGES[@]}"; do
         mkdir -p "$TASK_DIR"
         
         # Run standard (non-control) experiment
-        run_finetune_experiment "$TASK_TYPE" "$LANG" "$TASK" "" "" "$TASK_DIR"
+        run_probe_experiment "$TASK_TYPE" "$LANG" "$TASK" "" "" "$TASK_DIR"
     done
 done
 
-echo "Running control finetuning experiments..."
+echo "Running control probing experiments..."
 
 for LANG in "${LANGUAGES[@]}"; do
     for TASK in "${TASKS[@]}"; do
@@ -301,12 +289,12 @@ for LANG in "${LANGUAGES[@]}"; do
             mkdir -p "$CONTROL_DIR"
             
             # Run control experiment
-            run_finetune_experiment "$TASK_TYPE" "$LANG" "$TASK" "$CONTROL_IDX" "" "$CONTROL_DIR"
+            run_probe_experiment "$TASK_TYPE" "$LANG" "$TASK" "$CONTROL_IDX" "" "$CONTROL_DIR"
         done
     done
 done
 
-echo "Running submetric finetuning experiments..."
+echo "Running submetric probing experiments..."
 
 for LANG in "${LANGUAGES[@]}"; do
     for SUBMETRIC in "${SUBMETRICS[@]}"; do
@@ -315,11 +303,11 @@ for LANG in "${LANGUAGES[@]}"; do
         mkdir -p "$SUBMETRIC_DIR"
         
         # Run standard (non-control) submetric experiment
-        run_finetune_experiment "regression" "$LANG" "single_submetric" "" "$SUBMETRIC" "$SUBMETRIC_DIR"
+        run_probe_experiment "regression" "$LANG" "single_submetric" "" "$SUBMETRIC" "$SUBMETRIC_DIR"
     done
 done
 
-echo "Running control submetric finetuning experiments..."
+echo "Running control submetric probing experiments..."
 
 for LANG in "${LANGUAGES[@]}"; do
     for SUBMETRIC in "${SUBMETRICS[@]}"; do
@@ -329,43 +317,10 @@ for LANG in "${LANGUAGES[@]}"; do
             mkdir -p "$CONTROL_DIR"
             
             # Run control submetric experiment
-            run_finetune_experiment "regression" "$LANG" "single_submetric" "$CONTROL_IDX" "$SUBMETRIC" "$CONTROL_DIR"
+            run_probe_experiment "regression" "$LANG" "single_submetric" "$CONTROL_IDX" "$SUBMETRIC" "$CONTROL_DIR"
         done
     done
 done
-
-cat > "${OUTPUT_BASE_DIR}/finetune_metadata.json" << EOF
-{
-  "experiment_type": "lm_finetune",
-  "description": "Task-optimized fine-tuning of language model for classification, regression, and submetric prediction tasks",
-  "model": "cis-lmu/glot500-base",
-  "model_config": "glot500_finetune",
-  "languages": ["ar", "en", "fi", "id", "ja", "ko", "ru"],
-  "tasks": ["question_type", "complexity"],
-  "submetrics": ["avg_links_len", "avg_max_depth", "avg_subordinate_chain_len", "avg_verb_edges", "lexical_density", "n_tokens"],
-  "freeze_model": false,
-  "finetune": true,
-  "layer_wise": false,
-  "classification_config": {
-    "head_hidden_size": 768,
-    "head_layers": 2,
-    "dropout": 0.2,
-    "lr": "2e-5"
-  },
-  "regression_config": {
-    "head_hidden_size": 512,
-    "head_layers": 3,
-    "dropout": 0.1, 
-    "lr": "1e-5"
-  },
-  "control_indices": [1, 2, 3],
-  "batch_size": 16,
-  "effective_batch_size": 64,
-  "gradient_accumulation_steps": 4,
-  "date_completed": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
-  "total_experiments": $(cat "$RESULTS_TRACKER" | wc -l)
-}
-EOF
 
 # List any failed experiments
 if [ -f "$FAILED_LOG" ]; then
@@ -384,7 +339,7 @@ TOTAL_EXPERIMENTS=$((${#LANGUAGES[@]} * (${#TASKS[@]} + ${#SUBMETRICS[@]}) * (1 
 COMPLETED_EXPERIMENTS=$(grep -v "experiment_type" "$RESULTS_TRACKER" | wc -l)
 
 echo "=============================================="
-echo "Fine-tuning experiments completed!"
+echo "Probing experiments completed!"
 echo "=============================================="
 echo "Total planned experiments: $TOTAL_EXPERIMENTS"
 echo "Successfully completed: $COMPLETED_EXPERIMENTS"
