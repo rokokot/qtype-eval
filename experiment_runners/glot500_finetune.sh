@@ -8,7 +8,8 @@
 #SBATCH --cpus-per-task=16     
 #SBATCH --gpus-per-node=1     
 #SBATCH --mem-per-cpu=11700M  
-#SBATCH --time=00:10:00
+#SBATCH --time=12:00:00
+
 
 export PATH="$VSC_DATA/miniconda3/bin:$PATH"
 source "$VSC_DATA/miniconda3/etc/profile.d/conda.sh"
@@ -23,10 +24,10 @@ export HYDRA_FULL_ERROR=1
 export WANDB_DIR="$VSC_SCRATCH/wandb"
 mkdir -p "$VSC_SCRATCH/wandb"
 
-LANGUAGES=("ar" "fi" "id" "ja")
-TASKS=("complexity")    # "question_type"
+LANGUAGES=("ar" "en" "fi" "id" "ja" "ko" "ru")
+TASKS=("complexity" "question_type")    # "question_type"
 SUBMETRICS=("avg_links_len" "avg_max_depth" "avg_subordinate_chain_len" "avg_verb_edges" "lexical_density" "n_tokens")
-CONTROL_INDICES=()
+CONTROL_INDICES=(1 2 3)
 
 OUTPUT_BASE_DIR="$VSC_SCRATCH/finetune_output"
 mkdir -p $OUTPUT_BASE_DIR
@@ -164,7 +165,7 @@ run_finetune_experiment() {
         FINETUNE_CONFIG="\
             \"model.head_hidden_size=768\" \
             \"model.head_layers=2\" \
-            \"model.dropout=0.2\""
+            \"model.dropout=0.25\""
             
         TRAINING_CONFIG="\
             \"training.lr=2e-5\" \
@@ -175,9 +176,9 @@ run_finetune_experiment() {
     else
         # Regression fine-tuning configuration
         FINETUNE_CONFIG="\
-            \"model.head_hidden_size=512\" \
-            \"model.head_layers=3\" \
-            \"model.dropout=0.01\""
+            \"model.head_hidden_size=768\" \
+            \"model.head_layers=2\" \
+            \"model.dropout=0.25\""
             
         TRAINING_CONFIG="\
             \"training.lr=2e-5\" \
