@@ -1,3 +1,4 @@
+# creating instances of models used in our experiments
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -104,52 +105,8 @@ class BaseLMModel(nn.Module):
         logger.info(f"Encoder: {encoder_trainable:,} trainable parameters, Head: {head_trainable:,} trainable parameters")
 
 
-class LinearProbe(BaseLMModel):
-    """Simple linear probe for language model representations - true linear probe with no hidden layers."""
-    
-    def __init__(
-        self,
-        model_name: str = "cis-lmu/glot500-base",
-        task_type: str = "classification",
-        num_outputs: int = 1,
-        dropout: float = 0.0,  # Default to no dropout for linear probes
-        freeze_model: bool = True,
-        layer_wise: bool = True,
-        layer_index: int = -1
-    ):
-        super().__init__(
-            model_name=model_name,
-            task_type=task_type,
-            num_outputs=num_outputs,
-            freeze_model=freeze_model,
-            layer_wise=layer_wise,
-            layer_index=layer_index,
-        )
-        
-        # Set up linear probe head - direct mapping from representations to outputs
-        hidden_size = self.model.config.hidden_size
-        
-        self.head = nn.Sequential(
-            nn.Dropout(dropout),  # Optional dropout directly on the input
-            nn.Linear(hidden_size, num_outputs),
-            nn.Sigmoid() if num_outputs == 1 and task_type == "classification" else nn.Identity()
-        )
-        
-        # Log parameter statistics
-        self.log_parameter_stats()
-        logger.info(f"Linear probe configuration: dropout={dropout}")
-
-    def forward(self, input_ids, attention_mask, token_type_ids=None, **kwargs):
-        sentence_repr = self.get_representation(
-            input_ids=input_ids,
-            attention_mask=attention_mask, 
-            token_type_ids=token_type_ids
-        )
-        return self.head(sentence_repr)
-
-
 class LMProbe(BaseLMModel):
-    """MLP probe for language model representations with configurable hidden layer."""
+    """Lightweight probe for language model representations."""
     
     def __init__(
         self,
@@ -160,8 +117,7 @@ class LMProbe(BaseLMModel):
         freeze_model: bool = True,
         layer_wise: bool = True,
         layer_index: int = -1,
-        probe_hidden_size: int = 96,
-        use_linear_probe: bool = False  # Flag to use a linear probe instead of MLP
+        probe_hidden_size: int = 96
     ):
         super().__init__(
             model_name=model_name,
@@ -175,35 +131,24 @@ class LMProbe(BaseLMModel):
         # Set up probe head
         hidden_size = self.model.config.hidden_size
         
-        if use_linear_probe or probe_hidden_size <= 0:
-            # Use a linear probe instead (direct mapping)
-            logger.info("Using linear probe (no hidden layer)")
-            self.head = nn.Sequential(
-                nn.Dropout(dropout),  # Optional dropout directly on the input
-                nn.Linear(hidden_size, num_outputs),
-                nn.Sigmoid() if num_outputs == 1 and task_type == "classification" else nn.Identity()
-            )
+        if probe_hidden_size is None or probe_hidden_size <= 0:
+            probe_hidden_size = hidden_size // 8 if task_type == "classification" else hidden_size // 4
+            logger.info(f"Using calculated probe_hidden_size: {probe_hidden_size}")
         else:
-            # Calculate probe hidden size if not provided
-            if probe_hidden_size is None:
-                probe_hidden_size = hidden_size // 8 if task_type == "classification" else hidden_size // 4
-                logger.info(f"Using calculated probe_hidden_size: {probe_hidden_size}")
-            else:
-                logger.info(f"Using provided probe_hidden_size: {probe_hidden_size}")
-            
-            # Create a simple MLP probe
-            self.head = nn.Sequential(
-                nn.Linear(hidden_size, probe_hidden_size),
-                nn.ReLU(),
-                nn.Dropout(dropout),
-                nn.Linear(probe_hidden_size, num_outputs),
-                nn.Sigmoid() if num_outputs == 1 and task_type == "classification" else nn.Identity(),
-            )
+            logger.info(f"Using provided probe_hidden_size: {probe_hidden_size}")
+        
+        # Create a simple MLP probe
+        self.head = nn.Sequential(
+            nn.Linear(hidden_size, probe_hidden_size),
+            nn.ReLU(),
+            nn.Dropout(dropout),
+            nn.Linear(probe_hidden_size, num_outputs),
+            nn.Sigmoid() if num_outputs == 1 and task_type == "classification" else nn.Identity(),
+        )
         
         # Log parameter statistics
         self.log_parameter_stats()
-        probe_type = "linear" if use_linear_probe or probe_hidden_size <= 0 else "MLP"
-        logger.info(f"Probe configuration: type={probe_type}, hidden_size={probe_hidden_size if probe_hidden_size > 0 else 'N/A'}, dropout={dropout}")
+        logger.info(f"Probe configuration: hidden_size={probe_hidden_size}, dropout={dropout}")
 
     def forward(self, input_ids, attention_mask, token_type_ids=None, **kwargs):
         sentence_repr = self.get_representation(
@@ -297,17 +242,13 @@ def create_model(model_type, task_type, **kwargs):
     logger.info(f"Creating {model_type} model for {task_type} task")
     
     model_type = str(model_type).lower()
+    
     task_type = str(task_type).lower() if isinstance(task_type, str) else "classification"
+
+    if model_type in ['lm_probe', 'lm_finetune']:
+        model_type = 'lm_finetune'
+
     lm_name = kwargs.get("lm_name", "cis-lmu/glot500-base")
-    
-    # Determine if we should use linear probe instead of MLP probe
-    use_linear_probe = kwargs.get("use_linear_probe", False)
-    
-    # Handle probe_hidden_size=0 as a signal to use linear probe
-    probe_hidden_size = kwargs.get("probe_hidden_size", 96)
-    if probe_hidden_size == 0:
-        use_linear_probe = True
-        logger.info("Setting use_linear_probe=True because probe_hidden_size=0")
     
     default_hidden_size = 768
 
@@ -320,20 +261,12 @@ def create_model(model_type, task_type, **kwargs):
         "layer_index": kwargs.get("layer_index", -1)
     }
 
-    if model_type == "linear_probe":
-        # Explicitly use the new LinearProbe class
-        return LinearProbe(
-            **common_params,
-            freeze_model=kwargs.get("freeze_model", True)
-        )
-    
     if model_type == "lm_probe":
-        # LM probe can be configured as either linear or MLP
+        # Probe-specific parameters
         return LMProbe(
             **common_params,
             freeze_model=kwargs.get("freeze_model", True),
-            probe_hidden_size=probe_hidden_size,
-            use_linear_probe=use_linear_probe
+            probe_hidden_size=kwargs.get("probe_hidden_size", 96)
         )
     
     if model_type == "lm_finetune":
