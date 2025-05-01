@@ -5,13 +5,13 @@
 - model.dropout=0.1
 - model.freeze_model=false
 - model.finetune=true
-- data.languages=[id]
+- data.languages=[ar]
 - data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache
 - training.task_type=regression
 - training.num_epochs=10
 - training.batch_size=16
 - training.lr=2e-5
 - +training.gradient_accumulation_steps=2
-- experiment_name=finetune_complexity_id
-- output_dir=/scratch/leuven/371/vsc37132/finetune_output/complexity/id
+- experiment_name=finetune_complexity_ar
+- output_dir=/scratch/leuven/371/vsc37132/finetune_output/complexity
 - wandb.mode=offline
