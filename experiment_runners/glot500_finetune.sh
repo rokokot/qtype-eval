@@ -1,14 +1,14 @@
 #!/bin/bash
 #SBATCH --job-name=finetune_experiments
-#SBATCH --time=08:00:00
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=32G
-#SBATCH --gres=gpu:1
-#SBATCH --partition=gpu_a100
 #SBATCH --clusters=wice
 #SBATCH --account=intro_vsc37132
+#SBATCH --partition=gpu_h100
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16     
+#SBATCH --gpus-per-node=1     
+#SBATCH --mem-per-cpu=11700M  
+#SBATCH --time=12:00:00
 
 export PATH="$VSC_DATA/miniconda3/bin:$PATH"
 source "$VSC_DATA/miniconda3/etc/profile.d/conda.sh"
@@ -142,7 +142,7 @@ run_finetune_experiment() {
         \"experiment.tasks=${TASK}\" \
         \"model=glot500_finetune\" \
         \"model.lm_name=cis-lmu/glot500-base\" \
-        \"model.dropout=0.1\" \
+        \"model.dropout=0.25\" \
         \"model.freeze_model=false\" \
         \"model.finetune=true\" \
         \"data.languages=[${LANG}]\" \
@@ -150,8 +150,7 @@ run_finetune_experiment() {
         \"training.task_type=${TASK_TYPE}\" \
         \"training.num_epochs=10\" \
         \"training.batch_size=16\" \
-        \"training.lr=2e-5\" \
-        \"+training.gradient_accumulation_steps=2\" \
+        \"training.lr=1e-5\" \
         ${DEBUG_PARAM} \
         \"experiment_name=${EXPERIMENT_NAME}\" \
         \"output_dir=${OUTPUT_SUBDIR}\" \
@@ -462,9 +461,8 @@ cat > "${OUTPUT_BASE_DIR}/finetune_metadata.json" << EOF
   "layer_wise": false,
   "control_indices": $(python -c "import json; print(json.dumps(${CONTROL_INDICES[@]}))"),
   "batch_size": 16,
-  "gradient_accumulation_steps": 2,
-  "effective_batch_size": 32,
-  "learning_rate": "2e-5",
+  "effective_batch_size": 16,
+  "learning_rate": "1e-5",
   "date_completed": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
   "total_experiments": $(cat "$RESULTS_TRACKER" | wc -l)
 }
