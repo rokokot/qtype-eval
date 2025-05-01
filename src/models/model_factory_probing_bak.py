@@ -2,7 +2,6 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
-import torch.nn.functional as F
 import os
 from sklearn.dummy import DummyClassifier, DummyRegressor
 from sklearn.linear_model import LogisticRegression, Ridge
@@ -107,7 +106,7 @@ class BaseLMModel(nn.Module):
 
 
 class LMProbe(BaseLMModel):
-    """Lightweight probe with contemporary probing architecture."""
+    """Lightweight probe for language model representations."""
     
     def __init__(
         self,
@@ -118,8 +117,7 @@ class LMProbe(BaseLMModel):
         freeze_model: bool = True,
         layer_wise: bool = True,
         layer_index: int = -1,
-        probe_hidden_size: int = None,  # Make configurable
-        intermediate_size: int = None   # New parameter
+        probe_hidden_size: int = 96
     ):
         super().__init__(
             model_name=model_name,
@@ -129,43 +127,28 @@ class LMProbe(BaseLMModel):
             layer_wise=layer_wise,
             layer_index=layer_index,
         )
-
+        
+        # Set up probe head
         hidden_size = self.model.config.hidden_size
         
-        # Calculate sizes using contemporary probing ratios
-        if probe_hidden_size is None:
-            probe_hidden_size = hidden_size // 8  # Reduced capacity for probing
-        if intermediate_size is None:
-            intermediate_size = max(64, hidden_size // 16)  # Bottleneck layer
-
-        # Contemporary probing head with normalization
-        self.head = nn.Sequential(
-            nn.Linear(hidden_size, intermediate_size),
-            nn.LayerNorm(intermediate_size),  # Added normalization
-            nn.ReLU(),
-            nn.Dropout(dropout),
-            
-            nn.Linear(intermediate_size, probe_hidden_size),
-            nn.LayerNorm(probe_hidden_size),  # Intermediate normalization
-            nn.ReLU(),
-            nn.Dropout(dropout),
-            
-            nn.Linear(probe_hidden_size, num_outputs),
-        )
-
-        # Initialize using probing-appropriate methods
-        nn.init.orthogonal_(self.head[0].weight)
-        nn.init.zeros_(self.head[0].bias)
-        nn.init.orthogonal_(self.head[4].weight)
-        nn.init.zeros_(self.head[4].bias)
-        nn.init.xavier_uniform_(self.head[-1].weight)
+        if probe_hidden_size is None or probe_hidden_size <= 0:
+            probe_hidden_size = hidden_size // 8 if task_type == "classification" else hidden_size // 4
+            logger.info(f"Using calculated probe_hidden_size: {probe_hidden_size}")
+        else:
+            logger.info(f"Using provided probe_hidden_size: {probe_hidden_size}")
         
-        # Spectral regularization for probe stability
-        self.head = nn.utils.spectral_norm(self.head)
-
+        # Create a simple MLP probe
+        self.head = nn.Sequential(
+            nn.Linear(hidden_size, probe_hidden_size),
+            nn.ReLU(),
+            nn.Dropout(dropout),
+            nn.Linear(probe_hidden_size, num_outputs),
+            nn.Sigmoid() if num_outputs == 1 and task_type == "classification" else nn.Identity(),
+        )
+        
+        # Log parameter statistics
         self.log_parameter_stats()
-        logger.info(f"Probe configuration: intermediate={intermediate_size}, "
-                    f"hidden={probe_hidden_size}, dropout={dropout}")
+        logger.info(f"Probe configuration: hidden_size={probe_hidden_size}, dropout={dropout}")
 
     def forward(self, input_ids, attention_mask, token_type_ids=None, **kwargs):
         sentence_repr = self.get_representation(
@@ -173,12 +156,7 @@ class LMProbe(BaseLMModel):
             attention_mask=attention_mask, 
             token_type_ids=token_type_ids
         )
-        
-        # Layer-wise scaling for stability
-        sentence_repr = F.layer_norm(sentence_repr, sentence_repr.shape[-1:])
-        
         return self.head(sentence_repr)
-
 
 
 class LMFineTuner(BaseLMModel):
