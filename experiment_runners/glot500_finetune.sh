@@ -181,7 +181,7 @@ run_finetune_experiment() {
         echo "Experiment ${EXPERIMENT_NAME} completed successfully"
         
         # Extract metrics
-        RESULTS_FILE="${OUTPUT_SUBDIR}/results.json"
+        RESULTS_FILE="${OUTPUT_SUBDIR}/${LANG}/results.json"
         if [ -f "$RESULTS_FILE" ]; then
             CONTROL_PARAM=${CONTROL_IDX:-None}
             python3 ${OUTPUT_BASE_DIR}/extract_metrics.py \
@@ -189,7 +189,7 @@ run_finetune_experiment() {
                 "${SUBMETRIC:-}" "$CONTROL_PARAM"
                 
             # Create a summary
-            echo "Experiment: $EXPERIMENT_NAME" > "${OUTPUT_SUBDIR}/experiment_summary.txt"
+            echo "Experiment: $EXPERIMENT_NAME" > "${OUTPUT_SUBDIR}/${LANG}/experiment_summary.txt"
             if [ -n "$CONTROL_IDX" ]; then
                 echo "CONTROL EXPERIMENT (random labels)" >> "${OUTPUT_SUBDIR}/experiment_summary.txt"
             fi
