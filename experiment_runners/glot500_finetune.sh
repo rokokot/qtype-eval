@@ -220,7 +220,7 @@ for LANG in "${LANGUAGES[@]}"; do
         fi
         
         # Create output directory
-        TASK_DIR="${OUTPUT_BASE_DIR}/${TASK}/${LANG}"
+        TASK_DIR="${OUTPUT_BASE_DIR}/${TASK}"
         mkdir -p "$TASK_DIR"
         
         # Run standard (non-control) experiment
@@ -239,7 +239,7 @@ for LANG in "${LANGUAGES[@]}"; do
         
         for CONTROL_IDX in "${CONTROL_INDICES[@]}"; do
             # Create output directory
-            CONTROL_DIR="${OUTPUT_BASE_DIR}/${TASK}/${LANG}/control${CONTROL_IDX}"
+            CONTROL_DIR="${OUTPUT_BASE_DIR}/${TASK}/control${CONTROL_IDX}"
             mkdir -p "$CONTROL_DIR"
             
             # Run control experiment
@@ -253,7 +253,7 @@ echo "Running submetric finetuning experiments..."
 for LANG in "${LANGUAGES[@]}"; do
     for SUBMETRIC in "${SUBMETRICS[@]}"; do
         # Create output directory
-        SUBMETRIC_DIR="${OUTPUT_BASE_DIR}/submetrics/${SUBMETRIC}/${LANG}"
+        SUBMETRIC_DIR="${OUTPUT_BASE_DIR}/submetrics/${SUBMETRIC}"
         mkdir -p "$SUBMETRIC_DIR"
         
         # Run standard (non-control) submetric experiment
@@ -267,7 +267,7 @@ for LANG in "${LANGUAGES[@]}"; do
     for SUBMETRIC in "${SUBMETRICS[@]}"; do
         for CONTROL_IDX in "${CONTROL_INDICES[@]}"; do
             # Create output directory
-            CONTROL_DIR="${OUTPUT_BASE_DIR}/submetrics/${SUBMETRIC}/${LANG}/control${CONTROL_IDX}"
+            CONTROL_DIR="${OUTPUT_BASE_DIR}/submetrics/${SUBMETRIC}/control${CONTROL_IDX}"
             mkdir -p "$CONTROL_DIR"
             
             # Run control submetric experiment
