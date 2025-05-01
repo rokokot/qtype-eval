@@ -402,7 +402,7 @@ run_standard_experiment() {
         echo "==============================================================="
         
         # Extract metrics
-        RESULTS_FILE="${OUTPUT_SUBDIR}/results.json"
+        RESULTS_FILE="${OUTPUT_SUBDIR}/${LANGUAGE}/results.json"
         if [ -f "$RESULTS_FILE" ]; then
             python3 ${OUTPUT_BASE_DIR}/extract_metrics.py \
                 "$RESULTS_FILE" "$RESULTS_TRACKER" \
@@ -577,7 +577,7 @@ run_control_experiment() {
         echo "==============================================================="
         
         # Extract metrics
-        RESULTS_FILE="${OUTPUT_SUBDIR}/results.json"
+        RESULTS_FILE="${OUTPUT_SUBDIR}/${LANGUAGE}/results.json"
         if [ -f "$RESULTS_FILE" ]; then
             python3 ${OUTPUT_BASE_DIR}/extract_metrics.py \
                 "$RESULTS_FILE" "$RESULTS_TRACKER" \
