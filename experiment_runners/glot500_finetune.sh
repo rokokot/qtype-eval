@@ -1,12 +1,12 @@
 #!/bin/bash
 #SBATCH --job-name=finetune_experiments
-#SBATCH --time=00:30:00
+#SBATCH --time=08:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
 #SBATCH --gres=gpu:1
-#SBATCH --partition=gpu_a100_debug
+#SBATCH --partition=gpu_a100
 #SBATCH --clusters=wice
 #SBATCH --account=intro_vsc37132
 
@@ -68,7 +68,7 @@ def extract_metrics(result_file, tracker_file, exp_type, language, task, submetr
                 if value is not None:
                     writer.writerow([
                         exp_type, language, task, 
-                        submetric if submetric else '', 
+                        submetric if submetric else 'None', 
                         control_index if control_index != 'None' else 'None',
                         metric, value
                     ])
