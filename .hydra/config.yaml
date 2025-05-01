@@ -1,6 +1,6 @@
 seed: 42
-output_dir: /scratch/leuven/371/vsc37132/finetune_output/question_type/en
-experiment_name: finetune_question_type_en
+output_dir: /scratch/leuven/371/vsc37132/finetune_output/complexity/id
+experiment_name: finetune_complexity_id
 wandb:
   project: multilingual-question-probing
   entity: rokii-ku-leuven
@@ -18,7 +18,7 @@ data:
   cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
   vectors_dir: ./data/features
   languages:
-  - en
+  - id
   train_language: null
   eval_language: null
 model:
@@ -31,8 +31,9 @@ model:
   num_outputs: 1
   head_hidden_size: 768
   head_layers: 2
+  finetune: true
 training:
-  task_type: classification
+  task_type: regression
   batch_size: 16
   num_epochs: 10
   lr: 2.0e-05
@@ -45,9 +46,16 @@ training:
   gradient_accumulation_steps: 2
 experiment:
   type: lm_probe
-  tasks: question_type
+  tasks: complexity
   use_controls: false
   control_index: null
   num_controls: 3
   eval_on_orig_test: true
   cross_lingual: false
+  task_type: regression
+  feature: lang_norm_complexity_score
+  training:
+    patience: 5
+    scheduler_patience: 4
+    scheduler_factor: 0.8
+    dropout: 0.1

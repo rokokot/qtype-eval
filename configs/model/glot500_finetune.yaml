@@ -1,4 +1,4 @@
-# configs/model/lm_finetune.yaml
+# configs/model/glot500_finetune.yaml
 model_type: "lm_finetune"
 lm_name: "cis-lmu/glot500-base"
 dropout: 0.1
@@ -8,3 +8,4 @@ layer_index: -1
 num_outputs: 1
 head_hidden_size: 768
 head_layers: 2
+finetune: true
