@@ -150,20 +150,20 @@ hydra:
     - model.dropout=0.1
     - model.freeze_model=false
     - model.finetune=true
-    - data.languages=[id]
+    - data.languages=[ar]
     - data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache
     - training.task_type=regression
     - training.num_epochs=10
     - training.batch_size=16
     - training.lr=2e-5
     - +training.gradient_accumulation_steps=2
-    - experiment_name=finetune_complexity_id
-    - output_dir=/scratch/leuven/371/vsc37132/finetune_output/complexity/id
+    - experiment_name=finetune_complexity_ar
+    - output_dir=/scratch/leuven/371/vsc37132/finetune_output/complexity
     - wandb.mode=offline
   job:
     name: run_experiment
     chdir: false
-    override_dirname: +training.gradient_accumulation_steps=2,data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache,data.languages=[id],experiment.tasks=complexity,experiment=complexity,experiment_name=finetune_complexity_id,model.dropout=0.1,model.finetune=true,model.freeze_model=false,model.lm_name=cis-lmu/glot500-base,model=glot500_finetune,output_dir=/scratch/leuven/371/vsc37132/finetune_output/complexity/id,training.batch_size=16,training.lr=2e-5,training.num_epochs=10,training.task_type=regression,wandb.mode=offline
+    override_dirname: +training.gradient_accumulation_steps=2,data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache,data.languages=[ar],experiment.tasks=complexity,experiment=complexity,experiment_name=finetune_complexity_ar,model.dropout=0.1,model.finetune=true,model.freeze_model=false,model.lm_name=cis-lmu/glot500-base,model=glot500_finetune,output_dir=/scratch/leuven/371/vsc37132/finetune_output/complexity,training.batch_size=16,training.lr=2e-5,training.num_epochs=10,training.task_type=regression,wandb.mode=offline
     id: ???
     num: ???
     config_name: config

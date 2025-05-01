@@ -1,6 +1,6 @@
 seed: 42
-output_dir: /scratch/leuven/371/vsc37132/finetune_output/complexity/id
-experiment_name: finetune_complexity_id
+output_dir: /scratch/leuven/371/vsc37132/finetune_output/complexity
+experiment_name: finetune_complexity_ar
 wandb:
   project: multilingual-question-probing
   entity: rokii-ku-leuven
@@ -18,7 +18,7 @@ data:
   cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
   vectors_dir: ./data/features
   languages:
-  - id
+  - ar
   train_language: null
   eval_language: null
 model:
