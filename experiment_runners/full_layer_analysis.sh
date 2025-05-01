@@ -1,13 +1,13 @@
 #!/bin/bash
 #SBATCH --job-name=layerwise_probing
-#SBATCH --time=00:30:00 
+#SBATCH --time=06:00:00 
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
-#SBATCH --gres=gpu:1
-#SBATCH --partition=gpu_a100_debug
-#SBATCH --clusters=wice
+#SBATCH --gpus-per-node=1
+#SBATCH --partition=gpu_p100
+#SBATCH --clusters=genius
 #SBATCH --account=intro_vsc37132
 
 # === Environment setup ===
