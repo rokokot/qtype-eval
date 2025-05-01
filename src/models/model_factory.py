@@ -314,6 +314,7 @@ class ClassificationProbe(MLPProbe):
         freeze_model: bool = True,
         layer_wise: bool = True,
         layer_index: int = -1,
+        task_type: str = None,
         activation: str = "gelu",  # GELU works well for classification
         normalization: str = "layer",  # Layer norm is more stable
         probe_depth: int = 1,
@@ -357,6 +358,7 @@ class RegressionProbe(MLPProbe):
         model_name: str = "cis-lmu/glot500-base",
         num_outputs: int = 1,
         probe_hidden_size: int = 96,  # Smaller for continuous properties
+        task_type: str = None,
         dropout: float = 0.1,  # Lower dropout for regression
         freeze_model: bool = True,
         layer_wise: bool = True,
@@ -431,7 +433,8 @@ class ClassificationHead(nn.Module):
         hidden_size: int = 768,
         num_layers: int = 2,
         dropout: float = 0.2, 
-        num_outputs: int = 1
+        num_outputs: int = 1,
+        task_type: str = None
     ):
         super().__init__()
         
@@ -484,7 +487,8 @@ class RegressionHead(nn.Module):
         num_layers: int = 2,
         dropout: float = 0.1,
         num_outputs: int = 1,
-        use_residual: bool = True
+        use_residual: bool = True,
+        task_type: str = None
     ):
         super().__init__()
         
