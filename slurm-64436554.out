@@ -1,0 +1,495 @@
+SLURM_JOB_ID: 64436554
+SLURM_JOB_USER: vsc37132
+SLURM_JOB_ACCOUNT: intro_vsc37132
+SLURM_JOB_NAME: finetune_experiments
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: gpu_h100
+SLURM_NNODES: 1
+SLURM_NODELIST: s16g09
+SLURM_JOB_CPUS_PER_NODE: 16
+SLURM_JOB_GPUS: 2
+Date: Thu May  1 22:06:27 CEST 2025
+Walltime: 00-00:10:00
+========================================================================
+Running main finetuning experiments (non-control)...
+Running experiment: finetune_question_type_ar
+Command: python -m src.experiments.run_experiment         "hydra.job.chdir=False"         "hydra.run.dir=."         "experiment=question_type"         "experiment.tasks=question_type"         "model=glot500_finetune"         "model.lm_name=cis-lmu/glot500-base"         "model.freeze_model=false"         "model.finetune=true"                     "model.head_hidden_size=768"             "model.head_layers=2"             "model.dropout=0.2"         "data.languages=[ar]"         "data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache"         "training.task_type=classification"         "training.num_epochs=10"         "training.batch_size=16"                     "training.lr=2e-5"             "training.patience=3"             "training.scheduler_factor=0.5"             "training.scheduler_patience=2"             "+training.gradient_accumulation_steps=4"                  "experiment_name=finetune_question_type_ar"         "output_dir=/scratch/leuven/371/vsc37132/finetune_output/question_type"         "wandb.mode=offline"
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/launcher:
+Default list overrides requires 'override' keyword.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
+
+  deprecation_warning(msg)
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py:197: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  return _run_code(code, main_globals, None,
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py:94: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  _run_hydra(
+Using Dataset: rokokot/question-type-and-complexity
+Cache Directory: /data/leuven/371/vsc37132/qtype-eval/data/cache
+[2025-05-01 22:06:39,697][__main__][INFO] - Configuration:
+seed: 42
+output_dir: /scratch/leuven/371/vsc37132/finetune_output/question_type
+experiment_name: finetune_question_type_ar
+wandb:
+  project: multilingual-question-probing
+  entity: rokii-ku-leuven
+  mode: offline
+slurm:
+  partition: gpu
+  time: '24:00:00'
+  gpus_per_node: 1
+  cpus_per_task: 4
+  mem_per_cpu: 8
+  job_name: ${experiment_name}
+  account: intro_vsc37132
+data:
+  dataset_name: rokokot/question-type-and-complexity
+  cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
+  vectors_dir: ./data/features
+  languages:
+  - ar
+  train_language: null
+  eval_language: null
+model:
+  model_type: lm_finetune
+  lm_name: cis-lmu/glot500-base
+  dropout: 0.2
+  layer_wise: false
+  freeze_model: false
+  layer_index: -1
+  num_outputs: 1
+  head_hidden_size: 768
+  head_layers: 2
+  finetune: true
+training:
+  task_type: classification
+  batch_size: 16
+  num_epochs: 10
+  lr: 2.0e-05
+  weight_decay: 0.01
+  patience: 3
+  scheduler_factor: 0.5
+  scheduler_patience: 2
+  random_state: 42
+  num_workers: 4
+  gradient_accumulation_steps: 4
+experiment:
+  type: lm_probe
+  tasks: question_type
+  use_controls: false
+  control_index: null
+  num_controls: 3
+  eval_on_orig_test: true
+  cross_lingual: false
+
+[2025-05-01 22:06:39,697][__main__][INFO] - Normalized task: question_type
+[2025-05-01 22:06:39,697][__main__][INFO] - Using explicit task_type from config: classification
+[2025-05-01 22:06:39,697][__main__][INFO] - Determined Task Type: classification
+[2025-05-01 22:06:39,700][__main__][INFO] - Running LM experiment for task 'question_type' (type: classification) on languages: ['ar']
+[2025-05-01 22:06:39,700][__main__][INFO] - Processing language: ar
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Tracking run with wandb version 0.19.9
+wandb: W&B syncing is set to `offline` in this directory.  
+wandb: Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+[2025-05-01 22:06:41,582][src.data.datasets][INFO] - Creating dataloaders for language: 'ar', task: 'question_type', submetric: 'None'
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+[2025-05-01 22:06:43,537][src.data.datasets][INFO] - Successfully loaded tokenizer for cis-lmu/glot500-base
+[2025-05-01 22:06:43,538][src.data.datasets][INFO] - Loading 'base' dataset for ar language (train)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-05-01 22:06:43,639][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-01 22:06:43,670][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-01 22:06:43,744][src.data.datasets][INFO] - Filtered from 7460 to 995 examples for language 'ar'
+[2025-05-01 22:06:43,750][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-05-01 22:06:43,750][src.data.datasets][INFO] - Loaded 995 examples for ar (train)
+[2025-05-01 22:06:43,751][src.data.datasets][INFO] - Loading 'base' dataset for ar language (validation)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-05-01 22:06:43,766][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-01 22:06:43,787][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-01 22:06:43,797][src.data.datasets][INFO] - Filtered from 441 to 44 examples for language 'ar'
+[2025-05-01 22:06:43,798][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-05-01 22:06:43,798][src.data.datasets][INFO] - Loaded 44 examples for ar (validation)
+[2025-05-01 22:06:43,798][src.data.datasets][INFO] - Loading 'base' dataset for ar language (test)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-05-01 22:06:43,813][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-01 22:06:43,833][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-01 22:06:43,842][src.data.datasets][INFO] - Filtered from 719 to 77 examples for language 'ar'
+[2025-05-01 22:06:43,844][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-05-01 22:06:43,844][src.data.datasets][INFO] - Loaded 77 examples for ar (test)
+[2025-05-01 22:06:43,844][src.data.datasets][INFO] - Loaded datasets: train=995, val=44, test=77 examples
+[2025-05-01 22:06:43,845][src.data.datasets][INFO] - Task 'question_type' is classification: True
+[2025-05-01 22:06:43,845][src.data.datasets][INFO] - Getting feature name for task: 'question_type', submetric: 'None'
+[2025-05-01 22:06:43,845][src.data.datasets][INFO] - Selected feature name: 'question_type' for task: 'question_type'
+[2025-05-01 22:06:43,845][src.data.datasets][INFO] - Label statistics for question_type (feature: question_type):
+[2025-05-01 22:06:43,845][src.data.datasets][INFO] -   Label 0: 498 examples (50.1%)
+[2025-05-01 22:06:43,845][src.data.datasets][INFO] -   Label 1: 497 examples (49.9%)
+[2025-05-01 22:06:43,845][src.data.datasets][INFO] - Sample text: هل النمر العربي معرض للانقراض؟...
+[2025-05-01 22:06:43,845][src.data.datasets][INFO] - Sample label: 1
+[2025-05-01 22:06:43,845][src.data.datasets][INFO] - Task 'question_type' is classification: True
+[2025-05-01 22:06:43,845][src.data.datasets][INFO] - Getting feature name for task: 'question_type', submetric: 'None'
+[2025-05-01 22:06:43,845][src.data.datasets][INFO] - Selected feature name: 'question_type' for task: 'question_type'
+[2025-05-01 22:06:43,846][src.data.datasets][INFO] - Label statistics for question_type (feature: question_type):
+[2025-05-01 22:06:43,846][src.data.datasets][INFO] -   Label 0: 24 examples (54.5%)
+[2025-05-01 22:06:43,846][src.data.datasets][INFO] -   Label 1: 20 examples (45.5%)
+[2025-05-01 22:06:43,846][src.data.datasets][INFO] - Sample text: من هو مخترع الليزر ؟...
+[2025-05-01 22:06:43,846][src.data.datasets][INFO] - Sample label: 0
+[2025-05-01 22:06:43,846][src.data.datasets][INFO] - Task 'question_type' is classification: True
+[2025-05-01 22:06:43,846][src.data.datasets][INFO] - Getting feature name for task: 'question_type', submetric: 'None'
+[2025-05-01 22:06:43,846][src.data.datasets][INFO] - Selected feature name: 'question_type' for task: 'question_type'
+[2025-05-01 22:06:43,846][src.data.datasets][INFO] - Label statistics for question_type (feature: question_type):
+[2025-05-01 22:06:43,846][src.data.datasets][INFO] -   Label 0: 55 examples (71.4%)
+[2025-05-01 22:06:43,846][src.data.datasets][INFO] -   Label 1: 22 examples (28.6%)
+[2025-05-01 22:06:43,846][src.data.datasets][INFO] - Sample text: قبل الإقدام على خطوات يعلن ـ هو نفسه ـ أنها تتناقض...
+[2025-05-01 22:06:43,846][src.data.datasets][INFO] - Sample label: 0
+[2025-05-01 22:06:43,846][src.data.datasets][INFO] - Created datasets: train=995, val=44, test=77
+[2025-05-01 22:06:43,846][src.data.datasets][INFO] - Creating dataloaders with 4 workers
+[2025-05-01 22:06:43,847][src.data.datasets][INFO] - Successfully created all dataloaders
+[2025-05-01 22:06:43,847][__main__][INFO] - Using model type: lm_probe for question_type
+[2025-05-01 22:06:43,847][src.models.model_factory][INFO] - Creating lm_probe model for classification task
+[2025-05-01 22:06:43,847][__main__][ERROR] - Error processing language ar: __init__() got an unexpected keyword argument 'task_type'
+[2025-05-01 22:06:43,848][__main__][ERROR] - Traceback: Traceback (most recent call last):
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 338, in run_lm_experiment
+    model = create_model(model_type, task_type, **model_params_copy)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/models/model_factory.py", line 747, in create_model
+    return ClassificationProbe(
+TypeError: __init__() got an unexpected keyword argument 'task_type'
+
+wandb:                                                                                
+wandb: You can sync this run to the cloud by running:
+wandb: wandb sync /scratch/leuven/371/vsc37132/wandb/wandb/offline-run-20250501_220639-0k3r9rru
+wandb: Find logs at: /scratch/leuven/371/vsc37132/wandb/wandb/offline-run-20250501_220639-0k3r9rru/logs
+Experiment finetune_question_type_ar completed successfully
+Warning: Results file not found: /scratch/leuven/371/vsc37132/finetune_output/question_type/ar/results.json
+Running experiment: finetune_complexity_ar
+Command: python -m src.experiments.run_experiment         "hydra.job.chdir=False"         "hydra.run.dir=."         "experiment=complexity"         "experiment.tasks=complexity"         "model=glot500_finetune"         "model.lm_name=cis-lmu/glot500-base"         "model.freeze_model=false"         "model.finetune=true"                     "model.head_hidden_size=512"             "model.head_layers=3"             "model.dropout=0.1"         "data.languages=[ar]"         "data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache"         "training.task_type=regression"         "training.num_epochs=10"         "training.batch_size=16"                     "training.lr=1e-5"             "training.patience=4"             "training.scheduler_factor=0.5"             "training.scheduler_patience=3"             "+training.gradient_accumulation_steps=4"                  "experiment_name=finetune_complexity_ar"         "output_dir=/scratch/leuven/371/vsc37132/finetune_output/complexity"         "wandb.mode=offline"
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/launcher:
+Default list overrides requires 'override' keyword.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
+
+  deprecation_warning(msg)
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py:197: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  return _run_code(code, main_globals, None,
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py:94: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  _run_hydra(
+Using Dataset: rokokot/question-type-and-complexity
+Cache Directory: /data/leuven/371/vsc37132/qtype-eval/data/cache
+[2025-05-01 22:06:53,119][__main__][INFO] - Configuration:
+seed: 42
+output_dir: /scratch/leuven/371/vsc37132/finetune_output/complexity
+experiment_name: finetune_complexity_ar
+wandb:
+  project: multilingual-question-probing
+  entity: rokii-ku-leuven
+  mode: offline
+slurm:
+  partition: gpu
+  time: '24:00:00'
+  gpus_per_node: 1
+  cpus_per_task: 4
+  mem_per_cpu: 8
+  job_name: ${experiment_name}
+  account: intro_vsc37132
+data:
+  dataset_name: rokokot/question-type-and-complexity
+  cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
+  vectors_dir: ./data/features
+  languages:
+  - ar
+  train_language: null
+  eval_language: null
+model:
+  model_type: lm_finetune
+  lm_name: cis-lmu/glot500-base
+  dropout: 0.1
+  layer_wise: false
+  freeze_model: false
+  layer_index: -1
+  num_outputs: 1
+  head_hidden_size: 512
+  head_layers: 3
+  finetune: true
+training:
+  task_type: regression
+  batch_size: 16
+  num_epochs: 10
+  lr: 1.0e-05
+  weight_decay: 0.01
+  patience: 4
+  scheduler_factor: 0.5
+  scheduler_patience: 3
+  random_state: 42
+  num_workers: 4
+  gradient_accumulation_steps: 4
+experiment:
+  type: lm_probe
+  tasks: complexity
+  use_controls: false
+  control_index: null
+  num_controls: 3
+  eval_on_orig_test: true
+  cross_lingual: false
+  task_type: regression
+  feature: lang_norm_complexity_score
+  training:
+    patience: 5
+    scheduler_patience: 4
+    scheduler_factor: 0.8
+    dropout: 0.1
+
+[2025-05-01 22:06:53,119][__main__][INFO] - Normalized task: complexity
+[2025-05-01 22:06:53,119][__main__][INFO] - Using explicit task_type from config: regression
+[2025-05-01 22:06:53,119][__main__][INFO] - Determined Task Type: regression
+[2025-05-01 22:06:53,123][__main__][INFO] - Running LM experiment for task 'complexity' (type: regression) on languages: ['ar']
+[2025-05-01 22:06:53,123][__main__][INFO] - Processing language: ar
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Tracking run with wandb version 0.19.9
+wandb: W&B syncing is set to `offline` in this directory.  
+wandb: Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+[2025-05-01 22:06:54,309][src.data.datasets][INFO] - Creating dataloaders for language: 'ar', task: 'complexity', submetric: 'None'
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+[2025-05-01 22:06:56,252][src.data.datasets][INFO] - Successfully loaded tokenizer for cis-lmu/glot500-base
+[2025-05-01 22:06:56,252][src.data.datasets][INFO] - Loading 'base' dataset for ar language (train)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-05-01 22:06:56,271][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-01 22:06:56,295][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-01 22:06:56,356][src.data.datasets][INFO] - Filtered from 7460 to 995 examples for language 'ar'
+[2025-05-01 22:06:56,362][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-05-01 22:06:56,363][src.data.datasets][INFO] - Loaded 995 examples for ar (train)
+[2025-05-01 22:06:56,363][src.data.datasets][INFO] - Loading 'base' dataset for ar language (validation)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-05-01 22:06:56,380][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-01 22:06:56,407][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-01 22:06:56,417][src.data.datasets][INFO] - Filtered from 441 to 44 examples for language 'ar'
+[2025-05-01 22:06:56,418][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-05-01 22:06:56,418][src.data.datasets][INFO] - Loaded 44 examples for ar (validation)
+[2025-05-01 22:06:56,419][src.data.datasets][INFO] - Loading 'base' dataset for ar language (test)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-05-01 22:06:56,449][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-01 22:06:56,474][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-01 22:06:56,485][src.data.datasets][INFO] - Filtered from 719 to 77 examples for language 'ar'
+[2025-05-01 22:06:56,486][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-05-01 22:06:56,486][src.data.datasets][INFO] - Loaded 77 examples for ar (test)
+[2025-05-01 22:06:56,487][src.data.datasets][INFO] - Loaded datasets: train=995, val=44, test=77 examples
+[2025-05-01 22:06:56,487][src.data.datasets][INFO] - Task 'complexity' is classification: False
+[2025-05-01 22:06:56,487][src.data.datasets][INFO] - Getting feature name for task: 'complexity', submetric: 'None'
+[2025-05-01 22:06:56,487][src.data.datasets][INFO] - Selected feature name: 'lang_norm_complexity_score' for task: 'complexity'
+[2025-05-01 22:06:56,487][src.data.datasets][INFO] - Label statistics for complexity (feature: lang_norm_complexity_score):
+[2025-05-01 22:06:56,487][src.data.datasets][INFO] -   Min: 0.0000, Max: 1.0000
+[2025-05-01 22:06:56,488][src.data.datasets][INFO] -   Mean: 0.4236, Std: 0.1752
+[2025-05-01 22:06:56,488][src.data.datasets][INFO] - Sample text: هل النمر العربي معرض للانقراض؟...
+[2025-05-01 22:06:56,488][src.data.datasets][INFO] - Sample label: 0.41602465510368347
+[2025-05-01 22:06:56,488][src.data.datasets][INFO] - Task 'complexity' is classification: False
+[2025-05-01 22:06:56,488][src.data.datasets][INFO] - Getting feature name for task: 'complexity', submetric: 'None'
+[2025-05-01 22:06:56,488][src.data.datasets][INFO] - Selected feature name: 'lang_norm_complexity_score' for task: 'complexity'
+[2025-05-01 22:06:56,488][src.data.datasets][INFO] - Label statistics for complexity (feature: lang_norm_complexity_score):
+[2025-05-01 22:06:56,488][src.data.datasets][INFO] -   Min: 0.0000, Max: 1.0000
+[2025-05-01 22:06:56,488][src.data.datasets][INFO] -   Mean: 0.3847, Std: 0.2547
+[2025-05-01 22:06:56,488][src.data.datasets][INFO] - Sample text: من هو مخترع الليزر ؟...
+[2025-05-01 22:06:56,488][src.data.datasets][INFO] - Sample label: 0.09095905721187592
+[2025-05-01 22:06:56,488][src.data.datasets][INFO] - Task 'complexity' is classification: False
+[2025-05-01 22:06:56,488][src.data.datasets][INFO] - Getting feature name for task: 'complexity', submetric: 'None'
+[2025-05-01 22:06:56,488][src.data.datasets][INFO] - Selected feature name: 'lang_norm_complexity_score' for task: 'complexity'
+[2025-05-01 22:06:56,488][src.data.datasets][INFO] - Label statistics for complexity (feature: lang_norm_complexity_score):
+[2025-05-01 22:06:56,489][src.data.datasets][INFO] -   Min: 0.0000, Max: 1.0000
+[2025-05-01 22:06:56,489][src.data.datasets][INFO] -   Mean: 0.4157, Std: 0.2408
+[2025-05-01 22:06:56,489][src.data.datasets][INFO] - Sample text: قبل الإقدام على خطوات يعلن ـ هو نفسه ـ أنها تتناقض...
+[2025-05-01 22:06:56,489][src.data.datasets][INFO] - Sample label: 0.5635213255882263
+[2025-05-01 22:06:56,489][src.data.datasets][INFO] - Created datasets: train=995, val=44, test=77
+[2025-05-01 22:06:56,489][src.data.datasets][INFO] - Creating dataloaders with 4 workers
+[2025-05-01 22:06:56,489][src.data.datasets][INFO] - Successfully created all dataloaders
+[2025-05-01 22:06:56,489][__main__][INFO] - Using model type: lm_probe for complexity
+[2025-05-01 22:06:56,489][src.models.model_factory][INFO] - Creating lm_probe model for regression task
+[2025-05-01 22:06:56,489][__main__][ERROR] - Error processing language ar: __init__() got an unexpected keyword argument 'task_type'
+[2025-05-01 22:06:56,491][__main__][ERROR] - Traceback: Traceback (most recent call last):
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 338, in run_lm_experiment
+    model = create_model(model_type, task_type, **model_params_copy)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/models/model_factory.py", line 759, in create_model
+    return RegressionProbe(
+TypeError: __init__() got an unexpected keyword argument 'task_type'
+
+wandb:                                                                                
+wandb: You can sync this run to the cloud by running:
+wandb: wandb sync /scratch/leuven/371/vsc37132/wandb/wandb/offline-run-20250501_220653-njibjeax
+wandb: Find logs at: /scratch/leuven/371/vsc37132/wandb/wandb/offline-run-20250501_220653-njibjeax/logs
+Experiment finetune_complexity_ar completed successfully
+Warning: Results file not found: /scratch/leuven/371/vsc37132/finetune_output/complexity/ar/results.json
+Running experiment: finetune_question_type_en
+Command: python -m src.experiments.run_experiment         "hydra.job.chdir=False"         "hydra.run.dir=."         "experiment=question_type"         "experiment.tasks=question_type"         "model=glot500_finetune"         "model.lm_name=cis-lmu/glot500-base"         "model.freeze_model=false"         "model.finetune=true"                     "model.head_hidden_size=768"             "model.head_layers=2"             "model.dropout=0.2"         "data.languages=[en]"         "data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache"         "training.task_type=classification"         "training.num_epochs=10"         "training.batch_size=16"                     "training.lr=2e-5"             "training.patience=3"             "training.scheduler_factor=0.5"             "training.scheduler_patience=2"             "+training.gradient_accumulation_steps=4"         +training.debug_mode=true         "experiment_name=finetune_question_type_en"         "output_dir=/scratch/leuven/371/vsc37132/finetune_output/question_type"         "wandb.mode=offline"
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/launcher:
+Default list overrides requires 'override' keyword.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
+
+  deprecation_warning(msg)
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py:197: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  return _run_code(code, main_globals, None,
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py:94: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  _run_hydra(
+Using Dataset: rokokot/question-type-and-complexity
+Cache Directory: /data/leuven/371/vsc37132/qtype-eval/data/cache
+[2025-05-01 22:07:05,368][__main__][INFO] - Configuration:
+seed: 42
+output_dir: /scratch/leuven/371/vsc37132/finetune_output/question_type
+experiment_name: finetune_question_type_en
+wandb:
+  project: multilingual-question-probing
+  entity: rokii-ku-leuven
+  mode: offline
+slurm:
+  partition: gpu
+  time: '24:00:00'
+  gpus_per_node: 1
+  cpus_per_task: 4
+  mem_per_cpu: 8
+  job_name: ${experiment_name}
+  account: intro_vsc37132
+data:
+  dataset_name: rokokot/question-type-and-complexity
+  cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
+  vectors_dir: ./data/features
+  languages:
+  - en
+  train_language: null
+  eval_language: null
+model:
+  model_type: lm_finetune
+  lm_name: cis-lmu/glot500-base
+  dropout: 0.2
+  layer_wise: false
+  freeze_model: false
+  layer_index: -1
+  num_outputs: 1
+  head_hidden_size: 768
+  head_layers: 2
+  finetune: true
+training:
+  task_type: classification
+  batch_size: 16
+  num_epochs: 10
+  lr: 2.0e-05
+  weight_decay: 0.01
+  patience: 3
+  scheduler_factor: 0.5
+  scheduler_patience: 2
+  random_state: 42
+  num_workers: 4
+  gradient_accumulation_steps: 4
+  debug_mode: true
+experiment:
+  type: lm_probe
+  tasks: question_type
+  use_controls: false
+  control_index: null
+  num_controls: 3
+  eval_on_orig_test: true
+  cross_lingual: false
+
+[2025-05-01 22:07:05,368][__main__][INFO] - Normalized task: question_type
+[2025-05-01 22:07:05,368][__main__][INFO] - Using explicit task_type from config: classification
+[2025-05-01 22:07:05,368][__main__][INFO] - Determined Task Type: classification
+[2025-05-01 22:07:05,371][__main__][INFO] - Running LM experiment for task 'question_type' (type: classification) on languages: ['en']
+[2025-05-01 22:07:05,371][__main__][INFO] - Processing language: en
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Tracking run with wandb version 0.19.9
+wandb: W&B syncing is set to `offline` in this directory.  
+wandb: Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+[2025-05-01 22:07:06,445][src.data.datasets][INFO] - Creating dataloaders for language: 'en', task: 'question_type', submetric: 'None'
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+[2025-05-01 22:07:08,411][src.data.datasets][INFO] - Successfully loaded tokenizer for cis-lmu/glot500-base
+[2025-05-01 22:07:08,412][src.data.datasets][INFO] - Loading 'base' dataset for en language (train)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-05-01 22:07:08,434][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-01 22:07:08,455][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-01 22:07:08,507][src.data.datasets][INFO] - Filtered from 7460 to 1192 examples for language 'en'
+[2025-05-01 22:07:08,515][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-05-01 22:07:08,515][src.data.datasets][INFO] - Loaded 1192 examples for en (train)
+[2025-05-01 22:07:08,516][src.data.datasets][INFO] - Loading 'base' dataset for en language (validation)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-05-01 22:07:08,536][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-01 22:07:08,557][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-01 22:07:08,566][src.data.datasets][INFO] - Filtered from 441 to 72 examples for language 'en'
+[2025-05-01 22:07:08,568][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-05-01 22:07:08,568][src.data.datasets][INFO] - Loaded 72 examples for en (validation)
+[2025-05-01 22:07:08,568][src.data.datasets][INFO] - Loading 'base' dataset for en language (test)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-05-01 22:07:08,589][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-01 22:07:08,610][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-01 22:07:08,620][src.data.datasets][INFO] - Filtered from 719 to 110 examples for language 'en'
+[2025-05-01 22:07:08,621][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-05-01 22:07:08,622][src.data.datasets][INFO] - Loaded 110 examples for en (test)
+[2025-05-01 22:07:08,622][src.data.datasets][INFO] - Loaded datasets: train=1192, val=72, test=110 examples
+[2025-05-01 22:07:08,623][src.data.datasets][INFO] - Task 'question_type' is classification: True
+[2025-05-01 22:07:08,623][src.data.datasets][INFO] - Getting feature name for task: 'question_type', submetric: 'None'
+[2025-05-01 22:07:08,623][src.data.datasets][INFO] - Selected feature name: 'question_type' for task: 'question_type'
+[2025-05-01 22:07:08,623][src.data.datasets][INFO] - Label statistics for question_type (feature: question_type):
+[2025-05-01 22:07:08,623][src.data.datasets][INFO] -   Label 0: 596 examples (50.0%)
+[2025-05-01 22:07:08,623][src.data.datasets][INFO] -   Label 1: 596 examples (50.0%)
+[2025-05-01 22:07:08,623][src.data.datasets][INFO] - Sample text: Did Nvidia skip the 800 series for graphics cards?...
+[2025-05-01 22:07:08,623][src.data.datasets][INFO] - Sample label: 1
+[2025-05-01 22:07:08,623][src.data.datasets][INFO] - Task 'question_type' is classification: True
+[2025-05-01 22:07:08,623][src.data.datasets][INFO] - Getting feature name for task: 'question_type', submetric: 'None'
+[2025-05-01 22:07:08,623][src.data.datasets][INFO] - Selected feature name: 'question_type' for task: 'question_type'
+[2025-05-01 22:07:08,623][src.data.datasets][INFO] - Label statistics for question_type (feature: question_type):
+[2025-05-01 22:07:08,624][src.data.datasets][INFO] -   Label 0: 36 examples (50.0%)
+[2025-05-01 22:07:08,624][src.data.datasets][INFO] -   Label 1: 36 examples (50.0%)
+[2025-05-01 22:07:08,624][src.data.datasets][INFO] - Sample text: We just did a deal for the rest of the month for 1...
+[2025-05-01 22:07:08,624][src.data.datasets][INFO] - Sample label: 0
+[2025-05-01 22:07:08,624][src.data.datasets][INFO] - Task 'question_type' is classification: True
+[2025-05-01 22:07:08,624][src.data.datasets][INFO] - Getting feature name for task: 'question_type', submetric: 'None'
+[2025-05-01 22:07:08,624][src.data.datasets][INFO] - Selected feature name: 'question_type' for task: 'question_type'
+[2025-05-01 22:07:08,624][src.data.datasets][INFO] - Label statistics for question_type (feature: question_type):
+[2025-05-01 22:07:08,624][src.data.datasets][INFO] -   Label 0: 55 examples (50.0%)
+[2025-05-01 22:07:08,624][src.data.datasets][INFO] -   Label 1: 55 examples (50.0%)
+[2025-05-01 22:07:08,624][src.data.datasets][INFO] - Sample text: What is the problem?...
+[2025-05-01 22:07:08,624][src.data.datasets][INFO] - Sample label: 0
+[2025-05-01 22:07:08,624][src.data.datasets][INFO] - Created datasets: train=1192, val=72, test=110
+[2025-05-01 22:07:08,624][src.data.datasets][INFO] - Creating dataloaders with 4 workers
+[2025-05-01 22:07:08,625][src.data.datasets][INFO] - Successfully created all dataloaders
+[2025-05-01 22:07:08,625][__main__][INFO] - Using model type: lm_probe for question_type
+[2025-05-01 22:07:08,625][src.models.model_factory][INFO] - Creating lm_probe model for classification task
+[2025-05-01 22:07:08,625][__main__][ERROR] - Error processing language en: __init__() got an unexpected keyword argument 'task_type'
+[2025-05-01 22:07:08,626][__main__][ERROR] - Traceback: Traceback (most recent call last):
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 338, in run_lm_experiment
+    model = create_model(model_type, task_type, **model_params_copy)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/models/model_factory.py", line 747, in create_model
+    return ClassificationProbe(
+TypeError: __init__() got an unexpected keyword argument 'task_type'
+
+wandb:                                                                                
+wandb: You can sync this run to the cloud by running:
+wandb: wandb sync /scratch/leuven/371/vsc37132/wandb/wandb/offline-run-20250501_220705-e3y049k1
+wandb: Find logs at: /scratch/leuven/371/vsc37132/wandb/wandb/offline-run-20250501_220705-e3y049k1/logs
+slurmstepd: error: *** JOB 64436554 ON s16g09 CANCELLED AT 2025-05-01T22:07:09 ***

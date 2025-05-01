@@ -8,7 +8,7 @@
 #SBATCH --cpus-per-task=16     
 #SBATCH --gpus-per-node=1     
 #SBATCH --mem-per-cpu=11700M  
-#SBATCH --time=12:00:00
+#SBATCH --time=00:10:00
 
 export PATH="$VSC_DATA/miniconda3/bin:$PATH"
 source "$VSC_DATA/miniconda3/etc/profile.d/conda.sh"
@@ -23,10 +23,10 @@ export HYDRA_FULL_ERROR=1
 export WANDB_DIR="$VSC_SCRATCH/wandb"
 mkdir -p "$VSC_SCRATCH/wandb"
 
-LANGUAGES=("ar")
+LANGUAGES=("ar" "en" "fi" "id" "ja" "ko" "ru")
 TASKS=("question_type" "complexity")
-SUBMETRICS=("avg_links_len" "n_tokens")
-CONTROL_INDICES=(3)
+SUBMETRICS=("avg_links_len" "avg_max_depth" "avg_subordinate_chain_len" "avg_verb_edges" "lexical_density" "n_tokens")
+CONTROL_INDICES=(1 2 3)
 
 OUTPUT_BASE_DIR="$VSC_SCRATCH/finetune_output"
 mkdir -p $OUTPUT_BASE_DIR
@@ -158,15 +158,13 @@ run_finetune_experiment() {
     
     # Set task-specific configuration
     local FINETUNE_CONFIG=""
-    local TRAINING_CONFIG=""
     
     if [ "$TASK_TYPE" == "classification" ]; then
         # Classification fine-tuning configuration
         FINETUNE_CONFIG="\
             \"model.head_hidden_size=768\" \
             \"model.head_layers=2\" \
-            \"model.dropout=0.2\" \
-            \"model.use_pooled_output=true\""
+            \"model.dropout=0.2\""
             
         TRAINING_CONFIG="\
             \"training.lr=2e-5\" \
@@ -179,8 +177,7 @@ run_finetune_experiment() {
         FINETUNE_CONFIG="\
             \"model.head_hidden_size=512\" \
             \"model.head_layers=3\" \
-            \"model.dropout=0.1\" \
-            \"model.use_mean_pooling=true\""
+            \"model.dropout=0.1\""
             
         TRAINING_CONFIG="\
             \"training.lr=1e-5\" \
@@ -336,8 +333,231 @@ for LANG in "${LANGUAGES[@]}"; do
     done
 done
 
+# Generate summary visualizations
+cat > ${OUTPUT_BASE_DIR}/generate_finetune_summaries.py << 'EOF'
+#!/usr/bin/env python3
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import sys
+import os
 
+def generate_summaries(tracker_file, output_dir):
+    print(f"Reading tracker file: {tracker_file}")
+    df = pd.read_csv(tracker_file)
+    
+    # Replace empty strings with NaN for proper handling
+    df = df.replace('', np.nan)
+    
+    print(f"Generating summaries in: {output_dir}")
+    
+    # Create visualization directory
+    viz_dir = os.path.join(output_dir, 'visualizations')
+    os.makedirs(viz_dir, exist_ok=True)
+    
+    # Set plot style
+    plt.style.use('seaborn-v0_8-whitegrid')
+    sns.set_context("talk")
+    
+    # Task Summary
+    task_summary = df.pivot_table(
+        index=['task'], 
+        columns='metric', 
+        values='value',
+        aggfunc='mean'
+    )
+    task_summary.to_csv(os.path.join(output_dir, 'finetune_task_summary.csv'))
+    print("Generated finetune_task_summary.csv")
+    
+    # Language Summary
+    language_summary = df.pivot_table(
+        index=['language', 'task'], 
+        columns='metric', 
+        values='value',
+        aggfunc='mean'
+    )
+    language_summary.to_csv(os.path.join(output_dir, 'finetune_language_summary.csv'))
+    print("Generated finetune_language_summary.csv")
+    
+    # Control vs Non-control Comparison
+    # Create a new column indicating control status
+    df['is_control'] = df['control_index'].notna() & (df['control_index'] != 'None')
+    
+    control_comparison = df.pivot_table(
+        index=['task', 'is_control'], 
+        columns='metric', 
+        values='value',
+        aggfunc='mean'
+    )
+    control_comparison.to_csv(os.path.join(output_dir, 'finetune_control_comparison.csv'))
+    print("Generated finetune_control_comparison.csv")
+    
+    # Complete experiment matrix
+    experiment_matrix = df.pivot_table(
+        index=['experiment_type', 'language', 'task', 'control_index'],
+        columns='metric',
+        values='value'
+    )
+    experiment_matrix.to_csv(os.path.join(output_dir, 'finetune_experiment_matrix.csv'))
+    print("Generated finetune_experiment_matrix.csv")
+    
+    # Submetric summary if applicable
+    submetric_df = df[df['submetric'].notna() & (df['submetric'] != 'None')]
+    if not submetric_df.empty:
+        submetric_summary = submetric_df.pivot_table(
+            index=['submetric'], 
+            columns='metric', 
+            values='value',
+            aggfunc='mean'
+        )
+        submetric_summary.to_csv(os.path.join(output_dir, 'finetune_submetric_summary.csv'))
+        print("Generated finetune_submetric_summary.csv")
+    
+    # Visualization: Task performance by language
+    for task in df['task'].unique():
+        if pd.isna(task):
+            continue
+            
+        # Get metrics for this task
+        task_df = df[df['task'] == task]
+        metrics = [col for col in task_df['metric'].unique() if col in ['accuracy', 'f1', 'r2', 'mse']]
+        
+        for metric in metrics:
+            plt.figure(figsize=(12, 6))
+            
+            # Filter data: non-control entries with this metric
+            plot_data = task_df[
+                (task_df['metric'] == metric) & 
+                (~task_df['is_control'])
+            ]
+            
+            if plot_data.empty:
+                plt.close()
+                continue
+                
+            # Create bar chart of performance by language
+            lang_perf = plot_data.pivot_table(
+                index='language',
+                values='value',
+                aggfunc='mean'
+            )
+            
+            lang_perf.sort_values('value', ascending=False).plot(
+                kind='bar', 
+                color='skyblue',
+                ylim=(0, 1) if metric in ['accuracy', 'f1', 'r2'] else None
+            )
+            
+            plt.title(f'{task} - {metric} by Language (Finetuned)')
+            plt.xlabel('Language')
+            plt.ylabel(metric)
+            plt.grid(True, linestyle='--', alpha=0.3, axis='y')
+            plt.tight_layout()
+            
+            plt.savefig(os.path.join(viz_dir, f'finetune_{task}_{metric}_by_language.png'), dpi=300)
+            plt.close()
+            print(f"Generated finetune_{task}_{metric}_by_language.png")
+    
+    # Visualization: Control vs non-control performance
+    for task in df['task'].unique():
+        if pd.isna(task):
+            continue
+            
+        metrics = [col for col in df[df['task'] == task]['metric'].unique() if col in ['accuracy', 'f1', 'r2', 'mse']]
+        
+        for metric in metrics:
+            plt.figure(figsize=(10, 6))
+            
+            # Filter data
+            task_metric_df = df[(df['task'] == task) & (df['metric'] == metric)]
+            
+            if task_metric_df.empty:
+                plt.close()
+                continue
+                
+            # Group by control status and calculate mean
+            control_group = task_metric_df.groupby('is_control')['value'].mean()
+            
+            if len(control_group) < 2:
+                plt.close()
+                continue
+                
+            # Plot bar chart
+            control_group.plot(
+                kind='bar', 
+                color=['#2E86C1', '#E74C3C'],
+                ylim=(0, 1) if metric in ['accuracy', 'f1', 'r2'] else None
+            )
+            
+            plt.title(f'{task} - {metric}: Control vs Non-Control (Finetuned)')
+            plt.xlabel('Is Control')
+            plt.ylabel(metric)
+            plt.xticks(rotation=0)
+            plt.grid(True, linestyle='--', alpha=0.3, axis='y')
+            plt.tight_layout()
+            
+            plt.savefig(os.path.join(viz_dir, f'finetune_{task}_{metric}_control_comparison.png'), dpi=300)
+            plt.close()
+            print(f"Generated finetune_{task}_{metric}_control_comparison.png")
+            
+    # Visualization: Submetric performance if applicable
+    if not submetric_df.empty:
+        metrics = [col for col in submetric_df['metric'].unique() if col in ['r2', 'mse']]
+        
+        for metric in metrics:
+            plt.figure(figsize=(14, 7))
+            
+            # Filter data: non-control entries with this metric
+            plot_data = submetric_df[
+                (submetric_df['metric'] == metric) & 
+                (~submetric_df['is_control'])
+            ]
+            
+            if plot_data.empty:
+                plt.close()
+                continue
+                
+            # Create bar chart of performance by submetric
+            submetric_perf = plot_data.pivot_table(
+                index='submetric',
+                values='value',
+                aggfunc='mean'
+            )
+            
+            submetric_perf.sort_values('value', ascending=False).plot(
+                kind='bar', 
+                color='lightgreen',
+                ylim=(0, 1) if metric == 'r2' else None
+            )
+            
+            plt.title(f'Submetric Performance - {metric} (Finetuned)')
+            plt.xlabel('Submetric')
+            plt.ylabel(metric)
+            plt.grid(True, linestyle='--', alpha=0.3, axis='y')
+            plt.tight_layout()
+            
+            plt.savefig(os.path.join(viz_dir, f'finetune_submetrics_{metric}.png'), dpi=300)
+            plt.close()
+            print(f"Generated finetune_submetrics_{metric}.png")
+    
+    print("All summary files generated successfully!")
 
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: generate_finetune_summaries.py <tracker_file> <output_dir>")
+        sys.exit(1)
+    
+    tracker_file = sys.argv[1]
+    output_dir = sys.argv[2]
+    
+    generate_summaries(tracker_file, output_dir)
+EOF
+
+chmod +x ${OUTPUT_BASE_DIR}/generate_finetune_summaries.py
+
+# Generate summary files
+python3 ${OUTPUT_BASE_DIR}/generate_finetune_summaries.py "$RESULTS_TRACKER" "$OUTPUT_BASE_DIR"
 
 # Create metadata file
 cat > "${OUTPUT_BASE_DIR}/finetune_metadata.json" << EOF
@@ -356,14 +576,12 @@ cat > "${OUTPUT_BASE_DIR}/finetune_metadata.json" << EOF
     "head_hidden_size": 768,
     "head_layers": 2,
     "dropout": 0.2,
-    "use_pooled_output": true,
     "lr": "2e-5"
   },
   "regression_config": {
     "head_hidden_size": 512,
     "head_layers": 3,
-    "dropout": 0.1,
-    "use_mean_pooling": true,
+    "dropout": 0.1, 
     "lr": "1e-5"
   },
   "control_indices": [1, 2, 3],
