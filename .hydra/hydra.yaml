@@ -143,27 +143,33 @@ hydra:
     - hydra.run.dir=.
     - hydra.mode=RUN
     task:
-    - experiment=single_submetric
-    - experiment.tasks=single_submetric
+    - experiment=question_type
+    - experiment.tasks=question_type
     - model=glot500_finetune
     - model.lm_name=cis-lmu/glot500-base
-    - model.dropout=0.25
     - model.freeze_model=false
     - model.finetune=true
-    - data.languages=[ja]
+    - model.head_hidden_size=768
+    - model.head_layers=2
+    - model.dropout=0.2
+    - data.languages=[en]
     - data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache
-    - training.task_type=regression
+    - training.task_type=classification
     - training.num_epochs=10
     - training.batch_size=16
-    - training.lr=1e-5
-    - experiment_name=finetune_avg_links_len_ja
-    - output_dir=/scratch/leuven/371/vsc37132/finetune_output/submetrics/avg_links_len
+    - training.lr=2e-5
+    - training.patience=3
+    - training.scheduler_factor=0.5
+    - training.scheduler_patience=2
+    - +training.gradient_accumulation_steps=4
+    - +training.debug_mode=true
+    - experiment_name=finetune_question_type_en
+    - output_dir=/scratch/leuven/371/vsc37132/finetune_output/question_type
     - wandb.mode=offline
-    - experiment.submetric=avg_links_len
   job:
     name: run_experiment
     chdir: false
-    override_dirname: data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache,data.languages=[ja],experiment.submetric=avg_links_len,experiment.tasks=single_submetric,experiment=single_submetric,experiment_name=finetune_avg_links_len_ja,model.dropout=0.25,model.finetune=true,model.freeze_model=false,model.lm_name=cis-lmu/glot500-base,model=glot500_finetune,output_dir=/scratch/leuven/371/vsc37132/finetune_output/submetrics/avg_links_len,training.batch_size=16,training.lr=1e-5,training.num_epochs=10,training.task_type=regression,wandb.mode=offline
+    override_dirname: +training.debug_mode=true,+training.gradient_accumulation_steps=4,data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache,data.languages=[en],experiment.tasks=question_type,experiment=question_type,experiment_name=finetune_question_type_en,model.dropout=0.2,model.finetune=true,model.freeze_model=false,model.head_hidden_size=768,model.head_layers=2,model.lm_name=cis-lmu/glot500-base,model=glot500_finetune,output_dir=/scratch/leuven/371/vsc37132/finetune_output/question_type,training.batch_size=16,training.lr=2e-5,training.num_epochs=10,training.patience=3,training.scheduler_factor=0.5,training.scheduler_patience=2,training.task_type=classification,wandb.mode=offline
     id: ???
     num: ???
     config_name: config
@@ -190,7 +196,7 @@ hydra:
       provider: schema
     output_dir: /vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval
     choices:
-      experiment: single_submetric
+      experiment: question_type
       training: default
       model: glot500_finetune
       data: default
