@@ -8,7 +8,7 @@
 #SBATCH --cpus-per-task=16     
 #SBATCH --gpus-per-node=1     
 #SBATCH --mem-per-cpu=11700M  
-#SBATCH --time=12:00:00
+#SBATCH --time=00:10:00
 
 export PATH="$VSC_DATA/miniconda3/bin:$PATH"
 source "$VSC_DATA/miniconda3/etc/profile.d/conda.sh"
@@ -23,16 +23,20 @@ export HYDRA_FULL_ERROR=1
 export WANDB_DIR="$VSC_SCRATCH/wandb"
 mkdir -p "$VSC_SCRATCH/wandb"
 
-LANGUAGES=("ar" "en" "fi" "id" "ja" "ko" "ru")          # note
-TASKS=("question_type" "complexity")    #note
+LANGUAGES=("ar" "fi" "id" "ja")
+TASKS=("complexity")    # "question_type"
 SUBMETRICS=("avg_links_len" "avg_max_depth" "avg_subordinate_chain_len" "avg_verb_edges" "lexical_density" "n_tokens")
-CONTROL_INDICES=(1 2 3)                   #note
+CONTROL_INDICES=()
 
 OUTPUT_BASE_DIR="$VSC_SCRATCH/finetune_output"
 mkdir -p $OUTPUT_BASE_DIR
 
 RESULTS_TRACKER="${OUTPUT_BASE_DIR}/finetune_results.csv"
 echo "experiment_type,language,task,submetric,control_index,metric,value" > $RESULTS_TRACKER
+
+# Failed experiments tracker
+FAILED_LOG="${OUTPUT_BASE_DIR}/failed_experiments.log"
+touch $FAILED_LOG
 
 # Create metrics extractor
 cat > ${OUTPUT_BASE_DIR}/extract_metrics.py << 'EOF'
@@ -105,6 +109,7 @@ run_finetune_experiment() {
     local CONTROL_IDX=$4
     local SUBMETRIC=$5
     local OUTPUT_SUBDIR=$6
+    local MAX_RETRIES=2
     
     local EXPERIMENT_NAME=""
     local COMMAND=""
@@ -128,10 +133,58 @@ run_finetune_experiment() {
         fi
     fi
     
+    # Skip if already completed successfully
+    if [ -f "${OUTPUT_SUBDIR}/${LANG}/results.json" ]; then
+        echo "Experiment ${EXPERIMENT_NAME} already completed successfully. Extracting metrics..."
+        CONTROL_PARAM=${CONTROL_IDX:-None}
+        python3 ${OUTPUT_BASE_DIR}/extract_metrics.py \
+            "${OUTPUT_SUBDIR}/${LANG}/results.json" "$RESULTS_TRACKER" "finetune" "$LANG" "$TASK" \
+            "${SUBMETRIC:-}" "$CONTROL_PARAM"
+        return 0
+    fi
+    
+    # Skip if already failed too many times
+    local FAIL_COUNT=$(grep -c "^${EXPERIMENT_NAME}$" $FAILED_LOG)
+    if [ $FAIL_COUNT -ge $MAX_RETRIES ]; then
+        echo "Experiment ${EXPERIMENT_NAME} has failed $FAIL_COUNT times already. Skipping."
+        return 1
+    fi
+    
     # Add debug mode for first experiments
     local DEBUG_PARAM=""
     if [ "$LANG" == "en" ] && [ -z "$CONTROL_IDX" ]; then
         DEBUG_PARAM="+training.debug_mode=true"
+    fi
+    
+    # Set task-specific configuration
+    local FINETUNE_CONFIG=""
+    
+    if [ "$TASK_TYPE" == "classification" ]; then
+        # Classification fine-tuning configuration
+        FINETUNE_CONFIG="\
+            \"model.head_hidden_size=768\" \
+            \"model.head_layers=2\" \
+            \"model.dropout=0.2\""
+            
+        TRAINING_CONFIG="\
+            \"training.lr=2e-5\" \
+            \"training.patience=3\" \
+            \"training.scheduler_factor=0.5\" \
+            \"training.scheduler_patience=2\" \
+            \"+training.gradient_accumulation_steps=4\""
+    else
+        # Regression fine-tuning configuration
+        FINETUNE_CONFIG="\
+            \"model.head_hidden_size=512\" \
+            \"model.head_layers=3\" \
+            \"model.dropout=0.01\""
+            
+        TRAINING_CONFIG="\
+            \"training.lr=2e-5\" \
+            \"training.patience=4\" \
+            \"training.scheduler_factor=0.5\" \
+            \"training.scheduler_patience=3\" \
+            \"+training.gradient_accumulation_steps=4\""
     fi
     
     # Build command
@@ -140,17 +193,18 @@ run_finetune_experiment() {
         \"hydra.run.dir=.\" \
         \"experiment=${TASK}\" \
         \"experiment.tasks=${TASK}\" \
+        \"experiment.type=lm_finetune\" \
         \"model=glot500_finetune\" \
         \"model.lm_name=cis-lmu/glot500-base\" \
-        \"model.dropout=0.25\" \
         \"model.freeze_model=false\" \
         \"model.finetune=true\" \
+        ${FINETUNE_CONFIG} \
         \"data.languages=[${LANG}]\" \
         \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
         \"training.task_type=${TASK_TYPE}\" \
         \"training.num_epochs=10\" \
         \"training.batch_size=16\" \
-        \"training.lr=1e-5\" \
+        ${TRAINING_CONFIG} \
         ${DEBUG_PARAM} \
         \"experiment_name=${EXPERIMENT_NAME}\" \
         \"output_dir=${OUTPUT_SUBDIR}\" \
@@ -197,12 +251,17 @@ run_finetune_experiment() {
             python -c "import json; f=open('${RESULTS_FILE}'); data=json.load(f); print(json.dumps(data.get('test_metrics', {}), indent=2))" >> "${OUTPUT_SUBDIR}/experiment_summary.txt"
         else
             echo "Warning: Results file not found: $RESULTS_FILE"
+            echo "${EXPERIMENT_NAME}" >> $FAILED_LOG
         fi
         
         return 0
     else
         echo "Error in experiment ${EXPERIMENT_NAME}"
-        echo "$EXPERIMENT_NAME" >> "${OUTPUT_BASE_DIR}/failed_experiments.log"
+        echo "${EXPERIMENT_NAME}" >> $FAILED_LOG
+        
+        # Clean GPU memory explicitly
+        python -c "import torch; torch.cuda.empty_cache()" 2>/dev/null || true
+        
         return 1
     fi
 }
@@ -276,203 +335,28 @@ for LANG in "${LANGUAGES[@]}"; do
 done
 
 
-
-# Generate summary visualizations
-cat > ${OUTPUT_BASE_DIR}/generate_finetune_summaries.py << 'EOF'
-#!/usr/bin/env python3
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import sys
-import os
-
-def generate_summaries(tracker_file, output_dir):
-    print(f"Reading tracker file: {tracker_file}")
-    df = pd.read_csv(tracker_file)
-    
-    # Replace empty strings with NaN for proper handling
-    df = df.replace('', np.nan)
-    
-    print(f"Generating summaries in: {output_dir}")
-    
-    # Create visualization directory
-    viz_dir = os.path.join(output_dir, 'visualizations')
-    os.makedirs(viz_dir, exist_ok=True)
-    
-    # Task Summary
-    task_summary = df.pivot_table(
-        index=['task'], 
-        columns='metric', 
-        values='value',
-        aggfunc='mean'
-    )
-    task_summary.to_csv(os.path.join(output_dir, 'finetune_task_summary.csv'))
-    print("Generated finetune_task_summary.csv")
-    
-    # Language Summary
-    language_summary = df.pivot_table(
-        index=['language', 'task'], 
-        columns='metric', 
-        values='value',
-        aggfunc='mean'
-    )
-    language_summary.to_csv(os.path.join(output_dir, 'finetune_language_summary.csv'))
-    print("Generated finetune_language_summary.csv")
-    
-    # Control vs Non-control Comparison
-    # Create a new column indicating control status
-    df['is_control'] = df['control_index'].notna() & (df['control_index'] != 'None')
-    
-    control_comparison = df.pivot_table(
-        index=['task', 'is_control'], 
-        columns='metric', 
-        values='value',
-        aggfunc='mean'
-    )
-    control_comparison.to_csv(os.path.join(output_dir, 'finetune_control_comparison.csv'))
-    print("Generated finetune_control_comparison.csv")
-    
-    # Complete experiment matrix
-    experiment_matrix = df.pivot_table(
-        index=['experiment_type', 'language', 'task', 'control_index'],
-        columns='metric',
-        values='value'
-    )
-    experiment_matrix.to_csv(os.path.join(output_dir, 'finetune_experiment_matrix.csv'))
-    print("Generated finetune_experiment_matrix.csv")
-    
-    # Visualization: Task performance by language
-    for task in df['task'].unique():
-        if pd.isna(task):
-            continue
-            
-        # Get metrics for this task
-        task_df = df[df['task'] == task]
-        metrics = [col for col in task_df['metric'].unique() if col in ['accuracy', 'f1', 'r2', 'mse']]
-        
-        for metric in metrics:
-            plt.figure(figsize=(10, 6))
-            
-            # Filter data: non-control entries with this metric
-            plot_data = task_df[
-                (task_df['metric'] == metric) & 
-                (~task_df['is_control'])
-            ]
-            
-            if plot_data.empty:
-                plt.close()
-                continue
-                
-            # Create bar chart of performance by language
-            lang_perf = plot_data.pivot_table(
-                index='language',
-                values='value',
-                aggfunc='mean'
-            )
-            
-            lang_perf.sort_values('value', ascending=False).plot(
-                kind='bar', 
-                color='skyblue',
-                ylim=(0, 1) if metric in ['accuracy', 'f1', 'r2'] else None
-            )
-            
-            plt.title(f'{task} - {metric} by Language (Finetuned)')
-            plt.xlabel('Language')
-            plt.ylabel(metric)
-            plt.grid(True, linestyle='--', alpha=0.3, axis='y')
-            plt.tight_layout()
-            
-            plt.savefig(os.path.join(viz_dir, f'finetune_{task}_{metric}_by_language.png'))
-            plt.close()
-            print(f"Generated finetune_{task}_{metric}_by_language.png")
-    
-    # Visualization: Control vs non-control performance
-    for task in df['task'].unique():
-        if pd.isna(task):
-            continue
-            
-        metrics = [col for col in df[df['task'] == task]['metric'].unique() if col in ['accuracy', 'f1', 'r2', 'mse']]
-        
-        for metric in metrics:
-            plt.figure(figsize=(10, 6))
-            
-            # Filter data
-            task_metric_df = df[(df['task'] == task) & (df['metric'] == metric)]
-            
-            if task_metric_df.empty:
-                plt.close()
-                continue
-                
-            # Group by control status and calculate mean
-            control_group = task_metric_df.groupby('is_control')['value'].mean()
-            
-            if len(control_group) < 2:
-                plt.close()
-                continue
-                
-            # Plot bar chart
-            control_group.plot(
-                kind='bar', 
-                color=['green', 'red'],
-                ylim=(0, 1) if metric in ['accuracy', 'f1', 'r2'] else None
-            )
-            
-            plt.title(f'{task} - {metric}: Control vs Non-Control (Finetuned)')
-            plt.xlabel('Is Control')
-            plt.ylabel(metric)
-            plt.xticks(rotation=0)
-            plt.grid(True, linestyle='--', alpha=0.3, axis='y')
-            plt.tight_layout()
-            
-            plt.savefig(os.path.join(viz_dir, f'finetune_{task}_{metric}_control_comparison.png'))
-            plt.close()
-            print(f"Generated finetune_{task}_{metric}_control_comparison.png")
-    
-    print("All summary files generated successfully!")
-
-if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: generate_finetune_summaries.py <tracker_file> <output_dir>")
-        sys.exit(1)
-    
-    tracker_file = sys.argv[1]
-    output_dir = sys.argv[2]
-    
-    generate_summaries(tracker_file, output_dir)
-EOF
-
-chmod +x ${OUTPUT_BASE_DIR}/generate_finetune_summaries.py
-
-# Generate summary files
-python3 ${OUTPUT_BASE_DIR}/generate_finetune_summaries.py "$RESULTS_TRACKER" "$OUTPUT_BASE_DIR"
-
-# Create metadata file
-cat > "${OUTPUT_BASE_DIR}/finetune_metadata.json" << EOF
-{
-  "experiment_type": "fine-tuning",
-  "description": "Full fine-tuning of language model for classification, regression, and submetric prediction tasks",
-  "model": "cis-lmu/glot500-base",
-  "model_config": "glot500_finetune",
-  "languages": $(python -c "import json; print(json.dumps(${LANGUAGES[@]}))"),
-  "tasks": $(python -c "import json; print(json.dumps(${TASKS[@]}))"),
-  "submetrics": $(python -c "import json; print(json.dumps(${SUBMETRICS[@]}))"),
-  "freeze_model": false,
-  "finetune": true,
-  "layer_wise": false,
-  "control_indices": $(python -c "import json; print(json.dumps(${CONTROL_INDICES[@]}))"),
-  "batch_size": 16,
-  "effective_batch_size": 16,
-  "learning_rate": "1e-5",
-  "date_completed": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
-  "total_experiments": $(cat "$RESULTS_TRACKER" | wc -l)
-}
-EOF
-
 # List any failed experiments
-if [ -f "${OUTPUT_BASE_DIR}/failed_experiments.log" ]; then
-    echo "Some experiments failed. See ${OUTPUT_BASE_DIR}/failed_experiments.log for details."
-    echo "Failed experiments ($(cat "${OUTPUT_BASE_DIR}/failed_experiments.log" | wc -l)):"
-    cat "${OUTPUT_BASE_DIR}/failed_experiments.log"
+if [ -f "$FAILED_LOG" ]; then
+    FAILED_COUNT=$(wc -l < "$FAILED_LOG")
+    if [ $FAILED_COUNT -gt 0 ]; then
+        echo "Some experiments failed. See $FAILED_LOG for details."
+        echo "Failed experiments ($FAILED_COUNT):"
+        cat "$FAILED_LOG"
+    else
+        echo "All experiments completed successfully!"
+    fi
 fi
 
-echo "Fine-tuning experiments completed. Results available in: ${OUTPUT_BASE_DIR}"
+# Print summary statistics
+TOTAL_EXPERIMENTS=$((${#LANGUAGES[@]} * (${#TASKS[@]} + ${#SUBMETRICS[@]}) * (1 + ${#CONTROL_INDICES[@]})))
+COMPLETED_EXPERIMENTS=$(grep -v "experiment_type" "$RESULTS_TRACKER" | wc -l)
+
+echo "=============================================="
+echo "Fine-tuning experiments completed!"
+echo "=============================================="
+echo "Total planned experiments: $TOTAL_EXPERIMENTS"
+echo "Successfully completed: $COMPLETED_EXPERIMENTS"
+echo "Failed experiments: ${FAILED_COUNT:-0}"
+echo "Success rate: $(( COMPLETED_EXPERIMENTS * 100 / TOTAL_EXPERIMENTS ))%"
+echo "Results available in: ${OUTPUT_BASE_DIR}"
+echo "=============================================="

@@ -1,3 +1,4 @@
+# configs/model/lm_probe.yaml
 model_type: "lm_probe"
 lm_name: "cis-lmu/glot500-base"
 dropout: 0.3
@@ -5,4 +6,12 @@ freeze_model: true
 layer_wise: true
 layer_index: -1
 num_outputs: 1
-probe_hidden_size: 768
+probe_hidden_size: 128
+probe_depth: 1
+activation: "gelu"
+normalization: "layer"
+weight_init: "xavier"
+output_standardization: false
+use_linear_probe: false
+use_mean_pooling: false
+use_class_weights: false
