@@ -1,5 +1,5 @@
-- experiment=single_submetric
-- experiment.tasks=single_submetric
+- experiment=complexity
+- experiment.tasks=complexity
 - experiment.type=lm_probe
 - model=lm_probe
 - model.model_type=lm_probe
@@ -7,9 +7,9 @@
 - model.freeze_model=true
 - model.layer_wise=true
 - model.layer_index=11
-- model.probe_hidden_size=96
+- model.probe_hidden_size=384
 - model.probe_depth=2
-- model.dropout=0.1
+- model.dropout=0.2
 - model.activation=silu
 - model.normalization=layer
 - model.output_standardization=true
@@ -19,12 +19,11 @@
 - training.task_type=regression
 - training.num_epochs=15
 - training.batch_size=16
-- training.lr=2e-5
+- training.lr=1e-4
 - training.patience=4
 - training.scheduler_factor=0.5
 - training.scheduler_patience=2
 - +training.gradient_accumulation_steps=2
-- experiment_name=probe_layer11_avg_links_len_ar
-- output_dir=/scratch/leuven/371/vsc37132/probe_output/submetrics/avg_links_len/layer11/ar
+- experiment_name=probe_ar_complexity_layer11_h384_d0.2_lr1e-4
+- output_dir=/scratch/leuven/371/vsc37132/param_sweep_output/probe_ar_complexity_layer11_h384_d0.2_lr1e-4
 - wandb.mode=offline
-- experiment.submetric=avg_links_len

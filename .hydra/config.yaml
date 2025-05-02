@@ -1,6 +1,6 @@
 seed: 42
-output_dir: /scratch/leuven/371/vsc37132/probe_output/submetrics/avg_links_len/layer11/ar
-experiment_name: probe_layer11_avg_links_len_ar
+output_dir: /scratch/leuven/371/vsc37132/param_sweep_output/probe_ar_complexity_layer11_h384_d0.2_lr1e-4
+experiment_name: probe_ar_complexity_layer11_h384_d0.2_lr1e-4
 wandb:
   project: multilingual-question-probing
   entity: rokii-ku-leuven
@@ -24,12 +24,12 @@ data:
 model:
   model_type: lm_probe
   lm_name: cis-lmu/glot500-base
-  dropout: 0.1
+  dropout: 0.2
   freeze_model: true
   layer_wise: true
   layer_index: 11
   num_outputs: 1
-  probe_hidden_size: 96
+  probe_hidden_size: 384
   probe_depth: 2
   activation: silu
   normalization: layer
@@ -42,7 +42,7 @@ training:
   task_type: regression
   batch_size: 16
   num_epochs: 15
-  lr: 2.0e-05
+  lr: 0.0001
   weight_decay: 0.01
   patience: 4
   scheduler_factor: 0.5
@@ -52,18 +52,16 @@ training:
   gradient_accumulation_steps: 2
 experiment:
   type: lm_probe
-  tasks: single_submetric
-  submetric: avg_links_len
-  available_submetrics:
-  - avg_links_len
-  - avg_max_depth
-  - avg_subordinate_chain_len
-  - avg_verb_edges
-  - lexical_density
-  - n_tokens
+  tasks: complexity
   use_controls: false
   control_index: null
   num_controls: 3
   eval_on_orig_test: true
   cross_lingual: false
   task_type: regression
+  feature: lang_norm_complexity_score
+  training:
+    patience: 5
+    scheduler_patience: 4
+    scheduler_factor: 0.8
+    dropout: 0.1

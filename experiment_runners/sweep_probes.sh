@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=finetune_experiments
+#SBATCH --job-name=sweep_probes_combined
 #SBATCH --clusters=wice
 #SBATCH --account=intro_vsc37132
 #SBATCH --partition=gpu_h100
@@ -8,7 +8,7 @@
 #SBATCH --cpus-per-task=16     
 #SBATCH --gpus-per-node=1     
 #SBATCH --mem-per-cpu=11700M  
-#SBATCH --time=12:00:00
+#SBATCH --time=03:00:00
 
 export PATH="$VSC_DATA/miniconda3/bin:$PATH"
 source "$VSC_DATA/miniconda3/etc/profile.d/conda.sh"
@@ -24,13 +24,13 @@ export WANDB_DIR="$VSC_SCRATCH/wandb"
 mkdir -p "$VSC_SCRATCH/wandb"
 
 # Define parameter sweep values
-LANGUAGES=("ar" "ja")
+LANGUAGES=("ar")
 TASKS=("question_type" "complexity")
 SUBMETRICS=("avg_links_len")
-LAYERS=(1 6 12)
-HIDDEN_SIZES=(10 50 96 128 256 384)
-DROPOUT_RATES=(0.01 0.1 0.25)
-LEARNING_RATES=(1e-4 2e-5)
+LAYERS=(2 11)
+HIDDEN_SIZES=(128 256 384)
+DROPOUT_RATES=(0.01 0.05 0.1 0.2)
+LEARNING_RATES=(1e-3 1e-4)
 
 # Base directory for outputs
 OUTPUT_BASE_DIR="$VSC_SCRATCH/param_sweep_output"
