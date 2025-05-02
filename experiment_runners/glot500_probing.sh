@@ -23,15 +23,15 @@ export HYDRA_FULL_ERROR=1
 export WANDB_DIR="$VSC_SCRATCH/wandb"
 mkdir -p "$VSC_SCRATCH/wandb"
 
-LANGUAGES=("ar" "id" "ja" "ru")
+LANGUAGES=("ar")
 # LANGUAGES=("ar" "en" "fi" "id" "ja" "ko" "ru")
 TASKS=("question_type" "complexity")
-SUBMETRICS=("avg_links_len" "avg_max_depth" "avg_subordinate_chain_len" "avg_verb_edges" "lexical_density" "n_tokens")
-SUBMETRICS=("avg_links_len" "avg_verb_edges" "n_tokens")
-CONTROL_INDICES=(1)
+#SUBMETRICS=("avg_links_len" "avg_max_depth" "avg_subordinate_chain_len" "avg_verb_edges" "lexical_density" "n_tokens")
+SUBMETRICS=("avg_links_len")
+CONTROL_INDICES=()
 
 # Define which layers to probe
-LAYER_INDICES=(0 3 6 9 12)  # Early, middle, and last layers
+LAYER_INDICES=(1 4 6 9 11)  # Early, middle, and last layers
 
 OUTPUT_BASE_DIR="$VSC_SCRATCH/probe_output"
 mkdir -p $OUTPUT_BASE_DIR
