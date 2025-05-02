@@ -1,6 +1,6 @@
 seed: 42
-output_dir: /scratch/leuven/371/vsc37132/probe_output/question_type
-experiment_name: ''
+output_dir: /scratch/leuven/371/vsc37132/probe_output/submetrics/avg_links_len/layer11/ar
+experiment_name: probe_layer11_avg_links_len_ar
 wandb:
   project: multilingual-question-probing
   entity: rokii-ku-leuven
@@ -18,33 +18,33 @@ data:
   cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
   vectors_dir: ./data/features
   languages:
-  - ru
+  - ar
   train_language: null
   eval_language: null
 model:
   model_type: lm_probe
   lm_name: cis-lmu/glot500-base
-  dropout: 0.2
+  dropout: 0.1
   freeze_model: true
   layer_wise: true
-  layer_index: -1
+  layer_index: 11
   num_outputs: 1
-  probe_hidden_size: 384
+  probe_hidden_size: 96
   probe_depth: 2
-  activation: gelu
+  activation: silu
   normalization: layer
   weight_init: xavier
-  output_standardization: false
+  output_standardization: true
   use_linear_probe: false
-  use_mean_pooling: false
+  use_mean_pooling: true
   use_class_weights: false
 training:
-  task_type: classification
+  task_type: regression
   batch_size: 16
   num_epochs: 15
-  lr: 0.0001
+  lr: 2.0e-05
   weight_decay: 0.01
-  patience: 3
+  patience: 4
   scheduler_factor: 0.5
   scheduler_patience: 2
   random_state: 42
@@ -52,9 +52,18 @@ training:
   gradient_accumulation_steps: 2
 experiment:
   type: lm_probe
-  tasks: question_type
+  tasks: single_submetric
+  submetric: avg_links_len
+  available_submetrics:
+  - avg_links_len
+  - avg_max_depth
+  - avg_subordinate_chain_len
+  - avg_verb_edges
+  - lexical_density
+  - n_tokens
   use_controls: false
   control_index: null
   num_controls: 3
   eval_on_orig_test: true
   cross_lingual: false
+  task_type: regression

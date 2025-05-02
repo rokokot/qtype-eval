@@ -151,11 +151,11 @@ run_probe_experiment() {
     mkdir -p "$LAYER_OUTPUT_DIR"
     
     # Skip if already completed successfully
-    if [ -f "${LAYER_OUTPUT_DIR}/results.json" ]; then
+    if [ -f "${LAYER_OUTPUT_DIR}/${LANG}/results.json" ]; then
         echo "Experiment ${EXPERIMENT_NAME} already completed successfully. Extracting metrics..."
         CONTROL_PARAM=${CONTROL_IDX:-None}
         python3 ${OUTPUT_BASE_DIR}/extract_metrics.py \
-            "${LAYER_OUTPUT_DIR}/results.json" "$RESULTS_TRACKER" "probe" "$LANG" "$TASK" \
+            "${LAYER_OUTPUT_DIR}/${LANG}/results.json" "$RESULTS_TRACKER" "probe" "$LANG" "$TASK" \
             "${SUBMETRIC:-}" "$CONTROL_PARAM" "$LAYER_IDX"
         return 0
     fi
@@ -177,13 +177,13 @@ run_probe_experiment() {
     local PROBE_CONFIG=""
     
     if [ "$TASK_TYPE" == "classification" ]; then
-        # Classification probe configuration - use CLS token
-        PROBE_CONFIG="\"model.probe_hidden_size=384\" \"model.probe_depth=2\" \"model.dropout=0.2\" \"model.activation=gelu\" \"model.normalization=layer\" \"model.use_mean_pooling=false\""
+        # classification probe configuration - use CLS token | 384 ok |
+        PROBE_CONFIG="\"model.probe_hidden_size=128\" \"model.probe_depth=2\" \"model.dropout=0.2\" \"model.activation=gelu\" \"model.normalization=layer\" \"model.use_mean_pooling=true\""
             
         TRAINING_CONFIG="\"training.lr=1e-4\" \"training.patience=3\" \"training.scheduler_factor=0.5\" \"training.scheduler_patience=2\" \"+training.gradient_accumulation_steps=2\""
     else
-        # Regression probe configuration - use mean pooling
-        PROBE_CONFIG="\"model.probe_hidden_size=256\" \"model.probe_depth=2\" \"model.dropout=0.1\" \"model.activation=silu\" \"model.normalization=layer\" \"model.output_standardization=true\" \"model.use_mean_pooling=true\""
+        # Regression probe configuration - use mean pooling | 256 ok
+        PROBE_CONFIG="\"model.probe_hidden_size=96\" \"model.probe_depth=2\" \"model.dropout=0.1\" \"model.activation=silu\" \"model.normalization=layer\" \"model.output_standardization=true\" \"model.use_mean_pooling=true\""
             
         TRAINING_CONFIG="\"training.lr=2e-5\" \"training.patience=4\" \"training.scheduler_factor=0.5\" \"training.scheduler_patience=2\" \"+training.gradient_accumulation_steps=2\""
     fi
@@ -237,7 +237,7 @@ run_probe_experiment() {
         echo "Experiment ${EXPERIMENT_NAME} completed successfully"
         
         # Extract metrics
-        RESULTS_FILE="${LAYER_OUTPUT_DIR}/results.json"
+        RESULTS_FILE="${LAYER_OUTPUT_DIR}/${LANG}/results.json"
         if [ -f "$RESULTS_FILE" ]; then
             CONTROL_PARAM=${CONTROL_IDX:-None}
             python3 ${OUTPUT_BASE_DIR}/extract_metrics.py \
@@ -245,18 +245,18 @@ run_probe_experiment() {
                 "${SUBMETRIC:-}" "$CONTROL_PARAM" "$LAYER_IDX"
                 
             # Create a summary
-            echo "Experiment: $EXPERIMENT_NAME" > "${LAYER_OUTPUT_DIR}/experiment_summary.txt"
+            echo "Experiment: $EXPERIMENT_NAME" > "${LAYER_OUTPUT_DIR}/${LANG}/experiment_summary.txt"
             if [ -n "$CONTROL_IDX" ]; then
-                echo "CONTROL EXPERIMENT (random labels)" >> "${LAYER_OUTPUT_DIR}/experiment_summary.txt"
+                echo "CONTROL EXPERIMENT (random labels)" >> "${LAYER_OUTPUT_DIR}/${LANG}/experiment_summary.txt"
             fi
             if [ "$TASK_TYPE" == "classification" ]; then
                 echo "Pooling: CLS token" >> "${LAYER_OUTPUT_DIR}/experiment_summary.txt"
             else
-                echo "Pooling: Mean" >> "${LAYER_OUTPUT_DIR}/experiment_summary.txt"
+                echo "Pooling: Mean" >> "${LAYER_OUTPUT_DIR}/${LANG}/experiment_summary.txt"
             fi
-            echo "Layer: ${LAYER_IDX}" >> "${LAYER_OUTPUT_DIR}/experiment_summary.txt"
-            echo "Language: ${LANG}, Task: ${TASK}" >> "${LAYER_OUTPUT_DIR}/experiment_summary.txt"
-            echo "Results:" >> "${LAYER_OUTPUT_DIR}/experiment_summary.txt"
+            echo "Layer: ${LAYER_IDX}" >> "${LAYER_OUTPUT_DIR}/${LANG}/experiment_summary.txt"
+            echo "Language: ${LANG}, Task: ${TASK}" >> "${LAYER_OUTPUT_DIR}/${LANG}/experiment_summary.txt"
+            echo "Results:" >> "${LAYER_OUTPUT_DIR}/${LANG}/experiment_summary.txt"
             python -c "import json; f=open('${RESULTS_FILE}'); data=json.load(f); print(json.dumps(data.get('test_metrics', {}), indent=2))" >> "${LAYER_OUTPUT_DIR}/experiment_summary.txt"
         else
             echo "Warning: Results file not found: $RESULTS_FILE"
