@@ -57,7 +57,7 @@ class BaseLMModel(nn.Module):
         # Log model configuration
         logger.info(f"Base model configuration: layer-wise={layer_wise}, layer_index={layer_index}, freeze_model={freeze_model}")
             
-    def get_representation(self, input_ids, attention_mask, token_type_ids=None):
+    def get_representation(self, input_ids, attention_mask, token_type_ids=None, use_mean_pooling=False):
         """Extract representation from the language model."""
         if self.layer_wise:
             outputs = self.model(
@@ -75,18 +75,35 @@ class BaseLMModel(nn.Module):
                 layer_output = hidden_states[-1]
             else:
                 layer_output = hidden_states[layer_index]
-            
-            # Use CLS token representation
-            sentence_repr = layer_output[:, 0, :]
+
+            if use_mean_pooling:
+
+                attention_mask_expanded = attention_mask.unsqueeze(-1).expand(layer_output.size()).float()
+                sum_embeddings = torch.sum(layer_output * attention_mask_expanded, 1)
+                sum_mask = torch.sum(attention_mask_expanded, 1)
+                sum_mask = torch.clamp(sum_mask, min=1e-9)  # Avoid division by zero
+                sentence_repr = sum_embeddings / sum_mask
+            else: 
+                sentence_repr = layer_output[:, 0, :]
+
         else:
             outputs = self.model(
                 input_ids=input_ids,
                 attention_mask=attention_mask,
                 token_type_ids=token_type_ids if token_type_ids is not None else None,
             )
-            # Use CLS token representation from last layer
-            sentence_repr = outputs.last_hidden_state[:, 0, :]
-        
+
+            if use_mean_pooling:
+
+                attention_mask_expanded = attention_mask.unsqueeze(-1).expand(outputs.last_hidden_state.size()).float()
+                sum_embeddings = torch.sum(outputs.last_hidden_state * attention_mask_expanded, 1)
+                sum_mask = torch.sum(attention_mask_expanded, 1)
+                sum_mask = torch.clamp(sum_mask, min=1e-9)  # Avoid division by zero
+                sentence_repr = sum_embeddings / sum_mask
+            else:
+                sentence_repr = outputs.last_hidden_state[:, 0, :]
+
+
         return sentence_repr
     
     def log_parameter_stats(self):
@@ -159,7 +176,8 @@ class LinearProbe(BaseLMModel):
         sentence_repr = self.get_representation(
             input_ids=input_ids,
             attention_mask=attention_mask, 
-            token_type_ids=token_type_ids
+            token_type_ids=token_type_ids,
+            use_mean_pooling=getattr(self, 'use_mean_pooling', False)
         )
         
         if self.dropout is not None:
@@ -190,7 +208,8 @@ class MLPProbe(BaseLMModel):
         normalization: str = "none",
         probe_depth: int = 1,  # Number of hidden layers
         use_bias: bool = True,
-        weight_init: str = "normal"  # Initialization strategy
+        weight_init: str = "normal",  # Initialization strategy
+        use_mean_pooling: bool = False
     ):
         super().__init__(
             model_name=model_name,
@@ -201,6 +220,7 @@ class MLPProbe(BaseLMModel):
             layer_index=layer_index,
         )
         
+        self.use_mean_pooling = use_mean_pooling
         # Set up MLP probe head
         hidden_size = self.model.config.hidden_size
         
@@ -297,7 +317,8 @@ class MLPProbe(BaseLMModel):
         sentence_repr = self.get_representation(
             input_ids=input_ids,
             attention_mask=attention_mask, 
-            token_type_ids=token_type_ids
+            token_type_ids=token_type_ids,
+            use_mean_pooling=getattr(self, 'use_mean_pooling', False)
         )
         return self.head(sentence_repr)
 
@@ -319,7 +340,8 @@ class ClassificationProbe(MLPProbe):
         normalization: str = "layer",  # Layer norm is more stable
         probe_depth: int = 1,
         weight_init: str = "xavier",  # Xavier works well for classification
-        use_class_weights: bool = False
+        use_class_weights: bool = False,
+        use_mean_pooling: bool = False
     ):
         super().__init__(
             model_name=model_name,
@@ -333,9 +355,11 @@ class ClassificationProbe(MLPProbe):
             layer_index=layer_index,
             activation=activation,
             normalization=normalization,
-            weight_init=weight_init
+            weight_init=weight_init,
+            use_mean_pooling=use_mean_pooling
         )
-        
+
+        self.use_mean_pooling = use_mean_pooling
         self.use_class_weights = use_class_weights
         if use_class_weights:
             # Initialize with uniform class weights, can be updated later
@@ -367,7 +391,8 @@ class RegressionProbe(MLPProbe):
         normalization: str = "layer",
         probe_depth: int = 1,
         weight_init: str = "small",  # Small init for regression stability
-        output_standardization: bool = False  # Whether to standardize outputs
+        output_standardization: bool = False,  # Whether to standardize outputs
+        use_mean_pooling: bool = False
     ):
         super().__init__(
             model_name=model_name,
@@ -381,9 +406,11 @@ class RegressionProbe(MLPProbe):
             activation=activation,
             normalization=normalization,
             probe_depth=probe_depth,
-            weight_init=weight_init
+            weight_init=weight_init,
+            use_mean_pooling=use_mean_pooling
         )
         
+        self.use_mean_pooling = use_mean_pooling
         # Output standardization for better training stability
         self.output_standardization = output_standardization
         if output_standardization:
@@ -742,7 +769,8 @@ def create_model(model_type: str, task_type: str, **kwargs) -> nn.Module:
             freeze_model=kwargs.get("freeze_model", True),  # Always freeze for probes
             dropout=kwargs.get("dropout", 0.0),  # Minimal dropout for linear probes
             weight_normalization=kwargs.get("weight_normalization", False),
-            probe_rank=kwargs.get("probe_rank", None)
+            probe_rank=kwargs.get("probe_rank", None),
+            use_mean_pooling=kwargs.get("use_mean_pooling", False)
         )
     
     if model_type == "lm_probe":
@@ -757,7 +785,8 @@ def create_model(model_type: str, task_type: str, **kwargs) -> nn.Module:
                 normalization=kwargs.get("normalization", "layer"),
                 probe_depth=kwargs.get("probe_depth", 1),
                 weight_init=kwargs.get("weight_init", "xavier"),
-                use_class_weights=kwargs.get("use_class_weights", False)
+                use_class_weights=kwargs.get("use_class_weights", False),
+                use_mean_pooling=kwargs.get("use_mean_pooling", False)
             )
         else:  # regression
             return RegressionProbe(
@@ -769,7 +798,8 @@ def create_model(model_type: str, task_type: str, **kwargs) -> nn.Module:
                 normalization=kwargs.get("normalization", "layer"),
                 probe_depth=kwargs.get("probe_depth", 1),
                 weight_init=kwargs.get("weight_init", "small"),
-                output_standardization=kwargs.get("output_standardization", False)
+                output_standardization=kwargs.get("output_standardization", False),
+                use_mean_pooling=kwargs.get("use_mean_pooling", False)
             )
     
     # FINE-TUNING MODELS
