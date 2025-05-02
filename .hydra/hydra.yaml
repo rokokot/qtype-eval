@@ -143,8 +143,8 @@ hydra:
     - hydra.run.dir=.
     - hydra.mode=RUN
     task:
-    - experiment=complexity
-    - experiment.tasks=complexity
+    - experiment=single_submetric
+    - experiment.tasks=single_submetric
     - experiment.type=lm_finetune
     - model=glot500_finetune
     - model.lm_name=cis-lmu/glot500-base
@@ -153,7 +153,7 @@ hydra:
     - model.head_hidden_size=768
     - model.head_layers=2
     - model.dropout=0.25
-    - data.languages=[fi]
+    - data.languages=[id]
     - data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache
     - training.task_type=regression
     - training.num_epochs=10
@@ -163,13 +163,16 @@ hydra:
     - training.scheduler_factor=0.5
     - training.scheduler_patience=3
     - +training.gradient_accumulation_steps=4
-    - experiment_name=finetune_complexity_fi
-    - output_dir=/scratch/leuven/371/vsc37132/finetune_output/complexity
+    - experiment_name=finetune_avg_max_depth_control1_id
+    - output_dir=/scratch/leuven/371/vsc37132/finetune_output/submetrics/avg_max_depth/control1
     - wandb.mode=offline
+    - experiment.use_controls=true
+    - experiment.control_index=1
+    - experiment.submetric=avg_max_depth
   job:
     name: run_experiment
     chdir: false
-    override_dirname: +training.gradient_accumulation_steps=4,data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache,data.languages=[fi],experiment.tasks=complexity,experiment.type=lm_finetune,experiment=complexity,experiment_name=finetune_complexity_fi,model.dropout=0.25,model.finetune=true,model.freeze_model=false,model.head_hidden_size=768,model.head_layers=2,model.lm_name=cis-lmu/glot500-base,model=glot500_finetune,output_dir=/scratch/leuven/371/vsc37132/finetune_output/complexity,training.batch_size=16,training.lr=2e-5,training.num_epochs=10,training.patience=4,training.scheduler_factor=0.5,training.scheduler_patience=3,training.task_type=regression,wandb.mode=offline
+    override_dirname: +training.gradient_accumulation_steps=4,data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache,data.languages=[id],experiment.control_index=1,experiment.submetric=avg_max_depth,experiment.tasks=single_submetric,experiment.type=lm_finetune,experiment.use_controls=true,experiment=single_submetric,experiment_name=finetune_avg_max_depth_control1_id,model.dropout=0.25,model.finetune=true,model.freeze_model=false,model.head_hidden_size=768,model.head_layers=2,model.lm_name=cis-lmu/glot500-base,model=glot500_finetune,output_dir=/scratch/leuven/371/vsc37132/finetune_output/submetrics/avg_max_depth/control1,training.batch_size=16,training.lr=2e-5,training.num_epochs=10,training.patience=4,training.scheduler_factor=0.5,training.scheduler_patience=3,training.task_type=regression,wandb.mode=offline
     id: ???
     num: ???
     config_name: config
@@ -196,7 +199,7 @@ hydra:
       provider: schema
     output_dir: /vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval
     choices:
-      experiment: complexity
+      experiment: single_submetric
       training: default
       model: glot500_finetune
       data: default

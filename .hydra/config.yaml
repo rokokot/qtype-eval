@@ -1,6 +1,6 @@
 seed: 42
-output_dir: /scratch/leuven/371/vsc37132/finetune_output/complexity
-experiment_name: finetune_complexity_fi
+output_dir: /scratch/leuven/371/vsc37132/finetune_output/submetrics/avg_max_depth/control1
+experiment_name: finetune_avg_max_depth_control1_id
 wandb:
   project: multilingual-question-probing
   entity: rokii-ku-leuven
@@ -18,7 +18,7 @@ data:
   cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
   vectors_dir: ./data/features
   languages:
-  - fi
+  - id
   train_language: null
   eval_language: null
 model:
@@ -46,16 +46,18 @@ training:
   gradient_accumulation_steps: 4
 experiment:
   type: lm_finetune
-  tasks: complexity
-  use_controls: false
-  control_index: null
+  tasks: single_submetric
+  submetric: avg_max_depth
+  available_submetrics:
+  - avg_links_len
+  - avg_max_depth
+  - avg_subordinate_chain_len
+  - avg_verb_edges
+  - lexical_density
+  - n_tokens
+  use_controls: true
+  control_index: 1
   num_controls: 3
   eval_on_orig_test: true
   cross_lingual: false
   task_type: regression
-  feature: lang_norm_complexity_score
-  training:
-    patience: 5
-    scheduler_patience: 4
-    scheduler_factor: 0.8
-    dropout: 0.1
