@@ -183,7 +183,7 @@ run_probe_experiment() {
         TRAINING_CONFIG="\"training.lr=1e-4\" \"training.patience=3\" \"training.scheduler_factor=0.5\" \"training.scheduler_patience=2\" \"+training.gradient_accumulation_steps=2\""
     else
         # Regression probe configuration - use mean pooling | 256 ok
-        PROBE_CONFIG="\"model.probe_hidden_size=96\" \"model.probe_depth=2\" \"model.dropout=0.1\" \"model.activation=silu\" \"model.normalization=layer\" \"model.output_standardization=true\" \"model.use_mean_pooling=true\""
+        PROBE_CONFIG="\"model.probe_hidden_size=96\" \"model.probe_depth=3\" \"model.dropout=0.1\" \"model.activation=silu\" \"model.normalization=layer\" \"model.output_standardization=true\" \"model.use_mean_pooling=true\""
             
         TRAINING_CONFIG="\"training.lr=2e-5\" \"training.patience=4\" \"training.scheduler_factor=0.5\" \"training.scheduler_patience=2\" \"+training.gradient_accumulation_steps=2\""
     fi
