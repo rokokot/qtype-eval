@@ -1,6 +1,6 @@
 seed: 42
-output_dir: /scratch/leuven/371/vsc37132/finetune_output/submetrics/avg_max_depth/control1
-experiment_name: finetune_avg_max_depth_control1_id
+output_dir: /scratch/leuven/371/vsc37132/finetune_output/submetrics/avg_links_len/control3
+experiment_name: finetune_avg_links_len_control3_ja
 wandb:
   project: multilingual-question-probing
   entity: rokii-ku-leuven
@@ -18,7 +18,7 @@ data:
   cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
   vectors_dir: ./data/features
   languages:
-  - id
+  - ja
   train_language: null
   eval_language: null
 model:
@@ -47,7 +47,7 @@ training:
 experiment:
   type: lm_finetune
   tasks: single_submetric
-  submetric: avg_max_depth
+  submetric: avg_links_len
   available_submetrics:
   - avg_links_len
   - avg_max_depth
@@ -56,7 +56,7 @@ experiment:
   - lexical_density
   - n_tokens
   use_controls: true
-  control_index: 1
+  control_index: 3
   num_controls: 3
   eval_on_orig_test: true
   cross_lingual: false
