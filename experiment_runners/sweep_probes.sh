@@ -24,12 +24,12 @@ export WANDB_DIR="$VSC_SCRATCH/wandb"
 mkdir -p "$VSC_SCRATCH/wandb"
 
 # Define parameter sweep values
-LANGUAGES=("ar")
-TASKS=("question_type" "complexity")
-SUBMETRICS=("avg_links_len")
-LAYERS=(2 11)
-HIDDEN_SIZES=(128 256 384)
-DROPOUT_RATES=(0.01 0.05 0.1 0.2)
+LANGUAGES=("ar" "ru")
+TASKS=("complexity")
+SUBMETRICS=("avg_links_len" "n_tokens")
+LAYERS=(2 6 11)
+HIDDEN_SIZES=(128 384)
+DROPOUT_RATES=(0.01 0.2)
 LEARNING_RATES=(1e-3 1e-4)
 
 # Base directory for outputs

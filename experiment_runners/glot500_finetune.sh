@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=finetune_experiments
+#SBATCH --job-name=finetune_with_probe_parameters
 #SBATCH --clusters=wice
 #SBATCH --account=intro_vsc37132
 #SBATCH --partition=gpu_h100
@@ -163,12 +163,12 @@ run_finetune_experiment() {
     if [ "$TASK_TYPE" == "classification" ]; then
         # Classification fine-tuning configuration
         FINETUNE_CONFIG="\
-            \"model.head_hidden_size=768\" \
+            \"model.head_hidden_size=786\" \
             \"model.head_layers=2\" \
-            \"model.dropout=0.25\""
+            \"model.dropout=0.05\""
             
         TRAINING_CONFIG="\
-            \"training.lr=2e-5\" \
+            \"training.lr=1e-3\" \
             \"training.patience=3\" \
             \"training.scheduler_factor=0.5\" \
             \"training.scheduler_patience=2\" \
@@ -176,12 +176,12 @@ run_finetune_experiment() {
     else
         # Regression fine-tuning configuration
         FINETUNE_CONFIG="\
-            \"model.head_hidden_size=768\" \
-            \"model.head_layers=2\" \
-            \"model.dropout=0.25\""
+            \"model.head_hidden_size=786\" \
+            \"model.head_layers=3\" \
+            \"model.dropout=0.2\""
             
         TRAINING_CONFIG="\
-            \"training.lr=2e-5\" \
+            \"training.lr=1e-4\" \
             \"training.patience=4\" \
             \"training.scheduler_factor=0.5\" \
             \"training.scheduler_patience=3\" \
@@ -203,7 +203,7 @@ run_finetune_experiment() {
         \"data.languages=[${LANG}]\" \
         \"data.cache_dir=$VSC_DATA/qtype-eval/data/cache\" \
         \"training.task_type=${TASK_TYPE}\" \
-        \"training.num_epochs=10\" \
+        \"training.num_epochs=15\" \
         \"training.batch_size=16\" \
         ${TRAINING_CONFIG} \
         ${DEBUG_PARAM} \
