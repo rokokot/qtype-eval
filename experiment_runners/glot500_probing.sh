@@ -23,15 +23,15 @@ export HYDRA_FULL_ERROR=1
 export WANDB_DIR="$VSC_SCRATCH/wandb"
 mkdir -p "$VSC_SCRATCH/wandb"
 
-LANGUAGES=("ar")
-# LANGUAGES=("ar" "en" "fi" "id" "ja" "ko" "ru")
+#LANGUAGES=("ar")
+LANGUAGES=("ar" "en" "fi" "id" "ja" "ko" "ru")
 TASKS=("question_type" "complexity")
-#SUBMETRICS=("avg_links_len" "avg_max_depth" "avg_subordinate_chain_len" "avg_verb_edges" "lexical_density" "n_tokens")
-SUBMETRICS=("avg_links_len")
-CONTROL_INDICES=()
+SUBMETRICS=("avg_links_len" "avg_max_depth" "avg_subordinate_chain_len" "avg_verb_edges" "lexical_density" "n_tokens")
+#SUBMETRICS=("avg_links_len")
+CONTROL_INDICES=(1 2 3)
 
 # Define which layers to probe
-LAYER_INDICES=(1 4 6 9 11)  # Early, middle, and last layers
+LAYER_INDICES=(1 2 3 4 5 6 7 8 9 10 11 12)  # Early, middle, and last layers
 
 OUTPUT_BASE_DIR="$VSC_SCRATCH/probe_output"
 mkdir -p $OUTPUT_BASE_DIR
@@ -178,14 +178,14 @@ run_probe_experiment() {
     
     if [ "$TASK_TYPE" == "classification" ]; then
         # classification probe configuration - use CLS token | 384 ok |
-        PROBE_CONFIG="\"model.probe_hidden_size=128\" \"model.probe_depth=2\" \"model.dropout=0.2\" \"model.activation=gelu\" \"model.normalization=layer\" \"model.use_mean_pooling=true\""
+        PROBE_CONFIG="\"model.probe_hidden_size=385\" \"model.probe_depth=2\" \"model.dropout=0.05\" \"model.activation=gelu\" \"model.normalization=layer\" \"model.use_mean_pooling=true\""
             
-        TRAINING_CONFIG="\"training.lr=1e-4\" \"training.patience=3\" \"training.scheduler_factor=0.5\" \"training.scheduler_patience=2\" \"+training.gradient_accumulation_steps=2\""
+        TRAINING_CONFIG="\"training.lr=1e-3\" \"training.patience=3\" \"training.scheduler_factor=0.5\" \"training.scheduler_patience=2\" \"+training.gradient_accumulation_steps=2\""
     else
         # Regression probe configuration - use mean pooling | 256 ok
-        PROBE_CONFIG="\"model.probe_hidden_size=96\" \"model.probe_depth=3\" \"model.dropout=0.1\" \"model.activation=silu\" \"model.normalization=layer\" \"model.output_standardization=true\" \"model.use_mean_pooling=true\""
+        PROBE_CONFIG="\"model.probe_hidden_size=128\" \"model.probe_depth=3\" \"model.dropout=0.2\" \"model.activation=silu\" \"model.normalization=layer\" \"model.output_standardization=true\" \"model.use_mean_pooling=true\""
             
-        TRAINING_CONFIG="\"training.lr=2e-5\" \"training.patience=4\" \"training.scheduler_factor=0.5\" \"training.scheduler_patience=2\" \"+training.gradient_accumulation_steps=2\""
+        TRAINING_CONFIG="\"training.lr=1e-4\" \"training.patience=4\" \"training.scheduler_factor=0.5\" \"training.scheduler_patience=2\" \"+training.gradient_accumulation_steps=2\""
     fi
     
     # Build command with explicit layer index
