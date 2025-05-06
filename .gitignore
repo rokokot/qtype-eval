@@ -199,5 +199,9 @@ logs/
 
 ./data
 
+<<<<<<< HEAD
 ./outputs/*.out
+=======
+slurm-64444483.out
+>>>>>>> 69f886f3030b7aff0301a7fd3596c248c0142992
 
