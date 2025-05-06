@@ -25,7 +25,7 @@ export WANDB_DIR="$VSC_SCRATCH/wandb"
 mkdir -p "$VSC_SCRATCH/wandb"
 
 LANGUAGES=("ar" "en" "fi" "id" "ja" "ko" "ru")
-TASKS=("complexity" "question_type")    # "question_type"
+TASKS=("complexity" "question_type")    
 SUBMETRICS=("avg_links_len" "avg_max_depth" "avg_subordinate_chain_len" "avg_verb_edges" "lexical_density" "n_tokens")
 CONTROL_INDICES=(1 2 3)
 
@@ -39,7 +39,8 @@ echo "experiment_type,language,task,submetric,control_index,metric,value" > $RES
 FAILED_LOG="${OUTPUT_BASE_DIR}/failed_experiments.log"
 touch $FAILED_LOG
 
-# Create metrics extractor
+# creates a python script in the results folder that gets called after each run and logs results into a csv file
+#outputs get printed in slurm*.out
 cat > ${OUTPUT_BASE_DIR}/extract_metrics.py << 'EOF'
 #!/usr/bin/env python3
 import json
@@ -52,10 +53,8 @@ def extract_metrics(result_file, tracker_file, exp_type, language, task, submetr
         with open(result_file, 'r') as f:
             data = json.load(f)
         
-        # Extract test metrics
         test_metrics = data.get('test_metrics', {})
         
-        # Validate metrics
         if not test_metrics:
             print(f"Warning: No test metrics found in {result_file}")
             return False
@@ -66,7 +65,6 @@ def extract_metrics(result_file, tracker_file, exp_type, language, task, submetr
         if task in ["complexity", "single_submetric"] and "r2" not in test_metrics:
             print(f"Warning: No r2 metric found for regression task in {result_file}")
         
-        # Append to tracker file
         with open(tracker_file, 'a') as f:
             writer = csv.writer(f)
             for metric, value in test_metrics.items():
@@ -116,9 +114,7 @@ run_finetune_experiment() {
     local COMMAND=""
     local EXPERIMENT_TYPE="finetune"
     
-    # Set experiment name based on parameters
     if [ -n "$SUBMETRIC" ]; then
-        # This is a submetric experiment
         TASK="single_submetric"
         if [ -z "$CONTROL_IDX" ]; then
             EXPERIMENT_NAME="finetune_${SUBMETRIC}_${LANG}"
@@ -126,7 +122,6 @@ run_finetune_experiment() {
             EXPERIMENT_NAME="finetune_${SUBMETRIC}_control${CONTROL_IDX}_${LANG}"
         fi
     else
-        # Regular task experiment
         if [ -z "$CONTROL_IDX" ]; then
             EXPERIMENT_NAME="finetune_${TASK}_${LANG}"
         else
@@ -134,9 +129,8 @@ run_finetune_experiment() {
         fi
     fi
     
-    # Skip if already completed successfully
     if [ -f "${OUTPUT_SUBDIR}/${LANG}/results.json" ]; then
-        echo "Experiment ${EXPERIMENT_NAME} already completed successfully. Extracting metrics..."
+        echo "Experiment ${EXPERIMENT_NAME} already completed.  metrics..."
         CONTROL_PARAM=${CONTROL_IDX:-None}
         python3 ${OUTPUT_BASE_DIR}/extract_metrics.py \
             "${OUTPUT_SUBDIR}/${LANG}/results.json" "$RESULTS_TRACKER" "finetune" "$LANG" "$TASK" \
@@ -144,24 +138,20 @@ run_finetune_experiment() {
         return 0
     fi
     
-    # Skip if already failed too many times
     local FAIL_COUNT=$(grep -c "^${EXPERIMENT_NAME}$" $FAILED_LOG)
     if [ $FAIL_COUNT -ge $MAX_RETRIES ]; then
-        echo "Experiment ${EXPERIMENT_NAME} has failed $FAIL_COUNT times already. Skipping."
+        echo "tried running ${EXPERIMENT_NAME}, failed $FAIL_COUNT times . skip."
         return 1
     fi
     
-    # Add debug mode for first experiments
     local DEBUG_PARAM=""
     if [ "$LANG" == "en" ] && [ -z "$CONTROL_IDX" ]; then
         DEBUG_PARAM="+training.debug_mode=true"
     fi
     
-    # Set task-specific configuration
     local FINETUNE_CONFIG=""
     
-    if [ "$TASK_TYPE" == "classification" ]; then
-        # Classification fine-tuning configuration
+    if [ "$TASK_TYPE" == "classification" ]; then               # manual adjustments of configs
         FINETUNE_CONFIG="\
             \"model.head_hidden_size=786\" \
             \"model.head_layers=2\" \
@@ -174,7 +164,6 @@ run_finetune_experiment() {
             \"training.scheduler_patience=2\" \
             \"+training.gradient_accumulation_steps=4\""
     else
-        # Regression fine-tuning configuration
         FINETUNE_CONFIG="\
             \"model.head_hidden_size=786\" \
             \"model.head_layers=3\" \
@@ -188,7 +177,6 @@ run_finetune_experiment() {
             \"+training.gradient_accumulation_steps=4\""
     fi
     
-    # Build command
     COMMAND="python -m src.experiments.run_experiment \
         \"hydra.job.chdir=False\" \
         \"hydra.run.dir=.\" \
@@ -211,30 +199,25 @@ run_finetune_experiment() {
         \"output_dir=${OUTPUT_SUBDIR}\" \
         \"wandb.mode=offline\""
     
-    # Add control parameters if needed
     if [ -n "$CONTROL_IDX" ]; then
         COMMAND="$COMMAND \
             \"experiment.use_controls=true\" \
             \"experiment.control_index=${CONTROL_IDX}\""
     fi
     
-    # Add submetric parameter if needed
     if [ -n "$SUBMETRIC" ]; then
         COMMAND="$COMMAND \"experiment.submetric=${SUBMETRIC}\""
     fi
     
-    # Print the command for debugging
-    echo "Running experiment: ${EXPERIMENT_NAME}"
-    echo "Command: $COMMAND"
+    echo "RUNNING  EXPERIMENT: ${EXPERIMENT_NAME}"
+    echo "COMMAND: $COMMAND"
     
-    # Execute the experiment
     eval $COMMAND
     RESULT=$?
     
     if [ $RESULT -eq 0 ]; then
         echo "Experiment ${EXPERIMENT_NAME} completed successfully"
         
-        # Extract metrics
         RESULTS_FILE="${OUTPUT_SUBDIR}/${LANG}/results.json"
         if [ -f "$RESULTS_FILE" ]; then
             CONTROL_PARAM=${CONTROL_IDX:-None}
@@ -242,7 +225,6 @@ run_finetune_experiment() {
                 "$RESULTS_FILE" "$RESULTS_TRACKER" "finetune" "$LANG" "$TASK" \
                 "${SUBMETRIC:-}" "$CONTROL_PARAM"
                 
-            # Create a summary
             echo "Experiment: $EXPERIMENT_NAME" > "${OUTPUT_SUBDIR}/${LANG}/experiment_summary.txt"
             if [ -n "$CONTROL_IDX" ]; then
                 echo "CONTROL EXPERIMENT (random labels)" >> "${OUTPUT_SUBDIR}/experiment_summary.txt"
@@ -257,19 +239,17 @@ run_finetune_experiment() {
         
         return 0
     else
-        echo "Error in experiment ${EXPERIMENT_NAME}"
+        echo "ERROR in experiment ${EXPERIMENT_NAME}"
         echo "${EXPERIMENT_NAME}" >> $FAILED_LOG
         
-        # Clean GPU memory explicitly
-        python -c "import torch; torch.cuda.empty_cache()" 2>/dev/null || true
+        python -c "import torch; torch.cuda.empty_cache()" 2>/dev/null || true      #   manual gpu cleaning util
         
         return 1
     fi
 }
 
-# Run Main Experiments First
 
-echo "Running main finetuning experiments (non-control)..."
+echo "RUNNING MAIN FINETUNING (non-control)..."
 
 for LANG in "${LANGUAGES[@]}"; do
     for TASK in "${TASKS[@]}"; do
@@ -278,16 +258,14 @@ for LANG in "${LANGUAGES[@]}"; do
             TASK_TYPE="regression"
         fi
         
-        # Create output directory
         TASK_DIR="${OUTPUT_BASE_DIR}/${TASK}"
         mkdir -p "$TASK_DIR"
         
-        # Run standard (non-control) experiment
-        run_finetune_experiment "$TASK_TYPE" "$LANG" "$TASK" "" "" "$TASK_DIR"
+        run_finetune_experiment "$TASK_TYPE" "$LANG" "$TASK" "" "" "$TASK_DIR"          # non control run
     done
 done
 
-echo "Running control finetuning experiments..."
+echo "RUNNING CONTROL FINETUNING"
 
 for LANG in "${LANGUAGES[@]}"; do
     for TASK in "${TASKS[@]}"; do
@@ -297,67 +275,52 @@ for LANG in "${LANGUAGES[@]}"; do
         fi
         
         for CONTROL_IDX in "${CONTROL_INDICES[@]}"; do
-            # Create output directory
             CONTROL_DIR="${OUTPUT_BASE_DIR}/${TASK}/control${CONTROL_IDX}"
             mkdir -p "$CONTROL_DIR"
             
-            # Run control experiment
-            run_finetune_experiment "$TASK_TYPE" "$LANG" "$TASK" "$CONTROL_IDX" "" "$CONTROL_DIR"
+            run_finetune_experiment "$TASK_TYPE" "$LANG" "$TASK" "$CONTROL_IDX" "" "$CONTROL_DIR"       #control run
         done
     done
 done
 
-echo "Running submetric finetuning experiments..."
+echo "RUNNING SUBMETRICS"
 
 for LANG in "${LANGUAGES[@]}"; do
     for SUBMETRIC in "${SUBMETRICS[@]}"; do
-        # Create output directory
         SUBMETRIC_DIR="${OUTPUT_BASE_DIR}/submetrics/${SUBMETRIC}"
         mkdir -p "$SUBMETRIC_DIR"
         
-        # Run standard (non-control) submetric experiment
         run_finetune_experiment "regression" "$LANG" "single_submetric" "" "$SUBMETRIC" "$SUBMETRIC_DIR"
     done
 done
 
-echo "Running control submetric finetuning experiments..."
+echo "RUNNING SUBMETRIC CONTROLS"
 
 for LANG in "${LANGUAGES[@]}"; do
     for SUBMETRIC in "${SUBMETRICS[@]}"; do
         for CONTROL_IDX in "${CONTROL_INDICES[@]}"; do
-            # Create output directory
             CONTROL_DIR="${OUTPUT_BASE_DIR}/submetrics/${SUBMETRIC}/control${CONTROL_IDX}"
             mkdir -p "$CONTROL_DIR"
             
-            # Run control submetric experiment
             run_finetune_experiment "regression" "$LANG" "single_submetric" "$CONTROL_IDX" "$SUBMETRIC" "$CONTROL_DIR"
         done
     done
 done
 
 
-# List any failed experiments
 if [ -f "$FAILED_LOG" ]; then
     FAILED_COUNT=$(wc -l < "$FAILED_LOG")
     if [ $FAILED_COUNT -gt 0 ]; then
-        echo "Some experiments failed. See $FAILED_LOG for details."
-        echo "Failed experiments ($FAILED_COUNT):"
+        echo "Some failed. See $FAILED_LOG for details."
+        echo "Failed ($FAILED_COUNT):"
         cat "$FAILED_LOG"
     else
-        echo "All experiments completed successfully!"
+        echo "All experiments OK"
     fi
 fi
 
-# Print summary statistics
 TOTAL_EXPERIMENTS=$((${#LANGUAGES[@]} * (${#TASKS[@]} + ${#SUBMETRICS[@]}) * (1 + ${#CONTROL_INDICES[@]})))
 COMPLETED_EXPERIMENTS=$(grep -v "experiment_type" "$RESULTS_TRACKER" | wc -l)
 
 echo "=============================================="
-echo "Fine-tuning experiments completed!"
-echo "=============================================="
-echo "Total planned experiments: $TOTAL_EXPERIMENTS"
-echo "Successfully completed: $COMPLETED_EXPERIMENTS"
-echo "Failed experiments: ${FAILED_COUNT:-0}"
-echo "Success rate: $(( COMPLETED_EXPERIMENTS * 100 / TOTAL_EXPERIMENTS ))%"
-echo "Results available in: ${OUTPUT_BASE_DIR}"
-echo "=============================================="
+echo "Finetuning completed"

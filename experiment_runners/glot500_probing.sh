@@ -30,7 +30,7 @@ SUBMETRICS=("avg_links_len" "avg_max_depth" "avg_subordinate_chain_len" "avg_ver
 #SUBMETRICS=("avg_links_len")
 CONTROL_INDICES=(1 2 3)
 
-# Define which layers to probe
+# set which layers to probe
 LAYER_INDICES=(1 2 3 4 5 6 7 8 9 10 11 12)  # Early, middle, and last layers
 
 OUTPUT_BASE_DIR="$VSC_SCRATCH/probe_output"
@@ -39,11 +39,9 @@ mkdir -p $OUTPUT_BASE_DIR
 RESULTS_TRACKER="${OUTPUT_BASE_DIR}/probe_results.csv"
 echo "experiment_type,language,task,submetric,control_index,layer_index,metric,value" > $RESULTS_TRACKER
 
-# Failed experiments tracker
 FAILED_LOG="${OUTPUT_BASE_DIR}/failed_experiments.log"
 touch $FAILED_LOG
 
-# Create metrics extractor with layer information
 cat > ${OUTPUT_BASE_DIR}/extract_metrics.py << 'EOF'
 #!/usr/bin/env python3
 import json
@@ -116,10 +114,10 @@ run_probe_experiment() {
     local CONTROL_IDX=$4
     local SUBMETRIC=$5
     local OUTPUT_SUBDIR=$6
-    local LAYER_IDX=$7  # New parameter for layer index
+    local LAYER_IDX=$7  #  layer index
     local MAX_RETRIES=2
     
-    # Default to last layer if not specified
+    # Default to last layer
     if [ -z "$LAYER_IDX" ]; then
         LAYER_IDX="-1"
     fi
@@ -128,9 +126,7 @@ run_probe_experiment() {
     local COMMAND=""
     local EXPERIMENT_TYPE="probe"
     
-    # Set experiment name based on parameters including layer
     if [ -n "$SUBMETRIC" ]; then
-        # This is a submetric experiment
         TASK="single_submetric"
         if [ -z "$CONTROL_IDX" ]; then
             EXPERIMENT_NAME="probe_layer${LAYER_IDX}_${SUBMETRIC}_${LANG}"
@@ -138,7 +134,6 @@ run_probe_experiment() {
             EXPERIMENT_NAME="probe_layer${LAYER_IDX}_${SUBMETRIC}_control${CONTROL_IDX}_${LANG}"
         fi
     else
-        # Regular task experiment
         if [ -z "$CONTROL_IDX" ]; then
             EXPERIMENT_NAME="probe_layer${LAYER_IDX}_${TASK}_${LANG}"
         else
@@ -146,11 +141,9 @@ run_probe_experiment() {
         fi
     fi
     
-    # Create layer-specific output directory
     local LAYER_OUTPUT_DIR="${OUTPUT_SUBDIR}/layer${LAYER_IDX}/${LANG}"
     mkdir -p "$LAYER_OUTPUT_DIR"
     
-    # Skip if already completed successfully
     if [ -f "${LAYER_OUTPUT_DIR}/${LANG}/results.json" ]; then
         echo "Experiment ${EXPERIMENT_NAME} already completed successfully. Extracting metrics..."
         CONTROL_PARAM=${CONTROL_IDX:-None}
@@ -160,35 +153,29 @@ run_probe_experiment() {
         return 0
     fi
     
-    # Skip if already failed too many times
     local FAIL_COUNT=$(grep -c "^${EXPERIMENT_NAME}$" $FAILED_LOG)
     if [ $FAIL_COUNT -ge $MAX_RETRIES ]; then
         echo "Experiment ${EXPERIMENT_NAME} has failed $FAIL_COUNT times already. Skipping."
         return 1
     fi
     
-    # Add debug mode for first experiments
     local DEBUG_PARAM=""
     if [ "$LANG" == "en" ] && [ -z "$CONTROL_IDX" ] && [ "$LAYER_IDX" == "0" ]; then
         DEBUG_PARAM="+training.debug_mode=true"
     fi
     
-    # Set task-specific configuration with mean pooling
     local PROBE_CONFIG=""
     
     if [ "$TASK_TYPE" == "classification" ]; then
-        # classification probe configuration - use CLS token | 384 ok |
         PROBE_CONFIG="\"model.probe_hidden_size=385\" \"model.probe_depth=2\" \"model.dropout=0.05\" \"model.activation=gelu\" \"model.normalization=layer\" \"model.use_mean_pooling=true\""
             
         TRAINING_CONFIG="\"training.lr=1e-3\" \"training.patience=3\" \"training.scheduler_factor=0.5\" \"training.scheduler_patience=2\" \"+training.gradient_accumulation_steps=2\""
     else
-        # Regression probe configuration - use mean pooling | 256 ok
         PROBE_CONFIG="\"model.probe_hidden_size=128\" \"model.probe_depth=3\" \"model.dropout=0.2\" \"model.activation=silu\" \"model.normalization=layer\" \"model.output_standardization=true\" \"model.use_mean_pooling=true\""
             
         TRAINING_CONFIG="\"training.lr=1e-4\" \"training.patience=4\" \"training.scheduler_factor=0.5\" \"training.scheduler_patience=2\" \"+training.gradient_accumulation_steps=2\""
     fi
     
-    # Build command with explicit layer index
     COMMAND="python -m src.experiments.run_experiment \
         \"hydra.job.chdir=False\" \
         \"hydra.run.dir=.\" \
@@ -213,30 +200,25 @@ run_probe_experiment() {
         \"output_dir=${LAYER_OUTPUT_DIR}\" \
         \"wandb.mode=offline\""
     
-    # Add control parameters if needed
     if [ -n "$CONTROL_IDX" ]; then
         COMMAND="$COMMAND \
             \"experiment.use_controls=true\" \
             \"experiment.control_index=${CONTROL_IDX}\""
     fi
     
-    # Add submetric parameter if needed
     if [ -n "$SUBMETRIC" ]; then
         COMMAND="$COMMAND \"experiment.submetric=${SUBMETRIC}\""
     fi
     
-    # Print the command for debugging
     echo "Running experiment: ${EXPERIMENT_NAME}"
     echo "Command: $COMMAND"
     
-    # Execute the experiment
     eval $COMMAND
     RESULT=$?
     
     if [ $RESULT -eq 0 ]; then
         echo "Experiment ${EXPERIMENT_NAME} completed successfully"
         
-        # Extract metrics
         RESULTS_FILE="${LAYER_OUTPUT_DIR}/${LANG}/results.json"
         if [ -f "$RESULTS_FILE" ]; then
             CONTROL_PARAM=${CONTROL_IDX:-None}
@@ -244,7 +226,6 @@ run_probe_experiment() {
                 "$RESULTS_FILE" "$RESULTS_TRACKER" "probe" "$LANG" "$TASK" \
                 "${SUBMETRIC:-}" "$CONTROL_PARAM" "$LAYER_IDX"
                 
-            # Create a summary
             echo "Experiment: $EXPERIMENT_NAME" > "${LAYER_OUTPUT_DIR}/${LANG}/experiment_summary.txt"
             if [ -n "$CONTROL_IDX" ]; then
                 echo "CONTROL EXPERIMENT (random labels)" >> "${LAYER_OUTPUT_DIR}/${LANG}/experiment_summary.txt"
@@ -268,14 +249,12 @@ run_probe_experiment() {
         echo "Error in experiment ${EXPERIMENT_NAME}"
         echo "${EXPERIMENT_NAME}" >> $FAILED_LOG
         
-        # Clean GPU memory explicitly
         python -c "import torch; torch.cuda.empty_cache()" 2>/dev/null || true
         
         return 1
     fi
 }
 
-# Run Main Experiments First with layer iteration
 echo "Running main probing experiments (non-control)..."
 
 for LAYER_IDX in "${LAYER_INDICES[@]}"; do
@@ -290,11 +269,9 @@ for LAYER_IDX in "${LAYER_INDICES[@]}"; do
                 TASK_TYPE="regression"
             fi
             
-            # Create output directory
             TASK_DIR="${OUTPUT_BASE_DIR}/${TASK}"
             mkdir -p "$TASK_DIR"
             
-            # Run standard (non-control) experiment with specific layer
             run_probe_experiment "$TASK_TYPE" "$LANG" "$TASK" "" "" "$TASK_DIR" "$LAYER_IDX"
         done
     done
@@ -315,11 +292,9 @@ for LAYER_IDX in "${LAYER_INDICES[@]}"; do
             fi
             
             for CONTROL_IDX in "${CONTROL_INDICES[@]}"; do
-                # Create output directory
                 CONTROL_DIR="${OUTPUT_BASE_DIR}/${TASK}/control${CONTROL_IDX}"
                 mkdir -p "$CONTROL_DIR"
                 
-                # Run control experiment with specific layer
                 run_probe_experiment "$TASK_TYPE" "$LANG" "$TASK" "$CONTROL_IDX" "" "$CONTROL_DIR" "$LAYER_IDX"
             done
         done
@@ -335,11 +310,9 @@ for LAYER_IDX in "${LAYER_INDICES[@]}"; do
     
     for LANG in "${LANGUAGES[@]}"; do
         for SUBMETRIC in "${SUBMETRICS[@]}"; do
-            # Create output directory
             SUBMETRIC_DIR="${OUTPUT_BASE_DIR}/submetrics/${SUBMETRIC}"
             mkdir -p "$SUBMETRIC_DIR"
             
-            # Run standard (non-control) submetric experiment with specific layer
             run_probe_experiment "regression" "$LANG" "single_submetric" "" "$SUBMETRIC" "$SUBMETRIC_DIR" "$LAYER_IDX"
         done
     done
@@ -355,11 +328,9 @@ for LAYER_IDX in "${LAYER_INDICES[@]}"; do
     for LANG in "${LANGUAGES[@]}"; do
         for SUBMETRIC in "${SUBMETRICS[@]}"; do
             for CONTROL_IDX in "${CONTROL_INDICES[@]}"; do
-                # Create output directory
                 CONTROL_DIR="${OUTPUT_BASE_DIR}/submetrics/${SUBMETRIC}/control${CONTROL_IDX}"
                 mkdir -p "$CONTROL_DIR"
                 
-                # Run control submetric experiment with specific layer
                 run_probe_experiment "regression" "$LANG" "single_submetric" "$CONTROL_IDX" "$SUBMETRIC" "$CONTROL_DIR" "$LAYER_IDX"
             done
         done
@@ -368,30 +339,20 @@ done
 
 
 
-# List any failed experiments
 if [ -f "$FAILED_LOG" ]; then
     FAILED_COUNT=$(wc -l < "$FAILED_LOG")
     if [ $FAILED_COUNT -gt 0 ]; then
-        echo "Some experiments failed. See $FAILED_LOG for details."
-        echo "Failed experiments ($FAILED_COUNT):"
+        echo "some failed. See $FAILED_LOG for details."
+        echo "Failed ($FAILED_COUNT):"
         cat "$FAILED_LOG"
     else
-        echo "All experiments completed successfully!"
+        echo "All experiments OK"
     fi
 fi
 
 
-# Print summary statistics
 TOTAL_EXPERIMENTS=$((${#LANGUAGES[@]} * (${#TASKS[@]} + ${#SUBMETRICS[@]}) * (1 + ${#CONTROL_INDICES[@]}) * ${#LAYER_INDICES[@]}))
 COMPLETED_EXPERIMENTS=$(grep -v "experiment_type" "$RESULTS_TRACKER" | wc -l)
 
 echo "=============================================="
-echo "Layer-wise probing experiments completed!"
-echo "=============================================="
-echo "Total planned experiments: $TOTAL_EXPERIMENTS"
-echo "Successfully completed: $COMPLETED_EXPERIMENTS"
-echo "Failed experiments: ${FAILED_COUNT:-0}"
-echo "Success rate: $(( COMPLETED_EXPERIMENTS * 100 / TOTAL_EXPERIMENTS ))%"
-echo "Results available in: ${OUTPUT_BASE_DIR}"
-echo "Layer summary: ${OUTPUT_BASE_DIR}/layer_performance_summary.json"
-echo "=============================================="
+echo "layer-wise probing experiments completed"
