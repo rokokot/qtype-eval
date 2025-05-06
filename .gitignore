@@ -199,5 +199,5 @@ logs/
 
 ./data
 
-./outputs/*.out
+*.out
 
