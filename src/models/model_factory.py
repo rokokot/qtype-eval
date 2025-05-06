@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 
 class BaseLMModel(nn.Module):
-    """Base class for language model based models with common functionality."""
+    """ base class for language model based models"""
     
     def __init__(
         self,
@@ -37,14 +37,12 @@ class BaseLMModel(nn.Module):
             logger.error(f"Error loading model {model_name}: {e}")
             raise
 
-        # Store configuration
         self.task_type = task_type
         self.num_outputs = num_outputs
         self.layer_wise = layer_wise
         self.layer_index = layer_index
         self.freeze_model = freeze_model
         
-        # Set up model freezing
         if freeze_model:
             for param in self.model.parameters():
                 param.requires_grad = False
@@ -54,11 +52,9 @@ class BaseLMModel(nn.Module):
                 param.requires_grad = True
             logger.info("Language model parameters trainable")
             
-        # Log model configuration
         logger.info(f"Base model configuration: layer-wise={layer_wise}, layer_index={layer_index}, freeze_model={freeze_model}")
             
     def get_representation(self, input_ids, attention_mask, token_type_ids=None, use_mean_pooling=False):
-        """Extract representation from the language model."""
         if self.layer_wise:
             outputs = self.model(
                 input_ids=input_ids,
@@ -81,7 +77,7 @@ class BaseLMModel(nn.Module):
                 attention_mask_expanded = attention_mask.unsqueeze(-1).expand(layer_output.size()).float()
                 sum_embeddings = torch.sum(layer_output * attention_mask_expanded, 1)
                 sum_mask = torch.sum(attention_mask_expanded, 1)
-                sum_mask = torch.clamp(sum_mask, min=1e-9)  # Avoid division by zero
+                sum_mask = torch.clamp(sum_mask, min=1e-9)  #
                 sentence_repr = sum_embeddings / sum_mask
             else: 
                 sentence_repr = layer_output[:, 0, :]
@@ -98,7 +94,7 @@ class BaseLMModel(nn.Module):
                 attention_mask_expanded = attention_mask.unsqueeze(-1).expand(outputs.last_hidden_state.size()).float()
                 sum_embeddings = torch.sum(outputs.last_hidden_state * attention_mask_expanded, 1)
                 sum_mask = torch.sum(attention_mask_expanded, 1)
-                sum_mask = torch.clamp(sum_mask, min=1e-9)  # Avoid division by zero
+                sum_mask = torch.clamp(sum_mask, min=1e-9)  
                 sentence_repr = sum_embeddings / sum_mask
             else:
                 sentence_repr = outputs.last_hidden_state[:, 0, :]
@@ -119,23 +115,22 @@ class BaseLMModel(nn.Module):
 
 
 #
-# PROBE IMPLEMENTATIONS
+#               PROBE IMPLEMENTATIONS
 #
 
 class LinearProbe(BaseLMModel):
-    """Linear probe for linguistic analysis - simple linear mapping from representations to outputs."""
     
     def __init__(
         self,
         model_name: str = "cis-lmu/glot500-base",
         task_type: str = "classification",
         num_outputs: int = 1,
-        dropout: float = 0.0,  # Default to no dropout for linear probes
+        dropout: float = 0.0,  #  to no dropout for linear probes
         freeze_model: bool = True,
         layer_wise: bool = True,
         layer_index: int = -1,
         weight_normalization: bool = False,
-        probe_rank: int = None  # For rank-constrained probes
+        probe_rank: int = None  # config still
     ):
         super().__init__(
             model_name=model_name,
@@ -146,21 +141,20 @@ class LinearProbe(BaseLMModel):
             layer_index=layer_index,
         )
         
-        # Set up linear probe head
+        #  linear probe head
         hidden_size = self.model.config.hidden_size
         
         if probe_rank is not None and probe_rank < hidden_size:
-            # Create a rank-constrained linear probe using factorization
+            # config rank-constrained linear probe factorization
             # B = UV where U is (hidden_size x rank) and V is (rank x num_outputs)
             self.rank = probe_rank
             self.proj_down = nn.Linear(hidden_size, probe_rank, bias=False)
             self.proj_up = nn.Linear(probe_rank, num_outputs, bias=True)
             logger.info(f"Created rank-constrained linear probe with rank {probe_rank}")
         else:
-            # Standard direct linear mapping
+            #  direct linear mapping
             self.linear = nn.Linear(hidden_size, num_outputs)
             if weight_normalization:
-                # Apply weight normalization for more stable training
                 self.linear = nn.utils.weight_norm(self.linear)
                 logger.info("Applied weight normalization to linear probe")
         
@@ -168,7 +162,6 @@ class LinearProbe(BaseLMModel):
         self.use_rank_constraint = probe_rank is not None and probe_rank < hidden_size
         self.activation = nn.Sigmoid() if task_type == "classification" and num_outputs == 1 else nn.Identity()
         
-        # Log parameter statistics
         self.log_parameter_stats()
         logger.info(f"Linear probe configuration: rank_constraint={self.use_rank_constraint}, dropout={dropout}")
 
