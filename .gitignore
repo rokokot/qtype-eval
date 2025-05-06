@@ -199,5 +199,5 @@ logs/
 
 ./data
 
-*.out
+slurm-64444483.out
 
