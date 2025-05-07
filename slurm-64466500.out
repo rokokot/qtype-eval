@@ -1,0 +1,53 @@
+SLURM_JOB_ID: 64466500
+SLURM_JOB_USER: vsc37132
+SLURM_JOB_ACCOUNT: intro_vsc37132
+SLURM_JOB_NAME: qtype_experiments
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: gpu_a100_debug
+SLURM_NNODES: 1
+SLURM_NODELIST: k28i22
+SLURM_JOB_CPUS_PER_NODE: 4
+SLURM_JOB_GPUS: 0
+Date: Wed May  7 19:21:27 CEST 2025
+Walltime: 00-00:30:00
+========================================================================
+Running main probing experiments (non-control)...
+=======================
+PROBING LAYER 2
+=======================
+Experiment probe_layer2_complexity_fi already completed successfully. Extracting metrics...
+Successfully extracted metrics from /scratch/leuven/371/vsc37132/makeup_probes_output/complexity/layer2/fi/fi/results.json for layer 2
+Running control probing experiments...
+=======================
+PROBING LAYER 2 (CONTROL EXPERIMENTS)
+=======================
+Experiment probe_layer2_complexity_control1_fi already completed successfully. Extracting metrics...
+Successfully extracted metrics from /scratch/leuven/371/vsc37132/makeup_probes_output/complexity/control1/layer2/fi/fi/results.json for layer 2
+Experiment probe_layer2_complexity_control2_fi already completed successfully. Extracting metrics...
+Successfully extracted metrics from /scratch/leuven/371/vsc37132/makeup_probes_output/complexity/control2/layer2/fi/fi/results.json for layer 2
+Experiment probe_layer2_complexity_control3_fi already completed successfully. Extracting metrics...
+Successfully extracted metrics from /scratch/leuven/371/vsc37132/makeup_probes_output/complexity/control3/layer2/fi/fi/results.json for layer 2
+Running submetric probing experiments...
+=======================
+PROBING LAYER 2 (SUBMETRIC EXPERIMENTS)
+=======================
+Experiment probe_layer2_n_tokens_fi already completed successfully. Extracting metrics...
+Successfully extracted metrics from /scratch/leuven/371/vsc37132/makeup_probes_output/submetrics/n_tokens/layer2/fi/fi/results.json for layer 2
+Running control submetric probing experiments...
+=======================
+PROBING LAYER 2 (SUBMETRIC CONTROL EXPERIMENTS)
+=======================
+Experiment probe_layer2_n_tokens_control1_fi already completed successfully. Extracting metrics...
+Successfully extracted metrics from /scratch/leuven/371/vsc37132/makeup_probes_output/submetrics/n_tokens/control1/layer2/fi/fi/results.json for layer 2
+Experiment probe_layer2_n_tokens_control2_fi already completed successfully. Extracting metrics...
+Successfully extracted metrics from /scratch/leuven/371/vsc37132/makeup_probes_output/submetrics/n_tokens/control2/layer2/fi/fi/results.json for layer 2
+Experiment probe_layer2_n_tokens_control3_fi already completed successfully. Extracting metrics...
+Successfully extracted metrics from /scratch/leuven/371/vsc37132/makeup_probes_output/submetrics/n_tokens/control3/layer2/fi/fi/results.json for layer 2
+Some experiments failed. See /scratch/leuven/371/vsc37132/makeup_probes_output/failed_experiments.log for details.
+Failed experiments (2):
+probe_layer2_n_tokens,_fi
+probe_layer2_avg_verb_edges,_fi
+==============================================
+probing experiments completed!
+ planned experiments: 8
+ completed: 32

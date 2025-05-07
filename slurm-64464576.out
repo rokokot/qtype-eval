@@ -1,0 +1,292 @@
+SLURM_JOB_ID: 64464576
+SLURM_JOB_USER: vsc37132
+SLURM_JOB_ACCOUNT: intro_vsc37132
+SLURM_JOB_NAME: qtype_experiments
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: gpu_a100_debug
+SLURM_NNODES: 1
+SLURM_NODELIST: k28i22
+SLURM_JOB_CPUS_PER_NODE: 4
+SLURM_JOB_GPUS: 0
+Date: Wed May  7 14:02:33 CEST 2025
+Walltime: 00-00:30:00
+========================================================================
+Running main probing experiments (non-control)...
+=======================
+PROBING LAYER 2
+=======================
+Experiment probe_layer2_complexity_fi already completed successfully. Extracting metrics...
+Successfully extracted metrics from /scratch/leuven/371/vsc37132/makeup_probes_output/complexity/layer2/fi/fi/results.json for layer 2
+Running control probing experiments...
+=======================
+PROBING LAYER 2 (CONTROL EXPERIMENTS)
+=======================
+Experiment probe_layer2_complexity_control1_fi already completed successfully. Extracting metrics...
+Successfully extracted metrics from /scratch/leuven/371/vsc37132/makeup_probes_output/complexity/control1/layer2/fi/fi/results.json for layer 2
+Experiment probe_layer2_complexity_control2_fi already completed successfully. Extracting metrics...
+Successfully extracted metrics from /scratch/leuven/371/vsc37132/makeup_probes_output/complexity/control2/layer2/fi/fi/results.json for layer 2
+Experiment probe_layer2_complexity_control3_fi already completed successfully. Extracting metrics...
+Successfully extracted metrics from /scratch/leuven/371/vsc37132/makeup_probes_output/complexity/control3/layer2/fi/fi/results.json for layer 2
+Running submetric probing experiments...
+=======================
+PROBING LAYER 2 (SUBMETRIC EXPERIMENTS)
+=======================
+Running experiment: probe_layer2_n_tokens,_fi
+Command: python -m src.experiments.run_experiment         "hydra.job.chdir=False"         "hydra.run.dir=."         "experiment=single_submetric"         "experiment.tasks=single_submetric"         "experiment.type=lm_probe"         "model=lm_probe"         "model.model_type=lm_probe"         "model.lm_name=cis-lmu/glot500-base"         "model.freeze_model=true"         "model.layer_wise=true"         "model.layer_index=2"         "model.probe_hidden_size=128" "model.probe_depth=3" "model.dropout=0.2" "model.activation=silu" "model.normalization=layer" "model.output_standardization=true" "model.use_mean_pooling=true"         "data.languages=[fi]"         "data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache"         "training.task_type=regression"         "training.num_epochs=15"         "training.batch_size=16"         "training.lr=1e-4" "training.patience=4" "training.scheduler_factor=0.5" "training.scheduler_patience=2" "+training.gradient_accumulation_steps=2"                  "experiment_name=probe_layer2_n_tokens,_fi"         "output_dir=/scratch/leuven/371/vsc37132/makeup_probes_output/submetrics/n_tokens,/layer2/fi"         "wandb.mode=offline" "experiment.submetric=n_tokens,"
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 541, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+    raise ex
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 105, in run
+    cfg = self.compose_config(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 594, in compose_config
+    cfg = self.config_loader.load_configuration(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 142, in load_configuration
+    return self._load_configuration_impl(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 244, in _load_configuration_impl
+    parsed_overrides, caching_repo = self._parse_overrides_and_create_caching_repo(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 228, in _parse_overrides_and_create_caching_repo
+    parsed_overrides = parser.parse_overrides(overrides=overrides)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/override_parser/overrides_parser.py", line 96, in parse_overrides
+    raise OverrideParseException(
+hydra.errors.OverrideParseException: mismatched input '<EOF>' expecting {':', BRACKET_OPEN, BRACE_OPEN, FLOAT, INT, BOOL, NULL, UNQUOTED_CHAR, ID, ESC, WS, QUOTED_VALUE, INTERPOLATION}
+See https://hydra.cc/docs/1.2/advanced/override_grammar/basic for details
+Using Dataset: rokokot/question-type-and-complexity
+Cache Directory: /data/leuven/371/vsc37132/qtype-eval/data/cache
+Error in experiment probe_layer2_n_tokens,_fi
+Running experiment: probe_layer2_avg_verb_edges,_fi
+Command: python -m src.experiments.run_experiment         "hydra.job.chdir=False"         "hydra.run.dir=."         "experiment=single_submetric"         "experiment.tasks=single_submetric"         "experiment.type=lm_probe"         "model=lm_probe"         "model.model_type=lm_probe"         "model.lm_name=cis-lmu/glot500-base"         "model.freeze_model=true"         "model.layer_wise=true"         "model.layer_index=2"         "model.probe_hidden_size=128" "model.probe_depth=3" "model.dropout=0.2" "model.activation=silu" "model.normalization=layer" "model.output_standardization=true" "model.use_mean_pooling=true"         "data.languages=[fi]"         "data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache"         "training.task_type=regression"         "training.num_epochs=15"         "training.batch_size=16"         "training.lr=1e-4" "training.patience=4" "training.scheduler_factor=0.5" "training.scheduler_patience=2" "+training.gradient_accumulation_steps=2"                  "experiment_name=probe_layer2_avg_verb_edges,_fi"         "output_dir=/scratch/leuven/371/vsc37132/makeup_probes_output/submetrics/avg_verb_edges,/layer2/fi"         "wandb.mode=offline" "experiment.submetric=avg_verb_edges,"
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+Traceback (most recent call last):
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/experiments/run_experiment.py", line 541, in <module>
+    main()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+    raise ex
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 105, in run
+    cfg = self.compose_config(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 594, in compose_config
+    cfg = self.config_loader.load_configuration(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 142, in load_configuration
+    return self._load_configuration_impl(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 244, in _load_configuration_impl
+    parsed_overrides, caching_repo = self._parse_overrides_and_create_caching_repo(
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/config_loader_impl.py", line 228, in _parse_overrides_and_create_caching_repo
+    parsed_overrides = parser.parse_overrides(overrides=overrides)
+  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/core/override_parser/overrides_parser.py", line 96, in parse_overrides
+    raise OverrideParseException(
+hydra.errors.OverrideParseException: mismatched input '<EOF>' expecting {':', BRACKET_OPEN, BRACE_OPEN, FLOAT, INT, BOOL, NULL, UNQUOTED_CHAR, ID, ESC, WS, QUOTED_VALUE, INTERPOLATION}
+See https://hydra.cc/docs/1.2/advanced/override_grammar/basic for details
+Using Dataset: rokokot/question-type-and-complexity
+Cache Directory: /data/leuven/371/vsc37132/qtype-eval/data/cache
+Error in experiment probe_layer2_avg_verb_edges,_fi
+Running experiment: probe_layer2_lexical_density_fi
+Command: python -m src.experiments.run_experiment         "hydra.job.chdir=False"         "hydra.run.dir=."         "experiment=single_submetric"         "experiment.tasks=single_submetric"         "experiment.type=lm_probe"         "model=lm_probe"         "model.model_type=lm_probe"         "model.lm_name=cis-lmu/glot500-base"         "model.freeze_model=true"         "model.layer_wise=true"         "model.layer_index=2"         "model.probe_hidden_size=128" "model.probe_depth=3" "model.dropout=0.2" "model.activation=silu" "model.normalization=layer" "model.output_standardization=true" "model.use_mean_pooling=true"         "data.languages=[fi]"         "data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache"         "training.task_type=regression"         "training.num_epochs=15"         "training.batch_size=16"         "training.lr=1e-4" "training.patience=4" "training.scheduler_factor=0.5" "training.scheduler_patience=2" "+training.gradient_accumulation_steps=2"                  "experiment_name=probe_layer2_lexical_density_fi"         "output_dir=/scratch/leuven/371/vsc37132/makeup_probes_output/submetrics/lexical_density/layer2/fi"         "wandb.mode=offline" "experiment.submetric=lexical_density"
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/launcher:
+Default list overrides requires 'override' keyword.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
+
+  deprecation_warning(msg)
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py:197: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  return _run_code(code, main_globals, None,
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py:94: UserWarning: 
+'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  _run_hydra(
+Using Dataset: rokokot/question-type-and-complexity
+Cache Directory: /data/leuven/371/vsc37132/qtype-eval/data/cache
+[2025-05-07 14:04:07,656][__main__][INFO] - Configuration:
+seed: 42
+output_dir: /scratch/leuven/371/vsc37132/makeup_probes_output/submetrics/lexical_density/layer2/fi
+experiment_name: probe_layer2_lexical_density_fi
+wandb:
+  project: multilingual-question-probing
+  entity: rokii-ku-leuven
+  mode: offline
+slurm:
+  partition: gpu
+  time: '24:00:00'
+  gpus_per_node: 1
+  cpus_per_task: 4
+  mem_per_cpu: 8
+  job_name: ${experiment_name}
+  account: intro_vsc37132
+data:
+  dataset_name: rokokot/question-type-and-complexity
+  cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
+  vectors_dir: ./data/features
+  languages:
+  - fi
+  train_language: null
+  eval_language: null
+model:
+  model_type: lm_probe
+  lm_name: cis-lmu/glot500-base
+  dropout: 0.2
+  freeze_model: true
+  layer_wise: true
+  layer_index: 2
+  num_outputs: 1
+  probe_hidden_size: 128
+  probe_depth: 3
+  activation: silu
+  normalization: layer
+  weight_init: xavier
+  output_standardization: true
+  use_linear_probe: false
+  use_mean_pooling: true
+  use_class_weights: false
+training:
+  task_type: regression
+  batch_size: 16
+  num_epochs: 15
+  lr: 0.0001
+  weight_decay: 0.01
+  patience: 4
+  scheduler_factor: 0.5
+  scheduler_patience: 2
+  random_state: 42
+  num_workers: 4
+  gradient_accumulation_steps: 2
+experiment:
+  type: lm_probe
+  tasks: single_submetric
+  submetric: lexical_density
+  available_submetrics:
+  - avg_links_len
+  - avg_max_depth
+  - avg_subordinate_chain_len
+  - avg_verb_edges
+  - lexical_density
+  - n_tokens
+  use_controls: false
+  control_index: null
+  num_controls: 3
+  eval_on_orig_test: true
+  cross_lingual: false
+  task_type: regression
+
+[2025-05-07 14:04:07,657][__main__][INFO] - Normalized task: single_submetric
+[2025-05-07 14:04:07,657][__main__][INFO] - Using submetric: lexical_density
+[2025-05-07 14:04:07,657][__main__][INFO] - Using explicit task_type from config: regression
+[2025-05-07 14:04:07,657][__main__][INFO] - Determined Task Type: regression
+[2025-05-07 14:04:07,661][__main__][INFO] - Running LM experiment for task 'single_submetric' (type: regression) on languages: ['fi']
+[2025-05-07 14:04:07,661][__main__][INFO] - Using submetric: lexical_density
+[2025-05-07 14:04:07,661][__main__][INFO] - Processing language: fi
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Tracking run with wandb version 0.19.9
+wandb: W&B syncing is set to `offline` in this directory.  
+wandb: Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+[2025-05-07 14:04:10,902][src.data.datasets][INFO] - Creating dataloaders for language: 'fi', task: 'single_submetric', submetric: 'lexical_density'
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+[2025-05-07 14:04:13,363][src.data.datasets][INFO] - Successfully loaded tokenizer for cis-lmu/glot500-base
+[2025-05-07 14:04:13,363][src.data.datasets][INFO] - Loading 'base' dataset for fi language (train)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-05-07 14:04:13,591][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-07 14:04:13,681][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-07 14:04:13,878][src.data.datasets][INFO] - Filtered from 7460 to 1195 examples for language 'fi'
+[2025-05-07 14:04:13,887][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-05-07 14:04:13,887][src.data.datasets][INFO] - Loaded 1195 examples for fi (train)
+[2025-05-07 14:04:13,888][src.data.datasets][INFO] - Loading 'base' dataset for fi language (validation)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-05-07 14:04:13,953][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-07 14:04:14,076][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-07 14:04:14,129][src.data.datasets][INFO] - Filtered from 441 to 63 examples for language 'fi'
+[2025-05-07 14:04:14,131][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-05-07 14:04:14,131][src.data.datasets][INFO] - Loaded 63 examples for fi (validation)
+[2025-05-07 14:04:14,132][src.data.datasets][INFO] - Loading 'base' dataset for fi language (test)
+Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+[2025-05-07 14:04:14,192][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-07 14:04:14,276][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
+[2025-05-07 14:04:14,289][src.data.datasets][INFO] - Filtered from 719 to 110 examples for language 'fi'
+[2025-05-07 14:04:14,290][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
+[2025-05-07 14:04:14,290][src.data.datasets][INFO] - Loaded 110 examples for fi (test)
+[2025-05-07 14:04:14,291][src.data.datasets][INFO] - Loaded datasets: train=1195, val=63, test=110 examples
+[2025-05-07 14:04:14,291][src.data.datasets][INFO] - Task 'single_submetric' is classification: False
+[2025-05-07 14:04:14,291][src.data.datasets][INFO] - Getting feature name for task: 'single_submetric', submetric: 'lexical_density'
+[2025-05-07 14:04:14,292][src.data.datasets][INFO] - Selected feature name: 'lexical_density' for task: 'single_submetric'
+[2025-05-07 14:04:14,292][src.data.datasets][INFO] - Label statistics for single_submetric (feature: lexical_density):
+[2025-05-07 14:04:14,292][src.data.datasets][INFO] -   Min: 0.0000, Max: 1.0000
+[2025-05-07 14:04:14,292][src.data.datasets][INFO] -   Mean: 0.6682, Std: 0.2000
+[2025-05-07 14:04:14,292][src.data.datasets][INFO] - Sample text: Onko Tampereen rantatunneli Suomen pisin maantietu...
+[2025-05-07 14:04:14,292][src.data.datasets][INFO] - Sample label: 0.75
+[2025-05-07 14:04:14,292][src.data.datasets][INFO] - Task 'single_submetric' is classification: False
+[2025-05-07 14:04:14,292][src.data.datasets][INFO] - Getting feature name for task: 'single_submetric', submetric: 'lexical_density'
+[2025-05-07 14:04:14,292][src.data.datasets][INFO] - Selected feature name: 'lexical_density' for task: 'single_submetric'
+[2025-05-07 14:04:14,293][src.data.datasets][INFO] - Label statistics for single_submetric (feature: lexical_density):
+[2025-05-07 14:04:14,293][src.data.datasets][INFO] -   Min: 0.1670, Max: 1.0000
+[2025-05-07 14:04:14,293][src.data.datasets][INFO] -   Mean: 0.6281, Std: 0.1884
+[2025-05-07 14:04:14,293][src.data.datasets][INFO] - Sample text: Entä viestivätkö naisen silmät miehelle, että ”usk...
+[2025-05-07 14:04:14,293][src.data.datasets][INFO] - Sample label: 0.7329999804496765
+[2025-05-07 14:04:14,293][src.data.datasets][INFO] - Task 'single_submetric' is classification: False
+[2025-05-07 14:04:14,293][src.data.datasets][INFO] - Getting feature name for task: 'single_submetric', submetric: 'lexical_density'
+[2025-05-07 14:04:14,293][src.data.datasets][INFO] - Selected feature name: 'lexical_density' for task: 'single_submetric'
+[2025-05-07 14:04:14,293][src.data.datasets][INFO] - Label statistics for single_submetric (feature: lexical_density):
+[2025-05-07 14:04:14,293][src.data.datasets][INFO] -   Min: 0.0620, Max: 1.0000
+[2025-05-07 14:04:14,294][src.data.datasets][INFO] -   Mean: 0.5643, Std: 0.2115
+[2025-05-07 14:04:14,294][src.data.datasets][INFO] - Sample text: Kenen toimesta tämä on tehty?...
+[2025-05-07 14:04:14,294][src.data.datasets][INFO] - Sample label: 0.25
+[2025-05-07 14:04:14,294][src.data.datasets][INFO] - Created datasets: train=1195, val=63, test=110
+[2025-05-07 14:04:14,294][src.data.datasets][INFO] - Creating dataloaders with 4 workers
+[2025-05-07 14:04:14,294][src.data.datasets][INFO] - Successfully created all dataloaders
+[2025-05-07 14:04:14,294][__main__][INFO] - Using model type: lm_probe for submetric lexical_density
+[2025-05-07 14:04:14,295][src.models.model_factory][INFO] - Creating lm_probe model for regression task
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+Some weights of XLMRobertaModel were not initialized from the model checkpoint at cis-lmu/glot500-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[2025-05-07 14:04:21,614][src.models.model_factory][INFO] - Loaded model from local cache: cis-lmu/glot500-base
+[2025-05-07 14:04:21,615][src.models.model_factory][INFO] - Language model parameters frozen
+[2025-05-07 14:04:21,615][src.models.model_factory][INFO] - Base model configuration: layer-wise=True, layer_index=2, freeze_model=True
+[2025-05-07 14:04:21,615][src.models.model_factory][INFO] - Using provided probe_hidden_size: 128
+[2025-05-07 14:04:21,618][src.models.model_factory][INFO] - Model has 133,633 trainable parameters out of 394,255,105 total parameters
+[2025-05-07 14:04:21,618][src.models.model_factory][INFO] - Encoder: 0 trainable parameters, Head: 133,633 trainable parameters
+[2025-05-07 14:04:21,619][src.models.model_factory][INFO] - MLP probe configuration: hidden_size=128, depth=3, activation=silu, normalization=layer
+[2025-05-07 14:04:21,619][src.models.model_factory][INFO] - Created specialized regression probe with 3 layers, 128 hidden size
+[2025-05-07 14:04:21,619][__main__][INFO] - Successfully created lm_probe model for fi
+[2025-05-07 14:04:21,620][__main__][INFO] - Total parameters: 394,255,105
+[2025-05-07 14:04:21,620][__main__][INFO] - Trainable parameters: 133,633 (0.03%)
+Epoch 1/15: [Epoch 1/15: [                              ] 1/75 batches, loss: 0.4850Epoch 1/15: [                              ] 2/75 batches, loss: 0.5919Epoch 1/15: [=                             ] 3/75 batches, loss: 0.5246Epoch 1/15: [=                             ] 4/75 batches, loss: 0.4716Epoch 1/15: [==                            ] 5/75 batches, loss: 0.4585Epoch 1/15: [==                            ] 6/75 batches, loss: 0.4380Epoch 1/15: [==                            ] 7/75 batches, loss: 0.4188Epoch 1/15: [===                           ] 8/75 batches, loss: 0.4589Epoch 1/15: [===                           ] 9/75 batches, loss: 0.4702Epoch 1/15: [====                          ] 10/75 batches, loss: 0.4624Epoch 1/15: [====                          ] 11/75 batches, loss: 0.4446Epoch 1/15: [====                          ] 12/75 batches, loss: 0.4380Epoch 1/15: [=====                         ] 13/75 batches, loss: 0.4217Epoch 1/15: [=====                         ] 14/75 batches, loss: 0.4320Epoch 1/15: [======                        ] 15/75 batches, loss: 0.4297Epoch 1/15: [======                        ] 16/75 batches, loss: 0.4491Epoch 1/15: [======                        ] 17/75 batches, loss: 0.4376Epoch 1/15: [=======                       ] 18/75 batches, loss: 0.4322Epoch 1/15: [=======                       ] 19/75 batches, loss: 0.4288Epoch 1/15: [========                      ] 20/75 batches, loss: 0.4273Epoch 1/15: [========                      ] 21/75 batches, loss: 0.4361Epoch 1/15: [========                      ] 22/75 batches, loss: 0.4394Epoch 1/15: [=========                     ] 23/75 batches, loss: 0.4341Epoch 1/15: [=========                     ] 24/75 batches, loss: 0.4240Epoch 1/15: [==========                    ] 25/75 batches, loss: 0.4160Epoch 1/15: [==========                    ] 26/75 batches, loss: 0.4102Epoch 1/15: [==========                    ] 27/75 batches, loss: 0.4022Epoch 1/15: [===========                   ] 28/75 batches, loss: 0.3989Epoch 1/15: [===========                   ] 29/75 batches, loss: 0.3967Epoch 1/15: [============                  ] 30/75 batches, loss: 0.3988Epoch 1/15: [============                  ] 31/75 batches, loss: 0.3927Epoch 1/15: [============                  ] 32/75 batches, loss: 0.3882Epoch 1/15: [=============                 ] 33/75 batches, loss: 0.3853Epoch 1/15: [=============                 ] 34/75 batches, loss: 0.3840Epoch 1/15: [==============                ] 35/75 batches, loss: 0.3798Epoch 1/15: [==============                ] 36/75 batches, loss: 0.3824Epoch 1/15: [==============                ] 37/75 batches, loss: 0.3785Epoch 1/15: [===============               ] 38/75 batches, loss: 0.3762Epoch 1/15: [===============               ] 39/75 batches, loss: 0.3741Epoch 1/15: [================              ] 40/75 batches, loss: 0.3704Epoch 1/15: [================              ] 41/75 batches, loss: 0.3663Epoch 1/15: [================              ] 42/75 batches, loss: 0.3616Epoch 1/15: [=================             ] 43/75 batches, loss: 0.3586Epoch 1/15: [=================             ] 44/75 batches, loss: 0.3574Epoch 1/15: [==================            ] 45/75 batches, loss: 0.3598Epoch 1/15: [==================            ] 46/75 batches, loss: 0.3548Epoch 1/15: [==================            ] 47/75 batches, loss: 0.3548Epoch 1/15: [===================           ] 48/75 batches, loss: 0.3504Epoch 1/15: [===================           ] 49/75 batches, loss: 0.3487Epoch 1/15: [====================          ] 50/75 batches, loss: 0.3475Epoch 1/15: [====================          ] 51/75 batches, loss: 0.3481Epoch 1/15: [====================          ] 52/75 batches, loss: 0.3476Epoch 1/15: [=====================         ] 53/75 batches, loss: 0.3450Epoch 1/15: [=====================         ] 54/75 batches, loss: 0.3440Epoch 1/15: [======================        ] 55/75 batches, loss: 0.3440Epoch 1/15: [======================        ] 56/75 batches, loss: 0.3419Epoch 1/15: [======================        ] 57/75 batches, loss: 0.3447Epoch 1/15: [=======================       ] 58/75 batches, loss: 0.3448Epoch 1/15: [=======================       ] 59/75 batches, loss: 0.3435Epoch 1/15: [========================      ] 60/75 batches, loss: 0.3405Epoch 1/15: [========================      ] 61/75 batches, loss: 0.3367Epoch 1/15: [========================      ] 62/75 batches, loss: 0.3357Epoch 1/15: [=========================     ] 63/75 batches, loss: 0.3345Epoch 1/15: [=========================     ] 64/75 batches, loss: 0.3318Epoch 1/15: [==========================    ] 65/75 batches, loss: 0.3294Epoch 1/15: [==========================    ] 66/75 batches, loss: 0.3276Epoch 1/15: [==========================    ] 67/75 batches, loss: 0.3249Epoch 1/15: [===========================   ] 68/75 batches, loss: 0.3214Epoch 1/15: [===========================   ] 69/75 batches, loss: 0.3218Epoch 1/15: [============================  ] 70/75 batches, loss: 0.3209slurmstepd: error: *** JOB 64464576 ON k28i22 CANCELLED AT 2025-05-07T14:04:27 ***
