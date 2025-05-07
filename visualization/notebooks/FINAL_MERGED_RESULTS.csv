@@ -17,7 +17,7 @@ ar,question_type,overall,DummyClassifier,,accuracy,0.7142857142857143,0.71428571
 en,question_type,overall,DummyClassifier,,accuracy,0.5,0.5,0.5,0.5,0.5,test
 fi,question_type,overall,DummyClassifier,,accuracy,0.5,0.5,0.5,0.5,0.5,test
 id,question_type,overall,DummyClassifier,,accuracy,0.5,0.5,0.5,0.5,0.5,test
-ja,question_type,overall,DummyClassifier,,accuracy,0.4021739130434782,0.4021739130434782,0.4021739130434782,0.4021739130434782,0.4021739130434782,test
+ja,question_type,overall,DummyClassifier,,accuracy,0.5,0.5,0.5,0.5,0.5,test
 ko,question_type,overall,DummyClassifier,,accuracy,0.5,0.5,0.5,0.5,0.5,test
 ru,question_type,overall,DummyClassifier,,accuracy,0.5,0.5,0.5,0.5,0.5,test
 ar,single_submetric,avg_max_depth,Ridge,,mse,0.027878701529974,0.0545536559811195,0.0511130313092803,0.0544842576476242,0.0533836483126746,test
