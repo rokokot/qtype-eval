@@ -7,14 +7,8 @@ from itertools import product
 LANGUAGES = ["ar", "en", "fi", "id", "ja", "ko", "ru"]
 
 MAIN_TASKS = ["question_type", "complexity"]
-SUBMETRIC_TASKS = [
-    "avg_links_len",
-    "avg_max_depth",
-    "avg_subordinate_chain_len",
-    "avg_verb_edges",
-    "lexical_density",
-    "n_tokens",
-]
+SUBMETRIC_TASKS = ["avg_links_len","avg_max_depth","avg_subordinate_chain_len",
+    "avg_verb_edges","lexical_density","n_tokens",]
 
 ALL_TASKS = MAIN_TASKS + SUBMETRIC_TASKS
 

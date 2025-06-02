@@ -4,19 +4,13 @@ import logging
 import numpy as np
 from scipy.sparse import issparse, vstack
 
-# Configure logging
+#  logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
 
 def verify_tfidf_files(vectors_dir):
-    """Verify that the TF-IDF feature files exist and are valid."""
-    required_files = [
-        "tfidf_vectors_train.pkl",
-        "tfidf_vectors_dev.pkl",
-        "tfidf_vectors_test.pkl",
-        "idf_values.pkl",
-        "token_to_index_mapping.pkl",
-    ]
+
+    required_files = ["tfidf_vectors_train.pkl","tfidf_vectors_dev.pkl","tfidf_vectors_test.pkl","idf_values.pkl","token_to_index_mapping.pkl",]
 
     for file_name in required_files:
         file_path = os.path.join(vectors_dir, file_name)
@@ -27,26 +21,19 @@ def verify_tfidf_files(vectors_dir):
 
             logger.info(f"{file_name}: Loaded successfully")
             
-            # Detailed inspection for vector files
+            #  look for vector files
             if "vectors" in file_name:
                 split = file_name.split('_')[2].split('.')[0]
                 logger.info(f"Processing {split} vectors")
                 
                 if isinstance(data, list):
-                    # Attempt to stack matrices
                     try:
-                        # Extract first matrix from each item if nested
-                        sparse_matrices = [
-                            matrix[0] if isinstance(matrix, list) and len(matrix) > 0 else matrix 
-                            for matrix in data
-                        ]
+                        sparse_matrices = [matrix[0] if isinstance(matrix, list) and len(matrix) > 0 else matrix for matrix in data]
                         
-                        # Verify each matrix is sparse
                         non_sparse = [type(m) for m in sparse_matrices if not issparse(m)]
                         if non_sparse:
                             logger.warning(f"Non-sparse matrices found: {non_sparse}")
                         
-                        # Stack the matrices
                         stacked_vectors = vstack(sparse_matrices)
                         
                         logger.info(f"{split.capitalize()} vectors:")
@@ -77,9 +64,7 @@ def main(args):
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Verify TF-IDF features")
-    parser.add_argument(
-        "--vectors-dir", type=str, default="./data/features", help="Directory containing TF-IDF features"
-    )
+    parser.add_argument("--vectors-dir", type=str, default="./data/features", help="Directory containing TF-IDF features")
     args = parser.parse_args()
 
     main(args)

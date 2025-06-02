@@ -44,15 +44,9 @@ logging.basicConfig(
 logger = logging.getLogger("complexity_processor")
 
 
-LANGUAGE_CODES = {
-    'english': 'en', 'russian': 'ru', 'japanese': 'ja', 'arabic': 'ar',
-    'finnish': 'fi', 'korean': 'ko', 'indonesian': 'id'
-}
+LANGUAGE_CODES = {'english': 'en', 'russian': 'ru', 'japanese': 'ja', 'arabic': 'ar','finnish': 'fi', 'korean': 'ko', 'indonesian': 'id'}
 
-FEATURE_COLUMNS = [
-    'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len',
-    'avg_verb_edges', 'lexical_density', 'n_tokens'
-]
+FEATURE_COLUMNS = ['avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len','avg_verb_edges', 'lexical_density', 'n_tokens']
 
 VALIDATION_RATIO = 0.10  
 
@@ -160,12 +154,10 @@ def filter_and_preprocess(df, min_tokens, max_tokens, normalize_features=True, l
         )
     
 
-    # Convert question types to binary labels (0,1)
+    # convert question types to binary labels (0,1)
     if 'type' in filtered_df.columns:
         filtered_df['type_original'] = filtered_df['type'].copy()
-        filtered_df['question_type'] = filtered_df['type'].apply(
-            lambda x: 1 if x.lower() == 'polar' else 0 if x.lower() == 'content' else None
-        )
+        filtered_df['question_type'] = filtered_df['type'].apply(lambda x: 1 if x.lower() == 'polar' else 0 if x.lower() == 'content' else None)
     
     if normalize_features:
 
@@ -179,11 +171,8 @@ def filter_and_preprocess(df, min_tokens, max_tokens, normalize_features=True, l
                     range_val = max_val - min_val
 
                     if range_val > 0:
-                        filtered_df.loc[mask, feature] = (
-                            (filtered_df.loc[mask, feature] - min_val) / range_val
-                        )
+                        filtered_df.loc[mask, feature] = ((filtered_df.loc[mask, feature] - min_val) / range_val)
     
-
     return filtered_df
 
 
@@ -255,50 +244,44 @@ def split_train_validation(df, validation_ratio=VALIDATION_RATIO, random_state=s
     
     # Stratify by language and question type if available
     if 'language' in df.columns and 'type_original' in df.columns:
-        # Create stratification column
+        #  stratification column
         df['strat'] = df['language'] + '_' + df['type_original']
         
-        # Count samples in each stratum
+        #  samples in each stratum
         strat_counts = df['strat'].value_counts()
         
-        # Identify strata with enough samples to split
+        
         valid_strata = strat_counts[strat_counts >= 5].index
         
-        # Initialize train and validation dataframes
+        #  train and validation dataframes
         train_df = pd.DataFrame()
         val_df = pd.DataFrame()
         
         for stratum in valid_strata:
             stratum_df = df[df['strat'] == stratum].copy()
             
-            # Determine validation size
             val_size = max(2, int(len(stratum_df) * validation_ratio))
             
-            # Sample for validation set
             val_stratum = stratum_df.sample(n=val_size, random_state=random_state)
             train_stratum = stratum_df.drop(val_stratum.index)
             
-            # Add to respective dataframes
             train_df = pd.concat([train_df, train_stratum])
             val_df = pd.concat([val_df, val_stratum])
         
-        # Add remaining data (from strata too small to split) to training set
         remaining_df = df[~df['strat'].isin(valid_strata)]
         train_df = pd.concat([train_df, remaining_df])
         
-        # Drop stratification column
         if 'strat' in train_df.columns:
             train_df = train_df.drop(columns=['strat'])
         if 'strat' in val_df.columns:
             val_df = val_df.drop(columns=['strat'])
     else:
-        # Simple random split
+        #  random split
         val_size = int(len(df) * validation_ratio)
         val_df = df.sample(n=val_size, random_state=random_state)
         train_df = df.drop(val_df.index)
     
     return train_df, val_df
-
 
 
 
@@ -315,10 +298,7 @@ def token_based_sampling(df, target_size, random_state=seed):
         num_bins = min(max(5, len(df) // 10), 10)
         
         df_with_bins = df.copy()
-        df_with_bins['token_bin'] = pd.qcut(df_with_bins[token_column], 
-                                         q=num_bins, 
-                                         labels=False, 
-                                         duplicates='drop')
+        df_with_bins['token_bin'] = pd.qcut(df_with_bins[token_column], q=num_bins, labels=False, duplicates='drop')
         
         # Sample from each bin proportionally
         sampled_df = pd.DataFrame()
@@ -327,20 +307,16 @@ def token_based_sampling(df, target_size, random_state=seed):
         for bin_id, bin_count in bin_counts.items():
             bin_df = df_with_bins[df_with_bins['token_bin'] == bin_id]
             
-            # Calculate proportional sample size
             bin_proportion = bin_count / len(df_with_bins)
             bin_sample_size = max(1, int(target_size * bin_proportion))
             bin_sample_size = min(bin_sample_size, len(bin_df))
             
-            # Sample from this bin
             bin_sample = bin_df.sample(n=bin_sample_size, random_state=random_state)
             sampled_df = pd.concat([sampled_df, bin_sample])
         
-        # Adjust to exact target size if needed
         if len(sampled_df) > target_size:
             sampled_df = sampled_df.sample(n=target_size, random_state=random_state)
         
-        # Clean up the bin column
         if 'token_bin' in sampled_df.columns:
             sampled_df = sampled_df.drop('token_bin', axis=1)
         
@@ -348,7 +324,6 @@ def token_based_sampling(df, target_size, random_state=seed):
     
     except Exception as e:
         logger.error(f"Error during token-based sampling: {e}")
-        # Fall back to random sampling
         return df.sample(n=target_size, random_state=random_state)
 
 
@@ -424,9 +399,7 @@ def complexity_distribution_sampling(ud_df, tydi_df, target_size=None, random_st
 
 
 
-# =============================================================================
-# Main Processing Function
-# =============================================================================
+# Main function
 
 def process_files(args):
 
@@ -479,8 +452,10 @@ def process_files(args):
     
     all_languages = sorted(set(list(tydi_by_lang.keys()) + list(ud_by_lang.keys())))
     
-    # For storing dev set samples
     dev_samples_by_lang = {}
+
+    # depends on the dataset size
+    # Configure with appropriate size
     
     MAX_DEV_SAMPLES_PER_LANGUAGE = 75  
     
@@ -496,7 +471,7 @@ def process_files(args):
         if language in tydi_by_lang:
             logger.info(f"Processing TyDi {language} data (for TRAIN set)")
             
-            # Target sizes per language and type for TyDi
+            #  sizes per language and type for TyDi, requires some manual checking
             target_sizes = {
                 'ko': {'polar': 500, 'content': 400},
                 'id': {'polar': 474, 'content': 500},
@@ -518,49 +493,33 @@ def process_files(args):
                 
                 # Basic preprocessing
                 preprocessed_df = filter_and_preprocess(
-                    df, 
-                    args.min_tokens, 
-                    args.max_tokens, 
-                    normalize_features=not args.no_feature_normalization,
-                    language_code_mapping=LANGUAGE_CODES
-                )
+                    df, args.min_tokens,args.max_tokens,normalize_features=not args.no_feature_normalization,language_code_mapping=LANGUAGE_CODES)
                 
                 # Calculate complexity score
-                scored_df = calculate_complexity_score(
-                    preprocessed_df,
-                    normalize_score=not args.no_score_normalization
-                )
+                scored_df = calculate_complexity_score(preprocessed_df,normalize_score=not args.no_score_normalization)
                 
                 # Extract some samples for dev set (before sampling for training)
-                # Take a fixed number per question type, not a percentage
                 dev_size = min(max_dev_per_type, len(scored_df) // 10)  # No more than 10% of data
                 
                 if dev_size > 0:
                     dev_samples = scored_df.sample(n=dev_size, random_state=seed)
                     dev_tydi_samples.append(dev_samples)
                     
-                    # Remove dev samples from the training data
+                    # no dev samples from the training data
                     train_df = scored_df.drop(dev_samples.index)
                 else:
                     train_df = scored_df
                 
-                # Determine target size for training
+                # target size for training
                 target_size = (target_sizes.get(language, {}).get(q_type) or 
                               target_sizes.get(language, {}).get('default', 500))
                 
-                # Sample training data
-                train_df = token_based_sampling(
-                    train_df, 
-                    min(target_size, len(train_df)), 
-                    random_state=seed
-                )
-                
-                # Store processed dataframes
+                # training data
+                train_df = token_based_sampling(train_df, min(target_size, len(train_df)),random_state=seed)
                 tydi_processed_types[q_type] = train_df
                 
                 logger.info(f"  TyDi {language}_{q_type}: {len(train_df)} train, {dev_size} dev")
             
-            # Combine all question types for this language's training set
             if tydi_processed_types:
                 combined_train_df = pd.concat(tydi_processed_types.values(), ignore_index=True)
                 combined_train_df = combined_train_df.sample(frac=1, random_state=seed).reset_index(drop=True)
@@ -591,19 +550,10 @@ def process_files(args):
                 logger.info(f"  Processing UD {language}_{q_type}")
                 
                 # Basic preprocessing
-                preprocessed_df = filter_and_preprocess(
-                    df, 
-                    args.min_tokens, 
-                    args.max_tokens, 
-                    normalize_features=not args.no_feature_normalization,
-                    language_code_mapping=LANGUAGE_CODES
-                )
+                preprocessed_df = filter_and_preprocess(df, args.min_tokens, args.max_tokens, normalize_features=not args.no_feature_normalization,language_code_mapping=LANGUAGE_CODES)
                 
                 # Calculate complexity score
-                scored_df = calculate_complexity_score(
-                    preprocessed_df,
-                    normalize_score=not args.no_score_normalization
-                )
+                scored_df = calculate_complexity_score(preprocessed_df,normalize_score=not args.no_score_normalization)
                 
                 # Extract some samples for dev set (before sampling for testing)
                 # Take a fixed number per question type, not a percentage
@@ -632,20 +582,12 @@ def process_files(args):
                     
                     # Sample test data based on TyDi complexity distribution
                     target_size = 55  # Max 55 samples per type for UD
-                    test_df = complexity_distribution_sampling(
-                        test_df, 
-                        tydi_type_df, 
-                        target_size=min(target_size, len(test_df)),
-                        random_state=seed
-                    )
+                    test_df = complexity_distribution_sampling(test_df, tydi_type_df, target_size=min(target_size, len(test_df)),
+                        random_state=seed)
                 else:
                     # No TyDi reference, use token-based sampling
                     target_size = 55
-                    test_df = token_based_sampling(
-                        test_df, 
-                        min(target_size, len(test_df)),
-                        random_state=seed
-                    )
+                    test_df = token_based_sampling(test_df, min(target_size, len(test_df)),random_state=seed)
                 
                 # Store processed dataframes for test set
                 ud_processed_types[q_type] = test_df
@@ -754,12 +696,7 @@ def process_files(args):
                 
                 for feature in FEATURE_COLUMNS:
                     if feature in df.columns:
-                        ablation_df = calculate_complexity_score(
-                            df,
-                            excluded_feature=feature,
-                            normalize_score=not args.no_score_normalization,
-                            remove_excluded=args.remove_ablated_features
-                        )
+                        ablation_df = calculate_complexity_score(df,excluded_feature=feature,normalize_score=not args.no_score_normalization,remove_excluded=args.remove_ablated_features)
                         
                         final_ablation_df = finalize_dataframe(ablation_df)
                         final_ablation_df.to_csv(
@@ -772,12 +709,7 @@ def process_files(args):
                 if feature in all_tydi_df.columns:
                     logger.info(f"Ablating {feature} from combined TyDi dataset")
                     
-                    ablation_df = calculate_complexity_score(
-                        all_tydi_df,
-                        excluded_feature=feature,
-                        normalize_score=not args.no_score_normalization,
-                        remove_excluded=args.remove_ablated_features
-                    )
+                    ablation_df = calculate_complexity_score(all_tydi_df,excluded_feature=feature,normalize_score=not args.no_score_normalization,remove_excluded=args.remove_ablated_features)
                     
                     # Finalize and save the ablation dataset
                     final_ablation_df = finalize_dataframe(ablation_df)
@@ -794,12 +726,7 @@ def process_files(args):
                 if feature in all_ud_df.columns:
                     logger.info(f"Ablating {feature} from combined UD dataset")
                     
-                    ablation_df = calculate_complexity_score(
-                        all_ud_df,
-                        excluded_feature=feature,
-                        normalize_score=not args.no_score_normalization,
-                        remove_excluded=args.remove_ablated_features
-                    )
+                    ablation_df = calculate_complexity_score(all_ud_df,excluded_feature=feature,normalize_score=not args.no_score_normalization,remove_excluded=args.remove_ablated_features)
                     
                     # Finalize and save the ablation dataset
                     final_ablation_df = finalize_dataframe(ablation_df)
@@ -809,8 +736,12 @@ def process_files(args):
                     
                     logger.info(f" Saved combined UD ablation set: {ablation_filename}")
     
+
+
+# ============================== outdated, to do: check ablation parameters
+
     if not args.no_ablation and dev_samples_by_lang:        # Fix the language loops, it only keeps the last language
-        logger.info("\n ===== Create ablation sets for dev split ====")
+        logger.info(" ===== Create ablation sets for dev split ====")
 
         if 'all_dev_df' in locals() and len(all_dev_df) > 0:
             for feature in FEATURE_COLUMNS:
@@ -841,27 +772,19 @@ def process_files(args):
             
             for feature in FEATURE_COLUMNS:
                 if feature in dev_df.columns:
-                    ablation_df = calculate_complexity_score(
-                        dev_df,
-                        excluded_feature=feature,
-                        normalize_score=not args.no_score_normalization,
-                        remove_excluded=args.remove_ablated_features
-                    )
+                    ablation_df = calculate_complexity_score(dev_df,excluded_feature=feature,normalize_score=not args.no_score_normalization,remove_excluded=args.remove_ablated_features)
                     
                     final_ablation_df = finalize_dataframe(ablation_df)
                     ablation_filename = f"{language}_dev_no_{feature}.csv"
-                    final_ablation_df.to_csv(
-                            os.path.join(dev_dir, ablation_filename),
-                            index=False
-                        )
+                    final_ablation_df.to_csv(os.path.join(dev_dir, ablation_filename),index=False)
                     
                     logger.info(f"    Saved {language} dev ablation set: {ablation_filename}")
    
    
    
    
-    # === Summary ===
-    logger.info("\n=== Processing complete ===")
+                                                                # === Summary ===
+    logger.info("=== Processing complete ===")
     logger.info(f"Training data saved to: {train_dir}")
     logger.info(f"Test data saved to: {test_dir}")
     logger.info(f"Development data saved to: {dev_dir}")

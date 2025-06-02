@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+
+"""
+Helper script to cache the dataset, model, and tokenizer to a local directory.
+
+"""
+
+
 import os
 import argparse
 import logging
@@ -18,14 +25,7 @@ CONFIGS += [f"control_question_type_seed{i}" for i in range(1, 4)]
 
 CONFIGS += [f"control_complexity_seed{i}" for i in range(1, 4)]
 
-SUBMETRICS = [
-    "avg_links_len", 
-    "avg_max_depth", 
-    "avg_subordinate_chain_len", 
-    "avg_verb_edges", 
-    "lexical_density", 
-    "n_tokens"
-]
+SUBMETRICS = ["avg_links_len", "avg_max_depth","avg_subordinate_chain_len","avg_verb_edges","lexical_density","n_tokens"]
 
 for submetric in SUBMETRICS:
     CONFIGS += [f"control_{submetric}_seed{i}" for i in range(1, 4)]
@@ -33,29 +33,29 @@ for submetric in SUBMETRICS:
 SPLITS = ["train", "validation", "test"]
 
 def cache_datasets(cache_dir):
-    logger.info(f"Caching datasets to {cache_dir}")
+    logger.info(f"saving datasets to {cache_dir}")
     
     for config in CONFIGS:
-        logger.info(f"Caching dataset config: {config}")
+        logger.info(f"saving dataset config: {config}")
         for split in SPLITS:
             try:
                 dataset = load_dataset(DATASET_NAME, name=config, split=split, cache_dir=cache_dir)
-                logger.info(f"Successfully cached {config} ({split}): {len(dataset)} examples")
+                logger.info(f" cached {config} ({split}): {len(dataset)} examples")
             except Exception as e:
-                logger.error(f"Error caching {config} ({split}): {e}")
-                logger.warning(f"Skipping {config} ({split}) - may not exist or may require authentication")
+                logger.error(f"error  {config} ({split}): {e}")
+                logger.warning(f"skip {config} ({split}) CHECK FILES")
 
 def cache_model(cache_dir):
-    logger.info(f"Caching model: {MODEL_NAME}")
+    logger.info(f" model: {MODEL_NAME}")
     
     try:
         tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, cache_dir=cache_dir)
-        logger.info(f"Successfully cached tokenizer: {MODEL_NAME}")
+        logger.info(f" cached tokenizer: {MODEL_NAME}")
         
         model = AutoModel.from_pretrained(MODEL_NAME, cache_dir=cache_dir)
-        logger.info(f"Successfully cached model: {MODEL_NAME}")
+        logger.info(f" cached model: {MODEL_NAME}")
     except Exception as e:
-        logger.error(f"Error caching model: {e}")
+        logger.error(f"error: {e}")
 
 def main():
     parser = argparse.ArgumentParser(description="Cache HuggingFace resources for offline use")
@@ -64,11 +64,11 @@ def main():
     
     os.makedirs(args.cache_dir, exist_ok=True)
     
-    logger.info(f"Will cache {len(CONFIGS)} dataset configurations in total")
+    logger.info(f" cache {len(CONFIGS)} dataset configurations in total")
     cache_datasets(args.cache_dir)
     cache_model(args.cache_dir)
     
-    logger.info("Caching complete!")
+    logger.info("ok, complete!")
 
 if __name__ == "__main__":
     main()
