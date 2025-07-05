@@ -901,13 +901,7 @@ def get_model_config(task: str, model_approach: str) -> Dict[str, Any]:
             })
         else:
             # Complexity/submetric regression fine-tuning
-            config.update({
-                "head_hidden_size": 512,
-                "head_layers": 3,
-                "dropout": 0.1,
-                "use_pooled_output": False,
-                "use_mean_pooling": True,
-            })
+            config.update({"head_hidden_size": 512,"head_layers": 3,"dropout": 0.1,"use_pooled_output": False,"use_mean_pooling": True,})
     
     return config
 
