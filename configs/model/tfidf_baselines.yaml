@@ -1,0 +1,7 @@
+type: "tfidf_baseline"
+use_tfidf: true
+
+tfidf_settings:
+  features_dir: "${tfidf.features_dir}"
+  model_name: "${tfidf.model_name}"
+  max_features: "${tfidf.max_features}"
