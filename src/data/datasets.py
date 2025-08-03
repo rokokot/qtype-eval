@@ -1,552 +1,718 @@
-# src/data/datasets.py
+# src/data/datasets.py 
+"""
+Enhanced dataset loading with TF-IDF  integration.
+Maintains backward compatibility  adding TF-IDF support.
+"""
 
 import os
+import pickle
+import logging
+from pathlib import Path
+from typing import List, Dict, Tuple, Optional, Union, Any
 import numpy as np
 import pandas as pd
-import pickle
+from datasets import load_dataset
 import torch
 from torch.utils.data import Dataset, DataLoader
-from typing import List, Optional
-from datasets import load_dataset
 from transformers import AutoTokenizer
-from scipy.sparse import vstack
-from scipy import sparse
-import logging
+import scipy.sparse
 
+# Import TF-IDF feature loader
 from .tfidf_features import TfidfFeatureLoader
 
 logger = logging.getLogger(__name__)
 
-DATASET_NAME = "rokokot/question-type-and-complexity"
-CACHE_DIR = os.environ.get("HF_HOME", "./data/cache")
-
-# EXISTING TASK MAPPING (unchanged)
+# Define constants (maintain backward compatibility)
 TASK_TO_FEATURE = {
-    "question_type": {
-        "feature": "question_type",
-        "task_type": "classification",
-        "label_type": np.int64
-    },
-    "complexity": {
-        "feature": "lang_norm_complexity_score",
-        "task_type": "regression",
-        "label_type": np.float32
-    },
-    "single_submetric": {
-        "feature": None, 
-        "task_type": "regression",
-        "label_type": np.float32
-    },
-    "avg_links_len": {
-        "feature": "avg_links_len",
-        "task_type": "regression",
-        "label_type": np.float32
-    },
-    "avg_max_depth": {
-        "feature": "avg_max_depth",
-        "task_type": "regression",
-        "label_type": np.float32
-    },
-    "avg_subordinate_chain_len": {
-        "feature": "avg_subordinate_chain_len",
-        "task_type": "regression",
-        "label_type": np.float32
-    },
-    "avg_verb_edges": {
-        "feature": "avg_verb_edges",
-        "task_type": "regression",
-        "label_type": np.float32
-    },
-    "lexical_density": {
-        "feature": "lexical_density",
-        "task_type": "regression",
-        "label_type": np.float32
-    },
-    "n_tokens": {
-        "feature": "n_tokens",
-        "task_type": "regression",
-        "label_type": np.float32
-    }
+    "question_type": "question_type",
+    "complexity": "complexity_score",
+    "single_submetric": None,  # Will be determined by submetric parameter
+    "avg_links_len": "avg_links_len",
+    "avg_max_depth": "avg_max_depth", 
+    "avg_subordinate_chain_len": "avg_subordinate_chain_len",
+    "avg_verb_edges": "avg_verb_edges",
+    "lexical_density": "lexical_density",
+    "n_tokens": "n_tokens"
 }
 
-# EXISTING HELPER FUNCTIONS (unchanged)
-def ensure_string_task(task):
-    if task is None:
-        return "question_type"
-    
+AVAILABLE_LANGUAGES = ["ar", "en", "fi", "id", "ja", "ko", "ru"]
+
+def ensure_string_task(task) -> str:
+    """Ensure task is a string (backward compatibility)."""
     if isinstance(task, list):
-        task = next((str(t).strip().lower() for t in task if t), "question_type")
-    
-    task = str(task).strip().lower()
-    
-    task_mapping = {
-        "question_type": "question_type",
-        "complexity": "complexity",
-        "complexity_score": "complexity",
-        "lang_norm_complexity_score": "complexity",
-        "single_submetric": "single_submetric"
-    }
-    
-    submetrics = [
-        "avg_links_len", "avg_max_depth", "avg_subordinate_chain_len", 
-        "avg_verb_edges", "lexical_density", "n_tokens"
-    ]
-    
-    if task in submetrics:
-        return task
-    
-    return task_mapping.get(task, task)
+        return task[0] if task else "question_type"
+    return str(task) if task else "question_type"
 
-def get_feature_name_from_task(task, submetric=None, available_columns=None):
-    task = task.strip().lower() if isinstance(task, str) else "question_type"
-    logger.info(f"Getting feature name for task: '{task}', submetric: '{submetric}'")
+def load_sklearn_data(
+    languages: List[str] = ["all"],
+    task: str = "question_type", 
+    submetric: Optional[str] = None,
+    control_index: Optional[int] = None,
+    cache_dir: str = "./data/cache",
+    vectors_dir: str = "./data/features",
+    use_tfidf_loader: bool = False,
+    tfidf_features_dir: Optional[str] = None
+) -> Tuple[Tuple[Union[np.ndarray, scipy.sparse.csr_matrix], np.ndarray], 
+           Tuple[Union[np.ndarray, scipy.sparse.csr_matrix], np.ndarray], 
+           Tuple[Union[np.ndarray, scipy.sparse.csr_matrix], np.ndarray]]:
+    """
+    Load sklearn-compatible data with optional TF-IDF feature support.
     
-    valid_submetrics = [
-        "avg_links_len", "avg_max_depth", 
-        "avg_subordinate_chain_len", "avg_verb_edges", 
-        "lexical_density", "n_tokens"
-    ]
+    Args:
+        languages: List of language codes or ["all"]
+        task: Task name ("question_type", "complexity", "single_submetric", or submetric name)
+        submetric: Specific submetric for single_submetric task
+        control_index: Control experiment index (1, 2, 3)
+        cache_dir: Directory for cached datasets
+        vectors_dir: Directory containing legacy TF-IDF vectors
+        use_tfidf_loader: Whether to use new TF-IDF loader
+        tfidf_features_dir: Directory for new TF-IDF features (if use_tfidf_loader=True)
+        
+    Returns:
+        Tuple of (train, val, test) data, each containing (X, y)
+    """
+    logger.info(f"Loading sklearn data: task={task}, languages={languages}, control_index={control_index}")
     
-    feature_name = None
+    # Normalize task name
+    task = ensure_string_task(task)
     
-    if task == "single_submetric" and submetric is not None:
-        if submetric in valid_submetrics:
-            feature_name = submetric
-        else:
-            logger.warning(f"Invalid submetric: '{submetric}'. Using default 'avg_links_len'.")
-            feature_name = "avg_links_len"
+    # Load dataset and labels
+    train_labels, val_labels, test_labels = load_labels(
+        languages=languages,
+        task=task,
+        submetric=submetric,
+        control_index=control_index,
+        cache_dir=cache_dir
+    )
     
-    elif task in valid_submetrics:
-        feature_name = task
-    
+    # Load features - choose between TF-IDF loader and legacy vectors
+    if use_tfidf_loader:
+        logger.info("Using new TF-IDF feature loader")
+        features_dir = tfidf_features_dir or vectors_dir
+        X_train, X_val, X_test = load_tfidf_features_new(features_dir, languages)
     else:
-        task_mapping = {
-            "question_type": "question_type",
-            "complexity": "lang_norm_complexity_score",
-            "complexity_score": "lang_norm_complexity_score",
-            "lang_norm_complexity_score": "lang_norm_complexity_score"
-        }
-        
-        feature_name = task_mapping.get(task)
-        
-        if not feature_name:
-            logger.warning(f"Unrecognized task: '{task}'. Using default 'question_type'.")
-            feature_name = "question_type"
+        logger.info("Using legacy TF-IDF vectors")
+        X_train, X_val, X_test = load_tfidf_vectors(vectors_dir, languages)
     
-    if available_columns is not None:
-        if feature_name not in available_columns:
-            logger.error(f"Selected feature '{feature_name}' not found in available columns: {available_columns}")
-            
-            if feature_name == "lang_norm_complexity_score" and "complexity_score" in available_columns:
-                logger.info("Falling back to 'complexity_score' feature")
-                feature_name = "complexity_score"
-            elif any(sm in available_columns for sm in valid_submetrics):
-                for sm in valid_submetrics:
-                    if sm in available_columns:
-                        logger.info(f"Falling back to available submetric: '{sm}'")
-                        feature_name = sm
-                        break
-            elif "question_type" in available_columns:
-                logger.info("Falling back to 'question_type' feature")
-                feature_name = "question_type"
-            else:
-                logger.error(f"Cannot find a valid feature in available columns: {available_columns}")
-                raise ValueError(f"No valid feature found in columns: {available_columns}")
+    logger.info(f"Loaded features: train={X_train.shape}, val={X_val.shape}, test={X_test.shape}")
+    logger.info(f"Loaded labels: train={len(train_labels)}, val={len(val_labels)}, test={len(test_labels)}")
     
-    logger.info(f"Selected feature name: '{feature_name}' for task: '{task}'")
-    return feature_name
-
-# EXISTING DATASET CLASSES (unchanged)
-class MultilingualQuestionDataset(Dataset): 
-    def __init__(
-        self, data: pd.DataFrame, features: np.ndarray, labels: np.ndarray, language_ids: Optional[np.ndarray] = None
-    ):
-        self.data = data
-        self.features = features
-        self.labels = labels
-        self.language_ids = language_ids
-
-    def __len__(self):
-        return len(self.labels)
-
-    def __getitem__(self, idx):
-        item = {"features": self.features[idx], "label": self.labels[idx]}
-
-        if self.language_ids is not None:
-            item["language_id"] = self.language_ids[idx]
-
-        return item
-
-class LMQuestionDataset(Dataset):
-    def __init__(self, data: pd.DataFrame, tokenizer: AutoTokenizer, task: str, max_length: int = 128, submetric: Optional[str] = None):
-        self.data = data
-        self.tokenizer = tokenizer
-        self.max_length = max_length
-        
-        self.task = task.strip().lower() if isinstance(task, str) else "question_type"
-        self.submetric = submetric
-        
-        if "text" not in data.columns:
-            available_cols = data.columns.tolist()
-            raise ValueError(f"Required column 'text' not found in data. Available columns: {available_cols}")
-        
-        self.texts = data["text"].tolist()
-        
-        self.is_classification = self.task == "question_type"
-        logger.info(f"Task '{self.task}' is classification: {self.is_classification}")
-        
-        self.feature_name = get_feature_name_from_task(
-            self.task, 
-            self.submetric,
-            available_columns=data.columns.tolist()
-        )
-        
-        if self.feature_name not in data.columns:
-            raise ValueError(f"Feature '{self.feature_name}' not found in data columns: {data.columns.tolist()}")
-        
-        self.labels = data[self.feature_name].values
-        
-        logger.info(f"Label statistics for {self.task} (feature: {self.feature_name}):")
-        if self.is_classification:
-            self.labels = self.labels.astype(np.int64)
-            unique_labels, counts = np.unique(self.labels, return_counts=True)
-            for label, count in zip(unique_labels, counts):
-                logger.info(f"  Label {label}: {count} examples ({count/len(self.labels)*100:.1f}%)")
-        else:
-            self.labels = self.labels.astype(np.float32)
-            logger.info(f"  Min: {np.min(self.labels):.4f}, Max: {np.max(self.labels):.4f}")
-            logger.info(f"  Mean: {np.mean(self.labels):.4f}, Std: {np.std(self.labels):.4f}")
-        
-        if len(self.texts) > 0:
-            logger.info(f"Sample text: {self.texts[0][:50]}...")
-            logger.info(f"Sample label: {self.labels[0]}")
-
-    def __len__(self):
-        return len(self.texts)
-
-    def __getitem__(self, idx):
-        try:
-            text = self.texts[idx]
-            label = self.labels[idx]
+    # Validate shapes
+    if X_train.shape[0] != len(train_labels):
+        logger.warning(f"Feature/label mismatch in train: {X_train.shape[0]} vs {len(train_labels)}")
+    if X_val.shape[0] != len(val_labels):
+        logger.warning(f"Feature/label mismatch in val: {X_val.shape[0]} vs {len(val_labels)}")
+    if X_test.shape[0] != len(test_labels):
+        logger.warning(f"Feature/label mismatch in test: {X_test.shape[0]} vs {len(test_labels)}")
     
-            encoding = self.tokenizer(
-                text, 
-                max_length=self.max_length, 
-                padding="max_length", 
-                truncation=True, 
-                return_tensors="pt"
-            )
-            
-            # Remove batch dimension
-            encoding = {k: v.squeeze(0) for k, v in encoding.items()}
-    
-            # Add label with appropriate type
-            if self.is_classification:
-                encoding["labels"] = torch.tensor(label, dtype=torch.long)
-            else:
-                encoding["labels"] = torch.tensor(label, dtype=torch.float).reshape(-1)
-    
-            return encoding
-        except Exception as e:
-            logger.error(f"Error processing item {idx}: {e}")
-            logger.error(f"Text: {self.texts[idx] if idx < len(self.texts) else 'Index out of range'}")
-            logger.error(f"Label: {self.labels[idx] if idx < len(self.labels) else 'Index out of range'}")
-            raise
+    return (X_train, train_labels), (X_val, val_labels), (X_test, test_labels)
 
-def load_combined_dataset(split: str, 
-    control: Optional[str] = None, 
-    cache_dir: Optional[str] = None,
-    seed: Optional[int] = None):
- 
-    if control is None:
-        config_name = "base"
-    else:
-        if seed is None:
-            raise ValueError(f"Seed must be provided when using control '{control}'")
-        config_name = f"control_{control}_seed{seed}"
+def load_tfidf_features_new(
+    features_dir: str, 
+    languages: List[str]
+) -> Tuple[scipy.sparse.csr_matrix, scipy.sparse.csr_matrix, scipy.sparse.csr_matrix]:
+    """
+    Load TF-IDF features using the new TfidfFeatureLoader.
     
-    logger.info(f"Loading dataset: split={split}, config={config_name}")
-    
-    # Load the dataset
-    dataset = load_dataset(DATASET_NAME, name=config_name, split=split, cache_dir=cache_dir)
-    
-    # Convert to pandas DataFrame
-    df = dataset.to_pandas()
-    
-    return df
-    
-def load_hf_data(language, task, split, control_index=None, cache_dir=None, submetric=None):
-    config_name = "base"
-    using_control = False
+    Args:
+        features_dir: Directory containing TF-IDF features
+        languages: List of target languages
+        
+    Returns:
+        Tuple of (train, val, test) feature matrices
+    """
+    try:
+        # Initialize TF-IDF loader
+        loader = TfidfFeatureLoader(features_dir)
+        
+        # Load all features
+        all_features = loader.load_all_features()
+        
+        # Filter by languages
+        filtered_features = loader.filter_by_languages(all_features, languages)
+        
+        # Return in expected order
+        return filtered_features['train'], filtered_features['val'], filtered_features['test']
+        
+    except Exception as e:
+        logger.error(f"Failed to load TF-IDF features with new loader: {e}")
+        raise
 
+def load_tfidf_vectors(vectors_dir: str, languages: List[str]) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """
+    Load legacy TF-IDF vectors (backward compatibility).
+    
+    Args:
+        vectors_dir: Directory containing TF-IDF vector pickle files
+        languages: List of target languages (ignored for legacy vectors)
+        
+    Returns:
+        Tuple of (train, val, test) feature arrays
+    """
+    try:
+        train_path = os.path.join(vectors_dir, "tfidf_vectors_train.pkl")
+        dev_path = os.path.join(vectors_dir, "tfidf_vectors_dev.pkl")
+        test_path = os.path.join(vectors_dir, "tfidf_vectors_test.pkl")
+        
+        # Check if files exist
+        for path, split in [(train_path, "train"), (dev_path, "dev"), (test_path, "test")]:
+            if not os.path.exists(path):
+                raise FileNotFoundError(f"TF-IDF vectors not found: {path}")
+        
+        # Load vectors
+        with open(train_path, "rb") as f:
+            X_train = pickle.load(f)
+        with open(dev_path, "rb") as f:
+            X_val = pickle.load(f)
+        with open(test_path, "rb") as f:
+            X_test = pickle.load(f)
+        
+        # Convert to arrays if sparse
+        if scipy.sparse.issparse(X_train):
+            X_train = X_train.toarray()
+        if scipy.sparse.issparse(X_val):
+            X_val = X_val.toarray()
+        if scipy.sparse.issparse(X_test):
+            X_test = X_test.toarray()
+        
+        logger.info("Loaded legacy TF-IDF vectors successfully")
+        return X_train, X_val, X_test
+        
+    except Exception as e:
+        logger.error(f"Failed to load legacy TF-IDF vectors: {e}")
+        raise
+
+def load_labels(
+    languages: List[str] = ["all"],
+    task: str = "question_type",
+    submetric: Optional[str] = None,
+    control_index: Optional[int] = None,
+    cache_dir: str = "./data/cache"
+) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """
+    Load labels for the specified task and languages.
+    
+    Args:
+        languages: List of language codes or ["all"]
+        task: Task name
+        submetric: Specific submetric (if task is "single_submetric")
+        control_index: Control experiment index
+        cache_dir: Directory for cached datasets
+        
+    Returns:
+        Tuple of (train_labels, val_labels, test_labels)
+    """
+    # Determine dataset configuration
     if control_index is not None:
-        using_control = True
-        if task == "single_submetric" and submetric is not None:
+        if task == "single_submetric" and submetric:
             config_name = f"control_{submetric}_seed{control_index}"
-        elif task == "question_type":
-            config_name = f"control_question_type_seed{control_index}"
-        elif task in ["complexity", "complexity_score", "lang_norm_complexity_score"]:
-            config_name = f"control_complexity_seed{control_index}"
-        elif task in ["avg_links_len", "avg_max_depth", "avg_subordinate_chain_len", "avg_verb_edges", "lexical_density", "n_tokens"]:
-            config_name = f"control_{task}_seed{control_index}"
         else:
-            logger.warning(f"Unknown task '{task}' for control data. Using base config.")
+            config_name = f"control_{task}_seed{control_index}"
+    else:
+        config_name = "base"
     
-    logger.info(f"Loading '{config_name}' dataset for {language} language ({split})")
+    # Determine target feature
+    if task == "single_submetric":
+        if submetric is None:
+            raise ValueError("submetric must be specified when task is 'single_submetric'")
+        target_feature = submetric
+    elif task in TASK_TO_FEATURE:
+        target_feature = TASK_TO_FEATURE[task]
+    else:
+        # Assume task is a submetric name
+        target_feature = task
     
+    logger.info(f"Loading labels: config={config_name}, feature={target_feature}, languages={languages}")
+    
+    # Load dataset
     try:
         dataset = load_dataset(
-            DATASET_NAME, 
-            name=config_name,  
-            split=split,
+            "rokokot/question-type-and-complexity",
+            name=config_name,
+            cache_dir=cache_dir,
+            verification_mode='no_checks'
+        )
+    except Exception as e:
+        logger.error(f"Failed to load dataset with config '{config_name}': {e}")
+        raise
+    
+    # Extract labels for each split
+    train_labels = extract_labels_from_split(dataset['train'], target_feature, languages)
+    val_labels = extract_labels_from_split(dataset['validation'], target_feature, languages)
+    test_labels = extract_labels_from_split(dataset['test'], target_feature, languages)
+    
+    return train_labels, val_labels, test_labels
+
+def extract_labels_from_split(split_data, target_feature: str, languages: List[str]) -> np.ndarray:
+    """
+    Extract labels from a dataset split with language filtering.
+    
+    Args:
+        split_data: Dataset split
+        target_feature: Name of the target feature
+        languages: List of target languages
+        
+    Returns:
+        Numpy array of labels
+    """
+    # Convert to pandas for easier manipulation
+    df = split_data.to_pandas()
+    
+    # Filter by languages if specified
+    if languages != ["all"]:
+        df = df[df['language'].isin(languages)]
+    
+    # Extract target labels
+    if target_feature not in df.columns:
+        available_cols = list(df.columns)
+        raise ValueError(f"Target feature '{target_feature}' not found. Available: {available_cols}")
+    
+    labels = df[target_feature].values
+    
+    # Handle missing values
+    if pd.isna(labels).any():
+        logger.warning(f"Found {pd.isna(labels).sum()} missing values in {target_feature}")
+        # For now, replace NaN with 0 (could be made configurable)
+        labels = np.nan_to_num(labels, nan=0.0)
+    
+    return labels
+
+# Language Model DataLoader functions (keep existing functionality)
+class QuestionDataset(Dataset):
+    """Dataset class for question data with tokenization."""
+    
+    def __init__(self, texts: List[str], labels: List[float], tokenizer, max_length: int = 128):
+        self.texts = texts
+        self.labels = labels
+        self.tokenizer = tokenizer
+        self.max_length = max_length
+    
+    def __len__(self):
+        return len(self.texts)
+    
+    def __getitem__(self, idx):
+        text = str(self.texts[idx])
+        label = float(self.labels[idx])
+        
+        encoding = self.tokenizer(
+            text,
+            truncation=True,
+            padding="max_length",
+            max_length=self.max_length,
+            return_tensors="pt"
+        )
+        
+        return {
+            "input_ids": encoding["input_ids"].flatten(),
+            "attention_mask": encoding["attention_mask"].flatten(),
+            "labels": torch.tensor(label, dtype=torch.float)
+        }
+
+def create_lm_dataloaders(
+    language: str,
+    task: str,
+    model_name: str = "cis-lmu/glot500-base",
+    batch_size: int = 16,
+    max_length: int = 128,
+    control_index: Optional[int] = None,
+    cache_dir: str = "./data/cache",
+    num_workers: int = 0,
+    submetric: Optional[str] = None
+) -> Tuple[DataLoader, DataLoader, DataLoader]:
+    """
+    Create DataLoaders for language model training/evaluation.
+    
+    Args:
+        language: Language code
+        task: Task name
+        model_name: Model name for tokenizer
+        batch_size: Batch size
+        max_length: Maximum sequence length
+        control_index: Control experiment index
+        cache_dir: Cache directory
+        num_workers: Number of data loading workers
+        submetric: Specific submetric (if task is "single_submetric")
+        
+    Returns:
+        Tuple of (train_loader, val_loader, test_loader)
+    """
+    # Normalize task
+    task = ensure_string_task(task)
+    
+    # Determine dataset configuration
+    if control_index is not None:
+        if task == "single_submetric" and submetric:
+            config_name = f"control_{submetric}_seed{control_index}"
+        else:
+            config_name = f"control_{task}_seed{control_index}"
+    else:
+        config_name = "base"
+    
+    # Load tokenizer
+    try:
+        local_files_only = os.environ.get("TRANSFORMERS_OFFLINE", "0") == "1"
+        tokenizer = AutoTokenizer.from_pretrained(
+            model_name, 
+            cache_dir=cache_dir,
+            local_files_only=local_files_only
+        )
+    except Exception as e:
+        logger.error(f"Failed to load tokenizer {model_name}: {e}")
+        raise
+    
+    # Load dataset
+    try:
+        dataset = load_dataset(
+            "rokokot/question-type-and-complexity",
+            name=config_name,
+            cache_dir=cache_dir,
+            verification_mode='no_checks'
+        )
+    except Exception as e:
+        logger.error(f"Failed to load dataset with config '{config_name}': {e}")
+        raise
+    
+    # Determine target feature
+    if task == "single_submetric":
+        if submetric is None:
+            raise ValueError("submetric must be specified when task is 'single_submetric'")
+        target_feature = submetric
+    elif task in TASK_TO_FEATURE:
+        target_feature = TASK_TO_FEATURE[task]
+    else:
+        # Assume task is a submetric name
+        target_feature = task
+    
+    # Create datasets for each split
+    datasets = {}
+    for split_name in ['train', 'validation', 'test']:
+        split_data = dataset[split_name].to_pandas()
+        
+        # Filter by language
+        lang_data = split_data[split_data['language'] == language]
+        
+        if len(lang_data) == 0:
+            raise ValueError(f"No data found for language '{language}' in {split_name} split")
+        
+        # Extract texts and labels
+        texts = lang_data['text'].tolist()
+        
+        if target_feature not in lang_data.columns:
+            available_cols = list(lang_data.columns)
+            raise ValueError(f"Target feature '{target_feature}' not found. Available: {available_cols}")
+        
+        labels = lang_data[target_feature].fillna(0).tolist()
+        
+        # Create dataset
+        datasets[split_name] = QuestionDataset(texts, labels, tokenizer, max_length)
+        
+        logger.info(f"Created {split_name} dataset: {len(texts)} examples for language '{language}'")
+    
+    # Create data loaders
+    train_loader = DataLoader(
+        datasets['train'], 
+        batch_size=batch_size, 
+        shuffle=True, 
+        num_workers=num_workers
+    )
+    val_loader = DataLoader(
+        datasets['validation'], 
+        batch_size=batch_size, 
+        shuffle=False, 
+        num_workers=num_workers
+    )
+    test_loader = DataLoader(
+        datasets['test'], 
+        batch_size=batch_size, 
+        shuffle=False, 
+        num_workers=num_workers
+    )
+    
+    return train_loader, val_loader, test_loader
+
+
+def get_dataset_statistics(
+    languages: List[str] = ["all"],
+    cache_dir: str = "./data/cache"
+) -> Dict[str, Any]:
+    """
+    Get comprehensive statistics about the dataset.
+    
+    Args:
+        languages: List of language codes
+        cache_dir: Cache directory
+        
+    Returns:
+        Dictionary with dataset statistics
+    """
+    try:
+        # Load base dataset
+        dataset = load_dataset(
+            "rokokot/question-type-and-complexity",
+            name="base",
             cache_dir=cache_dir,
             verification_mode='no_checks'
         )
         
-        if language != "all":
-            original_len = len(dataset)
-            dataset = dataset.filter(lambda example: example["language"] == language)
-            filtered_len = len(dataset)
+        stats = {
+            'languages': languages,
+            'splits': {},
+            'tasks': list(TASK_TO_FEATURE.keys()),
+            'available_languages': AVAILABLE_LANGUAGES
+        }
+        
+        for split_name in ['train', 'validation', 'test']:
+            split_data = dataset[split_name].to_pandas()
             
-            if filtered_len == 0:
-                logger.warning(f"No examples found for language '{language}' in {config_name} ({split})")
-                if original_len > 0:
-                    all_langs = set(dataset["language"])
-                    logger.info(f"Available languages: {all_langs}")
-            else:
-                logger.info(f"Filtered from {original_len} to {filtered_len} examples for language '{language}'")
+            # Filter by languages if specified
+            if languages != ["all"]:
+                split_data = split_data[split_data['language'].isin(languages)]
+            
+            split_stats = {
+                'total_examples': len(split_data),
+                'languages': split_data['language'].value_counts().to_dict(),
+                'question_types': split_data['question_type'].value_counts().to_dict() if 'question_type' in split_data.columns else {},
+                'text_lengths': {
+                    'mean': float(split_data['text'].str.len().mean()),
+                    'std': float(split_data['text'].str.len().std()),
+                    'min': int(split_data['text'].str.len().min()),
+                    'max': int(split_data['text'].str.len().max())
+                }
+            }
+            
+            # Add complexity statistics if available
+            if 'complexity_score' in split_data.columns:
+                complexity_values = split_data['complexity_score'].dropna()
+                split_stats['complexity'] = {
+                    'mean': float(complexity_values.mean()),
+                    'std': float(complexity_values.std()),
+                    'min': float(complexity_values.min()),
+                    'max': float(complexity_values.max()),
+                    'count': len(complexity_values)
+                }
+            
+            stats['splits'][split_name] = split_stats
         
-        df = dataset.to_pandas()
+        return stats
         
-        logger.info(f"Columns in dataset: {list(df.columns)}")
-        logger.info(f"Loaded {len(df)} examples for {language} ({split})")
-        
-        return df
-    
     except Exception as e:
-        logger.error(f"Error loading data for {language} from config '{config_name}': {e}")
-        import traceback
-        logger.error(f"Traceback: {traceback.format_exc()}")
-        raise
+        logger.error(f"Failed to get dataset statistics: {e}")
+        return {'error': str(e)}
 
-# ENHANCED TF-IDF LOADING WITH BACKWARD COMPATIBILITY
-def load_tfidf_features(split: str, vectors_dir: str = "./data/features"):
-    """
-    Load TF-IDF features with multiple format support for backward compatibility.
-    Now supports both new Glot500-generated features and existing pickle files.
-    """
-    logger.info(f"Loading TF-IDF features from {vectors_dir} for split: {split}")
-    
-    # Try new TF-IDF feature loader first
-    try:
-        from src.data.tfidf_features import TfidfFeatureLoader
-        loader = TfidfFeatureLoader(vectors_dir)
-        features = loader.load_features(split)
-        logger.info(f"Loaded TF-IDF features using new loader: {features.shape}")
-        return features
-    except (ImportError, FileNotFoundError) as e:
-        logger.info(f"New TF-IDF loader failed ({e}), trying legacy format...")
-    
-    # Fallback to legacy pickle format
-    file_path = os.path.join(vectors_dir, f"tfidf_vectors_{split}.pkl")
-    
-    if not os.path.exists(file_path):
-        raise FileNotFoundError(f"TF-IDF features not found at {file_path}")
-    
-    try:
-        with open(file_path, "rb") as f:
-            vectors = pickle.load(f)
-        
-        if isinstance(vectors, list):
-            sparse_matrices = [matrix[0] if isinstance(matrix, list) and len(matrix) > 0 else matrix for matrix in vectors]
-            stacked_vectors = sparse.vstack(sparse_matrices)
-            logger.info(f"Stacked {len(sparse_matrices)} matrices to shape {stacked_vectors.shape}")
-            return stacked_vectors
-        
-        if sparse.issparse(vectors):
-            return vectors
-        
-        return sparse.csr_matrix(vectors)
-    
-    except Exception as e:
-        logger.error(f"Error loading TF-IDF features: {e}")
-        logger.warning("Creating empty matrix as fallback")
-        return sparse.csr_matrix((100, 128104))
 
-def load_sklearn_data(
-    task: str, 
-    languages: List[str], 
-    control: Optional[str] = None, 
-    seed: Optional[int] = None,
-    cache_dir: Optional[str] = None,
-    tfidf_features_dir: Optional[str] = None):
-   
-    logger.info(f"Loading sklearn data for task '{task}', languages: {languages}")
-    
-    # Check if TF-IDF features are available
-    if tfidf_features_dir and os.path.exists(tfidf_features_dir):
-        logger.info(f"Using TF-IDF features from {tfidf_features_dir}")
-        try:
-            feature_loader = TfidfFeatureLoader(tfidf_features_dir)
-            
-            # Load TF-IDF features for all splits
-            X_train = feature_loader.load_features('train')
-            X_val = feature_loader.load_features('val') 
-            X_test = feature_loader.load_features('test')
-            
-            logger.info(f"Using TfidfFeatureLoader - shapes: {X_train.shape}, {X_val.shape}, {X_test.shape}")
-            
-        except Exception as e:
-            logger.warning(f"Failed to load TF-IDF features: {e}")
-            logger.info("Falling back to text features")
-            tfidf_features_dir = None
-    
-    # Load datasets for labels and language filtering
-    logger.info("Loading base dataset (all languages, train)")
-    train_df = load_combined_dataset("train", control, cache_dir, seed)
-    logger.info(f"Loaded {len(train_df)} examples for train")
-    
-    logger.info("Loading base dataset (all languages, validation)")
-    val_df = load_combined_dataset("validation", control, cache_dir, seed)
-    logger.info(f"Loaded {len(val_df)} examples for validation")
-    
-    # For test set, use base configuration (no control experiments)
-    logger.info("Loading base dataset (all languages, test)")
-    test_df = load_combined_dataset("test", None, cache_dir, None)  # Always use base for test
-    logger.info(f"Loaded {len(test_df)} examples for test")
-    
-    # Filter by languages
-    if languages and languages != ["all"]:
-        train_df = train_df[train_df['language'].isin(languages)]
-        val_df = val_df[val_df['language'].isin(languages)]
-        test_df = test_df[test_df['language'].isin(languages)]
-        
-        logger.info(f"Filtered by languages {languages}: train={len(train_df)}, val={len(val_df)}, test={len(test_df)}")
-    
-    # If using TF-IDF features, filter them to match the dataframes
-    if tfidf_features_dir:
-        # Filter TF-IDF features to match language-filtered data
-        train_indices = train_df.index.values
-        val_indices = val_df.index.values  
-        test_indices = test_df.index.values
-        
-        # Filter features by matching indices
-        X_train_filtered = X_train[train_indices]
-        X_val_filtered = X_val[val_indices]
-        X_test_filtered = X_test[test_indices]
-        
-        logger.info(f"Filtered train from {X_train.shape[0]} to {X_train_filtered.shape[0]} examples")
-        logger.info(f"Filtered val from {X_val.shape[0]} to {X_val_filtered.shape[0]} examples")
-        logger.info(f"Filtered test from {X_test.shape[0]} to {X_test_filtered.shape[0]} examples")
-        
-        X_train, X_val, X_test = X_train_filtered, X_val_filtered, X_test_filtered
-    else:
-        # Use text features
-        X_train = train_df['text'].values
-        X_val = val_df['text'].values
-        X_test = test_df['text'].values
-    
-    # Extract labels
-    y_train = train_df[task].values
-    y_val = val_df[task].values
-    y_test = test_df[task].values
-    
-    logger.info(f"Final shapes - X: train={X_train.shape}, val={X_val.shape}, test={X_test.shape}")
-    logger.info(f"Final shapes - y: train={y_train.shape}, val={y_val.shape}, test={y_test.shape}")
-    
-    return (X_train, y_train), (X_val, y_val), (X_test, y_test)
-
-def create_lm_dataloaders(
-    language: str,
-    task: str = "question_type",
-    model_name: str = "cis-lmu/glot500-base",
-    batch_size: int = 16,
-    control_index: Optional[int] = None,
+def validate_dataset_integrity(
     cache_dir: str = "./data/cache",
-    num_workers: int = 4,
-    submetric: Optional[str] = None
-):
-    logger.info(f"Creating dataloaders for language: '{language}', task: '{task}', submetric: '{submetric}'")
+    tfidf_features_dir: Optional[str] = None
+) -> Dict[str, bool]:
+    """
+    Validate the integrity of datasets and features.
     
+    Args:
+        cache_dir: Cache directory for datasets
+        tfidf_features_dir: Directory for TF-IDF features
+        
+    Returns:
+        Dictionary with validation results
+    """
+    results = {}
+    
+    # Check dataset loading
     try:
-        try:
-            tokenizer = AutoTokenizer.from_pretrained(
-                model_name,
-                use_fast=True,
-                cache_dir=cache_dir,
-                local_files_only=True
-            )
-            logger.info(f"Successfully loaded tokenizer for {model_name}")
-        except Exception as tokenizer_error:
-            logger.error(f"Error loading tokenizer: {tokenizer_error}")
-            import traceback
-            logger.error(f"Tokenizer traceback: {traceback.format_exc()}")
-            raise
+        dataset = load_dataset(
+            "rokokot/question-type-and-complexity",
+            name="base",
+            cache_dir=cache_dir,
+            verification_mode='no_checks'
+        )
         
-        try:
-            train_df = load_hf_data(language, task, "train", control_index, cache_dir, submetric)
-            val_df = load_hf_data(language, task, "validation", None, cache_dir, submetric)
-            test_df = load_hf_data(language, task, "test", None, cache_dir, submetric)
-            
-            logger.info(f"Loaded datasets: train={len(train_df)}, val={len(val_df)}, test={len(test_df)} examples")
-        except Exception as load_error:
-            logger.error(f"Error loading datasets: {load_error}")
-            import traceback
-            logger.error(f"Dataset loading traceback: {traceback.format_exc()}")
-            raise
+        # Check required splits
+        required_splits = ['train', 'validation', 'test']
+        splits_ok = all(split in dataset for split in required_splits)
+        results['dataset_splits'] = splits_ok
         
-        try:
-            train_dataset = LMQuestionDataset(train_df, tokenizer, task, submetric=submetric)
-            val_dataset = LMQuestionDataset(val_df, tokenizer, task, submetric=submetric)
-            test_dataset = LMQuestionDataset(test_df, tokenizer, task, submetric=submetric)
-            
-            logger.info(f"Created datasets: train={len(train_dataset)}, val={len(val_dataset)}, test={len(test_dataset)}")
-        except Exception as dataset_error:
-            logger.error(f"Error creating datasets: {dataset_error}")
-            import traceback
-            logger.error(f"Dataset creation traceback: {traceback.format_exc()}")
-            raise
+        # Check required columns
+        sample_data = dataset['train'].to_pandas()
+        required_columns = ['text', 'language', 'question_type']
+        columns_ok = all(col in sample_data.columns for col in required_columns)
+        results['dataset_columns'] = columns_ok
         
-        try:
-            debug_mode = os.environ.get("DEBUG", "0") == "1"
-            actual_workers = 0 if debug_mode else num_workers
-            
-            logger.info(f"Creating dataloaders with {actual_workers} workers")
-            
-            train_loader = DataLoader(
-                train_dataset,
-                batch_size=batch_size,
-                shuffle=True,
-                num_workers=actual_workers,
-                pin_memory=True
-            )
-            
-            val_loader = DataLoader(
-                val_dataset,
-                batch_size=batch_size,
-                shuffle=False,
-                num_workers=actual_workers,
-                pin_memory=True
-            )
-            
-            test_loader = DataLoader(
-                test_dataset,
-                batch_size=batch_size,
-                shuffle=False,
-                num_workers=actual_workers,
-                pin_memory=True
-            )
-            
-            logger.info("Successfully created all dataloaders")
-            return train_loader, val_loader, test_loader
-        except Exception as loader_error:
-            logger.error(f"Error creating dataloaders: {loader_error}")
-            import traceback
-            logger.error(f"Dataloader creation traceback: {traceback.format_exc()}")
-            raise
-    
+        # Check languages
+        available_langs = set(sample_data['language'].unique())
+        expected_langs = set(AVAILABLE_LANGUAGES)
+        languages_ok = expected_langs.issubset(available_langs)
+        results['dataset_languages'] = languages_ok
+        
     except Exception as e:
-        logger.error(f"Error in create_lm_dataloaders: {e}")
-        import traceback
-        logger.error(f"Traceback: {traceback.format_exc()}")
-        raise
+        logger.error(f"Dataset validation failed: {e}")
+        results['dataset_splits'] = False
+        results['dataset_columns'] = False
+        results['dataset_languages'] = False
+    
+    # Check TF-IDF features if directory provided
+    if tfidf_features_dir:
+        try:
+            loader = TfidfFeatureLoader(tfidf_features_dir)
+            results['tfidf_features'] = loader.verify_features()
+        except Exception as e:
+            logger.error(f"TF-IDF features validation failed: {e}")
+            results['tfidf_features'] = False
+    
+    return results
+
+
+def create_tiny_dataset(
+    output_dir: str,
+    n_samples_per_lang: int = 10,
+    languages: List[str] = ["en", "ru"]
+) -> None:
+    """
+    Create a tiny dataset for testing purposes.
+    
+    Args:
+        output_dir: Directory to save the tiny dataset
+        n_samples_per_lang: Number of samples per language
+        languages: List of languages to include
+    """
+    from .tfidf_features import create_test_features
+    
+    logger.info(f"Creating tiny dataset in {output_dir}")
+    
+    output_path = Path(output_dir)
+    output_path.mkdir(parents=True, exist_ok=True)
+    
+    # Create test TF-IDF features
+    create_test_features(
+        output_dir=str(output_path / "tfidf_features"),
+        n_samples=n_samples_per_lang * len(languages)
+    )
+    
+    # Create test labels
+    total_samples = n_samples_per_lang * len(languages)
+    
+    # Generate synthetic labels for different tasks
+    np.random.seed(42)  # For reproducibility
+    
+    labels_data = {
+        'train': {
+            'question_type': np.random.randint(0, 2, total_samples),
+            'complexity_score': np.random.randn(total_samples) + 5,
+            'languages': np.repeat(languages, n_samples_per_lang)
+        },
+        'val': {
+            'question_type': np.random.randint(0, 2, total_samples // 4),
+            'complexity_score': np.random.randn(total_samples // 4) + 5,
+            'languages': np.repeat(languages, n_samples_per_lang // 4)
+        },
+        'test': {
+            'question_type': np.random.randint(0, 2, total_samples // 4),
+            'complexity_score': np.random.randn(total_samples // 4) + 5,
+            'languages': np.repeat(languages, n_samples_per_lang // 4)
+        }
+    }
+    
+    # Save labels as pickle files for testing
+    for split, data in labels_data.items():
+        with open(output_path / f"labels_{split}.pkl", "wb") as f:
+            pickle.dump(data, f)
+    
+    logger.info(f"✓ Tiny dataset created successfully in {output_dir}")
+
+
+# Utility functions for backward compatibility
+def get_available_tasks() -> List[str]:
+    """Get list of available tasks."""
+    return list(TASK_TO_FEATURE.keys())
+
+def get_available_languages() -> List[str]:
+    """Get list of available languages."""
+    return AVAILABLE_LANGUAGES.copy()
+
+def get_task_type(task: str) -> str:
+    """
+    Determine task type (classification or regression) from task name.
+    
+    Args:
+        task: Task name
+        
+    Returns:
+        'classification' or 'regression'
+    """
+    task = ensure_string_task(task)
+    
+    if task == "question_type":
+        return "classification"
+    elif task in ["complexity", "single_submetric"] or task in [
+        "avg_links_len", "avg_max_depth", "avg_subordinate_chain_len", 
+        "avg_verb_edges", "lexical_density", "n_tokens"
+    ]:
+        return "regression"
+    else:
+        logger.warning(f"Unknown task '{task}', defaulting to classification")
+        return "classification"
+
+
+if __name__ == "__main__":
+    # Test the enhanced dataset loading
+    import argparse
+    
+    parser = argparse.ArgumentParser(description="Test enhanced dataset loading")
+    parser.add_argument("--cache-dir", default="./data/cache", help="Cache directory")
+    parser.add_argument("--tfidf-dir", help="TF-IDF features directory")
+    parser.add_argument("--create-tiny", action="store_true", help="Create tiny test dataset")
+    parser.add_argument("--test-sklearn", action="store_true", help="Test sklearn data loading")
+    parser.add_argument("--test-lm", action="store_true", help="Test language model data loading")
+    
+    args = parser.parse_args()
+    
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+    
+    if args.create_tiny:
+        create_tiny_dataset("./data/tfidf_features_tiny")
+        print("✅ Tiny dataset created")
+    
+    if args.test_sklearn:
+        print("Testing sklearn data loading...")
+        
+        # Test with new TF-IDF loader if directory provided
+        if args.tfidf_dir:
+            try:
+                (X_train, y_train), (X_val, y_val), (X_test, y_test) = load_sklearn_data(
+                    languages=['en'],
+                    task='question_type',
+                    use_tfidf_loader=True,
+                    tfidf_features_dir=args.tfidf_dir
+                )
+                print(f"✅ New TF-IDF loader: train={X_train.shape}, val={X_val.shape}, test={X_test.shape}")
+                print(f"✅ Labels: train={len(y_train)}, val={len(y_val)}, test={len(y_test)}")
+            except Exception as e:
+                print(f"❌ New TF-IDF loader failed: {e}")
+    
+    if args.test_lm:
+        print("Testing language model data loading...")
+        try:
+            train_loader, val_loader, test_loader = create_lm_dataloaders(
+                language='en',
+                task='question_type',
+                batch_size=4,
+                cache_dir=args.cache_dir
+            )
+            print(f"✅ LM DataLoaders created: {len(train_loader)} train batches")
+            
+            # Test one batch
+            batch = next(iter(train_loader))
+            print(f"✅ Sample batch: input_ids={batch['input_ids'].shape}, labels={batch['labels'].shape}")
+        except Exception as e:
+            print(f"❌ LM DataLoader test failed: {e}")
+    
+    # Test dataset validation
+    print("Testing dataset validation...")
+    validation_results = validate_dataset_integrity(
+        cache_dir=args.cache_dir,
+        tfidf_features_dir=args.tfidf_dir
+    )
+    
+    for check, passed in validation_results.items():
+        status = "✅" if passed else "❌"
+        print(f"{status} {check}: {'PASS' if passed else 'FAIL'}")
+    
+    print(" All tests completed!")
