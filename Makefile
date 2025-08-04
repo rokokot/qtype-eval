@@ -126,7 +126,7 @@ generate-tfidf:
 generate-tfidf-tiny:
 	@echo "🔧 Generating tiny TF-IDF features for testing..."
 	mkdir -p $(FEATURES_DIR)_tiny
-	$(PYTHON) -c "from src.data.tfidf_features import create_test_features; create_test_features('$(FEATURES_DIR)_tiny', n_samples=100, vocab_size=200)"
+	$(PYTHON) -c "from src.data.tfidf_features import create_test_features; create_test_features('$(FEATURES_DIR)_tiny', n_samples=100)"
 	@echo "✅ Tiny TF-IDF features generated in $(FEATURES_DIR)_tiny"
 
 verify-tfidf:
@@ -369,7 +369,7 @@ help-vsc:
 
 # Error handling
 .ONESHELL:
-.SHELLFLAGS := -eu -o pipefail -c
+.SHELLFLAGS := -eu -c
 
 # Prevent deletion of intermediate files
 .SECONDARY:

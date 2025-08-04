@@ -14,7 +14,7 @@ from omegaconf import OmegaConf, DictConfig
 from typing import Dict, Any, List
 import logging
 
-from scripts.run_tfidf_experiments import TfidfExperimentRunner
+from ...scripts.run_tfidf_experiments import TfidfExperimentRunner
 from src.data.tfidf_features import create_test_features
 from tests.fixtures.mock_datasets import MockExperimentEnvironment, MockDatasetLoader
 from utils.test_helpers import create_test_config, validate_test_environment
