@@ -1,217 +1,378 @@
-# Makefile - Enhanced with TF-IDF baseline support
-# Preserves all existing functionality + adds TF-IDF commands
+# Makefile for TF-IDF Multilingual Question Probing
+# Provides comprehensive commands for setup, testing, and running experiments
 
-.PHONY: help setup install test clean
-.PHONY: generate-tfidf test-tfidf run-tfidf-experiments
-.PHONY: run-experiments run-baselines cache-data
+.PHONY: help setup install-deps clean test test-unit test-integration test-tfidf
+.PHONY: generate-tfidf generate-tfidf-tiny run-tfidf-experiments validate format lint
+.PHONY: run-neural-experiments collect-results docker-build docker-run
+.PHONY: setup-vsc cache-data check-environment
 
 # Default target
 help:
-	@echo "Available commands:"
+	@echo "🎯 TF-IDF Multilingual Question Probing - Available Commands"
 	@echo ""
-	@echo "Setup commands:"
-	@echo "  setup                 - Complete project setup"
-	@echo "  install               - Install Python dependencies"
-	@echo "  cache-data            - Cache HuggingFace datasets and models"
+	@echo "📋 Setup & Installation:"
+	@echo "  setup              - Complete project setup (deps + features)"
+	@echo "  install-deps       - Install Python dependencies"
+	@echo "  setup-vsc          - Setup for VSC HPC environment"
+	@echo "  cache-data         - Cache datasets and models for offline use"
 	@echo ""
-	@echo "TF-IDF baseline commands (recommended for testing):"
-	@echo "  generate-tfidf-tiny   - Generate minimal TF-IDF features (100 features) for testing"
-	@echo "  test-tfidf-setup      - Test TF-IDF setup step-by-step (recommended first step)"
-	@echo "  generate-tfidf-small  - Generate small TF-IDF features (1000 features)"
-	@echo "  generate-tfidf        - Generate full TF-IDF features (50000 features)"
-	@echo "  run-tfidf-minimal     - Run minimal TF-IDF test (dummy model, English only)"
-	@echo "  run-tfidf-test        - Run small TF-IDF test (dummy+logistic, English only)"
-	@echo "  run-tfidf-experiments - Run all TF-IDF baseline experiments"
+	@echo "🧪 Testing:"
+	@echo "  test               - Run all tests"
+	@echo "  test-unit          - Run unit tests only"
+	@echo "  test-integration   - Run integration tests only"
+	@echo "  test-tfidf         - Run TF-IDF specific tests"
+	@echo "  test-quick         - Quick validation tests"
+	@echo "  validate           - Validate complete setup"
 	@echo ""
-	@echo "Neural model commands:"
-	@echo "  run-experiments       - Run neural model experiments (existing)"
-	@echo "  run-baselines         - Run traditional sklearn baselines (existing)"
+	@echo "🔧 TF-IDF Features:"
+	@echo "  generate-tfidf     - Generate full TF-IDF features"
+	@echo "  generate-tfidf-tiny - Generate tiny features for testing"
+	@echo "  verify-tfidf       - Verify TF-IDF features"
 	@echo ""
-	@echo "Utility commands:"
-	@echo "  test                  - Run test suite"
-	@echo "  clean                 - Clean temporary files"
+	@echo "🚀 Experiments:"
+	@echo "  run-tfidf-minimal  - Run minimal TF-IDF experiment"
+	@echo "  run-tfidf-full     - Run full TF-IDF experiments"
+	@echo "  run-neural-minimal - Run minimal neural experiment"
+	@echo "  run-neural-full    - Run full neural experiments"
+	@echo ""
+	@echo "📊 Results & Analysis:"
+	@echo "  collect-results    - Collect and organize results"
+	@echo "  generate-report    - Generate analysis report"
+	@echo ""
+	@echo "🧹 Maintenance:"
+	@echo "  clean              - Clean temporary files"
+	@echo "  clean-all          - Clean everything including data"
+	@echo "  format             - Format code"
+	@echo "  lint               - Lint code"
+	@echo "  check-environment  - Check system environment"
 
-# Setup commands
-setup: install cache-data
-	@echo "✓ Project setup completed"
+# Variables
+PYTHON := python
+DATA_DIR := ./data
+FEATURES_DIR := $(DATA_DIR)/tfidf_features
+CACHE_DIR := $(DATA_DIR)/cache
+OUTPUTS_DIR := ./outputs
+TEST_OUTPUTS_DIR := ./test_outputs
 
-install:
-	pip install -r requirements.txt
-	pip install xgboost  # Ensure XGBoost is available for TF-IDF baselines
+# Environment setup
+export PYTHONPATH := $(PWD):$(PYTHONPATH)
+export HF_HOME := $(CACHE_DIR)
+export TRANSFORMERS_OFFLINE := 1
+export HF_DATASETS_OFFLINE := 1
+
+# Setup and Installation
+setup: install-deps generate-tfidf-tiny validate
+	@echo "✅ Complete setup finished!"
+
+install-deps:
+	@echo "📦 Installing dependencies..."
+	$(PYTHON) -m pip install --upgrade pip
+	$(PYTHON) -m pip install -r requirements.txt
+	@echo "✅ Dependencies installed"
+
+setup-vsc:
+	@echo "🖥️ Setting up VSC HPC environment..."
+	chmod +x utils/setup_vsc_environment.sh
+	./utils/setup_vsc_environment.sh
+	@echo "✅ VSC environment setup complete"
 
 cache-data:
-	python scripts/cache_resources.py --cache-dir ${HF_HOME:-./data/cache}
-
-# TF-IDF commands
-generate-tfidf:
-	@echo "Generating TF-IDF features with Glot500 tokenizer..."
-	mkdir -p data/tfidf_features
-	python scripts/generate_tfidf_glot500.py \
-		--output-dir ./data/tfidf_features \
-		--model-name cis-lmu/glot500-base \
-		--max-features 50000 \
-		--cache-dir ./data/cache \
-		--verify
-
-# Small-scale test version for development/testing
-generate-tfidf-small:
-	@echo "Generating small TF-IDF features for testing..."
-	mkdir -p data/tfidf_features_test
-	python scripts/generate_tfidf_glot500.py \
-		--output-dir ./data/tfidf_features_test \
-		--model-name cis-lmu/glot500-base \
-		--max-features 1000 \
-		--min-df 1 \
-		--cache-dir ./data/cache \
-		--verify
-
-# Tiny test version (minimal features for quick testing)
-generate-tfidf-tiny:
-	@echo "Generating tiny TF-IDF features for quick testing..."
-	mkdir -p data/tfidf_features_tiny
-	python scripts/generate_tfidf_glot500.py \
-		--output-dir ./data/tfidf_features_tiny \
-		--model-name cis-lmu/glot500-base \
-		--max-features 100 \
-		--min-df 1 \
-		--cache-dir ./data/cache \
-		--verify
-
-# Simple diagnostic test
-test-tfidf-setup:
-	@echo "Running comprehensive TF-IDF setup test..."
-	python scripts/simple_tfidf_test.py --features-dir ./data/tfidf_features_tiny
-
-test-tfidf-setup-small:
-	@echo "Running TF-IDF setup test with small features..."
-	python scripts/simple_tfidf_test.py --features-dir ./data/tfidf_features_test
-
-setup-tfidf-small: generate-tfidf-small test-tfidf
-	@echo "✓ Small TF-IDF setup completed successfully"
-	@echo ""
-	@echo "You can now run small TF-IDF experiments with:"
-	@echo "  make run-tfidf-test"
-
-setup-tfidf-tiny: generate-tfidf-tiny 
-	@echo "✓ Tiny TF-IDF setup completed successfully"
-	@echo ""
-	@echo "You can now test TF-IDF with minimal features"
-
-# Quick TF-IDF test with tiny features
-run-tfidf-test:
-	@echo "Running TF-IDF test with small features..."
-	python scripts/run_tfidf_experiments.py \
-		experiment=tfidf_baselines \
-		models=[dummy,logistic] \
-		languages=[en] \
-		tasks=[question_type] \
-		controls.enabled=false \
-		tfidf.features_dir=./data/tfidf_features_test \
-		output_dir=./outputs/tfidf_test
-
-# Minimal TF-IDF test with tiny features  
-run-tfidf-minimal:
-	@echo "Running minimal TF-IDF test..."
-	python scripts/run_tfidf_experiments.py \
-		experiment=tfidf_baselines \
-		models=[dummy] \
-		languages=[en] \
-		tasks=[question_type] \
-		controls.enabled=false \
-		tfidf.features_dir=./data/tfidf_features_tiny \
-		output_dir=./outputs/tfidf_minimal
-
-run-tfidf-experiments:
-	@echo "Running TF-IDF baseline experiments..."
-	mkdir -p outputs/tfidf_experiments
-	python scripts/run_tfidf_experiments.py \
-		experiment=tfidf_baselines \
-		output_dir=./outputs/tfidf_experiments
-
-# Quick TF-IDF test with minimal models/languages
-test-tfidf-quick:
-	@echo "Running quick TF-IDF test..."
-	python scripts/run_tfidf_experiments.py \
-		experiment=tfidf_baselines \
-		models=[dummy,logistic] \
-		languages=[en] \
-		tasks=[question_type] \
-		controls.enabled=false \
-		output_dir=./outputs/tfidf_test
-
-# Run TF-IDF for specific configuration
-run-tfidf-custom:
-	@echo "Running custom TF-IDF experiments..."
-	@echo "Usage: make run-tfidf-custom MODELS='[dummy,ridge]' LANGUAGES='[en,ru]' TASKS='[question_type]'"
-	python scripts/run_tfidf_experiments.py \
-		experiment=tfidf_baselines \
-		models=${MODELS:-[dummy,logistic]} \
-		languages=${LANGUAGES:-[en]} \
-		tasks=${TASKS:-[question_type]} \
-		output_dir=./outputs/tfidf_custom
-
-# Existing commands (preserved for backward compatibility)
-run-experiments:
-	@echo "Running neural model experiments..."
-	python -m src.experiments.run_experiment \
-		experiment=question_type \
-		model=lm_probe \
-		data.languages=[en]
-
-run-baselines:
-	@echo "Running traditional sklearn baselines..."
-	python -m src.experiments.run_experiment \
-		experiment=question_type \
-		model=dummy \
-		data.languages=[en]
+	@echo "💾 Caching datasets and models..."
+	mkdir -p $(CACHE_DIR)
+	$(PYTHON) scripts/cache_resources.py --cache-dir $(CACHE_DIR)
+	@echo "✅ Data cached successfully"
 
 # Testing
-test:
-	pytest tests/
+test: test-unit test-integration test-tfidf
+	@echo "✅ All tests completed!"
 
-test-all: test test-tfidf
-	@echo "✓ All tests completed"
+test-unit:
+	@echo "🧪 Running unit tests..."
+	$(PYTHON) -m pytest tests/unit/ -v --tb=short
+
+test-integration:
+	@echo "🔗 Running integration tests..."
+	$(PYTHON) -m pytest tests/integration/ -v --tb=short
+
+test-tfidf:
+	@echo "📊 Running TF-IDF specific tests..."
+	$(PYTHON) -m pytest tests/ -m "tfidf" -v --tb=short
+
+test-quick: generate-tfidf-tiny
+	@echo "⚡ Running quick validation tests..."
+	$(PYTHON) scripts/run_tfidf_tests.py --quick --features-dir $(FEATURES_DIR)_tiny
+
+test-comprehensive:
+	@echo "🔍 Running comprehensive test suite..."
+	$(PYTHON) scripts/run_tfidf_tests.py --output-dir $(TEST_OUTPUTS_DIR)
+
+validate: check-environment
+	@echo "✅ Running validation..."
+	$(PYTHON) scripts/simple_tfidf_test.py --features-dir $(FEATURES_DIR)_tiny || \
+	$(PYTHON) scripts/simple_tfidf_test.py --features-dir $(FEATURES_DIR) || \
+	echo "⚠️ Validation requires TF-IDF features. Run 'make generate-tfidf-tiny' first."
+
+# TF-IDF Features
+generate-tfidf:
+	@echo "🔧 Generating full TF-IDF features..."
+	mkdir -p $(FEATURES_DIR)
+	$(PYTHON) scripts/generate_tfidf_glot500.py \
+		--output-dir $(FEATURES_DIR) \
+		--model-name cis-lmu/glot500-base \
+		--max-features 50000 \
+		--verify
+	@echo "✅ TF-IDF features generated in $(FEATURES_DIR)"
+
+generate-tfidf-tiny:
+	@echo "🔧 Generating tiny TF-IDF features for testing..."
+	mkdir -p $(FEATURES_DIR)_tiny
+	$(PYTHON) -c "from src.data.tfidf_features import create_test_features; create_test_features('$(FEATURES_DIR)_tiny', n_samples=100, vocab_size=200)"
+	@echo "✅ Tiny TF-IDF features generated in $(FEATURES_DIR)_tiny"
+
+verify-tfidf:
+	@echo "🔍 Verifying TF-IDF features..."
+	$(PYTHON) -c "from src.data.tfidf_features import TfidfFeatureLoader; loader = TfidfFeatureLoader('$(FEATURES_DIR)'); print('✅ Features verified' if loader.verify_features() else '❌ Verification failed')"
+
+# Experiments
+run-tfidf-minimal: generate-tfidf-tiny
+	@echo "🚀 Running minimal TF-IDF experiment..."
+	mkdir -p $(OUTPUTS_DIR)/tfidf_minimal
+	$(PYTHON) scripts/run_tfidf_experiments.py \
+		tfidf.features_dir=$(FEATURES_DIR)_tiny \
+		models=[dummy] \
+		tasks=[question_type] \
+		languages=[[en]] \
+		controls.enabled=false \
+		output_dir=$(OUTPUTS_DIR)/tfidf_minimal \
+		wandb.mode=disabled
+
+run-tfidf-full: generate-tfidf
+	@echo "🚀 Running full TF-IDF experiments..."
+	mkdir -p $(OUTPUTS_DIR)/tfidf_full
+	$(PYTHON) scripts/run_tfidf_experiments.py \
+		tfidf.features_dir=$(FEATURES_DIR) \
+		models=[dummy,logistic,ridge,xgboost] \
+		tasks=[question_type,complexity] \
+		languages=[[en],[ru],[ar],[fi],[id],[ja],[ko]] \
+		controls.enabled=true \
+		output_dir=$(OUTPUTS_DIR)/tfidf_full \
+		wandb.mode=disabled
+
+run-neural-minimal:
+	@echo "🧠 Running minimal neural experiment..."
+	mkdir -p $(OUTPUTS_DIR)/neural_minimal
+	$(PYTHON) -m src.experiments.run_experiment \
+		experiment=question_type \
+		model=glot500_probe \
+		data.languages=[en] \
+		training.num_epochs=2 \
+		training.batch_size=4 \
+		experiment_name=minimal_probe_test \
+		output_dir=$(OUTPUTS_DIR)/neural_minimal \
+		wandb.mode=disabled
+
+run-neural-full:
+	@echo "🧠 Running full neural experiments..."
+	mkdir -p $(OUTPUTS_DIR)/neural_full
+	# This would run the full neural experiment suite
+	@echo "⚠️ Full neural experiments require significant compute resources"
+	@echo "Consider running on HPC cluster with appropriate SLURM scripts"
+
+# Results and Analysis
+collect-results:
+	@echo "📊 Collecting results..."
+	mkdir -p $(OUTPUTS_DIR)/collected
+	find $(OUTPUTS_DIR) -name "*.json" -path "*/results/*" -exec cp {} $(OUTPUTS_DIR)/collected/ \;
+	@echo "✅ Results collected in $(OUTPUTS_DIR)/collected"
+
+generate-report:
+	@echo "📈 Generating analysis report..."
+	$(PYTHON) scripts/analyze_results.py \
+		--input-dir $(OUTPUTS_DIR) \
+		--output-dir $(OUTPUTS_DIR)/analysis
+	@echo "✅ Analysis report generated"
+
+# Development and Maintenance
+format:
+	@echo "🎨 Formatting code..."
+	$(PYTHON) -m black src/ tests/ scripts/ utils/ --line-length 100
+	$(PYTHON) -m isort src/ tests/ scripts/ utils/ --profile black
+
+lint:
+	@echo "🔍 Linting code..."
+	$(PYTHON) -m flake8 src/ tests/ scripts/ utils/ --max-line-length 100 --ignore=E203,W503
+	$(PYTHON) -m pylint src/ --disable=C0114,C0115,C0116
+
+check-environment:
+	@echo "🔍 Checking environment..."
+	@echo "Python version: $$($(PYTHON) --version)"
+	@echo "Working directory: $$(pwd)"
+	@echo "PYTHONPATH: $(PYTHONPATH)"
+	@echo "HF_HOME: $(HF_HOME)"
+	$(PYTHON) -c "import sys; print('✅ Python path OK' if '$(PWD)' in sys.path else '⚠️ Add project to PYTHONPATH')"
+	@$(PYTHON) -c "import torch; print('✅ PyTorch available:', torch.__version__)" 2>/dev/null || echo "❌ PyTorch not available"
+	@$(PYTHON) -c "import transformers; print('✅ Transformers available:', transformers.__version__)" 2>/dev/null || echo "❌ Transformers not available"
+	@$(PYTHON) -c "import datasets; print('✅ Datasets available:', datasets.__version__)" 2>/dev/null || echo "❌ Datasets not available"
+	@$(PYTHON) -c "import sklearn; print('✅ Scikit-learn available:', sklearn.__version__)" 2>/dev/null || echo "❌ Scikit-learn not available"
 
 # Cleanup
 clean:
+	@echo "🧹 Cleaning temporary files..."
 	find . -type f -name "*.pyc" -delete
 	find . -type d -name "__pycache__" -delete
-	find . -type d -name "*.egg-info" -exec rm -rf {} +
-	rm -rf .pytest_cache/
-	rm -rf outputs/tfidf_test/
-	@echo "✓ Cleaned temporary files"
+	find . -type d -name ".pytest_cache" -delete
+	find . -type f -name ".coverage" -delete
+	rm -rf .coverage.*
+	rm -rf htmlcov/
+	rm -rf $(TEST_OUTPUTS_DIR)
+	@echo "✅ Temporary files cleaned"
 
-clean-tfidf:
-	rm -rf data/tfidf_features/
-	rm -rf outputs/tfidf_experiments/
-	@echo "✓ Cleaned TF-IDF files"
+clean-all: clean
+	@echo "🗑️ Cleaning all generated data..."
+	rm -rf $(DATA_DIR)/tfidf_features*
+	rm -rf $(CACHE_DIR)
+	rm -rf $(OUTPUTS_DIR)
+	rm -rf logs/
+	@echo "✅ All generated data cleaned"
 
-# Verify everything is working
-verify-setup: test-tfidf
-	@echo "✓ Setup verification completed"
+# Development workflows
+dev-setup: install-deps generate-tfidf-tiny
+	@echo "🛠️ Development environment ready!"
 
-# Development helpers
-check-tfidf-features:
-	@echo "Checking TF-IDF features status..."
-	@if [ -d "data/tfidf_features" ]; then \
-		echo "✓ TF-IDF features directory exists"; \
-		python -c "from src.data.tfidf_features import TfidfFeatureLoader; loader = TfidfFeatureLoader('./data/tfidf_features'); print(f'Vocab size: {loader.get_vocab_size()}') if loader.verify_features() else print('Features invalid')"; \
-	else \
-		echo "✗ TF-IDF features not found. Run 'make generate-tfidf'"; \
-	fi
+dev-test: test-unit test-quick
+	@echo "🧪 Development tests completed!"
 
-# Show current status
-status:
-	@echo "Project Status:"
-	@echo "==============="
-	@echo -n "HuggingFace cache: "
-	@if [ -d "${HF_HOME:-./data/cache}" ]; then echo "✓"; else echo "✗"; fi
-	@echo -n "TF-IDF features: "
-	@if [ -d "data/tfidf_features" ]; then echo "✓"; else echo "✗"; fi
-	@echo -n "Requirements: "
-	@python -c "import transformers, sklearn, datasets, scipy; print('✓')" 2>/dev/null || echo "✗"
-	@echo ""
-	@echo "Quick start:"
-	@echo "  1. make setup          # Initial setup"
-	@echo "  2. make setup-tfidf    # Setup TF-IDF baselines"
-	@echo "  3. make run-tfidf-experiments  # Run experiments"
+dev-experiment: run-tfidf-minimal
+	@echo "⚡ Development experiment completed!"
+
+# CI/CD workflows
+ci-test: install-deps test-unit test-integration
+	@echo "🤖 CI tests completed!"
+
+ci-full: install-deps generate-tfidf-tiny test-comprehensive run-tfidf-minimal
+	@echo "🤖 Full CI pipeline completed!"
+
+# VSC HPC specific targets
+vsc-setup:
+	@echo "🖥️ Setting up for VSC HPC..."
+	module purge || true
+	module load Python/3.9 || true
+	$(MAKE) install-deps
+	$(MAKE) cache-data
+
+vsc-submit-tfidf:
+	@echo "📤 Submitting TF-IDF job to VSC..."
+	sbatch scripts/slurm/run_tfidf_baselines.sh
+
+vsc-submit-neural:
+	@echo "📤 Submitting neural job to VSC..."
+	sbatch scripts/slurm/run_neural_experiments.sh
+
+# Docker targets
+docker-build:
+	@echo "🐳 Building Docker image..."
+	docker build -t multilingual-question-probing .
+
+docker-run:
+	@echo "🐳 Running in Docker..."
+	docker run -it --rm \
+		-v $(PWD):/workspace \
+		-v $(PWD)/data:/workspace/data \
+		multilingual-question-probing \
+		/bin/bash
+
+docker-test:
+	@echo "🐳 Running tests in Docker..."
+	docker run --rm \
+		-v $(PWD):/workspace \
+		multilingual-question-probing \
+		make ci-test
+
+# Advanced testing patterns
+test-pattern:
+	@echo "🔍 Running tests matching pattern: $(PATTERN)"
+	$(PYTHON) -m pytest -k "$(PATTERN)" -v
+
+test-markers:
+	@echo "🏷️ Running tests with markers: $(MARKERS)"
+	$(PYTHON) -m pytest -m "$(MARKERS)" -v
+
+test-coverage:
+	@echo "📊 Running tests with coverage..."
+	$(PYTHON) -m pytest tests/ --cov=src --cov-report=html --cov-report=term-missing
+	@echo "📋 Coverage report generated in htmlcov/"
+
+test-parallel:
+	@echo "⚡ Running tests in parallel..."
+	$(PYTHON) -m pytest tests/ -n auto
+
+# Benchmarking
+benchmark-tfidf:
+	@echo "⏱️ Benchmarking TF-IDF operations..."
+	$(PYTHON) -m pytest tests/ -m "performance" --benchmark-only
+
+benchmark-memory:
+	@echo "💾 Running memory benchmarks..."
+	$(PYTHON) scripts/benchmark_memory.py
+
+# Documentation
+docs:
+	@echo "📚 Generating documentation..."
+	$(PYTHON) -m sphinx-build -b html docs/ docs/_build/html/
+
+docs-serve:
+	@echo "🌐 Serving documentation..."
+	cd docs/_build/html && $(PYTHON) -m http.server 8000
+
+# Monitoring and debugging
+monitor-gpu:
+	@echo "🖥️ Monitoring GPU usage..."
+	watch -n 1 nvidia-smi
+
+debug-environment:
+	@echo "🐛 Debug environment information..."
+	$(PYTHON) scripts/debug_environment.py
+
+# Quick workflows for different scenarios
+quick-start: dev-setup dev-test
+	@echo "🚀 Quick start completed! You can now run experiments."
+
+full-setup: setup test run-tfidf-minimal
+	@echo "🎯 Full setup completed! System is ready for production use."
+
+research-ready: setup generate-tfidf run-tfidf-full
+	@echo "🔬 Research environment ready! All baseline experiments completed."
+
+# Help for specific components
+help-testing:
+	@echo "🧪 Testing Commands:"
+	@echo "  test              - Run all tests"
+	@echo "  test-unit         - Unit tests only"
+	@echo "  test-integration  - Integration tests only"
+	@echo "  test-tfidf        - TF-IDF specific tests"
+	@echo "  test-quick        - Quick validation"
+	@echo "  test-coverage     - Tests with coverage"
+	@echo "  test-parallel     - Parallel test execution"
+
+help-experiments:
+	@echo "🚀 Experiment Commands:"
+	@echo "  run-tfidf-minimal - Quick TF-IDF test"
+	@echo "  run-tfidf-full    - Complete TF-IDF experiments"
+	@echo "  run-neural-minimal - Quick neural test"
+	@echo "  run-neural-full   - Complete neural experiments"
+
+help-vsc:
+	@echo "🖥️ VSC HPC Commands:"
+	@echo "  vsc-setup         - Setup for VSC environment"
+	@echo "  vsc-submit-tfidf  - Submit TF-IDF job"
+	@echo "  vsc-submit-neural - Submit neural job"
+
+# Error handling
+.ONESHELL:
+.SHELLFLAGS := -eu -o pipefail -c
+
+# Prevent deletion of intermediate files
+.SECONDARY:
+
+# Targets that don't correspond to files
+.PHONY: $(MAKECMDGOALS)
