@@ -181,16 +181,28 @@ class TfidfBaselineModel:
             sparsity = 1 - (matrix.nnz / np.prod(matrix.shape))
             logger.info(f"  {split} sparsity: {sparsity:.2%}")
     
-    def fit(self, y_train: np.ndarray) -> 'TfidfBaselineModel':
+    def fit(self, X=None, y=None, **kwargs) -> 'TfidfBaselineModel':
         """
         Train the model on TF-IDF features.
         
         Args:
-            y_train: Training labels
+            X: Features (ignored, we use our own TF-IDF features) 
+            y: Training labels (can be passed as first or second argument)
+            **kwargs: Additional arguments
             
         Returns:
             Self for chaining
         """
+        # Handle different calling conventions
+        if X is not None and y is None:
+            # Called as fit(y_train) - X is actually y_train
+            y_train = X
+        elif X is not None and y is not None:
+            # Called as fit(X_train, y_train) - use y_train
+            y_train = y
+        else:
+            raise ValueError("Labels must be provided")
+        
         if self.features is None:
             self.load_features()
         
@@ -204,7 +216,7 @@ class TfidfBaselineModel:
             logger.info(f"Converted sparse matrix to dense for {self.model_type}")
         
         # Train the model
-        start_time = logger.info("Training started...")
+        logger.info("Training started...")
         self.model.fit(X_train, y_train)
         self.is_fitted = True
         
