@@ -1,242 +1,0 @@
-SLURM_JOB_ID: 64466495
-SLURM_JOB_USER: vsc37132
-SLURM_JOB_ACCOUNT: intro_vsc37132
-SLURM_JOB_NAME: qtype_experiments
-SLURM_CLUSTER_NAME: wice
-SLURM_JOB_PARTITION: gpu_a100_debug
-SLURM_NNODES: 1
-SLURM_NODELIST: k28i22
-SLURM_JOB_CPUS_PER_NODE: 4
-SLURM_JOB_GPUS: 0
-Date: Wed May  7 19:18:38 CEST 2025
-Walltime: 00-00:30:00
-========================================================================
-Running main probing experiments (non-control)...
-=======================
-PROBING LAYER 2
-=======================
-Running experiment: probe_layer2_single_submetric_fi
-Command: python -m src.experiments.run_experiment         "hydra.job.chdir=False"         "hydra.run.dir=."         "experiment=single_submetric"         "experiment.tasks=single_submetric"         "experiment.type=lm_probe"         "model=lm_probe"         "model.model_type=lm_probe"         "model.lm_name=cis-lmu/glot500-base"         "model.freeze_model=true"         "model.layer_wise=true"         "model.layer_index=2"         "model.probe_hidden_size=385" "model.probe_depth=2" "model.dropout=0.05" "model.activation=gelu" "model.normalization=layer" "model.use_mean_pooling=true"         "data.languages=[fi]"         "data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache"         "training.task_type=classification"         "training.num_epochs=15"         "training.batch_size=16"         "training.lr=1e-3" "training.patience=3" "training.scheduler_factor=0.5" "training.scheduler_patience=2" "+training.gradient_accumulation_steps=2"                  "experiment_name=probe_layer2_single_submetric_fi"         "output_dir=/scratch/leuven/371/vsc37132/makeup_probes_output/single_submetric/layer2/fi"         "wandb.mode=offline"
-/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
-  _torch_pytree._register_pytree_node(
-/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/launcher:
-Default list overrides requires 'override' keyword.
-See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
-
-  deprecation_warning(msg)
-/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/runpy.py:197: UserWarning: 
-'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
-This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
-See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
-  return _run_code(code, main_globals, None,
-/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/hydra/main.py:94: UserWarning: 
-'hydra/launcher/submitit_slurm' is validated against ConfigStore schema with the same name.
-This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
-See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
-  _run_hydra(
-Using Dataset: rokokot/question-type-and-complexity
-Cache Directory: /data/leuven/371/vsc37132/qtype-eval/data/cache
-[2025-05-07 19:19:15,316][__main__][INFO] - Configuration:
-seed: 42
-output_dir: /scratch/leuven/371/vsc37132/makeup_probes_output/single_submetric/layer2/fi
-experiment_name: probe_layer2_single_submetric_fi
-wandb:
-  project: multilingual-question-probing
-  entity: rokii-ku-leuven
-  mode: offline
-slurm:
-  partition: gpu
-  time: '24:00:00'
-  gpus_per_node: 1
-  cpus_per_task: 4
-  mem_per_cpu: 8
-  job_name: ${experiment_name}
-  account: intro_vsc37132
-data:
-  dataset_name: rokokot/question-type-and-complexity
-  cache_dir: /data/leuven/371/vsc37132/qtype-eval/data/cache
-  vectors_dir: ./data/features
-  languages:
-  - fi
-  train_language: null
-  eval_language: null
-model:
-  model_type: lm_probe
-  lm_name: cis-lmu/glot500-base
-  dropout: 0.05
-  freeze_model: true
-  layer_wise: true
-  layer_index: 2
-  num_outputs: 1
-  probe_hidden_size: 385
-  probe_depth: 2
-  activation: gelu
-  normalization: layer
-  weight_init: xavier
-  output_standardization: false
-  use_linear_probe: false
-  use_mean_pooling: true
-  use_class_weights: false
-training:
-  task_type: classification
-  batch_size: 16
-  num_epochs: 15
-  lr: 0.001
-  weight_decay: 0.01
-  patience: 3
-  scheduler_factor: 0.5
-  scheduler_patience: 2
-  random_state: 42
-  num_workers: 4
-  gradient_accumulation_steps: 2
-experiment:
-  type: lm_probe
-  tasks: single_submetric
-  submetric: avg_links_len
-  available_submetrics:
-  - avg_links_len
-  - avg_max_depth
-  - avg_subordinate_chain_len
-  - avg_verb_edges
-  - lexical_density
-  - n_tokens
-  use_controls: false
-  control_index: null
-  num_controls: 3
-  eval_on_orig_test: true
-  cross_lingual: false
-  task_type: regression
-
-[2025-05-07 19:19:15,316][__main__][INFO] - Normalized task: single_submetric
-[2025-05-07 19:19:15,316][__main__][INFO] - Using submetric: avg_links_len
-[2025-05-07 19:19:15,316][__main__][INFO] - Using explicit task_type from config: classification
-[2025-05-07 19:19:15,316][__main__][INFO] - Determined Task Type: classification
-[2025-05-07 19:19:15,321][__main__][INFO] - Running LM experiment for task 'single_submetric' (type: classification) on languages: ['fi']
-[2025-05-07 19:19:15,321][__main__][INFO] - Using submetric: avg_links_len
-[2025-05-07 19:19:15,321][__main__][INFO] - Processing language: fi
-wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
-wandb: Tracking run with wandb version 0.19.9
-wandb: W&B syncing is set to `offline` in this directory.  
-wandb: Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
-[2025-05-07 19:19:19,851][src.data.datasets][INFO] - Creating dataloaders for language: 'fi', task: 'single_submetric', submetric: 'avg_links_len'
-/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-[2025-05-07 19:19:22,312][src.data.datasets][INFO] - Successfully loaded tokenizer for cis-lmu/glot500-base
-[2025-05-07 19:19:22,312][src.data.datasets][INFO] - Loading 'base' dataset for fi language (train)
-Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
-[2025-05-07 19:19:22,630][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
-[2025-05-07 19:19:22,802][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
-[2025-05-07 19:19:23,126][src.data.datasets][INFO] - Filtered from 7460 to 1195 examples for language 'fi'
-[2025-05-07 19:19:23,137][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
-[2025-05-07 19:19:23,138][src.data.datasets][INFO] - Loaded 1195 examples for fi (train)
-[2025-05-07 19:19:23,141][src.data.datasets][INFO] - Loading 'base' dataset for fi language (validation)
-Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
-[2025-05-07 19:19:23,249][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
-[2025-05-07 19:19:23,351][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
-[2025-05-07 19:19:23,389][src.data.datasets][INFO] - Filtered from 441 to 63 examples for language 'fi'
-[2025-05-07 19:19:23,392][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
-[2025-05-07 19:19:23,392][src.data.datasets][INFO] - Loaded 63 examples for fi (validation)
-[2025-05-07 19:19:23,395][src.data.datasets][INFO] - Loading 'base' dataset for fi language (test)
-Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
-[2025-05-07 19:19:23,505][datasets.load][WARNING] - Using the latest cached version of the dataset since rokokot/question-type-and-complexity couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
-[2025-05-07 19:19:23,591][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'base' at /data/leuven/371/vsc37132/qtype-eval/data/cache/rokokot___question-type-and-complexity/base/0.0.0/73f7e9fabe3af1c8a61564a268551f52ed221358 (last modified on Mon Apr  7 15:43:17 2025).
-[2025-05-07 19:19:23,620][src.data.datasets][INFO] - Filtered from 719 to 110 examples for language 'fi'
-[2025-05-07 19:19:23,622][src.data.datasets][INFO] - Columns in dataset: ['unique_id', 'text', 'language', 'avg_links_len', 'avg_max_depth', 'avg_subordinate_chain_len', 'avg_verb_edges', 'lexical_density', 'n_tokens', 'question_type', 'complexity_score', 'lang_norm_complexity_score']
-[2025-05-07 19:19:23,622][src.data.datasets][INFO] - Loaded 110 examples for fi (test)
-[2025-05-07 19:19:23,625][src.data.datasets][INFO] - Loaded datasets: train=1195, val=63, test=110 examples
-[2025-05-07 19:19:23,626][src.data.datasets][INFO] - Task 'single_submetric' is classification: False
-[2025-05-07 19:19:23,626][src.data.datasets][INFO] - Getting feature name for task: 'single_submetric', submetric: 'avg_links_len'
-[2025-05-07 19:19:23,626][src.data.datasets][INFO] - Selected feature name: 'avg_links_len' for task: 'single_submetric'
-[2025-05-07 19:19:23,626][src.data.datasets][INFO] - Label statistics for single_submetric (feature: avg_links_len):
-[2025-05-07 19:19:23,626][src.data.datasets][INFO] -   Min: 0.0000, Max: 1.0000
-[2025-05-07 19:19:23,627][src.data.datasets][INFO] -   Mean: 0.1395, Std: 0.0869
-[2025-05-07 19:19:23,627][src.data.datasets][INFO] - Sample text: Onko Tampereen rantatunneli Suomen pisin maantietu...
-[2025-05-07 19:19:23,627][src.data.datasets][INFO] - Sample label: 0.2280000001192093
-[2025-05-07 19:19:23,627][src.data.datasets][INFO] - Task 'single_submetric' is classification: False
-[2025-05-07 19:19:23,627][src.data.datasets][INFO] - Getting feature name for task: 'single_submetric', submetric: 'avg_links_len'
-[2025-05-07 19:19:23,627][src.data.datasets][INFO] - Selected feature name: 'avg_links_len' for task: 'single_submetric'
-[2025-05-07 19:19:23,627][src.data.datasets][INFO] - Label statistics for single_submetric (feature: avg_links_len):
-[2025-05-07 19:19:23,627][src.data.datasets][INFO] -   Min: 0.0000, Max: 0.5520
-[2025-05-07 19:19:23,628][src.data.datasets][INFO] -   Mean: 0.2101, Std: 0.1311
-[2025-05-07 19:19:23,628][src.data.datasets][INFO] - Sample text: Entä viestivätkö naisen silmät miehelle, että ”usk...
-[2025-05-07 19:19:23,628][src.data.datasets][INFO] - Sample label: 0.36800000071525574
-[2025-05-07 19:19:23,628][src.data.datasets][INFO] - Task 'single_submetric' is classification: False
-[2025-05-07 19:19:23,628][src.data.datasets][INFO] - Getting feature name for task: 'single_submetric', submetric: 'avg_links_len'
-[2025-05-07 19:19:23,628][src.data.datasets][INFO] - Selected feature name: 'avg_links_len' for task: 'single_submetric'
-[2025-05-07 19:19:23,628][src.data.datasets][INFO] - Label statistics for single_submetric (feature: avg_links_len):
-[2025-05-07 19:19:23,628][src.data.datasets][INFO] -   Min: 0.0000, Max: 0.6740
-[2025-05-07 19:19:23,628][src.data.datasets][INFO] -   Mean: 0.2318, Std: 0.1347
-[2025-05-07 19:19:23,628][src.data.datasets][INFO] - Sample text: Kenen toimesta tämä on tehty?...
-[2025-05-07 19:19:23,628][src.data.datasets][INFO] - Sample label: 0.2070000022649765
-[2025-05-07 19:19:23,629][src.data.datasets][INFO] - Created datasets: train=1195, val=63, test=110
-[2025-05-07 19:19:23,629][src.data.datasets][INFO] - Creating dataloaders with 4 workers
-[2025-05-07 19:19:23,629][src.data.datasets][INFO] - Successfully created all dataloaders
-[2025-05-07 19:19:23,629][__main__][INFO] - Using model type: lm_probe for submetric avg_links_len
-[2025-05-07 19:19:23,629][src.models.model_factory][INFO] - Creating lm_probe model for classification task
-/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
-  _torch_pytree._register_pytree_node(
-/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
-  _torch_pytree._register_pytree_node(
-Some weights of XLMRobertaModel were not initialized from the model checkpoint at cis-lmu/glot500-base and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
-You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
-[2025-05-07 19:19:30,541][src.models.model_factory][INFO] - Loaded model from local cache: cis-lmu/glot500-base
-[2025-05-07 19:19:30,542][src.models.model_factory][INFO] - Language model parameters frozen
-[2025-05-07 19:19:30,542][src.models.model_factory][INFO] - Base model configuration: layer-wise=True, layer_index=2, freeze_model=True
-[2025-05-07 19:19:30,542][src.models.model_factory][INFO] - Using provided probe_hidden_size: 385
-[2025-05-07 19:19:30,548][src.models.model_factory][INFO] - Model has 447,367 trainable parameters out of 394,568,839 total parameters
-[2025-05-07 19:19:30,549][src.models.model_factory][INFO] - Encoder: 0 trainable parameters, Head: 447,367 trainable parameters
-[2025-05-07 19:19:30,549][src.models.model_factory][INFO] - MLP probe configuration: hidden_size=385, depth=2, activation=gelu, normalization=layer
-[2025-05-07 19:19:30,549][src.models.model_factory][INFO] - Created specialized classification probe with 2 layers, 385 hidden size
-[2025-05-07 19:19:30,549][__main__][INFO] - Successfully created lm_probe model for fi
-[2025-05-07 19:19:30,550][__main__][INFO] - Total parameters: 394,568,839
-[2025-05-07 19:19:30,550][__main__][INFO] - Trainable parameters: 447,367 (0.11%)
-[2025-05-07 19:19:30,551][__main__][INFO] - Adjusting learning rate for probe from 0.001 to 1e-4
-Epoch 1/15: [Epoch 1/15: [                              ] 1/75 batches, loss: 0.8301Epoch 1/15: [                              ] 2/75 batches, loss: 0.8058Epoch 1/15: [=                             ] 3/75 batches, loss: 0.7881Epoch 1/15: [=                             ] 4/75 batches, loss: 0.7721Epoch 1/15: [==                            ] 5/75 batches, loss: 0.7609Epoch 1/15: [==                            ] 6/75 batches, loss: 0.7529Epoch 1/15: [==                            ] 7/75 batches, loss: 0.7454Epoch 1/15: [===                           ] 8/75 batches, loss: 0.7395Epoch 1/15: [===                           ] 9/75 batches, loss: 0.7348Epoch 1/15: [====                          ] 10/75 batches, loss: 0.7309Epoch 1/15: [====                          ] 11/75 batches, loss: 0.7276Epoch 1/15: [====                          ] 12/75 batches, loss: 0.7251Epoch 1/15: [=====                         ] 13/75 batches, loss: 0.7227Epoch 1/15: [=====                         ] 14/75 batches, loss: 0.7207Epoch 1/15: [======                        ] 15/75 batches, loss: 0.7189Epoch 1/15: [======                        ] 16/75 batches, loss: 0.7174Epoch 1/15: [======                        ] 17/75 batches, loss: 0.7160Epoch 1/15: [=======                       ] 18/75 batches, loss: 0.7147Epoch 1/15: [=======                       ] 19/75 batches, loss: 0.7136Epoch 1/15: [========                      ] 20/75 batches, loss: 0.7126Epoch 1/15: [========                      ] 21/75 batches, loss: 0.7117Epoch 1/15: [========                      ] 22/75 batches, loss: 0.7109Epoch 1/15: [=========                     ] 23/75 batches, loss: 0.7101Epoch 1/15: [=========                     ] 24/75 batches, loss: 0.7094Epoch 1/15: [==========                    ] 25/75 batches, loss: 0.7088Epoch 1/15: [==========                    ] 26/75 batches, loss: 0.7082Epoch 1/15: [==========                    ] 27/75 batches, loss: 0.7077Epoch 1/15: [===========                   ] 28/75 batches, loss: 0.7071Epoch 1/15: [===========                   ] 29/75 batches, loss: 0.7067Epoch 1/15: [============                  ] 30/75 batches, loss: 0.7062Epoch 1/15: [============                  ] 31/75 batches, loss: 0.7058Epoch 1/15: [============                  ] 32/75 batches, loss: 0.7054Epoch 1/15: [=============                 ] 33/75 batches, loss: 0.7051Epoch 1/15: [=============                 ] 34/75 batches, loss: 0.7047Epoch 1/15: [==============                ] 35/75 batches, loss: 0.7044Epoch 1/15: [==============                ] 36/75 batches, loss: 0.7041Epoch 1/15: [==============                ] 37/75 batches, loss: 0.7038Epoch 1/15: [===============               ] 38/75 batches, loss: 0.7035Epoch 1/15: [===============               ] 39/75 batches, loss: 0.7032Epoch 1/15: [================              ] 40/75 batches, loss: 0.7030Epoch 1/15: [================              ] 41/75 batches, loss: 0.7028Epoch 1/15: [================              ] 42/75 batches, loss: 0.7025Epoch 1/15: [=================             ] 43/75 batches, loss: 0.7023Epoch 1/15: [=================             ] 44/75 batches, loss: 0.7021Epoch 1/15: [==================            ] 45/75 batches, loss: 0.7019Epoch 1/15: [==================            ] 46/75 batches, loss: 0.7017Epoch 1/15: [==================            ] 47/75 batches, loss: 0.7015Epoch 1/15: [===================           ] 48/75 batches, loss: 0.7014Epoch 1/15: [===================           ] 49/75 batches, loss: 0.7012Epoch 1/15: [====================          ] 50/75 batches, loss: 0.7010Epoch 1/15: [====================          ] 51/75 batches, loss: 0.7009Epoch 1/15: [====================          ] 52/75 batches, loss: 0.7007Epoch 1/15: [=====================         ] 53/75 batches, loss: 0.7006Epoch 1/15: [=====================         ] 54/75 batches, loss: 0.7005Epoch 1/15: [======================        ] 55/75 batches, loss: 0.7003Epoch 1/15: [======================        ] 56/75 batches, loss: 0.7002Epoch 1/15: [======================        ] 57/75 batches, loss: 0.7001Epoch 1/15: [=======================       ] 58/75 batches, loss: 0.7000Epoch 1/15: [=======================       ] 59/75 batches, loss: 0.6999Epoch 1/15: [========================      ] 60/75 batches, loss: 0.6997Epoch 1/15: [========================      ] 61/75 batches, loss: 0.6996Epoch 1/15: [========================      ] 62/75 batches, loss: 0.6995Epoch 1/15: [=========================     ] 63/75 batches, loss: 0.6994Epoch 1/15: [=========================     ] 64/75 batches, loss: 0.6993Epoch 1/15: [==========================    ] 65/75 batches, loss: 0.6992Epoch 1/15: [==========================    ] 66/75 batches, loss: 0.6991Epoch 1/15: [==========================    ] 67/75 batches, loss: 0.6991Epoch 1/15: [===========================   ] 68/75 batches, loss: 0.6990Epoch 1/15: [===========================   ] 69/75 batches, loss: 0.6989Epoch 1/15: [============================  ] 70/75 batches, loss: 0.6988Epoch 1/15: [============================  ] 71/75 batches, loss: 0.6987Epoch 1/15: [============================  ] 72/75 batches, loss: 0.6987Epoch 1/15: [============================= ] 73/75 batches, loss: 0.6986Epoch 1/15: [============================= ] 74/75 batches, loss: 0.6985Epoch 1/15: [==============================] 75/75 batches, loss: 0.6984
-[2025-05-07 19:19:36,602][src.training.lm_trainer][INFO] - Epoch 1/15, Train Loss: 0.6984
-[2025-05-07 19:19:36,858][src.training.lm_trainer][ERROR] - Error during training: Classification metrics can't handle a mix of continuous and binary targets
-[2025-05-07 19:19:36,922][src.training.lm_trainer][ERROR] - Traceback: Traceback (most recent call last):
-  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 243, in train
-    val_loss, val_metrics = self._evaluate(val_loader)
-  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 403, in _evaluate
-    metrics = self._calculate_metrics(all_labels, all_preds)
-  File "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/src/training/lm_trainer.py", line 421, in _calculate_metrics
-    "accuracy": float(accuracy_score(y_true, y_pred_binary)),
-  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/sklearn/utils/_param_validation.py", line 216, in wrapper
-    return func(*args, **kwargs)
-  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/sklearn/metrics/_classification.py", line 227, in accuracy_score
-    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
-  File "/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/sklearn/metrics/_classification.py", line 107, in _check_targets
-    raise ValueError(
-ValueError: Classification metrics can't handle a mix of continuous and binary targets
-
-[2025-05-07 19:19:36,923][src.training.lm_trainer][INFO] - GPU memory cleared
-wandb:                                                                                
-wandb: 
-wandb: Run history:
-wandb:         epoch ▁
-wandb: learning_rate ▁
-wandb:    train_loss ▁
-wandb: 
-wandb: Run summary:
-wandb:         epoch 1
-wandb: learning_rate 0.0001
-wandb:    train_loss 0.69844
-wandb: 
-wandb: You can sync this run to the cloud by running:
-wandb: wandb sync /scratch/leuven/371/vsc37132/wandb/wandb/offline-run-20250507_191915-xfx3waun
-wandb: Find logs at: /scratch/leuven/371/vsc37132/wandb/wandb/offline-run-20250507_191915-xfx3waun/logs
-Experiment probe_layer2_single_submetric_fi completed successfully
-Warning: No test metrics found in /scratch/leuven/371/vsc37132/makeup_probes_output/single_submetric/layer2/fi/fi/results.json
-Failed to extract metrics from /scratch/leuven/371/vsc37132/makeup_probes_output/single_submetric/layer2/fi/fi/results.json for layer 2
-Running control probing experiments...
-=======================
-PROBING LAYER 2 (CONTROL EXPERIMENTS)
-=======================
-Running experiment: probe_layer2_single_submetric_control1_fi
-Command: python -m src.experiments.run_experiment         "hydra.job.chdir=False"         "hydra.run.dir=."         "experiment=single_submetric"         "experiment.tasks=single_submetric"         "experiment.type=lm_probe"         "model=lm_probe"         "model.model_type=lm_probe"         "model.lm_name=cis-lmu/glot500-base"         "model.freeze_model=true"         "model.layer_wise=true"         "model.layer_index=2"         "model.probe_hidden_size=385" "model.probe_depth=2" "model.dropout=0.05" "model.activation=gelu" "model.normalization=layer" "model.use_mean_pooling=true"         "data.languages=[fi]"         "data.cache_dir=/data/leuven/371/vsc37132/qtype-eval/data/cache"         "training.task_type=classification"         "training.num_epochs=15"         "training.batch_size=16"         "training.lr=1e-3" "training.patience=3" "training.scheduler_factor=0.5" "training.scheduler_patience=2" "+training.gradient_accumulation_steps=2"                  "experiment_name=probe_layer2_single_submetric_control1_fi"         "output_dir=/scratch/leuven/371/vsc37132/makeup_probes_output/single_submetric/control1/layer2/fi"         "wandb.mode=offline"             "experiment.use_controls=true"             "experiment.control_index=1"
-/data/leuven/371/vsc37132/miniconda3/envs/qtype-eval/lib/python3.9/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
-  _torch_pytree._register_pytree_node(
-slurmstepd: error: *** JOB 64466495 ON k28i22 CANCELLED AT 2025-05-07T19:20:06 ***
