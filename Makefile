@@ -3,6 +3,7 @@
 .DEFAULT_GOAL := help
 
 PYTHON := python3
+PIP := pip
 DATA_DIR := data
 MODELS_DIR := models
 

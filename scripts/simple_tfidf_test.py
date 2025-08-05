@@ -148,7 +148,7 @@ def test_data_integration(features_dir):
         traceback.print_exc()
         return False
 
-def test_model_creation():
+def test_model_creation(features_dir):
     """Test TF-IDF model creation."""
     logger.info("Testing TF-IDF model creation...")
     
@@ -165,7 +165,7 @@ def test_model_creation():
                 model = create_tfidf_baseline_model(
                     model_type, 
                     task_type=task_type, 
-                    tfidf_features_dir="./data/tfidf_features_tiny"
+                    tfidf_features_dir=features_dir
                 )
                 logger.info(f"✓ Created {model_type} model: {type(model).__name__}")
             elif model_type == "ridge":
@@ -173,7 +173,7 @@ def test_model_creation():
                 model = create_tfidf_baseline_model(
                     model_type, 
                     task_type=task_type, 
-                    tfidf_features_dir="./data/tfidf_features_tiny"
+                    tfidf_features_dir=features_dir
                 )
                 logger.info(f"✓ Created {model_type} model: {type(model).__name__}")
             else:  # dummy
@@ -181,7 +181,7 @@ def test_model_creation():
                     model = create_tfidf_baseline_model(
                         model_type, 
                         task_type=task_type, 
-                        tfidf_features_dir="./data/tfidf_features_tiny"
+                        tfidf_features_dir=features_dir
                     )
                     logger.info(f"✓ Created {model_type} model for {task_type}: {type(model).__name__}")
         
@@ -261,7 +261,7 @@ def main():
         ("Module Imports", lambda: test_module_imports()),
         ("TF-IDF Loading", lambda: test_tfidf_loading(features_dir)),
         ("Data Integration", lambda: test_data_integration(features_dir)),
-        ("Model Creation", lambda: test_model_creation()),
+        ("Model Creation", lambda: test_model_creation(features_dir)),
         ("End-to-End Training", lambda: test_end_to_end_training(features_dir)),
     ]
     
