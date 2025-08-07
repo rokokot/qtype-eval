@@ -165,7 +165,7 @@ if [ ! -f "${FEATURES_DIR}/metadata.json" ]; then
     echo "Generating TF-IDF features..."
     python scripts/generate_tfidf_glot500.py \
         --output-dir "${FEATURES_DIR}" \
-        --max-features 10000 \
+        --max-features 128000 \
         --cache-dir $HF_HOME
     
     if [ $? -ne 0 ]; then

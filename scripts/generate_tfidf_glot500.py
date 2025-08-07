@@ -23,7 +23,7 @@ class Glot500TfidfGenerator:
     def __init__(
         self,
         model_name: str = 'cis-lmu/glot500-base',
-        max_features: int = 50000,
+        max_features: int = 128000,
         min_df: int = 2,
         max_df: float = 0.95,
         cache_dir: Optional[str] = None,
@@ -139,6 +139,7 @@ class Glot500TfidfGenerator:
             tokenizer=self.glot500_tokenize,
             lowercase=False,  # Glot500 handles casing internally
             token_pattern=None,  # We provide our own tokenizer
+            ngram_range=(1, 2),  # Subword unigrams + bigrams
             max_features=self.max_features,
             min_df=self.min_df,
             max_df=self.max_df,
@@ -318,7 +319,7 @@ def main():
                        help="Output directory for TF-IDF features")
     parser.add_argument("--model-name", default="cis-lmu/glot500-base", 
                        help="Glot500 model name for tokenization")
-    parser.add_argument("--max-features", type=int, default=50000, 
+    parser.add_argument("--max-features", type=int, default=128000, 
                        help="Maximum number of TF-IDF features")
     parser.add_argument("--min-df", type=int, default=2,
                        help="Minimum document frequency")

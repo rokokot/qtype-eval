@@ -1,7 +1,5 @@
 #!/bin/bash
 # scripts/setup_tfidf.sh
-# Setup script for TF-IDF features integration
-
 set -e
 
 echo "Setting up TF-IDF features for multilingual question probing..."
@@ -36,7 +34,7 @@ echo "Generating TF-IDF features with Glot500 tokenizer..."
 python scripts/generate_tfidf_glot500.py \
     --output-dir ./data/tfidf_features \
     --model-name cis-lmu/glot500-base \
-    --max-features 50000 \
+    --max-features 128000 \
     --verify
 
 if [ $? -eq 0 ]; then

@@ -10,7 +10,7 @@ name: "tfidf_glot500_baselines"
 tfidf:
   features_dir: "./data/tfidf_features"
   model_name: "cis-lmu/glot500-base"
-  max_features: 50000
+  max_features: 128000
   use_tfidf: true  # Flag to indicate TF-IDF mode
 
 # Models to test
