@@ -1,10 +1,14 @@
-task_type: "classification" 
-batch_size: 16
-num_epochs: 10
-lr: 3e-5
-weight_decay: 0.0001
-patience: 5
-scheduler_factor: 0.8
-scheduler_patience: 4
-random_state: 42
-num_workers: 4
+# Default experiment configuration
+experiment_type: "default"
+name: "default_experiment"
+
+# Task settings
+tasks: ["question_type"]
+languages: ["en"]
+
+# Basic settings
+use_controls: false
+control_index: null
+num_controls: 3
+eval_on_orig_test: true
+cross_lingual: false

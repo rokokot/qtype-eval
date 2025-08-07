@@ -6,7 +6,7 @@ import torch.nn as nn
 import torch.optim as optim
 import numpy as np
 from typing import Dict, Any, Optional
-from sklearn.metrics import accuracy_score, f1_score, mean_squared_error, r2_score, precision_score, recall_score, mean_absolute_error
+from src.evaluation.metrics import calculate_metrics, format_metrics_for_logging
 import logging
 from collections import defaultdict
 import json
@@ -245,7 +245,7 @@ class LMTrainer:
                     for k, v in val_metrics.items():
                         self.metrics_history[f'val_{k}'].append(v)
                     
-                    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Val Loss: {val_loss:.4f}, Metrics: {val_metrics}")
+                    logger.info(f"Epoch {epoch+1}/{self.num_epochs}, Val Loss: {val_loss:.4f}, Metrics: {format_metrics_for_logging(val_metrics)}")
 
                     scheduler.step(val_loss)
 
@@ -305,11 +305,11 @@ class LMTrainer:
             val_loss, val_metrics = self._evaluate(val_loader) if val_loader else (None, None)
             test_loss, test_metrics = self._evaluate(test_loader) if test_loader else (None, None)
 
-            logger.info(f"Final evaluation - Train metrics: {train_metrics}")
+            logger.info(f"Final evaluation - Train metrics: {format_metrics_for_logging(train_metrics)}")
             if val_metrics:
-                logger.info(f"Final evaluation - Validation metrics: {val_metrics}")
+                logger.info(f"Final evaluation - Validation metrics: {format_metrics_for_logging(val_metrics)}")
             if test_metrics:
-                logger.info(f"Final evaluation - Test metrics: {test_metrics}")
+                logger.info(f"Final evaluation - Test metrics: {format_metrics_for_logging(test_metrics)}")
 
             # Collect results
             results = {
@@ -405,33 +405,28 @@ class LMTrainer:
         return avg_loss, metrics
 
     def _calculate_metrics(self, y_true, y_pred):
-        """Calculate metrics based on task type"""
-        y_true = np.squeeze(y_true)
-        y_pred = np.squeeze(y_pred)
-
-        if self.task_type == "classification":
-            y_pred_binary = (y_pred > 0.5).astype(int)
+        """Calculate standardized metrics based on task type."""
+        try:
+            # Prepare predictions based on task type
+            y_true = np.squeeze(y_true)
+            y_pred = np.squeeze(y_pred)
             
-            if y_true.ndim > 1:
-                y_true = y_true.reshape(-1)
-            if y_pred_binary.ndim > 1:
-                y_pred_binary = y_pred_binary.reshape(-1)
+            if self.task_type == "classification":
+                # Convert probabilities to binary predictions
+                y_pred = (y_pred > 0.5).astype(int)
             
-            return {
-                "accuracy": float(accuracy_score(y_true, y_pred_binary)),
-                "f1": float(f1_score(y_true, y_pred_binary, average="binary")),
-                "precision": float(precision_score(y_true, y_pred_binary, zero_division=0)),
-                "recall": float(recall_score(y_true, y_pred_binary, zero_division=0))
-        
-            }
-        else:
+            # Flatten arrays if needed
             if y_true.ndim > 1:
                 y_true = y_true.reshape(-1)
             if y_pred.ndim > 1:
                 y_pred = y_pred.reshape(-1)
             
-            return {
-                "mse": float(mean_squared_error(y_true, y_pred)),
-                "rmse": float(np.sqrt(mean_squared_error(y_true, y_pred))),
-                "r2": float(r2_score(y_true, y_pred)),
-            }
+            return calculate_metrics(y_true, y_pred, self.task_type)
+            
+        except Exception as e:
+            logger.error(f"Error calculating metrics: {e}")
+            # Return fallback metrics
+            if self.task_type == "classification":
+                return {"primary_metric": "accuracy", "primary_value": 0.0, "accuracy": 0.0, "f1": 0.0, "precision": 0.0, "recall": 0.0}
+            else:
+                return {"primary_metric": "mse", "primary_value": float('inf'), "mse": float('inf'), "r2": 0.0}

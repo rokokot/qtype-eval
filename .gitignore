@@ -130,6 +130,48 @@ ENV/
 env.bak/
 venv.bak/
 
+# Experiment Results and Data
+data/cache/
+data/tfidf_features/
+*/output/
+*_output/
+*_results/
+results_*/
+consolidated_results/
+plots/
+*.csv
+!requirements.txt
+
+# HuggingFace Cache
+transformers_cache/
+datasets_cache/
+
+# SLURM and HPC
+slurm-*.out
+slurm-*.err
+*.sbatch.log
+
+# Wandb
+wandb/
+.wandb/
+
+# Model checkpoints and saved models
+*.bin
+*.pt
+*.pth
+checkpoints/
+saved_models/
+
+# Large feature files
+*.pkl
+*.npy
+*.npz
+tfidf_vectors_*
+
+# Temporary test outputs
+local_test_outputs/
+test_outputs/
+
 # Spyder project settings
 .spyderproject
 .spyproject
@@ -199,9 +241,5 @@ logs/
 
 ./data
 
-<<<<<<< HEAD
 ./outputs/*.out
-=======
-slurm-64444483.out
->>>>>>> 69f886f3030b7aff0301a7fd3596c248c0142992
 

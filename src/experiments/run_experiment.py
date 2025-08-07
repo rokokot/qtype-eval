@@ -1,4 +1,4 @@
-# main experiment runner
+"""Main experiment runner."""
 
 import os
 import logging

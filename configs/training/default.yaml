@@ -1,0 +1,17 @@
+# Default training configuration
+task_type: "classification"
+seed: 42
+batch_size: 16
+learning_rate: 2e-5
+num_epochs: 10
+patience: 3
+weight_decay: 0.01
+gradient_accumulation_steps: 1
+
+# Output settings
+save_model: true
+save_predictions: true
+
+# Evaluation settings
+eval_steps: 500
+logging_steps: 100

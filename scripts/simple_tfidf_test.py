@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""
-Fixed version of the TF-IDF integration test script.
-Addresses feature/label alignment and handles unhashable numpy arrays.
-"""
+"""TF-IDF integration test script."""
 
 import argparse
 import logging
@@ -276,12 +273,12 @@ def main():
             success = test_func()
             results[test_name] = success
             if success:
-                logger.info(f"✅ {test_name} PASSED")
+                logger.info(f" {test_name} PASSED")
             else:
-                logger.error(f"❌ {test_name} FAILED - stopping here")
+                logger.error(f" {test_name} FAILED - stopping here")
                 break
         except Exception as e:
-            logger.error(f"❌ {test_name} FAILED with exception: {e}")
+            logger.error(f" {test_name} FAILED with exception: {e}")
             results[test_name] = False
             break
     
@@ -294,16 +291,16 @@ def main():
     total = len(results)
     
     for test_name, success in results.items():
-        status = "✅ PASS" if success else "❌ FAIL"
+        status = " PASS" if success else " FAIL"
         logger.info(f"{test_name}: {status}")
     
     if passed == total:
-        logger.info(f"\n🎉 All {total} tests passed! TF-IDF integration is working correctly.")
+        logger.info(f"\n All {total} tests passed! TF-IDF integration is working correctly.")
         logger.info("\nNext steps:")
         logger.info("  python scripts/run_tfidf_experiments.py experiment=tfidf_baselines")
         return 0
     else:
-        logger.error(f"\n❌ {total - passed} out of {total} tests failed.")
+        logger.error(f"\n {total - passed} out of {total} tests failed.")
         logger.info("\nNext steps:")
         logger.info("  Fix the failing tests and try again")
         return 1

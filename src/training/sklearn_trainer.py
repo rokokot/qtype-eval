@@ -6,12 +6,12 @@ Addresses unhashable numpy array issues and improves compatibility.
 
 import numpy as np
 from typing import Dict, Any, Tuple, Optional
-from sklearn.metrics import accuracy_score, f1_score, mean_squared_error, r2_score, precision_score, recall_score
 import logging
 import time
 import joblib
 import json
 import os
+from src.evaluation.metrics import calculate_metrics, format_metrics_for_logging
 
 logger = logging.getLogger(__name__)
 
@@ -108,7 +108,7 @@ class SklearnTrainer:
         # Evaluate on training data
         train_preds = self.model.predict(X_train_processed)
         train_metrics = self._calculate_metrics(y_train_processed, train_preds)
-        logger.info(f"Training metrics: {train_metrics}")
+        logger.info(f"Training metrics: {format_metrics_for_logging(train_metrics)}")
         
         # Evaluate on validation data if provided
         val_metrics = None
@@ -119,7 +119,7 @@ class SklearnTrainer:
             
             val_preds = self.model.predict(X_val_processed)
             val_metrics = self._calculate_metrics(y_val_processed, val_preds)
-            logger.info(f"Validation metrics: {val_metrics}")
+            logger.info(f"Validation metrics: {format_metrics_for_logging(val_metrics)}")
         
         # Evaluate on test data if provided
         test_metrics = None
@@ -193,56 +193,16 @@ class SklearnTrainer:
             return y.astype(float)
     
     def _calculate_metrics(self, y_true: np.ndarray, y_pred: np.ndarray) -> Dict[str, float]:
-        """Calculate appropriate metrics based on task type."""
+        """Calculate standardized metrics based on task type."""
         try:
-            if self.task_type == "classification":
-                metrics = {
-                    "accuracy": float(accuracy_score(y_true, y_pred)),
-                }
-                
-                # Add F1 score with error handling
-                try:
-                    f1 = f1_score(y_true, y_pred, average="binary", zero_division=0)
-                    metrics["f1"] = float(f1)
-                except Exception as e:
-                    logger.warning(f"Could not compute F1 score: {e}")
-                    metrics["f1"] = 0.0
-                
-                # Add precision and recall with error handling
-                try:
-                    precision = precision_score(y_true, y_pred, average="binary", zero_division=0)
-                    recall = recall_score(y_true, y_pred, average="binary", zero_division=0)
-                    metrics["precision"] = float(precision)
-                    metrics["recall"] = float(recall)
-                except Exception as e:
-                    logger.warning(f"Could not compute precision/recall: {e}")
-                    metrics["precision"] = 0.0
-                    metrics["recall"] = 0.0
-                
-            else:  # regression
-                mse = mean_squared_error(y_true, y_pred)
-                metrics = {
-                    "mse": float(mse),
-                    "rmse": float(np.sqrt(mse)),
-                }
-                
-                # Add R² score with error handling
-                try:
-                    r2 = r2_score(y_true, y_pred)
-                    metrics["r2"] = float(r2)
-                except Exception as e:
-                    logger.warning(f"Could not compute R² score: {e}")
-                    metrics["r2"] = 0.0
-            
-            return metrics
-            
+            return calculate_metrics(y_true, y_pred, self.task_type)
         except Exception as e:
             logger.error(f"Error calculating metrics: {e}")
-            # Return basic metrics to avoid crashes
+            # Return fallback metrics
             if self.task_type == "classification":
-                return {"accuracy": 0.0, "f1": 0.0, "precision": 0.0, "recall": 0.0}
+                return {"primary_metric": "accuracy", "primary_value": 0.0, "accuracy": 0.0, "f1": 0.0, "precision": 0.0, "recall": 0.0}
             else:
-                return {"mse": float('inf'), "rmse": float('inf'), "r2": 0.0}
+                return {"primary_metric": "mse", "primary_value": float('inf'), "mse": float('inf'), "r2": 0.0}
     
     def _log_xgboost_training_curve(self):
         """Log XGBoost training curve to wandb."""

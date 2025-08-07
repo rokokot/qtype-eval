@@ -1,14 +1,11 @@
-# scripts/generate_tfidf_glot500.py
-"""
-Generate TF-IDF features using Glot500 tokenizer for fair comparison with neural models.
-This script creates features compatible with your existing sklearn baseline pipeline.
-"""
+"""Generate TF-IDF features using Glot500 tokenizer with seeded reproducibility."""
 
 import os
 import json
 import pickle
 import numpy as np
 import argparse
+import hashlib
 from pathlib import Path
 from typing import List, Dict, Tuple, Optional
 from transformers import AutoTokenizer
@@ -30,13 +27,18 @@ class Glot500TfidfGenerator:
         min_df: int = 2,
         max_df: float = 0.95,
         cache_dir: Optional[str] = None,
-        use_subword_tokens: bool = True
+        use_subword_tokens: bool = True,
+        random_state: int = 42
     ):
         self.model_name = model_name
         self.max_features = max_features
         self.min_df = min_df
         self.max_df = max_df
         self.use_subword_tokens = use_subword_tokens
+        self.random_state = random_state
+        
+        # Set numpy random seed for reproducibility
+        np.random.seed(random_state)
         
         logger.info(f"Loading Glot500 tokenizer: {model_name}")
         try:
@@ -52,6 +54,53 @@ class Glot500TfidfGenerator:
         
         self.vectorizer = None
         self.feature_names = None
+    
+    def _compute_data_hash(self, train_texts: List[str], val_texts: List[str], 
+                          test_texts: List[str]) -> str:
+        """Compute hash of input data for consistency checking."""
+        # Create a deterministic hash of the input data
+        all_texts = train_texts + val_texts + test_texts
+        text_sample = '|'.join(sorted(all_texts[:100]))  # Sample for efficiency
+        config_str = f"{self.model_name}|{self.max_features}|{self.min_df}|{self.max_df}|{self.use_subword_tokens}|{self.random_state}"
+        combined = f"{text_sample}|{config_str}|{len(train_texts)}|{len(val_texts)}|{len(test_texts)}"
+        return hashlib.md5(combined.encode()).hexdigest()
+    
+    def _features_exist_and_valid(self, output_dir: str, expected_hash: str) -> bool:
+        """Check if features already exist and are valid."""
+        output_path = Path(output_dir)
+        
+        # Check if metadata file exists
+        metadata_file = output_path / "metadata.json"
+        if not metadata_file.exists():
+            return False
+        
+        # Check if all required files exist
+        required_files = [
+            "X_train.npy", "X_val.npy", "X_test.npy",
+            "vectorizer.pkl", "feature_names.json", "metadata.json"
+        ]
+        
+        for filename in required_files:
+            if not (output_path / filename).exists():
+                logger.warning(f"Missing required file: {filename}")
+                return False
+        
+        # Check metadata hash
+        try:
+            with open(metadata_file, 'r') as f:
+                metadata = json.load(f)
+            
+            stored_hash = metadata.get('data_hash', '')
+            if stored_hash != expected_hash:
+                logger.warning(f"Data hash mismatch. Stored: {stored_hash[:8]}, Expected: {expected_hash[:8]}")
+                return False
+            
+            logger.info("✓ Existing features found and validated")
+            return True
+            
+        except Exception as e:
+            logger.warning(f"Error validating existing features: {e}")
+            return False
     
     def glot500_tokenize(self, text: str) -> List[str]:
         """Tokenize text using Glot500 tokenizer with proper handling."""
@@ -106,11 +155,25 @@ class Glot500TfidfGenerator:
         val_texts: List[str], 
         test_texts: List[str],
         output_dir: str,
-        languages_info: Optional[Dict[str, List[str]]] = None
+        languages_info: Optional[Dict[str, List[str]]] = None,
+        force_regenerate: bool = False
     ) -> Dict[str, np.ndarray]:
-        """Generate TF-IDF features for all splits."""
+        """Generate TF-IDF features for all splits with checkpointing."""
         output_path = Path(output_dir)
         output_path.mkdir(parents=True, exist_ok=True)
+        
+        # Compute data hash for consistency checking
+        data_hash = self._compute_data_hash(train_texts, val_texts, test_texts)
+        logger.info(f"Data hash: {data_hash[:8]}")
+        
+        # Check if features already exist and are valid
+        if not force_regenerate and self._features_exist_and_valid(output_dir, data_hash):
+            logger.info("Loading existing features from cache...")
+            features = {}
+            for split in ['train', 'val', 'test']:
+                features[split] = np.load(output_path / f"X_{split}.npy")
+                logger.info(f"Loaded {split} features: {features[split].shape}")
+            return features
         
         logger.info("Creating TF-IDF vectorizer with Glot500 tokenizer")
         self.vectorizer = self.create_vectorizer()
@@ -171,6 +234,8 @@ class Glot500TfidfGenerator:
             'min_df': self.min_df,
             'max_df': self.max_df,
             'use_subword_tokens': self.use_subword_tokens,
+            'random_state': self.random_state,
+            'data_hash': data_hash,
             'vocab_size': len(self.feature_names),
             'feature_shape': {
                 'train': X_train.shape,
@@ -265,6 +330,10 @@ def main():
                        help="Dataset name on HuggingFace Hub")
     parser.add_argument("--use-subword-tokens", action="store_true", default=True,
                        help="Use subword tokens (default) vs word-level tokens")
+    parser.add_argument("--random-state", type=int, default=42,
+                       help="Random state for reproducible feature generation")
+    parser.add_argument("--force-regenerate", action="store_true",
+                       help="Force regeneration even if valid features exist")
     parser.add_argument("--verify", action="store_true",
                        help="Verify generated features after creation")
     
@@ -281,7 +350,8 @@ def main():
         min_df=args.min_df,
         max_df=args.max_df,
         cache_dir=args.cache_dir,
-        use_subword_tokens=args.use_subword_tokens
+        use_subword_tokens=args.use_subword_tokens,
+        random_state=args.random_state
     )
     
     # Load dataset
@@ -292,7 +362,8 @@ def main():
     # Generate features
     features = generator.generate_features(
         train_texts, val_texts, test_texts, 
-        args.output_dir, languages_info
+        args.output_dir, languages_info,
+        force_regenerate=args.force_regenerate
     )
     
     # Verify features if requested

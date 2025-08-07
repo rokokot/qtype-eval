@@ -5,7 +5,6 @@ defaults:
   - model: default
   - training: default
   - experiment: default
-  - hydra/launcher: submitit_slurm
 
 # settings
 seed: 42

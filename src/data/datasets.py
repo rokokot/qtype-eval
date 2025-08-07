@@ -637,10 +637,10 @@ if __name__ == "__main__":
                     use_tfidf_loader=True,
                     tfidf_features_dir=args.tfidf_dir
                 )
-                print(f"✅ New TF-IDF loader: train={X_train.shape}, val={X_val.shape}, test={X_test.shape}")
-                print(f"✅ Labels: train={len(y_train)}, val={len(y_val)}, test={len(y_test)}")
+                print(f" New TF-IDF loader: train={X_train.shape}, val={X_val.shape}, test={X_test.shape}")
+                print(f" Labels: train={len(y_train)}, val={len(y_val)}, test={len(y_test)}")
             except Exception as e:
-                print(f"❌ New TF-IDF loader failed: {e}")
+                print(f" New TF-IDF loader failed: {e}")
     
     # Test dataset validation
     print("Testing dataset validation...")
@@ -650,7 +650,7 @@ if __name__ == "__main__":
     )
     
     for check, passed in validation_results.items():
-        status = "✅" if passed else "❌"
+        status = "" if passed else ""
         print(f"{status} {check}: {'PASS' if passed else 'FAIL'}")
     
-    print("✅ All tests completed!")
+    print(" All tests completed!")

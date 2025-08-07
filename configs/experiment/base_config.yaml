@@ -1,0 +1,25 @@
+# Base experiment configuration
+# @package _global_
+
+# Basic experiment settings  
+experiment_type: "base"
+name: "base_experiment"
+output_dir: "./outputs"
+
+# Default data settings
+data:
+  languages: ["en"]
+  tasks: ["question_type"]
+  
+# Default model settings
+model:
+  model_type: "logistic"
+  
+# Default training settings
+training:
+  task_type: "classification"
+  seed: 42
+
+# Evaluation settings
+evaluation:
+  metrics: ["accuracy", "f1", "precision", "recall"]

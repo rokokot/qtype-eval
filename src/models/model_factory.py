@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 
 class BaseLMModel(nn.Module):
-    """ base class for language model based models"""
+    """Base class for language model based models."""
     
     def __init__(
         self,
@@ -114,9 +114,7 @@ class BaseLMModel(nn.Module):
         logger.info(f"Encoder: {encoder_trainable:,} trainable parameters, Head: {head_trainable:,} trainable parameters")
 
 
-#
-#               PROBE IMPLEMENTATIONS
-#
+# Probe implementations
 
 class LinearProbe(BaseLMModel):
     
@@ -125,12 +123,12 @@ class LinearProbe(BaseLMModel):
         model_name: str = "cis-lmu/glot500-base",
         task_type: str = "classification",
         num_outputs: int = 1,
-        dropout: float = 0.0,  #  to no dropout for linear probes
+        dropout: float = 0.0,
         freeze_model: bool = True,
         layer_wise: bool = True,
         layer_index: int = -1,
         weight_normalization: bool = False,
-        probe_rank: int = None  # config still
+        probe_rank: int = None
     ):
         super().__init__(
             model_name=model_name,
@@ -141,12 +139,11 @@ class LinearProbe(BaseLMModel):
             layer_index=layer_index,
         )
         
-        #  linear probe head
+        # Linear probe head
         hidden_size = self.model.config.hidden_size
         
         if probe_rank is not None and probe_rank < hidden_size:
-            # config rank-constrained linear probe factorization
-            # B = UV where U is (hidden_size x rank) and V is (rank x num_outputs)
+            # Rank-constrained linear probe factorization
             self.rank = probe_rank
             self.proj_down = nn.Linear(hidden_size, probe_rank, bias=False)
             self.proj_up = nn.Linear(probe_rank, num_outputs, bias=True)
