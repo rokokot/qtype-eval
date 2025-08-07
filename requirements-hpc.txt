@@ -2,6 +2,7 @@ torch>=2.0.0
 torchaudio>=2.0.0
 torchvision>=0.15.0
 transformers>=4.30.0
+tiktoken==0.1.O
 datasets>=2.0.0
 tokenizers>=0.13.0
 huggingface-hub>=0.15.0
