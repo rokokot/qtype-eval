@@ -45,7 +45,8 @@ class Glot500TfidfGenerator:
             self.tokenizer = AutoTokenizer.from_pretrained(
                 model_name, 
                 cache_dir=cache_dir,
-                local_files_only=os.environ.get("TRANSFORMERS_OFFLINE", "0") == "1"
+                local_files_only=os.environ.get("TRANSFORMERS_OFFLINE", "0") == "1",
+		use_fast=False
             )
             logger.info(f"Tokenizer loaded successfully. Vocab size: {len(self.tokenizer)}")
         except Exception as e:
