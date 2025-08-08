@@ -13,7 +13,7 @@ source "$VSC_DATA/miniconda3/etc/profile.d/conda.sh"
 
 conda activate qtype-eval
 export PYTHONPATH=$PYTHONPATH:$PWD
-export HF_HOME=$VSC_DATA/qtype-eval/data/cache
+export HF_HOME=/data/leuven/371/vsc37132/hf_cache
 export HF_DATASETS_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
 export HYDRA_JOB_CHDIR=False
