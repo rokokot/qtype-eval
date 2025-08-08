@@ -1,18 +1,20 @@
 #!/bin/bash
 #SBATCH --job-name=tfidf_baselines
+#SBATCH --clusters=wice
 #SBATCH --time=04:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
-#SBATCH --partition=cpu
-#SBATCH --clusters=wice
+#SBATCH --partition=batch
 #SBATCH --account=intro_vsc37132
 
-export PATH="$VSC_DATA/miniconda3/bin:$PATH"
-source "$VSC_DATA/miniconda3/etc/profile.d/conda.sh"
 
+module load cluster/wice/batch
+module load Miniconda3/4.12.0
 conda activate qtype-eval
+
+
 export PYTHONPATH=$PYTHONPATH:$PWD
 export HF_HOME=/data/leuven/371/vsc37132/hf_cache
 export HF_DATASETS_OFFLINE=1
