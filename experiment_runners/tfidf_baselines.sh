@@ -6,6 +6,7 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
 #SBATCH --partition=cpu
+#SBATCH --clusters=wice
 #SBATCH --account=intro_vsc37132
 
 export PATH="$VSC_DATA/miniconda3/bin:$PATH"
