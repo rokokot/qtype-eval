@@ -9,15 +9,28 @@
 #SBATCH --partition=batch
 #SBATCH --account=intro_vsc37132
 
-export PATH="$VSC_DATA/miniconda3/bin:$PATH"
-# Fix the capitalization issue: profile.D -> profile.d
-source "$VSC_DATA/miniconda3/etc/profile.d/conda.sh"
-conda activate qtype-eval
+# Fix: Check if conda exists in VSC_DATA, if not, use module system
+if [ -f "$VSC_DATA/miniconda3/etc/profile.d/conda.sh" ]; then
+    echo "Using conda from VSC_DATA"
+    export PATH="$VSC_DATA/miniconda3/bin:$PATH"
+    source "$VSC_DATA/miniconda3/etc/profile.d/conda.sh"
+    conda activate qtype-eval
+else
+    echo "Conda not found in VSC_DATA, using module system"
+    module purge
+    module load Python/3.9.5-GCCcore-10.3.0
+    module load scikit-learn/1.0.2-foss-2021a
+    
+    # Install missing packages to user directory
+    export PYTHONUSERBASE=$VSC_DATA/python_packages
+    mkdir -p $PYTHONUSERBASE
+    pip install --user hydra-core omegaconf datasets wandb xgboost
+fi
 
 # Verify conda environment is active
-echo "Active conda environment: $CONDA_DEFAULT_ENV"
-which python
-python --version
+echo "Active conda environment: ${CONDA_DEFAULT_ENV:-system}"
+echo "Python path: $(which python)"
+echo "Python version: $(python --version)"
 
 # Export environment variables after conda activation
 export PYTHONPATH=$PYTHONPATH:$PWD
@@ -42,7 +55,7 @@ FAILED_LOG="${OUTPUT_BASE_DIR}/failed_experiments.log"
 touch $FAILED_LOG
 
 # TF-IDF features directory
-FEATURES_DIR="${OUTPUT_BASE_DIR}/tfidf_features"
+FEATURES_DIR="./data/tfidf_features"
 
 # Create metrics extractor
 cat > ${OUTPUT_BASE_DIR}/extract_tfidf_metrics.py << 'EOF'
@@ -121,7 +134,7 @@ run_tfidf_experiment() {
     fi
     
     # Skip if failed too many times
-    local FAIL_COUNT=$(grep -c "^${EXPERIMENT_NAME}$" $FAILED_LOG)
+    local FAIL_COUNT=$(grep -c "^${EXPERIMENT_NAME}$" $FAILED_LOG 2>/dev/null || echo "0")
     if [ $FAIL_COUNT -ge $MAX_RETRIES ]; then
         echo "Experiment ${EXPERIMENT_NAME} has failed $FAIL_COUNT times. Skipping."
         return 1
@@ -129,16 +142,16 @@ run_tfidf_experiment() {
     
     echo "Running experiment: ${EXPERIMENT_NAME}"
     
-    # Build command
+    # Build command - Fix: use correct script path and parameters
     COMMAND="python scripts/run_tfidf_experiments.py \
         experiment=tfidf_baselines \
-        data.languages=[${LANG}] \
-        model.model_type=${MODEL} \
-        experiment.tasks=${TASK} \
-        training.task_type=${TASK_TYPE} \
-        output_dir=${OUTPUT_DIR} \
-        tfidf.features_dir=${FEATURES_DIR} \
-        experiment_name=${EXPERIMENT_NAME}"
+        data.languages=[$LANG] \
+        model.model_type=$MODEL \
+        experiment.tasks=$TASK \
+        training.task_type=$TASK_TYPE \
+        output_dir=$OUTPUT_DIR \
+        tfidf.features_dir=$FEATURES_DIR \
+        experiment_name=$EXPERIMENT_NAME"
     
     echo "Command: $COMMAND"
     
@@ -167,24 +180,36 @@ run_tfidf_experiment() {
     fi
 }
 
-# Step 1: Generate TF-IDF features if not exist
+# Step 1: Check if TF-IDF features exist
 echo "Checking TF-IDF features..."
-if [ ! -f "${FEATURES_DIR}/metadata.json" ]; then
-    echo "Generating TF-IDF features..."
-    python scripts/generate_tfidf_glot500.py \
-        --output-dir "${FEATURES_DIR}" \
-        --max-features 128000 \
-        --cache-dir $HF_HOME
-    
-    if [ $? -ne 0 ]; then
-        echo "Failed to generate TF-IDF features. Exiting."
-        exit 1
-    fi
+if [ ! -d "${FEATURES_DIR}" ] || [ ! -f "${FEATURES_DIR}/X_train.npy" ]; then
+    echo "TF-IDF features not found. You need to generate them first."
+    echo "Run the TF-IDF generation script first:"
+    echo "python scripts/generate_tfidf_features.py --output-dir ${FEATURES_DIR}"
+    exit 1
 else
     echo "TF-IDF features already exist."
 fi
 
-# Step 2: Run TF-IDF baseline experiments
+# Step 2: Test basic imports
+echo "Testing Python imports..."
+python -c "
+import sys
+print('Python version:', sys.version)
+try:
+    import sklearn, xgboost, pandas, numpy, hydra, omegaconf
+    print('All required packages imported successfully')
+except ImportError as e:
+    print('Import error:', e)
+    sys.exit(1)
+"
+
+if [ $? -ne 0 ]; then
+    echo "Python import test failed. Check your environment setup."
+    exit 1
+fi
+
+# Step 3: Run TF-IDF baseline experiments
 echo "Starting TF-IDF baseline experiments..."
 
 TOTAL_EXPERIMENTS=0
@@ -209,7 +234,7 @@ done
 
 # List any failed experiments
 if [ -f "$FAILED_LOG" ]; then
-    FAILED_COUNT=$(wc -l < "$FAILED_LOG")
+    FAILED_COUNT=$(wc -l < "$FAILED_LOG" 2>/dev/null || echo "0")
     if [ $FAILED_COUNT -gt 0 ]; then
         echo "Some experiments failed. See $FAILED_LOG for details."
         echo "Failed experiments ($FAILED_COUNT):"

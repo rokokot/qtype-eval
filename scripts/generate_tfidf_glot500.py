@@ -46,7 +46,7 @@ class Glot500TfidfGenerator:
                 model_name, 
                 cache_dir=cache_dir,
                 local_files_only=os.environ.get("TRANSFORMERS_OFFLINE", "0") == "1",
-		use_fast=False
+                use_fast=False  # Fix: use_fast=False instead of use_fast=False
             )
             logger.info(f"Tokenizer loaded successfully. Vocab size: {len(self.tokenizer)}")
         except Exception as e:
@@ -314,6 +314,85 @@ def load_dataset_splits(
         logger.error(f"Failed to load dataset: {e}")
         raise
 
+def verify_features(output_dir: str) -> bool:
+    """Verify that generated features are valid and loadable."""
+    logger.info("Verifying generated features...")
+    output_path = Path(output_dir)
+    
+    try:
+        # Check required files exist
+        required_files = [
+            "X_train.npy", "X_val.npy", "X_test.npy",
+            "metadata.json", "vectorizer.pkl", "feature_names.json"
+        ]
+        
+        missing_files = []
+        for filename in required_files:
+            if not (output_path / filename).exists():
+                missing_files.append(filename)
+        
+        if missing_files:
+            logger.error(f"Missing required files: {missing_files}")
+            return False
+        
+        # Try to load each feature matrix
+        for split in ['train', 'val', 'test']:
+            try:
+                X = np.load(output_path / f"X_{split}.npy")
+                logger.info(f"✓ {split} features: {X.shape}")
+                
+                # Basic sanity checks
+                if X.shape[0] == 0:
+                    logger.error(f"✗ {split} features have 0 samples")
+                    return False
+                
+                if X.shape[1] == 0:
+                    logger.error(f"✗ {split} features have 0 features")
+                    return False
+                
+                # Check for reasonable values
+                if not np.all(np.isfinite(X)):
+                    logger.error(f"✗ {split} features contain non-finite values")
+                    return False
+                
+            except Exception as e:
+                logger.error(f"✗ Failed to load {split} features: {e}")
+                return False
+        
+        # Load and verify metadata
+        try:
+            with open(output_path / "metadata.json", 'r') as f:
+                metadata = json.load(f)
+            
+            required_metadata = ['model_name', 'vocab_size', 'feature_shape']
+            for key in required_metadata:
+                if key not in metadata:
+                    logger.error(f"✗ Missing metadata key: {key}")
+                    return False
+            
+            logger.info(f"✓ Metadata: vocab_size={metadata['vocab_size']}")
+            
+        except Exception as e:
+            logger.error(f"✗ Failed to load metadata: {e}")
+            return False
+        
+        # Load and verify vectorizer
+        try:
+            with open(output_path / "vectorizer.pkl", 'rb') as f:
+                vectorizer = pickle.load(f)
+            logger.info("✓ Vectorizer loaded successfully")
+            
+        except Exception as e:
+            logger.error(f"✗ Failed to load vectorizer: {e}")
+            return False
+        
+        logger.info("✓ All feature verification checks passed!")
+        return True
+        
+    except Exception as e:
+        logger.error(f"✗ Feature verification failed: {e}")
+        return False
+
 def main():
     parser = argparse.ArgumentParser(description="Generate TF-IDF features with Glot500 tokenizer")
     parser.add_argument("--output-dir", default="./data/tfidf_features", 
@@ -338,6 +417,8 @@ def main():
                        help="Force regeneration even if valid features exist")
     parser.add_argument("--verify", action="store_true",
                        help="Verify generated features after creation")
+    parser.add_argument("--verify-only", action="store_true",
+                       help="Only verify existing features without generating")
     
     args = parser.parse_args()
     
@@ -345,42 +426,55 @@ def main():
     if args.cache_dir is None:
         args.cache_dir = os.environ.get("HF_HOME", "./data/cache")
     
-    # Create generator
-    generator = Glot500TfidfGenerator(
-        model_name=args.model_name,
-        max_features=args.max_features,
-        min_df=args.min_df,
-        max_df=args.max_df,
-        cache_dir=args.cache_dir,
-        use_subword_tokens=args.use_subword_tokens,
-        random_state=args.random_state
-    )
-    
-    # Load dataset
-    train_texts, val_texts, test_texts, languages_info = load_dataset_splits(
-        args.dataset_name, args.cache_dir
-    )
-    
-    # Generate features
-    features = generator.generate_features(
-        train_texts, val_texts, test_texts, 
-        args.output_dir, languages_info,
-        force_regenerate=args.force_regenerate
-    )
-    
-    # Verify features if requested
-    if args.verify:
-        logger.info("Verifying generated features...")
-        from src.data.tfidf_features import TfidfFeatureLoader
-        loader = TfidfFeatureLoader(args.output_dir)
-        if loader.verify_features():
+    # If only verification requested
+    if args.verify_only:
+        if verify_features(args.output_dir):
             logger.info("✓ Feature verification successful!")
+            return 0
         else:
             logger.error("✗ Feature verification failed!")
             return 1
     
-    logger.info("TF-IDF feature generation completed successfully!")
-    return 0
+    try:
+        # Create generator
+        generator = Glot500TfidfGenerator(
+            model_name=args.model_name,
+            max_features=args.max_features,
+            min_df=args.min_df,
+            max_df=args.max_df,
+            cache_dir=args.cache_dir,
+            use_subword_tokens=args.use_subword_tokens,
+            random_state=args.random_state
+        )
+        
+        # Load dataset
+        train_texts, val_texts, test_texts, languages_info = load_dataset_splits(
+            args.dataset_name, args.cache_dir
+        )
+        
+        # Generate features
+        features = generator.generate_features(
+            train_texts, val_texts, test_texts, 
+            args.output_dir, languages_info,
+            force_regenerate=args.force_regenerate
+        )
+        
+        # Verify features if requested
+        if args.verify:
+            if verify_features(args.output_dir):
+                logger.info("✓ Feature verification successful!")
+            else:
+                logger.error("✗ Feature verification failed!")
+                return 1
+        
+        logger.info("✓ TF-IDF feature generation completed successfully!")
+        return 0
+        
+    except Exception as e:
+        logger.error(f"✗ TF-IDF feature generation failed: {e}")
+        import traceback
+        traceback.print_exc()
+        return 1
 
 if __name__ == "__main__":
     exit(main())
