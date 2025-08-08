@@ -9,12 +9,17 @@
 #SBATCH --partition=batch
 #SBATCH --account=intro_vsc37132
 
-
-module load cluster/wice/batch
-module load Miniconda3/4.12.0
+export PATH="$VSC_DATA/miniconda3/bin:$PATH"
+# Fix the capitalization issue: profile.D -> profile.d
+source "$VSC_DATA/miniconda3/etc/profile.d/conda.sh"
 conda activate qtype-eval
 
+# Verify conda environment is active
+echo "Active conda environment: $CONDA_DEFAULT_ENV"
+which python
+python --version
 
+# Export environment variables after conda activation
 export PYTHONPATH=$PYTHONPATH:$PWD
 export HF_HOME=/data/leuven/371/vsc37132/hf_cache
 export HF_DATASETS_OFFLINE=1

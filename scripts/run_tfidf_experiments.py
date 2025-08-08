@@ -73,7 +73,7 @@ class TfidfExperimentRunner:
                 task=task,
                 submetric=submetric,
                 control_index=control_index,
-                cache_dir=self.config.data.cache_dir,
+                cache_dir=self.config.get('data',{}).get('cache_dir', os.getenv('VSC_DATA', './data') + '/qtype-eval/data/cache'),
                 vectors_dir=self.features_dir,
                 use_tfidf_loader=True  # Use new TF-IDF loader
             )
@@ -140,7 +140,7 @@ class TfidfExperimentRunner:
             
             # Save experiment-specific results
             with open(exp_output_dir / "results.json", "w") as f:
-                json.dump(results, f, indent=2)
+                json.dump(OmegaConf.to_container(results, resolve=True), f, indent=2)
             
             logger.info(f"Completed experiment: {exp_name}")
             logger.info(f"Test metrics: {results.get('test_metrics', {})}")

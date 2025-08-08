@@ -1,5 +1,5 @@
 seed: 42
-output_dir: ${hydra:runtime.output_dir}
+output_dir: /tmp/test_output
 experiment_name: default
 wandb:
   project: multilingual-question-probing
@@ -22,7 +22,7 @@ data:
   train_language: null
   eval_language: null
 model:
-  model_type: logistic
+  model_type: dummy
 training:
   task_type: classification
   seed: 42
@@ -59,16 +59,14 @@ experiment:
   tfidf:
     features_dir: ./data/tfidf_features
     model_name: cis-lmu/glot500-base
-    max_features: 50000
+    max_features: 128000
     use_tfidf: true
   models:
   - dummy
   - logistic
   - ridge
   - xgboost
-  tasks:
-  - question_type
-  - complexity
+  tasks: question_type
   languages:
   - all
   - en
@@ -107,3 +105,9 @@ experiment:
         max_depth: 6
         learning_rate: 0.1
         eval_metric: rmse
+tfidf:
+  features_dir: ./data/tfidf_features
+  model_name: cis-lmu/glot500-base
+  max_features: 128000
+  use_tfidf: true
+  min_sparsity: 0.5

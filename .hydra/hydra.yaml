@@ -114,11 +114,14 @@ hydra:
     task:
     - experiment=tfidf_baselines
     - data.languages=[en]
-    - model.model_type=logistic
+    - model.model_type=dummy
+    - experiment.tasks=question_type
+    - training.task_type=classification
+    - output_dir=/tmp/test_output
   job:
     name: run_tfidf_experiments
     chdir: false
-    override_dirname: data.languages=[en],experiment=tfidf_baselines,model.model_type=logistic
+    override_dirname: data.languages=[en],experiment.tasks=question_type,experiment=tfidf_baselines,model.model_type=dummy,output_dir=/tmp/test_output,training.task_type=classification
     id: ???
     num: ???
     config_name: config
@@ -132,19 +135,20 @@ hydra:
   runtime:
     version: 1.3.2
     version_base: '1.3'
-    cwd: /home/robin/Research/qtype-eval
+    cwd: /vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval
     config_sources:
     - path: hydra.conf
       schema: pkg
       provider: hydra
-    - path: /home/robin/Research/qtype-eval/configs
+    - path: /vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/configs
       schema: file
       provider: main
     - path: ''
       schema: structured
       provider: schema
-    output_dir: /home/robin/Research/qtype-eval
+    output_dir: /vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval
     choices:
+      tfidf: default
       experiment: tfidf_baselines
       training: default
       model: default

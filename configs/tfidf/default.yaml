@@ -1,0 +1,8 @@
+# TFIDF config
+features_dir: "./data/tfidf_features"
+model_name: "cis-lmu/glot500-base"
+max_features: 128000
+use_tfidf: true
+min_sparsity: 0.5
+
+

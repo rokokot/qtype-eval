@@ -5,6 +5,7 @@ defaults:
   - model: default
   - training: default
   - experiment: default
+  - tfidf: default
 
 # settings
 seed: 42
