@@ -2,7 +2,11 @@ torch>=2.0.0
 torchaudio>=2.0.0
 torchvision>=0.15.0
 transformers>=4.30.0
+<<<<<<< HEAD
 tiktoken==0.1.O
+=======
+tiktoken==0.7.0
+>>>>>>> c6f99ebbfaf2aa3080f1017c20b61d2a3b3f570a
 datasets>=2.0.0
 tokenizers>=0.13.0
 huggingface-hub>=0.15.0
