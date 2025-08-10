@@ -46,11 +46,8 @@ else
     echo "⚠️ Miniconda module failed to load, checking if conda is already available..."
     if command -v conda >/dev/null 2>&1; then
         echo "✅ Conda found in PATH, initializing and activating qtype-eval environment..."
-        # Initialize conda if needed
-        if ! conda info >/dev/null 2>&1; then
-            conda init bash
-            source ~/.bashrc
-        fi
+        # Initialize conda shell integration
+        eval "$(conda shell.bash hook)"
         conda activate qtype-eval
     else
         echo "❌ Neither module nor conda available, exiting..."
