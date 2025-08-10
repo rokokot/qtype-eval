@@ -27,13 +27,15 @@ echo "========================================================================="
 # Activate the clean environment
 echo "🔄 Activating clean qtype-eval environment..."
 
-# Load the exact Python module available on your system
+# Load Miniconda and activate environment
 module purge
-module load Python/3.12.3-GCCcore-13.3.0
+module load Miniconda3/py310_22.11.1-1
 
-# Set up environment
-export PYTHONUSERBASE="$VSC_DATA/qtype-eval-packages"
-export PATH="$PYTHONUSERBASE/bin:$PATH"
+# Initialize conda
+source $EBROOTMINICONDA3/etc/profile.d/conda.sh
+conda activate qtype-eval
+
+# Set up environment (keeping HF settings)
 export PYTHONPATH="$PWD:$PYTHONPATH"
 export HF_HOME="$VSC_DATA/hf_cache"
 export HF_DATASETS_OFFLINE=1
@@ -42,14 +44,15 @@ export HYDRA_JOB_CHDIR=False
 export HYDRA_FULL_ERROR=1
 
 echo "🐍 Environment verification:"
-echo "  Python path: $(which python3)"
-echo "  Python version: $(python3 --version)"
-echo "  User packages: $PYTHONUSERBASE"
+echo "  Python path: $(which python)"
+echo "  Python version: $(python --version)"
+echo "  Conda environment: $CONDA_DEFAULT_ENV"
+echo "  Conda prefix: $CONDA_PREFIX"
 
 # Quick package check
 echo "📦 Checking required packages..."
 python3 -c "
-required = ['numpy', 'pandas', 'sklearn', 'xgboost', 'transformers', 'datasets', 'hydra']
+required = ['numpy', 'pandas', 'sklearn', 'xgboost', 'transformers', 'datasets', 'hydra_core']
 missing = []
 for pkg in required:
     try:
@@ -64,7 +67,7 @@ if missing:
     import subprocess
     import sys
     for pkg in missing:
-        subprocess.run([sys.executable, '-m', 'pip', 'install', '--user', pkg])
+        subprocess.run([sys.executable, '-m', 'pip', 'install', pkg])
 "
 
 # Initialize experiment setup
