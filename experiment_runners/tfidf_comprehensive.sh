@@ -101,7 +101,7 @@ LINGUISTIC_TASKS[n_tokens]="regression"
 OUTPUT_BASE_DIR="$VSC_SCRATCH/tfidf_comprehensive_output"
 mkdir -p "$OUTPUT_BASE_DIR"
 
-FEATURES_DIR="./data/tfidf_features_128k_optimized"
+FEATURES_DIR="./data/xlm_roberta_tfidf_features_128k"
 
 # Generate high-quality TF-IDF features
 echo "🔍 Checking TF-IDF features..."

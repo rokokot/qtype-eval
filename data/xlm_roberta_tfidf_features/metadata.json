@@ -1,0 +1,55 @@
+{
+  "tokenizer_info": {
+    "model_name": "xlm-roberta-base",
+    "tokenizer_class": "XLMRobertaTokenizerFast",
+    "vocab_size": 250002,
+    "model_max_length": 512,
+    "special_tokens": {
+      "bos_token": "<s>",
+      "eos_token": "</s>",
+      "cls_token": "<s>",
+      "sep_token": "</s>",
+      "pad_token": "<pad>",
+      "unk_token": "<unk>"
+    },
+    "use_fast": true
+  },
+  "tfidf_params": {
+    "max_features": 50000,
+    "min_df": 2,
+    "max_df": 0.95,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "norm": "l2",
+    "use_idf": true,
+    "smooth_idf": true,
+    "sublinear_tf": true
+  },
+  "random_state": 42,
+  "data_hash": "ad022b91f5cfc132db17364ef8c2f689",
+  "vocab_size": 18336,
+  "feature_shape": {
+    "train": [
+      7460,
+      18336
+    ],
+    "val": [
+      441,
+      18336
+    ],
+    "test": [
+      719,
+      18336
+    ]
+  },
+  "generation_info": {
+    "actual_features": 18336,
+    "sparsity": {
+      "train": 0.9991921647857801,
+      "val": 0.9993548248269639,
+      "test": 0.9994640304184356
+    }
+  }
+}
