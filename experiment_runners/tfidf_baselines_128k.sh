@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=clean_tfidf
+#SBATCH --job-name=clean_tfidf_128k
 #SBATCH --clusters=wice
 #SBATCH --time=04:00:00
 #SBATCH --nodes=1
@@ -95,22 +95,22 @@ LANGUAGES=("ar" "en" "fi" "id" "ja" "ko" "ru")
 MODELS=("dummy" "logistic" "ridge" "xgboost")  
 TASKS=("question_type" "complexity")
 
-OUTPUT_BASE_DIR="$VSC_SCRATCH/clean_tfidf_output"
+OUTPUT_BASE_DIR="$VSC_SCRATCH/clean_tfidf_128k_output"
 mkdir -p "$OUTPUT_BASE_DIR"
 
 RESULTS_TRACKER="${OUTPUT_BASE_DIR}/results.csv"
 echo "experiment,language,task,model,metric,value,status" > "$RESULTS_TRACKER"
 
-FEATURES_DIR="./data/tfidf_features"
+FEATURES_DIR="./data/tfidf_features_128k"
 
 # Generate TF-IDF features if needed
 echo "🔍 Checking TF-IDF features..."
 if [ ! -f "${FEATURES_DIR}/metadata.json" ]; then
-    echo "⚙️ Generating TF-IDF features..."
+    echo "⚙️ Generating TF-IDF features with 128k max_features..."
     python3 scripts/generate_tfidf_glot500.py \
         --output-dir "${FEATURES_DIR}" \
         --model-name "cis-lmu/glot500-base" \
-        --max-features 50000 \
+        --max-features 128000 \
         --verify
     
     if [ $? -ne 0 ]; then
@@ -192,6 +192,7 @@ try:
     results['language'] = '$LANG'
     results['task'] = '$TASK'
     results['model'] = '$MODEL'
+    results['max_features'] = 128000
     
     with open('$OUTPUT_DIR/results.json', 'w') as f:
         json.dump(results, f, indent=2)
@@ -214,7 +215,7 @@ except Exception as e:
 }
 
 # Run all experiments
-echo "🚀 Starting TF-IDF experiments..."
+echo "🚀 Starting TF-IDF experiments with 128k features..."
 total=0
 completed=0
 
@@ -278,7 +279,8 @@ for result_file in output_dir.rglob('results.json'):
                 'task': data.get('task', 'unknown'),
                 'model': data.get('model', 'unknown'),
                 'metric': metric,
-                'value': value
+                'value': value,
+                'max_features': data.get('max_features', 128000)
             })
     except Exception as e:
         print(f'Error processing {result_file}: {e}')
@@ -297,7 +299,7 @@ if results:
         
         if len(accuracy_df) > 0:
             best_acc = accuracy_df.nlargest(5, 'value')
-            print('\\nTop 5 Accuracy Results:')
+            print('\\nTop 5 Accuracy Results (128k features):')
             for _, row in best_acc.iterrows():
                 print(f'  {row[\"experiment\"]}: {row[\"value\"]:.3f}')
         else:
