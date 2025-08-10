@@ -12,8 +12,15 @@ from typing import List, Dict, Tuple, Optional, Union, Any
 import numpy as np
 import pandas as pd
 from datasets import load_dataset, Dataset
-import torch
-from torch.utils.data import Dataset as TorchDataset, DataLoader
+try:
+    import torch
+    from torch.utils.data import Dataset as TorchDataset, DataLoader
+    TORCH_AVAILABLE = True
+except ImportError:
+    torch = None
+    TorchDataset = None
+    DataLoader = None
+    TORCH_AVAILABLE = False
 from transformers import AutoTokenizer
 import scipy.sparse
 
@@ -381,7 +388,7 @@ class QuestionDataset(TorchDataset):
         return {
             "input_ids": encoding["input_ids"].flatten(),
             "attention_mask": encoding["attention_mask"].flatten(),
-            "labels": torch.tensor(label, dtype=torch.float)
+            "labels": torch.tensor(label, dtype=torch.float) if TORCH_AVAILABLE else label
         }
 
 def create_lm_dataloaders(
