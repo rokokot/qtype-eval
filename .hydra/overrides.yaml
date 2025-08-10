@@ -1,6 +1,0 @@
-- experiment=tfidf_baselines
-- data.languages=[en]
-- model.model_type=dummy
-- experiment.tasks=question_type
-- training.task_type=classification
-- output_dir=/tmp/test_output
