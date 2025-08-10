@@ -28,21 +28,32 @@ echo "========================================================================="
 echo "🔄 Activating clean qtype-eval environment..."
 
 # Load Miniconda and activate environment
-module purge
+module --force purge
 module load cluster/wice/oldhierarchy
-module load Miniconda3/py310_22.11.1-1
 
-# Initialize conda with fallback
-if [ -f "$EBROOTMINICONDA3/etc/profile.d/conda.sh" ]; then
-    source $EBROOTMINICONDA3/etc/profile.d/conda.sh
-    conda activate qtype-eval
-else
-    echo "⚠️ Conda initialization failed, checking if conda is already available..."
-    if command -v conda >/dev/null 2>&1; then
-        echo "✅ Conda found, activating qtype-eval environment..."
+# Try to load Miniconda module, with fallback
+if module load Miniconda3/py310_22.11.1-1 2>/dev/null; then
+    echo "✅ Miniconda module loaded successfully"
+    # Initialize conda
+    if [ -f "$EBROOTMINICONDA3/etc/profile.d/conda.sh" ]; then
+        source $EBROOTMINICONDA3/etc/profile.d/conda.sh
         conda activate qtype-eval
     else
-        echo "❌ Conda not available, exiting..."
+        echo "❌ Conda initialization script not found at expected path"
+        exit 1
+    fi
+else
+    echo "⚠️ Miniconda module failed to load, checking if conda is already available..."
+    if command -v conda >/dev/null 2>&1; then
+        echo "✅ Conda found in PATH, initializing and activating qtype-eval environment..."
+        # Initialize conda if needed
+        if ! conda info >/dev/null 2>&1; then
+            conda init bash
+            source ~/.bashrc
+        fi
+        conda activate qtype-eval
+    else
+        echo "❌ Neither module nor conda available, exiting..."
         exit 1
     fi
 fi
