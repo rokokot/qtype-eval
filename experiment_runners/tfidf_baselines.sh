@@ -72,7 +72,7 @@ echo "  Conda prefix: $CONDA_PREFIX"
 # Quick package check
 echo "📦 Checking required packages..."
 python3 -c "
-required = ['numpy', 'pandas', 'sklearn', 'xgboost', 'transformers', 'datasets', 'hydra_core']
+required = ['numpy', 'pandas', 'sklearn', 'xgboost', 'transformers', 'datasets', 'hydra_core', 'sentencepiece']
 missing = []
 for pkg in required:
     try:
