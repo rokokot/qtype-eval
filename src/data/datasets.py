@@ -547,14 +547,90 @@ def get_task_type(task: str) -> str:
     
     if task == "question_type":
         return "classification"
-    elif task in ["complexity", "single_submetric"] or task in [
-        "avg_links_len", "avg_max_depth", "avg_subordinate_chain_len", 
-        "avg_verb_edges", "lexical_density", "n_tokens"
-    ]:
-        return "regression"
+
+
+def load_sklearn_data_with_config(
+    task: str,
+    languages: List[str] = ['all'],
+    dataset_config: str = 'base',
+    tfidf_features_dir: str = "./data/tfidf_features",
+    use_tfidf_loader: bool = True,
+    cache_dir: Optional[str] = None
+) -> Tuple[Tuple[Union[np.ndarray, scipy.sparse.csr_matrix], np.ndarray], 
+           Tuple[Union[np.ndarray, scipy.sparse.csr_matrix], np.ndarray], 
+           Tuple[Union[np.ndarray, scipy.sparse.csr_matrix], np.ndarray]]:
+    """
+    Load sklearn-compatible data with specified dataset configuration.
+    
+    Args:
+        task: Target task name (question_type, lang_norm_complexity_score, avg_links_len, etc.)
+        languages: List of language codes or ['all']
+        dataset_config: Dataset configuration name (base, control_question_type_seed1, etc.)
+        tfidf_features_dir: Directory containing TF-IDF features
+        use_tfidf_loader: Whether to use TF-IDF feature loader
+        cache_dir: Cache directory for datasets
+    
+    Returns:
+        Tuple of (train, val, test) data as ((X, y), (X, y), (X, y))
+    """
+    if use_tfidf_loader:
+        # Load TF-IDF features (same for all configs, fitted on base data)
+        feature_loader = TfidfFeatureLoader(tfidf_features_dir)
+        X_train, X_val, X_test = feature_loader.load_features(languages)
+        
+        # Load labels from specific config
+        dataset_name = "rokokot/question-type-and-complexity"
+        logger.info(f"Loading dataset config: {dataset_config}")
+        
+        dataset = load_dataset(
+            dataset_name,
+            dataset_config,
+            cache_dir=cache_dir,
+            trust_remote_code=True
+        )
+        
+        # Extract labels for the specified task
+        def extract_labels(split_data, task_name, target_languages):
+            if task_name not in split_data.features:
+                available_tasks = list(split_data.features.keys())
+                raise ValueError(f"Task '{task_name}' not found in dataset config '{dataset_config}'. Available: {available_tasks}")
+            
+            labels = []
+            indices = []
+            for i, item in enumerate(split_data):
+                # Filter by language if specified
+                if target_languages != ['all'] and item['language'] not in target_languages:
+                    continue
+                labels.append(item[task_name])
+                indices.append(i)
+            
+            return np.array(labels), indices
+        
+        # Extract labels from each split with language filtering
+        y_train, train_indices = extract_labels(dataset['train'], task, languages)
+        y_val, val_indices = extract_labels(dataset['validation'], task, languages)
+        y_test, test_indices = extract_labels(dataset['test'], task, languages)
+        
+        # Filter features to match language filtering if needed
+        if languages != ['all']:
+            X_train = X_train[train_indices] if hasattr(X_train, '__getitem__') else X_train
+            X_val = X_val[val_indices] if hasattr(X_val, '__getitem__') else X_val  
+            X_test = X_test[test_indices] if hasattr(X_test, '__getitem__') else X_test
+        
+        logger.info(f"Loaded data shapes - Train: {X_train.shape}, Val: {X_val.shape}, Test: {X_test.shape}")
+        logger.info(f"Task: {task}, Config: {dataset_config}, Languages: {languages}")
+        
+        return (X_train, y_train), (X_val, y_val), (X_test, y_test)
+    
     else:
-        logger.warning(f"Unknown task '{task}', defaulting to classification")
-        return "classification"
+        # Fallback to original implementation (modify to support config)
+        return load_sklearn_data(
+            languages=languages,
+            task=task, 
+            cache_dir=cache_dir,
+            use_tfidf_loader=False,
+            tfidf_features_dir=tfidf_features_dir
+        )
 
 def validate_dataset_integrity(
     cache_dir: str = "./data/cache",

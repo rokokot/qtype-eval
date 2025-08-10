@@ -1,0 +1,33 @@
+{
+  "model_name": "cis-lmu/glot500-base",
+  "max_features": 128000,
+  "min_df": 1,
+  "max_df": 0.99,
+  "use_subword_tokens": true,
+  "random_state": 42,
+  "data_hash": "affe6786f1d67badfa2e89e59c1e99f6",
+  "vocab_size": 75468,
+  "feature_shape": {
+    "train": [
+      7460,
+      75468
+    ],
+    "val": [
+      441,
+      75468
+    ],
+    "test": [
+      719,
+      75468
+    ]
+  },
+  "generation_info": {
+    "tokenizer_vocab_size": 401145,
+    "actual_features": 75468,
+    "sparsity": {
+      "train": 0.9997113809649059,
+      "val": 0.999820410134337,
+      "test": 0.9998485482116858
+    }
+  }
+}
