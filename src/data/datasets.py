@@ -576,7 +576,9 @@ def load_sklearn_data_with_config(
     if use_tfidf_loader:
         # Load TF-IDF features (same for all configs, fitted on base data)
         feature_loader = TfidfFeatureLoader(tfidf_features_dir)
-        X_train, X_val, X_test = feature_loader.load_features(languages)
+        X_train = feature_loader.load_features('train')
+        X_val = feature_loader.load_features('val')
+        X_test = feature_loader.load_features('test')
         
         # Load labels from specific config
         dataset_name = "rokokot/question-type-and-complexity"
@@ -613,9 +615,14 @@ def load_sklearn_data_with_config(
         
         # Filter features to match language filtering if needed
         if languages != ['all']:
-            X_train = X_train[train_indices] if hasattr(X_train, '__getitem__') else X_train
-            X_val = X_val[val_indices] if hasattr(X_val, '__getitem__') else X_val  
-            X_test = X_test[test_indices] if hasattr(X_test, '__getitem__') else X_test
+            # Convert indices to numpy arrays for proper indexing
+            train_indices = np.array(train_indices)
+            val_indices = np.array(val_indices)
+            test_indices = np.array(test_indices)
+            
+            X_train = X_train[train_indices]
+            X_val = X_val[val_indices]  
+            X_test = X_test[test_indices]
         
         logger.info(f"Loaded data shapes - Train: {X_train.shape}, Val: {X_val.shape}, Test: {X_test.shape}")
         logger.info(f"Task: {task}, Config: {dataset_config}, Languages: {languages}")
