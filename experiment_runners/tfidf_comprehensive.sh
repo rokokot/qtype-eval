@@ -53,6 +53,11 @@ export TRANSFORMERS_OFFLINE=1
 export HYDRA_JOB_CHDIR=False
 export HYDRA_FULL_ERROR=1
 
+# Explicitly disable all HF offline modes
+unset HF_HUB_OFFLINE
+unset HUGGINGFACE_HUB_OFFLINE
+export HF_HUB_OFFLINE=0
+
 echo "🐍 Environment verification:"
 echo "  Python path: $(which python)"
 echo "  Python version: $(python --version)"
