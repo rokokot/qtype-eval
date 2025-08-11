@@ -119,7 +119,7 @@ LINGUISTIC_TASKS[n_tokens]="regression"
 OUTPUT_BASE_DIR="$VSC_SCRATCH/tfidf_comprehensive_output"
 mkdir -p "$OUTPUT_BASE_DIR"
 
-FEATURES_DIR="$PWD/data/xlm_roberta_tfidf_features_128k"
+FEATURES_DIR="$PWD/data/xlm_roberta_text2text_tfidf_features"
 
 # Generate high-quality TF-IDF features
 echo "🔍 Checking TF-IDF features..."
@@ -128,21 +128,23 @@ echo "Working directory: $(pwd)"
 echo "Features exist: $(ls -la "${FEATURES_DIR}" 2>/dev/null | head -5 || echo 'Directory not found')"
 
 if [ ! -f "${FEATURES_DIR}/metadata.json" ]; then
-    echo "⚙️ Generating high-quality TF-IDF features..."
-    python3 scripts/generate_tfidf_glot500.py \
+    echo "⚙️ Generating hybrid XLM-RoBERTa + text2text TF-IDF features..."
+    python3 scripts/generate_xlm_roberta_text2text_tfidf.py \
         --output-dir "${FEATURES_DIR}" \
-        --model-name "cis-lmu/glot500-base" \
+        --model-name "xlm-roberta-base" \
         --max-features 128000 \
-        --min-df 1 \
-        --max-df 0.99 \
+        --min-df 2 \
+        --max-df 0.95 \
         --verify
     
     if [ $? -ne 0 ]; then
-        echo "❌ TF-IDF generation failed"
+        echo "❌ Hybrid TF-IDF generation failed"
         exit 1
     fi
 else
-    echo "✅ TF-IDF features found"
+    echo "✅ Hybrid XLM-RoBERTa + text2text TF-IDF features found"
+    echo "  Features: $(cat ${FEATURES_DIR}/metadata.json | grep -o '\"vocab_size\":[^,]*' | cut -d':' -f2)"
+    echo "  Tokenizer: XLM-RoBERTa-base with text2text methodology"
 fi
 
 # Function to run a single experiment
@@ -379,11 +381,23 @@ done
 
 echo ""
 echo "========================================================================="
-echo "🏁 TF-IDF Comprehensive Experiments Completed!"
+echo "🏁 Hybrid XLM-RoBERTa + text2text TF-IDF Experiments Completed!"
 echo "========================================================================="
 echo "Main experiments: $main_completed/$main_total"
 echo "Control experiments: $control_completed/$control_total"
 echo "Total: $((main_completed + control_completed))/$((main_total + control_total))"
+echo ""
+echo "🔬 Feature Information:"
+if [ -f "${FEATURES_DIR}/metadata.json" ]; then
+    VOCAB_SIZE=$(cat ${FEATURES_DIR}/metadata.json | grep -o '\"vocab_size\":[^,]*' | cut -d':' -f2)
+    TOKENIZER=$(cat ${FEATURES_DIR}/metadata.json | grep -o '\"model_name\":\"[^\"]*' | cut -d':' -f2 | tr -d '"')
+    echo "  Features generated: $VOCAB_SIZE (hybrid approach)"
+    echo "  Tokenizer: $TOKENIZER with text2text methodology"
+    echo "  Approach: XLM-RoBERTa tokenization + sklearn TF-IDF"
+else
+    echo "  Features: Hybrid XLM-RoBERTa + text2text approach"
+fi
+echo ""
 echo "Results directory: $OUTPUT_BASE_DIR"
 echo "========================================================================="
 
