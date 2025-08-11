@@ -119,7 +119,7 @@ LINGUISTIC_TASKS[n_tokens]="regression"
 OUTPUT_BASE_DIR="$VSC_SCRATCH/tfidf_comprehensive_output"
 mkdir -p "$OUTPUT_BASE_DIR"
 
-FEATURES_DIR="$PWD/data/xlm_roberta_text2text_tfidf_features"
+FEATURES_DIR="$PWD/data/xlm_roberta_text2text_tfidf_enhanced"
 
 # Generate high-quality TF-IDF features
 echo "🔍 Checking TF-IDF features..."
@@ -133,8 +133,8 @@ if [ ! -f "${FEATURES_DIR}/metadata.json" ]; then
         --output-dir "${FEATURES_DIR}" \
         --model-name "xlm-roberta-base" \
         --max-features 128000 \
-        --min-df 2 \
-        --max-df 0.95 \
+        --min-df 1 \
+        --max-df 0.99 \
         --verify
     
     if [ $? -ne 0 ]; then

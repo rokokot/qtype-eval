@@ -34,9 +34,9 @@ class XLMRobertaText2TextTfidfExtractor:
         self,
         model_name: str = "xlm-roberta-base",
         max_features: int = 128000,
-        min_df: int = 2,
-        max_df: float = 0.95,
-        ngram_range: Tuple[int, int] = (1, 2),
+        min_df: int = 1,        # Allow single-occurrence terms (like reference)
+        max_df: float = 0.99,   # Less aggressive filtering
+        ngram_range: Tuple[int, int] = (1, 3),  # Include trigrams like reference
         use_full_vocab: bool = False,
         random_state: int = 42
     ):
@@ -106,16 +106,13 @@ class XLMRobertaText2TextTfidfExtractor:
     
     def _create_custom_vectorizer(self, preprocessed_texts: List[str]) -> TfidfVectorizer:
         """
-        Create TfidfVectorizer with XLM-RoBERTa token preprocessing.
+        Create TfidfVectorizer with XLM-RoBERTa token preprocessing and proper n-gram support.
         """
-        # Custom analyzer that just splits on spaces (since we pre-tokenized)
-        def token_analyzer(text):
-            return text.split()
-        
         vectorizer = TfidfVectorizer(
-            analyzer=token_analyzer,
+            analyzer='word',    # Use word analyzer to enable n-grams
             preprocessor=None,  # We already preprocessed
-            tokenizer=None,     # We already tokenized
+            tokenizer=str.split,  # Simple split on spaces since we pre-tokenized
+            token_pattern=None,   # Don't use regex token pattern
             lowercase=False,    # XLM-RoBERTa tokens are already processed
             max_features=self.max_features,
             min_df=self.min_df,
@@ -125,7 +122,6 @@ class XLMRobertaText2TextTfidfExtractor:
             use_idf=True,
             smooth_idf=True,
             sublinear_tf=True   # Use log scaling
-            # Note: TfidfVectorizer doesn't have random_state parameter
         )
         
         return vectorizer
@@ -159,11 +155,119 @@ class XLMRobertaText2TextTfidfExtractor:
         logger.info(f"Fitted vectorizer with {len(self.vocab_to_index)} features")
         logger.info(f"Feature range: {min(self.vocab_to_index.values())} to {max(self.vocab_to_index.values())}")
         
+        # Detailed vocabulary analysis like reference implementation
+        self._analyze_fitted_vocabulary()
+        
         # Log some example features
         sample_features = list(self.vocab_to_index.items())[:10]
         logger.info(f"Sample features: {sample_features}")
         
         return self
+    
+    def _analyze_fitted_vocabulary(self):
+        """Analyze fitted vocabulary with detailed statistics like reference implementation."""
+        if not self.vocab_to_index:
+            return
+        
+        logger.info("\n" + "="*50)
+        logger.info("VOCABULARY ANALYSIS (Reference Implementation Style)")
+        logger.info("="*50)
+        
+        feature_names = list(self.vocab_to_index.keys())
+        
+        # Basic statistics
+        token_lengths = [len(token) for token in feature_names]
+        avg_len = sum(token_lengths) / len(token_lengths)
+        
+        logger.info(f"Total features: {len(feature_names):,}")
+        logger.info(f"Average token length: {avg_len:.2f} characters")
+        logger.info(f"Min token length: {min(token_lengths)} characters")
+        logger.info(f"Max token length: {max(token_lengths)} characters")
+        
+        # Count by first character (multilingual analysis)
+        from collections import Counter
+        first_chars = Counter([token[0] if token else '' for token in feature_names])
+        logger.info("\nMost common first characters:")
+        for char, count in first_chars.most_common(10):
+            percentage = (count / len(feature_names)) * 100
+            logger.info(f"  '{char}': {count:,} features ({percentage:.1f}%)")
+        
+        # Token length distribution
+        length_counts = Counter(token_lengths)
+        logger.info("\nFeature count by token length:")
+        for length in sorted(length_counts.keys())[:15]:  # Show first 15 lengths
+            count = length_counts[length]
+            percentage = (count / len(feature_names)) * 100
+            logger.info(f"  Length {length}: {count:,} features ({percentage:.1f}%)")
+        
+        # Sample tokens by length (like reference)
+        logger.info("\nSample features by length:")
+        for length in range(1, min(11, max(token_lengths) + 1)):
+            tokens_of_length = [t for t in feature_names if len(t) == length]
+            if tokens_of_length:
+                sample = tokens_of_length[:8]  # Show up to 8 examples
+                logger.info(f"  Length {length}: {', '.join(repr(t) for t in sample)}")
+        
+        # Multilingual token analysis
+        self._analyze_multilingual_tokens(feature_names)
+        
+        # N-gram analysis
+        self._analyze_ngrams(feature_names)
+        
+        logger.info("="*50)
+    
+    def _analyze_multilingual_tokens(self, feature_names):
+        """Analyze multilingual characteristics of tokens."""
+        logger.info("\nMultilingual Token Analysis:")
+        
+        # Count tokens starting with multilingual prefixes
+        multilingual_patterns = {
+            '▁': 'Subword prefix tokens',
+            'ا': 'Arabic tokens',
+            'в': 'Russian tokens', 
+            'は': 'Japanese tokens',
+            'の': 'Japanese particles',
+            '은': 'Korean particles',
+            '는': 'Korean particles',
+            'ä': 'Finnish/German tokens',
+            'ö': 'Finnish/German tokens'
+        }
+        
+        for pattern, description in multilingual_patterns.items():
+            count = sum(1 for token in feature_names if token.startswith(pattern))
+            if count > 0:
+                percentage = (count / len(feature_names)) * 100
+                logger.info(f"  {description}: {count:,} ({percentage:.2f}%)")
+        
+        # Question markers analysis (key for our task)
+        question_markers = ['?', '؟', '▁هل', '▁Apakah', '▁apakah', '▁Onko', '▁ли']
+        logger.info("\nQuestion Marker Features:")
+        for marker in question_markers:
+            if marker in feature_names:
+                idx = self.vocab_to_index[marker]
+                logger.info(f"  '{marker}' -> feature index {idx}")
+    
+    def _analyze_ngrams(self, feature_names):
+        """Analyze n-gram distribution."""
+        logger.info("\nN-gram Analysis:")
+        
+        unigrams = [f for f in feature_names if ' ' not in f]
+        bigrams = [f for f in feature_names if f.count(' ') == 1]
+        trigrams = [f for f in feature_names if f.count(' ') == 2]
+        higher_grams = [f for f in feature_names if f.count(' ') >= 3]
+        
+        total = len(feature_names)
+        logger.info(f"  Unigrams (1-gram): {len(unigrams):,} ({len(unigrams)/total*100:.1f}%)")
+        logger.info(f"  Bigrams (2-gram): {len(bigrams):,} ({len(bigrams)/total*100:.1f}%)")
+        logger.info(f"  Trigrams (3-gram): {len(trigrams):,} ({len(trigrams)/total*100:.1f}%)")
+        if higher_grams:
+            logger.info(f"  Higher n-grams: {len(higher_grams):,} ({len(higher_grams)/total*100:.1f}%)")
+        
+        # Show sample n-grams
+        if bigrams:
+            logger.info(f"  Sample bigrams: {bigrams[:5]}")
+        if trigrams:
+            logger.info(f"  Sample trigrams: {trigrams[:5]}")
     
     def transform(self, texts: List[str], languages: Optional[List[str]] = None) -> sparse.csr_matrix:
         """
@@ -191,7 +295,106 @@ class XLMRobertaText2TextTfidfExtractor:
         sparsity = 1 - (tfidf_matrix.nnz / np.prod(tfidf_matrix.shape))
         logger.info(f"Sparsity: {sparsity:.4f}")
         
+        # Detailed TF-IDF analysis like reference implementation
+        self._analyze_tfidf_matrix(tfidf_matrix, languages)
+        
         return tfidf_matrix
+    
+    def _analyze_tfidf_matrix(self, tfidf_matrix, languages=None):
+        """Analyze TF-IDF matrix with detailed statistics like reference."""
+        logger.info("\n" + "="*50)
+        logger.info("TF-IDF MATRIX ANALYSIS (Reference Implementation Style)")
+        logger.info("="*50)
+        
+        # Basic statistics
+        n_samples, n_features = tfidf_matrix.shape
+        logger.info(f"Matrix dimensions: {n_samples:,} samples × {n_features:,} features")
+        
+        # Non-zero statistics
+        non_zero_per_doc = [tfidf_matrix[i].nnz for i in range(n_samples)]
+        logger.info(f"Average non-zero features per document: {np.mean(non_zero_per_doc):.2f}")
+        logger.info(f"Min non-zero features: {min(non_zero_per_doc)}")
+        logger.info(f"Max non-zero features: {max(non_zero_per_doc)}")
+        logger.info(f"Median non-zero features: {np.median(non_zero_per_doc):.1f}")
+        
+        # Sparsity breakdown
+        sparsity = 1 - (tfidf_matrix.nnz / np.prod(tfidf_matrix.shape))
+        density_percentage = (1 - sparsity) * 100
+        logger.info(f"Matrix sparsity: {sparsity:.6f} ({sparsity*100:.4f}%)")
+        logger.info(f"Matrix density: {density_percentage:.6f}%")
+        logger.info(f"Total non-zero elements: {tfidf_matrix.nnz:,}")
+        
+        # Feature frequency analysis
+        feature_counts = np.zeros(n_features)
+        for i in range(n_samples):
+            feature_counts[tfidf_matrix[i].nonzero()[1]] += 1
+        
+        # Top features by document frequency
+        top_feature_indices = np.argsort(-feature_counts)[:20]
+        logger.info("\nTop 20 features by document frequency:")
+        feature_names = self.get_feature_names()
+        for i, idx in enumerate(top_feature_indices, 1):
+            token = feature_names[idx] if idx < len(feature_names) else f"UNKNOWN_{idx}"
+            freq = feature_counts[idx]
+            percentage = (freq / n_samples) * 100
+            logger.info(f"  {i:2d}. '{token}': {freq:.0f} docs ({percentage:.1f}%)")
+        
+        # Language-specific analysis if available
+        if languages:
+            self._analyze_language_specific_tfidf(tfidf_matrix, languages, feature_names)
+        
+        # Sample document analysis (like reference)
+        self._analyze_sample_documents(tfidf_matrix, feature_names)
+        
+        logger.info("="*50)
+    
+    def _analyze_language_specific_tfidf(self, tfidf_matrix, languages, feature_names):
+        """Analyze TF-IDF patterns by language."""
+        logger.info("\nLanguage-specific TF-IDF Analysis:")
+        
+        unique_languages = list(set(languages))
+        for lang in unique_languages[:7]:  # Limit to first 7 languages
+            lang_indices = [i for i, l in enumerate(languages) if l == lang]
+            if not lang_indices:
+                continue
+                
+            lang_matrix = tfidf_matrix[lang_indices]
+            
+            # Calculate average TF-IDF scores for this language
+            lang_avg_scores = np.array(lang_matrix.mean(axis=0)).flatten()
+            
+            # Get top features for this language
+            top_indices = np.argsort(lang_avg_scores)[-10:][::-1]
+            
+            logger.info(f"\n  {lang} (n={len(lang_indices)}): Top features")
+            for i, idx in enumerate(top_indices, 1):
+                if lang_avg_scores[idx] > 0:
+                    token = feature_names[idx] if idx < len(feature_names) else f"UNKNOWN_{idx}"
+                    score = lang_avg_scores[idx]
+                    logger.info(f"    {i:2d}. '{token}': {score:.6f}")
+    
+    def _analyze_sample_documents(self, tfidf_matrix, feature_names, num_samples=3):
+        """Analyze sample documents' TF-IDF values like reference."""
+        logger.info(f"\nSample Document Analysis (first {num_samples} documents):")
+        
+        for doc_idx in range(min(num_samples, tfidf_matrix.shape[0])):
+            feature_vector = tfidf_matrix[doc_idx]
+            non_zero_indices = feature_vector.nonzero()[1]
+            feature_values = feature_vector.data
+            
+            if len(non_zero_indices) == 0:
+                logger.info(f"  Document {doc_idx}: No features (empty)")
+                continue
+            
+            # Sort by TF-IDF value
+            sorted_indices = sorted(zip(non_zero_indices, feature_values),
+                                   key=lambda x: x[1], reverse=True)
+            
+            logger.info(f"  Document {doc_idx}: {len(non_zero_indices)} features")
+            logger.info("    Top 10 features by TF-IDF value:")
+            for i, (idx, value) in enumerate(sorted_indices[:10], 1):
+                token = feature_names[idx] if idx < len(feature_names) else f"UNKNOWN_{idx}"
+                logger.info(f"      {i:2d}. '{token}': {value:.6f}")
     
     def fit_transform(self, texts: List[str], languages: Optional[List[str]] = None) -> sparse.csr_matrix:
         """
@@ -264,8 +467,8 @@ def generate_xlm_roberta_text2text_features(
     output_dir: str,
     model_name: str = "xlm-roberta-base",
     max_features: int = 128000,
-    min_df: int = 2,
-    max_df: float = 0.95,
+    min_df: int = 1,        # Allow single-occurrence terms
+    max_df: float = 0.99,   # Less aggressive filtering  
     dataset_name: str = "rokokot/question-type-and-complexity",
     dataset_config: str = "base",
     verify: bool = True
@@ -318,7 +521,7 @@ def generate_xlm_roberta_text2text_features(
         max_features=max_features,
         min_df=min_df,
         max_df=max_df,
-        ngram_range=(1, 2),  # Like text2text reference
+        ngram_range=(1, 3),  # Include trigrams for more features
         random_state=42
     )
     
