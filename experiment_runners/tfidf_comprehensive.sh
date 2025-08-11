@@ -101,10 +101,14 @@ LINGUISTIC_TASKS[n_tokens]="regression"
 OUTPUT_BASE_DIR="$VSC_SCRATCH/tfidf_comprehensive_output"
 mkdir -p "$OUTPUT_BASE_DIR"
 
-FEATURES_DIR="./data/xlm_roberta_tfidf_features_128k"
+FEATURES_DIR="$PWD/data/xlm_roberta_tfidf_features_128k"
 
 # Generate high-quality TF-IDF features
 echo "🔍 Checking TF-IDF features..."
+echo "Features directory: ${FEATURES_DIR}"
+echo "Working directory: $(pwd)"
+echo "Features exist: $(ls -la "${FEATURES_DIR}" 2>/dev/null | head -5 || echo 'Directory not found')"
+
 if [ ! -f "${FEATURES_DIR}/metadata.json" ]; then
     echo "⚙️ Generating high-quality TF-IDF features..."
     python3 scripts/generate_tfidf_glot500.py \
