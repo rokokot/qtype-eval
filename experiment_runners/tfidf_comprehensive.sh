@@ -67,15 +67,24 @@ echo "  Conda prefix: $CONDA_PREFIX"
 # Quick package check
 echo "📦 Checking required packages..."
 python3 -c "
-required = ['numpy', 'pandas', 'sklearn', 'xgboost', 'transformers', 'datasets', 'hydra-core', 'sentencepiece']
+required = [
+    ('numpy', 'numpy'), 
+    ('pandas', 'pandas'), 
+    ('sklearn', 'scikit-learn'), 
+    ('xgboost', 'xgboost'), 
+    ('transformers', 'transformers'), 
+    ('datasets', 'datasets'), 
+    ('hydra', 'hydra-core'), 
+    ('sentencepiece', 'sentencepiece')
+]
 missing = []
-for pkg in required:
+for import_name, pip_name in required:
     try:
-        __import__(pkg)
-        print(f'✅ {pkg}')
+        __import__(import_name)
+        print(f'✅ {pip_name}')
     except ImportError:
-        print(f'❌ {pkg}')
-        missing.append(pkg)
+        print(f'❌ {pip_name}')
+        missing.append(pip_name)
 
 if missing:
     print(f'Installing missing packages: {missing}')
@@ -88,6 +97,10 @@ if missing:
 # Experiment configuration
 LANGUAGES=("ar" "en" "fi" "id" "ja" "ko" "ru")
 MODELS=("dummy" "logistic" "ridge" "xgboost")
+
+# Force fresh run by removing existing results
+echo "🔄 Forcing fresh run - removing previous results..."
+rm -rf "$VSC_SCRATCH/tfidf_comprehensive_output"
 
 # Task definitions
 declare -A MAIN_TASKS
@@ -211,6 +224,15 @@ try:
     
     with open('$OUTPUT_DIR/results.json', 'w') as f:
         json.dump(results, f, indent=2)
+    
+    # Print main test results
+    test_metrics = results.get('test_metrics', {})
+    if '$TASK_TYPE' == 'classification':
+        acc = test_metrics.get('accuracy', 'N/A')
+        print(f'    📊 Test Accuracy: {acc:.4f}' if isinstance(acc, (int, float)) else f'    📊 Test Accuracy: {acc}')
+    else:
+        mse = test_metrics.get('mse', 'N/A') 
+        print(f'    📊 Test MSE: {mse:.4f}' if isinstance(mse, (int, float)) else f'    📊 Test MSE: {mse}')
     
     print('  ✅ Completed successfully')
 
@@ -463,6 +485,26 @@ if results:
     
     # Show top results
     print('\\n=== MAIN VS CONTROL SUMMARY ===')
+    print('\\n🎯 MAIN TASK PERFORMANCE:')
+    
+    # Show best main results first
+    main_results = df[df['experiment_type'] == 'main'].copy()
+    if len(main_results) > 0:
+        # Classification results (accuracy)
+        acc_results = main_results[main_results['metric'] == 'accuracy'].copy()
+        if len(acc_results) > 0:
+            acc_results['value'] = pd.to_numeric(acc_results['value'], errors='coerce')
+            best_acc = acc_results.loc[acc_results['value'].idxmax()]
+            print(f'  🏆 Best Classification Accuracy: {best_acc[\\\"value\\\"]:.4f} ({best_acc[\\\"model\\\"]}, {best_acc[\\\"task\\\"]}, {best_acc[\\\"language\\\"]})')
+        
+        # Regression results (MSE - lower is better)
+        mse_results = main_results[main_results['metric'] == 'mse'].copy()
+        if len(mse_results) > 0:
+            mse_results['value'] = pd.to_numeric(mse_results['value'], errors='coerce')
+            best_mse = mse_results.loc[mse_results['value'].idxmin()]
+            print(f'  🏆 Best Regression MSE: {best_mse[\\\"value\\\"]:.4f} ({best_mse[\\\"model\\\"]}, {best_mse[\\\"task\\\"]}, {best_mse[\\\"language\\\"]})')
+    
+    print('\\n📊 DETAILED COMPARISONS:')
     
     # Accuracy results (classification tasks)
     acc_comp = comp_df[comp_df['metric'] == 'accuracy'].copy()
