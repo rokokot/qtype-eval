@@ -67,7 +67,7 @@ echo "  Conda prefix: $CONDA_PREFIX"
 # Quick package check
 echo "📦 Checking required packages..."
 python3 -c "
-required = ['numpy', 'pandas', 'sklearn', 'xgboost', 'transformers', 'datasets', 'hydra_core', 'sentencepiece']
+required = ['numpy', 'pandas', 'sklearn', 'xgboost', 'transformers', 'datasets', 'hydra-core', 'sentencepiece']
 missing = []
 for pkg in required:
     try:
@@ -237,6 +237,10 @@ for lang in "${LANGUAGES[@]}"; do
                 echo "⏭️ Skipping $model + $task (incompatible)"
                 continue
             fi
+            if [[ "$model" == "ridge" && "${MAIN_TASKS[$task]}" == "classification" ]]; then
+                echo "⏭️ Skipping $model + $task (incompatible)"
+                continue
+            fi
             
             ((main_total++))
             echo ""
@@ -285,7 +289,11 @@ for lang in "${LANGUAGES[@]}"; do
     # Question type controls
     for seed in 1 2 3; do
         for model in "${MODELS[@]}"; do
+            # Skip incompatible combinations
             if [[ "$model" == "logistic" && "${MAIN_TASKS[question_type]}" == "regression" ]]; then
+                continue
+            fi
+            if [[ "$model" == "ridge" && "${MAIN_TASKS[question_type]}" == "classification" ]]; then
                 continue
             fi
             
@@ -306,6 +314,7 @@ for lang in "${LANGUAGES[@]}"; do
     # Complexity controls
     for seed in 1 2 3; do
         for model in "${MODELS[@]}"; do
+            # Skip logistic for regression tasks
             if [[ "$model" == "logistic" ]]; then
                 continue
             fi

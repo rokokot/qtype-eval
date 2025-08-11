@@ -149,17 +149,10 @@ class TfidfBaselineModel:
             default_params.update(params)
             
             if self.task_type == "classification":
-                # Additional XGBoost-specific params for classification
-                default_params.update({
-                    'eval_metric': 'logloss',
-                    'use_label_encoder': False
-                })
+                # XGBoost classifier (remove deprecated params)
                 return xgb.XGBClassifier(**default_params)
             else:
-                # Additional XGBoost-specific params for regression
-                default_params.update({
-                    'eval_metric': 'rmse'
-                })
+                # XGBoost regressor
                 return xgb.XGBRegressor(**default_params)
         
         else:
