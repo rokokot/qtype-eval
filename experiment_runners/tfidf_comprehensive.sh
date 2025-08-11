@@ -48,7 +48,7 @@ fi
 # Set up environment
 export PYTHONPATH="$PWD:$PYTHONPATH"
 export HF_HOME="$VSC_DATA/hf_cache"
-export HF_DATASETS_OFFLINE=1
+export HF_DATASETS_OFFLINE=0
 export TRANSFORMERS_OFFLINE=1
 export HYDRA_JOB_CHDIR=False
 export HYDRA_FULL_ERROR=1
