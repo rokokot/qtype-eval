@@ -1,0 +1,52 @@
+{
+  "experiment_id": "5c1e62a19cde",
+  "timestamp": "2025-08-12T17:17:10.719160",
+  "config": {
+    "experiment_name": "xgboost_lexical_density_en_base",
+    "language": "en",
+    "task": "lexical_density",
+    "model_type": "xgboost",
+    "task_type": "regression",
+    "config": "base",
+    "experiment_type": "main",
+    "features_dir": "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/data/xlm_roberta_text2text_tfidf_enhanced",
+    "batch_name": "tfidf_xlm_roberta_enhanced_20250812_170535"
+  },
+  "status": "completed",
+  "error": null,
+  "model_type": "XGBRegressor",
+  "task_type": "regression",
+  "train_time": 37.29817318916321,
+  "train_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.0032801692487853308,
+    "mse": 0.0032801692487853308,
+    "r2": 0.8798911898125115
+  },
+  "val_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.0231425879241772,
+    "mse": 0.0231425879241772,
+    "r2": 0.11302760414147794
+  },
+  "test_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.028335713919206584,
+    "mse": 0.028335713919206584,
+    "r2": 0.009669885534110745
+  },
+  "data_shapes": {
+    "train": [
+      1192,
+      9199
+    ],
+    "val": [
+      72,
+      9199
+    ],
+    "test": [
+      110,
+      9199
+    ]
+  }
+}

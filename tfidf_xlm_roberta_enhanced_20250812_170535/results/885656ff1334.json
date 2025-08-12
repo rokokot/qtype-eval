@@ -1,0 +1,52 @@
+{
+  "experiment_id": "885656ff1334",
+  "timestamp": "2025-08-12T17:45:51.997967",
+  "config": {
+    "experiment_name": "xgboost_lang_norm_complexity_score_ko_base",
+    "language": "ko",
+    "task": "lang_norm_complexity_score",
+    "model_type": "xgboost",
+    "task_type": "regression",
+    "config": "base",
+    "experiment_type": "main",
+    "features_dir": "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/data/xlm_roberta_text2text_tfidf_enhanced",
+    "batch_name": "tfidf_xlm_roberta_enhanced_20250812_170535"
+  },
+  "status": "completed",
+  "error": null,
+  "model_type": "XGBRegressor",
+  "task_type": "regression",
+  "train_time": 37.797922134399414,
+  "train_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.0012418914927805034,
+    "mse": 0.0012418914927805034,
+    "r2": 0.9442135822187774
+  },
+  "val_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.044902277788442496,
+    "mse": 0.044902277788442496,
+    "r2": 0.046881429856382884
+  },
+  "test_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.030775649193387152,
+    "mse": 0.030775649193387152,
+    "r2": 0.04441038457307933
+  },
+  "data_shapes": {
+    "train": [
+      739,
+      9199
+    ],
+    "val": [
+      72,
+      9199
+    ],
+    "test": [
+      110,
+      9199
+    ]
+  }
+}
