@@ -384,20 +384,20 @@ if __name__ == "__main__":
         
         # Verify features
         if loader.verify_features():
-            print("✓ Feature verification passed")
+            print("Feature verification passed")
         else:
-            print("✗ Feature verification failed")
+            print("Feature verification failed")
         
         # Load and check features
         features = loader.load_all_features()
-        print(f"✓ Loaded features: {[(k, v.shape) for k, v in features.items()]}")
+        print(f"Loaded features: {[(k, v.shape) for k, v in features.items()]}")
         
         # Get statistics
         stats = loader.get_statistics()
-        print(f"✓ Statistics: vocab_size={stats['vocab_size']}")
+        print(f"Statistics: vocab_size={stats['vocab_size']}")
         
         # Create aligned dataset
         aligned_data = create_aligned_test_dataset(temp_dir)
-        print(f"✓ Created aligned dataset with splits: {list(aligned_data.keys())}")
+        print(f"Created aligned dataset with splits: {list(aligned_data.keys())}")
         
         print("All tests passed!")

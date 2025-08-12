@@ -490,7 +490,7 @@ if __name__ == "__main__":
     validation = validate_config()
     print("Configuration validation:")
     for check, passed in validation.items():
-        status = "✓" if passed else "✗"
+        status = "PASS" if passed else "FAIL"
         print(f"  {status} {check}")
     
     # Print experiment estimates
@@ -503,7 +503,7 @@ if __name__ == "__main__":
     print("\nTesting experiment generation...")
     try:
         experiments = get_xlm_roberta_experiment_matrix()
-        print(f"✓ Generated {len(experiments)} experiments")
+        print(f"Generated {len(experiments)} experiments")
         
         # Show sample experiment
         if experiments:
@@ -513,6 +513,6 @@ if __name__ == "__main__":
                 print(f"  {key}: {value}")
                 
     except Exception as e:
-        print(f"✗ Experiment generation failed: {e}")
+        print(f"Experiment generation failed: {e}")
     
     print("\nConfiguration test completed!")

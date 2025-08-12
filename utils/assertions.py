@@ -815,9 +815,9 @@ if __name__ == "__main__":
     
     try:
         assert_sparse_matrix(test_matrix, min_sparsity=0.5)
-        print("✓ Sparse matrix assertion passed")
+        print("Sparse matrix assertion passed")
     except AssertionError as e:
-        print(f"✗ Sparse matrix assertion failed: {e}")
+        print(f"Sparse matrix assertion failed: {e}")
     
     # Test metrics assertions
     test_metrics = {
@@ -829,9 +829,9 @@ if __name__ == "__main__":
     
     try:
         assert_classification_metrics(test_metrics)
-        print("✓ Classification metrics assertion passed")
+        print("Classification metrics assertion passed")
     except AssertionError as e:
-        print(f"✗ Classification metrics assertion failed: {e}")
+        print(f"Classification metrics assertion failed: {e}")
     
     # Test dataset assertions
     test_dataset = {
@@ -842,8 +842,8 @@ if __name__ == "__main__":
     
     try:
         assert_dataset_consistency(test_dataset, expected_size=3)
-        print("✓ Dataset consistency assertion passed")
+        print("Dataset consistency assertion passed")
     except AssertionError as e:
-        print(f"✗ Dataset consistency assertion failed: {e}")
+        print(f"Dataset consistency assertion failed: {e}")
     
     print("Assertion function tests completed")

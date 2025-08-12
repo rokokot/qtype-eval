@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=tfidf_comprehensive_enhanced
+#SBATCH --job-name=tfidf_experiments
 #SBATCH --clusters=wice
 #SBATCH --time=08:00:00
 #SBATCH --nodes=1
@@ -25,22 +25,22 @@ echo "Walltime: $SLURM_TIMELIMIT"
 echo "========================================================================="
 
 # Activate environment
-echo "🔄 Activating clean qtype-eval environment..."
+echo "Activating clean qtype-eval environment..."
 
 module --force purge
 module load cluster/wice/oldhierarchy
 
 if module load Miniconda3/py310_22.11.1-1 2>/dev/null; then
-    echo "✅ Miniconda module loaded successfully"
+    echo "Miniconda module loaded successfully"
     if [ -f "$EBROOTMINICONDA3/etc/profile.d/conda.sh" ]; then
         source $EBROOTMINICONDA3/etc/profile.d/conda.sh
         conda activate qtype-eval
     else
-        echo "❌ Conda initialization script not found at expected path"
+        echo "Conda initialization script not found at expected path"
         exit 1
     fi
 else
-    echo "⚠️ Miniconda module failed to load, using fallback..."
+    echo "Miniconda module failed to load, using fallback..."
     eval "$(conda shell.bash hook)"
     conda activate qtype-eval
 fi
@@ -58,14 +58,14 @@ unset HF_HUB_OFFLINE
 unset HUGGINGFACE_HUB_OFFLINE
 export HF_HUB_OFFLINE=0
 
-echo "🐍 Environment verification:"
+echo "Environment verification:"
 echo "  Python path: $(which python)"
 echo "  Python version: $(python --version)"
 echo "  Conda environment: $CONDA_DEFAULT_ENV"
 echo "  Conda prefix: $CONDA_PREFIX"
 
 # Quick package check
-echo "📦 Checking required packages..."
+echo "Checking required packages..."
 python3 -c "
 required = [
     ('numpy', 'numpy'), 
@@ -83,9 +83,9 @@ missing = []
 for import_name, pip_name in required:
     try:
         __import__(import_name)
-        print(f'✅ {pip_name}')
+        print(f'{pip_name}')
     except ImportError:
-        print(f'❌ {pip_name}')
+        print(f'{pip_name}')
         missing.append(pip_name)
 
 if missing:
@@ -101,12 +101,12 @@ LANGUAGES=("ar" "en" "fi" "id" "ja" "ko" "ru")
 MODELS=("dummy" "logistic" "ridge" "xgboost")
 
 # Enhanced experiment tracking
-EXPERIMENT_BATCH_NAME="tfidf_xlm_roberta_enhanced_$(date +%Y%m%d_%H%M%S)"
-OUTPUT_BASE_DIR="$VSC_SCRATCH/enhanced_tfidf_experiments"
+EXPERIMENT_BATCH_NAME="tfidf_results_$(date +%Y%m%d_%H%M%S)"
+OUTPUT_BASE_DIR="$VSC_SCRATCH/tfidf_experiments"
 EXPERIMENT_DIR="$OUTPUT_BASE_DIR/$EXPERIMENT_BATCH_NAME"
 
 # Force fresh run by removing existing results
-echo "🔄 Setting up experiment directory..."
+echo "Setting up experiment directory..."
 mkdir -p "$EXPERIMENT_DIR"
 
 # Task definitions
@@ -123,17 +123,17 @@ LINGUISTIC_TASKS[avg_verb_edges]="regression"
 LINGUISTIC_TASKS[lexical_density]="regression"
 LINGUISTIC_TASKS[n_tokens]="regression"
 
-FEATURES_DIR="$PWD/data/xlm_roberta_text2text_tfidf_enhanced"
+FEATURES_DIR="$PWD/data/tfidf_features"
 
 # Generate high-quality TF-IDF features
-echo "🔍 Checking TF-IDF features..."
+echo "Checking TF-IDF features..."
 echo "Features directory: ${FEATURES_DIR}"
 echo "Working directory: $(pwd)"
 echo "Features exist: $(ls -la "${FEATURES_DIR}" 2>/dev/null | head -5 || echo 'Directory not found')"
 
 if [ ! -f "${FEATURES_DIR}/metadata.json" ]; then
-    echo "⚙️ Generating hybrid XLM-RoBERTa + text2text TF-IDF features..."
-    python3 scripts/generate_xlm_roberta_text2text_tfidf.py \
+    echo "Generating hybrid XLM-RoBERTa + text2text TF-IDF features..."
+    python3 scripts/generate_tfidf_features.py \
         --output-dir "${FEATURES_DIR}" \
         --model-name "xlm-roberta-base" \
         --max-features 32000 \
@@ -142,17 +142,17 @@ if [ ! -f "${FEATURES_DIR}/metadata.json" ]; then
         --verify
     
     if [ $? -ne 0 ]; then
-        echo "❌ Hybrid TF-IDF generation failed"
+        echo "Hybrid TF-IDF generation failed"
         exit 1
     fi
 else
-    echo "✅ Hybrid XLM-RoBERTa + text2text TF-IDF features found"
+    echo "Hybrid XLM-RoBERTa + text2text TF-IDF features found"
     echo "  Features: $(cat ${FEATURES_DIR}/metadata.json | grep -o '\"vocab_size\":[^,]*' | cut -d':' -f2)"
     echo "  Tokenizer: XLM-RoBERTa-base with text2text methodology"
 fi
 
 # Initialize enhanced experiment logger
-echo "🔧 Initializing enhanced experiment tracking..."
+echo "Initializing enhanced experiment tracking..."
 python3 -c "
 import sys
 sys.path.append('.')
@@ -164,13 +164,13 @@ logger = ExperimentLogger(
     experiment_name='$EXPERIMENT_BATCH_NAME'
 )
 
-print(f'✅ Experiment logger initialized: {logger.experiment_name}')
-print(f'📁 Results directory: {logger.results_dir}')
-print(f'📊 Visualizations directory: {logger.viz_dir}')
+print(f'Experiment logger initialized: {logger.experiment_name}')
+print(f'Results directory: {logger.results_dir}')
+print(f'Visualizations directory: {logger.viz_dir}')
 "
 
 if [ $? -ne 0 ]; then
-    echo "❌ Failed to initialize experiment logger"
+    echo "Failed to initialize experiment logger"
     exit 1
 fi
 
@@ -185,7 +185,7 @@ run_enhanced_experiment() {
     local EXP_NAME="${MODEL}_${TASK}_${LANG}_${CONFIG}"
     local TASK_TYPE=${MAIN_TASKS[$TASK]:-${LINGUISTIC_TASKS[$TASK]}}
     
-    echo "🔬 Running: $EXP_NAME ($EXP_TYPE)"
+    echo "Running: $EXP_NAME ($EXP_TYPE)"
     
     # Run the experiment with enhanced tracking - pass variables directly to avoid JSON parsing issues
     python3 -c "
@@ -220,11 +220,11 @@ experiment_config = {
 
 # Log experiment start
 exp_id = exp_logger.log_experiment_start(experiment_config)
-print(f'📝 Started tracking experiment: {exp_id}')
+print(f'Started tracking experiment: {exp_id}')
 
 try:
     # Load data with specific config
-    print('  📊 Loading data...')
+    print('  Loading data...')
     (X_train, y_train), (X_val, y_val), (X_test, y_test) = load_sklearn_data_with_config(
         task='$TASK',
         languages=['$LANG'],
@@ -235,7 +235,7 @@ try:
     print(f'    Train: {X_train.shape}, Val: {X_val.shape}, Test: {X_test.shape}')
     
     # Create model
-    print('  🤖 Creating model...')
+    print('  Creating model...')
     model = create_tfidf_baseline_model(
         model_type='$MODEL',
         task_type='$TASK_TYPE',
@@ -244,7 +244,7 @@ try:
     )
     
     # Train with enhanced tracking
-    print('  🏋️ Training...')
+    print('  Training...')
     trainer = SklearnTrainer(
         model=model.model,
         task_type='$TASK_TYPE',
@@ -272,19 +272,19 @@ try:
     if '$TASK_TYPE' == 'classification':
         acc = test_metrics.get('accuracy', 'N/A')
         f1 = test_metrics.get('f1', 'N/A')
-        print(f'    📊 Test Accuracy: {acc:.4f}' if isinstance(acc, (int, float)) else f'    📊 Test Accuracy: {acc}')
-        print(f'    📊 Test F1: {f1:.4f}' if isinstance(f1, (int, float)) else f'    📊 Test F1: {f1}')
+        print(f'    Test Accuracy: {acc:.4f}' if isinstance(acc, (int, float)) else f'    Test Accuracy: {acc}')
+        print(f'    Test F1: {f1:.4f}' if isinstance(f1, (int, float)) else f'    Test F1: {f1}')
     else:
         mse = test_metrics.get('mse', 'N/A') 
         r2 = test_metrics.get('r2', 'N/A')
-        print(f'    📊 Test MSE: {mse:.4f}' if isinstance(mse, (int, float)) else f'    📊 Test MSE: {mse}')
-        print(f'    📊 Test R²: {r2:.4f}' if isinstance(r2, (int, float)) else f'    📊 Test R²: {r2}')
+        print(f'    Test MSE: {mse:.4f}' if isinstance(mse, (int, float)) else f'    Test MSE: {mse}')
+        print(f'    Test R²: {r2:.4f}' if isinstance(r2, (int, float)) else f'    Test R²: {r2}')
     
-    print('  ✅ Completed successfully')
-    print(f'  📝 Results logged with ID: {exp_id}')
+    print('  Completed successfully')
+    print(f'  Results logged with ID: {exp_id}')
 
 except Exception as e:
-    print(f'  ❌ Failed: {e}')
+    print(f'  Failed: {e}')
     traceback.print_exc()
     
     # Log failure
@@ -297,7 +297,7 @@ except Exception as e:
 
 # Run main experiments (base config)
 echo ""
-echo "🚀 Starting main TF-IDF experiments with enhanced tracking..."
+echo "Starting main TF-IDF experiments with enhanced tracking..."
 main_total=0
 main_completed=0
 
@@ -307,30 +307,30 @@ for lang in "${LANGUAGES[@]}"; do
         for model in "${MODELS[@]}"; do
             # Skip incompatible combinations
             if [[ "$model" == "logistic" && "${MAIN_TASKS[$task]}" == "regression" ]]; then
-                echo "⏭️ Skipping $model + $task (incompatible)"
+                echo "Skipping $model + $task (incompatible)"
                 continue
             fi
             if [[ "$model" == "ridge" && "${MAIN_TASKS[$task]}" == "classification" ]]; then
-                echo "⏭️ Skipping $model + $task (incompatible)"
+                echo "Skipping $model + $task (incompatible)"
                 continue
             fi
             
             ((main_total++))
             echo ""
-            echo "📋 Main Experiment $main_total: $model + $task + $lang"
+            echo "Main Experiment $main_total: $model + $task + $lang"
             echo "----------------------------------------"
             
             if run_enhanced_experiment "$lang" "$task" "$model" "base" "main"; then
                 ((main_completed++))
-                echo "✅ Success ($main_completed/$main_total)"
+                echo "Success ($main_completed/$main_total)"
             else
-                echo "❌ Failed ($main_completed/$main_total)"
+                echo "Failed ($main_completed/$main_total)"
             fi
             
             # Print progress every 10 experiments
             if (( main_total % 10 == 0 )); then
                 echo ""
-                echo "📊 Progress Update: $main_completed/$main_total completed"
+                echo "Progress Update: $main_completed/$main_total completed"
                 # Get current experiment status
                 python3 -c "
 import sys
@@ -339,7 +339,7 @@ from src.utils.experiment_logger import ExperimentLogger
 
 exp_logger = ExperimentLogger('$OUTPUT_BASE_DIR', '$EXPERIMENT_BATCH_NAME')
 status = exp_logger.get_experiment_status()
-print(f'📈 Current Status: {status[\"completed\"]} completed, {status[\"failed\"]} failed, {status[\"success_rate\"]*100:.1f}% success rate')
+print(f'Current Status: {status[\"completed\"]} completed, {status[\"failed\"]} failed, {status[\"success_rate\"]*100:.1f}% success rate')
 "
                 echo ""
             fi
@@ -356,14 +356,14 @@ print(f'📈 Current Status: {status[\"completed\"]} completed, {status[\"failed
             
             ((main_total++))
             echo ""
-            echo "📋 Main Experiment $main_total: $model + $task + $lang"
+            echo "Main Experiment $main_total: $model + $task + $lang"
             echo "----------------------------------------"
             
             if run_enhanced_experiment "$lang" "$task" "$model" "base" "main"; then
                 ((main_completed++))
-                echo "✅ Success ($main_completed/$main_total)"
+                echo "Success ($main_completed/$main_total)"
             else
-                echo "❌ Failed ($main_completed/$main_total)"
+                echo "Failed ($main_completed/$main_total)"
             fi
         done
     done
@@ -371,7 +371,7 @@ done
 
 # Run control experiments
 echo ""
-echo "🎯 Starting control TF-IDF experiments with enhanced tracking..."
+echo "Starting control TF-IDF experiments with enhanced tracking..."
 control_total=0
 control_completed=0
 
@@ -389,14 +389,14 @@ for lang in "${LANGUAGES[@]}"; do
             
             ((control_total++))
             echo ""
-            echo "📋 Control Experiment $control_total: $model + question_type + $lang + seed$seed"
+            echo "Control Experiment $control_total: $model + question_type + $lang + seed$seed"
             echo "----------------------------------------"
             
             if run_enhanced_experiment "$lang" "question_type" "$model" "control_question_type_seed$seed" "control"; then
                 ((control_completed++))
-                echo "✅ Success ($control_completed/$control_total)"
+                echo "Success ($control_completed/$control_total)"
             else
-                echo "❌ Failed ($control_completed/$control_total)"
+                echo "Failed ($control_completed/$control_total)"
             fi
         done
     done
@@ -411,14 +411,14 @@ for lang in "${LANGUAGES[@]}"; do
             
             ((control_total++))
             echo ""
-            echo "📋 Control Experiment $control_total: $model + lang_norm_complexity_score + $lang + seed$seed"
+            echo "Control Experiment $control_total: $model + lang_norm_complexity_score + $lang + seed$seed"
             echo "----------------------------------------"
             
             if run_enhanced_experiment "$lang" "lang_norm_complexity_score" "$model" "control_complexity_seed$seed" "control"; then
                 ((control_completed++))
-                echo "✅ Success ($control_completed/$control_total)"
+                echo "Success ($control_completed/$control_total)"
             else
-                echo "❌ Failed ($control_completed/$control_total)"
+                echo "Failed ($control_completed/$control_total)"
             fi
         done
     done
@@ -432,14 +432,14 @@ for lang in "${LANGUAGES[@]}"; do
             
             ((control_total++))
             echo ""
-            echo "📋 Control Experiment $control_total: $model + avg_links_len + $lang + seed$seed"
+            echo "Control Experiment $control_total: $model + avg_links_len + $lang + seed$seed"
             echo "----------------------------------------"
             
             if run_enhanced_experiment "$lang" "avg_links_len" "$model" "control_avg_links_len_seed$seed" "control"; then
                 ((control_completed++))
-                echo "✅ Success ($control_completed/$control_total)"
+                echo "Success ($control_completed/$control_total)"
             else
-                echo "❌ Failed ($control_completed/$control_total)"
+                echo "Failed ($control_completed/$control_total)"
             fi
         done
     done
@@ -447,13 +447,13 @@ done
 
 echo ""
 echo "========================================================================="
-echo "🏁 Enhanced TF-IDF Experiments Completed!"
+echo "Enhanced TF-IDF Experiments Completed!"
 echo "========================================================================="
 echo "Main experiments: $main_completed/$main_total"
 echo "Control experiments: $control_completed/$control_total"
 echo "Total: $((main_completed + control_completed))/$((main_total + control_total))"
 echo ""
-echo "🔬 Feature Information:"
+echo "Feature Information:"
 if [ -f "${FEATURES_DIR}/metadata.json" ]; then
     VOCAB_SIZE=$(cat ${FEATURES_DIR}/metadata.json | grep -o '\"vocab_size\":[^,]*' | cut -d':' -f2)
     TOKENIZER=$(cat ${FEATURES_DIR}/metadata.json | grep -o '\"model_name\":\"[^\"]*' | cut -d':' -f2 | tr -d '"')
@@ -468,7 +468,7 @@ echo "Results directory: $EXPERIMENT_DIR"
 echo ""
 
 # Finalize experiment and create comprehensive analysis
-echo "📊 Creating comprehensive analysis and visualizations..."
+echo "Creating comprehensive analysis and visualizations..."
 python3 -c "
 import sys
 sys.path.append('.')
@@ -478,26 +478,26 @@ from src.utils.experiment_logger import ExperimentLogger
 exp_logger = ExperimentLogger('$OUTPUT_BASE_DIR', '$EXPERIMENT_BATCH_NAME')
 summaries = exp_logger.finalize_experiment()
 
-print('✅ Experiment logging finalized')
-print('📊 Summary tables created:')
+print('Experiment logging finalized')
+print('Summary tables created:')
 for name, df in summaries.items():
     if hasattr(df, '__len__'):
         print(f'  - {name}: {len(df)} entries')
 "
 
 # Generate comprehensive visualizations
-echo "🎨 Generating visualizations..."
+echo "Generating visualizations..."
 python3 scripts/visualize_experiment_results.py "$EXPERIMENT_DIR" --dpi 300
 
 if [ $? -eq 0 ]; then
-    echo "✅ Visualizations generated successfully"
+    echo "Visualizations generated successfully"
 else
-    echo "⚠️ Visualization generation encountered issues (check logs)"
+    echo "Visualization generation encountered issues (check logs)"
 fi
 
 echo ""
 echo "========================================================================="
-echo "📊 FINAL EXPERIMENT STATUS"
+echo "FINAL EXPERIMENT STATUS"
 echo "========================================================================="
 
 # Get final status
@@ -515,13 +515,13 @@ print(f'Successful: {status[\"completed\"]} ({status[\"success_rate\"]*100:.1f}%
 print(f'Failed: {status[\"failed\"]}')
 print(f'Results Directory: {status[\"experiment_dir\"]}')
 print('')
-print('📁 Generated Files:')
+print('Generated Files:')
 print('  - results/: Individual experiment results (JSON)')
 print('  - summaries/: Aggregated CSV summaries')
 print('  - visualizations/: Charts and plots')
 print('  - logs/: Experiment execution logs')
 print('')
-print('🎯 Key Visualizations:')
+print('Key Visualizations:')
 print('  - main_vs_control_comparison.png')
 print('  - performance_by_language_task.png') 
 print('  - model_performance_comparison.png')

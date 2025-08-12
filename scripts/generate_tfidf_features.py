@@ -676,9 +676,9 @@ def verify_features(features_dir: str) -> bool:
         success = loader.verify_features()
         
         if success:
-            logger.info("✅ Feature verification passed")
+            logger.info("Feature verification passed")
         else:
-            logger.error("❌ Feature verification failed")
+            logger.error("Feature verification failed")
             
         return success
         
@@ -690,10 +690,10 @@ def verify_features(features_dir: str) -> bool:
         all_exist = all((features_path / f).exists() for f in required_files)
         
         if all_exist:
-            logger.info("✅ Basic file verification passed")
+            logger.info("Basic file verification passed")
             return True
         else:
-            logger.error("❌ Missing required feature files")
+            logger.error("Missing required feature files")
             return False
 
 if __name__ == "__main__":
