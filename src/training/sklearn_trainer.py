@@ -82,12 +82,12 @@ class SklearnTrainer:
             y_val_processed = self._prepare_labels(y_val)
             
             try:
+                # XGBoost fit method - eval_metric should be set in model initialization, not fit()
                 self.model.fit(
                     X_train_processed,
                     y_train_processed,
                     eval_set=[(X_train_processed, y_train_processed), (X_val_processed, y_val_processed)],
-                    eval_metric="logloss" if self.task_type == "classification" else "rmse",
-                    verbose=False,  # Reduce verbose output
+                    verbose=False  # Reduce verbose output
                 )
                 
                 # Log XGBoost training curve if wandb available

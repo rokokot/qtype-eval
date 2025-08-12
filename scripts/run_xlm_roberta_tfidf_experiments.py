@@ -150,9 +150,12 @@ class XLMRobertaTfidfExperimentRunner:
             if not HAS_XGBOOST:
                 raise ImportError("XGBoost not available")
             
+            # Add eval_metric to params for proper XGBoost initialization
             if task_type == "classification":
+                params['eval_metric'] = 'logloss'
                 return xgb.XGBClassifier(**params)
             else:
+                params['eval_metric'] = 'rmse'
                 return xgb.XGBRegressor(**params)
         
         else:

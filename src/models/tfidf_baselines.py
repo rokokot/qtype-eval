@@ -144,15 +144,18 @@ class TfidfBaselineModel:
                 'max_depth': 6,
                 'learning_rate': 0.1,
                 'subsample': 1.0,
-                'colsample_bytree': 1.0
+                'colsample_bytree': 1.0,
+                'random_state': 42
             }
             default_params.update(params)
             
             if self.task_type == "classification":
-                # XGBoost classifier (remove deprecated params)
+                # XGBoost classifier - add eval_metric during initialization
+                default_params['eval_metric'] = 'logloss'
                 return xgb.XGBClassifier(**default_params)
             else:
-                # XGBoost regressor
+                # XGBoost regressor - add eval_metric during initialization  
+                default_params['eval_metric'] = 'rmse'
                 return xgb.XGBRegressor(**default_params)
         
         else:
