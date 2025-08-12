@@ -187,20 +187,7 @@ run_enhanced_experiment() {
     
     echo "🔬 Running: $EXP_NAME ($EXP_TYPE)"
     
-    # Create experiment configuration for logging
-    local EXPERIMENT_CONFIG="{
-        \"experiment_name\": \"$EXP_NAME\",
-        \"language\": \"$LANG\",
-        \"task\": \"$TASK\",
-        \"model_type\": \"$MODEL\",
-        \"task_type\": \"$TASK_TYPE\",
-        \"config\": \"$CONFIG\",
-        \"experiment_type\": \"$EXP_TYPE\",
-        \"features_dir\": \"$FEATURES_DIR\",
-        \"batch_name\": \"$EXPERIMENT_BATCH_NAME\"
-    }"
-    
-    # Run the experiment with enhanced tracking
+    # Run the experiment with enhanced tracking - pass variables directly to avoid JSON parsing issues
     python3 -c "
 import sys
 sys.path.append('.')
@@ -218,8 +205,18 @@ exp_logger = ExperimentLogger(
     experiment_name='$EXPERIMENT_BATCH_NAME'
 )
 
-# Parse experiment configuration
-experiment_config = json.loads('$EXPERIMENT_CONFIG')
+# Create experiment configuration directly
+experiment_config = {
+    'experiment_name': '$EXP_NAME',
+    'language': '$LANG',
+    'task': '$TASK',
+    'model_type': '$MODEL',
+    'task_type': '$TASK_TYPE',
+    'config': '$CONFIG',
+    'experiment_type': '$EXP_TYPE',
+    'features_dir': '$FEATURES_DIR',
+    'batch_name': '$EXPERIMENT_BATCH_NAME'
+}
 
 # Log experiment start
 exp_id = exp_logger.log_experiment_start(experiment_config)
