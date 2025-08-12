@@ -136,9 +136,9 @@ if [ ! -f "${FEATURES_DIR}/metadata.json" ]; then
     python3 scripts/generate_xlm_roberta_text2text_tfidf.py \
         --output-dir "${FEATURES_DIR}" \
         --model-name "xlm-roberta-base" \
-        --max-features 128000 \
-        --min-df 1 \
-        --max-df 0.99 \
+        --max-features 32000 \
+        --min-df 3 \
+        --max-df 0.95 \
         --verify
     
     if [ $? -ne 0 ]; then

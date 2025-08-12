@@ -33,10 +33,10 @@ class XLMRobertaText2TextTfidfExtractor:
     def __init__(
         self,
         model_name: str = "xlm-roberta-base",
-        max_features: int = 128000,
-        min_df: int = 1,        # Allow single-occurrence terms (like reference)
-        max_df: float = 0.99,   # Less aggressive filtering
-        ngram_range: Tuple[int, int] = (1, 3),  # Include trigrams like reference
+        max_features: int = 32000,   # Reduced from 128000 to focus on most informative features
+        min_df: int = 3,         # Increased from 1 to remove very rare terms (noise reduction)
+        max_df: float = 0.95,    # Reduced from 0.99 to filter more common terms  
+        ngram_range: Tuple[int, int] = (1, 2),  # Keep trigrams as they capture important phrase patterns
         use_full_vocab: bool = False,
         random_state: int = 42
     ):
@@ -466,9 +466,9 @@ class XLMRobertaText2TextTfidfExtractor:
 def generate_xlm_roberta_text2text_features(
     output_dir: str,
     model_name: str = "xlm-roberta-base",
-    max_features: int = 128000,
-    min_df: int = 1,        # Allow single-occurrence terms
-    max_df: float = 0.99,   # Less aggressive filtering  
+    max_features: int = 32000,   # Reduced from 128000 for better signal-to-noise ratio
+    min_df: int = 3,         # Increased from 1 to remove very rare terms
+    max_df: float = 0.95,    # Reduced from 0.99 to filter more common terms  
     dataset_name: str = "rokokot/question-type-and-complexity",
     dataset_config: str = "base",
     verify: bool = True
@@ -521,7 +521,7 @@ def generate_xlm_roberta_text2text_features(
         max_features=max_features,
         min_df=min_df,
         max_df=max_df,
-        ngram_range=(1, 3),  # Include trigrams for more features
+        ngram_range=(1, 2),  # Include trigrams for more features
         random_state=42
     )
     
