@@ -1,0 +1,52 @@
+{
+  "experiment_id": "bef8b168ad86",
+  "timestamp": "2025-08-12T22:21:22.495294",
+  "config": {
+    "experiment_name": "dummy_lang_norm_complexity_score_ko_base",
+    "language": "ko",
+    "task": "lang_norm_complexity_score",
+    "model_type": "dummy",
+    "task_type": "regression",
+    "config": "base",
+    "experiment_type": "main",
+    "features_dir": "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/data/tfidf_features",
+    "batch_name": "tfidf_results_20250812_220645"
+  },
+  "status": "completed",
+  "error": null,
+  "model_type": "DummyRegressor",
+  "task_type": "regression",
+  "train_time": 0.004964351654052734,
+  "train_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.022261538599786513,
+    "mse": 0.022261538599786513,
+    "r2": 0.0
+  },
+  "val_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.05560317118973537,
+    "mse": 0.05560317118973537,
+    "r2": -0.18026117226178262
+  },
+  "test_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.03670295372973632,
+    "mse": 0.03670295372973632,
+    "r2": -0.1396335206201602
+  },
+  "data_shapes": {
+    "train": [
+      739,
+      9199
+    ],
+    "val": [
+      72,
+      9199
+    ],
+    "test": [
+      110,
+      9199
+    ]
+  }
+}

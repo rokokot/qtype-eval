@@ -1,0 +1,52 @@
+{
+  "experiment_id": "96afd48bcd66",
+  "timestamp": "2025-08-12T22:42:41.562972",
+  "config": {
+    "experiment_name": "xgboost_avg_links_len_ja_control_avg_links_len_seed2",
+    "language": "ja",
+    "task": "avg_links_len",
+    "model_type": "xgboost",
+    "task_type": "regression",
+    "config": "control_avg_links_len_seed2",
+    "experiment_type": "control",
+    "features_dir": "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/data/tfidf_features",
+    "batch_name": "tfidf_results_20250812_220645"
+  },
+  "status": "completed",
+  "error": null,
+  "model_type": "XGBRegressor",
+  "task_type": "regression",
+  "train_time": 0.446857213973999,
+  "train_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.004179788005641559,
+    "mse": 0.004179788005641559,
+    "r2": 0.5506433938851997
+  },
+  "val_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.023184141724222566,
+    "mse": 0.023184141724222566,
+    "r2": -0.3004521366082944
+  },
+  "test_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.10963168473215835,
+    "mse": 0.10963168473215835,
+    "r2": -1.5784122577392101
+  },
+  "data_shapes": {
+    "train": [
+      1191,
+      9199
+    ],
+    "val": [
+      46,
+      9199
+    ],
+    "test": [
+      92,
+      9199
+    ]
+  }
+}

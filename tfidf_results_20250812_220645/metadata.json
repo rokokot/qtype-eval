@@ -1,0 +1,10 @@
+{
+  "experiment_name": "tfidf_results_20250812_220645",
+  "start_time": "2025-08-12T22:49:46.822903",
+  "base_output_dir": "/scratch/leuven/371/vsc37132/tfidf_experiments",
+  "experiment_dir": "/scratch/leuven/371/vsc37132/tfidf_experiments/tfidf_results_20250812_220645",
+  "completed_experiments": [],
+  "failed_experiments": [],
+  "total_experiments": 0,
+  "schema_version": "1.0"
+}
