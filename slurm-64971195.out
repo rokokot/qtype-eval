@@ -1,0 +1,5160 @@
+SLURM_JOB_ID: 64971195
+SLURM_JOB_USER: vsc37132
+SLURM_JOB_ACCOUNT: intro_vsc37132
+SLURM_JOB_NAME: tfidf_experiments
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: batch
+SLURM_NNODES: 1
+SLURM_NODELIST: s28c11n1
+SLURM_JOB_CPUS_PER_NODE: 32
+Date: Tue Aug 12 22:05:59 CEST 2025
+Walltime: 00-08:00:00
+========================================================================
+=========================================================================
+SLURM Job Information:
+SLURM_JOB_ID: 64971195
+SLURM_JOB_USER: vsc37132
+SLURM_JOB_ACCOUNT: intro_vsc37132
+SLURM_JOB_NAME: tfidf_experiments
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: batch
+SLURM_NNODES: 1
+SLURM_NODELIST: s28c11n1
+SLURM_JOB_CPUS_PER_NODE: 32
+Date: Tue Aug 12 22:05:59 CEST 2025
+Walltime: 
+=========================================================================
+Activating clean qtype-eval environment...
+Miniconda module loaded successfully
+Environment verification:
+  Python path: /data/leuven/371/vsc37132/conda/envs/qtype-eval/bin/python
+  Python version: Python 3.9.23
+  Conda environment: qtype-eval
+  Conda prefix: /data/leuven/371/vsc37132/conda/envs/qtype-eval
+Checking required packages...
+numpy
+pandas
+scikit-learn
+xgboost
+transformers
+datasets
+hydra-core
+sentencepiece
+matplotlib
+seaborn
+Setting up experiment directory...
+Checking TF-IDF features...
+Features directory: /vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/data/tfidf_features
+Working directory: /vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval
+Features exist: total 624744
+drwxr-x--- 2 vsc37132 vsc37132      4096 Aug 12 21:52 .
+drwxr-x--- 6 vsc37132 vsc37132      4096 Aug 12 21:51 ..
+-rw-r----- 1 vsc37132 vsc37132    217766 Aug 12 21:51 feature_names.json
+-rw-r----- 1 vsc37132 vsc37132     86250 Aug 12 21:51 language_info.json
+Hybrid XLM-RoBERTa + text2text TF-IDF features found
+  Features:  250002
+ 9199
+  Tokenizer: XLM-RoBERTa-base with text2text methodology
+Initializing enhanced experiment tracking...
+Experiment logger initialized: tfidf_results_20250812_220645
+Results directory: /scratch/leuven/371/vsc37132/tfidf_experiments/tfidf_results_20250812_220645/results
+Visualizations directory: /scratch/leuven/371/vsc37132/tfidf_experiments/tfidf_results_20250812_220645/visualizations
+
+Starting main TF-IDF experiments with enhanced tracking...
+
+Main Experiment 1: dummy + lang_norm_complexity_score + ar
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_ar_base (main)
+Started tracking experiment: c2a336d29522
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0581
+    Test R²: -0.0011
+  Completed successfully
+  Results logged with ID: c2a336d29522
+Success (1/1)
+Skipping logistic + lang_norm_complexity_score (incompatible)
+
+Main Experiment 2: ridge + lang_norm_complexity_score + ar
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_ar_base (main)
+Started tracking experiment: a844df0b6234
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0453
+    Test R²: 0.2183
+  Completed successfully
+  Results logged with ID: a844df0b6234
+Success (2/2)
+
+Main Experiment 3: xgboost + lang_norm_complexity_score + ar
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_ar_base (main)
+Started tracking experiment: 1a00eb1cad9f
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0344
+    Test R²: 0.4071
+  Completed successfully
+  Results logged with ID: 1a00eb1cad9f
+Success (3/3)
+
+Main Experiment 4: dummy + question_type + ar
+----------------------------------------
+Running: dummy_question_type_ar_base (main)
+Started tracking experiment: 8e8a347b80f9
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.7143
+    Test F1: 0.5952
+  Completed successfully
+  Results logged with ID: 8e8a347b80f9
+Success (4/4)
+
+Main Experiment 5: logistic + question_type + ar
+----------------------------------------
+Running: logistic_question_type_ar_base (main)
+Started tracking experiment: b9dfab04cb8d
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.9091
+    Test F1: 0.9116
+  Completed successfully
+  Results logged with ID: b9dfab04cb8d
+Success (5/5)
+Skipping ridge + question_type (incompatible)
+
+Main Experiment 6: xgboost + question_type + ar
+----------------------------------------
+Running: xgboost_question_type_ar_base (main)
+Started tracking experiment: 8639bd238614
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.9740
+    Test F1: 0.9736
+  Completed successfully
+  Results logged with ID: 8639bd238614
+Success (6/6)
+
+Main Experiment 7: dummy + avg_verb_edges + ar
+----------------------------------------
+Running: dummy_avg_verb_edges_ar_base (main)
+Started tracking experiment: b25692473356
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.1284
+    Test R²: -0.8603
+  Completed successfully
+  Results logged with ID: b25692473356
+Success (7/7)
+
+Main Experiment 8: ridge + avg_verb_edges + ar
+----------------------------------------
+Running: ridge_avg_verb_edges_ar_base (main)
+Started tracking experiment: f29e209c6691
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0918
+    Test R²: -0.3298
+  Completed successfully
+  Results logged with ID: f29e209c6691
+Success (8/8)
+
+Main Experiment 9: xgboost + avg_verb_edges + ar
+----------------------------------------
+Running: xgboost_avg_verb_edges_ar_base (main)
+Started tracking experiment: 37fecd008ef4
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.1041
+    Test R²: -0.5086
+  Completed successfully
+  Results logged with ID: 37fecd008ef4
+Success (9/9)
+
+Main Experiment 10: dummy + lexical_density + ar
+----------------------------------------
+Running: dummy_lexical_density_ar_base (main)
+Started tracking experiment: d686dca9100e
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0671
+    Test R²: -0.1557
+  Completed successfully
+  Results logged with ID: d686dca9100e
+Success (10/10)
+
+Main Experiment 11: ridge + lexical_density + ar
+----------------------------------------
+Running: ridge_lexical_density_ar_base (main)
+Started tracking experiment: 31503ba35dac
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0576
+    Test R²: 0.0066
+  Completed successfully
+  Results logged with ID: 31503ba35dac
+Success (11/11)
+
+Main Experiment 12: xgboost + lexical_density + ar
+----------------------------------------
+Running: xgboost_lexical_density_ar_base (main)
+Started tracking experiment: fe854fed89ca
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0675
+    Test R²: -0.1629
+  Completed successfully
+  Results logged with ID: fe854fed89ca
+Success (12/12)
+
+Main Experiment 13: dummy + n_tokens + ar
+----------------------------------------
+Running: dummy_n_tokens_ar_base (main)
+Started tracking experiment: 309144ba72a4
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0779
+    Test R²: -0.0402
+  Completed successfully
+  Results logged with ID: 309144ba72a4
+Success (13/13)
+
+Main Experiment 14: ridge + n_tokens + ar
+----------------------------------------
+Running: ridge_n_tokens_ar_base (main)
+Started tracking experiment: 0d7f4f544186
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0424
+    Test R²: 0.4344
+  Completed successfully
+  Results logged with ID: 0d7f4f544186
+Success (14/14)
+
+Main Experiment 15: xgboost + n_tokens + ar
+----------------------------------------
+Running: xgboost_n_tokens_ar_base (main)
+Started tracking experiment: 994add9452c5
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0326
+    Test R²: 0.5642
+  Completed successfully
+  Results logged with ID: 994add9452c5
+Success (15/15)
+
+Main Experiment 16: dummy + avg_max_depth + ar
+----------------------------------------
+Running: dummy_avg_max_depth_ar_base (main)
+Started tracking experiment: 57391af731ee
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0523
+    Test R²: -0.0600
+  Completed successfully
+  Results logged with ID: 57391af731ee
+Success (16/16)
+
+Main Experiment 17: ridge + avg_max_depth + ar
+----------------------------------------
+Running: ridge_avg_max_depth_ar_base (main)
+Started tracking experiment: 2a0b861e11c0
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0291
+    Test R²: 0.4092
+  Completed successfully
+  Results logged with ID: 2a0b861e11c0
+Success (17/17)
+
+Main Experiment 18: xgboost + avg_max_depth + ar
+----------------------------------------
+Running: xgboost_avg_max_depth_ar_base (main)
+Started tracking experiment: 85b515da17eb
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0287
+    Test R²: 0.4180
+  Completed successfully
+  Results logged with ID: 85b515da17eb
+Success (18/18)
+
+Main Experiment 19: dummy + avg_links_len + ar
+----------------------------------------
+Running: dummy_avg_links_len_ar_base (main)
+Started tracking experiment: 3e09e32b3dbe
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0652
+    Test R²: -0.4071
+  Completed successfully
+  Results logged with ID: 3e09e32b3dbe
+Success (19/19)
+
+Main Experiment 20: ridge + avg_links_len + ar
+----------------------------------------
+Running: ridge_avg_links_len_ar_base (main)
+Started tracking experiment: c8890f3033a5
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0453
+    Test R²: 0.0211
+  Completed successfully
+  Results logged with ID: c8890f3033a5
+Success (20/20)
+
+Main Experiment 21: xgboost + avg_links_len + ar
+----------------------------------------
+Running: xgboost_avg_links_len_ar_base (main)
+Started tracking experiment: fe4ea085c997
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0579
+    Test R²: -0.2493
+  Completed successfully
+  Results logged with ID: fe4ea085c997
+Success (21/21)
+
+Main Experiment 22: dummy + avg_subordinate_chain_len + ar
+----------------------------------------
+Running: dummy_avg_subordinate_chain_len_ar_base (main)
+Started tracking experiment: 8dfa227a30ee
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0772
+    Test R²: -0.3977
+  Completed successfully
+  Results logged with ID: 8dfa227a30ee
+Success (22/22)
+
+Main Experiment 23: ridge + avg_subordinate_chain_len + ar
+----------------------------------------
+Running: ridge_avg_subordinate_chain_len_ar_base (main)
+Started tracking experiment: 863db0dddbcf
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0539
+    Test R²: 0.0242
+  Completed successfully
+  Results logged with ID: 863db0dddbcf
+Success (23/23)
+
+Main Experiment 24: xgboost + avg_subordinate_chain_len + ar
+----------------------------------------
+Running: xgboost_avg_subordinate_chain_len_ar_base (main)
+Started tracking experiment: 64f8867ee023
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0592
+    Test R²: -0.0713
+  Completed successfully
+  Results logged with ID: 64f8867ee023
+Success (24/24)
+
+Main Experiment 25: dummy + lang_norm_complexity_score + en
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_en_base (main)
+Started tracking experiment: ecc2363b5cf1
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0386
+    Test R²: -0.0017
+  Completed successfully
+  Results logged with ID: ecc2363b5cf1
+Success (25/25)
+Skipping logistic + lang_norm_complexity_score (incompatible)
+
+Main Experiment 26: ridge + lang_norm_complexity_score + en
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_en_base (main)
+Started tracking experiment: f384a9672a17
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0234
+    Test R²: 0.3917
+  Completed successfully
+  Results logged with ID: f384a9672a17
+Success (26/26)
+
+Main Experiment 27: xgboost + lang_norm_complexity_score + en
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_en_base (main)
+Started tracking experiment: ee33f73bc8b8
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0177
+    Test R²: 0.5401
+  Completed successfully
+  Results logged with ID: ee33f73bc8b8
+Success (27/27)
+
+Main Experiment 28: dummy + question_type + en
+----------------------------------------
+Running: dummy_question_type_en_base (main)
+Started tracking experiment: 791a93b6ef63
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5000
+    Test F1: 0.3333
+  Completed successfully
+  Results logged with ID: 791a93b6ef63
+Success (28/28)
+
+Main Experiment 29: logistic + question_type + en
+----------------------------------------
+Running: logistic_question_type_en_base (main)
+Started tracking experiment: b89a23288503
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.8364
+    Test F1: 0.8355
+  Completed successfully
+  Results logged with ID: b89a23288503
+Success (29/29)
+Skipping ridge + question_type (incompatible)
+
+Main Experiment 30: xgboost + question_type + en
+----------------------------------------
+Running: xgboost_question_type_en_base (main)
+Started tracking experiment: ccf0eafd98d3
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.8091
+    Test F1: 0.8055
+  Completed successfully
+  Results logged with ID: ccf0eafd98d3
+Success (30/30)
+
+Progress Update: 30/30 completed
+Current Status: 0 completed, 0 failed, 0.0% success rate
+
+
+Main Experiment 31: dummy + avg_verb_edges + en
+----------------------------------------
+Running: dummy_avg_verb_edges_en_base (main)
+Started tracking experiment: e9d0af9a9c89
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0609
+    Test R²: -0.0232
+  Completed successfully
+  Results logged with ID: e9d0af9a9c89
+Success (31/31)
+
+Main Experiment 32: ridge + avg_verb_edges + en
+----------------------------------------
+Running: ridge_avg_verb_edges_en_base (main)
+Started tracking experiment: a11f8f096d4d
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0417
+    Test R²: 0.2989
+  Completed successfully
+  Results logged with ID: a11f8f096d4d
+Success (32/32)
+
+Main Experiment 33: xgboost + avg_verb_edges + en
+----------------------------------------
+Running: xgboost_avg_verb_edges_en_base (main)
+Started tracking experiment: 41da51ec5194
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0498
+    Test R²: 0.1631
+  Completed successfully
+  Results logged with ID: 41da51ec5194
+Success (33/33)
+
+Main Experiment 34: dummy + lexical_density + en
+----------------------------------------
+Running: dummy_lexical_density_en_base (main)
+Started tracking experiment: 20b24ab50198
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0287
+    Test R²: -0.0014
+  Completed successfully
+  Results logged with ID: 20b24ab50198
+Success (34/34)
+
+Main Experiment 35: ridge + lexical_density + en
+----------------------------------------
+Running: ridge_lexical_density_en_base (main)
+Started tracking experiment: b7f81586c7f6
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0271
+    Test R²: 0.0544
+  Completed successfully
+  Results logged with ID: b7f81586c7f6
+Success (35/35)
+
+Main Experiment 36: xgboost + lexical_density + en
+----------------------------------------
+Running: xgboost_lexical_density_en_base (main)
+Started tracking experiment: 6a93816123c6
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0283
+    Test R²: 0.0097
+  Completed successfully
+  Results logged with ID: 6a93816123c6
+Success (36/36)
+
+Main Experiment 37: dummy + n_tokens + en
+----------------------------------------
+Running: dummy_n_tokens_en_base (main)
+Started tracking experiment: 5bbf79eed628
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0294
+    Test R²: -0.5543
+  Completed successfully
+  Results logged with ID: 5bbf79eed628
+Success (37/37)
+
+Main Experiment 38: ridge + n_tokens + en
+----------------------------------------
+Running: ridge_n_tokens_en_base (main)
+Started tracking experiment: 1bd8edad9778
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0343
+    Test R²: -0.8136
+  Completed successfully
+  Results logged with ID: 1bd8edad9778
+Success (38/38)
+
+Main Experiment 39: xgboost + n_tokens + en
+----------------------------------------
+Running: xgboost_n_tokens_en_base (main)
+Started tracking experiment: 96a765a84a61
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0131
+    Test R²: 0.3050
+  Completed successfully
+  Results logged with ID: 96a765a84a61
+Success (39/39)
+
+Main Experiment 40: dummy + avg_max_depth + en
+----------------------------------------
+Running: dummy_avg_max_depth_en_base (main)
+Started tracking experiment: e2ac8121fcbb
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0284
+    Test R²: -0.0061
+  Completed successfully
+  Results logged with ID: e2ac8121fcbb
+Success (40/40)
+
+Main Experiment 41: ridge + avg_max_depth + en
+----------------------------------------
+Running: ridge_avg_max_depth_en_base (main)
+Started tracking experiment: bd3fc5af9539
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0135
+    Test R²: 0.5222
+  Completed successfully
+  Results logged with ID: bd3fc5af9539
+Success (41/41)
+
+Main Experiment 42: xgboost + avg_max_depth + en
+----------------------------------------
+Running: xgboost_avg_max_depth_en_base (main)
+Started tracking experiment: 80d679e8f914
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0137
+    Test R²: 0.5146
+  Completed successfully
+  Results logged with ID: 80d679e8f914
+Success (42/42)
+
+Main Experiment 43: dummy + avg_links_len + en
+----------------------------------------
+Running: dummy_avg_links_len_en_base (main)
+Started tracking experiment: 3140344a1a84
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0096
+    Test R²: -0.0272
+  Completed successfully
+  Results logged with ID: 3140344a1a84
+Success (43/43)
+
+Main Experiment 44: ridge + avg_links_len + en
+----------------------------------------
+Running: ridge_avg_links_len_en_base (main)
+Started tracking experiment: ee1cb588b8f8
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0073
+    Test R²: 0.2112
+  Completed successfully
+  Results logged with ID: ee1cb588b8f8
+Success (44/44)
+
+Main Experiment 45: xgboost + avg_links_len + en
+----------------------------------------
+Running: xgboost_avg_links_len_en_base (main)
+Started tracking experiment: b97e838496fd
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0071
+    Test R²: 0.2349
+  Completed successfully
+  Results logged with ID: b97e838496fd
+Success (45/45)
+
+Main Experiment 46: dummy + avg_subordinate_chain_len + en
+----------------------------------------
+Running: dummy_avg_subordinate_chain_len_en_base (main)
+Started tracking experiment: 0c077a3a9b97
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0274
+    Test R²: -0.1194
+  Completed successfully
+  Results logged with ID: 0c077a3a9b97
+Success (46/46)
+
+Main Experiment 47: ridge + avg_subordinate_chain_len + en
+----------------------------------------
+Running: ridge_avg_subordinate_chain_len_en_base (main)
+Started tracking experiment: 7c03fc9ccbca
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0152
+    Test R²: 0.3783
+  Completed successfully
+  Results logged with ID: 7c03fc9ccbca
+Success (47/47)
+
+Main Experiment 48: xgboost + avg_subordinate_chain_len + en
+----------------------------------------
+Running: xgboost_avg_subordinate_chain_len_en_base (main)
+Started tracking experiment: 2848512bc947
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0255
+    Test R²: -0.0424
+  Completed successfully
+  Results logged with ID: 2848512bc947
+Success (48/48)
+
+Main Experiment 49: dummy + lang_norm_complexity_score + fi
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_fi_base (main)
+Started tracking experiment: e07bf19d79e5
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0399
+    Test R²: -0.0099
+  Completed successfully
+  Results logged with ID: e07bf19d79e5
+Success (49/49)
+Skipping logistic + lang_norm_complexity_score (incompatible)
+
+Main Experiment 50: ridge + lang_norm_complexity_score + fi
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_fi_base (main)
+Started tracking experiment: 950a47ed64be
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0372
+    Test R²: 0.0579
+  Completed successfully
+  Results logged with ID: 950a47ed64be
+Success (50/50)
+
+Progress Update: 50/50 completed
+Current Status: 0 completed, 0 failed, 0.0% success rate
+
+
+Main Experiment 51: xgboost + lang_norm_complexity_score + fi
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_fi_base (main)
+Started tracking experiment: e93524714b6c
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0319
+    Test R²: 0.1917
+  Completed successfully
+  Results logged with ID: e93524714b6c
+Success (51/51)
+
+Main Experiment 52: dummy + question_type + fi
+----------------------------------------
+Running: dummy_question_type_fi_base (main)
+Started tracking experiment: bd4584a302b3
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5000
+    Test F1: 0.3333
+  Completed successfully
+  Results logged with ID: bd4584a302b3
+Success (52/52)
+
+Main Experiment 53: logistic + question_type + fi
+----------------------------------------
+Running: logistic_question_type_fi_base (main)
+Started tracking experiment: c414e27fd505
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.8455
+    Test F1: 0.8444
+  Completed successfully
+  Results logged with ID: c414e27fd505
+Success (53/53)
+Skipping ridge + question_type (incompatible)
+
+Main Experiment 54: xgboost + question_type + fi
+----------------------------------------
+Running: xgboost_question_type_fi_base (main)
+Started tracking experiment: 346aaf003c0b
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.8727
+    Test F1: 0.8717
+  Completed successfully
+  Results logged with ID: 346aaf003c0b
+Success (54/54)
+
+Main Experiment 55: dummy + avg_verb_edges + fi
+----------------------------------------
+Running: dummy_avg_verb_edges_fi_base (main)
+Started tracking experiment: 3f489c502213
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0946
+    Test R²: -0.3372
+  Completed successfully
+  Results logged with ID: 3f489c502213
+Success (55/55)
+
+Main Experiment 56: ridge + avg_verb_edges + fi
+----------------------------------------
+Running: ridge_avg_verb_edges_fi_base (main)
+Started tracking experiment: 96a1e276a27c
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0679
+    Test R²: 0.0399
+  Completed successfully
+  Results logged with ID: 96a1e276a27c
+Success (56/56)
+
+Main Experiment 57: xgboost + avg_verb_edges + fi
+----------------------------------------
+Running: xgboost_avg_verb_edges_fi_base (main)
+Started tracking experiment: 9262919d1a23
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0669
+    Test R²: 0.0539
+  Completed successfully
+  Results logged with ID: 9262919d1a23
+Success (57/57)
+
+Main Experiment 58: dummy + lexical_density + fi
+----------------------------------------
+Running: dummy_lexical_density_fi_base (main)
+Started tracking experiment: dc641c074239
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0555
+    Test R²: -0.2417
+  Completed successfully
+  Results logged with ID: dc641c074239
+Success (58/58)
+
+Main Experiment 59: ridge + lexical_density + fi
+----------------------------------------
+Running: ridge_lexical_density_fi_base (main)
+Started tracking experiment: 071610eb131e
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0704
+    Test R²: -0.5732
+  Completed successfully
+  Results logged with ID: 071610eb131e
+Success (59/59)
+
+Main Experiment 60: xgboost + lexical_density + fi
+----------------------------------------
+Running: xgboost_lexical_density_fi_base (main)
+Started tracking experiment: 140c3e703c5d
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0692
+    Test R²: -0.5467
+  Completed successfully
+  Results logged with ID: 140c3e703c5d
+Success (60/60)
+
+Main Experiment 61: dummy + n_tokens + fi
+----------------------------------------
+Running: dummy_n_tokens_fi_base (main)
+Started tracking experiment: fd8d7e49449a
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0144
+    Test R²: -0.0383
+  Completed successfully
+  Results logged with ID: fd8d7e49449a
+Success (61/61)
+
+Main Experiment 62: ridge + n_tokens + fi
+----------------------------------------
+Running: ridge_n_tokens_fi_base (main)
+Started tracking experiment: 32e5b4983fe0
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0155
+    Test R²: -0.1237
+  Completed successfully
+  Results logged with ID: 32e5b4983fe0
+Success (62/62)
+
+Main Experiment 63: xgboost + n_tokens + fi
+----------------------------------------
+Running: xgboost_n_tokens_fi_base (main)
+Started tracking experiment: 4a7a869d7c41
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0091
+    Test R²: 0.3418
+  Completed successfully
+  Results logged with ID: 4a7a869d7c41
+Success (63/63)
+
+Main Experiment 64: dummy + avg_max_depth + fi
+----------------------------------------
+Running: dummy_avg_max_depth_fi_base (main)
+Started tracking experiment: de98eac92d50
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0307
+    Test R²: -0.0073
+  Completed successfully
+  Results logged with ID: de98eac92d50
+Success (64/64)
+
+Main Experiment 65: ridge + avg_max_depth + fi
+----------------------------------------
+Running: ridge_avg_max_depth_fi_base (main)
+Started tracking experiment: ab8ea84e7edc
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0367
+    Test R²: -0.2031
+  Completed successfully
+  Results logged with ID: ab8ea84e7edc
+Success (65/65)
+
+Main Experiment 66: xgboost + avg_max_depth + fi
+----------------------------------------
+Running: xgboost_avg_max_depth_fi_base (main)
+Started tracking experiment: ced76814761e
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0220
+    Test R²: 0.2782
+  Completed successfully
+  Results logged with ID: ced76814761e
+Success (66/66)
+
+Main Experiment 67: dummy + avg_links_len + fi
+----------------------------------------
+Running: dummy_avg_links_len_fi_base (main)
+Started tracking experiment: 7279377155a9
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0267
+    Test R²: -0.4698
+  Completed successfully
+  Results logged with ID: 7279377155a9
+Success (67/67)
+
+Main Experiment 68: ridge + avg_links_len + fi
+----------------------------------------
+Running: ridge_avg_links_len_fi_base (main)
+Started tracking experiment: 76b587f0d18d
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0245
+    Test R²: -0.3500
+  Completed successfully
+  Results logged with ID: 76b587f0d18d
+Success (68/68)
+
+Main Experiment 69: xgboost + avg_links_len + fi
+----------------------------------------
+Running: xgboost_avg_links_len_fi_base (main)
+Started tracking experiment: aac38d8b5c65
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0271
+    Test R²: -0.4968
+  Completed successfully
+  Results logged with ID: aac38d8b5c65
+Success (69/69)
+
+Main Experiment 70: dummy + avg_subordinate_chain_len + fi
+----------------------------------------
+Running: dummy_avg_subordinate_chain_len_fi_base (main)
+Started tracking experiment: 93e99fbb0bcf
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0545
+    Test R²: -0.2272
+  Completed successfully
+  Results logged with ID: 93e99fbb0bcf
+Success (70/70)
+
+Main Experiment 71: ridge + avg_subordinate_chain_len + fi
+----------------------------------------
+Running: ridge_avg_subordinate_chain_len_fi_base (main)
+Started tracking experiment: 7dc4ec4a7c53
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0410
+    Test R²: 0.0773
+  Completed successfully
+  Results logged with ID: 7dc4ec4a7c53
+Success (71/71)
+
+Main Experiment 72: xgboost + avg_subordinate_chain_len + fi
+----------------------------------------
+Running: xgboost_avg_subordinate_chain_len_fi_base (main)
+Started tracking experiment: 0e5bd1d98dee
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0515
+    Test R²: -0.1608
+  Completed successfully
+  Results logged with ID: 0e5bd1d98dee
+Success (72/72)
+
+Main Experiment 73: dummy + lang_norm_complexity_score + id
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_id_base (main)
+Started tracking experiment: 69e74054f243
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0408
+    Test R²: -0.0003
+  Completed successfully
+  Results logged with ID: 69e74054f243
+Success (73/73)
+Skipping logistic + lang_norm_complexity_score (incompatible)
+
+Main Experiment 74: ridge + lang_norm_complexity_score + id
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_id_base (main)
+Started tracking experiment: a3ba80d03c5d
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0285
+    Test R²: 0.3017
+  Completed successfully
+  Results logged with ID: a3ba80d03c5d
+Success (74/74)
+
+Main Experiment 75: xgboost + lang_norm_complexity_score + id
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_id_base (main)
+Started tracking experiment: 808d74ef6a7f
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0265
+    Test R²: 0.3498
+  Completed successfully
+  Results logged with ID: 808d74ef6a7f
+Success (75/75)
+
+Main Experiment 76: dummy + question_type + id
+----------------------------------------
+Running: dummy_question_type_id_base (main)
+Started tracking experiment: 301e5c494de6
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5000
+    Test F1: 0.3333
+  Completed successfully
+  Results logged with ID: 301e5c494de6
+Success (76/76)
+
+Main Experiment 77: logistic + question_type + id
+----------------------------------------
+Running: logistic_question_type_id_base (main)
+Started tracking experiment: 90000f688d29
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.6727
+    Test F1: 0.6534
+  Completed successfully
+  Results logged with ID: 90000f688d29
+Success (77/77)
+Skipping ridge + question_type (incompatible)
+
+Main Experiment 78: xgboost + question_type + id
+----------------------------------------
+Running: xgboost_question_type_id_base (main)
+Started tracking experiment: 333277157964
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.6545
+    Test F1: 0.6131
+  Completed successfully
+  Results logged with ID: 333277157964
+Success (78/78)
+
+Main Experiment 79: dummy + avg_verb_edges + id
+----------------------------------------
+Running: dummy_avg_verb_edges_id_base (main)
+Started tracking experiment: 8b2e03525962
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0649
+    Test R²: -0.0155
+  Completed successfully
+  Results logged with ID: 8b2e03525962
+Success (79/79)
+
+Main Experiment 80: ridge + avg_verb_edges + id
+----------------------------------------
+Running: ridge_avg_verb_edges_id_base (main)
+Started tracking experiment: fbf8a135f9db
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0735
+    Test R²: -0.1503
+  Completed successfully
+  Results logged with ID: fbf8a135f9db
+Success (80/80)
+
+Main Experiment 81: xgboost + avg_verb_edges + id
+----------------------------------------
+Running: xgboost_avg_verb_edges_id_base (main)
+Started tracking experiment: afcfce3c5417
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0901
+    Test R²: -0.4102
+  Completed successfully
+  Results logged with ID: afcfce3c5417
+Success (81/81)
+
+Main Experiment 82: dummy + lexical_density + id
+----------------------------------------
+Running: dummy_lexical_density_id_base (main)
+Started tracking experiment: 0ab8fecec45c
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0543
+    Test R²: -0.3272
+  Completed successfully
+  Results logged with ID: 0ab8fecec45c
+Success (82/82)
+
+Main Experiment 83: ridge + lexical_density + id
+----------------------------------------
+Running: ridge_lexical_density_id_base (main)
+Started tracking experiment: f9bcf04c4624
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0337
+    Test R²: 0.1767
+  Completed successfully
+  Results logged with ID: f9bcf04c4624
+Success (83/83)
+
+Main Experiment 84: xgboost + lexical_density + id
+----------------------------------------
+Running: xgboost_lexical_density_id_base (main)
+Started tracking experiment: 57a8a5c8b579
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0460
+    Test R²: -0.1245
+  Completed successfully
+  Results logged with ID: 57a8a5c8b579
+Success (84/84)
+
+Main Experiment 85: dummy + n_tokens + id
+----------------------------------------
+Running: dummy_n_tokens_id_base (main)
+Started tracking experiment: d54dcc199bb9
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0399
+    Test R²: -0.3508
+  Completed successfully
+  Results logged with ID: d54dcc199bb9
+Success (85/85)
+
+Main Experiment 86: ridge + n_tokens + id
+----------------------------------------
+Running: ridge_n_tokens_id_base (main)
+Started tracking experiment: e6be9dbe295a
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0376
+    Test R²: -0.2722
+  Completed successfully
+  Results logged with ID: e6be9dbe295a
+Success (86/86)
+
+Main Experiment 87: xgboost + n_tokens + id
+----------------------------------------
+Running: xgboost_n_tokens_id_base (main)
+Started tracking experiment: ab156fe3150a
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0219
+    Test R²: 0.2601
+  Completed successfully
+  Results logged with ID: ab156fe3150a
+Success (87/87)
+
+Main Experiment 88: dummy + avg_max_depth + id
+----------------------------------------
+Running: dummy_avg_max_depth_id_base (main)
+Started tracking experiment: d9563e513de6
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0323
+    Test R²: -0.0025
+  Completed successfully
+  Results logged with ID: d9563e513de6
+Success (88/88)
+
+Main Experiment 89: ridge + avg_max_depth + id
+----------------------------------------
+Running: ridge_avg_max_depth_id_base (main)
+Started tracking experiment: 36d96d6ef388
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0241
+    Test R²: 0.2511
+  Completed successfully
+  Results logged with ID: 36d96d6ef388
+Success (89/89)
+
+Main Experiment 90: xgboost + avg_max_depth + id
+----------------------------------------
+Running: xgboost_avg_max_depth_id_base (main)
+Started tracking experiment: 9d7a7ce00446
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0261
+    Test R²: 0.1897
+  Completed successfully
+  Results logged with ID: 9d7a7ce00446
+Success (90/90)
+
+Main Experiment 91: dummy + avg_links_len + id
+----------------------------------------
+Running: dummy_avg_links_len_id_base (main)
+Started tracking experiment: 8c8902e76cb3
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0360
+    Test R²: -0.6200
+  Completed successfully
+  Results logged with ID: 8c8902e76cb3
+Success (91/91)
+
+Main Experiment 92: ridge + avg_links_len + id
+----------------------------------------
+Running: ridge_avg_links_len_id_base (main)
+Started tracking experiment: f534d12cc46b
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0370
+    Test R²: -0.6670
+  Completed successfully
+  Results logged with ID: f534d12cc46b
+Success (92/92)
+
+Main Experiment 93: xgboost + avg_links_len + id
+----------------------------------------
+Running: xgboost_avg_links_len_id_base (main)
+Started tracking experiment: a12633ba2e1f
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0405
+    Test R²: -0.8226
+  Completed successfully
+  Results logged with ID: a12633ba2e1f
+Success (93/93)
+
+Main Experiment 94: dummy + avg_subordinate_chain_len + id
+----------------------------------------
+Running: dummy_avg_subordinate_chain_len_id_base (main)
+Started tracking experiment: dfa582e679af
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0696
+    Test R²: -0.3283
+  Completed successfully
+  Results logged with ID: dfa582e679af
+Success (94/94)
+
+Main Experiment 95: ridge + avg_subordinate_chain_len + id
+----------------------------------------
+Running: ridge_avg_subordinate_chain_len_id_base (main)
+Started tracking experiment: 7a96b8658247
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0526
+    Test R²: -0.0039
+  Completed successfully
+  Results logged with ID: 7a96b8658247
+Success (95/95)
+
+Main Experiment 96: xgboost + avg_subordinate_chain_len + id
+----------------------------------------
+Running: xgboost_avg_subordinate_chain_len_id_base (main)
+Started tracking experiment: 148cd56698a6
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0550
+    Test R²: -0.0496
+  Completed successfully
+  Results logged with ID: 148cd56698a6
+Success (96/96)
+
+Main Experiment 97: dummy + lang_norm_complexity_score + ja
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_ja_base (main)
+Started tracking experiment: db82a6f17da9
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0603
+    Test R²: -0.1576
+  Completed successfully
+  Results logged with ID: db82a6f17da9
+Success (97/97)
+Skipping logistic + lang_norm_complexity_score (incompatible)
+
+Main Experiment 98: ridge + lang_norm_complexity_score + ja
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_ja_base (main)
+Started tracking experiment: 2555f87bc52f
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0398
+    Test R²: 0.2348
+  Completed successfully
+  Results logged with ID: 2555f87bc52f
+Success (98/98)
+
+Main Experiment 99: xgboost + lang_norm_complexity_score + ja
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_ja_base (main)
+Started tracking experiment: a417ca016bce
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0370
+    Test R²: 0.2898
+  Completed successfully
+  Results logged with ID: a417ca016bce
+Success (99/99)
+
+Main Experiment 100: dummy + question_type + ja
+----------------------------------------
+Running: dummy_question_type_ja_base (main)
+Started tracking experiment: 3cc0d4900c4f
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5978
+    Test F1: 0.4474
+  Completed successfully
+  Results logged with ID: 3cc0d4900c4f
+Success (100/100)
+
+Progress Update: 100/100 completed
+Current Status: 0 completed, 0 failed, 0.0% success rate
+
+
+Main Experiment 101: logistic + question_type + ja
+----------------------------------------
+Running: logistic_question_type_ja_base (main)
+Started tracking experiment: c782a7dfc79e
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.6413
+    Test F1: 0.5914
+  Completed successfully
+  Results logged with ID: c782a7dfc79e
+Success (101/101)
+Skipping ridge + question_type (incompatible)
+
+Main Experiment 102: xgboost + question_type + ja
+----------------------------------------
+Running: xgboost_question_type_ja_base (main)
+Started tracking experiment: a1449a540f25
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.6413
+    Test F1: 0.6405
+  Completed successfully
+  Results logged with ID: a1449a540f25
+Success (102/102)
+
+Main Experiment 103: dummy + avg_verb_edges + ja
+----------------------------------------
+Running: dummy_avg_verb_edges_ja_base (main)
+Started tracking experiment: 9c9772d75c9d
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.1076
+    Test R²: -0.1261
+  Completed successfully
+  Results logged with ID: 9c9772d75c9d
+Success (103/103)
+
+Main Experiment 104: ridge + avg_verb_edges + ja
+----------------------------------------
+Running: ridge_avg_verb_edges_ja_base (main)
+Started tracking experiment: c60fe9ece0dd
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.1028
+    Test R²: -0.0765
+  Completed successfully
+  Results logged with ID: c60fe9ece0dd
+Success (104/104)
+
+Main Experiment 105: xgboost + avg_verb_edges + ja
+----------------------------------------
+Running: xgboost_avg_verb_edges_ja_base (main)
+Started tracking experiment: 111a8224cd4e
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.1049
+    Test R²: -0.0981
+  Completed successfully
+  Results logged with ID: 111a8224cd4e
+Success (105/105)
+
+Main Experiment 106: dummy + lexical_density + ja
+----------------------------------------
+Running: dummy_lexical_density_ja_base (main)
+Started tracking experiment: 16224ea3e913
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0649
+    Test R²: -0.2382
+  Completed successfully
+  Results logged with ID: 16224ea3e913
+Success (106/106)
+
+Main Experiment 107: ridge + lexical_density + ja
+----------------------------------------
+Running: ridge_lexical_density_ja_base (main)
+Started tracking experiment: 7de570b1e7eb
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0919
+    Test R²: -0.7538
+  Completed successfully
+  Results logged with ID: 7de570b1e7eb
+Success (107/107)
+
+Main Experiment 108: xgboost + lexical_density + ja
+----------------------------------------
+Running: xgboost_lexical_density_ja_base (main)
+Started tracking experiment: 18ffbf5b73a2
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0802
+    Test R²: -0.5312
+  Completed successfully
+  Results logged with ID: 18ffbf5b73a2
+Success (108/108)
+
+Main Experiment 109: dummy + n_tokens + ja
+----------------------------------------
+Running: dummy_n_tokens_ja_base (main)
+Started tracking experiment: c0f5acf8cd89
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0609
+    Test R²: -0.0201
+  Completed successfully
+  Results logged with ID: c0f5acf8cd89
+Success (109/109)
+
+Main Experiment 110: ridge + n_tokens + ja
+----------------------------------------
+Running: ridge_n_tokens_ja_base (main)
+Started tracking experiment: 2916aa4c0257
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0459
+    Test R²: 0.2308
+  Completed successfully
+  Results logged with ID: 2916aa4c0257
+Success (110/110)
+
+Main Experiment 111: xgboost + n_tokens + ja
+----------------------------------------
+Running: xgboost_n_tokens_ja_base (main)
+Started tracking experiment: 0616c684ec86
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0400
+    Test R²: 0.3290
+  Completed successfully
+  Results logged with ID: 0616c684ec86
+Success (111/111)
+
+Main Experiment 112: dummy + avg_max_depth + ja
+----------------------------------------
+Running: dummy_avg_max_depth_ja_base (main)
+Started tracking experiment: ed5a29c455ee
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0834
+    Test R²: -0.2315
+  Completed successfully
+  Results logged with ID: ed5a29c455ee
+Success (112/112)
+
+Main Experiment 113: ridge + avg_max_depth + ja
+----------------------------------------
+Running: ridge_avg_max_depth_ja_base (main)
+Started tracking experiment: 2b6ba197e3be
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0658
+    Test R²: 0.0277
+  Completed successfully
+  Results logged with ID: 2b6ba197e3be
+Success (113/113)
+
+Main Experiment 114: xgboost + avg_max_depth + ja
+----------------------------------------
+Running: xgboost_avg_max_depth_ja_base (main)
+Started tracking experiment: 6f7626aa2639
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0630
+    Test R²: 0.0694
+  Completed successfully
+  Results logged with ID: 6f7626aa2639
+Success (114/114)
+
+Main Experiment 115: dummy + avg_links_len + ja
+----------------------------------------
+Running: dummy_avg_links_len_ja_base (main)
+Started tracking experiment: 3628144c9628
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.1082
+    Test R²: -1.5454
+  Completed successfully
+  Results logged with ID: 3628144c9628
+Success (115/115)
+
+Main Experiment 116: ridge + avg_links_len + ja
+----------------------------------------
+Running: ridge_avg_links_len_ja_base (main)
+Started tracking experiment: af4d34c5b75e
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0946
+    Test R²: -1.2241
+  Completed successfully
+  Results logged with ID: af4d34c5b75e
+Success (116/116)
+
+Main Experiment 117: xgboost + avg_links_len + ja
+----------------------------------------
+Running: xgboost_avg_links_len_ja_base (main)
+Started tracking experiment: d23569b0aca0
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.1052
+    Test R²: -1.4742
+  Completed successfully
+  Results logged with ID: d23569b0aca0
+Success (117/117)
+
+Main Experiment 118: dummy + avg_subordinate_chain_len + ja
+----------------------------------------
+Running: dummy_avg_subordinate_chain_len_ja_base (main)
+Started tracking experiment: a98533796d99
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0924
+    Test R²: -0.2553
+  Completed successfully
+  Results logged with ID: a98533796d99
+Success (118/118)
+
+Main Experiment 119: ridge + avg_subordinate_chain_len + ja
+----------------------------------------
+Running: ridge_avg_subordinate_chain_len_ja_base (main)
+Started tracking experiment: baeb65ad1096
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0759
+    Test R²: -0.0309
+  Completed successfully
+  Results logged with ID: baeb65ad1096
+Success (119/119)
+
+Main Experiment 120: xgboost + avg_subordinate_chain_len + ja
+----------------------------------------
+Running: xgboost_avg_subordinate_chain_len_ja_base (main)
+Started tracking experiment: befdbb99bf75
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0813
+    Test R²: -0.1043
+  Completed successfully
+  Results logged with ID: befdbb99bf75
+Success (120/120)
+
+Main Experiment 121: dummy + lang_norm_complexity_score + ko
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_ko_base (main)
+Started tracking experiment: bef8b168ad86
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0367
+    Test R²: -0.1396
+  Completed successfully
+  Results logged with ID: bef8b168ad86
+Success (121/121)
+Skipping logistic + lang_norm_complexity_score (incompatible)
+
+Main Experiment 122: ridge + lang_norm_complexity_score + ko
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_ko_base (main)
+Started tracking experiment: 4af3adeb4f66
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0229
+    Test R²: 0.2895
+  Completed successfully
+  Results logged with ID: 4af3adeb4f66
+Success (122/122)
+
+Main Experiment 123: xgboost + lang_norm_complexity_score + ko
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_ko_base (main)
+Started tracking experiment: e4ad10fa44af
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0308
+    Test R²: 0.0444
+  Completed successfully
+  Results logged with ID: e4ad10fa44af
+Success (123/123)
+
+Main Experiment 124: dummy + question_type + ko
+----------------------------------------
+Running: dummy_question_type_ko_base (main)
+Started tracking experiment: d75cbb3a1a2c
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5000
+    Test F1: 0.3333
+  Completed successfully
+  Results logged with ID: d75cbb3a1a2c
+Success (124/124)
+
+Main Experiment 125: logistic + question_type + ko
+----------------------------------------
+Running: logistic_question_type_ko_base (main)
+Started tracking experiment: 21e78b845f18
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.6636
+    Test F1: 0.6573
+  Completed successfully
+  Results logged with ID: 21e78b845f18
+Success (125/125)
+Skipping ridge + question_type (incompatible)
+
+Main Experiment 126: xgboost + question_type + ko
+----------------------------------------
+Running: xgboost_question_type_ko_base (main)
+Started tracking experiment: 4c338ec7dd0b
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.7364
+    Test F1: 0.7326
+  Completed successfully
+  Results logged with ID: 4c338ec7dd0b
+Success (126/126)
+
+Main Experiment 127: dummy + avg_verb_edges + ko
+----------------------------------------
+Running: dummy_avg_verb_edges_ko_base (main)
+Started tracking experiment: dbc8f4eaca58
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0408
+    Test R²: -0.1757
+  Completed successfully
+  Results logged with ID: dbc8f4eaca58
+Success (127/127)
+
+Main Experiment 128: ridge + avg_verb_edges + ko
+----------------------------------------
+Running: ridge_avg_verb_edges_ko_base (main)
+Started tracking experiment: 2ae5e1b626b8
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0451
+    Test R²: -0.3002
+  Completed successfully
+  Results logged with ID: 2ae5e1b626b8
+Success (128/128)
+
+Main Experiment 129: xgboost + avg_verb_edges + ko
+----------------------------------------
+Running: xgboost_avg_verb_edges_ko_base (main)
+Started tracking experiment: 6a601f72f91b
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0461
+    Test R²: -0.3274
+  Completed successfully
+  Results logged with ID: 6a601f72f91b
+Success (129/129)
+
+Main Experiment 130: dummy + lexical_density + ko
+----------------------------------------
+Running: dummy_lexical_density_ko_base (main)
+Started tracking experiment: dbb6244049d5
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.1071
+    Test R²: -1.6788
+  Completed successfully
+  Results logged with ID: dbb6244049d5
+Success (130/130)
+
+Main Experiment 131: ridge + lexical_density + ko
+----------------------------------------
+Running: ridge_lexical_density_ko_base (main)
+Started tracking experiment: 86acc2cfbbbb
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0698
+    Test R²: -0.7450
+  Completed successfully
+  Results logged with ID: 86acc2cfbbbb
+Success (131/131)
+
+Main Experiment 132: xgboost + lexical_density + ko
+----------------------------------------
+Running: xgboost_lexical_density_ko_base (main)
+Started tracking experiment: 8333f7489317
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0827
+    Test R²: -1.0692
+  Completed successfully
+  Results logged with ID: 8333f7489317
+Success (132/132)
+
+Main Experiment 133: dummy + n_tokens + ko
+----------------------------------------
+Running: dummy_n_tokens_ko_base (main)
+Started tracking experiment: 45dbf1370e8e
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0786
+    Test R²: -0.8857
+  Completed successfully
+  Results logged with ID: 45dbf1370e8e
+Success (133/133)
+
+Main Experiment 134: ridge + n_tokens + ko
+----------------------------------------
+Running: ridge_n_tokens_ko_base (main)
+Started tracking experiment: 918a2b3c3f32
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0563
+    Test R²: -0.3494
+  Completed successfully
+  Results logged with ID: 918a2b3c3f32
+Success (134/134)
+
+Main Experiment 135: xgboost + n_tokens + ko
+----------------------------------------
+Running: xgboost_n_tokens_ko_base (main)
+Started tracking experiment: fe670b19ba3b
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0775
+    Test R²: -0.8580
+  Completed successfully
+  Results logged with ID: fe670b19ba3b
+Success (135/135)
+
+Main Experiment 136: dummy + avg_max_depth + ko
+----------------------------------------
+Running: dummy_avg_max_depth_ko_base (main)
+Started tracking experiment: 7e813df1f684
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0371
+    Test R²: -0.0637
+  Completed successfully
+  Results logged with ID: 7e813df1f684
+Success (136/136)
+
+Main Experiment 137: ridge + avg_max_depth + ko
+----------------------------------------
+Running: ridge_avg_max_depth_ko_base (main)
+Started tracking experiment: ef217ecebde1
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0256
+    Test R²: 0.2674
+  Completed successfully
+  Results logged with ID: ef217ecebde1
+Success (137/137)
+
+Main Experiment 138: xgboost + avg_max_depth + ko
+----------------------------------------
+Running: xgboost_avg_max_depth_ko_base (main)
+Started tracking experiment: 7876751d90db
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0323
+    Test R²: 0.0752
+  Completed successfully
+  Results logged with ID: 7876751d90db
+Success (138/138)
+
+Main Experiment 139: dummy + avg_links_len + ko
+----------------------------------------
+Running: dummy_avg_links_len_ko_base (main)
+Started tracking experiment: 7cdedf683625
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0272
+    Test R²: -0.1822
+  Completed successfully
+  Results logged with ID: 7cdedf683625
+Success (139/139)
+
+Main Experiment 140: ridge + avg_links_len + ko
+----------------------------------------
+Running: ridge_avg_links_len_ko_base (main)
+Started tracking experiment: 18d300af404f
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0220
+    Test R²: 0.0449
+  Completed successfully
+  Results logged with ID: 18d300af404f
+Success (140/140)
+
+Main Experiment 141: xgboost + avg_links_len + ko
+----------------------------------------
+Running: xgboost_avg_links_len_ko_base (main)
+Started tracking experiment: 899b1b3852e7
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0295
+    Test R²: -0.2838
+  Completed successfully
+  Results logged with ID: 899b1b3852e7
+Success (141/141)
+
+Main Experiment 142: dummy + avg_subordinate_chain_len + ko
+----------------------------------------
+Running: dummy_avg_subordinate_chain_len_ko_base (main)
+Started tracking experiment: 5cd4d2a350e9
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0540
+    Test R²: -0.0689
+  Completed successfully
+  Results logged with ID: 5cd4d2a350e9
+Success (142/142)
+
+Main Experiment 143: ridge + avg_subordinate_chain_len + ko
+----------------------------------------
+Running: ridge_avg_subordinate_chain_len_ko_base (main)
+Started tracking experiment: e946a077637c
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0442
+    Test R²: 0.1250
+  Completed successfully
+  Results logged with ID: e946a077637c
+Success (143/143)
+
+Main Experiment 144: xgboost + avg_subordinate_chain_len + ko
+----------------------------------------
+Running: xgboost_avg_subordinate_chain_len_ko_base (main)
+Started tracking experiment: c0265f4209c9
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0631
+    Test R²: -0.2482
+  Completed successfully
+  Results logged with ID: c0265f4209c9
+Success (144/144)
+
+Main Experiment 145: dummy + lang_norm_complexity_score + ru
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_ru_base (main)
+Started tracking experiment: 079528bd52d8
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0564
+    Test R²: -0.4272
+  Completed successfully
+  Results logged with ID: 079528bd52d8
+Success (145/145)
+Skipping logistic + lang_norm_complexity_score (incompatible)
+
+Main Experiment 146: ridge + lang_norm_complexity_score + ru
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_ru_base (main)
+Started tracking experiment: b8f9f9aed011
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0325
+    Test R²: 0.1782
+  Completed successfully
+  Results logged with ID: b8f9f9aed011
+Success (146/146)
+
+Main Experiment 147: xgboost + lang_norm_complexity_score + ru
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_ru_base (main)
+Started tracking experiment: 6acb79c687a3
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0390
+    Test R²: 0.0147
+  Completed successfully
+  Results logged with ID: 6acb79c687a3
+Success (147/147)
+
+Main Experiment 148: dummy + question_type + ru
+----------------------------------------
+Running: dummy_question_type_ru_base (main)
+Started tracking experiment: ee8857fd74c4
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5000
+    Test F1: 0.3333
+  Completed successfully
+  Results logged with ID: ee8857fd74c4
+Success (148/148)
+
+Main Experiment 149: logistic + question_type + ru
+----------------------------------------
+Running: logistic_question_type_ru_base (main)
+Started tracking experiment: d8db5a5b99ab
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.8636
+    Test F1: 0.8611
+  Completed successfully
+  Results logged with ID: d8db5a5b99ab
+Success (149/149)
+Skipping ridge + question_type (incompatible)
+
+Main Experiment 150: xgboost + question_type + ru
+----------------------------------------
+Running: xgboost_question_type_ru_base (main)
+Started tracking experiment: f01685f9070b
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.7727
+    Test F1: 0.7603
+  Completed successfully
+  Results logged with ID: f01685f9070b
+Success (150/150)
+
+Progress Update: 150/150 completed
+Current Status: 0 completed, 0 failed, 0.0% success rate
+
+
+Main Experiment 151: dummy + avg_verb_edges + ru
+----------------------------------------
+Running: dummy_avg_verb_edges_ru_base (main)
+Started tracking experiment: fb3192e44721
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0444
+    Test R²: -0.0842
+  Completed successfully
+  Results logged with ID: fb3192e44721
+Success (151/151)
+
+Main Experiment 152: ridge + avg_verb_edges + ru
+----------------------------------------
+Running: ridge_avg_verb_edges_ru_base (main)
+Started tracking experiment: da243bd7b5e6
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0467
+    Test R²: -0.1407
+  Completed successfully
+  Results logged with ID: da243bd7b5e6
+Success (152/152)
+
+Main Experiment 153: xgboost + avg_verb_edges + ru
+----------------------------------------
+Running: xgboost_avg_verb_edges_ru_base (main)
+Started tracking experiment: 4d4e95c6f845
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0441
+    Test R²: -0.0779
+  Completed successfully
+  Results logged with ID: 4d4e95c6f845
+Success (153/153)
+
+Main Experiment 154: dummy + lexical_density + ru
+----------------------------------------
+Running: dummy_lexical_density_ru_base (main)
+Started tracking experiment: ebc3ec43fcb2
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0713
+    Test R²: -0.7734
+  Completed successfully
+  Results logged with ID: ebc3ec43fcb2
+Success (154/154)
+
+Main Experiment 155: ridge + lexical_density + ru
+----------------------------------------
+Running: ridge_lexical_density_ru_base (main)
+Started tracking experiment: 0c978c7968f2
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0498
+    Test R²: -0.2378
+  Completed successfully
+  Results logged with ID: 0c978c7968f2
+Success (155/155)
+
+Main Experiment 156: xgboost + lexical_density + ru
+----------------------------------------
+Running: xgboost_lexical_density_ru_base (main)
+Started tracking experiment: d90fd8452dc6
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0614
+    Test R²: -0.5279
+  Completed successfully
+  Results logged with ID: d90fd8452dc6
+Success (156/156)
+
+Main Experiment 157: dummy + n_tokens + ru
+----------------------------------------
+Running: dummy_n_tokens_ru_base (main)
+Started tracking experiment: 6112c86f6468
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0119
+    Test R²: -0.0504
+  Completed successfully
+  Results logged with ID: 6112c86f6468
+Success (157/157)
+
+Main Experiment 158: ridge + n_tokens + ru
+----------------------------------------
+Running: ridge_n_tokens_ru_base (main)
+Started tracking experiment: ddf26f2fe5bd
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0130
+    Test R²: -0.1413
+  Completed successfully
+  Results logged with ID: ddf26f2fe5bd
+Success (158/158)
+
+Main Experiment 159: xgboost + n_tokens + ru
+----------------------------------------
+Running: xgboost_n_tokens_ru_base (main)
+Started tracking experiment: d2e133d0f9e9
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0071
+    Test R²: 0.3773
+  Completed successfully
+  Results logged with ID: d2e133d0f9e9
+Success (159/159)
+
+Main Experiment 160: dummy + avg_max_depth + ru
+----------------------------------------
+Running: dummy_avg_max_depth_ru_base (main)
+Started tracking experiment: 31dc19abda45
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0246
+    Test R²: -0.0071
+  Completed successfully
+  Results logged with ID: 31dc19abda45
+Success (160/160)
+
+Main Experiment 161: ridge + avg_max_depth + ru
+----------------------------------------
+Running: ridge_avg_max_depth_ru_base (main)
+Started tracking experiment: 88ff86e920ae
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0194
+    Test R²: 0.2047
+  Completed successfully
+  Results logged with ID: 88ff86e920ae
+Success (161/161)
+
+Main Experiment 162: xgboost + avg_max_depth + ru
+----------------------------------------
+Running: xgboost_avg_max_depth_ru_base (main)
+Started tracking experiment: eac8a9982dc6
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0173
+    Test R²: 0.2901
+  Completed successfully
+  Results logged with ID: eac8a9982dc6
+Success (162/162)
+
+Main Experiment 163: dummy + avg_links_len + ru
+----------------------------------------
+Running: dummy_avg_links_len_ru_base (main)
+Started tracking experiment: f08b7b077de9
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0170
+    Test R²: -0.0086
+  Completed successfully
+  Results logged with ID: f08b7b077de9
+Success (163/163)
+
+Main Experiment 164: ridge + avg_links_len + ru
+----------------------------------------
+Running: ridge_avg_links_len_ru_base (main)
+Started tracking experiment: 2d684fb6f456
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0220
+    Test R²: -0.3073
+  Completed successfully
+  Results logged with ID: 2d684fb6f456
+Success (164/164)
+
+Main Experiment 165: xgboost + avg_links_len + ru
+----------------------------------------
+Running: xgboost_avg_links_len_ru_base (main)
+Started tracking experiment: 61e382f01e0a
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0197
+    Test R²: -0.1704
+  Completed successfully
+  Results logged with ID: 61e382f01e0a
+Success (165/165)
+
+Main Experiment 166: dummy + avg_subordinate_chain_len + ru
+----------------------------------------
+Running: dummy_avg_subordinate_chain_len_ru_base (main)
+Started tracking experiment: 580cf1a39ff4
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0540
+    Test R²: -0.4292
+  Completed successfully
+  Results logged with ID: 580cf1a39ff4
+Success (166/166)
+
+Main Experiment 167: ridge + avg_subordinate_chain_len + ru
+----------------------------------------
+Running: ridge_avg_subordinate_chain_len_ru_base (main)
+Started tracking experiment: 7a2cd66525c3
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0352
+    Test R²: 0.0682
+  Completed successfully
+  Results logged with ID: 7a2cd66525c3
+Success (167/167)
+
+Main Experiment 168: xgboost + avg_subordinate_chain_len + ru
+----------------------------------------
+Running: xgboost_avg_subordinate_chain_len_ru_base (main)
+Started tracking experiment: 5af802dbf3d4
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0463
+    Test R²: -0.2269
+  Completed successfully
+  Results logged with ID: 5af802dbf3d4
+Success (168/168)
+
+Starting control TF-IDF experiments with enhanced tracking...
+
+Control Experiment 1: dummy + question_type + ar + seed1
+----------------------------------------
+Running: dummy_question_type_ar_control_question_type_seed1 (control)
+Started tracking experiment: 12532ffbcbbe
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.7143
+    Test F1: 0.5952
+  Completed successfully
+  Results logged with ID: 12532ffbcbbe
+Success (1/1)
+
+Control Experiment 2: logistic + question_type + ar + seed1
+----------------------------------------
+Running: logistic_question_type_ar_control_question_type_seed1 (control)
+Started tracking experiment: 17522bfc50b2
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5065
+    Test F1: 0.5303
+  Completed successfully
+  Results logged with ID: 17522bfc50b2
+Success (2/2)
+
+Control Experiment 3: xgboost + question_type + ar + seed1
+----------------------------------------
+Running: xgboost_question_type_ar_control_question_type_seed1 (control)
+Started tracking experiment: 671ebb9029f1
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.6104
+    Test F1: 0.6270
+  Completed successfully
+  Results logged with ID: 671ebb9029f1
+Success (3/3)
+
+Control Experiment 4: dummy + question_type + ar + seed2
+----------------------------------------
+Running: dummy_question_type_ar_control_question_type_seed2 (control)
+Started tracking experiment: fd07528d00c0
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.7143
+    Test F1: 0.5952
+  Completed successfully
+  Results logged with ID: fd07528d00c0
+Success (4/4)
+
+Control Experiment 5: logistic + question_type + ar + seed2
+----------------------------------------
+Running: logistic_question_type_ar_control_question_type_seed2 (control)
+Started tracking experiment: 0fc364515394
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4026
+    Test F1: 0.4280
+  Completed successfully
+  Results logged with ID: 0fc364515394
+Success (5/5)
+
+Control Experiment 6: xgboost + question_type + ar + seed2
+----------------------------------------
+Running: xgboost_question_type_ar_control_question_type_seed2 (control)
+Started tracking experiment: 63ac77212afd
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4935
+    Test F1: 0.5139
+  Completed successfully
+  Results logged with ID: 63ac77212afd
+Success (6/6)
+
+Control Experiment 7: dummy + question_type + ar + seed3
+----------------------------------------
+Running: dummy_question_type_ar_control_question_type_seed3 (control)
+Started tracking experiment: 31ae9e193f7a
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.7143
+    Test F1: 0.5952
+  Completed successfully
+  Results logged with ID: 31ae9e193f7a
+Success (7/7)
+
+Control Experiment 8: logistic + question_type + ar + seed3
+----------------------------------------
+Running: logistic_question_type_ar_control_question_type_seed3 (control)
+Started tracking experiment: 6ce164fa58d8
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5065
+    Test F1: 0.5303
+  Completed successfully
+  Results logged with ID: 6ce164fa58d8
+Success (8/8)
+
+Control Experiment 9: xgboost + question_type + ar + seed3
+----------------------------------------
+Running: xgboost_question_type_ar_control_question_type_seed3 (control)
+Started tracking experiment: 1e1f8c9df3fa
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4935
+    Test F1: 0.5156
+  Completed successfully
+  Results logged with ID: 1e1f8c9df3fa
+Success (9/9)
+
+Control Experiment 10: dummy + lang_norm_complexity_score + ar + seed1
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_ar_control_complexity_seed1 (control)
+Started tracking experiment: a7710b170d24
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0581
+    Test R²: -0.0011
+  Completed successfully
+  Results logged with ID: a7710b170d24
+Success (10/10)
+
+Control Experiment 11: ridge + lang_norm_complexity_score + ar + seed1
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_ar_control_complexity_seed1 (control)
+Started tracking experiment: d99f3f3b58d5
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0605
+    Test R²: -0.0429
+  Completed successfully
+  Results logged with ID: d99f3f3b58d5
+Success (11/11)
+
+Control Experiment 12: xgboost + lang_norm_complexity_score + ar + seed1
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_ar_control_complexity_seed1 (control)
+Started tracking experiment: 7a4e54dc36dc
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0681
+    Test R²: -0.1740
+  Completed successfully
+  Results logged with ID: 7a4e54dc36dc
+Success (12/12)
+
+Control Experiment 13: dummy + lang_norm_complexity_score + ar + seed2
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_ar_control_complexity_seed2 (control)
+Started tracking experiment: fdaa31926c3b
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0581
+    Test R²: -0.0011
+  Completed successfully
+  Results logged with ID: fdaa31926c3b
+Success (13/13)
+
+Control Experiment 14: ridge + lang_norm_complexity_score + ar + seed2
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_ar_control_complexity_seed2 (control)
+Started tracking experiment: b101036b6501
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0662
+    Test R²: -0.1408
+  Completed successfully
+  Results logged with ID: b101036b6501
+Success (14/14)
+
+Control Experiment 15: xgboost + lang_norm_complexity_score + ar + seed2
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_ar_control_complexity_seed2 (control)
+Started tracking experiment: 1c7053216f40
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0603
+    Test R²: -0.0398
+  Completed successfully
+  Results logged with ID: 1c7053216f40
+Success (15/15)
+
+Control Experiment 16: dummy + lang_norm_complexity_score + ar + seed3
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_ar_control_complexity_seed3 (control)
+Started tracking experiment: 6c5ed8a636f2
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0581
+    Test R²: -0.0011
+  Completed successfully
+  Results logged with ID: 6c5ed8a636f2
+Success (16/16)
+
+Control Experiment 17: ridge + lang_norm_complexity_score + ar + seed3
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_ar_control_complexity_seed3 (control)
+Started tracking experiment: b1d200f7af08
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0647
+    Test R²: -0.1147
+  Completed successfully
+  Results logged with ID: b1d200f7af08
+Success (17/17)
+
+Control Experiment 18: xgboost + lang_norm_complexity_score + ar + seed3
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_ar_control_complexity_seed3 (control)
+Started tracking experiment: b17d66f74d62
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0598
+    Test R²: -0.0315
+  Completed successfully
+  Results logged with ID: b17d66f74d62
+Success (18/18)
+
+Control Experiment 19: dummy + avg_links_len + ar + seed1
+----------------------------------------
+Running: dummy_avg_links_len_ar_control_avg_links_len_seed1 (control)
+Started tracking experiment: d2fa70d5fb61
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0652
+    Test R²: -0.4071
+  Completed successfully
+  Results logged with ID: d2fa70d5fb61
+Success (19/19)
+
+Control Experiment 20: ridge + avg_links_len + ar + seed1
+----------------------------------------
+Running: ridge_avg_links_len_ar_control_avg_links_len_seed1 (control)
+Started tracking experiment: 8d3d730788e1
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0674
+    Test R²: -0.4550
+  Completed successfully
+  Results logged with ID: 8d3d730788e1
+Success (20/20)
+
+Control Experiment 21: xgboost + avg_links_len + ar + seed1
+----------------------------------------
+Running: xgboost_avg_links_len_ar_control_avg_links_len_seed1 (control)
+Started tracking experiment: c51e8ad53e77
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0678
+    Test R²: -0.4628
+  Completed successfully
+  Results logged with ID: c51e8ad53e77
+Success (21/21)
+
+Control Experiment 22: dummy + avg_links_len + ar + seed2
+----------------------------------------
+Running: dummy_avg_links_len_ar_control_avg_links_len_seed2 (control)
+Started tracking experiment: 6313cc1f5c17
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0652
+    Test R²: -0.4071
+  Completed successfully
+  Results logged with ID: 6313cc1f5c17
+Success (22/22)
+
+Control Experiment 23: ridge + avg_links_len + ar + seed2
+----------------------------------------
+Running: ridge_avg_links_len_ar_control_avg_links_len_seed2 (control)
+Started tracking experiment: 6ee2d9324902
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0570
+    Test R²: -0.2312
+  Completed successfully
+  Results logged with ID: 6ee2d9324902
+Success (23/23)
+
+Control Experiment 24: xgboost + avg_links_len + ar + seed2
+----------------------------------------
+Running: xgboost_avg_links_len_ar_control_avg_links_len_seed2 (control)
+Started tracking experiment: 210779663314
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0613
+    Test R²: -0.3244
+  Completed successfully
+  Results logged with ID: 210779663314
+Success (24/24)
+
+Control Experiment 25: dummy + avg_links_len + ar + seed3
+----------------------------------------
+Running: dummy_avg_links_len_ar_control_avg_links_len_seed3 (control)
+Started tracking experiment: ba1c361d79c2
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0652
+    Test R²: -0.4071
+  Completed successfully
+  Results logged with ID: ba1c361d79c2
+Success (25/25)
+
+Control Experiment 26: ridge + avg_links_len + ar + seed3
+----------------------------------------
+Running: ridge_avg_links_len_ar_control_avg_links_len_seed3 (control)
+Started tracking experiment: 1b7cd2b370db
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0682
+    Test R²: -0.4725
+  Completed successfully
+  Results logged with ID: 1b7cd2b370db
+Success (26/26)
+
+Control Experiment 27: xgboost + avg_links_len + ar + seed3
+----------------------------------------
+Running: xgboost_avg_links_len_ar_control_avg_links_len_seed3 (control)
+Started tracking experiment: a53aaee88bff
+  Loading data...
+    Train: (995, 9199), Val: (44, 9199), Test: (77, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0732
+    Test R²: -0.5810
+  Completed successfully
+  Results logged with ID: a53aaee88bff
+Success (27/27)
+
+Control Experiment 28: dummy + question_type + en + seed1
+----------------------------------------
+Running: dummy_question_type_en_control_question_type_seed1 (control)
+Started tracking experiment: 0ba7600a1322
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5000
+    Test F1: 0.3333
+  Completed successfully
+  Results logged with ID: 0ba7600a1322
+Success (28/28)
+
+Control Experiment 29: logistic + question_type + en + seed1
+----------------------------------------
+Running: logistic_question_type_en_control_question_type_seed1 (control)
+Started tracking experiment: a325d5686a79
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5182
+    Test F1: 0.5172
+  Completed successfully
+  Results logged with ID: a325d5686a79
+Success (29/29)
+
+Control Experiment 30: xgboost + question_type + en + seed1
+----------------------------------------
+Running: xgboost_question_type_en_control_question_type_seed1 (control)
+Started tracking experiment: 42e60e7eb89f
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4818
+    Test F1: 0.4783
+  Completed successfully
+  Results logged with ID: 42e60e7eb89f
+Success (30/30)
+
+Control Experiment 31: dummy + question_type + en + seed2
+----------------------------------------
+Running: dummy_question_type_en_control_question_type_seed2 (control)
+Started tracking experiment: af7344025d96
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5000
+    Test F1: 0.3333
+  Completed successfully
+  Results logged with ID: af7344025d96
+Success (31/31)
+
+Control Experiment 32: logistic + question_type + en + seed2
+----------------------------------------
+Running: logistic_question_type_en_control_question_type_seed2 (control)
+Started tracking experiment: b37ab7a7b0e9
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4364
+    Test F1: 0.4362
+  Completed successfully
+  Results logged with ID: b37ab7a7b0e9
+Success (32/32)
+
+Control Experiment 33: xgboost + question_type + en + seed2
+----------------------------------------
+Running: xgboost_question_type_en_control_question_type_seed2 (control)
+Started tracking experiment: 45a44c2e15b5
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5091
+    Test F1: 0.5084
+  Completed successfully
+  Results logged with ID: 45a44c2e15b5
+Success (33/33)
+
+Control Experiment 34: dummy + question_type + en + seed3
+----------------------------------------
+Running: dummy_question_type_en_control_question_type_seed3 (control)
+Started tracking experiment: afe95e98f9ba
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5000
+    Test F1: 0.3333
+  Completed successfully
+  Results logged with ID: afe95e98f9ba
+Success (34/34)
+
+Control Experiment 35: logistic + question_type + en + seed3
+----------------------------------------
+Running: logistic_question_type_en_control_question_type_seed3 (control)
+Started tracking experiment: d6a75b197ff8
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.6636
+    Test F1: 0.6629
+  Completed successfully
+  Results logged with ID: d6a75b197ff8
+Success (35/35)
+
+Control Experiment 36: xgboost + question_type + en + seed3
+----------------------------------------
+Running: xgboost_question_type_en_control_question_type_seed3 (control)
+Started tracking experiment: ff866e114032
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5636
+    Test F1: 0.5631
+  Completed successfully
+  Results logged with ID: ff866e114032
+Success (36/36)
+
+Control Experiment 37: dummy + lang_norm_complexity_score + en + seed1
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_en_control_complexity_seed1 (control)
+Started tracking experiment: 4b0fd95f9aa9
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0386
+    Test R²: -0.0017
+  Completed successfully
+  Results logged with ID: 4b0fd95f9aa9
+Success (37/37)
+
+Control Experiment 38: ridge + lang_norm_complexity_score + en + seed1
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_en_control_complexity_seed1 (control)
+Started tracking experiment: fa72c33e25d6
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0464
+    Test R²: -0.2047
+  Completed successfully
+  Results logged with ID: fa72c33e25d6
+Success (38/38)
+
+Control Experiment 39: xgboost + lang_norm_complexity_score + en + seed1
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_en_control_complexity_seed1 (control)
+Started tracking experiment: a45ca1b3bbf4
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0424
+    Test R²: -0.1013
+  Completed successfully
+  Results logged with ID: a45ca1b3bbf4
+Success (39/39)
+
+Control Experiment 40: dummy + lang_norm_complexity_score + en + seed2
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_en_control_complexity_seed2 (control)
+Started tracking experiment: e8d7a52c80d4
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0386
+    Test R²: -0.0017
+  Completed successfully
+  Results logged with ID: e8d7a52c80d4
+Success (40/40)
+
+Control Experiment 41: ridge + lang_norm_complexity_score + en + seed2
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_en_control_complexity_seed2 (control)
+Started tracking experiment: e077edd093be
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0409
+    Test R²: -0.0602
+  Completed successfully
+  Results logged with ID: e077edd093be
+Success (41/41)
+
+Control Experiment 42: xgboost + lang_norm_complexity_score + en + seed2
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_en_control_complexity_seed2 (control)
+Started tracking experiment: f1b82a1a3605
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0445
+    Test R²: -0.1551
+  Completed successfully
+  Results logged with ID: f1b82a1a3605
+Success (42/42)
+
+Control Experiment 43: dummy + lang_norm_complexity_score + en + seed3
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_en_control_complexity_seed3 (control)
+Started tracking experiment: 21de8d9e8f7b
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0386
+    Test R²: -0.0017
+  Completed successfully
+  Results logged with ID: 21de8d9e8f7b
+Success (43/43)
+
+Control Experiment 44: ridge + lang_norm_complexity_score + en + seed3
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_en_control_complexity_seed3 (control)
+Started tracking experiment: e40c5aa3c28c
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0430
+    Test R²: -0.1166
+  Completed successfully
+  Results logged with ID: e40c5aa3c28c
+Success (44/44)
+
+Control Experiment 45: xgboost + lang_norm_complexity_score + en + seed3
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_en_control_complexity_seed3 (control)
+Started tracking experiment: bff7c0f3a5fa
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0419
+    Test R²: -0.0880
+  Completed successfully
+  Results logged with ID: bff7c0f3a5fa
+Success (45/45)
+
+Control Experiment 46: dummy + avg_links_len + en + seed1
+----------------------------------------
+Running: dummy_avg_links_len_en_control_avg_links_len_seed1 (control)
+Started tracking experiment: 64931acc1cb3
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0096
+    Test R²: -0.0272
+  Completed successfully
+  Results logged with ID: 64931acc1cb3
+Success (46/46)
+
+Control Experiment 47: ridge + avg_links_len + en + seed1
+----------------------------------------
+Running: ridge_avg_links_len_en_control_avg_links_len_seed1 (control)
+Started tracking experiment: 0a4472df3309
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0101
+    Test R²: -0.0888
+  Completed successfully
+  Results logged with ID: 0a4472df3309
+Success (47/47)
+
+Control Experiment 48: xgboost + avg_links_len + en + seed1
+----------------------------------------
+Running: xgboost_avg_links_len_en_control_avg_links_len_seed1 (control)
+Started tracking experiment: ccea1fd4fd39
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0100
+    Test R²: -0.0752
+  Completed successfully
+  Results logged with ID: ccea1fd4fd39
+Success (48/48)
+
+Control Experiment 49: dummy + avg_links_len + en + seed2
+----------------------------------------
+Running: dummy_avg_links_len_en_control_avg_links_len_seed2 (control)
+Started tracking experiment: 007e46e449d9
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0096
+    Test R²: -0.0272
+  Completed successfully
+  Results logged with ID: 007e46e449d9
+Success (49/49)
+
+Control Experiment 50: ridge + avg_links_len + en + seed2
+----------------------------------------
+Running: ridge_avg_links_len_en_control_avg_links_len_seed2 (control)
+Started tracking experiment: ff3fb16d12c9
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0110
+    Test R²: -0.1813
+  Completed successfully
+  Results logged with ID: ff3fb16d12c9
+Success (50/50)
+
+Control Experiment 51: xgboost + avg_links_len + en + seed2
+----------------------------------------
+Running: xgboost_avg_links_len_en_control_avg_links_len_seed2 (control)
+Started tracking experiment: d68457f167e8
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0106
+    Test R²: -0.1428
+  Completed successfully
+  Results logged with ID: d68457f167e8
+Success (51/51)
+
+Control Experiment 52: dummy + avg_links_len + en + seed3
+----------------------------------------
+Running: dummy_avg_links_len_en_control_avg_links_len_seed3 (control)
+Started tracking experiment: 88fa8dff60a7
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0096
+    Test R²: -0.0272
+  Completed successfully
+  Results logged with ID: 88fa8dff60a7
+Success (52/52)
+
+Control Experiment 53: ridge + avg_links_len + en + seed3
+----------------------------------------
+Running: ridge_avg_links_len_en_control_avg_links_len_seed3 (control)
+Started tracking experiment: d507fd54988d
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0112
+    Test R²: -0.2016
+  Completed successfully
+  Results logged with ID: d507fd54988d
+Success (53/53)
+
+Control Experiment 54: xgboost + avg_links_len + en + seed3
+----------------------------------------
+Running: xgboost_avg_links_len_en_control_avg_links_len_seed3 (control)
+Started tracking experiment: a37128db193d
+  Loading data...
+    Train: (1192, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0109
+    Test R²: -0.1713
+  Completed successfully
+  Results logged with ID: a37128db193d
+Success (54/54)
+
+Control Experiment 55: dummy + question_type + fi + seed1
+----------------------------------------
+Running: dummy_question_type_fi_control_question_type_seed1 (control)
+Started tracking experiment: 5c2e93e45563
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5000
+    Test F1: 0.3333
+  Completed successfully
+  Results logged with ID: 5c2e93e45563
+Success (55/55)
+
+Control Experiment 56: logistic + question_type + fi + seed1
+----------------------------------------
+Running: logistic_question_type_fi_control_question_type_seed1 (control)
+Started tracking experiment: 76678269a29e
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4636
+    Test F1: 0.4600
+  Completed successfully
+  Results logged with ID: 76678269a29e
+Success (56/56)
+
+Control Experiment 57: xgboost + question_type + fi + seed1
+----------------------------------------
+Running: xgboost_question_type_fi_control_question_type_seed1 (control)
+Started tracking experiment: a5c00ce027b4
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4727
+    Test F1: 0.4683
+  Completed successfully
+  Results logged with ID: a5c00ce027b4
+Success (57/57)
+
+Control Experiment 58: dummy + question_type + fi + seed2
+----------------------------------------
+Running: dummy_question_type_fi_control_question_type_seed2 (control)
+Started tracking experiment: bd2a3465b439
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5000
+    Test F1: 0.3333
+  Completed successfully
+  Results logged with ID: bd2a3465b439
+Success (58/58)
+
+Control Experiment 59: logistic + question_type + fi + seed2
+----------------------------------------
+Running: logistic_question_type_fi_control_question_type_seed2 (control)
+Started tracking experiment: 908125f34ef2
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4727
+    Test F1: 0.4664
+  Completed successfully
+  Results logged with ID: 908125f34ef2
+Success (59/59)
+
+Control Experiment 60: xgboost + question_type + fi + seed2
+----------------------------------------
+Running: xgboost_question_type_fi_control_question_type_seed2 (control)
+Started tracking experiment: 7706b5801bd4
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4455
+    Test F1: 0.4443
+  Completed successfully
+  Results logged with ID: 7706b5801bd4
+Success (60/60)
+
+Control Experiment 61: dummy + question_type + fi + seed3
+----------------------------------------
+Running: dummy_question_type_fi_control_question_type_seed3 (control)
+Started tracking experiment: b5f0b37cc944
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5000
+    Test F1: 0.3333
+  Completed successfully
+  Results logged with ID: b5f0b37cc944
+Success (61/61)
+
+Control Experiment 62: logistic + question_type + fi + seed3
+----------------------------------------
+Running: logistic_question_type_fi_control_question_type_seed3 (control)
+Started tracking experiment: e011dc5fc929
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4455
+    Test F1: 0.4432
+  Completed successfully
+  Results logged with ID: e011dc5fc929
+Success (62/62)
+
+Control Experiment 63: xgboost + question_type + fi + seed3
+----------------------------------------
+Running: xgboost_question_type_fi_control_question_type_seed3 (control)
+Started tracking experiment: 8e3b8a0152d5
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4545
+    Test F1: 0.4544
+  Completed successfully
+  Results logged with ID: 8e3b8a0152d5
+Success (63/63)
+
+Control Experiment 64: dummy + lang_norm_complexity_score + fi + seed1
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_fi_control_complexity_seed1 (control)
+Started tracking experiment: d683b2f8a253
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0399
+    Test R²: -0.0099
+  Completed successfully
+  Results logged with ID: d683b2f8a253
+Success (64/64)
+
+Control Experiment 65: ridge + lang_norm_complexity_score + fi + seed1
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_fi_control_complexity_seed1 (control)
+Started tracking experiment: 8001f45c4ac5
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0401
+    Test R²: -0.0144
+  Completed successfully
+  Results logged with ID: 8001f45c4ac5
+Success (65/65)
+
+Control Experiment 66: xgboost + lang_norm_complexity_score + fi + seed1
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_fi_control_complexity_seed1 (control)
+Started tracking experiment: cb11e791d928
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0413
+    Test R²: -0.0456
+  Completed successfully
+  Results logged with ID: cb11e791d928
+Success (66/66)
+
+Control Experiment 67: dummy + lang_norm_complexity_score + fi + seed2
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_fi_control_complexity_seed2 (control)
+Started tracking experiment: 6b9d3238cfe6
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0399
+    Test R²: -0.0099
+  Completed successfully
+  Results logged with ID: 6b9d3238cfe6
+Success (67/67)
+
+Control Experiment 68: ridge + lang_norm_complexity_score + fi + seed2
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_fi_control_complexity_seed2 (control)
+Started tracking experiment: 2206c4fad3a6
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0444
+    Test R²: -0.1252
+  Completed successfully
+  Results logged with ID: 2206c4fad3a6
+Success (68/68)
+
+Control Experiment 69: xgboost + lang_norm_complexity_score + fi + seed2
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_fi_control_complexity_seed2 (control)
+Started tracking experiment: 54599205ff36
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0399
+    Test R²: -0.0109
+  Completed successfully
+  Results logged with ID: 54599205ff36
+Success (69/69)
+
+Control Experiment 70: dummy + lang_norm_complexity_score + fi + seed3
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_fi_control_complexity_seed3 (control)
+Started tracking experiment: 16bc99e7094a
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0399
+    Test R²: -0.0099
+  Completed successfully
+  Results logged with ID: 16bc99e7094a
+Success (70/70)
+
+Control Experiment 71: ridge + lang_norm_complexity_score + fi + seed3
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_fi_control_complexity_seed3 (control)
+Started tracking experiment: 53f0e0fe24a8
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0439
+    Test R²: -0.1120
+  Completed successfully
+  Results logged with ID: 53f0e0fe24a8
+Success (71/71)
+
+Control Experiment 72: xgboost + lang_norm_complexity_score + fi + seed3
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_fi_control_complexity_seed3 (control)
+Started tracking experiment: 7c0601e7c050
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0438
+    Test R²: -0.1101
+  Completed successfully
+  Results logged with ID: 7c0601e7c050
+Success (72/72)
+
+Control Experiment 73: dummy + avg_links_len + fi + seed1
+----------------------------------------
+Running: dummy_avg_links_len_fi_control_avg_links_len_seed1 (control)
+Started tracking experiment: 72d6eac4069e
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0267
+    Test R²: -0.4698
+  Completed successfully
+  Results logged with ID: 72d6eac4069e
+Success (73/73)
+
+Control Experiment 74: ridge + avg_links_len + fi + seed1
+----------------------------------------
+Running: ridge_avg_links_len_fi_control_avg_links_len_seed1 (control)
+Started tracking experiment: 8c8aa2dfeff7
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0274
+    Test R²: -0.5107
+  Completed successfully
+  Results logged with ID: 8c8aa2dfeff7
+Success (74/74)
+
+Control Experiment 75: xgboost + avg_links_len + fi + seed1
+----------------------------------------
+Running: xgboost_avg_links_len_fi_control_avg_links_len_seed1 (control)
+Started tracking experiment: 6882393c07fc
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0278
+    Test R²: -0.5301
+  Completed successfully
+  Results logged with ID: 6882393c07fc
+Success (75/75)
+
+Control Experiment 76: dummy + avg_links_len + fi + seed2
+----------------------------------------
+Running: dummy_avg_links_len_fi_control_avg_links_len_seed2 (control)
+Started tracking experiment: 115dbe57f3ba
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0267
+    Test R²: -0.4698
+  Completed successfully
+  Results logged with ID: 115dbe57f3ba
+Success (76/76)
+
+Control Experiment 77: ridge + avg_links_len + fi + seed2
+----------------------------------------
+Running: ridge_avg_links_len_fi_control_avg_links_len_seed2 (control)
+Started tracking experiment: 0c25244430af
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0294
+    Test R²: -0.6184
+  Completed successfully
+  Results logged with ID: 0c25244430af
+Success (77/77)
+
+Control Experiment 78: xgboost + avg_links_len + fi + seed2
+----------------------------------------
+Running: xgboost_avg_links_len_fi_control_avg_links_len_seed2 (control)
+Started tracking experiment: 7eb18893b9d6
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0287
+    Test R²: -0.5841
+  Completed successfully
+  Results logged with ID: 7eb18893b9d6
+Success (78/78)
+
+Control Experiment 79: dummy + avg_links_len + fi + seed3
+----------------------------------------
+Running: dummy_avg_links_len_fi_control_avg_links_len_seed3 (control)
+Started tracking experiment: c56ce77f9558
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0267
+    Test R²: -0.4698
+  Completed successfully
+  Results logged with ID: c56ce77f9558
+Success (79/79)
+
+Control Experiment 80: ridge + avg_links_len + fi + seed3
+----------------------------------------
+Running: ridge_avg_links_len_fi_control_avg_links_len_seed3 (control)
+Started tracking experiment: dde15a2b4cd8
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0289
+    Test R²: -0.5962
+  Completed successfully
+  Results logged with ID: dde15a2b4cd8
+Success (80/80)
+
+Control Experiment 81: xgboost + avg_links_len + fi + seed3
+----------------------------------------
+Running: xgboost_avg_links_len_fi_control_avg_links_len_seed3 (control)
+Started tracking experiment: 53ae62769ec8
+  Loading data...
+    Train: (1195, 9199), Val: (63, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0277
+    Test R²: -0.5286
+  Completed successfully
+  Results logged with ID: 53ae62769ec8
+Success (81/81)
+
+Control Experiment 82: dummy + question_type + id + seed1
+----------------------------------------
+Running: dummy_question_type_id_control_question_type_seed1 (control)
+Started tracking experiment: bf7b5b97e17e
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5000
+    Test F1: 0.3333
+  Completed successfully
+  Results logged with ID: bf7b5b97e17e
+Success (82/82)
+
+Control Experiment 83: logistic + question_type + id + seed1
+----------------------------------------
+Running: logistic_question_type_id_control_question_type_seed1 (control)
+Started tracking experiment: bdcca7593cfa
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5636
+    Test F1: 0.5623
+  Completed successfully
+  Results logged with ID: bdcca7593cfa
+Success (83/83)
+
+Control Experiment 84: xgboost + question_type + id + seed1
+----------------------------------------
+Running: xgboost_question_type_id_control_question_type_seed1 (control)
+Started tracking experiment: 0df5108e03d2
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.6000
+    Test F1: 0.5800
+  Completed successfully
+  Results logged with ID: 0df5108e03d2
+Success (84/84)
+
+Control Experiment 85: dummy + question_type + id + seed2
+----------------------------------------
+Running: dummy_question_type_id_control_question_type_seed2 (control)
+Started tracking experiment: 12855de6b019
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5000
+    Test F1: 0.3333
+  Completed successfully
+  Results logged with ID: 12855de6b019
+Success (85/85)
+
+Control Experiment 86: logistic + question_type + id + seed2
+----------------------------------------
+Running: logistic_question_type_id_control_question_type_seed2 (control)
+Started tracking experiment: 8efa662ca578
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4091
+    Test F1: 0.3425
+  Completed successfully
+  Results logged with ID: 8efa662ca578
+Success (86/86)
+
+Control Experiment 87: xgboost + question_type + id + seed2
+----------------------------------------
+Running: xgboost_question_type_id_control_question_type_seed2 (control)
+Started tracking experiment: 7bb2fc73210d
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5455
+    Test F1: 0.5089
+  Completed successfully
+  Results logged with ID: 7bb2fc73210d
+Success (87/87)
+
+Control Experiment 88: dummy + question_type + id + seed3
+----------------------------------------
+Running: dummy_question_type_id_control_question_type_seed3 (control)
+Started tracking experiment: e199ca47a21c
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5000
+    Test F1: 0.3333
+  Completed successfully
+  Results logged with ID: e199ca47a21c
+Success (88/88)
+
+Control Experiment 89: logistic + question_type + id + seed3
+----------------------------------------
+Running: logistic_question_type_id_control_question_type_seed3 (control)
+Started tracking experiment: 3c61ad0094f0
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4545
+    Test F1: 0.4529
+  Completed successfully
+  Results logged with ID: 3c61ad0094f0
+Success (89/89)
+
+Control Experiment 90: xgboost + question_type + id + seed3
+----------------------------------------
+Running: xgboost_question_type_id_control_question_type_seed3 (control)
+Started tracking experiment: 9003741b0613
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4545
+    Test F1: 0.4544
+  Completed successfully
+  Results logged with ID: 9003741b0613
+Success (90/90)
+
+Control Experiment 91: dummy + lang_norm_complexity_score + id + seed1
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_id_control_complexity_seed1 (control)
+Started tracking experiment: 82c771445036
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0408
+    Test R²: -0.0003
+  Completed successfully
+  Results logged with ID: 82c771445036
+Success (91/91)
+
+Control Experiment 92: ridge + lang_norm_complexity_score + id + seed1
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_id_control_complexity_seed1 (control)
+Started tracking experiment: 264aa9515214
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0446
+    Test R²: -0.0943
+  Completed successfully
+  Results logged with ID: 264aa9515214
+Success (92/92)
+
+Control Experiment 93: xgboost + lang_norm_complexity_score + id + seed1
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_id_control_complexity_seed1 (control)
+Started tracking experiment: afa28d7c5201
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0446
+    Test R²: -0.0933
+  Completed successfully
+  Results logged with ID: afa28d7c5201
+Success (93/93)
+
+Control Experiment 94: dummy + lang_norm_complexity_score + id + seed2
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_id_control_complexity_seed2 (control)
+Started tracking experiment: e8ec362b359f
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0408
+    Test R²: -0.0003
+  Completed successfully
+  Results logged with ID: e8ec362b359f
+Success (94/94)
+
+Control Experiment 95: ridge + lang_norm_complexity_score + id + seed2
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_id_control_complexity_seed2 (control)
+Started tracking experiment: a8253fc4b3a8
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0498
+    Test R²: -0.2209
+  Completed successfully
+  Results logged with ID: a8253fc4b3a8
+Success (95/95)
+
+Control Experiment 96: xgboost + lang_norm_complexity_score + id + seed2
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_id_control_complexity_seed2 (control)
+Started tracking experiment: ba37c9c58c09
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0425
+    Test R²: -0.0430
+  Completed successfully
+  Results logged with ID: ba37c9c58c09
+Success (96/96)
+
+Control Experiment 97: dummy + lang_norm_complexity_score + id + seed3
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_id_control_complexity_seed3 (control)
+Started tracking experiment: 6a243c9a5cf2
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0408
+    Test R²: -0.0003
+  Completed successfully
+  Results logged with ID: 6a243c9a5cf2
+Success (97/97)
+
+Control Experiment 98: ridge + lang_norm_complexity_score + id + seed3
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_id_control_complexity_seed3 (control)
+Started tracking experiment: d5e6e890902d
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0454
+    Test R²: -0.1144
+  Completed successfully
+  Results logged with ID: d5e6e890902d
+Success (98/98)
+
+Control Experiment 99: xgboost + lang_norm_complexity_score + id + seed3
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_id_control_complexity_seed3 (control)
+Started tracking experiment: f81cca25b8e1
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0419
+    Test R²: -0.0274
+  Completed successfully
+  Results logged with ID: f81cca25b8e1
+Success (99/99)
+
+Control Experiment 100: dummy + avg_links_len + id + seed1
+----------------------------------------
+Running: dummy_avg_links_len_id_control_avg_links_len_seed1 (control)
+Started tracking experiment: 06b3cb248b68
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0360
+    Test R²: -0.6200
+  Completed successfully
+  Results logged with ID: 06b3cb248b68
+Success (100/100)
+
+Control Experiment 101: ridge + avg_links_len + id + seed1
+----------------------------------------
+Running: ridge_avg_links_len_id_control_avg_links_len_seed1 (control)
+Started tracking experiment: a0e8f085389e
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0369
+    Test R²: -0.6625
+  Completed successfully
+  Results logged with ID: a0e8f085389e
+Success (101/101)
+
+Control Experiment 102: xgboost + avg_links_len + id + seed1
+----------------------------------------
+Running: xgboost_avg_links_len_id_control_avg_links_len_seed1 (control)
+Started tracking experiment: 412a5d4cdf2a
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0387
+    Test R²: -0.7453
+  Completed successfully
+  Results logged with ID: 412a5d4cdf2a
+Success (102/102)
+
+Control Experiment 103: dummy + avg_links_len + id + seed2
+----------------------------------------
+Running: dummy_avg_links_len_id_control_avg_links_len_seed2 (control)
+Started tracking experiment: b80c130d3851
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0360
+    Test R²: -0.6200
+  Completed successfully
+  Results logged with ID: b80c130d3851
+Success (103/103)
+
+Control Experiment 104: ridge + avg_links_len + id + seed2
+----------------------------------------
+Running: ridge_avg_links_len_id_control_avg_links_len_seed2 (control)
+Started tracking experiment: 534a2b8d1f3d
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0403
+    Test R²: -0.8147
+  Completed successfully
+  Results logged with ID: 534a2b8d1f3d
+Success (104/104)
+
+Control Experiment 105: xgboost + avg_links_len + id + seed2
+----------------------------------------
+Running: xgboost_avg_links_len_id_control_avg_links_len_seed2 (control)
+Started tracking experiment: 8112fefc5f4b
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0455
+    Test R²: -1.0507
+  Completed successfully
+  Results logged with ID: 8112fefc5f4b
+Success (105/105)
+
+Control Experiment 106: dummy + avg_links_len + id + seed3
+----------------------------------------
+Running: dummy_avg_links_len_id_control_avg_links_len_seed3 (control)
+Started tracking experiment: 021344182ae3
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0360
+    Test R²: -0.6200
+  Completed successfully
+  Results logged with ID: 021344182ae3
+Success (106/106)
+
+Control Experiment 107: ridge + avg_links_len + id + seed3
+----------------------------------------
+Running: ridge_avg_links_len_id_control_avg_links_len_seed3 (control)
+Started tracking experiment: ecce9f9f3486
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0327
+    Test R²: -0.4744
+  Completed successfully
+  Results logged with ID: ecce9f9f3486
+Success (107/107)
+
+Control Experiment 108: xgboost + avg_links_len + id + seed3
+----------------------------------------
+Running: xgboost_avg_links_len_id_control_avg_links_len_seed3 (control)
+Started tracking experiment: 813e1ae77d99
+  Loading data...
+    Train: (954, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0364
+    Test R²: -0.6395
+  Completed successfully
+  Results logged with ID: 813e1ae77d99
+Success (108/108)
+
+Control Experiment 109: dummy + question_type + ja + seed1
+----------------------------------------
+Running: dummy_question_type_ja_control_question_type_seed1 (control)
+Started tracking experiment: 9774be5473c2
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5978
+    Test F1: 0.4474
+  Completed successfully
+  Results logged with ID: 9774be5473c2
+Success (109/109)
+
+Control Experiment 110: logistic + question_type + ja + seed1
+----------------------------------------
+Running: logistic_question_type_ja_control_question_type_seed1 (control)
+Started tracking experiment: 9bcfb9889d77
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5109
+    Test F1: 0.5146
+  Completed successfully
+  Results logged with ID: 9bcfb9889d77
+Success (110/110)
+
+Control Experiment 111: xgboost + question_type + ja + seed1
+----------------------------------------
+Running: xgboost_question_type_ja_control_question_type_seed1 (control)
+Started tracking experiment: 825ff09bfcdf
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5109
+    Test F1: 0.5153
+  Completed successfully
+  Results logged with ID: 825ff09bfcdf
+Success (111/111)
+
+Control Experiment 112: dummy + question_type + ja + seed2
+----------------------------------------
+Running: dummy_question_type_ja_control_question_type_seed2 (control)
+Started tracking experiment: c1088cc5ecb5
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5978
+    Test F1: 0.4474
+  Completed successfully
+  Results logged with ID: c1088cc5ecb5
+Success (112/112)
+
+Control Experiment 113: logistic + question_type + ja + seed2
+----------------------------------------
+Running: logistic_question_type_ja_control_question_type_seed2 (control)
+Started tracking experiment: e3b5c2f49305
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4783
+    Test F1: 0.4693
+  Completed successfully
+  Results logged with ID: e3b5c2f49305
+Success (113/113)
+
+Control Experiment 114: xgboost + question_type + ja + seed2
+----------------------------------------
+Running: xgboost_question_type_ja_control_question_type_seed2 (control)
+Started tracking experiment: ef8d1d2125dd
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5109
+    Test F1: 0.5007
+  Completed successfully
+  Results logged with ID: ef8d1d2125dd
+Success (114/114)
+
+Control Experiment 115: dummy + question_type + ja + seed3
+----------------------------------------
+Running: dummy_question_type_ja_control_question_type_seed3 (control)
+Started tracking experiment: 11e2839db8b6
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5978
+    Test F1: 0.4474
+  Completed successfully
+  Results logged with ID: 11e2839db8b6
+Success (115/115)
+
+Control Experiment 116: logistic + question_type + ja + seed3
+----------------------------------------
+Running: logistic_question_type_ja_control_question_type_seed3 (control)
+Started tracking experiment: b54e683f1828
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5435
+    Test F1: 0.5313
+  Completed successfully
+  Results logged with ID: b54e683f1828
+Success (116/116)
+
+Control Experiment 117: xgboost + question_type + ja + seed3
+----------------------------------------
+Running: xgboost_question_type_ja_control_question_type_seed3 (control)
+Started tracking experiment: 32645fb60952
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4783
+    Test F1: 0.4783
+  Completed successfully
+  Results logged with ID: 32645fb60952
+Success (117/117)
+
+Control Experiment 118: dummy + lang_norm_complexity_score + ja + seed1
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_ja_control_complexity_seed1 (control)
+Started tracking experiment: 8d0880793b24
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0603
+    Test R²: -0.1576
+  Completed successfully
+  Results logged with ID: 8d0880793b24
+Success (118/118)
+
+Control Experiment 119: ridge + lang_norm_complexity_score + ja + seed1
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_ja_control_complexity_seed1 (control)
+Started tracking experiment: 914a2a5086ec
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0636
+    Test R²: -0.2209
+  Completed successfully
+  Results logged with ID: 914a2a5086ec
+Success (119/119)
+
+Control Experiment 120: xgboost + lang_norm_complexity_score + ja + seed1
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_ja_control_complexity_seed1 (control)
+Started tracking experiment: 8bba323e60f6
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0655
+    Test R²: -0.2584
+  Completed successfully
+  Results logged with ID: 8bba323e60f6
+Success (120/120)
+
+Control Experiment 121: dummy + lang_norm_complexity_score + ja + seed2
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_ja_control_complexity_seed2 (control)
+Started tracking experiment: a43eec31f91e
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0603
+    Test R²: -0.1576
+  Completed successfully
+  Results logged with ID: a43eec31f91e
+Success (121/121)
+
+Control Experiment 122: ridge + lang_norm_complexity_score + ja + seed2
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_ja_control_complexity_seed2 (control)
+Started tracking experiment: f66ebf904c71
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0621
+    Test R²: -0.1933
+  Completed successfully
+  Results logged with ID: f66ebf904c71
+Success (122/122)
+
+Control Experiment 123: xgboost + lang_norm_complexity_score + ja + seed2
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_ja_control_complexity_seed2 (control)
+Started tracking experiment: 83b7e38a8242
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0589
+    Test R²: -0.1318
+  Completed successfully
+  Results logged with ID: 83b7e38a8242
+Success (123/123)
+
+Control Experiment 124: dummy + lang_norm_complexity_score + ja + seed3
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_ja_control_complexity_seed3 (control)
+Started tracking experiment: 0b1a99efb5ed
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0603
+    Test R²: -0.1576
+  Completed successfully
+  Results logged with ID: 0b1a99efb5ed
+Success (124/124)
+
+Control Experiment 125: ridge + lang_norm_complexity_score + ja + seed3
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_ja_control_complexity_seed3 (control)
+Started tracking experiment: eeeefa521322
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0665
+    Test R²: -0.2778
+  Completed successfully
+  Results logged with ID: eeeefa521322
+Success (125/125)
+
+Control Experiment 126: xgboost + lang_norm_complexity_score + ja + seed3
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_ja_control_complexity_seed3 (control)
+Started tracking experiment: 91b17933af5e
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0590
+    Test R²: -0.1334
+  Completed successfully
+  Results logged with ID: 91b17933af5e
+Success (126/126)
+
+Control Experiment 127: dummy + avg_links_len + ja + seed1
+----------------------------------------
+Running: dummy_avg_links_len_ja_control_avg_links_len_seed1 (control)
+Started tracking experiment: f023195e13fc
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.1082
+    Test R²: -1.5454
+  Completed successfully
+  Results logged with ID: f023195e13fc
+Success (127/127)
+
+Control Experiment 128: ridge + avg_links_len + ja + seed1
+----------------------------------------
+Running: ridge_avg_links_len_ja_control_avg_links_len_seed1 (control)
+Started tracking experiment: 7f87374461a5
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.1110
+    Test R²: -1.6111
+  Completed successfully
+  Results logged with ID: 7f87374461a5
+Success (128/128)
+
+Control Experiment 129: xgboost + avg_links_len + ja + seed1
+----------------------------------------
+Running: xgboost_avg_links_len_ja_control_avg_links_len_seed1 (control)
+Started tracking experiment: b9a36a68576c
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.1117
+    Test R²: -1.6274
+  Completed successfully
+  Results logged with ID: b9a36a68576c
+Success (129/129)
+
+Control Experiment 130: dummy + avg_links_len + ja + seed2
+----------------------------------------
+Running: dummy_avg_links_len_ja_control_avg_links_len_seed2 (control)
+Started tracking experiment: 39e451033f50
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.1082
+    Test R²: -1.5454
+  Completed successfully
+  Results logged with ID: 39e451033f50
+Success (130/130)
+
+Control Experiment 131: ridge + avg_links_len + ja + seed2
+----------------------------------------
+Running: ridge_avg_links_len_ja_control_avg_links_len_seed2 (control)
+Started tracking experiment: c13b99b27278
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.1161
+    Test R²: -1.7314
+  Completed successfully
+  Results logged with ID: c13b99b27278
+Success (131/131)
+
+Control Experiment 132: xgboost + avg_links_len + ja + seed2
+----------------------------------------
+Running: xgboost_avg_links_len_ja_control_avg_links_len_seed2 (control)
+Started tracking experiment: 96afd48bcd66
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.1096
+    Test R²: -1.5784
+  Completed successfully
+  Results logged with ID: 96afd48bcd66
+Success (132/132)
+
+Control Experiment 133: dummy + avg_links_len + ja + seed3
+----------------------------------------
+Running: dummy_avg_links_len_ja_control_avg_links_len_seed3 (control)
+Started tracking experiment: 79f38108d0d9
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.1082
+    Test R²: -1.5454
+  Completed successfully
+  Results logged with ID: 79f38108d0d9
+Success (133/133)
+
+Control Experiment 134: ridge + avg_links_len + ja + seed3
+----------------------------------------
+Running: ridge_avg_links_len_ja_control_avg_links_len_seed3 (control)
+Started tracking experiment: a99b48e2bd6b
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.1043
+    Test R²: -1.4526
+  Completed successfully
+  Results logged with ID: a99b48e2bd6b
+Success (134/134)
+
+Control Experiment 135: xgboost + avg_links_len + ja + seed3
+----------------------------------------
+Running: xgboost_avg_links_len_ja_control_avg_links_len_seed3 (control)
+Started tracking experiment: 4306f5bdff15
+  Loading data...
+    Train: (1191, 9199), Val: (46, 9199), Test: (92, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.1058
+    Test R²: -1.4893
+  Completed successfully
+  Results logged with ID: 4306f5bdff15
+Success (135/135)
+
+Control Experiment 136: dummy + question_type + ko + seed1
+----------------------------------------
+Running: dummy_question_type_ko_control_question_type_seed1 (control)
+Started tracking experiment: 5f598496d195
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5000
+    Test F1: 0.3333
+  Completed successfully
+  Results logged with ID: 5f598496d195
+Success (136/136)
+
+Control Experiment 137: logistic + question_type + ko + seed1
+----------------------------------------
+Running: logistic_question_type_ko_control_question_type_seed1 (control)
+Started tracking experiment: 11f597388494
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4636
+    Test F1: 0.4174
+  Completed successfully
+  Results logged with ID: 11f597388494
+Success (137/137)
+
+Control Experiment 138: xgboost + question_type + ko + seed1
+----------------------------------------
+Running: xgboost_question_type_ko_control_question_type_seed1 (control)
+Started tracking experiment: 7f3563a83361
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4727
+    Test F1: 0.4464
+  Completed successfully
+  Results logged with ID: 7f3563a83361
+Success (138/138)
+
+Control Experiment 139: dummy + question_type + ko + seed2
+----------------------------------------
+Running: dummy_question_type_ko_control_question_type_seed2 (control)
+Started tracking experiment: 07980f586e5c
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5000
+    Test F1: 0.3333
+  Completed successfully
+  Results logged with ID: 07980f586e5c
+Success (139/139)
+
+Control Experiment 140: logistic + question_type + ko + seed2
+----------------------------------------
+Running: logistic_question_type_ko_control_question_type_seed2 (control)
+Started tracking experiment: 2623cf0d0408
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5182
+    Test F1: 0.5172
+  Completed successfully
+  Results logged with ID: 2623cf0d0408
+Success (140/140)
+
+Control Experiment 141: xgboost + question_type + ko + seed2
+----------------------------------------
+Running: xgboost_question_type_ko_control_question_type_seed2 (control)
+Started tracking experiment: e2b3a1a2c7b0
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5455
+    Test F1: 0.5441
+  Completed successfully
+  Results logged with ID: e2b3a1a2c7b0
+Success (141/141)
+
+Control Experiment 142: dummy + question_type + ko + seed3
+----------------------------------------
+Running: dummy_question_type_ko_control_question_type_seed3 (control)
+Started tracking experiment: 8e84cec4beaf
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5000
+    Test F1: 0.3333
+  Completed successfully
+  Results logged with ID: 8e84cec4beaf
+Success (142/142)
+
+Control Experiment 143: logistic + question_type + ko + seed3
+----------------------------------------
+Running: logistic_question_type_ko_control_question_type_seed3 (control)
+Started tracking experiment: b2eb45c4130a
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4091
+    Test F1: 0.3867
+  Completed successfully
+  Results logged with ID: b2eb45c4130a
+Success (143/143)
+
+Control Experiment 144: xgboost + question_type + ko + seed3
+----------------------------------------
+Running: xgboost_question_type_ko_control_question_type_seed3 (control)
+Started tracking experiment: 401622bb87cd
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4727
+    Test F1: 0.4640
+  Completed successfully
+  Results logged with ID: 401622bb87cd
+Success (144/144)
+
+Control Experiment 145: dummy + lang_norm_complexity_score + ko + seed1
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_ko_control_complexity_seed1 (control)
+Started tracking experiment: 85a1bbc8d79f
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0367
+    Test R²: -0.1396
+  Completed successfully
+  Results logged with ID: 85a1bbc8d79f
+Success (145/145)
+
+Control Experiment 146: ridge + lang_norm_complexity_score + ko + seed1
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_ko_control_complexity_seed1 (control)
+Started tracking experiment: 0a2fc936c4ee
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0374
+    Test R²: -0.1601
+  Completed successfully
+  Results logged with ID: 0a2fc936c4ee
+Success (146/146)
+
+Control Experiment 147: xgboost + lang_norm_complexity_score + ko + seed1
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_ko_control_complexity_seed1 (control)
+Started tracking experiment: 6d7b94d63464
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0406
+    Test R²: -0.2594
+  Completed successfully
+  Results logged with ID: 6d7b94d63464
+Success (147/147)
+
+Control Experiment 148: dummy + lang_norm_complexity_score + ko + seed2
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_ko_control_complexity_seed2 (control)
+Started tracking experiment: d74de2ac3e79
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0367
+    Test R²: -0.1396
+  Completed successfully
+  Results logged with ID: d74de2ac3e79
+Success (148/148)
+
+Control Experiment 149: ridge + lang_norm_complexity_score + ko + seed2
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_ko_control_complexity_seed2 (control)
+Started tracking experiment: d1f91f23c519
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0356
+    Test R²: -0.1065
+  Completed successfully
+  Results logged with ID: d1f91f23c519
+Success (149/149)
+
+Control Experiment 150: xgboost + lang_norm_complexity_score + ko + seed2
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_ko_control_complexity_seed2 (control)
+Started tracking experiment: e3fdbbbfccc8
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0352
+    Test R²: -0.0915
+  Completed successfully
+  Results logged with ID: e3fdbbbfccc8
+Success (150/150)
+
+Control Experiment 151: dummy + lang_norm_complexity_score + ko + seed3
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_ko_control_complexity_seed3 (control)
+Started tracking experiment: 6ce2436d838b
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0367
+    Test R²: -0.1396
+  Completed successfully
+  Results logged with ID: 6ce2436d838b
+Success (151/151)
+
+Control Experiment 152: ridge + lang_norm_complexity_score + ko + seed3
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_ko_control_complexity_seed3 (control)
+Started tracking experiment: 8cf43acc8238
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0447
+    Test R²: -0.3865
+  Completed successfully
+  Results logged with ID: 8cf43acc8238
+Success (152/152)
+
+Control Experiment 153: xgboost + lang_norm_complexity_score + ko + seed3
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_ko_control_complexity_seed3 (control)
+Started tracking experiment: 63fec35439ac
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0397
+    Test R²: -0.2334
+  Completed successfully
+  Results logged with ID: 63fec35439ac
+Success (153/153)
+
+Control Experiment 154: dummy + avg_links_len + ko + seed1
+----------------------------------------
+Running: dummy_avg_links_len_ko_control_avg_links_len_seed1 (control)
+Started tracking experiment: 317ad29dfd7f
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0272
+    Test R²: -0.1822
+  Completed successfully
+  Results logged with ID: 317ad29dfd7f
+Success (154/154)
+
+Control Experiment 155: ridge + avg_links_len + ko + seed1
+----------------------------------------
+Running: ridge_avg_links_len_ko_control_avg_links_len_seed1 (control)
+Started tracking experiment: da39d68d3c51
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0274
+    Test R²: -0.1923
+  Completed successfully
+  Results logged with ID: da39d68d3c51
+Success (155/155)
+
+Control Experiment 156: xgboost + avg_links_len + ko + seed1
+----------------------------------------
+Running: xgboost_avg_links_len_ko_control_avg_links_len_seed1 (control)
+Started tracking experiment: 1479a367fdf9
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0294
+    Test R²: -0.2792
+  Completed successfully
+  Results logged with ID: 1479a367fdf9
+Success (156/156)
+
+Control Experiment 157: dummy + avg_links_len + ko + seed2
+----------------------------------------
+Running: dummy_avg_links_len_ko_control_avg_links_len_seed2 (control)
+Started tracking experiment: 09a03b45c3a6
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0272
+    Test R²: -0.1822
+  Completed successfully
+  Results logged with ID: 09a03b45c3a6
+Success (157/157)
+
+Control Experiment 158: ridge + avg_links_len + ko + seed2
+----------------------------------------
+Running: ridge_avg_links_len_ko_control_avg_links_len_seed2 (control)
+Started tracking experiment: fd54ae380b6c
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0280
+    Test R²: -0.2179
+  Completed successfully
+  Results logged with ID: fd54ae380b6c
+Success (158/158)
+
+Control Experiment 159: xgboost + avg_links_len + ko + seed2
+----------------------------------------
+Running: xgboost_avg_links_len_ko_control_avg_links_len_seed2 (control)
+Started tracking experiment: 507dd764659a
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0267
+    Test R²: -0.1611
+  Completed successfully
+  Results logged with ID: 507dd764659a
+Success (159/159)
+
+Control Experiment 160: dummy + avg_links_len + ko + seed3
+----------------------------------------
+Running: dummy_avg_links_len_ko_control_avg_links_len_seed3 (control)
+Started tracking experiment: 5742744d772e
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0272
+    Test R²: -0.1822
+  Completed successfully
+  Results logged with ID: 5742744d772e
+Success (160/160)
+
+Control Experiment 161: ridge + avg_links_len + ko + seed3
+----------------------------------------
+Running: ridge_avg_links_len_ko_control_avg_links_len_seed3 (control)
+Started tracking experiment: 7a261a731f98
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0302
+    Test R²: -0.3138
+  Completed successfully
+  Results logged with ID: 7a261a731f98
+Success (161/161)
+
+Control Experiment 162: xgboost + avg_links_len + ko + seed3
+----------------------------------------
+Running: xgboost_avg_links_len_ko_control_avg_links_len_seed3 (control)
+Started tracking experiment: d18c7f6a133c
+  Loading data...
+    Train: (739, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0360
+    Test R²: -0.5648
+  Completed successfully
+  Results logged with ID: d18c7f6a133c
+Success (162/162)
+
+Control Experiment 163: dummy + question_type + ru + seed1
+----------------------------------------
+Running: dummy_question_type_ru_control_question_type_seed1 (control)
+Started tracking experiment: 71cefaebbb07
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5000
+    Test F1: 0.3333
+  Completed successfully
+  Results logged with ID: 71cefaebbb07
+Success (163/163)
+
+Control Experiment 164: logistic + question_type + ru + seed1
+----------------------------------------
+Running: logistic_question_type_ru_control_question_type_seed1 (control)
+Started tracking experiment: 0a9dde45a6cb
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.3545
+    Test F1: 0.3532
+  Completed successfully
+  Results logged with ID: 0a9dde45a6cb
+Success (164/164)
+
+Control Experiment 165: xgboost + question_type + ru + seed1
+----------------------------------------
+Running: xgboost_question_type_ru_control_question_type_seed1 (control)
+Started tracking experiment: 86b59451857d
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.3909
+    Test F1: 0.3679
+  Completed successfully
+  Results logged with ID: 86b59451857d
+Success (165/165)
+
+Control Experiment 166: dummy + question_type + ru + seed2
+----------------------------------------
+Running: dummy_question_type_ru_control_question_type_seed2 (control)
+Started tracking experiment: 655ac08bf68d
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5000
+    Test F1: 0.3333
+  Completed successfully
+  Results logged with ID: 655ac08bf68d
+Success (166/166)
+
+Control Experiment 167: logistic + question_type + ru + seed2
+----------------------------------------
+Running: logistic_question_type_ru_control_question_type_seed2 (control)
+Started tracking experiment: a475013f6ca2
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4455
+    Test F1: 0.4443
+  Completed successfully
+  Results logged with ID: a475013f6ca2
+Success (167/167)
+
+Control Experiment 168: xgboost + question_type + ru + seed2
+----------------------------------------
+Running: xgboost_question_type_ru_control_question_type_seed2 (control)
+Started tracking experiment: 027ab50918b1
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.4909
+    Test F1: 0.4894
+  Completed successfully
+  Results logged with ID: 027ab50918b1
+Success (168/168)
+
+Control Experiment 169: dummy + question_type + ru + seed3
+----------------------------------------
+Running: dummy_question_type_ru_control_question_type_seed3 (control)
+Started tracking experiment: d6b9bf8895bf
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5000
+    Test F1: 0.3333
+  Completed successfully
+  Results logged with ID: d6b9bf8895bf
+Success (169/169)
+
+Control Experiment 170: logistic + question_type + ru + seed3
+----------------------------------------
+Running: logistic_question_type_ru_control_question_type_seed3 (control)
+Started tracking experiment: 93e81592f9ad
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.6000
+    Test F1: 0.5952
+  Completed successfully
+  Results logged with ID: 93e81592f9ad
+Success (170/170)
+
+Control Experiment 171: xgboost + question_type + ru + seed3
+----------------------------------------
+Running: xgboost_question_type_ru_control_question_type_seed3 (control)
+Started tracking experiment: 82558f0c966f
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test Accuracy: 0.5818
+    Test F1: 0.5813
+  Completed successfully
+  Results logged with ID: 82558f0c966f
+Success (171/171)
+
+Control Experiment 172: dummy + lang_norm_complexity_score + ru + seed1
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_ru_control_complexity_seed1 (control)
+Started tracking experiment: b146b5abf280
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0564
+    Test R²: -0.4272
+  Completed successfully
+  Results logged with ID: b146b5abf280
+Success (172/172)
+
+Control Experiment 173: ridge + lang_norm_complexity_score + ru + seed1
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_ru_control_complexity_seed1 (control)
+Started tracking experiment: 3578aa0191db
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0654
+    Test R²: -0.6541
+  Completed successfully
+  Results logged with ID: 3578aa0191db
+Success (173/173)
+
+Control Experiment 174: xgboost + lang_norm_complexity_score + ru + seed1
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_ru_control_complexity_seed1 (control)
+Started tracking experiment: 41ad148e6573
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0622
+    Test R²: -0.5722
+  Completed successfully
+  Results logged with ID: 41ad148e6573
+Success (174/174)
+
+Control Experiment 175: dummy + lang_norm_complexity_score + ru + seed2
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_ru_control_complexity_seed2 (control)
+Started tracking experiment: 4c99202829c1
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0564
+    Test R²: -0.4272
+  Completed successfully
+  Results logged with ID: 4c99202829c1
+Success (175/175)
+
+Control Experiment 176: ridge + lang_norm_complexity_score + ru + seed2
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_ru_control_complexity_seed2 (control)
+Started tracking experiment: a436618695dd
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0545
+    Test R²: -0.3776
+  Completed successfully
+  Results logged with ID: a436618695dd
+Success (176/176)
+
+Control Experiment 177: xgboost + lang_norm_complexity_score + ru + seed2
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_ru_control_complexity_seed2 (control)
+Started tracking experiment: b2cf6a1aaff9
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0626
+    Test R²: -0.5831
+  Completed successfully
+  Results logged with ID: b2cf6a1aaff9
+Success (177/177)
+
+Control Experiment 178: dummy + lang_norm_complexity_score + ru + seed3
+----------------------------------------
+Running: dummy_lang_norm_complexity_score_ru_control_complexity_seed3 (control)
+Started tracking experiment: 6143a4bc8456
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0564
+    Test R²: -0.4272
+  Completed successfully
+  Results logged with ID: 6143a4bc8456
+Success (178/178)
+
+Control Experiment 179: ridge + lang_norm_complexity_score + ru + seed3
+----------------------------------------
+Running: ridge_lang_norm_complexity_score_ru_control_complexity_seed3 (control)
+Started tracking experiment: 93ec65e4bd52
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0635
+    Test R²: -0.6060
+  Completed successfully
+  Results logged with ID: 93ec65e4bd52
+Success (179/179)
+
+Control Experiment 180: xgboost + lang_norm_complexity_score + ru + seed3
+----------------------------------------
+Running: xgboost_lang_norm_complexity_score_ru_control_complexity_seed3 (control)
+Started tracking experiment: aa8de9a6368b
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0592
+    Test R²: -0.4977
+  Completed successfully
+  Results logged with ID: aa8de9a6368b
+Success (180/180)
+
+Control Experiment 181: dummy + avg_links_len + ru + seed1
+----------------------------------------
+Running: dummy_avg_links_len_ru_control_avg_links_len_seed1 (control)
+Started tracking experiment: a478f0e1216c
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0170
+    Test R²: -0.0086
+  Completed successfully
+  Results logged with ID: a478f0e1216c
+Success (181/181)
+
+Control Experiment 182: ridge + avg_links_len + ru + seed1
+----------------------------------------
+Running: ridge_avg_links_len_ru_control_avg_links_len_seed1 (control)
+Started tracking experiment: 6cf01027ee2d
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0214
+    Test R²: -0.2722
+  Completed successfully
+  Results logged with ID: 6cf01027ee2d
+Success (182/182)
+
+Control Experiment 183: xgboost + avg_links_len + ru + seed1
+----------------------------------------
+Running: xgboost_avg_links_len_ru_control_avg_links_len_seed1 (control)
+Started tracking experiment: 5b0227f2c55e
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0194
+    Test R²: -0.1489
+  Completed successfully
+  Results logged with ID: 5b0227f2c55e
+Success (183/183)
+
+Control Experiment 184: dummy + avg_links_len + ru + seed2
+----------------------------------------
+Running: dummy_avg_links_len_ru_control_avg_links_len_seed2 (control)
+Started tracking experiment: ac86ff9bcd6b
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0170
+    Test R²: -0.0086
+  Completed successfully
+  Results logged with ID: ac86ff9bcd6b
+Success (184/184)
+
+Control Experiment 185: ridge + avg_links_len + ru + seed2
+----------------------------------------
+Running: ridge_avg_links_len_ru_control_avg_links_len_seed2 (control)
+Started tracking experiment: 2a6e3448d1b8
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0178
+    Test R²: -0.0539
+  Completed successfully
+  Results logged with ID: 2a6e3448d1b8
+Success (185/185)
+
+Control Experiment 186: xgboost + avg_links_len + ru + seed2
+----------------------------------------
+Running: xgboost_avg_links_len_ru_control_avg_links_len_seed2 (control)
+Started tracking experiment: 3f0033bfc92c
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0184
+    Test R²: -0.0901
+  Completed successfully
+  Results logged with ID: 3f0033bfc92c
+Success (186/186)
+
+Control Experiment 187: dummy + avg_links_len + ru + seed3
+----------------------------------------
+Running: dummy_avg_links_len_ru_control_avg_links_len_seed3 (control)
+Started tracking experiment: e45a75936119
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0170
+    Test R²: -0.0086
+  Completed successfully
+  Results logged with ID: e45a75936119
+Success (187/187)
+
+Control Experiment 188: ridge + avg_links_len + ru + seed3
+----------------------------------------
+Running: ridge_avg_links_len_ru_control_avg_links_len_seed3 (control)
+Started tracking experiment: cb251a0a5d69
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0251
+    Test R²: -0.4925
+  Completed successfully
+  Results logged with ID: cb251a0a5d69
+Success (188/188)
+
+Control Experiment 189: xgboost + avg_links_len + ru + seed3
+----------------------------------------
+Running: xgboost_avg_links_len_ru_control_avg_links_len_seed3 (control)
+Started tracking experiment: 3a90c20b37f9
+  Loading data...
+    Train: (1194, 9199), Val: (72, 9199), Test: (110, 9199)
+  Creating model...
+  Training...
+    Test MSE: 0.0194
+    Test R²: -0.1532
+  Completed successfully
+  Results logged with ID: 3a90c20b37f9
+Success (189/189)
+
+=========================================================================
+Enhanced TF-IDF Experiments Completed!
+=========================================================================
+Main experiments: 168/168
+Control experiments: 189/189
+Total: 357/357
+
+Feature Information:
+  Features generated:  250002
+ 9199 (hybrid approach)
+  Tokenizer:  with text2text methodology
+  Approach: XLM-RoBERTa tokenization + sklearn TF-IDF
+
+Results directory: /scratch/leuven/371/vsc37132/tfidf_experiments/tfidf_results_20250812_220645
+
+Creating comprehensive analysis and visualizations...
+Experiment logging finalized
+Summary tables created:
+  - all_results: 357 entries
+  - successful_results: 357 entries
+  - failed_results: 0 entries
+  - main_vs_control: 63 entries
+  - by_task_language: 77 entries
+  - by_model_type: 12 entries
+Generating visualizations...
+2025-08-12 22:49:33,955 [INFO] Initialized experiment logger: tfidf_results_20250812_220645
+2025-08-12 22:49:33,955 [INFO] Results directory: /scratch/leuven/371/vsc37132/tfidf_experiments/tfidf_results_20250812_220645/results
+2025-08-12 22:49:34,035 [INFO] Collected 357 experiment results
+2025-08-12 22:49:34,092 [INFO] Collected 357 experiment results
+2025-08-12 22:49:34,136 [INFO] Saved all_results summary: 357 entries
+2025-08-12 22:49:34,150 [INFO] Saved successful_results summary: 357 entries
+2025-08-12 22:49:34,153 [INFO] Saved main_vs_control summary: 63 entries
+2025-08-12 22:49:34,155 [INFO] Saved by_task_language summary: 77 entries
+2025-08-12 22:49:34,156 [INFO] Saved by_model_type summary: 12 entries
+2025-08-12 22:49:34,156 [INFO] Initialized visualizer for 357 experiments
+2025-08-12 22:49:34,156 [INFO] Creating comprehensive visualizations...
+2025-08-12 22:49:46,100 [INFO] No failed experiments to analyze
+2025-08-12 22:49:46,100 [INFO] All visualizations saved to /scratch/leuven/371/vsc37132/tfidf_experiments/tfidf_results_20250812_220645/visualizations
+2025-08-12 22:49:46,109 [INFO] Summary report saved to /scratch/leuven/371/vsc37132/tfidf_experiments/tfidf_results_20250812_220645/visualizations/experiment_summary_report.md
+2025-08-12 22:49:46,109 [INFO] ============================================================
+2025-08-12 22:49:46,109 [INFO] VISUALIZATION COMPLETE
+2025-08-12 22:49:46,109 [INFO] ============================================================
+2025-08-12 22:49:46,109 [INFO] Visualizations saved to: /scratch/leuven/371/vsc37132/tfidf_experiments/tfidf_results_20250812_220645/visualizations
+Visualizations generated successfully
+
+=========================================================================
+FINAL EXPERIMENT STATUS
+=========================================================================
+Experiment Batch: tfidf_results_20250812_220645
+Total Experiments: 0
+Successful: 0 (0.0%)
+Failed: 0
+Results Directory: /scratch/leuven/371/vsc37132/tfidf_experiments/tfidf_results_20250812_220645
+
+Generated Files:
+  - results/: Individual experiment results (JSON)
+  - summaries/: Aggregated CSV summaries
+  - visualizations/: Charts and plots
+  - logs/: Experiment execution logs
+
+Key Visualizations:
+  - main_vs_control_comparison.png
+  - performance_by_language_task.png
+  - model_performance_comparison.png
+  - experiment_summary_report.md
+=========================================================================
