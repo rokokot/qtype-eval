@@ -1,0 +1,59 @@
+\begin{table}[H]
+    \resizebox{0.93\textwidth}{!}{
+    \begin{tabular}{crcccccccc}
+        & & \multicolumn{4}{c}{\scshape question type classification} & \multicolumn{4}{c}{\scshape combined complexity regression} \\[8pt]
+        & & $Acc.$ & $\overline{control}$ & $\Delta Acc.$ & \multicolumn{1}{c}{$\widehat{S}$} & $MSE$ & $\overline{control}$ & $\Delta MSE$ & $\widehat{S}$ \\\hhline{*{10}{-}}
+        
+        \rotmultirow{6}{*}{\small Dummy baseline} & ar & 71.4 & 71.4 & 0 & \multicolumn{1}{c|}{0} & 0.059 & 0.059 & 0 & 0 \\
+        & en & 50.0 & 50.0 & 0 & \multicolumn{1}{c|}{0} & 0.038 & 0.039 & 0 & 0 \\
+        & fi & 50.0 & 50.0 & 0 & \multicolumn{1}{c|}{0} & 0.040 & 0.040 & 0 & 0 \\
+        & id & 50.0 & 50.0 & 0 & \multicolumn{1}{c|}{0} & 0.040 & 0.040 & 0 & 0 \\
+        & ja & 50.0 & 50.0 & 0 & \multicolumn{1}{c|}{0} & 0.063 & 0.063 & 0 & 0 \\
+        & ko & 50.0 & 50.0 & 0 & \multicolumn{1}{c|}{0} & 0.036 & 0.036 & 0 & 0 \\
+        & ru & 50.0 & 50.0 & 0 & \multicolumn{1}{c|}{0} & 0.059 & 0.059 & 0 & 0 \\\hhline{*{10}{-}}
+        
+        \rotmultirow{6}{*}{\small Linear predictors} & ar & 98.7 & 51.9 & 46.8 & \multicolumn{1}{c|}{0.90} & 0.038 & 0.065 & 0.027 & 0.41 \\
+        & en & 79.1 & 50.3 & 28.8 & \multicolumn{1}{c|}{0.57} & 0.020 & 0.042 & 0.022 & 0.52 \\
+        & fi & 84.5 & 44.2 & 40.3 & \multicolumn{1}{c|}{0.91} & 0.028 & 0.041 & 0.013 & 0.31 \\
+        & id & 57.3 & 47.3 & 10.0 & \multicolumn{1}{c|}{0.21} & 0.021 & 0.045 & 0.024 & 0.53 \\
+        & ja & 65.2 & 54.0 & 11.2 & \multicolumn{1}{c|}{0.20} & 0.035 & 0.062 & 0.027 & 0.43 \\
+        & ko & 66.5 & 48.5 & 18.0 & \multicolumn{1}{c|}{0.37} & 0.019 & 0.039 & 0.020 & 0.51 \\
+        & ru & 80.0 & 48.8 & 31.2 & \multicolumn{1}{c|}{0.63} & 0.026 & 0.063 & 0.037 & 0.58 \\\hhline{*{10}{-}}
+        
+        \rotmultirow{6}{*}{\small Gradient boosting \ } & ar & 98.7 & 50.6 & 48.1 & \multicolumn{1}{c|}{0.95} & 0.042 & 0.056 & 0.014 & 0.25 \\
+        & en & 73.6 & 50.9 & 22.7 & \multicolumn{1}{c|}{0.44} & 0.015 & 0.040 & 0.025 & 0.62 \\
+        & fi & 80.9 & 46.1 & 34.8 & \multicolumn{1}{c|}{0.75} & 0.019 & 0.040 & 0.021 & 0.52 \\
+        & id & 69.1 & 50.0 & 19.1 & \multicolumn{1}{c|}{0.38} & 0.019 & 0.040 & 0.021 & 0.52 \\
+        & ja & 64.1 & 52.5 & 11.6 & \multicolumn{1}{c|}{0.22} & 0.028 & 0.059 & 0.031 & 0.52 \\
+        & ko & 66.4 & 51.2 & 15.2 & \multicolumn{1}{c|}{0.29} & 0.015 & 0.037 & 0.022 & 0.59 \\
+        & ru & 87.2 & 57.5 & 29.7 & \multicolumn{1}{c|}{0.51} & 0.024 & 0.060 & 0.036 & 0.60 \\\hhline{*{10}{-}}
+        
+        \rotmultirow{6}{*}{\small Optimal Probe} & ar & 85.7 \footnotesize(2) & 71.4 & 14.3 & \multicolumn{1}{c|}{0.20} & 0.030 \footnotesize(4) & 0.067 & 0.037 & 0.55 \\
+        & en & 97.3 \footnotesize(5) & 50.0 & 47.3 & \multicolumn{1}{c|}{0.95} & 0.017 \footnotesize(1) & 0.048 & 0.031 & 0.64 \\
+        & fi & 94.5 \footnotesize(5)& 50.0 & 44.5 & \multicolumn{1}{c|}{0.89} & 0.025 \footnotesize(1)& 0.050 & 0.025 & 0.50 \\
+        & id & 80.9 \footnotesize(6)& 50.0 & 30.9 & \multicolumn{1}{c|}{0.62} & 0.024 \footnotesize(4)& 0.047 & 0.023 & 0.49 \\
+        & ja & 82.6 \footnotesize(10)& 39.8 & 42.8 & \multicolumn{1}{c|}{1.07} & 0.016 \footnotesize(4)& 0.073 & 0.057 & 0.78 \\
+        & ko & 76.4 \footnotesize(9)& 50.0 & 26.4 & \multicolumn{1}{c|}{0.53} & 0.043 \footnotesize(3)& 0.093 & 0.050 & 0.53 \\
+        & ru & 97.3 \footnotesize(11)& 50.0 & 47.3 & \multicolumn{1}{c|}{0.95} & 0.039 \footnotesize(6)& 0.069 & 0.030 & 0.43 \\\hhline{*{10}{-}}
+        
+        \rotmultirow{6}{*}{\small Weakest Probe} & ar & 62.5 \footnotesize(12) & 71.4 & 8.9 & \multicolumn{1}{c|}{0.12} & 0.057 \footnotesize(12) & 0.061 & 0.004 & 0.07 \\
+        & en & 89.4 \footnotesize(2) & 50.0 & 39.4 & \multicolumn{1}{c|}{0.79} & 0.043 \footnotesize(12) & 0.045 & 0.002 & 0.04 \\
+        & fi & 83.6 \footnotesize(3) & 50.0 & 33.6 & \multicolumn{1}{c|}{0.67} & 0.042 \footnotesize(12) & 0.043 & 0.001 & 0.03 \\
+        & id & 62.7 \footnotesize(12) & 50.0 & 12.7 & \multicolumn{1}{c|}{0.25} & 0.042 \footnotesize(12) & 0.046 & 0.004 & 0.09 \\
+        & ja & 63.0 \footnotesize(5) & 40.2 & 22.8 & \multicolumn{1}{c|}{0.57} & 0.058 \footnotesize(12) & 0.061 & 0.003 & 0.05 \\
+        & ko & 63.6 \footnotesize(1) & 50.0 & 13.6 & \multicolumn{1}{c|}{0.27} & 0.041 \footnotesize(2) & 0.053 & 0.012 & 0.22 \\
+        & ru & 90.0 \footnotesize(2) & 50.0 & 40.0 & \multicolumn{1}{c|}{0.80} & 0.067 \footnotesize(10) & 0.075 & 0.008 & 0.11 \\\hhline{*{10}{-}}
+        
+        \rotmultirow{6}{*}{\small Fine-tuned Glot500 \ } & ar & 74.1 & - & - & \multicolumn{1}{c|}{-} & 0.042 & - & - & - \\
+        & en & 91.8 & - & - & \multicolumn{1}{c|}{-} & 0.020 & - & - & - \\
+        & fi & 92.3 & - & - & \multicolumn{1}{c|}{-} & 0.030 & - & - & - \\
+        & id & 73.6 & - & - & \multicolumn{1}{c|}{-} & 0.030 & - & - & - \\
+        & ja & 88.0 & - & - & \multicolumn{1}{c|}{-} & 0.029 & - & - & - \\
+        & ko & 91.1 & - & - & \multicolumn{1}{c|}{-} & 0.031 & - & - & - \\
+        & ru & 96.4 & - & - & \multicolumn{1}{c|}{-} & 0.045 & - & - & - \\\hhline{*{10}{-}}
+    \end{tabular}
+    } 
+    \centering
+        \caption{Performance metrics for question type classification (accuracy) and combined complexity regression (MSE) tasks across seven languages.}
+    \label{tab:language_probing}
+\end{table}
