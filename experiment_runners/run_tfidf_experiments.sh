@@ -423,24 +423,26 @@ for lang in "${LANGUAGES[@]}"; do
         done
     done
     
-    # Individual metric controls (sample - just avg_links_len for now)
-    for seed in 1 2 3; do
-        for model in "${MODELS[@]}"; do
-            if [[ "$model" == "logistic" ]]; then
-                continue
-            fi
-            
-            ((control_total++))
-            echo ""
-            echo "Control Experiment $control_total: $model + avg_links_len + $lang + seed$seed"
-            echo "----------------------------------------"
-            
-            if run_enhanced_experiment "$lang" "avg_links_len" "$model" "control_avg_links_len_seed$seed" "control"; then
-                ((control_completed++))
-                echo "Success ($control_completed/$control_total)"
-            else
-                echo "Failed ($control_completed/$control_total)"
-            fi
+    # Individual metric controls (all linguistic metrics)
+    for task in "${!LINGUISTIC_TASKS[@]}"; do
+        for seed in 1 2 3; do
+            for model in "${MODELS[@]}"; do
+                if [[ "$model" == "logistic" ]]; then
+                    continue
+                fi
+                
+                ((control_total++))
+                echo ""
+                echo "Control Experiment $control_total: $model + $task + $lang + seed$seed"
+                echo "----------------------------------------"
+                
+                if run_enhanced_experiment "$lang" "$task" "$model" "control_${task}_seed$seed" "control"; then
+                    ((control_completed++))
+                    echo "Success ($control_completed/$control_total)"
+                else
+                    echo "Failed ($control_completed/$control_total)"
+                fi
+            done
         done
     done
 done
