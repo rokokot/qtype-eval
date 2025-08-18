@@ -1,0 +1,52 @@
+{
+  "experiment_id": "cc5059830529",
+  "timestamp": "2025-08-17T23:02:43.839309",
+  "config": {
+    "experiment_name": "ridge_lexical_density_ar_control_lexical_density_seed1",
+    "language": "ar",
+    "task": "lexical_density",
+    "model_type": "ridge",
+    "task_type": "regression",
+    "config": "control_lexical_density_seed1",
+    "experiment_type": "control",
+    "features_dir": "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/data/tfidf_features",
+    "batch_name": "tfidf_results_20250817_223817"
+  },
+  "status": "completed",
+  "error": null,
+  "model_type": "Ridge",
+  "task_type": "regression",
+  "train_time": 0.0030601024627685547,
+  "train_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.02280421780493931,
+    "mse": 0.02280421780493931,
+    "r2": 0.469552392891357
+  },
+  "val_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.04029727454006888,
+    "mse": 0.04029727454006888,
+    "r2": -0.17205506423278893
+  },
+  "test_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.0772867838932283,
+    "mse": 0.0772867838932283,
+    "r2": -0.3318316460555013
+  },
+  "data_shapes": {
+    "train": [
+      995,
+      9199
+    ],
+    "val": [
+      44,
+      9199
+    ],
+    "test": [
+      77,
+      9199
+    ]
+  }
+}

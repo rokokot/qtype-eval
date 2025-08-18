@@ -1,0 +1,58 @@
+{
+  "experiment_id": "94fec7b16ece",
+  "timestamp": "2025-08-17T23:44:33.827820",
+  "config": {
+    "experiment_name": "xgboost_question_type_ko_control_question_type_seed1",
+    "language": "ko",
+    "task": "question_type",
+    "model_type": "xgboost",
+    "task_type": "classification",
+    "config": "control_question_type_seed1",
+    "experiment_type": "control",
+    "features_dir": "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/data/tfidf_features",
+    "batch_name": "tfidf_results_20250817_223817"
+  },
+  "status": "completed",
+  "error": null,
+  "model_type": "XGBClassifier",
+  "task_type": "classification",
+  "train_time": 0.35782742500305176,
+  "train_metrics": {
+    "primary_metric": "accuracy",
+    "primary_value": 0.9336941813261164,
+    "accuracy": 0.9336941813261164,
+    "precision": 0.9353685982959496,
+    "recall": 0.9336941813261164,
+    "f1": 0.9334421833945716
+  },
+  "val_metrics": {
+    "primary_metric": "accuracy",
+    "primary_value": 0.5833333333333334,
+    "accuracy": 0.5833333333333334,
+    "precision": 0.6111111111111112,
+    "recall": 0.5833333333333334,
+    "f1": 0.5555555555555556
+  },
+  "test_metrics": {
+    "primary_metric": "accuracy",
+    "primary_value": 0.4727272727272727,
+    "accuracy": 0.4727272727272727,
+    "precision": 0.4663127807268273,
+    "recall": 0.4727272727272727,
+    "f1": 0.4463727872266574
+  },
+  "data_shapes": {
+    "train": [
+      739,
+      9199
+    ],
+    "val": [
+      72,
+      9199
+    ],
+    "test": [
+      110,
+      9199
+    ]
+  }
+}

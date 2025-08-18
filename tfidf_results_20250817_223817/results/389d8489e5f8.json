@@ -1,0 +1,58 @@
+{
+  "experiment_id": "389d8489e5f8",
+  "timestamp": "2025-08-17T23:08:44.911748",
+  "config": {
+    "experiment_name": "dummy_question_type_en_control_question_type_seed2",
+    "language": "en",
+    "task": "question_type",
+    "model_type": "dummy",
+    "task_type": "classification",
+    "config": "control_question_type_seed2",
+    "experiment_type": "control",
+    "features_dir": "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/data/tfidf_features",
+    "batch_name": "tfidf_results_20250817_223817"
+  },
+  "status": "completed",
+  "error": null,
+  "model_type": "DummyClassifier",
+  "task_type": "classification",
+  "train_time": 0.009096622467041016,
+  "train_metrics": {
+    "primary_metric": "accuracy",
+    "primary_value": 0.5,
+    "accuracy": 0.5,
+    "precision": 0.25,
+    "recall": 0.5,
+    "f1": 0.3333333333333333
+  },
+  "val_metrics": {
+    "primary_metric": "accuracy",
+    "primary_value": 0.5,
+    "accuracy": 0.5,
+    "precision": 0.25,
+    "recall": 0.5,
+    "f1": 0.3333333333333333
+  },
+  "test_metrics": {
+    "primary_metric": "accuracy",
+    "primary_value": 0.5,
+    "accuracy": 0.5,
+    "precision": 0.25,
+    "recall": 0.5,
+    "f1": 0.3333333333333333
+  },
+  "data_shapes": {
+    "train": [
+      1192,
+      9199
+    ],
+    "val": [
+      72,
+      9199
+    ],
+    "test": [
+      110,
+      9199
+    ]
+  }
+}
