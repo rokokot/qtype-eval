@@ -1,0 +1,52 @@
+{
+  "experiment_id": "0bcdd8755220",
+  "timestamp": "2025-08-18T18:45:15.397885",
+  "config": {
+    "experiment_name": "dummy_lexical_density_ko_base",
+    "language": "ko",
+    "task": "lexical_density",
+    "model_type": "dummy",
+    "task_type": "regression",
+    "config": "base",
+    "experiment_type": "main",
+    "features_dir": "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/data/tfidf_features",
+    "batch_name": "tfidf_results_20250818_182716"
+  },
+  "status": "completed",
+  "error": null,
+  "model_type": "DummyRegressor",
+  "task_type": "regression",
+  "train_time": 0.0051190853118896484,
+  "train_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.03424589988299296,
+    "mse": 0.03424589988299296,
+    "r2": 0.0
+  },
+  "val_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.04693720711219572,
+    "mse": 0.04693720711219572,
+    "r2": -0.12953091206171452
+  },
+  "test_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.10708370548052036,
+    "mse": 0.10708370548052036,
+    "r2": -1.6787978800436734
+  },
+  "data_shapes": {
+    "train": [
+      739,
+      9199
+    ],
+    "val": [
+      72,
+      9199
+    ],
+    "test": [
+      110,
+      9199
+    ]
+  }
+}

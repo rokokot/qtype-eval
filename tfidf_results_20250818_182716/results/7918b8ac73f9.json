@@ -1,0 +1,58 @@
+{
+  "experiment_id": "7918b8ac73f9",
+  "timestamp": "2025-08-18T19:51:06.781036",
+  "config": {
+    "experiment_name": "logistic_question_type_ru_control_question_type_seed3",
+    "language": "ru",
+    "task": "question_type",
+    "model_type": "logistic",
+    "task_type": "classification",
+    "config": "control_question_type_seed3",
+    "experiment_type": "control",
+    "features_dir": "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/data/tfidf_features",
+    "batch_name": "tfidf_results_20250818_182716"
+  },
+  "status": "completed",
+  "error": null,
+  "model_type": "LogisticRegression",
+  "task_type": "classification",
+  "train_time": 0.0028264522552490234,
+  "train_metrics": {
+    "primary_metric": "accuracy",
+    "primary_value": 0.8274706867671692,
+    "accuracy": 0.8274706867671692,
+    "precision": 0.8276030482927035,
+    "recall": 0.8274706867671692,
+    "f1": 0.8274532582434695
+  },
+  "val_metrics": {
+    "primary_metric": "accuracy",
+    "primary_value": 0.5555555555555556,
+    "accuracy": 0.5555555555555556,
+    "precision": 0.5557275541795667,
+    "recall": 0.5555555555555556,
+    "f1": 0.5552123552123551
+  },
+  "test_metrics": {
+    "primary_metric": "accuracy",
+    "primary_value": 0.6,
+    "accuracy": 0.6,
+    "precision": 0.604998264491496,
+    "recall": 0.6,
+    "f1": 0.5951823352291736
+  },
+  "data_shapes": {
+    "train": [
+      1194,
+      9199
+    ],
+    "val": [
+      72,
+      9199
+    ],
+    "test": [
+      110,
+      9199
+    ]
+  }
+}

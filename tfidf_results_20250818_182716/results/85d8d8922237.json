@@ -1,0 +1,52 @@
+{
+  "experiment_id": "85d8d8922237",
+  "timestamp": "2025-08-18T18:56:08.506234",
+  "config": {
+    "experiment_name": "dummy_n_tokens_ar_control_n_tokens_seed3",
+    "language": "ar",
+    "task": "n_tokens",
+    "model_type": "dummy",
+    "task_type": "regression",
+    "config": "control_n_tokens_seed3",
+    "experiment_type": "control",
+    "features_dir": "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/data/tfidf_features",
+    "batch_name": "tfidf_results_20250818_182716"
+  },
+  "status": "completed",
+  "error": null,
+  "model_type": "DummyRegressor",
+  "task_type": "regression",
+  "train_time": 0.0054166316986083984,
+  "train_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.01938932234640539,
+    "mse": 0.01938932234640539,
+    "r2": 0.0
+  },
+  "val_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.05380863786373624,
+    "mse": 0.05380863786373624,
+    "r2": -0.03598699305176667
+  },
+  "test_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.07791209185446911,
+    "mse": 0.07791209185446911,
+    "r2": -0.04017593882483328
+  },
+  "data_shapes": {
+    "train": [
+      995,
+      9199
+    ],
+    "val": [
+      44,
+      9199
+    ],
+    "test": [
+      77,
+      9199
+    ]
+  }
+}

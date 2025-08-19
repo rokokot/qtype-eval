@@ -1,0 +1,52 @@
+{
+  "experiment_id": "586f7a163d1d",
+  "timestamp": "2025-08-18T19:47:03.107996",
+  "config": {
+    "experiment_name": "ridge_avg_max_depth_ko_control_avg_max_depth_seed2",
+    "language": "ko",
+    "task": "avg_max_depth",
+    "model_type": "ridge",
+    "task_type": "regression",
+    "config": "control_avg_max_depth_seed2",
+    "experiment_type": "control",
+    "features_dir": "/vsc-hard-mounts/leuven-data/371/vsc37132/qtype-eval/data/tfidf_features",
+    "batch_name": "tfidf_results_20250818_182716"
+  },
+  "status": "completed",
+  "error": null,
+  "model_type": "Ridge",
+  "task_type": "regression",
+  "train_time": 0.0029845237731933594,
+  "train_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.014679550140540749,
+    "mse": 0.014679550140540749,
+    "r2": 0.49740381482135776
+  },
+  "val_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.04217478791352229,
+    "mse": 0.04217478791352229,
+    "r2": -0.2588557603469377
+  },
+  "test_metrics": {
+    "primary_metric": "mse",
+    "primary_value": 0.038610553808596675,
+    "mse": 0.038610553808596675,
+    "r2": -0.10584562137377995
+  },
+  "data_shapes": {
+    "train": [
+      739,
+      9199
+    ],
+    "val": [
+      72,
+      9199
+    ],
+    "test": [
+      110,
+      9199
+    ]
+  }
+}
