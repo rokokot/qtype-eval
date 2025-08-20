@@ -8,7 +8,7 @@ defaults:
   - tfidf: default
 
 # settings
-seed: 654
+seed: 42        # original was 42, 1808 was 654, 432, 321
 output_dir: ${hydra:runtime.output_dir}
 experiment_name: "default"
 

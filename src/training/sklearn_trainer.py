@@ -149,6 +149,15 @@ class SklearnTrainer:
             
             self.wandb_run.log(wandb_metrics)
         
+        # Get feature importance if available
+        feature_importance = None
+        if hasattr(self.model, "feature_importances_"):
+            feature_importance = self.model.feature_importances_
+        elif hasattr(self.model, "coef_"):
+            coef = self.model.coef_
+            # Handle different shapes (1D vs 2D arrays for binary classification)
+            feature_importance = coef.flatten() if coef.ndim > 1 else coef
+        
         # Compile results
         results = {
             "model_type": self.model.__class__.__name__,
@@ -158,6 +167,15 @@ class SklearnTrainer:
             "val_metrics": val_metrics,
             "test_metrics": test_metrics,
         }
+        
+        # Add feature importance to results if available
+        if feature_importance is not None:
+            results["feature_importance"] = {
+                "values": feature_importance.tolist(),
+                "shape": list(feature_importance.shape),
+                "top_10_indices": np.argsort(np.abs(feature_importance))[-10:].tolist()[::-1],  # Descending order
+                "top_10_values": feature_importance[np.argsort(np.abs(feature_importance))[-10:][::-1]].tolist()
+            }
         
         # Save results and model if output directory provided
         if self.output_dir:
